@@ -1,0 +1,15 @@
+*-password.txt
+.vagrant
+*.retry
+*.pem
+#roles/
+tmp/
+vars/aws_generated/
+*.iml
+*.ipr
+*.iws
+.idea
+.data
+*.hpi
+ansible/roles
+

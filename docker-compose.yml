@@ -1,0 +1,18 @@
+version: '2'
+services:
+  jenkins-master:
+    build: ./
+    ports:
+      - '8080:8080'
+      - '50000:50000'
+    volumes:
+      - '.data/jenkins_home:/var/jenkins_home'
+      - '.data/jenkins-workspace-home:/jenkins-workspace-home'
+    environment:
+      JAVA_OPTS: '-Xmx1g'
+      JENKINS_ENV_SECURITY_REALM: jenkins_database
+      JENKINS_ENV_ADMIN_USER: admin
+      JENKINS_ENV_ADMIN_PASSWORD: admin
+      JENKINS_ENV_CRED_USERPASS_EXAMPLE: 'mygit-user-pass:user:password'
+
+      
