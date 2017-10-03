@@ -1,4 +1,3 @@
-@Grab(group='org.yaml', module='snakeyaml', version='1.13')
 
 def loadProperties(){
     Properties envProperties = new Properties()

@@ -9,6 +9,8 @@ RUN /usr/local/bin/install-plugins.sh $(cat /usr/share/jenkins/ref/plugins.txt |
 # We will disable some sandbox limitations
 COPY sandbox-signatures.txt /usr/share/jenkins/ref/sandbox-signatures.txt.override
 COPY init-scripts/* /usr/share/jenkins/ref/init.groovy.d/
+RUN cd /usr/share/jenkins/ref/init.groovy.d/ && \
+    for f in *.groovy; do mv "$f" "${f}.override"; done 
 
 # Using root to install and run entrypoint. 
 # We will change the user to jenkins using gosu
