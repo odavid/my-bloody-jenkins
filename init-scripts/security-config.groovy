@@ -4,9 +4,11 @@ import hudson.security.HudsonPrivateSecurityRealm
 import jenkins.security.plugins.ldap.FromGroupSearchLDAPGroupMembershipStrategy
 import jenkins.security.plugins.ldap.FromUserRecordLDAPGroupMembershipStrategy
 import jenkins.model.Jenkins
-import jenkins.CLI
 import hudson.model.Hudson
 import hudson.model.Item
+
+def shared = evaluate(new File("/var/jenkins_home/init.groovy.d/SharedMethods.groovy"))
+Properties envProperties = shared.loadProperties()
 
 def setup_ldap( server, rootDN, 
                 userSearchBase, userSearchFilter,
@@ -45,11 +47,6 @@ def setup_ldap( server, rootDN,
 }
 
 def instance = Jenkins.getInstance()
-Properties envProperties = new Properties()
-File propertiesFile = new File('/tmp/jenkins-env.properties')
-propertiesFile.withInputStream {
-    envProperties.load(it)
-}
 
 def security_realm = envProperties.get('SECURITY_REALM')
 def admin_user = envProperties.get('ADMIN_USER')
@@ -66,7 +63,6 @@ def displayNameAttr = envProperties.get('LDAP_DISPLAY_NAME_ATTRIBUTE')
 def emailAttr = envProperties.get('LDAP_EMAIL_ATTRIBUTE')
 def managerDN = envProperties.get('LDAP_MANAGER_DN')
 def managerPassword = envProperties.get('LDAP_MANAGER_PASSWORD')
-def cli_over_remoting = envProperties.get('CLI_OVER_REMOTING')
 
 def realm
 switch(security_realm){
@@ -103,5 +99,4 @@ if(realm){
     instance.save()
 }
 
-CLI.get().setEnabled(cli_over_remoting.toBoolean())
 
