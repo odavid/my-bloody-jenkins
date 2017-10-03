@@ -37,7 +37,7 @@ def createOrUpdateCred(cred){
     def globalDomain = Domain.global()
     def credentialsStore = Jenkins.instance.getExtensionList(SystemCredentialsProvider)[0].getStore()
     def currentCred = currentCreds.find{it.id == cred.id}
-    if(!cred){
+    if(!currentCred){
         credentialsStore.addCredentials(globalDomain, cred)
     }else{
         credentialsStore.updateCredentials(globalDomain, currentCred, cred)

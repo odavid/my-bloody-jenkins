@@ -48,8 +48,6 @@ def setup_ldap( server, rootDN,
 
 def instance = Jenkins.getInstance()
 
-println envProperties
-
 def security_realm = envProperties.get('SECURITY_REALM')
 def admin_user = envProperties.get('ADMIN_USER')
 def admin_password = envProperties.get('ADMIN_PASSWORD')
@@ -65,8 +63,6 @@ def displayNameAttr = envProperties.get('LDAP_DISPLAY_NAME_ATTRIBUTE')
 def emailAttr = envProperties.get('LDAP_EMAIL_ATTRIBUTE')
 def managerDN = envProperties.get('LDAP_MANAGER_DN')
 def managerPassword = envProperties.get('LDAP_MANAGER_PASSWORD')
-
-println "security_realm: '${security_realm}'"
 
 def realm
 switch(security_realm){
@@ -86,7 +82,6 @@ switch(security_realm){
         break
 }
 
-println "realm = ${realm}"
 if(realm){
     instance.setSecurityRealm(realm)
     instance.save()
@@ -99,9 +94,6 @@ if(realm){
     strategy.add(Item.DISCOVER, 'authenticated')
     strategy.add(Item.CANCEL, 'authenticated')
     strategy.add(Hudson.ADMINISTER, admin_user)
-
-    println "strategy = ${strategy}"
-    
 
     instance.setAuthorizationStrategy(strategy)
     instance.save()
