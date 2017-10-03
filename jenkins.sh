@@ -13,7 +13,7 @@ if [[ $# -lt 1 ]] || [[ "$1" == "-"* ]]; then
     for key in $VARIABLES; do
         echo "reading key: ${key}"
         value="${!key}"
-        value="$(echo -n "$value" | awk 1 ORS='\\n' | sed 's/\([=:]\)/\\\1/g')"
+        value="$(echo -n "$value" | sed 's/\([=:]\)/\\\1/g' | awk 1 ORS='\\n' | sed 's/\(.*\)\\n$/\1/g')"
         trimmed_key=$(echo -n $key | sed 's/JENKINS_ENV_//g')
         echo "${trimmed_key}=$value" >> /tmp/jenkins-env.properties
         unset ${key}
