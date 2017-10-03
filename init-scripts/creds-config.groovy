@@ -4,8 +4,10 @@ import com.cloudbees.plugins.credentials.domains.Domain
 import com.cloudbees.plugins.credentials.SystemCredentialsProvider
 import com.cloudbees.plugins.credentials.CredentialsScope
 import jenkins.model.Jenkins
+import groovy.transform.BaseScript
 
-
+def shared = evaluate(new File("/var/jenkins_home/init.groovy.d/SharedMethods.groovy"))
+Properties envProperties = shared.loadProperties()
 
 def sshKeyCred(id, username, privateKeyString, passphrase = "", description = null) {
     new BasicSSHUserPrivateKey(CredentialsScope.GLOBAL,
@@ -41,12 +43,6 @@ def createOrUpdateCred(cred){
         credentialsStore.updateCredentials(globalDomain, currentCred, cred)
     }
     credentialsStore.save()
-}
-
-Properties envProperties = new Properties()
-File propertiesFile = new File('/tmp/jenkins-env.properties')
-propertiesFile.withInputStream {
-    envProperties.load(it)
 }
 
 //CRED_USERPASS_EXAMPLE=<id>:<user>:<pass>
