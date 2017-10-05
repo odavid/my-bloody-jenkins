@@ -18,6 +18,9 @@ USER root
 RUN curl -SsLo /usr/bin/gosu https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-amd64 && \
      chmod +x /usr/bin/gosu
 
+# Ability to use usermod
+RUN apk add --no-cache shadow
+
 # Separate between JENKINS_HOME and WORKSPACE dir. Best if we use NFS for JENKINS_HOME 
 RUN mkdir -p /jenkins-workspace-home && \
     chown -R jenkins:jenkins /jenkins-workspace-home

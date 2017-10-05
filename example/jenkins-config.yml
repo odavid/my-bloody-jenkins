@@ -7,6 +7,10 @@
     admin_password: admin
   
   clouds:
+    docker-cloud:
+      type: docker
+      serverUrl: unix:/var/run/docker.sock
+      
 
 
   credentials:
