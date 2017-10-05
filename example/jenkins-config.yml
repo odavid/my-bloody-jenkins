@@ -1,0 +1,55 @@
+  ---
+  executer_count: 0
+  cli_over_remoting: False
+  security:
+    realm: jenkins_database
+    admin_user: admin
+    admin_password: admin
+  
+  clouds:
+
+
+  credentials:
+    awscred:
+      type: awscred
+      access_key: xxxx
+      secret_access_key: yyyy
+    gituserpass:
+      type: userpass
+      username: user
+      password: password1234
+    gitsshkey:
+      type: sshkey
+      username: user
+      passphrase: password1234
+      sshkey: |
+        -----BEGIN RSA PRIVATE KEY-----
+        Proc-Type: 4,ENCRYPTED
+        DEK-Info: AES-128-CBC,B1615A0CA4F11333D058A5A9C4D0144E
+
+        wxr6qxA/gcj+Bf1he0YRaqH2HbvHXIshrXTFq7oet5OeF1oaX4yyejotI9oPXvvM
+        X9jzLpPwhdpriuFKJKr9jc+1rto/71QExTYEaAWwfYi1EVb1ERGmG4DMANqBKssO
+        FTn01t4wew3d6DPcAIwFBT7gvlJfg0poCxae1fhsXGijMy2YryiU+BcV0BYsM6Lj
+        VAfn9+djoxPKTv3wPFZPXVrzSkWG8IFUcLBIKE6hf3xxwV5FPHDSegAnwTBV9sVB
+        BkVfAHDkzecEtK3iHqa9QUsW014TTLZ7Rbbzh6mskrGxgjgDXXjbdEYbJDtSES6E
+        d2o1nXqJEsDdUrSWAoaViR052KyW8f8n//LEjI1a6aveOQWoWXgPwD9jnp5cPrGv
+        mWGrZmhWLh0rx61qG+bBVEfbGmLmbi74jxq1/6vaAF4ChtfBks2mpOMMOKf+bKar
+        w1laJKgwFRWO7iYql9dHzny2GXy4z6hjD5g3omEdFyWh3GSW8NNkXyojml7tlIa6
+        ln286//PSmN0dLZptULAr8A4Bp+aGgybnla7H2F5/s2mGc39MrodFPFbpjp50d4R
+        2x4uV4ofVvVExv5wWSdQ60o7trSvBWqwu4MDm2yWCxUiay8I8EF2iM0etutlWm5N
+        V9aD8TTC5zHLbwY7YI0OvOXyCWgI5CW1tTsnoDxR1H0aDByuSL+Q+8I5gxRKdJlb
+        fYZ683g8AuTkKilHQ6KINAAUuvMvgSWzOa/BU9L7Xqn99w2WgdheLMkdp6O4dJX4
+        f4vFTzms+tBVXwqybac/8HZ4uW163pgnBpH2bVFi7/qyd8sl8TYAODN70R2oLv3c
+        HBjzI/078G9B4WkpL99FK9cWsfCleIM+HIGeQ9jPDK/hzAhlKIIQxzIaomhcRZlW
+        Oc3+zlioBuQSBVtf1UJMrCFSfr9Gq+lbhsD5k8bscU38d5R8EHDGvicpr/KIwjGn
+        piNmO7Nz2KcJaLUX6D1oG0p4ioan7js27eBGVnur73hNySbFycwiTGdZkp1CHM7D
+        OH2iOMibQGMGYWoci/SoIOgp54Meq4WkEpV5wwr6aCuTzsgnVJXVuMmBk8dnvyat
+        EKflp+2kKCj9uPo/QUoozNAuNzyDJU95E8ZfLyT5G9GCQtlf2EnrFZIeQ040xBQC
+        6vGQLodjxIG1X8ejDv69FIW66qyofAWVuwCO6wuCWEdLLZrNNhjyPCnnxv5Kw8oC
+        nB8/YDntqKg2GqpDu4s0bzAt0CPbMQydvD5x4AWKYCm4HQIF3qX544yUKd9vuO3l
+        5t8JE8l4ETGMieKFpE9YiVbobye8iNRyIYVBuvlk4lq+xifw7i3Crmr/+KB+2ABZ
+        8TshgEjw8G7TR7qZjZGONCBJ6ozUNR5ipUANc81AA3AUGilBeC4lLUcvatsixtWz
+        6BDHwOYfLbfm8YIxDELMt13f++sxKoed4EjFJu+JIjEZlRomPf9pZEmZwTRVASsc
+        CbwJjRc022b7HIsetGBYu76KK/Fs25D5JTZjQ3ylMKwhBjrOT7d8Xm90/6eg4hvE
+        4c9bdLH+2Xuc6qv/oBoFzVd19c3DiVfns2/5BohfG+pbNwZUVR1vjP/BVDgwDBc+
+        -----END RSA PRIVATE KEY-----

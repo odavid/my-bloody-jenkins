@@ -26,7 +26,3 @@ VOLUME /jenkins-workspace-home
 # Change the original entrypoint. We will later on run it using gosu
 RUN mv /usr/local/bin/jenkins.sh /usr/local/bin/jenkins-orig.sh
 COPY jenkins.sh /usr/local/bin/jenkins.sh
-
-ENV \
-    JENKINS_ENV_CLI_OVER_REMOTING=false \
-    JENKINS_ENV_EXECUTERS_COUNT=0
