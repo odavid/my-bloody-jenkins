@@ -3,7 +3,7 @@ import org.jenkinsci.plugins.scriptsecurity.scripts.ScriptApproval
 import jenkins.CLI
 
 def setup(config){
-    println "General setup: config = ${config}"
+    config = config ?: [:]
     def instance = Jenkins.getInstance()
     config.with{
         instance.setNumExecutors(executers_count  ? executers_count as int : 0)
