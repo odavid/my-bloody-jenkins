@@ -53,7 +53,7 @@ mailer:1.20
 mask-passwords:2.10.1
 matrix-auth:1.7
 matrix-project:1.11
-maven-plugin:3.0-rc1
+maven-plugin:3.0-rc2
 momentjs:1.1.1
 openstack-cloud:2.25
 parallel-test-executor:1.9

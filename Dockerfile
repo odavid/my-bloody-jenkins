@@ -4,7 +4,7 @@ ARG GOSU_VERSION=1.10
 
 # Install plugins
 COPY plugins.txt /usr/share/jenkins/ref/
-RUN /usr/local/bin/install-plugins.sh $(cat /usr/share/jenkins/ref/plugins.txt | tr '\n' ' ')
+RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
 
 # We will disable some sandbox limitations
 COPY sandbox-signatures.txt /usr/share/jenkins/ref/sandbox-signatures.txt.override
