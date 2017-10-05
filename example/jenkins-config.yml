@@ -10,14 +10,15 @@ security:
 clouds:
   docker-cloud:
     type: docker
-    serverUrl: unix:/var/run/docker.sock
+    serverUrl: unix:///var/run/docker.sock
     templates:
-      - image: jenkinsci/docker-jnlp-slave
-        connection_timeout: 0
-        read_timeout: 0
-        remote_fs: /home/jenkins
-        jvm_opts: -Xmx1g
-        memory: 2g
+      - image: jenkinsci/jnlp-slave
+        labels:
+          - docker
+          - docker-slave
+        remoteFs: /home/jenkins
+        vmargs: -Xmx1g
+        memory: 2048
         cpu: 1024
         volumes:
           - '/var/run/docker.sock:/var/run/docker.sock'
