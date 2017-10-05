@@ -41,17 +41,20 @@ def setupLdap(config){
 }
 def setupJenkinsDatabase(config){
     config.with{
-        realm = new HudsonPrivateSecurityRealm(false)
-        realm.createAccount(admin_user, admin_password)
-        return realm
+        securityRealm = new HudsonPrivateSecurityRealm(false)
+        securityRealm.createAccount(admin_user, admin_password)
+        return securityRealm
     }
 }
 
-def setupSecurityRealm(securityRealm, config){
+def setup(config){
+    config = config ?: [:]
+    def instance = Jenkins.getInstance()
+    
     def realm
-    switch(securityRealm){
+    switch(config.realm){
         case 'ldap':
-            realm = setup_ldap(config)
+            realm = setupLdap(config)
             break
         case 'jenkins_database':
             realm = setupJenkinsDatabase(config)
@@ -59,7 +62,6 @@ def setupSecurityRealm(securityRealm, config){
     }
     if(realm){
         instance.setSecurityRealm(realm)
-        instance.save()
         def strategy = instance.authorizationStrategy instanceof GlobalMatrixAuthorizationStrategy ? 
             instance.authorizationStrategy : new GlobalMatrixAuthorizationStrategy()
         config.with{
