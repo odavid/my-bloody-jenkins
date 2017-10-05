@@ -1,3 +1,4 @@
+import org.yaml.snakeyaml.Yaml
 
 def loadProperties(){
     Properties envProperties = new Properties()
@@ -7,4 +8,13 @@ def loadProperties(){
     }
     envProperties    
 }
+
+def loadYamlConfig(filename){
+    return new File(filename).withReader{
+        new Yaml().load(it)
+    }
+}
+
+
+
 return this

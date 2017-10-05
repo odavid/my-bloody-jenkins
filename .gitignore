@@ -11,5 +11,4 @@ vars/aws_generated/
 .idea
 .data
 *.hpi
-ansible/roles
-
+.vscode

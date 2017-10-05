@@ -9,6 +9,7 @@ services:
       - '.data/jenkins_home:/var/jenkins_home'
       - '.data/jenkins-workspace-home:/jenkins-workspace-home'
       - '/var/run/docker.sock:/var/run/docker.sock'
+      - './example/jenkins-config.yml:/etc/jenkins-config.yml'
     environment:
       JAVA_OPTS: '-Xmx1g'
               

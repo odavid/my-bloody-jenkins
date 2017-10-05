@@ -1,6 +1,8 @@
   ---
-  executer_count: 0
-  cli_over_remoting: False
+  general:
+    executer_count: 0
+    cli_over_remoting: False
+
   security:
     realm: jenkins_database
     admin_user: admin
@@ -23,11 +25,9 @@
           environment:
             XXX: xxx
 
-
-
   credentials:
     awscred:
-      type: awscred
+      type: aws
       access_key: xxxx
       secret_access_key: yyyy
     gituserpass:
