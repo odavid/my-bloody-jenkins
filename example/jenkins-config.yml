@@ -10,7 +10,19 @@
     docker-cloud:
       type: docker
       serverUrl: unix:/var/run/docker.sock
-      
+      templates:
+        - image: jenkinsci/docker-jnlp-slave
+          connection_timeout: 0
+          read_timeout: 0
+          remote_fs: /home/jenkins
+          jvm_opts: -Xmx1g
+          memory: 2g
+          cpu: 1024
+          volumes:
+            - '/var/run/docker.sock:/var/run/docker.sock'
+          environment:
+            XXX: xxx
+
 
 
   credentials:
