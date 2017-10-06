@@ -21,59 +21,6 @@ def asBoolean(value, defaultValue=false){
     return value ? value.toBoolean() : defaultValue
 }
 
-def dockerCloud(config){
-    config.with{
-        return new DockerCloud(
-            id,
-            templates?.collect{ temp ->
-                def dockerComputerJNLPLauncher = new DockerComputerJNLPLauncher(
-                    new JNLPLauncher(
-                        config.tunnel,
-                        temp.vmargs
-                    )
-                )
-                dockerComputerJNLPLauncher.setUser(temp.user)
-                def dockerTemplate = new DockerTemplate(
-                    new DockerTemplateBase(
-                        temp.image,
-                        temp.dns?.join(' '),
-                        temp.network,
-                        temp.command,
-                        temp.volumes?.join(' '),
-                        temp.volumesFrom?.join(' '),
-                        temp.environment?.collect{k,v -> "${k}=${v}"}.join("\n"),
-                        temp.lxcConf,
-                        temp.hostname,
-                        asInt(temp.memory),
-                        asInt(temp.memorySwap),
-                        asInt(temp.cpu),
-                        temp.ports?.join(' '),
-                        asBoolean(temp.bindAllPorts),
-                        asBoolean(temp.privileged),
-                        asBoolean(temp.tty),
-                        temp.macAddress
-                    ),
-                    temp.labels?.join(' '),
-                    temp.remoteFs,
-                    temp.remoteFsMapping,
-                    temp.instanceCap ?: "",
-                )
-                dockerTemplate.mode = Node.Mode.EXCLUSIVE
-                dockerTemplate.numExecutors = 100
-                dockerTemplate.launcher = dockerComputerJNLPLauncher
-                dockerTemplate.removeVolumes = temp.removeVolumes ? temp.removeVolumes.toBoolean() : false
-                return dockerTemplate
-            },
-            serverUrl,
-            "100", //containerCapStr,
-            asInt(connectTimeout),
-            asInt(readTimeout),
-            credentialsId,
-            null //version,
-        )
-    }
-}
-
 def pathToVolumeName(path){
     path.split('/').collect{ org.apache.commons.lang.StringUtils.capitalize(it)}.join('').replaceAll('\\.', '_')
 }
@@ -126,6 +73,59 @@ def parseContainerVolume(volume, closure){
         container_path,
         read_only
     )
+}
+
+def dockerCloud(config){
+    config.with{
+        return new DockerCloud(
+            id,
+            templates?.collect{ temp ->
+                def dockerComputerJNLPLauncher = new DockerComputerJNLPLauncher(
+                    new JNLPLauncher(
+                        config.tunnel,
+                        temp.vmargs
+                    )
+                )
+                dockerComputerJNLPLauncher.setUser(temp.user)
+                def dockerTemplate = new DockerTemplate(
+                    new DockerTemplateBase(
+                        temp.image,
+                        temp.dns?.join(' '),
+                        temp.network,
+                        temp.command,
+                        temp.volumes?.join(' '),
+                        temp.volumesFrom?.join(' '),
+                        temp.environment?.collect{k,v -> "${k}=${v}"}.join("\n"),
+                        temp.lxcConf,
+                        temp.hostname,
+                        asInt(temp.memory),
+                        asInt(temp.memorySwap),
+                        asInt(temp.cpu),
+                        temp.ports?.join(' '),
+                        asBoolean(temp.bindAllPorts),
+                        asBoolean(temp.privileged),
+                        asBoolean(temp.tty),
+                        temp.macAddress
+                    ),
+                    temp.labels?.join(' '),
+                    temp.remoteFs,
+                    temp.remoteFsMapping,
+                    temp.instanceCap ?: "",
+                )
+                dockerTemplate.mode = Node.Mode.EXCLUSIVE
+                dockerTemplate.numExecutors = 100
+                dockerTemplate.launcher = dockerComputerJNLPLauncher
+                dockerTemplate.removeVolumes = temp.removeVolumes ? temp.removeVolumes.toBoolean() : false
+                return dockerTemplate
+            },
+            serverUrl,
+            containerCap ? containerCap.toString() : "100",
+            asInt(connectTimeout),
+            asInt(readTimeout),
+            credentialsId,
+            dockerApiVersion,
+        )
+    }
 }
 
 def ecsCloud(config){
