@@ -73,7 +73,7 @@ def dockerCloud(config){
 }
 
 def pathToEcsVolumeName(path){
-    org.apache.commons.lang.StringUtils.capitalize(path.replaceAll('/', ' ')).replaceAll(' ', '').replaceAll('.', '_')
+    path.split('/').collect{ org.apache.commons.lang.StringUtils.capitalize(it)}.join('').replaceAll('\\.', '_')
 }
 def parseEcsVolume(volume){
     def parts = volume.split(':')
@@ -88,7 +88,7 @@ def parseEcsVolume(volume){
         host_path = parts[0]
         container_path = parts[1]
     }
-    if(parts.size() == 2 and parts[1] == 'ro'){
+    if(parts.size() == 2 && parts[1] == 'ro'){
         container_path = parts[0]
         read_only = true
     }
@@ -106,7 +106,7 @@ def parseEcsVolume(volume){
         throw new RuntimeException("Invalid volume declaration: ${volume}")
     }
 
-    if(host_path && (host_path[0] in ['~', '.'] || host_path[0] != '/' && '/' in host_path){
+    if(host_path && (host_path[0] in ['~', '.'] || host_path[0] != '/' && '/' in host_path)){
         throw new RuntimeException("Not supported volume declaration: ${volume}, host path must be absolute")
     }
 
@@ -131,26 +131,31 @@ def ecsCloud(config){
         return new ECSCloud(
             id,
             templates?.collect{ temp ->
-                return new ECSTaskTemplate(
-                    temp.name,
+                def ecsTemplate = new ECSTaskTemplate(
+                    temp.name ? temp.name : temp.labels?.join('-'),
                     temp.labels?.join(' '),
                     temp.image,
-                    temp.remoteFSRoot,
+                    temp.remoteFs,
                     temp.memory ? temp.memory.toInteger() : 0,
                     temp.memoryReservation ? temp.memoryReservation.toInteger() : 0,
                     temp.cpu ? temp.cpu.toInteger() : 0,
                     temp.privileged ? temp.privileged.toBoolean() : false,
                     temp.logDriverOptions?.collect{ k,v -> new LogDriverOption(k,v) },
-                    temp.environments?.collect{ k, v -> new EnvironmentEntry(k,v) },
+                    temp.environment?.collect{ k, v -> new EnvironmentEntry(k,v) },
                     temp.extraHosts?.collect { k, v -> new ExtraHostEntry(k,v) },
-                    temp.mountPoints?.collect {mp -> parseEcsVolume(mp) }
-                )                
-            }, 
+                    temp.volumes?.collect {vol -> parseEcsVolume(vol) }
+                )
+                ecsTemplate.jvmArgs = temp.vmargs
+                ecsTemplate.entrypoint = temp.entrypoint
+                ecsTemplate.logDriver = temp.logDriver
+                ecsTemplate.dnsSearchDomains = temp.dns
+                return ecsTemplate
+            },
             credentialsId ?: '',
-            cluster, 
-            region, 
-            jenkinsUrl, 
-            slaveTimoutInSeconds ? slaveTimoutInSeconds.toInteger() : 0            
+            cluster,
+            region,
+            jenkinsUrl,
+            slaveTimoutInSeconds ? slaveTimoutInSeconds.toInteger() : 0
         )
     }
 }

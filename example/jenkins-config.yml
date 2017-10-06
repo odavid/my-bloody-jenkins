@@ -8,6 +8,26 @@ security:
   admin_password: admin
 
 clouds:
+  ecs-cloud:
+    type: ecs
+    credentialsId: ''
+    cluster: 'arn:ssss'
+    region: eu-west-1
+    # jenkinsUrl: 'xxx'
+    slaveTimoutInSeconds: 0
+    templates:
+      - image: jenkinsci/jnlp-slave:latest
+        labels:
+          - ecs-slave
+        remoteFs: /home/jenkins
+        vmargs: -Xmx1g
+        memoryReservation: 2048
+        cpu: 1024
+        volumes:
+          - '/var/run/docker.sock:/var/run/docker.sock'
+        environment:
+          XXX: xxx
+
   # docker-cloud:
   #   type: docker
   #   serverUrl: unix:///var/run/docker.sock
