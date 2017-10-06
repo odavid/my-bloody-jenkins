@@ -6,6 +6,8 @@ import jenkins.security.plugins.ldap.FromUserRecordLDAPGroupMembershipStrategy
 import jenkins.model.Jenkins
 import hudson.model.Hudson
 import hudson.model.Item
+import jenkins.security.ApiTokenProperty
+import hudson.model.User
 
 def setupLdap(config){
     config.with{
@@ -32,7 +34,7 @@ def setupLdap(config){
                     new LDAPSecurityRealm.EnvironmentProperty('com.sun.jndi.ldap.connect.timeout', '5000'),
                     new LDAPSecurityRealm.EnvironmentProperty('com.sun.jndi.ldap.read.timeout', '60000'),
                 ] as LDAPSecurityRealm.EnvironmentProperty[],
-                displayNameAttr, 
+                displayNameAttr,
                 emailAttr,
                 /*IdStrategy userIdStrategy*/null,
                 /*IdStrategy groupIdStrategy*/null
@@ -49,8 +51,9 @@ def setupJenkinsDatabase(config){
 
 def setup(config){
     config = config ?: [:]
+    def admin_user = config.admin_user
     def instance = Jenkins.getInstance()
-    
+
     def realm
     switch(config.realm){
         case 'ldap':
@@ -62,7 +65,7 @@ def setup(config){
     }
     if(realm){
         instance.setSecurityRealm(realm)
-        def strategy = instance.authorizationStrategy instanceof GlobalMatrixAuthorizationStrategy ? 
+        def strategy = instance.authorizationStrategy instanceof GlobalMatrixAuthorizationStrategy ?
             instance.authorizationStrategy : new GlobalMatrixAuthorizationStrategy()
         config.with{
             strategy.add(Jenkins.READ, 'authenticated')
@@ -75,6 +78,8 @@ def setup(config){
         instance.setAuthorizationStrategy(strategy)
         instance.save()
     }
+    def token = User.get(admin_user).getProperty(ApiTokenProperty).apiTokenInsecure
+    new File('/tmp/api-token').withWriter{out -> out.println "${admin_user}:${token}"}
 }
 
 return this
