@@ -128,7 +128,7 @@ def parseEcsVolume(volume){
 
 def ecsCloud(config){
     config.with{
-        return new ECSCloud(
+        def ecsCloud = new ECSCloud(
             id,
             templates?.collect{ temp ->
                 def ecsTemplate = new ECSTaskTemplate(
@@ -157,6 +157,8 @@ def ecsCloud(config){
             jenkinsUrl,
             slaveTimoutInSeconds ? slaveTimoutInSeconds.toInteger() : 0
         )
+        ecsCloud.tunnel = tunnel
+        return ecsCloud
     }
 }
 
