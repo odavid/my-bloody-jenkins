@@ -211,9 +211,21 @@ def kubernetesCloud(config){
                 podTemplate.inheritFrom = temp.inheritFrom
                 podTemplate.nodeSelector = temp.nodeSelector
                 podTemplate.serviceAccount = serviceAccount
-                podTemplate.slaveConnectTimeout = asInt(slaveConnectTimeout)
-                podTemplate.instanceCap = asInt(instanceCap)
+                podTemplate.slaveConnectTimeout = asInt(slaveConnectTimeout, PodTemplate.DEFAULT_SLAVE_JENKINS_CONNECTION_TIMEOUT)
+                podTemplate.instanceCap = asInt(instanceCap, -1)
                 podTemplate.imagePullSecrets = imagePullSecrets?.collect{secretName -> new PodImagePullSecret(secretName)}
+                def simplePodVolumes = temp.volumes?.collect { vol -> parseContainerVolume(vol){ 
+                    vol_name, host_path, container_path,read_only -> 
+                        if(host_path){
+                            return new HostPathVolume(host_path, container_path)
+                        }else{
+                            return new EmptyDirVolume(container_path, false)
+                        }
+                    } 
+                }
+                if(simplePodVolumes){
+                    podTemplate.volumes.addAll(simplePodVolumes)
+                }
                 return podTemplate
             },
             serverUrl,
