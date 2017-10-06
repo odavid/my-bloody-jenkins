@@ -1,5 +1,6 @@
 import hudson.slaves.JNLPLauncher
 import hudson.plugins.sshslaves.SSHConnector
+
 import com.nirima.jenkins.plugins.docker.DockerCloud
 import com.nirima.jenkins.plugins.docker.DockerTemplate
 import com.nirima.jenkins.plugins.docker.DockerTemplateBase
@@ -9,6 +10,13 @@ import com.nirima.jenkins.plugins.docker.launcher.DockerComputerSSHLauncher
 import com.nirima.jenkins.plugins.docker.strategy.DockerOnceRetentionStrategy
 import hudson.model.Node
 import jenkins.model.Jenkins
+
+import com.cloudbees.jenkins.plugins.amazonecs.ECSCloud
+import com.cloudbees.jenkins.plugins.amazonecs.ECSTaskTemplate
+import com.cloudbees.jenkins.plugins.amazonecs.ECSTaskTemplate.LogDriverOption
+import com.cloudbees.jenkins.plugins.amazonecs.ECSTaskTemplate.EnvironmentEntry
+import com.cloudbees.jenkins.plugins.amazonecs.ECSTaskTemplate.ExtraHostEntry
+import com.cloudbees.jenkins.plugins.amazonecs.ECSTaskTemplate.MountPointEntry
 
 
 def dockerCloud(config){
@@ -64,6 +72,89 @@ def dockerCloud(config){
     }
 }
 
+def pathToEcsVolumeName(path){
+    org.apache.commons.lang.StringUtils.capitalize(path.replaceAll('/', ' ')).replaceAll(' ', '').replaceAll('.', '_')
+}
+def parseEcsVolume(volume){
+    def parts = volume.split(':')
+    def host_path = null
+    def container_path = null
+    def read_only = false
+
+    if(parts.size() == 1){
+        container_path = parts[0]
+    }
+    if(parts.size() == 2 && parts[1] != 'ro'){
+        host_path = parts[0]
+        container_path = parts[1]
+    }
+    if(parts.size() == 2 and parts[1] == 'ro'){
+        container_path = parts[0]
+        read_only = true
+    }
+    if(parts.size() == 3 && parts[2] == 'ro'){
+        host_path = parts[0]
+        container_path = parts[1]
+        read_only = true
+    }
+    if(parts.size() == 3 && parts[2] == 'rw'){
+        host_path = parts[0]
+        container_path = parts[1]
+    }
+
+    if(!host_path && !container_path){
+        throw new RuntimeException("Invalid volume declaration: ${volume}")
+    }
+
+    if(host_path && (host_path[0] in ['~', '.'] || host_path[0] != '/' && '/' in host_path){
+        throw new RuntimeException("Not supported volume declaration: ${volume}, host path must be absolute")
+    }
+
+    if(host_path && host_path[0] == '/'){
+        vol_name = pathToEcsVolumeName(host_path)
+    } else if(host_path){
+        vol_name = pathToEcsVolumeName(host_path)
+    }else{
+        vol_name = pathToEcsVolumeName(container_path)
+    }
+    return new MountPointEntry(
+        vol_name,
+        host_path,
+        container_path,
+        read_only
+    )
+
+}
+
+def ecsCloud(config){
+    config.with{
+        return new ECSCloud(
+            id,
+            templates?.collect{ temp ->
+                return new ECSTaskTemplate(
+                    temp.name,
+                    temp.labels?.join(' '),
+                    temp.image,
+                    temp.remoteFSRoot,
+                    temp.memory ? temp.memory.toInteger() : 0,
+                    temp.memoryReservation ? temp.memoryReservation.toInteger() : 0,
+                    temp.cpu ? temp.cpu.toInteger() : 0,
+                    temp.privileged ? temp.privileged.toBoolean() : false,
+                    temp.logDriverOptions?.collect{ k,v -> new LogDriverOption(k,v) },
+                    temp.environments?.collect{ k, v -> new EnvironmentEntry(k,v) },
+                    temp.extraHosts?.collect { k, v -> new ExtraHostEntry(k,v) },
+                    temp.mountPoints?.collect {mp -> parseEcsVolume(mp) }
+                )                
+            }, 
+            credentialsId ?: '',
+            cluster, 
+            region, 
+            jenkinsUrl, 
+            slaveTimoutInSeconds ? slaveTimoutInSeconds.toInteger() : 0            
+        )
+    }
+}
+
 def setup(config){
     config = config ?: [:]
     def clouds = config.collect{k,v ->
@@ -71,6 +162,8 @@ def setup(config){
         switch(v.type){
             case 'docker':
                 return dockerCloud(cloudConfig)
+            case 'ecs':
+                return ecsCloud(cloudConfig)
         }
     }.grep().each{ cloud ->
         def old = Jenkins.instance.clouds.find{ it.name == cloud.name}
