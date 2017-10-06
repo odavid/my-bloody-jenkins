@@ -14,7 +14,7 @@ clouds:
     cluster: 'arn:ssss'
     region: eu-west-1
     # jenkinsUrl: 'xxx'
-    slaveTimoutInSeconds: 0
+    connectTimeout: 0
     templates:
       - name: ecsSlave
         image: jenkinsci/jnlp-slave:latest
@@ -24,6 +24,24 @@ clouds:
         vmargs: -Xmx1g
         memoryReservation: 2048
         cpu: 1024
+        volumes:
+          - '/var/run/docker.sock:/var/run/docker.sock'
+        environment:
+          XXX: xxx
+
+  kube-cloud:
+    type: kubernetes
+    serverUrl: xxx
+    namespace: yyy
+    # jenkinsUrl: 
+    connectTimeout: 0
+    templates:
+      - name: kubeslave
+        image: jenkinsci/jnlp-slave:latest
+        labels:
+          - kubeslave
+        remoteFs: /home/jenkins
+        vmargs: -Xmx1g
         volumes:
           - '/var/run/docker.sock:/var/run/docker.sock'
         environment:

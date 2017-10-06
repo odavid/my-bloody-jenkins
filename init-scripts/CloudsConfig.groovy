@@ -1,23 +1,25 @@
+import hudson.model.Node
 import hudson.slaves.JNLPLauncher
 import hudson.plugins.sshslaves.SSHConnector
-
-import com.nirima.jenkins.plugins.docker.DockerCloud
-import com.nirima.jenkins.plugins.docker.DockerTemplate
-import com.nirima.jenkins.plugins.docker.DockerTemplateBase
-import com.nirima.jenkins.plugins.docker.DockerImagePullStrategy
-import com.nirima.jenkins.plugins.docker.launcher.DockerComputerJNLPLauncher
-import com.nirima.jenkins.plugins.docker.launcher.DockerComputerSSHLauncher
-import com.nirima.jenkins.plugins.docker.strategy.DockerOnceRetentionStrategy
-import hudson.model.Node
 import jenkins.model.Jenkins
 
-import com.cloudbees.jenkins.plugins.amazonecs.ECSCloud
-import com.cloudbees.jenkins.plugins.amazonecs.ECSTaskTemplate
-import com.cloudbees.jenkins.plugins.amazonecs.ECSTaskTemplate.LogDriverOption
-import com.cloudbees.jenkins.plugins.amazonecs.ECSTaskTemplate.EnvironmentEntry
-import com.cloudbees.jenkins.plugins.amazonecs.ECSTaskTemplate.ExtraHostEntry
-import com.cloudbees.jenkins.plugins.amazonecs.ECSTaskTemplate.MountPointEntry
+import com.nirima.jenkins.plugins.docker.*
+import com.nirima.jenkins.plugins.docker.launcher.*
+import com.nirima.jenkins.plugins.docker.strategy.*
 
+import com.cloudbees.jenkins.plugins.amazonecs.*
+import static com.cloudbees.jenkins.plugins.amazonecs.ECSTaskTemplate.*
+
+import org.csanchez.jenkins.plugins.kubernetes.*
+import org.csanchez.jenkins.plugins.kubernetes.volumes.*
+import org.csanchez.jenkins.plugins.kubernetes.volumes.workspace.*
+
+def asInt(value, defaultValue=0){
+    return value ? value.toInteger() : defaultValue
+}
+def asBoolean(value, defaultValue=false){
+    return value ? value.toBoolean() : defaultValue
+}
 
 def dockerCloud(config){
     config.with{
@@ -26,7 +28,7 @@ def dockerCloud(config){
             templates?.collect{ temp ->
                 def dockerComputerJNLPLauncher = new DockerComputerJNLPLauncher(
                     new JNLPLauncher(
-                        temp.tunnel,
+                        config.tunnel,
                         temp.vmargs
                     )
                 )
@@ -40,21 +42,21 @@ def dockerCloud(config){
                         temp.volumes?.join(' '),
                         temp.volumesFrom?.join(' '),
                         temp.environment?.collect{k,v -> "${k}=${v}"}.join("\n"),
-                        null, // temp.lxcConfString,
+                        temp.lxcConf,
                         temp.hostname,
-                        temp.memory?.toInteger(),
-                        temp.memorySwap?.toInteger(),
-                        temp.cpu?.toInteger(),
+                        asInt(temp.memory),
+                        asInt(temp.memorySwap),
+                        asInt(temp.cpu),
                         temp.ports?.join(' '),
-                        temp.bindAllPorts?.toBoolean() ?: false,
-                        temp.privileged?.toBoolean() ?: false,
-                        temp.tty?.toBoolean() ?: false,
+                        asBoolean(temp.bindAllPorts),
+                        asBoolean(temp.privileged),
+                        asBoolean(temp.tty),
                         temp.macAddress
                     ),
                     temp.labels?.join(' '),
                     temp.remoteFs,
                     temp.remoteFsMapping,
-                    "" //temp.instanceCapStr,
+                    temp.instanceCap ?: "",
                 )
                 dockerTemplate.mode = Node.Mode.EXCLUSIVE
                 dockerTemplate.numExecutors = 100
@@ -64,18 +66,19 @@ def dockerCloud(config){
             },
             serverUrl,
             "100", //containerCapStr,
-            0, //connectTimeout,
-            0, //readTimeout,
+            asInt(connectTimeout),
+            asInt(readTimeout),
             credentialsId,
             null //version,
         )
     }
 }
 
-def pathToEcsVolumeName(path){
+def pathToVolumeName(path){
     path.split('/').collect{ org.apache.commons.lang.StringUtils.capitalize(it)}.join('').replaceAll('\\.', '_')
 }
-def parseEcsVolume(volume){
+
+def parseContainerVolume(volume, closure){
     def parts = volume.split(':')
     def host_path = null
     def container_path = null
@@ -111,19 +114,18 @@ def parseEcsVolume(volume){
     }
 
     if(host_path && host_path[0] == '/'){
-        vol_name = pathToEcsVolumeName(host_path)
+        vol_name = pathToVolumeName(host_path)
     } else if(host_path){
-        vol_name = pathToEcsVolumeName(host_path)
+        vol_name = pathToVolumeName(host_path)
     }else{
-        vol_name = pathToEcsVolumeName(container_path)
+        vol_name = pathToVolumeName(container_path)
     }
-    return new MountPointEntry(
+    return closure(
         vol_name,
         host_path,
         container_path,
         read_only
     )
-
 }
 
 def ecsCloud(config){
@@ -136,14 +138,18 @@ def ecsCloud(config){
                     temp.labels?.join(' '),
                     temp.image,
                     temp.remoteFs,
-                    temp.memory ? temp.memory.toInteger() : 0,
-                    temp.memoryReservation ? temp.memoryReservation.toInteger() : 0,
-                    temp.cpu ? temp.cpu.toInteger() : 0,
-                    temp.privileged ? temp.privileged.toBoolean() : false,
+                    asInt(temp.memory),
+                    asInt(temp.memoryReservation),
+                    asInt(temp.cpu),
+                    asBoolean(temp.privileged),
                     temp.logDriverOptions?.collect{ k,v -> new LogDriverOption(k,v) },
                     temp.environment?.collect{ k, v -> new EnvironmentEntry(k,v) },
                     temp.extraHosts?.collect { k, v -> new ExtraHostEntry(k,v) },
-                    temp.volumes?.collect {vol -> parseEcsVolume(vol) }
+                    temp.volumes?.collect { vol -> parseContainerVolume(vol){ 
+                        vol_name, host_path, container_path,read_only -> 
+                            new MountPointEntry(vol_name, host_path, container_path,read_only) 
+                        } 
+                    }
                 )
                 ecsTemplate.jvmArgs = temp.vmargs
                 ecsTemplate.entrypoint = temp.entrypoint
@@ -155,10 +161,77 @@ def ecsCloud(config){
             cluster,
             region,
             jenkinsUrl,
-            slaveTimoutInSeconds ? slaveTimoutInSeconds.toInteger() : 0
+            asInt(connectTimeout)
         )
         ecsCloud.tunnel = tunnel
         return ecsCloud
+    }
+}
+
+def kubernetesCloud(config){
+    config.with{
+        def kubernetesCloud = new KubernetesCloud(
+            id,
+            templates?.collect{ temp ->
+                def name = temp.name ? temp.name : temp.labels?.join('-')
+                
+                def containerTemplate = new ContainerTemplate(name, temp.image)
+                containerTemplate.command = temp.command
+                containerTemplate.args = temp.args
+                containerTemplate.ttyEnabled = asBoolean(temp.tty)
+                containerTemplate.workingDir = temp.remoteFs ?: ContainerTemplate.DEFAULT_WORKING_DIR
+                containerTemplate.privileged = asBoolean(temp.privileged)
+                containerTemplate.alwaysPullImage = asBoolean(temp.alwaysPullImage)
+                containerTemplate.envVars = temp.environment?.collect{ k, v -> new ContainerEnvVar(k,v) }
+                containerTemplate.ports = temp.ports?.collect{ portMapping -> 
+                    def parts = portMapping.split(':')
+                    def hostPort = parts.size() > 1 ? parts[0] : null
+                    def containerPort = parts.size() > 1 ? parts[1] : parts[0]
+                    return PortMapping(null, containerPort?.toInteger(), hostPort?.toInteger())
+                }
+                containerTemplate.resourceRequestMemory = temp.resourceRequestMemory
+                containerTemplate.resourceRequestCpu = temp.resourceRequestCpu
+                containerTemplate.resourceLimitMemory = temp.resourceLimitMemory
+                containerTemplate.resourceLimitCpu = temp.containerTemplate
+                containerTemplate.livenessProbe = temp.livenessProbe ? new ContainerLivenessProbe(
+                    temp.livenessProbe.execArgs, 
+                    asInt(temp.livenessProbe.timeoutSeconds), 
+                    asInt(temp.livenessProbe.initialDelaySeconds), 
+                    asInt(temp.livenessProbe.failureThreshold), 
+                    asInt(temp.livenessProbe.periodSeconds), 
+                    asInt(temp.livenessProbe.successThreshold)
+                ) : null
+
+                def podTemplate = new PodTemplate()
+                podTemplate.name = name
+                podTemplate.containers << containerTemplate
+                podTemplate.namespace = temp.namespace
+                podTemplate.label = temp.labels?.join(' ')
+                podTemplate.nodeUsageMode = Node.Mode.EXCLUSIVE
+                podTemplate.inheritFrom = temp.inheritFrom
+                podTemplate.nodeSelector = temp.nodeSelector
+                podTemplate.serviceAccount = serviceAccount
+                podTemplate.slaveConnectTimeout = asInt(slaveConnectTimeout)
+                podTemplate.instanceCap = asInt(instanceCap)
+                podTemplate.imagePullSecrets = imagePullSecrets?.collect{secretName -> new PodImagePullSecret(secretName)}
+                return podTemplate
+            },
+            serverUrl,
+            namespace,
+            jenkinsUrl,
+            containerCap ? containerCap.toString() : "",
+            asInt(connectTimeout),
+            asInt(readTimeout),
+            asInt(retentionTimeout, KubernetesCloud.DEFAULT_RETENTION_TIMEOUT_MINUTES)
+        )
+        kubernetesCloud.jenkinsTunnel = tunnel
+        kubernetesCloud.credentialsId = credentialsId
+        kubernetesCloud.skipTlsVerify = asBoolean(skipTlsVerify)
+        kubernetesCloud.serverCertificate = serverCertificate
+        kubernetesCloud.maxRequestsPerHostStr = maxRequestsPerHost ? maxRequestsPerHost.toString() : null
+        kubernetesCloud.defaultsProviderTemplate = defaultsProviderTemplate
+
+        return kubernetesCloud
     }
 }
 
@@ -171,6 +244,8 @@ def setup(config){
                 return dockerCloud(cloudConfig)
             case 'ecs':
                 return ecsCloud(cloudConfig)
+            case 'kubernetes':
+                return kubernetesCloud(cloudConfig)
         }
     }.grep().each{ cloud ->
         def old = Jenkins.instance.clouds.find{ it.name == cloud.name}

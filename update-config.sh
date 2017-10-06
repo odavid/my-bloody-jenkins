@@ -8,5 +8,8 @@ if [ ! -f $script_dir/jenkins-cli.jar ]; then
 fi
 
 echo "Updating Jenkins Configuration"
-java -jar jenkins-cli.jar -s http://localhost:8080/ -auth "$(cat $token_file)" groovy = < /var/jenkins_home/init.groovy.d/init-jenkins.groovy
+java -jar $script_dir/jenkins-cli.jar \
+    -s http://localhost:8080/ \
+    -auth "$(cat $token_file)" \
+    groovy = < /var/jenkins_home/init.groovy.d/init-jenkins.groovy
 echo "Jenkins Configuration Updated"
