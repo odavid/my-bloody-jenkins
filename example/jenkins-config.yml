@@ -16,7 +16,8 @@ clouds:
     # jenkinsUrl: 'xxx'
     slaveTimoutInSeconds: 0
     templates:
-      - image: jenkinsci/jnlp-slave:latest
+      - name: ecsSlave
+        image: jenkinsci/jnlp-slave:latest
         labels:
           - ecs-slave
         remoteFs: /home/jenkins
