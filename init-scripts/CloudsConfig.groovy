@@ -1,9 +1,11 @@
 import hudson.slaves.JNLPLauncher
+import hudson.plugins.sshslaves.SSHConnector
 import com.nirima.jenkins.plugins.docker.DockerCloud
 import com.nirima.jenkins.plugins.docker.DockerTemplate
 import com.nirima.jenkins.plugins.docker.DockerTemplateBase
 import com.nirima.jenkins.plugins.docker.DockerImagePullStrategy
 import com.nirima.jenkins.plugins.docker.launcher.DockerComputerJNLPLauncher
+import com.nirima.jenkins.plugins.docker.launcher.DockerComputerSSHLauncher
 import com.nirima.jenkins.plugins.docker.strategy.DockerOnceRetentionStrategy
 import hudson.model.Node
 import jenkins.model.Jenkins
@@ -20,7 +22,7 @@ def dockerCloud(config){
                         temp.vmargs
                     )
                 )
-                dockerComputerJNLPLauncher.setUser(temp.user ?: 'jenkins')
+                dockerComputerJNLPLauncher.setUser(temp.user)
                 def dockerTemplate = new DockerTemplate(
                     new DockerTemplateBase(
                         temp.image,
@@ -47,13 +49,13 @@ def dockerCloud(config){
                     "" //temp.instanceCapStr,
                 )
                 dockerTemplate.mode = Node.Mode.EXCLUSIVE
-                dockerTemplate.numExecutors = 1
+                dockerTemplate.numExecutors = 100
                 dockerTemplate.launcher = dockerComputerJNLPLauncher
                 dockerTemplate.removeVolumes = temp.removeVolumes ? temp.removeVolumes.toBoolean() : false
                 return dockerTemplate
             },
             serverUrl,
-            "", //containerCapStr,
+            "100", //containerCapStr,
             0, //connectTimeout,
             0, //readTimeout,
             credentialsId,
@@ -71,13 +73,10 @@ def setup(config){
                 return dockerCloud(cloudConfig)
         }
     }.grep().each{ cloud ->
-        println "cloud: ${cloud}"
         def old = Jenkins.instance.clouds.find{ it.name == cloud.name}
-        println "old: ${old}"
         if(old){
             Jenkins.instance.clouds.remove(old)
         }
-        println "adding cloud"
         Jenkins.instance.clouds.add(cloud)
     }
     Jenkins.instance.save()
