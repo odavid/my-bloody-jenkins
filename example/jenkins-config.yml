@@ -6,6 +6,23 @@ security:
   realm: jenkins_database
   admin_password: admin
 
+tools:
+  my-xvfb:
+    type: xvfb
+    home: /usr/bin
+  JDK8:
+    type: jdk
+    home: /usr/lib/jvm/java-1.8-openjdk
+  MAVEN-3.5.0:
+    type: maven
+    home: /usr/share/apache-maven-3.5.0
+  ANT-1.9.4:
+    type: ant
+    home: /usr/share/apache-ant-1.9.4
+  GRADLE-4.2.1:
+    type: gradle
+    home: /usr/share/gradle-4.2.1
+
 credentials:
   slack:
     type: text
