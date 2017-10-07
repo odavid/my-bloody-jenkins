@@ -11,5 +11,5 @@ echo "Updating Jenkins Configuration"
 java -jar $script_dir/jenkins-cli.jar \
     -s http://localhost:8080/ \
     -auth "$(cat $token_file)" \
-    groovy = < /var/jenkins_home/init.groovy.d/init-jenkins.groovy
+    groovy = < /var/jenkins_home/init.groovy.d/JenkinsConfigLoader.groovy
 echo "Jenkins Configuration Updated"

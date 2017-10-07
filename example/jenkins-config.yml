@@ -2,68 +2,13 @@ general:
   executer_count: 0
   cli_over_remoting: False
 
-security:
-  realm: jenkins_database
-  admin_password: admin
-
-clouds:
-  ecs-cloud:
-    type: ecs
-    credentialsId: ''
-    cluster: 'arn:ssss'
-    region: eu-west-1
-    # jenkinsUrl: 'xxx'
-    connectTimeout: 0
-    templates:
-      - name: ecsSlave
-        image: jenkinsci/jnlp-slave:latest
-        labels:
-          - ecs-slave
-        remoteFs: /home/jenkins
-        vmargs: -Xmx1g
-        memoryReservation: 2048
-        cpu: 1024
-        volumes:
-          - '/var/run/docker.sock:/var/run/docker.sock'
-        environment:
-          XXX: xxx
-
-  kube-cloud:
-    type: kubernetes
-    serverUrl: xxx
-    namespace: yyy
-    # jenkinsUrl: 
-    connectTimeout: 0
-    templates:
-      - name: kubeslave
-        image: jenkinsci/jnlp-slave:latest
-        labels:
-          - kubeslave
-        remoteFs: /home/jenkins
-        vmargs: -Xmx1g
-        volumes:
-          - '/var/run/docker.sock:/var/run/docker.sock'
-        environment:
-          XXX: xxx
-
-  # docker-cloud:
-  #   type: docker
-  #   serverUrl: unix:///var/run/docker.sock
-  #   templates:
-  #     - image: jenkinsci/ssh-slave:latest
-  #       labels:
-  #         - docker
-  #         - docker-slave
-  #       remoteFs: /home/jenkins
-  #       vmargs: -Xmx1g
-  #       memory: 2048
-  #       cpu: 1024
-  #       volumes:
-  #         - '/var/run/docker.sock:/var/run/docker.sock'
-  #       environment:
-  #         XXX: xxx
-
 credentials:
+  slack:
+    type: text
+    text: abcdefg
+  hipchat:
+    type: text
+    text: abcdefg
   awscred:
     type: aws
     access_key: xxxx
@@ -107,3 +52,79 @@ credentials:
       CbwJjRc022b7HIsetGBYu76KK/Fs25D5JTZjQ3ylMKwhBjrOT7d8Xm90/6eg4hvE
       4c9bdLH+2Xuc6qv/oBoFzVd19c3DiVfns2/5BohfG+pbNwZUVR1vjP/BVDgwDBc+
       -----END RSA PRIVATE KEY-----
+
+security:
+  realm: jenkins_database
+  admin_password: admin
+
+clouds:
+  ecs-cloud:
+    type: ecs
+    credentialsId: ''
+    cluster: 'arn:ssss'
+    region: eu-west-1
+    # jenkinsUrl: 'xxx'
+    connectTimeout: 0
+    templates:
+      - name: ecsSlave
+        image: jenkinsci/jnlp-slave:latest
+        labels:
+          - ecs-slave
+        remoteFs: /home/jenkins
+        jvmArgs: -Xmx1g
+        memoryReservation: 2048
+        cpu: 1024
+        volumes:
+          - '/var/run/docker.sock:/var/run/docker.sock'
+        environment:
+          XXX: xxx
+
+  kube-cloud:
+    type: kubernetes
+    serverUrl: xxx
+    namespace: yyy
+    # jenkinsUrl: xxx
+    connectTimeout: 0
+    templates:
+      - name: kubeslave
+        image: jenkinsci/jnlp-slave:latest
+        labels:
+          - kubeslave
+        remoteFs: /home/jenkins
+        jvmArgs: -Xmx1g
+        volumes:
+          - '/var/run/docker.sock:/var/run/docker.sock'
+        environment:
+          XXX: xxx
+
+  # docker-cloud:
+  #   type: docker
+  #   serverUrl: unix:///var/run/docker.sock
+  #   templates:
+  #     - image: jenkinsci/ssh-slave:latest
+  #       labels:
+  #         - docker
+  #         - docker-slave
+  #       remoteFs: /home/jenkins
+  #       jvmArgs: -Xmx1g
+  #       memory: 2048
+  #       cpu: 1024
+  #       volumes:
+  #         - '/var/run/docker.sock:/var/run/docker.sock'
+  #       environment:
+  #         XXX: xxx
+
+notifiers:
+  hipchat:
+    server: my.api.hipchat.com
+    room: JenkinsNotificationRoom
+    sendAs: TestSendAs
+    v2Enabled: true
+    credentialId: hipchat
+  slack:
+    credentialId: slack
+    teamDomain: teamDoamin
+    botUser: true
+    room: TestRoom
+    baseUrl: http://localhost:8080/
+    sendAs: JenkinsSlack

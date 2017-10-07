@@ -83,7 +83,7 @@ def dockerCloud(config){
                 def dockerComputerJNLPLauncher = new DockerComputerJNLPLauncher(
                     new JNLPLauncher(
                         config.tunnel,
-                        temp.vmargs
+                        temp.jvmArgs
                     )
                 )
                 dockerComputerJNLPLauncher.setUser(temp.user)
@@ -151,7 +151,7 @@ def ecsCloud(config){
                         } 
                     }
                 )
-                ecsTemplate.jvmArgs = temp.vmargs
+                ecsTemplate.jvmArgs = temp.jvmArgs
                 ecsTemplate.entrypoint = temp.entrypoint
                 ecsTemplate.logDriver = temp.logDriver
                 ecsTemplate.dnsSearchDomains = temp.dns

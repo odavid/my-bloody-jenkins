@@ -4,8 +4,9 @@ import com.cloudbees.plugins.credentials.domains.Domain
 import com.cloudbees.plugins.credentials.SystemCredentialsProvider
 import com.cloudbees.plugins.credentials.CredentialsScope
 import com.cloudbees.jenkins.plugins.awscredentials.AWSCredentialsImpl
+import org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl
 import jenkins.model.Jenkins
-
+import hudson.util.Secret
 
 def sshKeyCred(config) {
     config.with{
@@ -43,6 +44,17 @@ def awsCred(config){
     }
 }
 
+def textCred(config){
+    config.with{
+        return new StringCredentialsImpl(
+            CredentialsScope.GLOBAL, 
+            id,
+            description,
+            Secret.fromString(text),
+        )
+    }
+}
+
 def createOrUpdateCred(cred){
     def currentCreds = com.cloudbees.plugins.credentials.CredentialsProvider.lookupCredentials(
         cred.class,
@@ -70,6 +82,8 @@ def setup(config){
                 return awsCred(credConfig)
             case 'userpass':
                 return userPassCred(credConfig)
+            case 'text':
+                return textCred(credConfig)
             case 'sshkey':
                 return sshKeyCred(credConfig)
             default:
