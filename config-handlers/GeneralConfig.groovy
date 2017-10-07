@@ -8,7 +8,6 @@ def setup(config){
     config.with{
         instance.setNumExecutors(executers_count  ? executers_count as int : 0)
         CLI.get().setEnabled(cli_over_remoting ? cli_over_remoting.toBoolean() : false)
-
     }
 }
 return this
