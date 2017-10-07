@@ -6,8 +6,6 @@ import jenkins.security.plugins.ldap.FromUserRecordLDAPGroupMembershipStrategy
 import jenkins.model.Jenkins
 import hudson.model.Hudson
 import hudson.model.Item
-import jenkins.security.ApiTokenProperty
-import hudson.model.User
 
 def setupLdap(config){
     config.with{
@@ -78,8 +76,6 @@ def setup(config){
         instance.setAuthorizationStrategy(strategy)
         instance.save()
     }
-    def token = User.get(admin_user).getProperty(ApiTokenProperty).apiTokenInsecure
-    new File('/tmp/api-token').withWriter{out -> out.println "${admin_user}:${token}"}
 }
 
 return this

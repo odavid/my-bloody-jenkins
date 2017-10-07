@@ -1,4 +1,6 @@
 import org.yaml.snakeyaml.Yaml
+import jenkins.security.ApiTokenProperty
+import hudson.model.User
 
 def loadYamlConfig(filename){
     return new File(filename).withReader{
@@ -6,14 +8,29 @@ def loadYamlConfig(filename){
     }
 }
 
-def generalConfig = evaluate(new File("/usr/share/jenkins/config-handlers/GeneralConfig.groovy"))
-def credsConfig = evaluate(new File("/usr/share/jenkins/config-handlers/CredsConfig.groovy"))
-def securityConfig = evaluate(new File("/usr/share/jenkins/config-handlers/SecurityConfig.groovy"))
-def cloudsConfig = evaluate(new File("/usr/share/jenkins/config-handlers/CloudsConfig.groovy"))
+def handleConfig(handler, config){
+    println "Handling ${handler} configuration"
+    evaluate(new File("/usr/share/jenkins/config-handlers/${handler}.groovy")).setup(config)
+    println "Handled ${handler} configuration"
+}
+
+def getAdminUserName(){
+    def env = System.getenv()
+    return env['JENKINS_ENV_ADMIN_USER'] ?: 'admin'
+}
+def storeAdminApiToken(adminUser, filename){
+    def adminUserApiToken = User.get(adminUser).getProperty(ApiTokenProperty).apiTokenInsecure
+    new File(filename).withWriter{out -> out.println "${adminUser}:${adminUserApiToken}"}
+}
+
+def adminUser = getAdminUserName()
+storeAdminApiToken(adminUser, '/tmp/.api-token')
 
 def jenkinsConfig = loadYamlConfig('/etc/jenkins-config.yml')
+// TODO: admin user should be global. Make it more generic....
+jenkinsConfig.security?.admin_user = adminUser
 
-generalConfig.setup(jenkinsConfig.general)
-credsConfig.setup(jenkinsConfig.credentials)
-securityConfig.setup(jenkinsConfig.security)
-cloudsConfig.setup(jenkinsConfig.clouds)
+handleConfig('General', jenkinsConfig.general)
+handleConfig('Creds', jenkinsConfig.credentials)
+handleConfig('Security', jenkinsConfig.security)
+handleConfig('Clouds', jenkinsConfig.clouds)

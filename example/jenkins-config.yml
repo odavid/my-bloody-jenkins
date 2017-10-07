@@ -4,7 +4,6 @@ general:
 
 security:
   realm: jenkins_database
-  admin_user: admin
   admin_password: admin
 
 clouds:

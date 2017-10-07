@@ -11,6 +11,7 @@ services:
       - '/var/run/docker.sock:/var/run/docker.sock'
       - './example/jenkins-config.yml:/etc/jenkins-config.yml'
     environment:
+      JENKINS_ENV_ADMIN_USER: admin
       JAVA_OPTS: '-Xmx1g'
               
 

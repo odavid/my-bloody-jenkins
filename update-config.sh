@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 script_dir=$(cd $(dirname "$0"); pwd)
-token_file=/tmp/api-token
+token_file=/tmp/.api-token
 
 if [ ! -f $script_dir/jenkins-cli.jar ]; then
     curl -o $script_dir/jenkins-cli.jar http://localhost:8080/jnlpJars/jenkins-cli.jar
