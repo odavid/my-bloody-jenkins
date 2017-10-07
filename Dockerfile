@@ -21,6 +21,7 @@ RUN cd /usr/share/jenkins/ref/init.groovy.d/ && \
 
 # Add configuration handlers groovy scripts
 COPY config-handlers /usr/share/jenkins/config-handlers
+COPY update-config.sh /usr/bin/
 
 RUN curl -SsLo /usr/bin/gosu https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-amd64 && \
      chmod +x /usr/bin/gosu

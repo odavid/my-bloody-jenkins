@@ -2,6 +2,10 @@ general:
   executer_count: 0
   cli_over_remoting: False
 
+security:
+  realm: jenkins_database
+  admin_password: admin
+
 credentials:
   slack:
     type: text
@@ -52,10 +56,6 @@ credentials:
       CbwJjRc022b7HIsetGBYu76KK/Fs25D5JTZjQ3ylMKwhBjrOT7d8Xm90/6eg4hvE
       4c9bdLH+2Xuc6qv/oBoFzVd19c3DiVfns2/5BohfG+pbNwZUVR1vjP/BVDgwDBc+
       -----END RSA PRIVATE KEY-----
-
-security:
-  realm: jenkins_database
-  admin_password: admin
 
 clouds:
   ecs-cloud:
