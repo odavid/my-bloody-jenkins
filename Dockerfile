@@ -20,7 +20,7 @@ RUN cd /usr/share/jenkins/ref/init.groovy.d/ && \
     for f in *.groovy; do mv "$f" "${f}.override"; done 
 
 # Add configuration handlers groovy scripts
-COPY config-handlers /usr/share/jenkins/
+COPY config-handlers /usr/share/jenkins/config-handlers
 
 # We will disable some sandbox limitations
 COPY sandbox-signatures.txt /usr/share/jenkins/ref/sandbox-signatures.txt.override

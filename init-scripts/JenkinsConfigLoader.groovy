@@ -10,16 +10,16 @@ def loadYamlConfig(filename){
 
 def handleConfig(handler, config){
     println "Handling ${handler} configuration"
-    evaluate(new File("/usr/share/jenkins/config-handlers/${handler}.groovy")).setup(config)
+    evaluate(new File("/usr/share/jenkins/config-handlers/${handler}Config.groovy")).setup(config)
     println "Handled ${handler} configuration"
 }
 
 def getAdminUserName(){
-    def env = System.getenv()
-    return env['JENKINS_ENV_ADMIN_USER'] ?: 'admin'
+    return System.getenv()['JENKINS_ENV_ADMIN_USER']
 }
+
 def storeAdminApiToken(adminUser, filename){
-    def adminUserApiToken = User.get(adminUser).getProperty(ApiTokenProperty).apiTokenInsecure
+    def adminUserApiToken = User.get(adminUser, true).getProperty(ApiTokenProperty).apiTokenInsecure
     new File(filename).withWriter{out -> out.println "${adminUser}:${adminUserApiToken}"}
 }
 
