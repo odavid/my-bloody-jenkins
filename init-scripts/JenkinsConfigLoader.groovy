@@ -9,9 +9,9 @@ def loadYamlConfig(filename){
 }
 
 def handleConfig(handler, config){
-    println "Handling ${handler} configuration"
+    println "--> Handling ${handler} configuration"
     evaluate(new File("/usr/share/jenkins/config-handlers/${handler}Config.groovy")).setup(config)
-    println "Handled ${handler} configuration"
+    println "--> Handling ${handler} configuration... done"
 }
 
 def getAdminUserName(){
