@@ -23,6 +23,7 @@ credentials:
     password: password1234
   gitsshkey:
     type: sshkey
+    description: git-ssh-key
     username: user
     passphrase: password1234
     privatekey: |
@@ -137,6 +138,17 @@ notifiers:
     room: TestRoom
     baseUrl: http://localhost:8080/
     sendAs: JenkinsSlack
+
+pipeline_libraries:
+  my-library:
+    source:
+      remote: git@github.com:odavid/jenkins-docker.git
+      credentialsId: gitsshkey
+    defaultVersion: master
+    implicit: false
+    allowVersionOverride: true
+    includeInChangesets: true
+
 
 script_approval:
   approvals:
