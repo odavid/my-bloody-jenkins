@@ -115,6 +115,14 @@ clouds:
   #         XXX: xxx
 
 notifiers:
+  mail:
+    authUser: test
+    autPassword: test
+    replyToAddress: no-reply@mydomain.com
+    useSsl: true
+    smtpHost: xxx.mydomain.com
+    smtpPort: 25
+    charset: UTF-8
   hipchat:
     server: my.api.hipchat.com
     room: JenkinsNotificationRoom
