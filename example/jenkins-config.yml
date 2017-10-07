@@ -7,7 +7,7 @@ security:
   admin_password: admin
 
 tools:
-  my-xvfb:
+  XVFB:
     type: xvfb
     home: /usr/bin
   JDK8:
