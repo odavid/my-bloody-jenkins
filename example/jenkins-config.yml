@@ -116,12 +116,13 @@ clouds:
 
 notifiers:
   mail:
+    host: xxx.mydomain.com
+    port: 25
     authUser: test
     autPassword: test
     replyToAddress: no-reply@mydomain.com
+    defaultSuffix: '@mydomain.com'
     useSsl: true
-    smtpHost: xxx.mydomain.com
-    smtpPort: 25
     charset: UTF-8
   hipchat:
     server: my.api.hipchat.com

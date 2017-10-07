@@ -55,7 +55,7 @@ def slackConfig(config){
 }
 
 def mailConfig(config){
-    def mailer = Jenkins.instance.getDescriptorByType(hudson.tasks.Mailer)
+    def mailer = Jenkins.instance.getDescriptor('hudson.tasks.Mailer')
     config.with{
         if(authUser){
             mailer.setSmtpAuth(authUser, authPassowrd?:'')
@@ -65,6 +65,7 @@ def mailConfig(config){
         mailer.smtpHost = host
         mailer.smtpPort = port ? port.toString() : null
         mailer.charset = charset
+        mailer.defaultSuffix = defaultSuffix
     }
     return mailer
 }
