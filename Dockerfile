@@ -35,3 +35,15 @@ VOLUME /jenkins-workspace-home
 # Change the original entrypoint. We will later on run it using gosu
 RUN mv /usr/local/bin/jenkins.sh /usr/local/bin/jenkins-orig.sh
 COPY jenkins.sh /usr/local/bin/jenkins.sh
+
+####################################################################################
+# ADDITIONAL JAVA_OPTS
+####################################################################################
+#
+# Don't run the setup wizard
+ENV JAVA_OPTS_DISABLE_WIZARD="-Djenkins.install.runSetupWizard=false"
+# See https://wiki.jenkins.io/display/JENKINS/Configuring+Content+Security+Policy
+ENV JAVA_OPTS_CSP="-Dhudson.model.DirectoryBrowserSupport.CSP=\"sandbox allow-same-origin allow-scripts; default-src 'self'; script-src * 'unsafe-eval'; img-src *; style-src * 'unsafe-inline'; font-src *\""
+# See https://issues.jenkins-ci.org/browse/JENKINS-24752
+ENV JAVA_OPTS_LOAD_STATS_CLOCK="-Dhudson.model.LoadStatistics.clock=1000"
+####################################################################################
