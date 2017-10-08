@@ -1,5 +1,5 @@
 import hudson.security.LDAPSecurityRealm
-import hudson.security.GlobalMatrixAuthorizationStrategy
+import hudson.security.ProjectMatrixAuthorizationStrategy
 import hudson.security.HudsonPrivateSecurityRealm
 import jenkins.security.plugins.ldap.FromGroupSearchLDAPGroupMembershipStrategy
 import jenkins.security.plugins.ldap.FromUserRecordLDAPGroupMembershipStrategy
@@ -63,14 +63,18 @@ def setup(config){
     }
     if(realm){
         instance.setSecurityRealm(realm)
-        def strategy = instance.authorizationStrategy instanceof GlobalMatrixAuthorizationStrategy ?
-            instance.authorizationStrategy : new GlobalMatrixAuthorizationStrategy()
-        config.with{
-            strategy.add(Jenkins.READ, 'authenticated')
-            strategy.add(Item.READ, 'authenticated')
-            strategy.add(Item.DISCOVER, 'authenticated')
-            strategy.add(Item.CANCEL, 'authenticated')
-            strategy.add(Hudson.ADMINISTER, admin_user)
+        def strategy = new ProjectMatrixAuthorizationStrategy()
+        strategy.add(Hudson.ADMINISTER, admin_user)
+        config?.permissions?.each{ principal, permissions ->
+            for(p in permissions){
+                try{
+                    def permission = hudson.security.Permission.fromId(p)
+                    strategy.add(permission, principal)
+                }catch(e){
+                    println "Failed to set permission ${p} for principal ${principal}... ${e}"
+                    e.printStackTrace()
+                }
+            }
         }
 
         instance.setAuthorizationStrategy(strategy)
