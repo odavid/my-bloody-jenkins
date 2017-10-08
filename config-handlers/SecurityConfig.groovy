@@ -42,14 +42,14 @@ def setupLdap(config){
 def setupJenkinsDatabase(config){
     config.with{
         securityRealm = new HudsonPrivateSecurityRealm(false)
-        securityRealm.createAccount(admin_user, admin_password)
+        securityRealm.createAccount(adminUser, adminPassword)
         return securityRealm
     }
 }
 
 def setup(config){
     config = config ?: [:]
-    def admin_user = config.admin_user
+    def adminUser = config.adminUser
     def instance = Jenkins.getInstance()
 
     def realm
@@ -64,7 +64,7 @@ def setup(config){
     if(realm){
         instance.setSecurityRealm(realm)
         def strategy = new ProjectMatrixAuthorizationStrategy()
-        strategy.add(Hudson.ADMINISTER, admin_user)
+        strategy.add(Hudson.ADMINISTER, adminUser)
         config?.permissions?.each{ principal, permissions ->
             for(p in permissions){
                 try{

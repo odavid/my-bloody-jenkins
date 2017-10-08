@@ -14,6 +14,7 @@ if [[ $# -lt 1 ]] || [[ "$1" == "-"* ]]; then
     
     # This is important if you let docker create the host mounted volumes. 
     # We need to make sure they will be owned by the jenkins user
+    mkdir -p /jenkins-workspace-home/workspace
     chown -R jenkins:jenkins /jenkins-workspace-home
     chown -R jenkins:jenkins $JENKINS_HOME
 

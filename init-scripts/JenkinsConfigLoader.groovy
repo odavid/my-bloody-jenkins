@@ -28,7 +28,7 @@ storeAdminApiToken(adminUser, '/tmp/.api-token')
 
 def jenkinsConfig = loadYamlConfig('/etc/jenkins-config.yml')
 // TODO: admin user should be global. Make it more generic....
-jenkinsConfig.security?.admin_user = adminUser
+jenkinsConfig.security?.adminUser = adminUser
 
 handleConfig('General', jenkinsConfig.general)
 handleConfig('Creds', jenkinsConfig.credentials)
