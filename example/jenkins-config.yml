@@ -10,6 +10,9 @@ tools:
   XVFB:
     type: xvfb
     home: /usr/bin
+  JDK7:
+    type: jdk
+    home: /usr/lib/jvm/java-1.7-openjdk
   JDK8:
     type: jdk
     home: /usr/lib/jvm/java-1.8-openjdk
