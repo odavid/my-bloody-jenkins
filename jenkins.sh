@@ -1,10 +1,11 @@
 #! /bin/bash -e
 
 if [[ $# -lt 1 ]] || [[ "$1" == "-"* ]]; then
-    # Don't run the setup wizard
-    export JAVA_OPTS="$JAVA_OPTS -Djenkins.install.runSetupWizard=false"
-    # See https://wiki.jenkins.io/display/JENKINS/Configuring+Content+Security+Policy
-    export JAVA_OPTS="$JAVA_OPTS -Dhudson.model.DirectoryBrowserSupport.CSP=\"sandbox allow-same-origin allow-scripts; default-src 'self'; script-src * 'unsafe-eval'; img-src *; style-src * 'unsafe-inline'; font-src *\""
+    JAVA_OPTS_VARIABLES=$(compgen -v | while read line; do echo $line | grep JAVA_OPTS_;done) || true
+    for key in $JAVA_OPTS_VARIABLES; do
+        echo "adding: ${key} to JAVA_OPTS"
+        export JAVA_OPTS="$JAVA_OPTS ${!key}"
+    done    
 
     if [ -n "${JENKINS_ENV_CONFIG_YAML}" ]; then
         echo -n "$JENKINS_ENV_CONFIG_YAML" > /etc/jenkins-config.yml
