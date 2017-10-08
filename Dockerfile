@@ -30,6 +30,7 @@ RUN curl -SsLo /usr/bin/gosu https://github.com/tianon/gosu/releases/download/${
 # Separate between JENKINS_HOME and WORKSPACE dir. Best if we use NFS for JENKINS_HOME 
 RUN mkdir -p /jenkins-workspace-home && \
     chown -R jenkins:jenkins /jenkins-workspace-home
+
 VOLUME /jenkins-workspace-home
 
 # Change the original entrypoint. We will later on run it using gosu

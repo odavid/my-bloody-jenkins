@@ -1,10 +1,11 @@
 general:
-  executer_count: 0
-  cli_over_remoting: False
+  executersCount: 0
+  cliOverRemoting: false
+  changeWorkspaceDir: true
 
 security:
   realm: jenkins_database
-  admin_password: admin
+  adminPassword: admin
   permissions:
     authenticated:
       - hudson.model.Hudson.Read
