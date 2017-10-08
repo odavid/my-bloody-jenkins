@@ -7,6 +7,13 @@ import jenkins.model.Jenkins
 import hudson.model.Hudson
 import hudson.model.Item
 
+def asInt(value, defaultValue=0){
+    return value ? value.toInteger() : defaultValue
+}
+def asBoolean(value, defaultValue=false){
+    return value != null ? value.toBoolean() : defaultValue
+}
+
 def setupLdap(config){
     config.with{
         if (!groupMembershipAttribute && !groupMembershipFilter){
@@ -26,11 +33,11 @@ def setupLdap(config){
                 groupMembershipStrategy,
                 managerDN,
                 Secret.fromString(managerPassword),
-                false,
-                false,
+                asBoolean(inhibitInferRootDN),
+                asBoolean(disableMailAddressResolver),
                 new LDAPSecurityRealm.CacheConfiguration(20, 300), [
-                    new LDAPSecurityRealm.EnvironmentProperty('com.sun.jndi.ldap.connect.timeout', '5000'),
-                    new LDAPSecurityRealm.EnvironmentProperty('com.sun.jndi.ldap.read.timeout', '60000'),
+                    new LDAPSecurityRealm.EnvironmentProperty('com.sun.jndi.ldap.connect.timeout', asInt(connectTimeout, 5000).toString()),
+                    new LDAPSecurityRealm.EnvironmentProperty('com.sun.jndi.ldap.read.timeout', asInt(readTimeout, 60000).toString()),
                 ] as LDAPSecurityRealm.EnvironmentProperty[],
                 displayNameAttr,
                 emailAttr,
