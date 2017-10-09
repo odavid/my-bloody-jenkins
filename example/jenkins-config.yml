@@ -214,6 +214,17 @@ pipeline_libraries:
     allowVersionOverride: true
     includeInChangesets: true
 
+seed_jobs:
+  SeedJob:
+    source: 
+      remote: git@github.com:odavid/my-bloody-jenkins.git
+      credentialsId: gitsshkey
+      branch: 'master'
+    triggers: 
+      pollScm: '* * * * *'
+      periodic: '* * * * *'
+    pipeline: example/SeedJobPipeline.groovy
+    executeWhen: always #firstTimeOnly always never
 
 script_approval:
   approvals:
