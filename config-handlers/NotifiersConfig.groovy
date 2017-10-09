@@ -10,7 +10,7 @@ def asInt(value, defaultValue=0){
     return value ? value.toInteger() : defaultValue
 }
 def asBoolean(value, defaultValue=false){
-    return value ? value.toBoolean() : defaultValue
+    return value != null ? value.toBoolean() : defaultValue
 }
 
 def hipchatConfig(config){
