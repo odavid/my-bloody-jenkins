@@ -215,7 +215,7 @@ pipeline_libraries:
     includeInChangesets: true
 
 seed_jobs:
-  - name: SeedJob
+  SeedJob:
     source: 
       remote: git@github.com:odavid/my-bloody-jenkins.git
       credentialsId: gitsshkey
@@ -224,7 +224,7 @@ seed_jobs:
       pollScm: '* * * * *'
       periodic: '* * * * *'
     pipeline: example/SeedJobPipeline.groovy
-    executeWhen: firstTimeOnly # always, never
+    executeWhen: always #firstTimeOnly always never
 
 script_approval:
   approvals:
