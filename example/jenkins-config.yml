@@ -226,6 +226,13 @@ seed_jobs:
     pipeline: example/SeedJobPipeline.groovy
     executeWhen: always #firstTimeOnly always never
 
+sonar_qube_servers:
+  installations:
+    my-sonar-qube:
+      serverUrl: http://localhost:9999
+      serverVersion: '5.3'
+      serverAuthenticationToken: asdasdasdasdas
+      
 script_approval:
   approvals:
     - field hudson.model.Queue$Item task
