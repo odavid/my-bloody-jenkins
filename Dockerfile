@@ -40,6 +40,7 @@ COPY jenkins.sh /usr/local/bin/jenkins.sh
 ####################################################################################
 # ADDITIONAL JAVA_OPTS
 ####################################################################################
+# Each JAVA_OPTS_* variable will be added to the JAVA_OPTS variable before startup
 #
 # Don't run the setup wizard
 ENV JAVA_OPTS_DISABLE_WIZARD="-Djenkins.install.runSetupWizard=false"
@@ -50,17 +51,20 @@ ENV JAVA_OPTS_LOAD_STATS_CLOCK="-Dhudson.model.LoadStatistics.clock=1000"
 ####################################################################################
 
 ####################################################################################
-# IP/Port Variables
-# This is used by docker slaves to construct the 'jenkinsUrl' for cloud jnlp slaves 
-# in case jenkins is behind a load-balancer
-# jenkinsUrl=http://${JENKINS_IP_FOR_SLAVES}:${JENKINS_HTTP_PORT_FOR_SLAVES}
+# JNLP Tunnel Variables
 ####################################################################################
-# This is used by docker slaves to construct the jenkinsUrl 
-ENV JENKINS_HTTP_PORT_FOR_SLAVES="8080"
-# This variable will be contain a valid IP address:
-#ENV JENKINS_IP_FOR_SLAVES=<REAL_IP>
-
+# This is used by docker slaves to construct the '-tunnel' parameter 
+# in case jenkins is behind a load-balancer or a reverse proxy
+# i.e. (-tunnel $JENKINS_IP_FOR_SLAVES)
+#
+# JENKINS_IP_FOR_SLAVES will be evaluated in the following order: 
+#    $JENKINS_ENV_HOST_IP || 
+#    $(eval $JENKINS_ENV_HOST_IP_CMD) || 
+#    ''
+#ENV JENKINS_ENV_HOST_IP=<REAL_IP>
+#ENV JENKINS_ENV_HOST_IP_CMD='<command to fetch ip>'
 # This variable will be evaluated and should retrun a valid IP address:
 # AWS:      JENKINS_ENV_HOST_IP_CMD='curl http://169.254.169.254/latest/meta-data/local-ipv4'
 # General:  JENKINS_ENV_HOST_IP_CMD='ip route | grep default | awk '"'"'{print $3}'"'"''
-#ENV JENKINS_ENV_HOST_IP_CMD='<command to fetch ip>'
+####################################################################################
+

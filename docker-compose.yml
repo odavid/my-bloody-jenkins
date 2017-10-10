@@ -12,6 +12,7 @@ services:
       - './example/jenkins-config.yml:/etc/jenkins-config.yml'
     environment:
       JENKINS_ENV_ADMIN_USER: admin
+      JENKINS_ENV_HOST_IP: '192.168.254.11'
       JAVA_OPTS: '-Xmx1g'
               
 

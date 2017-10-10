@@ -154,6 +154,7 @@ clouds:
     cluster: 'arn:ssss'
     region: eu-west-1
     # jenkinsUrl: 'xxx'
+    # tunnel: 
     connectTimeout: 0
     templates:
       - name: ecsSlave
