@@ -4,8 +4,13 @@
 I've been working a lot with Jenkins/Pipline and Docker in the last couple of years, and wanted to share my experience on these subjects.
 
 Jenkins is great! Jenkins combined with Docker is even greater...
+
 But...
-It is HARD to get it work. Many small tweaks, plugins that do not work as expected in combination with other plugins, and not to mention configuration and automation.
+
+It is HARD to get it work. 
+
+Many small tweaks, plugins that do not work as expected in combination with other plugins, and not to mention configuration and automation.
+
 When it comes to Jenkins combined with Docker it is even harder:
 
 * How to cope with Jenkins master data in a cluster of ECS/Kubernetes? 
@@ -16,7 +21,9 @@ When it comes to Jenkins combined with Docker it is even harder:
     * Host mounted volumes permissions issues
     * ...
 
-So... since I spilled some blood on that matter, I've decided to create an opinioned Jenkins Docker Image that covers some of these subjects... Therefore ***My Bloody Jenkins***
+So... Since I spilled some blood on that matter, I've decided to create an ***opinioned*** Jenkins Docker Image that covers some of these subjects... 
+
+Therefore ***My Bloody Jenkins***...
 
 ### Main Decisions
 
