@@ -19,9 +19,9 @@ def setup(config) {
         desc.excludeFolders = excludeFolders
         desc.filterPattern = filterPattern
         desc.forcingVulnerabilityThresholdEnabled = asBoolean(forcingVulnerabilityThresholdEnabled)
-        desc.highThresholdEnforcement = asInt(highThresholdEnforcement)
-        desc.mediumThresholdEnforcement = asInt(mediumThresholdEnforcement)
-        desc.lowThresholdEnforcement = asInt(lowThresholdEnforcement)
+        desc.highThresholdEnforcement = asInt(highThresholdEnforcement, null)
+        desc.mediumThresholdEnforcement = asInt(mediumThresholdEnforcement, null)
+        desc.lowThresholdEnforcement = asInt(lowThresholdEnforcement, null)
         desc.osaHighThresholdEnforcement = asInt(osaHighThresholdEnforcement, null)
         desc.osaMediumThresholdEnforcement = asInt(osaMediumThresholdEnforcement, null)
         desc.osaLowThresholdEnforcement = asInt(osaLowThresholdEnforcement, null)
