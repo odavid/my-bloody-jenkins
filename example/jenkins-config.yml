@@ -1,3 +1,4 @@
+## TODO: Move the general section to environment variables
 general:
   executersCount: 0
   cliOverRemoting: false
