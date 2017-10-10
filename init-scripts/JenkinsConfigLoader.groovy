@@ -9,6 +9,10 @@ def loadYamlConfig(filename){
 }
 
 def handleConfig(handler, config){
+    if(!config){
+        println "--> skipping ${handler} configuration"
+        return
+    }
     println "--> Handling ${handler} configuration"
     evaluate(new File("/usr/share/jenkins/config-handlers/${handler}Config.groovy")).setup(config)
     println "--> Handling ${handler} configuration... done"
@@ -38,5 +42,6 @@ handleConfig('Notifiers', jenkinsConfig.notifiers)
 handleConfig('ScriptApproval', jenkinsConfig.script_approval)
 handleConfig('Tools', jenkinsConfig.tools)
 handleConfig('SonarQubeServers', jenkinsConfig.sonar_qube_servers)
+handleConfig('Checkmarx', jenkinsConfig.checkmarx)
 handleConfig('PipelineLibraries', jenkinsConfig.pipeline_libraries)
 handleConfig('SeedJobs', jenkinsConfig.seed_jobs)
