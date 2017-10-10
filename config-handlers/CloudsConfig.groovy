@@ -248,9 +248,14 @@ def kubernetesCloud(config){
 }
 
 def setup(config){
+    def env = System.getenv()
+    def jenkins_ip_for_slaves = env['JENKINS_IP_FOR_SLAVES']
+    def tunnel = jenkins_ip_for_slaves ? "${jenkins_ip_for_slaves}:".toString() : null
+
     config = config ?: [:]
     def clouds = config.collect{k,v ->
         def cloudConfig = [id: k] << v
+        cloudConfig.tunnel = tunnel && (cloudConfig.tunnel == null) ? tunnel : cloudConfig.tunnel
         switch(v.type){
             case 'docker':
                 return dockerCloud(cloudConfig)

@@ -12,7 +12,9 @@ services:
       - './example/jenkins-config.yml:/etc/jenkins-config.yml'
     environment:
       JENKINS_ENV_ADMIN_USER: admin
-      JAVA_OPTS: '-Xmx1g'
+      JAVA_OPTS_MEM: '-Xmx1g'
+      # JENKINS_ENV_HOST_IP: '192.168.254.11'
+      # JENKINS_ENV_HOST_IP_CMD: "ip route | grep default | awk '{print $$3}'"
               
 
       
