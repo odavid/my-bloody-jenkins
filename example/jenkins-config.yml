@@ -274,7 +274,21 @@ checkmarx:
   # osaMediumThresholdEnforcement: 
   # osaLowThresholdEnforcement: 
   # scanTimeOutEnabled: 
-  # scanTimeoutDurationInMinutes: 
+  # scanTimeoutDuration: 
+
+jira:
+  sites:
+    - url: http://myjira.mydomain.com
+      username: myjirauser
+      password: myjirapass
+      # alternativeUrl
+      # supportsWikiStyleComment
+      # recordScmChanges
+      # userPattern
+      # updateJiraIssueForAllStatus
+      # groupVisibility
+      # roleVisibility
+      # useHTTPAuth
   
       
 script_approval:

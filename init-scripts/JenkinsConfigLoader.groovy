@@ -14,8 +14,13 @@ def handleConfig(handler, config){
         return
     }
     println "--> Handling ${handler} configuration"
-    evaluate(new File("/usr/share/jenkins/config-handlers/${handler}Config.groovy")).setup(config)
-    println "--> Handling ${handler} configuration... done"
+    try{
+        evaluate(new File("/usr/share/jenkins/config-handlers/${handler}Config.groovy")).setup(config)
+        println "--> Handling ${handler} configuration... done"
+    }catch(e){
+        println "--> Handling ${handler} configuration... error: ${e}"
+        e.printStackTrace()
+    }
 }
 
 def getAdminUserName(){
@@ -42,6 +47,7 @@ handleConfig('Notifiers', jenkinsConfig.notifiers)
 handleConfig('ScriptApproval', jenkinsConfig.script_approval)
 handleConfig('Tools', jenkinsConfig.tools)
 handleConfig('SonarQubeServers', jenkinsConfig.sonar_qube_servers)
+handleConfig('Jira', jenkinsConfig.jira)
 handleConfig('Checkmarx', jenkinsConfig.checkmarx)
 handleConfig('PipelineLibraries', jenkinsConfig.pipeline_libraries)
 handleConfig('SeedJobs', jenkinsConfig.seed_jobs)

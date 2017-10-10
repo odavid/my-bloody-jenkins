@@ -26,7 +26,7 @@ def setup(config) {
         desc.osaMediumThresholdEnforcement = asInt(osaMediumThresholdEnforcement, null)
         desc.osaLowThresholdEnforcement = asInt(osaLowThresholdEnforcement, null)
         desc.scanTimeOutEnabled = asBoolean(scanTimeOutEnabled)
-        desc.scanTimeoutDurationInMinutes = asInt(scanTimeoutDurationInMinutes)
+        desc.scanTimeoutDuration = asInt(scanTimeoutDuration)
     }
     desc.save()
 }
