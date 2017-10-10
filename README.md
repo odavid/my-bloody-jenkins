@@ -2,6 +2,7 @@
 
 ## Introduction
 I've been working a lot with Jenkins/Pipline and Docker in the last couple of years, and wanted to share my experience on these subjects.
+
 Jenkins is great! Jenkins combined with Docker is even greater...
 But...
 It is HARD to get it work. Many small tweaks, plugins that do not work as expected in combination with other plugins, and not to mention automation of configuration.
