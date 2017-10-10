@@ -52,24 +52,48 @@ security:
       - com.cloudbees.plugins.credentials.CredentialsProvider.View
 
 tools:
-  XVFB:
-    type: xvfb
-    home: /usr/bin
-  JDK7:
-    type: jdk
-    home: /usr/lib/jvm/java-1.7-openjdk
-  JDK8:
-    type: jdk
-    home: /usr/lib/jvm/java-1.8-openjdk
-  MAVEN-3.5.0:
-    type: maven
-    home: /usr/share/apache-maven-3.5.0
-  ANT-1.9.4:
-    type: ant
-    home: /usr/share/apache-ant-1.9.4
-  GRADLE-4.2.1:
-    type: gradle
-    home: /usr/share/gradle-4.2.1
+  oracle_jdk_download:
+    username: xxx
+    password: yyy
+  installations:
+    XVFB:
+      type: xvfb
+      home: /usr/bin
+    JDK7:
+      type: jdk
+      installers:
+        - id: jdk-8u144-oth-JPR
+        - type: command
+          label: xxx
+          command: xxx
+          toolHome: xxx
+        - type: zip
+          label: xxx
+          url: aaa
+          subdir: xxx
+    JDK8:
+      type: jdk
+      home: /usr/lib/jvm/java-1.8-openjdk
+    MAVEN-3.5.0:
+      type: maven
+      home: /usr/share/apache-maven-3.5.0
+      installers:
+        - id: '3.5.0'
+    ANT-1.9.4:
+      type: ant
+      home: /usr/share/apache-ant-1.9.4
+      installers:
+        - id: '1.10.1'
+    GRADLE-4.2.1:
+      type: gradle
+      home: /usr/share/gradle-4.2.1
+      installers:
+        - id: '4.2.1'
+    my-sonar-runner:
+      type: sonarQubeRunner
+      installers:
+        - id: '3.0.3.778'
+    
 
 credentials:
   slack:
