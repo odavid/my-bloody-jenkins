@@ -54,7 +54,7 @@ Therefore ***My Bloody Jenkins***...
         * Email
         * Slack
         * Hipchat
-    * Script Approvals - since we are using pipeline, sometimes you must approve some groovy methods (We all ynderstand why it is needed, but this one is bloody...)
+    * Script Approvals - since we are using pipeline, sometimes you must approve some groovy methods (We all understand why it is needed, but this one is bloody...)
     * Tools and installers
         * Apache Ant
         * Apache Maven
