@@ -369,7 +369,91 @@ script_approval:
 ```
 
 ### Clouds Section
-TBD
+Responsible for configuration of the following docker cloud providers:
+* Amazon ECS - [type: ecs](https://wiki.jenkins.io/display/JENKINS/Amazon+EC2+Container+Service+Plugin)
+* Kubernetes - [type: kubernetes](https://wiki.jenkins.io/display/JENKINS/Kubernetes+Plugin)
+
+You can define multiple clouds. Each cloud is configured as a dict. For top level key represents the cloud name. Each dict has a mandatory type attritube, and a section of templates representing slave docker templates that correspond to list of labels.
+
+#### Amazon ECS
+```yaml
+clouds:
+  # Top level key -> name of the cloud
+  ecs-cloud:
+    # type is mandatory
+    type: ecs
+    # If your jenkins master is running on EC2 and is using IAM Role, then you can discard this credential, otherwise, you need to have an aws credential declared in the credentials secion  
+    credentialsId: 'my-aws-key'
+    # AWS region where your ECS Cluster reside
+    region: eu-west-1
+    # ARN of the ECS Cluster
+    cluster: 'arn:ssss'
+    # Timeout (in second) for ECS task to be created, usefull if you use large docker slave image, because the host will take more time to pull the docker image
+    # If empty or <= 0, the 900 is the default.
+    connectTimeout: 0
+    # List of templates
+    templates:
+      - name: ecsSlave
+        # Only JNLP slaves are supported
+        image: jenkinsci/jnlp-slave:latest
+        # Labels are mandatory!
+        # Your pipeline jobs will need to use node(label){} in order to use this slave template 
+        labels:
+          - ecs-slave
+        # The directory within the container that is used as root filesystem  
+        remoteFs: /home/jenkins
+        # JVM arguments to pass to the jnlp jar
+        jvmArgs: -Xmx1g
+        # ECS memory reservation
+        memoryReservation: 2048
+        # ECS cpu reservation
+        cpu: 1024
+        # Volume mappings
+        # If your slave need to build docker images, then map the host docker socket
+        # to the container docker socket. Also make sure the user within the container
+        # has privileges to that socket within the entrypoint
+        volumes:
+          - '/var/run/docker.sock:/var/run/docker.sock'
+        # Environment variables to pass to the slave container 
+        environment:
+          XXX: xxx
+```
+
+
+#### Kubernetes
+```yaml
+clouds:
+  # Top level key -> name of the cloud
+  kube-cloud:
+    # type is mandatory
+    type: kubernetes
+    # Kubernetes URL
+    serverUrl: http://mykubernetes
+    # Default kubernetes namespace for slaves 
+    namespace: jenkins
+    # Pod templates
+    templates:
+      - name: kubeslave
+        # Only JNLP slaves are supported
+        image: jenkinsci/jnlp-slave:latest
+        # Labels are mandatory!
+        # Your pipeline jobs will need to use node(label){} in order to use this slave template 
+        labels:
+          - kubeslave
+        # The directory within the container that is used as root filesystem  
+        remoteFs: /home/jenkins
+        # JVM arguments to pass to the jnlp jar
+        jvmArgs: -Xmx1g
+        # Volume mappings
+        # If your slave need to build docker images, then map the host docker socket
+        # to the container docker socket. Also make sure the user within the container
+        # has privileges to that socket within the entrypoint
+        volumes:
+          - '/var/run/docker.sock:/var/run/docker.sock'
+        # Environment variables to pass to the slave container 
+        environment:
+          XXX: xxx
+```
 
 ### Seed Jobs Section
 TBD
