@@ -382,13 +382,16 @@ clouds:
   ecs-cloud:
     # type is mandatory
     type: ecs
-    # If your jenkins master is running on EC2 and is using IAM Role, then you can discard this credential, otherwise, you need to have an aws credential declared in the credentials secion  
+    # If your jenkins master is running on EC2 and is using IAM Role, then you can 
+    # discard this credential, otherwise, you need to have an 
+    # aws credential declared in the credentials secion  
     credentialsId: 'my-aws-key'
     # AWS region where your ECS Cluster reside
     region: eu-west-1
     # ARN of the ECS Cluster
     cluster: 'arn:ssss'
-    # Timeout (in second) for ECS task to be created, usefull if you use large docker slave image, because the host will take more time to pull the docker image
+    # Timeout (in second) for ECS task to be created, usefull if you use large docker 
+    # slave image, because the host will take more time to pull the docker image
     # If empty or <= 0, the 900 is the default.
     connectTimeout: 0
     # List of templates
@@ -397,7 +400,8 @@ clouds:
         # Only JNLP slaves are supported
         image: jenkinsci/jnlp-slave:latest
         # Labels are mandatory!
-        # Your pipeline jobs will need to use node(label){} in order to use this slave template 
+        # Your pipeline jobs will need to use node(label){} in order to use 
+        # this slave template 
         labels:
           - ecs-slave
         # The directory within the container that is used as root filesystem  
