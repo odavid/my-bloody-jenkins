@@ -292,13 +292,79 @@ credentials:
 ```        
 
 ### Notifiers Section
-TBD
+Responsible for Configuration of the following notifiers:
+* Mail - [Default Mailer](https://wiki.jenkins.io/display/JENKINS/Mailer) and [Email-ext](https://wiki.jenkins.io/display/JENKINS/Email-ext+plugin) plugin
+* [Slack plugin](https://wiki.jenkins.io/display/JENKINS/Slack+Plugin)
+* [Hipchat plugin](https://wiki.jenkins.io/display/JENKINS/Hipchat+Plugin)
+
+```yaml
+notifiers:
+  mail:
+    host: xxx.mydomain.com
+    port: 25
+    authUser: test
+    autPassword: test
+    replyToAddress: no-reply@mydomain.com
+    defaultSuffix: '@mydomain.com'
+    useSsl: true
+    charset: UTF-8
+  hipchat:
+    server: my.api.hipchat.com
+    room: JenkinsNotificationRoom
+    sendAs: TestSendAs
+    v2Enabled: true
+    credentialId: hipchat # should be defined in credentials section
+  slack:
+    teamDomain: teamDoamin
+    botUser: true
+    room: TestRoom
+    baseUrl: http://localhost:8080/
+    sendAs: JenkinsSlack
+    credentialId: slack # should be defined in credentials section
+```
 
 ### Pipeline Libraries Section
-TBD
+Responsible for setting up [Global Pipeline Libraries](https://wiki.jenkins.io/display/JENKINS/Pipeline+Shared+Groovy+Libraries+Plugin)
+
+Configuration is composed of dicts where each top level key is the name of the library and its value contains the library configuration (source, default version)  
+```yaml
+pipeline_libraries:
+  my-library: # the library name
+    source:
+      remote: git@github.com:odavid/jenkins-docker.git
+      credentialsId: gitsshkey # should be defined in credentials section
+    defaultVersion: master
+    implicit: false # Default false - if true the library will be available within all pipeline jobs with declaring it with @Library
+    allowVersionOverride: true # Default true, better to leave it as is
+    includeInChangesets: true # see https://issues.jenkins-ci.org/browse/JENKINS-41497
+  
+  my-other-lib:
+    source:
+      remote:
+    ...
+
+```
 
 ### Script Approval Section
-TBD
+Responsible for configuration list of white-listed methods to be used within your pipeline groovy scripts. See [Script Security](https://wiki.jenkins.io/display/JENKINS/Script+Security+Plugin)
+
+Contains list of method/field signatures that will be added to the [Script Approval Console](https://wiki.jenkins.io/display/JENKINS/Script+Security+Plugin)
+
+```yaml
+script_approval:
+  approvals:
+    - field hudson.model.Queue$Item task
+    - method groovy.lang.Binding getVariable java.lang.String
+    - method groovy.lang.Binding getVariables
+    - method groovy.lang.Binding hasVariable java.lang.String
+    - method hudson.model.AbstractCIBase getQueue
+    - staticMethod java.lang.Math max int int
+    - staticMethod java.lang.Math max long long
+    - staticMethod java.lang.Math min int int
+    - staticMethod java.lang.Math min long long
+    - staticMethod java.lang.Math pow double double
+    - staticMethod java.lang.Math sqrt double
+```
 
 ### Clouds Section
 TBD
