@@ -218,21 +218,23 @@ tools:
 
 ### Credentials Section
 Responsible for:
-* Setting up credentials to be used later on by pipelines/tools
+* Setting up [credentials](https://wiki.jenkins.io/display/JENKINS/Credentials+Plugin) to be used later on by pipelines/tools
 * Each credential has an id, type, description and arbitary attributes according to its type
 * The following types are supported:
-    * type: text - simple secret. Mandatory attributes:
+    * type: text - [simple secret](https://wiki.jenkins.io/display/JENKINS/Plain+Credentials+Plugin). Mandatory attributes:
         * text - the text to encrypt
-    * type: aws - an aws secret. Mandatory attributes:
+    * type: aws - an [aws secret](https://wiki.jenkins.io/display/JENKINS/CloudBees+AWS+Credentials+Plugin). Mandatory attributes:
         * access_key - AWS access key
         * secret_access_key - AWS secret access key
-    * type: userpass - a user/password pair. Mandatory attributes:
+    * type: userpass - a [user/password](https://github.com/jenkinsci/credentials-plugin/blob/master/src/main/java/com/cloudbees/plugins/credentials/impl/UsernamePasswordCredentialsImpl.java) pair. Mandatory attributes:
         * username
         * password
-    * type: sshkey - an ssh private key in PEM format. Mandatory attributes:
+    * type: sshkey - an [ssh private key](https://wiki.jenkins.io/display/JENKINS/SSH+Credentials+Plugin) in PEM format. Mandatory attributes:
         * username
         * privatekey - PEM format text
         * passphrase - not mandatory, but encouraged
+
+> `Note: Currently the configuration supports only the global credentials domain.`
 
 ```yaml
 # Each top level key represents the credential id
