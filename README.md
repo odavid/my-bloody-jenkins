@@ -30,7 +30,7 @@ Therefore ***My Bloody Jenkins***...
 * Jenkins does not rely on external configuration management tools. I've decided to make it an 'autopilot' docker container, using environment variables that are passed to the container or can be fetched from a centrailized KV store such as Consul.
 * I am focusing in docker cloud environment - meaning Jenkins master is running inside docker, slaves are ephemeral docker containers running in Kubernetes/ECS/Swarm clusters
 * Only using JNLP slaves and not SSH slaves
-* Jenkins master does not have any executer of its own - let the slaves do the actual job
+* By default, Jenkins master does not have any executer of its own - let the slaves do the actual job
 * SCM - Focusing only on git
 * Complex configuration items are defined in yaml and can be passed as environment variables
 * Plugins
