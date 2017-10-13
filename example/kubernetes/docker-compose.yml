@@ -50,7 +50,7 @@ services:
               branch: 'kubernetes-example'
             triggers: 
               pollScm: 'H/2 * * * *'
-              # periodic: '@hourly'
+              periodic: '@hourly'
             pipeline: example/jobs/seed/Jenkinsfile
             executeWhen: always #firstTimeOnly always never
         
