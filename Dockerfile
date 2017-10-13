@@ -49,7 +49,9 @@ ENV JENKINS_ENV_CLI_REMOTING_ENABLED=false
 # This is useful in case your JENKINS_HOME is mapped to NFS mount, 
 # slowing down the workspace
 ENV JENKINS_ENV_CHANGE_WORKSPACE_DIR=true
-
+# If true, every DSL script would have to be approved using the ScriptApproval console
+# See https://github.com/jenkinsci/job-dsl-plugin/wiki/Script-Security
+ENV JENKINS_ENV_USE_SCRIPT_SECURITY=false
 ####################################################################################
 # ADDITIONAL JAVA_OPTS
 ####################################################################################
