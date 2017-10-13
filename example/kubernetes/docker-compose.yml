@@ -1,0 +1,16 @@
+version: '2'
+services:
+  jenkins-master:
+    build: ../..
+    ports:
+      - '8080:8080'
+      - '50000:50000'
+    volumes:
+      - '.data/jenkins_home:/var/jenkins_home'
+      - '.data/jenkins-workspace-home:/jenkins-workspace-home'
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      - './example/jenkins-config.yml:/etc/jenkins-config.yml'
+    environment:
+      JENKINS_ENV_ADMIN_USER: admin
+      JAVA_OPTS_MEM: '-Xmx1g'
+

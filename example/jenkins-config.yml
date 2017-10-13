@@ -1,9 +1,3 @@
-## TODO: Move the general section to environment variables
-general:
-  executersCount: 0
-  cliOverRemoting: false
-  changeWorkspaceDir: true
-
 security:
   realm: jenkins_database
   adminPassword: admin
@@ -154,8 +148,6 @@ clouds:
     credentialsId: ''
     cluster: 'arn:ssss'
     region: eu-west-1
-    # jenkinsUrl: 'xxx'
-    # tunnel: 
     connectTimeout: 0
     templates:
       - name: ecsSlave
@@ -175,7 +167,6 @@ clouds:
     type: kubernetes
     serverUrl: xxx
     namespace: yyy
-    # jenkinsUrl: xxx
     connectTimeout: 0
     templates:
       - name: kubeslave
