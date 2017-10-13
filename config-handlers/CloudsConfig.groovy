@@ -176,8 +176,8 @@ def kubernetesCloud(config){
                 def name = temp.name ? temp.name : temp.labels?.join('-')
                 
                 def containerTemplate = new ContainerTemplate('jnlp', temp.image)
-                containerTemplate.command = temp.command
-                containerTemplate.args = temp.args
+                containerTemplate.command = temp.command ?: ''
+                containerTemplate.args = temp.args ?: ''
                 containerTemplate.ttyEnabled = asBoolean(temp.tty)
                 containerTemplate.workingDir = temp.remoteFs ?: ContainerTemplate.DEFAULT_WORKING_DIR
                 containerTemplate.privileged = asBoolean(temp.privileged)
@@ -250,12 +250,13 @@ def kubernetesCloud(config){
 def setup(config){
     def env = System.getenv()
     def jenkins_ip_for_slaves = env['JENKINS_IP_FOR_SLAVES']
-    def tunnel = jenkins_ip_for_slaves ? "${jenkins_ip_for_slaves}:".toString() : null
+    def jenkins_http_port_for_slaves = env['JENKINS_HTTP_PORT_FOR_SLAVES'] ?: 8080
+    def jenkinsUrl = jenkins_ip_for_slaves ? "http://${jenkins_ip_for_slaves}:${jenkins_http_port_for_slaves}".toString() : null
 
     config = config ?: [:]
     def clouds = config.collect{k,v ->
         def cloudConfig = [id: k] << v
-        cloudConfig.tunnel = tunnel && (cloudConfig.tunnel == null) ? tunnel : cloudConfig.tunnel
+        cloudConfig.jenkinsUrl = jenkinsUrl && (cloudConfig.jenkinsUrl == null) ? jenkinsUrl : cloudConfig.jenkinsUrl
         switch(v.type){
             case 'docker':
                 return dockerCloud(cloudConfig)

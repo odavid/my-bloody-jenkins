@@ -27,6 +27,7 @@ services:
             type: kubernetes
             serverUrl: https://${MINIKUBE_IP}:${MINIKUBE_PORT}
             skipTlsVerify: true
+            credentialsId: minikube-cert
             templates:
               - name: kubeslave
                 image: jenkinsci/jnlp-slave:latest

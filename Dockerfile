@@ -66,9 +66,10 @@ ENV JAVA_OPTS_LOAD_STATS_CLOCK="-Dhudson.model.LoadStatistics.clock=1000"
 ####################################################################################
 # JNLP Tunnel Variables
 ####################################################################################
-# This is used by docker slaves to construct the '-tunnel' parameter 
+# Default port for http
+ENV JENKINS_HTTP_PORT_FOR_SLAVES=8080
+# This is used by docker slaves to get the actual jenkins URL
 # in case jenkins is behind a load-balancer or a reverse proxy
-# i.e. (-tunnel $JENKINS_IP_FOR_SLAVES)
 #
 # JENKINS_IP_FOR_SLAVES will be evaluated in the following order: 
 #    $JENKINS_ENV_HOST_IP || 

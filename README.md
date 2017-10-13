@@ -84,7 +84,7 @@ The following Environment variables are supported
 * ___JENKINS_ENV_CONFIG_YAML___ - The [configuration](#configuration-reference) is stored in '/etc/jenkins-config.yml' file. When this variable is set, the contents of this variable is written to the file before starting Jenkins and can be fetched from Consul and also be watched so jenkins can update its configuration everytime this variable is being changed. Since the contents of this variable contains secrets, it is wise to store and pass it from Consul/S3 bucket. In any case, once the file is written, this variable is being unset, so it won't appear in Jenkins 'System Information' page (As I said, blood...)
 * ___JENKINS_ENV_HOST_IP___ - When Jenkins is running behind an ELB or a reverse proxy, JNLP slaves must know about the real IP of Jenkins, so they can access the 50000 port. Usually they are using the Jenkins URL to try to get to it, so it is very important to let them know what is the original Jenkins IP Address. If the master has a static IP address, then this variable should be set with the static IP address of the host.
 * ___JENKINS_ENV_HOST_IP_CMD___ - Same as ___JENKINS_ENV_HOST_IP___, but this time a shell command expression to fetch the IP Address. In AWS, it is useful to use the EC2 Magic IP: ```JENKINS_ENV_HOST_IP_CMD='curl http://169.254.169.254/latest/meta-data/local-ipv4'```
-
+* __JENKINS_HTTP_PORT_FOR_SLAVES__ - (Default: 8080) Used together with JENKINS_ENV_HOST_IP to construct the real jenkinsUrl for jnlp slaves. 
 
 ## Configuration Reference
 The '/etc/jenkins-config.yml' file is divided into main configuration sections. Each section is responsible for a specific aspect of jenkins configuration.
