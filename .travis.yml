@@ -6,8 +6,8 @@ services:
 script:
   - docker build --rm --force-rm -t odavid/my-bloody-jenkins .
 
-# after_success:
-#   - if [ "$TRAVIS_BRANCH" == 'master' ]; then
-#     docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
-#     docker push odavid/my-bloody-jenkins
-#     fi
+after_success:
+  - if [ "$TRAVIS_BRANCH" == 'master' ]; then
+    docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
+    docker push odavid/my-bloody-jenkins
+    fi
