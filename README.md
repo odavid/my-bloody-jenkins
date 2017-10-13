@@ -42,6 +42,7 @@ Therefore ***My Bloody Jenkins***...
         * SSH Keys
         * Secret Text
         * AWS Credentials
+        * Certificiate Credentials
     * Security
         * Jenkins database
         * LDAP
@@ -233,6 +234,9 @@ Responsible for:
         * username
         * privatekey - PEM format text
         * passphrase - not mandatory, but encouraged
+    * type: cert - a [Certificate](https://wiki.jenkins.io/display/JENKINS/Credentials+Plugin). Mandatory attributes:
+      * base64 - the PKCS12 certificate bytes base64 encoded
+      * password - not mandatory, but encouraged
 
 > `Note: Currently the configuration supports only the global credentials domain.`
 
@@ -291,6 +295,13 @@ credentials:
       4c9bdLH+2Xuc6qv/oBoFzVd19c3DiVfns2/5BohfG+pbNwZUVR1vjP/BVDgwDBc+
       -----END RSA PRIVATE KEY-----
 
+  kubernetes-cert:
+    type: cert
+    password: secret
+    base64: >
+      MIIM2QIBAzCCDJ8GCSqGSIb3DQEHAaCCDJAEggyMMIIMiDCCBz8GCSqGSIb3DQEHBq
+      CCBzAwggcsAgEAMIIHJQYJKoZIhvcNAQcBMBwGCiqGSIb3DQEMAQYwDgQIPPHR3lAy
+      ...
 ```        
 
 ### Notifiers Section
