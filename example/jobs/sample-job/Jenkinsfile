@@ -1,0 +1,6 @@
+stage('checkout'){
+    checkout scm
+}
+stage('build'){
+    sh 'java -version'
+}
