@@ -55,6 +55,20 @@ def textCred(config){
     }
 }
 
+def certCred(config){
+    config.with{
+        def secretBytes = com.cloudbees.plugins.credentials.SecretBytes.fromString(base64)
+        def keyStoreSource = new com.cloudbees.plugins.credentials.impl.CertificateCredentialsImpl.UploadedKeyStoreSource(secretBytes)
+        return new com.cloudbees.plugins.credentials.impl.CertificateCredentialsImpl(
+            CredentialsScope.GLOBAL, 
+            id,
+            description,
+            password,
+            secretBytes
+        )
+    }
+}
+
 def createOrUpdateCred(cred){
     def currentCreds = com.cloudbees.plugins.credentials.CredentialsProvider.lookupCredentials(
         cred.class,
@@ -86,6 +100,8 @@ def setup(config){
                 return textCred(credConfig)
             case 'sshkey':
                 return sshKeyCred(credConfig)
+            case 'cert':
+                return certCred(credConfig)
             default:
                 return null
         }
