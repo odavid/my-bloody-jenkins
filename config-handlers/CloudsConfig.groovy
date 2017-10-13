@@ -175,14 +175,14 @@ def kubernetesCloud(config){
             templates?.collect{ temp ->
                 def name = temp.name ? temp.name : temp.labels?.join('-')
                 
-                def containerTemplate = new ContainerTemplate(name, temp.image)
+                def containerTemplate = new ContainerTemplate('jnlp', temp.image)
                 containerTemplate.command = temp.command
                 containerTemplate.args = temp.args
                 containerTemplate.ttyEnabled = asBoolean(temp.tty)
                 containerTemplate.workingDir = temp.remoteFs ?: ContainerTemplate.DEFAULT_WORKING_DIR
                 containerTemplate.privileged = asBoolean(temp.privileged)
                 containerTemplate.alwaysPullImage = asBoolean(temp.alwaysPullImage)
-                containerTemplate.envVars = temp.environment?.collect{ k, v -> new ContainerEnvVar(k,v) }
+                containerTemplate.envVars = temp.environment?.collect{ k, v -> new ContainerEnvVar(k,v) } ?: []
                 containerTemplate.ports = temp.ports?.collect{ portMapping -> 
                     def parts = portMapping.split(':')
                     def hostPort = parts.size() > 1 ? parts[0] : null
@@ -229,7 +229,7 @@ def kubernetesCloud(config){
                 return podTemplate
             },
             serverUrl,
-            namespace,
+            namespace ?: 'default',
             jenkinsUrl,
             containerCap ? containerCap.toString() : "",
             asInt(connectTimeout),
