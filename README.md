@@ -460,7 +460,30 @@ clouds:
 ```
 
 ### Seed Jobs Section
-TBD
+Responsible for seed job creation and execution. Each seed job would be a pipeline script that can use [jobDsl pipeline step](https://github.com/jenkinsci/job-dsl-plugin/wiki/User-Power-Moves#use-job-dsl-in-pipeline-scripts)
+
+```yaml
+seed_jobs:
+  # Each top level key is the seed job name
+  SeedJob:    
+    source:
+      # git repo where of the seed job 
+      remote: git@github.com:odavid/my-bloody-jenkins.git
+      credentialsId: gitsshkey
+      branch: 'master'
+    triggers: 
+      # scm polling trigger
+      pollScm: '* * * * *'
+      # period trigger
+      periodic: '* * * * *'
+    # Location of the pipeline script within the repository  
+    pipeline: example/SeedJobPipeline.groovy
+    # always - will be executed everytime the config loader will run
+    # firstTimeOnly - will be executed only if the job was not exist
+    # never - don't execute the job, let the triggers do their job
+    executeWhen: always #firstTimeOnly always never
+
+```
 
 ### Sonar Qube Servers Section
 TBD
