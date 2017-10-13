@@ -12,7 +12,7 @@ pipelineJob('sample-job-created-by-seed'){
                     }
                 }
             }
-            scriptPath('example/jobs/sample-job/Jenkinsfile')
+            scriptPath('examples/jobs/sample-job/Jenkinsfile')
         }
     }
 }
