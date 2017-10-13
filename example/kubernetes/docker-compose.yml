@@ -37,5 +37,15 @@ services:
                 jvmArgs: -Xmx1g
                 volumes:
                   - '/var/run/docker.sock:/var/run/docker.sock'
+        seed_jobs:
+          seed-job:
+            source: 
+              remote: https://github.com/odavid/my-bloody-jenkins.git
+              branch: 'kubernetes-example'
+            triggers: 
+              pollScm: '* * * * *'
+              # periodic: '* * * * *'
+            pipeline: example/jobs/seed/Jenkinsfile
+            executeWhen: always #firstTimeOnly always never
         
 
