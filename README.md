@@ -484,12 +484,3 @@ seed_jobs:
     executeWhen: always #firstTimeOnly always never
 
 ```
-
-### Sonar Qube Servers Section
-TBD
-
-### Checkmarks Section
-TBD
-
-### Jira Section
-TBD
