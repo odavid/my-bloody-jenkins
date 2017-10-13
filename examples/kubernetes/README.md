@@ -31,7 +31,7 @@ $ cd my-bloody-jenkins/examples/kubernetes
 $ # setup variables to be used by docker-compose
 $ . ./setup-env
 $ # run the docker-compose
-$ docker-compose up -d --build
+$ docker-compose up -d
 $ # view logs
 $ docker-compose logs -f
 ```
