@@ -32,7 +32,7 @@ if [[ $# -lt 1 ]] || [[ "$1" == "-"* ]]; then
         chown -R jenkins:jenkins /jenkins-workspace-home
     fi
     if [ "jenkins" != "$(stat -c %U ${JENKINS_HOME})" ]; then
-        chown -R jenkins:jenkins 
+        chown -R jenkins:jenkins $JENKINS_HOME
     fi
 
     # To enable docker cloud based on docker socket, 
