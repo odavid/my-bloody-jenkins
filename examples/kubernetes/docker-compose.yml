@@ -51,7 +51,7 @@ services:
             triggers: 
               pollScm: 'H/2 * * * *'
               periodic: '@hourly'
-            pipeline: example/jobs/seed/Jenkinsfile
+            pipeline: examples/jobs/seed/Jenkinsfile
             executeWhen: always #firstTimeOnly always never
         
 
