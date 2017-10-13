@@ -15,6 +15,5 @@ services:
       JAVA_OPTS_MEM: '-Xmx1g'
       # JENKINS_ENV_HOST_IP: '192.168.254.11'
       # JENKINS_ENV_HOST_IP_CMD: "ip route | grep default | awk '{print $$3}'"
-              
+      # JENKINS_ENV_HOST_IP_CMD: 'curl http://169.254.169.254/latest/meta-data/local-ipv4'
 
-      
