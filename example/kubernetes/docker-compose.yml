@@ -43,8 +43,8 @@ services:
               remote: https://github.com/odavid/my-bloody-jenkins.git
               branch: 'kubernetes-example'
             triggers: 
-              pollScm: '* * * * *'
-              # periodic: '* * * * *'
+              pollScm: 'H/2 * * * *'
+              # periodic: '@hourly'
             pipeline: example/jobs/seed/Jenkinsfile
             executeWhen: always #firstTimeOnly always never
         
