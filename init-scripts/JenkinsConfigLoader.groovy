@@ -39,7 +39,10 @@ def jenkinsConfig = loadYamlConfig('/etc/jenkins-config.yml')
 // TODO: admin user should be global. Make it more generic....
 jenkinsConfig.security?.adminUser = adminUser
 
-handleConfig('General', jenkinsConfig.general)
+// TODO: General config is using only environment variables
+// Find a more elegant way to handle it 
+handleConfig('General', [general: true])
+
 handleConfig('Creds', jenkinsConfig.credentials)
 handleConfig('Security', jenkinsConfig.security)
 handleConfig('Clouds', jenkinsConfig.clouds)
