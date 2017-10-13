@@ -1,4 +1,5 @@
 # My Bloody Jenkins - An opinionated Jenkins Docker Image
+
 [[!Build Status](https://travis-ci.org/odavid/my-bloody-jenkins.svg?branch=master)](https://travis-ci.org/odavid/my-bloody-jenkins)
 
 ## Introduction

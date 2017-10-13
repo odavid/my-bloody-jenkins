@@ -9,5 +9,5 @@ script:
 after_success:
   - if [ "$TRAVIS_BRANCH" == 'master' ]; then
     docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
-    docker push odavid/my-bloody-jenkins
+    docker push odavid/my-bloody-jenkins;
     fi
