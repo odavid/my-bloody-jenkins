@@ -1,0 +1,9 @@
+node('kubeslave'){
+    checkout scm
+    echo "Running dsl-script.groovy"
+    jobDsl targets: ['example/kubernetes/seed-jobs/dsl-script.groov'].join('\n'),
+           removedJobAction: 'DELETE',
+           removedViewAction: 'DELETE'
+    echo "Running dsl-script.groovy... done"
+
+}
