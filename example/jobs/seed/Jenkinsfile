@@ -1,7 +1,7 @@
 node('kubeslave'){
     checkout scm
     echo "Running dsl-script.groovy"
-    jobDsl targets: ['example/jobs/seed/dsl-script.groov'].join('\n'),
+    jobDsl targets: ['example/jobs/seed/dsl-script.groovy'].join('\n'),
            removedJobAction: 'DELETE',
            removedViewAction: 'DELETE'
     echo "Running dsl-script.groovy... done"
