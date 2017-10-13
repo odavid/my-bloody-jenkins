@@ -72,7 +72,9 @@ Therefore ***My Bloody Jenkins***...
 
 Ok, enough talking...
 
-## Docker Image Reference
+# Examples
+* [kubernetes](examples/kubernetes/README.md) cloud using Minikube with seed job. See [examples/kubernetes/README.md]()
+
 ## Environment Variables
 The following Environment variables are supported
 

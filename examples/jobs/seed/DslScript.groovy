@@ -3,7 +3,7 @@ pipelineJob('sample-job-created-by-seed'){
         cpsScm{
             scm{
                 git{
-                    branch('kubernetes-example')
+                    branch('master')
                     remote{
                         url('https://github.com/odavid/my-bloody-jenkins.git')
                     }

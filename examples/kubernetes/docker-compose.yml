@@ -47,7 +47,7 @@ services:
           seed-job:
             source: 
               remote: https://github.com/odavid/my-bloody-jenkins.git
-              branch: 'kubernetes-example'
+              branch: 'master'
             triggers: 
               pollScm: 'H/2 * * * *'
               periodic: '@hourly'
