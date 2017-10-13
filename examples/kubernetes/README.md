@@ -16,6 +16,11 @@ Running the example will:
 * docker-compose is installed
 * Minikube installed - https://kubernetes.io/docs/getting-started-guides/minikube/#installation
 
+* Make sure minikube is started
+```bash
+$ minikube start
+```
+
 # Running the example
 
 In order to run the example
