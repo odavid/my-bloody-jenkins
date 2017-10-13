@@ -1,0 +1,18 @@
+pipelineJob('sample-job-created-by-seed'){
+    definition{
+        cpsScm{
+            scm{
+                git{
+                    branch('master')
+                    remote{
+                        url('https://github.com/odavid/my-bloody-jenkins.git')
+                    }
+                    extensions{
+                        cleanBeforeCheckout()
+                    }
+                }
+            }
+            scriptPath('examples/jobs/sample-job/Jenkinsfile')
+        }
+    }
+}

@@ -77,7 +77,6 @@ sonar:2.6.1
 ssh-agent:1.15
 ssh-credentials:1.13
 structs:1.10
-swarm:3.4
 timestamper:1.8.8
 token-macro:2.3
 workflow-aggregator:2.5

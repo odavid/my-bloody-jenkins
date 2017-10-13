@@ -1,0 +1,24 @@
+#!/bin/bash
+
+export MINIKUBE_CERT_PASSWORD=secret
+if [ ! -f ~/.minikube/minikube.pfx ]; then
+    echo "~/.minikube/minikube.pfx was not found, generating pkcs12 certificate to be used as credential by jenkins"
+    openssl pkcs12 -export \
+         -out ~/.minikube/minikube.pfx \
+         -inkey ~/.minikube/apiserver.key \
+         -in ~/.minikube/apiserver.crt \
+         -certfile ~/.minikube/ca.crt \
+         -passout pass:${MINIKUBE_CERT_PASSWORD}
+fi
+export MINIKUBE_CERT="$(cat ~/.minikube/minikube.pfx | base64)"
+export MINIKUBE_IP="$(minikube ip)"
+export MINIKUBE_PORT=8443
+export MY_HOST_IP="$(ifconfig | grep "inet " | grep -Fv 127.0.0.1 | awk '{print $2}' | head -n 1)"
+
+echo "-------------------------------------------------"
+echo "MINIKUBE_CERT_PASSWORD = $MINIKUBE_CERT_PASSWORD"
+echo "MINIKUBE_CERT = ${MINIKUBE_CERT:0:40}..."
+echo "MINIKUBE_IP = $MINIKUBE_IP"
+echo "MINIKUBE_PORT = $MINIKUBE_PORT"
+echo "MY_HOST_IP = $MY_HOST_IP"
+echo "-------------------------------------------------"

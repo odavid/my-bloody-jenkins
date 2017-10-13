@@ -7,6 +7,7 @@ def setup(config){
     def instance = Jenkins.getInstance()
     def executersCount = env['JENKINS_ENV_EXECUTERS']
     def cliOverRemoting = env['JENKINS_ENV_CLI_REMOTING_ENABLED']
+    def useScriptSecurity = env['JENKINS_ENV_USE_SCRIPT_SECURITY']
     def changeWorkspaceDir = env['JENKINS_ENV_CHANGE_WORKSPACE_DIR']
 
     instance.setNumExecutors(executersCount  ? executersCount.toInteger() : 0)
@@ -19,5 +20,10 @@ def setup(config){
         f.set(Jenkins.instance, '/jenkins-workspace-home/workspace/${ITEM_FULLNAME}')
         Jenkins.instance.save()
     }
+
+
+    jenkins.model.GlobalConfiguration.all()
+        .get(javaposse.jobdsl.plugin.GlobalJobDslSecurityConfiguration).useScriptSecurity =
+            useScriptSecurity ? useScriptSecurity.toBoolean() : false
 }
 return this
