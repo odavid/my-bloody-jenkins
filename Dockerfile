@@ -38,6 +38,19 @@ RUN mv /usr/local/bin/jenkins.sh /usr/local/bin/jenkins-orig.sh
 COPY jenkins.sh /usr/local/bin/jenkins.sh
 
 ####################################################################################
+# GENERAL Configuration variables
+####################################################################################
+# Let the master be a master, don't run any jobs on it
+ENV JENKINS_ENV_EXECUTERS=0
+# See https://jenkins.io/blog/2017/04/11/new-cli/
+ENV JENKINS_ENV_CLI_REMOTING_ENABLED=false
+# If true, then workspaceDir will changed its defaults from ${JENKINS_HOME}/workspace
+# to /jenkins-workspace-home/workspace/${ITEM_FULLNAME}
+# This is useful in case your JENKINS_HOME is mapped to NFS mount, 
+# slowing down the workspace
+ENV JENKINS_ENV_CHANGE_WORKSPACE_DIR=true
+
+####################################################################################
 # ADDITIONAL JAVA_OPTS
 ####################################################################################
 # Each JAVA_OPTS_* variable will be added to the JAVA_OPTS variable before startup
