@@ -2,7 +2,15 @@ pipelineJob('sample-job-created-by-seed'){
     definition{
         cpsScm{
             scm{
-                git('https://github.com/odavid/my-bloody-jenkins.git', 'kubernetes-example')
+                git{
+                    branch('kubernetes-example')
+                    remote{
+                        url('https://github.com/odavid/my-bloody-jenkins.git')
+                    }
+                    extensions{
+                        cleanBeforeCheckout()
+                    }
+                }
             }
             scriptPath('example/jobs/sample-job/Jenkinsfile')
         }

@@ -1,6 +1,8 @@
-stage('checkout'){
-    checkout scm
-}
-stage('build'){
-    sh 'java -version'
+node('kubeslave'){
+    stage('checkout'){
+        checkout scm
+    }
+    stage('build'){
+        sh 'java -version'
+    }
 }
