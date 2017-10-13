@@ -4,5 +4,8 @@ node('kubeslave'){
     }
     stage('build'){
         sh 'java -version'
+        // Use installable tool to showoff...
+        def mavenHome = tool 'MVN-3.5.0'
+        sh "${mavenHome}/bin/mvn -version"
     }
 }

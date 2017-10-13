@@ -22,6 +22,11 @@ services:
             type: cert
             base64: ${MINIKUBE_CERT}
             password: ${MINIKUBE_CERT_PASSWORD}
+        tools:
+          MVN-3.5.0:
+            type: maven
+            installers:
+              - id: '3.5.0'
         clouds:
           kube-cloud:
             type: kubernetes
