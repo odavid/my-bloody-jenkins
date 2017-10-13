@@ -1,4 +1,5 @@
-# My Bloody Jenkins - An opinionated Jenkins Docker Image [!Build Status](https://travis-ci.org/odavid/my-bloody-jenkins.svg?branch=master)
+# My Bloody Jenkins - An opinionated Jenkins Docker Image 
+![Build Status](https://travis-ci.org/odavid/my-bloody-jenkins.svg?branch=master)
 
 ## Introduction
 I've been working a lot with Jenkins/Pipline and Docker in the last couple of years, and wanted to share my experience on these subjects.
