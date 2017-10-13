@@ -64,7 +64,7 @@ def certCred(config){
             id,
             description,
             password,
-            secretBytes
+            keyStoreSource
         )
     }
 }
