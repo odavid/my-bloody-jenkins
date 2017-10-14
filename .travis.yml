@@ -10,4 +10,8 @@ after_success:
   - if [ "$TRAVIS_BRANCH" == 'master' ]; then
     docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
     docker push odavid/my-bloody-jenkins;
+    LTS_VERSION="$(grep FROM Dockerfile | cut -d':' -f 2)";
+    echo "LTS_VERSION = $LTS_VERSION"
+    docker tag odavid/my-bloody-jenkins odavid/my-bloody-jenkins:$LTS_VERSION;
+    docker push odavid/my-bloody-jenkins:$LTS_VERSION;    
     fi
