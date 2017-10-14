@@ -28,29 +28,40 @@ def getAdminUserName(){
 }
 
 def storeAdminApiToken(adminUser, filename){
-    def adminUserApiToken = User.get(adminUser, true).getProperty(ApiTokenProperty).apiTokenInsecure
-    new File(filename).withWriter{out -> out.println "${adminUser}:${adminUserApiToken}"}
+    def adminUserApiToken = User.get(adminUser, true)?.getProperty(ApiTokenProperty)?.apiTokenInsecure
+    if(adminUserApiToken){
+        new File(filename).withWriter{out -> out.println "${adminUser}:${adminUserApiToken}"}
+    }
 }
 
 def adminUser = getAdminUserName()
-storeAdminApiToken(adminUser, '/tmp/.api-token')
+if(!adminUser){
+    println "JENKINS_ENV_ADMIN_USER was not set. This is mandatory variable"
+}else{
+    storeAdminApiToken(adminUser, '/tmp/.api-token')
+}
 
-def jenkinsConfig = loadYamlConfig('/etc/jenkins-config.yml')
-// TODO: admin user should be global. Make it more generic....
-jenkinsConfig.security?.adminUser = adminUser
+def configFileName = '/etc/jenkins-config.yml'
+if(!new File(configFileName).exists()) {
+    println "${configFileName} does not exist. Set variable JENKINS_ENV_CONFIG_YAML! Skipping configuration..."
+} else {
+    def jenkinsConfig = loadYamlConfig('/etc/jenkins-config.yml')
+    // TODO: admin user should be global. Make it more generic....
+    jenkinsConfig.security?.adminUser = adminUser
 
-// TODO: General config is using only environment variables
-// Find a more elegant way to handle it 
-handleConfig('General', [general: true])
+    // TODO: General config is using only environment variables
+    // Find a more elegant way to handle it 
+    handleConfig('General', [general: true])
 
-handleConfig('Creds', jenkinsConfig.credentials)
-handleConfig('Security', jenkinsConfig.security)
-handleConfig('Clouds', jenkinsConfig.clouds)
-handleConfig('Notifiers', jenkinsConfig.notifiers)
-handleConfig('ScriptApproval', jenkinsConfig.script_approval)
-handleConfig('Tools', jenkinsConfig.tools)
-handleConfig('SonarQubeServers', jenkinsConfig.sonar_qube_servers)
-handleConfig('Jira', jenkinsConfig.jira)
-handleConfig('Checkmarx', jenkinsConfig.checkmarx)
-handleConfig('PipelineLibraries', jenkinsConfig.pipeline_libraries)
-handleConfig('SeedJobs', jenkinsConfig.seed_jobs)
+    handleConfig('Creds', jenkinsConfig.credentials)
+    handleConfig('Security', jenkinsConfig.security)
+    handleConfig('Clouds', jenkinsConfig.clouds)
+    handleConfig('Notifiers', jenkinsConfig.notifiers)
+    handleConfig('ScriptApproval', jenkinsConfig.script_approval)
+    handleConfig('Tools', jenkinsConfig.tools)
+    handleConfig('SonarQubeServers', jenkinsConfig.sonar_qube_servers)
+    handleConfig('Jira', jenkinsConfig.jira)
+    handleConfig('Checkmarx', jenkinsConfig.checkmarx)
+    handleConfig('PipelineLibraries', jenkinsConfig.pipeline_libraries)
+    handleConfig('SeedJobs', jenkinsConfig.seed_jobs)
+}
