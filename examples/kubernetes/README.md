@@ -1,6 +1,6 @@
 # Running slaves in Kubernetes
 
-The following examples runs a Jenkins Master using docker-compose and uses [Minikube](https://kubernetes.io/docs/getting-started-guides/minikube/) to run slaves within it.
+The following example runs a Jenkins Master using docker-compose and uses [Minikube](https://kubernetes.io/docs/getting-started-guides/minikube/) to run slaves within it.
 
 Running the example will:
 * Run the Jenkins master
