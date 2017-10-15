@@ -5,7 +5,7 @@ def printActivePlugins(){
 }
 
 def testNoFailedPlugins(){
-	assert jenkins.model.Jenkins.instance.pluginManager.failedPlugins.empty
+	assert jenkins.model.Jenkins.instance.pluginManager.failedPlugins.empty : "There are failed plugins"
 }
 
 testNoFailedPlugins()

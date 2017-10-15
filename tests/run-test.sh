@@ -15,5 +15,5 @@ fi
 echo "Running test $1"
 java -jar $script_dir/jenkins-cli.jar \
     -s http://localhost:8080/ $AUTH_ARG \
-    groovy = < $1
+    groovy = < "$1"
 echo "Running test $1... done"
