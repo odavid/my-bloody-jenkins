@@ -1,4 +1,5 @@
 ace-editor:1.1
+active-directory:2.6
 amazon-ecr:1.6
 amazon-ecs:1.11
 antisamy-markup-formatter:1.5

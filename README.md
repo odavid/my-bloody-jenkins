@@ -1,4 +1,4 @@
-# My Bloody Jenkins - An opinionated Jenkins Docker Image 
+# My Bloody Jenkins - An opinionated Jenkins Docker Image
 [![Build Status](https://travis-ci.org/odavid/my-bloody-jenkins.svg?branch=master)](https://travis-ci.org/odavid/my-bloody-jenkins)
 [![Docker Stars](https://img.shields.io/docker/stars/odavid/my-bloody-jenkins.svg)](https://hub.docker.com/r/odavid/my-bloody-jenkins/)
 
@@ -48,6 +48,7 @@ Therefore ***My Bloody Jenkins***...
     * Security
         * Jenkins database
         * LDAP
+        * ActiveDirectory
         * Using Project Matrix Authorization Strategy
     * Clouds - As I said above - Only docker based and only JNLP
         * ECS
@@ -88,7 +89,7 @@ The following Environment variables are supported
 * ___JENKINS_ENV_CONFIG_YAML___ - The [configuration](#configuration-reference) is stored in '/etc/jenkins-config.yml' file. When this variable is set, the contents of this variable is written to the file before starting Jenkins and can be fetched from Consul and also be watched so jenkins can update its configuration everytime this variable is being changed. Since the contents of this variable contains secrets, it is wise to store and pass it from Consul/S3 bucket. In any case, once the file is written, this variable is being unset, so it won't appear in Jenkins 'System Information' page (As I said, blood...)
 * ___JENKINS_ENV_HOST_IP___ - When Jenkins is running behind an ELB or a reverse proxy, JNLP slaves must know about the real IP of Jenkins, so they can access the 50000 port. Usually they are using the Jenkins URL to try to get to it, so it is very important to let them know what is the original Jenkins IP Address. If the master has a static IP address, then this variable should be set with the static IP address of the host.
 * ___JENKINS_ENV_HOST_IP_CMD___ - Same as ___JENKINS_ENV_HOST_IP___, but this time a shell command expression to fetch the IP Address. In AWS, it is useful to use the EC2 Magic IP: ```JENKINS_ENV_HOST_IP_CMD='curl http://169.254.169.254/latest/meta-data/local-ipv4'```
-* __JENKINS_HTTP_PORT_FOR_SLAVES__ - (Default: 8080) Used together with JENKINS_ENV_HOST_IP to construct the real jenkinsUrl for jnlp slaves. 
+* __JENKINS_HTTP_PORT_FOR_SLAVES__ - (Default: 8080) Used together with JENKINS_ENV_HOST_IP to construct the real jenkinsUrl for jnlp slaves.
 * __JENKINS_ENV_USE_SCRIPT_SECURITY__ - false by default, if true, it enables the [Script Security](https://github.com/jenkinsci/job-dsl-plugin/wiki/Script-Security) for dsl scripts
 
 ## Configuration Reference
@@ -99,6 +100,7 @@ Responsible for:
 * Setting up security realm
     * jenkins_database - the adminPassword must be provided
     * ldap - LDAP Configuration must be provided
+    * active_directory - Uses [active-directory plugin](https://wiki.jenkins.io/display/JENKINS/Active+Directory+plugin)
 * User/Group Permissions dict - Each key represent a user or a group and its value is a list of Jenkins [Permissions IDs](https://wiki.jenkins.io/display/JENKINS/Matrix-based+security)
 
 ```yaml
@@ -134,6 +136,28 @@ security:
     readTimeout: 60000 # default = 60000
     displayNameAttr: cn
     emailAttr: email
+```
+
+```yaml
+# active_directory - active_directory configuration must be provided
+security:
+    realm: active_directory
+    domains:
+      - name: corp.mydomain.com
+        servers:
+          - dc1.corp.mydomain.com
+          - dc2.corp.mydomain.com
+        site: optional-site
+        bindName: CN=user,OU=myorg,OU=User,DC=mydoain,DC=com
+        bindPassword: secret
+        groupLookupStrategy: AUTO # AUTO, RECURSIVE, CHAIN, TOKENGROUPS
+        removeIrrelevantGroups: false
+        cache:
+          size: 500
+          ttl: 30
+        startTls: false
+        tlsConfiguration: TRUST_ALL_CERTIFICATES # TRUST_ALL_CERTIFICATES, JDK_TRUSTSTORE
+        jenkinsInternalUser: my-none-ad-user #
 ```
 
 ```yaml
@@ -307,7 +331,7 @@ credentials:
       MIIM2QIBAzCCDJ8GCSqGSIb3DQEHAaCCDJAEggyMMIIMiDCCBz8GCSqGSIb3DQEHBq
       CCBzAwggcsAgEAMIIHJQYJKoZIhvcNAQcBMBwGCiqGSIb3DQEMAQYwDgQIPPHR3lAy
       ...
-```        
+```
 
 ### Notifiers Section
 Responsible for Configuration of the following notifiers:
@@ -344,7 +368,7 @@ notifiers:
 ### Pipeline Libraries Section
 Responsible for setting up [Global Pipeline Libraries](https://wiki.jenkins.io/display/JENKINS/Pipeline+Shared+Groovy+Libraries+Plugin)
 
-Configuration is composed of dicts where each top level key is the name of the library and its value contains the library configuration (source, default version)  
+Configuration is composed of dicts where each top level key is the name of the library and its value contains the library configuration (source, default version)
 ```yaml
 pipeline_libraries:
   my-library: # the library name
@@ -355,7 +379,7 @@ pipeline_libraries:
     implicit: false # Default false - if true the library will be available within all pipeline jobs with declaring it with @Library
     allowVersionOverride: true # Default true, better to leave it as is
     includeInChangesets: true # see https://issues.jenkins-ci.org/browse/JENKINS-41497
-  
+
   my-other-lib:
     source:
       remote:
@@ -398,15 +422,15 @@ clouds:
   ecs-cloud:
     # type is mandatory
     type: ecs
-    # If your jenkins master is running on EC2 and is using IAM Role, then you can 
-    # discard this credential, otherwise, you need to have an 
-    # aws credential declared in the credentials secion  
+    # If your jenkins master is running on EC2 and is using IAM Role, then you can
+    # discard this credential, otherwise, you need to have an
+    # aws credential declared in the credentials secion
     credentialsId: 'my-aws-key'
     # AWS region where your ECS Cluster reside
     region: eu-west-1
     # ARN of the ECS Cluster
     cluster: 'arn:ssss'
-    # Timeout (in second) for ECS task to be created, usefull if you use large docker 
+    # Timeout (in second) for ECS task to be created, usefull if you use large docker
     # slave image, because the host will take more time to pull the docker image
     # If empty or <= 0, the 900 is the default.
     connectTimeout: 0
@@ -416,11 +440,11 @@ clouds:
         # Only JNLP slaves are supported
         image: jenkinsci/jnlp-slave:latest
         # Labels are mandatory!
-        # Your pipeline jobs will need to use node(label){} in order to use 
-        # this slave template 
+        # Your pipeline jobs will need to use node(label){} in order to use
+        # this slave template
         labels:
           - ecs-slave
-        # The directory within the container that is used as root filesystem  
+        # The directory within the container that is used as root filesystem
         remoteFs: /home/jenkins
         # JVM arguments to pass to the jnlp jar
         jvmArgs: -Xmx1g
@@ -434,7 +458,7 @@ clouds:
         # has privileges to that socket within the entrypoint
         volumes:
           - '/var/run/docker.sock:/var/run/docker.sock'
-        # Environment variables to pass to the slave container 
+        # Environment variables to pass to the slave container
         environment:
           XXX: xxx
 ```
@@ -449,7 +473,7 @@ clouds:
     type: kubernetes
     # Kubernetes URL
     serverUrl: http://mykubernetes
-    # Default kubernetes namespace for slaves 
+    # Default kubernetes namespace for slaves
     namespace: jenkins
     # Pod templates
     templates:
@@ -457,10 +481,10 @@ clouds:
         # Only JNLP slaves are supported
         image: jenkinsci/jnlp-slave:latest
         # Labels are mandatory!
-        # Your pipeline jobs will need to use node(label){} in order to use this slave template 
+        # Your pipeline jobs will need to use node(label){} in order to use this slave template
         labels:
           - kubeslave
-        # The directory within the container that is used as root filesystem  
+        # The directory within the container that is used as root filesystem
         remoteFs: /home/jenkins
         # JVM arguments to pass to the jnlp jar
         jvmArgs: -Xmx1g
@@ -470,7 +494,7 @@ clouds:
         # has privileges to that socket within the entrypoint
         volumes:
           - '/var/run/docker.sock:/var/run/docker.sock'
-        # Environment variables to pass to the slave container 
+        # Environment variables to pass to the slave container
         environment:
           XXX: xxx
 ```
@@ -481,18 +505,18 @@ Responsible for seed job creation and execution. Each seed job would be a pipeli
 ```yaml
 seed_jobs:
   # Each top level key is the seed job name
-  SeedJob:    
+  SeedJob:
     source:
-      # git repo where of the seed job 
+      # git repo where of the seed job
       remote: git@github.com:odavid/my-bloody-jenkins.git
       credentialsId: gitsshkey
       branch: 'master'
-    triggers: 
+    triggers:
       # scm polling trigger
       pollScm: '* * * * *'
       # period trigger
       periodic: '* * * * *'
-    # Location of the pipeline script within the repository  
+    # Location of the pipeline script within the repository
     pipeline: example/SeedJobPipeline.groovy
     # always - will be executed everytime the config loader will run
     # firstTimeOnly - will be executed only if the job was not exist
