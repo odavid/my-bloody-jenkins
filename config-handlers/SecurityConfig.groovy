@@ -14,6 +14,37 @@ def asBoolean(value, defaultValue=false){
     return value != null ? value.toBoolean() : defaultValue
 }
 
+def setupActiveDirectory(config){
+    config.with{
+        return new hudson.plugins.active_directory.ActiveDirectorySecurityRealm(
+            domain, 
+            domains?.collect{ currentDomain ->
+                new hudson.plugins.active_directory.ActiveDirectoryDomain(
+                    currentDomain.name, 
+                    currentDomain.servers?.join(','), 
+                    currentDomain.site, 
+                    currentDomain.bindName, 
+                    currentDomain.bindPassword
+                )
+            }, 
+            site, 
+            bindName,
+            bindPassword, 
+            server, 
+            groupLookupStrategy ? hudson.plugins.active_directory.GroupLookupStrategy.valueOf(groupLookupStrategy) : null, 
+            asBoolean(removeIrrelevantGroups), 
+            asBoolean(customDomain, null), 
+            cache ? new hudson.plugins.active_directory.CacheConfiguration(
+                asInt(cache.size, 0),
+                asInt(cache.ttl, 0)
+            ) : null, 
+            asBoolean(startTls, null), 
+            tlsConfiguration ? hudson.plugins.active_directory.TlsConfiguration.valueOf(tlsConfiguration) : null, 
+            jenkinsInternalUser ? new hudson.plugins.active_directory.ActiveDirectoryInternalUsersDatabase(jenkinsInternalUser) : null
+        )
+    }
+}
+
 def setupLdap(config){
     config.with{
         if (!groupMembershipAttribute && !groupMembershipFilter){
@@ -66,6 +97,9 @@ def setup(config){
             break
         case 'jenkins_database':
             realm = setupJenkinsDatabase(config)
+            break
+        case 'active_directory':
+            realm = setupActiveDirectory(config)
             break
     }
     if(realm){
