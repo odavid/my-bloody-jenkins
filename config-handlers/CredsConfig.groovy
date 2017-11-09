@@ -9,7 +9,7 @@ import jenkins.model.Jenkins
 import hudson.util.Secret
 
 def sshKeyCred(config) {
-    def pk = config.privatekey ? config.privatekey : new String(config.base64.decodeBase64(), 'UTF-8')
+    def pk = config.privatekey ?: new String(config.base64?.decodeBase64(), 'UTF-8')
     config.with{
         return new BasicSSHUserPrivateKey(CredentialsScope.GLOBAL,
             id, 
