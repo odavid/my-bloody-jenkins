@@ -262,6 +262,7 @@ Responsible for:
     * type: sshkey - an [ssh private key](https://wiki.jenkins.io/display/JENKINS/SSH+Credentials+Plugin) in PEM format. Mandatory attributes:
         * username
         * privatekey - PEM format text
+        * base64 - PEM format text base64 encoded. Mandatory if privatekey is not provided
         * passphrase - not mandatory, but encouraged
     * type: cert - a [Certificate](https://wiki.jenkins.io/display/JENKINS/Credentials+Plugin). Mandatory attributes:
       * base64 - the PKCS12 certificate bytes base64 encoded
