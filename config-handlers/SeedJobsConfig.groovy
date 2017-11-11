@@ -46,6 +46,11 @@ def seedJobConfig(config){
         paramDef.parameterDefinitions.clear()
         paramDef.parameterDefinitions.addAll(
             parameters?.collect{ name, parameter ->
+                if(parameter instanceof String){
+                    parameter = [type: 'string', value: parameter]
+                }else if(parameter instanceof List){
+                    parameter = [type: 'choice', value: parameter]
+                }
                 parameter.with{
                     switch(type){
                         case 'choice':
