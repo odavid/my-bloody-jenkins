@@ -47,9 +47,12 @@ def seedJobConfig(config){
         paramsDef.parameterDefinitions.addAll(
             parameters?.collect{ name, parameter ->
                 if(parameter instanceof String){
-                    parameter = [type: 'string', value: parameter]
+                    def type = parameter.contains('\n') ? 'text' : 'string'
+                    parameter = [type: type, value: parameter]
                 }else if(parameter instanceof List){
                     parameter = [type: 'choice', value: parameter]
+                }else if(parameter instanceof Boolean){
+                    parameter = [type: 'boolean', value: parameter]
                 }
                 parameter.with{
                     switch(type){
