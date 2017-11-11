@@ -43,8 +43,8 @@ def seedJobConfig(config){
             paramsDef = new hudson.model.ParametersDefinitionProperty([])
             job.addProperty(paramsDef)
         }
-        paramDef.clear()
-        paramDef.addAll(
+        paramDef.parameterDefinitions.clear()
+        paramDef.parameterDefinitions.addAll(
             parameters?.collect{ name, parameter ->
                 parameter.with{
                     switch(type){
