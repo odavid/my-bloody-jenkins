@@ -73,14 +73,14 @@ def seedJobConfig(config){
                         case 'password':
                             new hudson.model.PasswordParameterValue(
                                 name,
-                                value,
+                                value ? value.toString() : '',
                                 description?:''
                             )
                             break
                         case 'text':
                             new hudson.model.TextParameterDefinition(
                                 name,
-                                value,
+                                value ? value.toString() : '',
                                 description?:''
                             )
                             break
@@ -88,7 +88,7 @@ def seedJobConfig(config){
                         default:
                             new hudson.model.StringParameterDefinition(
                                 name,
-                                value,
+                                value ? value.toString() : '',
                                 description?:''
                             )
                             break
