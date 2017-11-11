@@ -523,5 +523,28 @@ seed_jobs:
     # firstTimeOnly - will be executed only if the job was not exist
     # never - don't execute the job, let the triggers do their job
     executeWhen: always #firstTimeOnly always never
+    
+    # Define parameters with default values to the seed job
+    parameters: 
+      a_boolean_param: # the name of the param
+        type: boolean
+        value: true
+      a_string_param:
+        type: string
+        value: The String default value
+      a_password_param:
+        type: password
+        value: ThePasswordValue
+      a_choice_param:
+        type: choice
+        choices:
+          - choice1 ## The first choice is the default one
+          - choice2
+          - choice3
+      a_text_param:
+        type: text
+        value: |
+          A text with
+          new lines
 
 ```
