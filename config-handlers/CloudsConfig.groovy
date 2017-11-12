@@ -110,7 +110,7 @@ def dockerCloud(config){
                     temp.labels?.join(' '),
                     temp.remoteFs,
                     temp.remoteFsMapping,
-                    temp.instanceCap ?: "",
+                    temp.instanceCap?.toString() ?: "",
                 )
                 dockerTemplate.mode = Node.Mode.EXCLUSIVE
                 dockerTemplate.numExecutors = 100
