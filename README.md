@@ -91,6 +91,8 @@ The following Environment variables are supported
 * ___JENKINS_ENV_HOST_IP_CMD___ - Same as ___JENKINS_ENV_HOST_IP___, but this time a shell command expression to fetch the IP Address. In AWS, it is useful to use the EC2 Magic IP: ```JENKINS_ENV_HOST_IP_CMD='curl http://169.254.169.254/latest/meta-data/local-ipv4'```
 * __JENKINS_HTTP_PORT_FOR_SLAVES__ - (Default: 8080) Used together with JENKINS_ENV_HOST_IP to construct the real jenkinsUrl for jnlp slaves.
 * __JENKINS_ENV_USE_SCRIPT_SECURITY__ - false by default, if true, it enables the [Script Security](https://github.com/jenkinsci/job-dsl-plugin/wiki/Script-Security) for dsl scripts
+* __JENKINS_ENV_JENKINS_URL__ - Define the Jenkins root URL in configuration. This can be useful when you cannot run the Jenkins master docker container with host network and you need it to be available to slaves
+* __JENKINS_ENV_ADMIN_ADDRESS__ - Define the Jenkins admin email address
 
 ## Configuration Reference
 The '/etc/jenkins-config.yml' file is divided into main configuration sections. Each section is responsible for a specific aspect of jenkins configuration.

@@ -9,6 +9,21 @@ def setup(config){
     def cliOverRemoting = env['JENKINS_ENV_CLI_REMOTING_ENABLED']
     def useScriptSecurity = env['JENKINS_ENV_USE_SCRIPT_SECURITY']
     def changeWorkspaceDir = env['JENKINS_ENV_CHANGE_WORKSPACE_DIR']
+    
+    def jenkinsUrl = env['JENKINS_ENV_JENKINS_URL']
+    def adminAddress = env['JENKINS_ENV_ADMIN_ADDRESS']
+
+    if(jenkinsUrl || adminAddres){
+        def jenkinsLocationConfig = jenkins.model.JenkinsLocationConfiguration.get()
+        if(jenkinsUrl){
+            jenkinsLocationConfig.url  = jenkinsUrl
+        }
+        if(adminAddress){
+            jenkinsLocationConfig.adminAddres = adminAddres
+        }
+        jenkinsLocationConfig.save()
+    }
+    
 
     instance.setNumExecutors(executersCount  ? executersCount.toInteger() : 0)
     CLI.get().setEnabled(cliOverRemoting ? cliOverRemoting.toBoolean() : false)

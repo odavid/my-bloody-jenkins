@@ -109,8 +109,9 @@ def dockerCloud(config){
                 )
                 dockerTemplate.mode = Node.Mode.EXCLUSIVE
                 dockerTemplate.numExecutors = asInt(temp.numExecutors, 100)
+                def theTunnel = tunnel ? tunnel : jenkinsUrl ? jenkinsUrl.minus('http://') : null
                 dockerTemplate.connector = new io.jenkins.docker.connector.DockerComputerJNLPConnector(
-                    new JNLPLauncher(config.tunnel, temp.jvmArgs)
+                    new JNLPLauncher(theTunnel, temp.jvmArgs)
                 )
                 dockerTemplate.connector.user = config.jnlpUser
                 dockerTemplate.removeVolumes = asBoolean(temp.removeVolumes)

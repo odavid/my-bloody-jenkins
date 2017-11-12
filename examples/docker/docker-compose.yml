@@ -11,6 +11,7 @@ services:
       - '/var/run/docker.sock:/var/run/docker.sock'
     environment:
       JAVA_OPTS_MEM: '-Xmx1g'
+      JENKINS_ENV_JENKINS_URL: http://${MY_HOST_IP}:8080
       JENKINS_ENV_ADMIN_USER: admin
       JENKINS_ENV_HOST_IP: ${MY_HOST_IP}
       JENKINS_ENV_CONFIG_YAML: |
@@ -35,6 +36,7 @@ services:
                   - generic
                 remoteFs: /home/jenkins
                 jvmArgs: -Xmx1g
+                # Need to setup tunnel so the URL will be defined correctly
                 volumes:
                   - '/var/run/docker.sock:/var/run/docker.sock'
                 instanceCap: '10'
