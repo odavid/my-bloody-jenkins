@@ -89,7 +89,7 @@ def dockerCloud(config){
                         temp.command,
                         temp.volumes?.join(' '),
                         temp.volumesFrom?.join(' '),
-                        temp.environment?.collect{k,v -> "${k}=${v}"}.join("\n"),
+                        temp.environment?.collect{k,v -> "${k}=${v}"}?.join("\n"),
                         temp.lxcConf,
                         temp.hostname,
                         asInt(temp.memory),
