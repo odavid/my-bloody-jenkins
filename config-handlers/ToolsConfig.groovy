@@ -5,6 +5,7 @@ def createInstallation(config){
     def installers = config.installers?.collect{createInstaller(config.type, it)}
     def toolsProperties = installers ? [new hudson.tools.InstallSourceProperty(installers)] : []
     def desc = null
+    config.home = config.home?:''
     switch(config?.type){
         case 'jdk':
             desc = Jenkins.instance.getDescriptorByType(hudson.model.JDK.DescriptorImpl)
