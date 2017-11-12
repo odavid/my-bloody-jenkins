@@ -76,6 +76,7 @@ Therefore ***My Bloody Jenkins***...
 Ok, enough talking...
 
 # Examples
+* [docker-plugin cloud](examples/docker/) cloud using Docker Plugin cloud with seed job. See [examples/docker](examples/docker/)
 * [kubernetes](examples/kubernetes/) cloud using Minikube with seed job. See [examples/kubernetes](examples/kubernetes/)
 
 ## Environment Variables
