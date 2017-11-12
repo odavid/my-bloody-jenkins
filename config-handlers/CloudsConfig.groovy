@@ -80,16 +80,10 @@ def dockerCloud(config){
         return new DockerCloud(
             id,
             templates?.collect{ temp ->
-                def dockerComputerJNLPLauncher = new DockerComputerJNLPLauncher(
-                    new JNLPLauncher(
-                        config.tunnel,
-                        temp.jvmArgs
-                    )
-                )
-                dockerComputerJNLPLauncher.setUser(temp.user)
                 def dockerTemplate = new DockerTemplate(
                     new DockerTemplateBase(
                         temp.image,
+                        temp.pullCredentialsId,
                         temp.dns?.join(' '),
                         temp.network,
                         temp.command,
@@ -113,8 +107,11 @@ def dockerCloud(config){
                     temp.instanceCap?.toString() ?: "",
                 )
                 dockerTemplate.mode = Node.Mode.EXCLUSIVE
-                dockerTemplate.numExecutors = 100
-                dockerTemplate.launcher = dockerComputerJNLPLauncher
+                dockerTemplate.numExecutors = asInt(temp.numExecutors, 100)
+                dockerTemplate.connector = new io.jenkins.docker.connector.DockerComputerJNLPConnector(
+                    new JNLPLauncher(config.tunnel, temp.jvmArgs)
+                )
+                dockerTemplate.connector.user = config.jnlpUser
                 dockerTemplate.removeVolumes = temp.removeVolumes ? temp.removeVolumes.toBoolean() : false
                 return dockerTemplate
             },
