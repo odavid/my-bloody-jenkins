@@ -503,6 +503,39 @@ clouds:
           XXX: xxx
 ```
 
+#### Docker Cloud
+```yaml
+clouds:
+  # Top level key -> name of the cloud
+  docker-cloud:
+    # type is mandatory
+    type: docker
+    templates:
+      - name: dockerslave
+        ## How many containers can run at the same time
+        instanceCap: 100
+        # Only JNLP slaves are supported
+        image: jenkinsci/jnlp-slave:latest
+        # Labels are mandatory!
+        # Your pipeline jobs will need to use node(label){} in order to use this slave template
+        labels:
+          - dockerslave
+        # The directory within the container that is used as root filesystem
+        remoteFs: /home/jenkins
+        # JVM arguments to pass to the jnlp jar
+        jvmArgs: -Xmx1g
+        # Volume mappings
+        # If your slave need to build docker images, then map the host docker socket
+        # to the container docker socket. Also make sure the user within the container
+        # has privileges to that socket within the entrypoint
+        volumes:
+          - '/var/run/docker.sock:/var/run/docker.sock'
+        # Environment variables to pass to the slave container
+        environment:
+          XXX: xxx
+```
+
+
 ### Seed Jobs Section
 Responsible for seed job creation and execution. Each seed job would be a pipeline script that can use [jobDsl pipeline step](https://github.com/jenkinsci/job-dsl-plugin/wiki/User-Power-Moves#use-job-dsl-in-pipeline-scripts)
 
