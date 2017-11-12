@@ -37,65 +37,66 @@ def seedJobConfig(config){
                     return null
             }
         }.grep().each{ trigger -> job.addTrigger(trigger)}
-
-        def paramsDef = job.getProperty(hudson.model.ParametersDefinitionProperty)
-        if(!paramsDef){
-            paramsDef = new hudson.model.ParametersDefinitionProperty([])
-            job.addProperty(paramsDef)
-        }
-        paramsDef.parameterDefinitions.clear()
-        paramsDef.parameterDefinitions.addAll(
-            parameters?.collect{ name, parameter ->
-                if(parameter instanceof String){
-                    def type = parameter.contains('\n') ? 'text' : 'string'
-                    parameter = [type: type, value: parameter]
-                }else if(parameter instanceof List){
-                    parameter = [type: 'choice', value: parameter]
-                }else if(parameter instanceof Boolean){
-                    parameter = [type: 'boolean', value: parameter]
-                }
-                parameter.with{
-                    switch(type){
-                        case 'choice':
-                            new hudson.model.ChoiceParameterDefinition(
-                                name, 
-                                choices?.join('\n')?:'', 
-                                description?:''
-                            )
-                            break
-                        case 'boolean':
-                            new hudson.model.BooleanParameterDefinition(
-                                name,
-                                asBoolean(value),
-                                description?:''
-                            )
-                            break
-                        case 'password':
-                            new hudson.model.PasswordParameterValue(
-                                name,
-                                value ? value.toString() : '',
-                                description?:''
-                            )
-                            break
-                        case 'text':
-                            new hudson.model.TextParameterDefinition(
-                                name,
-                                value ? value.toString() : '',
-                                description?:''
-                            )
-                            break
-                        case 'string':
-                        default:
-                            new hudson.model.StringParameterDefinition(
-                                name,
-                                value ? value.toString() : '',
-                                description?:''
-                            )
-                            break
+        if(parameters){
+            def paramsDef = job.getProperty(hudson.model.ParametersDefinitionProperty)
+            if(!paramsDef){
+                paramsDef = new hudson.model.ParametersDefinitionProperty([])
+                job.addProperty(paramsDef)
+            }
+            paramsDef.parameterDefinitions.clear()
+            paramsDef.parameterDefinitions.addAll(
+                parameters?.collect{ name, parameter ->
+                    if(parameter instanceof String){
+                        def type = parameter.contains('\n') ? 'text' : 'string'
+                        parameter = [type: type, value: parameter]
+                    }else if(parameter instanceof List){
+                        parameter = [type: 'choice', value: parameter]
+                    }else if(parameter instanceof Boolean){
+                        parameter = [type: 'boolean', value: parameter]
                     }
-                }
-            } ?: []
-        )
+                    parameter.with{
+                        switch(type){
+                            case 'choice':
+                                new hudson.model.ChoiceParameterDefinition(
+                                    name, 
+                                    choices?.join('\n')?:'', 
+                                    description?:''
+                                )
+                                break
+                            case 'boolean':
+                                new hudson.model.BooleanParameterDefinition(
+                                    name,
+                                    asBoolean(value),
+                                    description?:''
+                                )
+                                break
+                            case 'password':
+                                new hudson.model.PasswordParameterValue(
+                                    name,
+                                    value ? value.toString() : '',
+                                    description?:''
+                                )
+                                break
+                            case 'text':
+                                new hudson.model.TextParameterDefinition(
+                                    name,
+                                    value ? value.toString() : '',
+                                    description?:''
+                                )
+                                break
+                            case 'string':
+                            default:
+                                new hudson.model.StringParameterDefinition(
+                                    name,
+                                    value ? value.toString() : '',
+                                    description?:''
+                                )
+                                break
+                        }
+                    }
+                } ?: []
+            )
+        }
         if((executeWhen == 'firstTimeOnly' && !exists) || executeWhen == 'always'){
             println "Scheduling ${name}"
             job.scheduleBuild()
