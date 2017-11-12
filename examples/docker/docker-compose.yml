@@ -36,7 +36,6 @@ services:
                   - generic
                 remoteFs: /home/jenkins
                 jvmArgs: -Xmx1g
-                # Need to setup tunnel so the URL will be defined correctly
                 volumes:
                   - '/var/run/docker.sock:/var/run/docker.sock'
                 instanceCap: '10'
