@@ -77,7 +77,7 @@ def parseContainerVolume(volume, closure){
 
 def dockerCloud(config){
     config.with{
-        return new DockerCloud(
+        def dockerCloud = new DockerCloud(
             id,
             templates?.collect{ temp ->
                 def dockerTemplate = new DockerTemplate(
@@ -105,6 +105,7 @@ def dockerCloud(config){
                     temp.remoteFs,
                     temp.remoteFsMapping,
                     temp.instanceCap?.toString() ?: "",
+                    []
                 )
                 dockerTemplate.mode = Node.Mode.EXCLUSIVE
                 dockerTemplate.numExecutors = asInt(temp.numExecutors, 100)
@@ -112,16 +113,20 @@ def dockerCloud(config){
                     new JNLPLauncher(config.tunnel, temp.jvmArgs)
                 )
                 dockerTemplate.connector.user = config.jnlpUser
-                dockerTemplate.removeVolumes = temp.removeVolumes ? temp.removeVolumes.toBoolean() : false
+                dockerTemplate.removeVolumes = asBoolean(temp.removeVolumes)
                 return dockerTemplate
             },
-            serverUrl,
-            containerCap ? containerCap.toString() : "100",
+            new org.jenkinsci.plugins.docker.commons.credentials.DockerServerEndpoint(
+                dockerHostUri,
+                credentialsId
+            ),
+            asInt(containerCap, 100),
             asInt(connectTimeout),
             asInt(readTimeout),
-            credentialsId,
-            dockerApiVersion,
+            apiVersion,
+            dockerHostname
         )
+        return dockerCloud 
     }
 }
 

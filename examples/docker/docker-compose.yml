@@ -26,6 +26,8 @@ services:
         clouds:
           docker-cloud:
             type: docker
+            dockerHostUri: 'unix:///var/run/docker.sock'
+            dockerHostname: ${MY_HOST_IP}
             templates:
               - name: docker-slave
                 image: jenkinsci/jnlp-slave:latest
