@@ -38,7 +38,7 @@ services:
               - name: kubeslave
                 image: jenkinsci/jnlp-slave:latest
                 labels:
-                  - kubeslave
+                  - generic
                 remoteFs: /home/jenkins
                 jvmArgs: -Xmx1g
                 volumes:

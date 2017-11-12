@@ -32,7 +32,7 @@ services:
               - name: docker-slave
                 image: jenkinsci/jnlp-slave:latest
                 labels:
-                  - docker-slave
+                  - generic
                 remoteFs: /home/jenkins
                 jvmArgs: -Xmx1g
                 volumes:
