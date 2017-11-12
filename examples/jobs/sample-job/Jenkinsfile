@@ -1,4 +1,4 @@
-node('kubeslave'){
+node('generic'){
     stage('checkout'){
         checkout scm
     }

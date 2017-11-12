@@ -1,4 +1,4 @@
-node('kubeslave'){
+node('generic'){
     checkout scm
     echo "Running dsl-script.groovy"
     jobDsl targets: ['examples/jobs/seed/DslScript.groovy'].join('\n'),

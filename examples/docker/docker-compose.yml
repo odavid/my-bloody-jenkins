@@ -11,17 +11,13 @@ services:
       - '/var/run/docker.sock:/var/run/docker.sock'
     environment:
       JAVA_OPTS_MEM: '-Xmx1g'
+      JENKINS_ENV_JENKINS_URL: http://${MY_HOST_IP}:8080
       JENKINS_ENV_ADMIN_USER: admin
       JENKINS_ENV_HOST_IP: ${MY_HOST_IP}
       JENKINS_ENV_CONFIG_YAML: |
         security:
           realm: jenkins_database
           adminPassword: admin
-        credentials:
-          minikube-cert:
-            type: cert
-            base64: ${MINIKUBE_CERT}
-            password: ${MINIKUBE_CERT_PASSWORD}
         tools:
           installations:
             MVN-3.5.0:
@@ -29,20 +25,21 @@ services:
               installers:
                 - id: '3.5.0'
         clouds:
-          kube-cloud:
-            type: kubernetes
-            serverUrl: https://${MINIKUBE_IP}:${MINIKUBE_PORT}
-            skipTlsVerify: true
-            credentialsId: minikube-cert
+          docker-cloud:
+            type: docker
+            dockerHostUri: 'unix:///var/run/docker.sock'
+            dockerHostname: ${MY_HOST_IP}
             templates:
-              - name: kubeslave
+              - name: docker-slave
                 image: jenkinsci/jnlp-slave:latest
                 labels:
                   - generic
                 remoteFs: /home/jenkins
                 jvmArgs: -Xmx1g
+                # Need to setup tunnel so the URL will be defined correctly
                 volumes:
                   - '/var/run/docker.sock:/var/run/docker.sock'
+                instanceCap: '10'
         seed_jobs:
           seed-job:
             source: 

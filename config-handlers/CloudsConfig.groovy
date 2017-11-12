@@ -77,25 +77,19 @@ def parseContainerVolume(volume, closure){
 
 def dockerCloud(config){
     config.with{
-        return new DockerCloud(
+        def dockerCloud = new DockerCloud(
             id,
             templates?.collect{ temp ->
-                def dockerComputerJNLPLauncher = new DockerComputerJNLPLauncher(
-                    new JNLPLauncher(
-                        config.tunnel,
-                        temp.jvmArgs
-                    )
-                )
-                dockerComputerJNLPLauncher.setUser(temp.user)
                 def dockerTemplate = new DockerTemplate(
                     new DockerTemplateBase(
                         temp.image,
+                        temp.pullCredentialsId,
                         temp.dns?.join(' '),
                         temp.network,
                         temp.command,
                         temp.volumes?.join(' '),
                         temp.volumesFrom?.join(' '),
-                        temp.environment?.collect{k,v -> "${k}=${v}"}.join("\n"),
+                        temp.environment?.collect{k,v -> "${k}=${v}"}?.join("\n"),
                         temp.lxcConf,
                         temp.hostname,
                         asInt(temp.memory),
@@ -110,21 +104,29 @@ def dockerCloud(config){
                     temp.labels?.join(' '),
                     temp.remoteFs,
                     temp.remoteFsMapping,
-                    temp.instanceCap ?: "",
+                    temp.instanceCap?.toString() ?: "",
+                    []
                 )
                 dockerTemplate.mode = Node.Mode.EXCLUSIVE
-                dockerTemplate.numExecutors = 100
-                dockerTemplate.launcher = dockerComputerJNLPLauncher
-                dockerTemplate.removeVolumes = temp.removeVolumes ? temp.removeVolumes.toBoolean() : false
+                dockerTemplate.numExecutors = asInt(temp.numExecutors, 100)
+                dockerTemplate.connector = new io.jenkins.docker.connector.DockerComputerJNLPConnector(
+                    new JNLPLauncher(tunnel, temp.jvmArgs)
+                )
+                dockerTemplate.connector.user = config.jnlpUser
+                dockerTemplate.removeVolumes = asBoolean(temp.removeVolumes)
                 return dockerTemplate
             },
-            serverUrl,
-            containerCap ? containerCap.toString() : "100",
+            new org.jenkinsci.plugins.docker.commons.credentials.DockerServerEndpoint(
+                dockerHostUri,
+                credentialsId
+            ),
+            asInt(containerCap, 100),
             asInt(connectTimeout),
             asInt(readTimeout),
-            credentialsId,
-            dockerApiVersion,
+            apiVersion,
+            dockerHostname
         )
+        return dockerCloud 
     }
 }
 
