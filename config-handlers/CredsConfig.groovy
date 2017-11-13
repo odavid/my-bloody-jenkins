@@ -12,7 +12,7 @@ def sshKeyCred(config) {
     def pk = config.privatekey ?: new String(config.base64?.decodeBase64(), 'UTF-8')
     config.with{
         return new BasicSSHUserPrivateKey(CredentialsScope.GLOBAL,
-            id, 
+            id,
             username,
             new BasicSSHUserPrivateKey.DirectEntryPrivateKeySource(pk),
             passphrase,
@@ -24,10 +24,10 @@ def sshKeyCred(config) {
 def userPassCred(config) {
     config.with{
         return new UsernamePasswordCredentialsImpl(
-            CredentialsScope.GLOBAL, 
-            id, 
-            description, 
-            username, 
+            CredentialsScope.GLOBAL,
+            id,
+            description,
+            username,
             password
         )
     }
@@ -36,7 +36,7 @@ def userPassCred(config) {
 def awsCred(config){
     config.with{
         return new AWSCredentialsImpl(
-            CredentialsScope.GLOBAL, 
+            CredentialsScope.GLOBAL,
             id,
             access_key,
             secret_access_key,
@@ -48,7 +48,7 @@ def awsCred(config){
 def textCred(config){
     config.with{
         return new StringCredentialsImpl(
-            CredentialsScope.GLOBAL, 
+            CredentialsScope.GLOBAL,
             id,
             description,
             Secret.fromString(text),
@@ -61,11 +61,21 @@ def certCred(config){
         def secretBytes = com.cloudbees.plugins.credentials.SecretBytes.fromString(base64)
         def keyStoreSource = new com.cloudbees.plugins.credentials.impl.CertificateCredentialsImpl.UploadedKeyStoreSource(secretBytes)
         return new com.cloudbees.plugins.credentials.impl.CertificateCredentialsImpl(
-            CredentialsScope.GLOBAL, 
+            CredentialsScope.GLOBAL,
             id,
             description,
             password,
             keyStoreSource
+        )
+    }
+}
+def gitlabApiToken(config){
+    config.with{
+        return new com.dabsquared.gitlabjenkins.connection.GitLabApiTokenImpl(
+            CredentialsScope.GLOBAL,
+            id,
+            description,
+            Secret.fromString(text),
         )
     }
 }
@@ -90,7 +100,7 @@ def createOrUpdateCred(cred){
 
 def setup(config){
     config = config ?: [:]
-    config.collect{k,v -> 
+    config.collect{k,v ->
         def credConfig = [id: k] << v
         switch(v.type){
             case 'aws':
@@ -103,6 +113,8 @@ def setup(config){
                 return sshKeyCred(credConfig)
             case 'cert':
                 return certCred(credConfig)
+            case 'gitlab-api-token':
+                return gitlabApiToken(credConfig)
             default:
                 return null
         }

@@ -62,6 +62,7 @@ if(!new File(configFileName).exists()) {
     handleConfig('SonarQubeServers', jenkinsConfig.sonar_qube_servers)
     handleConfig('Jira', jenkinsConfig.jira)
     handleConfig('Checkmarx', jenkinsConfig.checkmarx)
+    handleConfig('Gitlab', jenkinsConfig.gitlab)
     handleConfig('PipelineLibraries', jenkinsConfig.pipeline_libraries)
     handleConfig('SeedJobs', jenkinsConfig.seed_jobs)
 }
