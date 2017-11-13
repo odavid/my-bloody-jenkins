@@ -72,6 +72,7 @@ Therefore ***My Bloody Jenkins***...
         * Checkmarx
         * Jira
         * SonarQube
+        * Gitlab
 
 Ok, enough talking...
 
