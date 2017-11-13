@@ -414,6 +414,7 @@ script_approval:
 
 ### Clouds Section
 Responsible for configuration of the following docker cloud providers:
+* Docker - [type: docker](https://wiki.jenkins.io/display/JENKINS/Docker+Plugin)
 * Amazon ECS - [type: ecs](https://wiki.jenkins.io/display/JENKINS/Amazon+EC2+Container+Service+Plugin)
 * Kubernetes - [type: kubernetes](https://wiki.jenkins.io/display/JENKINS/Kubernetes+Plugin)
 
