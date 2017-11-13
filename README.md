@@ -270,6 +270,8 @@ Responsible for:
     * type: cert - a [Certificate](https://wiki.jenkins.io/display/JENKINS/Credentials+Plugin). Mandatory attributes:
       * base64 - the PKCS12 certificate bytes base64 encoded
       * password - not mandatory, but encouraged
+    * type: gitlab-api-token - a [Gitlab API token](https://wiki.jenkins.io/display/JENKINS/GitLab+Plugin) to be used with the gitlab plugin
+      * text - the api token as text
 
 > `Note: Currently the configuration supports only the global credentials domain.`
 
@@ -291,6 +293,9 @@ credentials:
     type: userpass
     username: user
     password: password1234
+  my-gitlab-api-token:
+    type: gitlab-api-token
+    text: <api-token-of-gitlab>
   gitsshkey:
     type: sshkey
     description: git-ssh-key
@@ -560,9 +565,9 @@ seed_jobs:
     # firstTimeOnly - will be executed only if the job was not exist
     # never - don't execute the job, let the triggers do their job
     executeWhen: always #firstTimeOnly always never
-    
+
     # Define parameters with default values to the seed job
-    parameters: 
+    parameters:
       a_boolean_param: # the name of the param
         type: boolean
         value: true
