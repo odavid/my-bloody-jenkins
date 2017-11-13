@@ -8,7 +8,7 @@ def asBoolean(value, defaultValue=false){
 def setup(config) {
     config = config ?: [:]
     def desc = jenkins.model.Jenkins.instance.getDescriptor(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfig)
-    def connections = config.connections?.collect{ connectionConfig ->
+    def connections = config.connections?.collect{ name, connectionConfig ->
         connectionConfig.with{
             return new com.dabsquared.gitlabjenkins.connection.GitLabConnection(
                 name,
