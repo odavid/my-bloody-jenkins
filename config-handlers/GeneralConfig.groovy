@@ -13,13 +13,13 @@ def setup(config){
     def jenkinsUrl = env['JENKINS_ENV_JENKINS_URL']
     def adminAddress = env['JENKINS_ENV_ADMIN_ADDRESS']
 
-    if(jenkinsUrl || adminAddres){
+    if(jenkinsUrl || adminAddress){
         def jenkinsLocationConfig = jenkins.model.JenkinsLocationConfiguration.get()
         if(jenkinsUrl){
             jenkinsLocationConfig.url  = jenkinsUrl
         }
         if(adminAddress){
-            jenkinsLocationConfig.adminAddres = adminAddres
+            jenkinsLocationConfig.adminAddress = adminAddress
         }
         jenkinsLocationConfig.save()
     }
