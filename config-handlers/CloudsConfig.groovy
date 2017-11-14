@@ -108,7 +108,7 @@ def dockerCloud(config){
                     []
                 )
                 dockerTemplate.mode = Node.Mode.EXCLUSIVE
-                dockerTemplate.numExecutors = asInt(temp.numExecutors, 100)
+                dockerTemplate.numExecutors = asInt(temp.numExecutors, 1)
                 dockerTemplate.connector = new io.jenkins.docker.connector.DockerComputerJNLPConnector(
                     new JNLPLauncher(tunnel, temp.jvmArgs)
                 )
