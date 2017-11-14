@@ -2,16 +2,29 @@ import jenkins.model.Jenkins
 import org.jenkinsci.plugins.scriptsecurity.scripts.ScriptApproval
 import jenkins.CLI
 
+def asInt(value, defaultValue=0){
+    return value ? value.toInteger() : defaultValue
+}
+def asBoolean(value, defaultValue=false){
+    return value != null ? value.toBoolean() : defaultValue
+}
+
 def setup(config){
     def env = System.getenv()
     def instance = Jenkins.getInstance()
+    def slaveAgentPorts = env['JENKINS_SLAVE_AGENT_PORT']
     def executersCount = env['JENKINS_ENV_EXECUTERS']
     def cliOverRemoting = env['JENKINS_ENV_CLI_REMOTING_ENABLED']
     def useScriptSecurity = env['JENKINS_ENV_USE_SCRIPT_SECURITY']
     def changeWorkspaceDir = env['JENKINS_ENV_CHANGE_WORKSPACE_DIR']
-    
+
     def jenkinsUrl = env['JENKINS_ENV_JENKINS_URL']
     def adminAddress = env['JENKINS_ENV_ADMIN_ADDRESS']
+
+    if(slaveAgentPorts){
+        Jenkins.instance.setSlaveAgentPort(asInt(slaveAgentPorts, 50000))
+        Jenkins.instance.save()
+    }
 
     if(jenkinsUrl || adminAddress){
         def jenkinsLocationConfig = jenkins.model.JenkinsLocationConfiguration.get()
@@ -23,7 +36,8 @@ def setup(config){
         }
         jenkinsLocationConfig.save()
     }
-    
+
+
 
     instance.setNumExecutors(executersCount  ? executersCount.toInteger() : 0)
     CLI.get().setEnabled(cliOverRemoting ? cliOverRemoting.toBoolean() : false)

@@ -83,27 +83,27 @@ def dockerCloud(config){
                 def dockerTemplate = new DockerTemplate(
                     new DockerTemplateBase(
                         temp.image,
-                        temp.pullCredentialsId,
+                        temp.pullCredentialsId?:'',
                         temp.dns?.join(' '),
-                        temp.network,
-                        temp.command,
+                        temp.network?:'',
+                        temp.command?:'',
                         temp.volumes?.join(' '),
                         temp.volumesFrom?.join(' '),
                         temp.environment?.collect{k,v -> "${k}=${v}"}?.join("\n"),
-                        temp.lxcConf,
-                        temp.hostname,
+                        temp.lxcConf?:'',
+                        temp.hostname?:'',
                         asInt(temp.memory),
                         asInt(temp.memorySwap),
                         asInt(temp.cpu),
-                        temp.ports?.join(' '),
+                        temp.ports?.join(' ') ?:'',
                         asBoolean(temp.bindAllPorts),
                         asBoolean(temp.privileged),
                         asBoolean(temp.tty),
                         temp.macAddress
                     ),
                     temp.labels?.join(' '),
-                    temp.remoteFs,
-                    temp.remoteFsMapping,
+                    temp.remoteFs?:'',
+                    temp.remoteFsMapping?:'',
                     temp.instanceCap?.toString() ?: "",
                     []
                 )
@@ -112,7 +112,7 @@ def dockerCloud(config){
                 dockerTemplate.connector = new io.jenkins.docker.connector.DockerComputerJNLPConnector(
                     new JNLPLauncher(tunnel, temp.jvmArgs)
                 )
-                dockerTemplate.connector.user = config.jnlpUser
+                dockerTemplate.connector.user = config.jnlpUser?:''
                 dockerTemplate.removeVolumes = asBoolean(temp.removeVolumes)
                 return dockerTemplate
             },
@@ -123,10 +123,11 @@ def dockerCloud(config){
             asInt(containerCap, 100),
             asInt(connectTimeout),
             asInt(readTimeout),
-            apiVersion,
-            dockerHostname
+            apiVersion?:'',
+            dockerHostname?:''
         )
-        return dockerCloud 
+        dockerCloud.exposeDockerHost = asBoolean(exposeDockerHost, true)
+        return dockerCloud
     }
 }
 
@@ -147,10 +148,10 @@ def ecsCloud(config){
                     temp.logDriverOptions?.collect{ k,v -> new LogDriverOption(k,v) },
                     temp.environment?.collect{ k, v -> new EnvironmentEntry(k,v) },
                     temp.extraHosts?.collect { k, v -> new ExtraHostEntry(k,v) },
-                    temp.volumes?.collect { vol -> parseContainerVolume(vol){ 
-                        vol_name, host_path, container_path,read_only -> 
-                            new MountPointEntry(vol_name, host_path, container_path,read_only) 
-                        } 
+                    temp.volumes?.collect { vol -> parseContainerVolume(vol){
+                        vol_name, host_path, container_path,read_only ->
+                            new MountPointEntry(vol_name, host_path, container_path,read_only)
+                        }
                     }
                 )
                 ecsTemplate.jvmArgs = temp.jvmArgs
@@ -176,7 +177,7 @@ def kubernetesCloud(config){
             id,
             templates?.collect{ temp ->
                 def name = temp.name ? temp.name : temp.labels?.join('-')
-                
+
                 def containerTemplate = new ContainerTemplate('jnlp', temp.image)
                 containerTemplate.command = temp.command ?: ''
                 containerTemplate.args = temp.args ?: ''
@@ -185,7 +186,7 @@ def kubernetesCloud(config){
                 containerTemplate.privileged = asBoolean(temp.privileged)
                 containerTemplate.alwaysPullImage = asBoolean(temp.alwaysPullImage)
                 containerTemplate.envVars = temp.environment?.collect{ k, v -> new ContainerEnvVar(k,v) } ?: []
-                containerTemplate.ports = temp.ports?.collect{ portMapping -> 
+                containerTemplate.ports = temp.ports?.collect{ portMapping ->
                     def parts = portMapping.split(':')
                     def hostPort = parts.size() > 1 ? parts[0] : null
                     def containerPort = parts.size() > 1 ? parts[1] : parts[0]
@@ -196,11 +197,11 @@ def kubernetesCloud(config){
                 containerTemplate.resourceLimitMemory = temp.resourceLimitMemory
                 containerTemplate.resourceLimitCpu = temp.containerTemplate
                 containerTemplate.livenessProbe = temp.livenessProbe ? new ContainerLivenessProbe(
-                    temp.livenessProbe.execArgs, 
-                    asInt(temp.livenessProbe.timeoutSeconds), 
-                    asInt(temp.livenessProbe.initialDelaySeconds), 
-                    asInt(temp.livenessProbe.failureThreshold), 
-                    asInt(temp.livenessProbe.periodSeconds), 
+                    temp.livenessProbe.execArgs,
+                    asInt(temp.livenessProbe.timeoutSeconds),
+                    asInt(temp.livenessProbe.initialDelaySeconds),
+                    asInt(temp.livenessProbe.failureThreshold),
+                    asInt(temp.livenessProbe.periodSeconds),
                     asInt(temp.livenessProbe.successThreshold)
                 ) : null
 
@@ -216,14 +217,14 @@ def kubernetesCloud(config){
                 podTemplate.slaveConnectTimeout = asInt(slaveConnectTimeout, PodTemplate.DEFAULT_SLAVE_JENKINS_CONNECTION_TIMEOUT)
                 podTemplate.instanceCap = asInt(instanceCap, -1)
                 podTemplate.imagePullSecrets = imagePullSecrets?.collect{secretName -> new PodImagePullSecret(secretName)}
-                def simplePodVolumes = temp.volumes?.collect { vol -> parseContainerVolume(vol){ 
-                    vol_name, host_path, container_path,read_only -> 
+                def simplePodVolumes = temp.volumes?.collect { vol -> parseContainerVolume(vol){
+                    vol_name, host_path, container_path,read_only ->
                         if(host_path){
                             return new HostPathVolume(host_path, container_path)
                         }else{
                             return new EmptyDirVolume(container_path, false)
                         }
-                    } 
+                    }
                 }
                 if(simplePodVolumes){
                     podTemplate.volumes.addAll(simplePodVolumes)
