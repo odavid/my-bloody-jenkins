@@ -114,7 +114,7 @@ def dockerCloud(config){
                 )
                 dockerTemplate.connector.user = config.jnlpUser?:''
                 dockerTemplate.removeVolumes = asBoolean(temp.removeVolumes)
-                dockerTemplate.extraHosts = extraHosts?:[]
+                dockerTemplate.dockerTemplateBase.extraHosts = extraHosts?:[]
                 return dockerTemplate
             },
             new org.jenkinsci.plugins.docker.commons.credentials.DockerServerEndpoint(
