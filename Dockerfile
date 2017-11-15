@@ -13,7 +13,8 @@ RUN apk add --no-cache shadow py-setuptools less outils-md5 && \
 
 # Install plugins
 COPY plugins.txt /usr/share/jenkins/ref/
-RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
+COPY install-plugins-with-retry.sh /usr/local/bin/install-plugins-with-retry.sh
+RUN /usr/local/bin/install-plugins-with-retry.sh < /usr/share/jenkins/ref/plugins.txt
 
 # Add all init groovy scripts to ref folder and change their ext to .override
 # so Jenkins will override them every time it starts
