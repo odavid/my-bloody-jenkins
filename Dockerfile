@@ -6,8 +6,10 @@ ARG GOSU_VERSION=1.10
 # We will change the user to jenkins using gosu
 USER root
 
-# Ability to use usermod
-RUN apk add --no-cache shadow
+# Ability to use usermod + install awscli in order to be able to watch s3 if needed
+RUN apk add --no-cache shadow py-setuptools && \
+    easy_install-2.7 pip && \
+    pip install awscli
 
 # Install plugins
 COPY plugins.txt /usr/share/jenkins/ref/
