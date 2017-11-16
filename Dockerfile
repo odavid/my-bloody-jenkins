@@ -6,16 +6,24 @@ ARG GOSU_VERSION=1.10
 # We will change the user to jenkins using gosu
 USER root
 
-# Ability to use usermod
-RUN apk add --no-cache shadow
+# Ability to use usermod + install awscli in order to be able to watch s3 if needed
+RUN apk add --no-cache shadow py-setuptools less outils-md5 && \
+    easy_install-2.7 pip && \
+    pip install awscli
 
 # Install plugins
 COPY plugins.txt /usr/share/jenkins/ref/
-RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
+COPY install-plugins-with-retry.sh /usr/local/bin/install-plugins-with-retry.sh
+RUN /usr/local/bin/install-plugins-with-retry.sh < /usr/share/jenkins/ref/plugins.txt
 
 # Add all init groovy scripts to ref folder and change their ext to .override
 # so Jenkins will override them every time it starts
 COPY init-scripts/* /usr/share/jenkins/ref/init.groovy.d/
+
+## Use this to be able to watch s3 configuration file and update jenkins everytime it changes
+RUN curl  -SsLo /usr/bin/watch-s3-file.sh https://raw.githubusercontent.com/odavid/aws-util-scripts/master/watch-s3-file.sh && \
+    chmod +x /usr/bin/watch-s3-file.sh
+
 RUN cd /usr/share/jenkins/ref/init.groovy.d/ && \
     for f in *.groovy; do mv "$f" "${f}.override"; done 
 
