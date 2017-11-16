@@ -84,21 +84,30 @@ Ok, enough talking...
 The following Environment variables are supported
 
 * ___JENKINS_ENV_ADMIN_USER___ - (***mandatory***) Represents the name of the admin user. If LDAP is your choice of authentication, then this should be a valid LDAP user id. If Using Jenkins Database, then you also need to pass the password of this user within the [configuration](#configuration-reference).
+
 * ___JAVA_OPTS\_*___ - All JAVA_OPTS_ variables will be appended to the JAVA_OPTS during startup. Use them to control options (system properties) or memory/gc options. I am using few of them by default to tweak some known issues:
     * JAVA_OPTS_DISABLE_WIZARD - disables the Jenkins 2 startup wizard
     * JAVA_OPTS_CSP - Default content security policy for HTML Publisher/Gatling plugins - See [Configuring Content Security Policy](https://wiki.jenkins.io/display/JENKINS/Configuring+Content+Security+Policy)
     * JAVA_OPTS_LOAD_STATS_CLOCK - This one is sweet (: - Reducing the load stats clock enables ephemeral slaves to start immediately without waiting for suspended slaves to be reaped
+
 * ___JENKINS_ENV_CONFIG_YAML___ - The [configuration](#configuration-reference) is stored in '/etc/jenkins-config.yml' file. When this variable is set, the contents of this variable is written to the file before starting Jenkins and can be fetched from Consul and also be watched so jenkins can update its configuration everytime this variable is being changed. Since the contents of this variable contains secrets, it is wise to store and pass it from Consul/S3 bucket. In any case, once the file is written, this variable is being unset, so it won't appear in Jenkins 'System Information' page (As I said, blood...)
 
-* __JENKINS_ENV_CONFIG_YML_S3_URL__ - An s3://<bucket>/<path-to-yaml-file> URL that will be used to fetch the configuration and updated jenkins everytime it changes. This is an alternative to ___JENKINS_ENV_CONFIG_YAML__ setup.
+* __JENKINS_ENV_CONFIG_YML_S3_URL__ - An s3://\<bucket\>/\<path-to-yaml-file\> URL that will be used to fetch the configuration and updated jenkins everytime it changes. This is an alternative to ___JENKINS_ENV_CONFIG_YAML__ setup.
+
 * __JENKINS_ENV_CONFIG_YML_S3_DISABLE_WATCH__ - If equals to 'true', then the configuration file will be fetched only at startup, but won't be watched. Default 'false'
+
 * ___JENKINS_ENV_CONFIG_YML_S3_POLLING___ - polling interval in seconds to check if file changed in s3. Default (30)
 
 * ___JENKINS_ENV_HOST_IP___ - When Jenkins is running behind an ELB or a reverse proxy, JNLP slaves must know about the real IP of Jenkins, so they can access the 50000 port. Usually they are using the Jenkins URL to try to get to it, so it is very important to let them know what is the original Jenkins IP Address. If the master has a static IP address, then this variable should be set with the static IP address of the host.
+
 * ___JENKINS_ENV_HOST_IP_CMD___ - Same as ___JENKINS_ENV_HOST_IP___, but this time a shell command expression to fetch the IP Address. In AWS, it is useful to use the EC2 Magic IP: ```JENKINS_ENV_HOST_IP_CMD='curl http://169.254.169.254/latest/meta-data/local-ipv4'```
+
 * __JENKINS_HTTP_PORT_FOR_SLAVES__ - (Default: 8080) Used together with JENKINS_ENV_HOST_IP to construct the real jenkinsUrl for jnlp slaves.
+
 * __JENKINS_ENV_USE_SCRIPT_SECURITY__ - false by default, if true, it enables the [Script Security](https://github.com/jenkinsci/job-dsl-plugin/wiki/Script-Security) for dsl scripts
+
 * __JENKINS_ENV_JENKINS_URL__ - Define the Jenkins root URL in configuration. This can be useful when you cannot run the Jenkins master docker container with host network and you need it to be available to slaves
+
 * __JENKINS_ENV_ADMIN_ADDRESS__ - Define the Jenkins admin email address
 
 ## Configuration Reference
