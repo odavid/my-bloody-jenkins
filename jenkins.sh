@@ -10,20 +10,21 @@ if [[ $# -lt 1 ]] || [[ "$1" == "-"* ]]; then
     if [ -n "${JENKINS_ENV_CONFIG_YAML}" ]; then
         echo -n "$JENKINS_ENV_CONFIG_YAML" > /etc/jenkins-config.yml
         unset JENKINS_ENV_CONFIG_YAML
-    elif [ -n "${JENKINS_ENV_CONFIG_YML_S3}" ]; then
-        echo "Fetching config from S3: ${JENKINS_ENV_CONFIG_YML_S3}"
+    elif [ -n "${JENKINS_ENV_CONFIG_YML_S3_URL}" ]; then
+        echo "Fetching config from S3: ${JENKINS_ENV_CONFIG_YML_S3_URL}"
         watch-s3-file.sh \
-             --s3-url "${JENKINS_ENV_CONFIG_YML_S3}" \
+             --s3-url "${JENKINS_ENV_CONFIG_YML_S3_URL}" \
             --filename /etc/jenkins-config.yml \
             --skip-watch
 
-        echo "Watching config from S3: ${JENKINS_ENV_CONFIG_YML_S3} in the backgroud"
+        echo "Watching config from S3: ${JENKINS_ENV_CONFIG_YML_S3_URL} in the backgroud"
         watch-s3-file.sh \
-             --s3-url "${JENKINS_ENV_CONFIG_YML_S3}" \
+             --s3-url "${JENKINS_ENV_CONFIG_YML_S3_URL}" \
             --filename /etc/jenkins-config.yml \
             --polling-interval "${JENKINS_ENV_CONFIG_YML_S3_POLLING:-30}" \
             --command 'update-config.sh' &
-
+        unset AWS_ACCESS_KEY_ID
+        unset AWS_SECRET_ACCESS_KEY
     fi
 
     # Because we are in docker, we need to fetch the real IP of jenkins, so ecs/kubernetes/docker cloud slaves will
