@@ -17,13 +17,11 @@ def sonarInstallation(config){
             databasePassword,
             mojoVersion,
             additionalProperties,
-            triggers?.collect{ trigger ->
-                new hudson.plugins.sonar.model.TriggersConfig(
-                    asBoolean(trigger.skipScmCause),
-                    asBoolean(trigger.skipUpstreamCause),
-                    trigger.envVar
-                )
-            },
+            new hudson.plugins.sonar.model.TriggersConfig(
+                asBoolean(triggers?.skipScmCause),
+                asBoolean(triggers?.skipUpstreamCause),
+                triggers?.envVar
+            ),
             sonarLogin,
             sonarPassword,
             additionalAnalysisProperties
