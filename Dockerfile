@@ -11,6 +11,25 @@ RUN apk add --no-cache shadow py-setuptools less outils-md5 && \
     easy_install-2.7 pip && \
     pip install awscli
 
+## Use this to be able to watch s3 configuration file and update jenkins everytime it changes
+RUN curl  -SsLo /usr/bin/watch-s3-file.sh https://raw.githubusercontent.com/odavid/aws-util-scripts/master/watch-s3-file.sh && \
+    chmod +x /usr/bin/watch-s3-file.sh
+
+RUN curl -SsLo /usr/bin/gosu https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-amd64 && \
+     chmod +x /usr/bin/gosu
+
+COPY update-config.sh /usr/bin/
+
+# Separate between JENKINS_HOME and WORKSPACE dir. Best if we use NFS for JENKINS_HOME 
+RUN mkdir -p /jenkins-workspace-home && \
+    chown -R jenkins:jenkins /jenkins-workspace-home
+
+# Change the original entrypoint. We will later on run it using gosu
+RUN mv /usr/local/bin/jenkins.sh /usr/local/bin/jenkins-orig.sh
+COPY jenkins.sh /usr/local/bin/jenkins.sh
+
+# Do things on behalf of jenkins user
+USER jenkins
 # Install plugins
 COPY plugins.txt /usr/share/jenkins/ref/
 COPY install-plugins-with-retry.sh /usr/local/bin/install-plugins-with-retry.sh
@@ -20,30 +39,16 @@ RUN /usr/local/bin/install-plugins-with-retry.sh < /usr/share/jenkins/ref/plugin
 # so Jenkins will override them every time it starts
 COPY init-scripts/* /usr/share/jenkins/ref/init.groovy.d/
 
-## Use this to be able to watch s3 configuration file and update jenkins everytime it changes
-RUN curl  -SsLo /usr/bin/watch-s3-file.sh https://raw.githubusercontent.com/odavid/aws-util-scripts/master/watch-s3-file.sh && \
-    chmod +x /usr/bin/watch-s3-file.sh
-
 RUN cd /usr/share/jenkins/ref/init.groovy.d/ && \
     for f in *.groovy; do mv "$f" "${f}.override"; done 
 
 # Add configuration handlers groovy scripts
 COPY config-handlers /usr/share/jenkins/config-handlers
-COPY update-config.sh /usr/bin/
-
-RUN curl -SsLo /usr/bin/gosu https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-amd64 && \
-     chmod +x /usr/bin/gosu
-
-
-# Separate between JENKINS_HOME and WORKSPACE dir. Best if we use NFS for JENKINS_HOME 
-RUN mkdir -p /jenkins-workspace-home && \
-    chown -R jenkins:jenkins /jenkins-workspace-home
 
 VOLUME /jenkins-workspace-home
 
-# Change the original entrypoint. We will later on run it using gosu
-RUN mv /usr/local/bin/jenkins.sh /usr/local/bin/jenkins-orig.sh
-COPY jenkins.sh /usr/local/bin/jenkins.sh
+# Rever to root
+USER root
 
 ####################################################################################
 # GENERAL Configuration variables
