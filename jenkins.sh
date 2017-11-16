@@ -16,13 +16,14 @@ if [[ $# -lt 1 ]] || [[ "$1" == "-"* ]]; then
              --s3-url "${JENKINS_ENV_CONFIG_YML_S3_URL}" \
             --filename /etc/jenkins-config.yml \
             --skip-watch
-
-        echo "Watching config from S3: ${JENKINS_ENV_CONFIG_YML_S3_URL} in the backgroud"
-        watch-s3-file.sh \
-             --s3-url "${JENKINS_ENV_CONFIG_YML_S3_URL}" \
-            --filename /etc/jenkins-config.yml \
-            --polling-interval "${JENKINS_ENV_CONFIG_YML_S3_POLLING:-30}" \
-            --command 'update-config.sh' &
+        if [ "$JENKINS_ENV_CONFIG_YML_S3_DISABLE_WATCH" != 'true' ]; then
+            echo "Watching config from S3: ${JENKINS_ENV_CONFIG_YML_S3_URL} in the backgroud"
+            watch-s3-file.sh \
+                --s3-url "${JENKINS_ENV_CONFIG_YML_S3_URL}" \
+                --filename /etc/jenkins-config.yml \
+                --polling-interval "${JENKINS_ENV_CONFIG_YML_S3_POLLING:-30}" \
+                --command 'update-config.sh' &
+        fi
         unset AWS_ACCESS_KEY_ID
         unset AWS_SECRET_ACCESS_KEY
     fi
