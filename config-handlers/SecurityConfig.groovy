@@ -63,7 +63,7 @@ def setupLdap(config){
                 groupSearchFilter,
                 groupMembershipStrategy,
                 managerDN,
-                Secret.fromString(managerPassword),
+                hudson.util.Secret.fromString(managerPassword),
                 asBoolean(inhibitInferRootDN),
                 asBoolean(disableMailAddressResolver),
                 new LDAPSecurityRealm.CacheConfiguration(20, 300), [
