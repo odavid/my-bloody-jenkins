@@ -8,8 +8,5 @@ script:
 
 after_success:
   - if [ "$TRAVIS_BRANCH" == 'master' ]; then
-    docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
-    docker push odavid/my-bloody-jenkins;
-    LTS_VERSION="$(grep FROM Dockerfile | cut -d':' -f 2)";
-    echo "LTS_VERSION = $LTS_VERSION";
+    curl --request POST --header Content-Type:application/json --data '{"build":true}' --url $DOCKER_CLOUD_TRIGGER_URL
     fi
