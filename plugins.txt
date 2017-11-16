@@ -93,6 +93,7 @@ matrix-project:1.12
 maven-plugin:3.0
 mercurial:2.2
 momentjs:1.1.1
+p4:1.8.1
 parallel-test-executor:1.9
 parameterized-trigger:2.35.2
 pipeline-build-step:2.5.1
