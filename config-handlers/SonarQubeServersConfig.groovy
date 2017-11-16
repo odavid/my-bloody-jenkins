@@ -26,12 +26,6 @@ def sonarInstallation(config){
             sonarPassword,
             additionalAnalysisProperties
         )
-
-String name, String serverUrl, String serverVersion, String serverAuthenticationToken,
-    String databaseUrl, String databaseLogin, String databasePassword,
-    String mojoVersion, String additionalProperties, TriggersConfig triggers,
-    String sonarLogin, String sonarPassword, String additionalAnalysisProperties        
-        return sonarInstallation
     }
 }
 
