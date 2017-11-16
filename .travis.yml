@@ -6,7 +6,8 @@ services:
 script:
   - docker build --rm --force-rm -t odavid/my-bloody-jenkins .
 
-after_success:
-  - if [ "$TRAVIS_BRANCH" == 'master' ]; then
-    curl --request POST --header Content-Type:application/json --data '{"build":true}' --url $DOCKER_CLOUD_TRIGGER_URL
-    fi
+deploy:
+  - provider: script
+    script: curl --request POST --header Content-Type:application/json --data '{"build":true}' --url ${DOCKER_CLOUD_TRIGGER_URL}
+    on:
+      branch: master
