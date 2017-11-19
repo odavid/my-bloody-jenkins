@@ -9,7 +9,7 @@ def setup(config) {
     config = config ?: [:]
     if(config.proxyHost){
         config.with{
-            def pc = new hudson.ProxyConfiguration(proxyHost, port, userName, password, noProxyHost)
+            def pc = new hudson.ProxyConfiguration(proxyHost, port, username, password, noProxyHost)
             jenkins.model.Jenkins.instance.proxy = pc
             pc.save()
         }
