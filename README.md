@@ -605,3 +605,17 @@ seed_jobs:
           new lines
 
 ```
+
+### Running Jenkins behind proxy
+When running Jenkins behind a proxy server, add the following to your config yaml file:
+
+```yaml
+
+proxy:
+  proxyHost: <proxy_address>
+  port: <port>
+  username: <proxy_auth> # leave empty if not required
+  password: <proxy_auth> # leave empty if not required
+  noProxyHost: <comma delimited>
+
+```
