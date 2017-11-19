@@ -2,7 +2,7 @@
 
 ### 2.73.3-2 (Not released yet)
 
-* Add proxy configuration when Jenkins is running behind a proxy server [#41]()
+* Add proxy configuration when Jenkins is running behind a proxy server [#41](https://github.com/odavid/my-bloody-jenkins/issues/41)
 
 
 ### 2.73.3-1
