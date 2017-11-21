@@ -31,7 +31,7 @@ services:
             dockerHostname: ${MY_HOST_IP}
             templates:
               - name: docker-slave
-                image: jenkinsci/jnlp-slave:latest
+                image: odavid/jenkins-jnlp-slave:latest
                 labels:
                   - generic
                 remoteFs: /home/jenkins

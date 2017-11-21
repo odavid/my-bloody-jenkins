@@ -17,8 +17,7 @@ services:
         security:
           realm: jenkins_database
           adminPassword: admin
-        credentials:
-          minikube-cert:
+        odavid/jenkins-jnlp-slave:
             type: cert
             base64: ${MINIKUBE_CERT}
             password: ${MINIKUBE_CERT_PASSWORD}
@@ -36,7 +35,7 @@ services:
             credentialsId: minikube-cert
             templates:
               - name: kubeslave
-                image: jenkinsci/jnlp-slave:latest
+                image: odavid/jenkins-jnlp-slave:latest
                 labels:
                   - generic
                 remoteFs: /home/jenkins
