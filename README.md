@@ -113,6 +113,18 @@ The following Environment variables are supported
 ## Configuration Reference
 The '/etc/jenkins-config.yml' file is divided into main configuration sections. Each section is responsible for a specific aspect of jenkins configuration.
 
+### Environment Variables Section
+Responsible for adding global environment variables to jenkins config.
+Keys are environment variable names and values are their corresponding values. Note that variables names should be a valid environment variable name.
+
+```yaml
+  environment:
+    ENV_KEY_NAME1: ENV_VALUE1
+    ENV_KEY_NAME2: ENV_VALUE1
+    
+```
+
+
 ### Security Section
 Responsible for:
 * Setting up security realm
