@@ -55,8 +55,10 @@ if [[ $# -lt 1 ]] || [[ "$1" == "-"* ]]; then
     # we need to add jenkins user to the docker group
     if [ -S /var/run/docker.sock ]; then
         DOCKER_SOCKET_OWNER_GROUP_ID=$(stat -c %g /var/run/docker.sock)
-        groups jenkins | grep docker || groupadd -g $DOCKER_SOCKET_OWNER_GROUP_ID docker
-        id jenkins -G | grep $DOCKER_SOCKET_OWNER_GROUP_ID || usermod -G docker jenkins
+        echo "jenkins groups: $(id jenkins -G)"
+        getent group $DOCKER_SOCKET_OWNER_GROUP_ID || groupadd -g $DOCKER_SOCKET_OWNER_GROUP_ID docker 
+        id jenkins -G | grep $DOCKER_SOCKET_OWNER_GROUP_ID || usermod -G "$(id -G jenkins | tr ' ' ','),$DOCKER_SOCKET_OWNER_GROUP_ID" jenkins
+        echo "jenkins new groups: $(id jenkins -G)"
     fi
 
     # This changes the actual command to run the original jenkins entrypoint
