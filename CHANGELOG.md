@@ -2,6 +2,7 @@
 
 ### 2.73.3-3 (Not released yet)
 * add jenkins environment variables section [#45](https://github.com/odavid/my-bloody-jenkins/issues/45)
+* Don't create docker group if GID already exist on start [#46](https://github.com/odavid/my-bloody-jenkins/issues/46)
 
 ### 2.73.3-2
 
