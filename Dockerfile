@@ -12,8 +12,8 @@ RUN apk add --no-cache shadow py-setuptools less outils-md5 && \
     pip install awscli
 
 ## Use this to be able to watch s3 configuration file and update jenkins everytime it changes
-RUN curl  -SsLo /usr/bin/watch-s3-file.sh https://raw.githubusercontent.com/odavid/aws-util-scripts/master/watch-s3-file.sh && \
-    chmod +x /usr/bin/watch-s3-file.sh
+RUN curl  -SsLo /usr/bin/watch-file.sh https://raw.githubusercontent.com/odavid/aws-util-scripts/watch-file/scripts/watch-file.sh && \
+    chmod +x /usr/bin/watch-file.sh
 
 RUN curl -SsLo /usr/bin/gosu https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-amd64 && \
      chmod +x /usr/bin/gosu
