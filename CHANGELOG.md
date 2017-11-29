@@ -1,6 +1,6 @@
 ## Changelog
 
-### 2.73.3-4 (Not released yet)
+### 2.73.3-4
 * Generalize S3 Watch to be able to watch other sources [#51](https://github.com/odavid/my-bloody-jenkins/issues/51)
     * **NOTE:** The Following variables were renamed:
         * JENKINS_ENV_CONFIG_YML_S3_URL --> JENKINS_ENV_CONFIG_YML_URL
