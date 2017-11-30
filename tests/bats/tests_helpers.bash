@@ -13,6 +13,7 @@ function docker_build(){
 
 function run_test_container_and_wait(){
     docker run --name $TEST_CONTAINER_NAME -d \
+        -p 9090:8080 \
         -e JAVA_OPTS_MEM='-Xmx1g' \
         -e JENKINS_ENV_ADMIN_USER=admin \
         -e JENKINS_ENV_CONFIG_YAML="
