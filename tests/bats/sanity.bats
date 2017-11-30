@@ -7,40 +7,40 @@ load tests_helpers
     run_test_container_and_wait
 }
 
-@test "SanityTest" {
-    run_test "SanityTest"
+@test "Sanity" {
+    run_groovy_test
 }
 
-@test "ToolsConfig General" {
-    run_test "ToolsConfig/GeneralTest"
+@test "ToolsConfig/General" {
+    run_groovy_test
 }
 
-@test "ToolsConfig Maven" {
-    run_test "ToolsConfig/MavenTest"
+@test "ToolsConfig/Maven" {
+    run_groovy_test
 }
 
-@test "ToolsConfig Ant" {
-    run_test "ToolsConfig/AntTest"
+@test "ToolsConfig/Ant" {
+    run_groovy_test
 }
 
-@test "ToolsConfig JDK" {
-    run_test "ToolsConfig/JDKTest"
+@test "ToolsConfig/JDK" {
+    run_groovy_test
 }
 
-@test "ToolsConfig Gradle" {
-    run_test "ToolsConfig/GradleTest"
+@test "ToolsConfig/Gradle" {
+    run_groovy_test
 }
 
-@test "ToolsConfig Xvfb" {
-    run_test "ToolsConfig/XvfbTest"
+@test "ToolsConfig/Xvfb" {
+    run_groovy_test
 }
 
-@test "ToolsConfig SonarQubeRunner" {
-    run_test "ToolsConfig/SonarQubeRunnerTest"
+@test "ToolsConfig/SonarQubeRunner" {
+    run_groovy_test
 }
 
-@test "ToolsConfig CustomInstallers" {
-    run_test "ToolsConfig/CustomInstallersTest"
+@test "ToolsConfig/CustomInstallers" {
+    run_groovy_test
 }
 
 @test "terminate container" {

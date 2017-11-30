@@ -35,7 +35,8 @@ function teardown_test_container(){
     docker rm -f -v "$TEST_CONTAINER_NAME" || true
 }
 
-function run_test(){
-    docker exec -t $TEST_CONTAINER_NAME run-test.sh /tests/$1.groovy
+function run_groovy_test(){
+    local test_name=${1:-$BATS_TEST_DESCRIPTION}
+    docker exec -t $TEST_CONTAINER_NAME run-test.sh /tests/${test_name}Test.groovy
 }
 
