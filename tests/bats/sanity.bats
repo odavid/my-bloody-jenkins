@@ -35,6 +35,10 @@ load tests_helpers
     run_test "ToolsConfig/XvfbTest"
 }
 
+@test "ToolsConfig SonarQubeRunner" {
+    run_test "ToolsConfig/SonarQubeRunnerTest"
+}
+
 @test "ToolsConfig CustomInstallers" {
     run_test "ToolsConfig/CustomInstallersTest"
 }
