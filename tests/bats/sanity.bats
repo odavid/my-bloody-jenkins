@@ -11,6 +11,10 @@ load tests_helpers
     run_test "SanityTest"
 }
 
+@test "ToolsConfigTest" {
+    run_test "ToolsConfigTest"
+}
+
 @test "terminate container" {
     teardown_test_container
 }
