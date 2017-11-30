@@ -98,7 +98,6 @@ cert-cred:
         assert it.password.toString() == "secret"
         assert it.keyStoreSource instanceof com.cloudbees.plugins.credentials.impl.CertificateCredentialsImpl.UploadedKeyStoreSource
         assert it.keyStoreSource.keyStoreBytes
-        
     }
 }
 testCreds()
