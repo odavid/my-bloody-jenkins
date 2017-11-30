@@ -23,6 +23,10 @@ load tests_helpers
     run_test "ToolsConfig/AntTest"
 }
 
+@test "ToolsConfig JDK" {
+    run_test "ToolsConfig/JDKTest"
+}
+
 @test "terminate container" {
     teardown_test_container
 }
