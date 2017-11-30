@@ -11,8 +11,12 @@ load tests_helpers
     run_test "SanityTest"
 }
 
-@test "ToolsConfigTest" {
-    run_test "ToolsConfigTest"
+@test "ToolsConfig General" {
+    run_test "ToolsConfig/GeneralTest"
+}
+
+@test "ToolsConfig Maven" {
+    run_test "ToolsConfig/MavenTest"
 }
 
 @test "terminate container" {
