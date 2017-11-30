@@ -19,6 +19,10 @@ load tests_helpers
     run_test "ToolsConfig/MavenTest"
 }
 
+@test "ToolsConfig Ant" {
+    run_test "ToolsConfig/AntTest"
+}
+
 @test "terminate container" {
     teardown_test_container
 }

@@ -4,7 +4,7 @@ handler = 'Tools'
 configHandler = evaluate(new File("/usr/share/jenkins/config-handlers/${handler}Config.groovy"))
 
 
-def testMavenToolAutoInstaller(){
+def testToolAutoInstaller(){
 	def config = new Yaml().load("""
 installations:
   MAVEN-351:
@@ -19,7 +19,7 @@ installations:
 	assert installation.properties[0].installers[0].id == '3.5.1'
 }
 
-def testMavenToolManual(){
+def testToolManualInstaller(){
 	def config = new Yaml().load("""
 installations:
   MAVEN-35:
@@ -32,5 +32,5 @@ installations:
 	assert installation.home == '/user/share/maven-3.5.1'
 }
 
-testMavenToolAutoInstaller()
-testMavenToolManual()
+testToolAutoInstaller()
+testToolManualInstaller()
