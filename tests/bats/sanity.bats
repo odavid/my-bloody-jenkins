@@ -31,6 +31,10 @@ load tests_helpers
     run_test "ToolsConfig/GradleTest"
 }
 
+@test "ToolsConfig Xvfb" {
+    run_test "ToolsConfig/XvfbTest"
+}
+
 @test "terminate container" {
     teardown_test_container
 }
