@@ -27,6 +27,10 @@ load tests_helpers
     run_test "ToolsConfig/JDKTest"
 }
 
+@test "ToolsConfig Gradle" {
+    run_test "ToolsConfig/GradleTest"
+}
+
 @test "terminate container" {
     teardown_test_container
 }
