@@ -11,38 +11,6 @@ load tests_helpers
     run_groovy_test
 }
 
-@test "ToolsConfig/General" {
-    run_groovy_test
-}
-
-@test "ToolsConfig/Maven" {
-    run_groovy_test
-}
-
-@test "ToolsConfig/Ant" {
-    run_groovy_test
-}
-
-@test "ToolsConfig/JDK" {
-    run_groovy_test
-}
-
-@test "ToolsConfig/Gradle" {
-    run_groovy_test
-}
-
-@test "ToolsConfig/Xvfb" {
-    run_groovy_test
-}
-
-@test "ToolsConfig/SonarQubeRunner" {
-    run_groovy_test
-}
-
-@test "ToolsConfig/CustomInstallers" {
-    run_groovy_test
-}
-
 @test "terminate container" {
     teardown_test_container
 }
