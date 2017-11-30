@@ -7,7 +7,7 @@ load tests_helpers
     run_test_container_and_wait
 }
 
-@test "CredsConfig/General" {
+@test "CredsConfig" {
     run_groovy_test
 }
 
