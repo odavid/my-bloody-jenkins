@@ -22,7 +22,7 @@ def setup(config) {
         }
     }
     desc.connections = connections
-    desc.useAuthenticatedEndpoint = useAuthenticatedEndpoint != null ? useAuthenticatedEndpoint : true
+    desc.useAuthenticatedEndpoint = config.useAuthenticatedEndpoint != null ? config.useAuthenticatedEndpoint : true
     return desc
 }
 return this
