@@ -3,6 +3,7 @@ import jenkins.model.Jenkins
 import jenkins.plugins.hipchat.*
 import jenkins.plugins.hipchat.impl.*
 import jenkins.plugins.hipchat.model.*
+import jenkins.plugins.hipchat.model.notifications.Notification.Color
 import jenkins.plugins.slack.*
 import net.sf.json.JSONObject
 
@@ -25,9 +26,9 @@ def hipchatConfig(config){
         hipchat.defaultNotifications = defaultNotifications?.collect{ n ->
             return new NotificationConfig(
                 asBoolean(n.notifyEnabled), 
-                n.textFormat, 
+                asBoolean(n.textFormat), 
                 n.notificationType ? NotificationType.valueOf(n.notificationType): null, 
-                n.color ? jenkins.plugins.hipchat.model.notifications.Color.valueOf(n.color) : null,
+                n.color ? Color.valueOf(n.color) : null,
                 n.messageTemplate
             )
         }
