@@ -40,4 +40,42 @@ emailAttr: email
     assert ldapConfig.mailAddressAttributeName == 'email'
 }
 
+
+def testActiveDirectory(){
+	def config = new Yaml().load("""
+domains:
+  - name: my-domain.com
+    servers:
+      - dc1.com
+      - dc2.com
+    site: site
+    bindName: my-domain.com\\search
+    bindPassword: password
+groupLookupStrategy: RECURSIVE
+removeIrrelevantGroups: true
+customDomain: true
+cache:
+  size: 400
+  ttl: 400
+startTls: true
+tlsConfiguration: TRUST_ALL_CERTIFICATES
+jenkinsInternalUser: admin
+""")
+    def realm = configHandler.setupActiveDirectory(config)
+    assert realm instanceof hudson.plugins.active_directory.ActiveDirectorySecurityRealm
+    def adDomain = realm.domains[0] 
+    assert adDomain.name == 'my-domain.com'
+    assert adDomain.servers == 'dc1.com:3268,dc2.com:3268'
+    assert adDomain.site == 'site'
+    assert adDomain.bindName == 'my-domain.com\\search'
+    assert adDomain.bindPassword.toString() == 'password'
+    assert realm.groupLookupStrategy == hudson.plugins.active_directory.GroupLookupStrategy.RECURSIVE
+    assert realm.cache.size == 400
+    assert realm.cache.ttl == 400
+    assert realm.startTls
+    assert realm.tlsConfiguration == hudson.plugins.active_directory.TlsConfiguration.TRUST_ALL_CERTIFICATES
+    assert realm.internalUsersDatabase.jenkinsInternalUser == 'admin'
+}
+
 testLdap()
+testActiveDirectory()
