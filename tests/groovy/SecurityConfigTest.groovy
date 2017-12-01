@@ -23,7 +23,7 @@ emailAttr: email
 """)
     def ldapRealm = configHandler.setupLdap(config)
     assert ldapRealm instanceof hudson.security.LDAPSecurityRealm
-    def ldapConfig = ldapRealm.configurations[0] 
+    def ldapConfig = ldapRealm.configurations[0]
     assert ldapConfig.server == 'ldap.mydomain.com'
     assert ldapConfig.rootDN == 'DC=mydomain,DC=com'
     assert ldapConfig.userSearchBase == 'OU=users,DC=mydomain,DC=com'
@@ -63,7 +63,7 @@ jenkinsInternalUser: admin
 """)
     def realm = configHandler.setupActiveDirectory(config)
     assert realm instanceof hudson.plugins.active_directory.ActiveDirectorySecurityRealm
-    def adDomain = realm.domains[0] 
+    def adDomain = realm.domains[0]
     assert adDomain.name == 'my-domain.com'
     assert adDomain.servers == 'dc1.com:3268,dc2.com:3268'
     assert adDomain.site == 'site'
@@ -77,5 +77,28 @@ jenkinsInternalUser: admin
     assert realm.internalUsersDatabase.jenkinsInternalUser == 'admin'
 }
 
+def testAuthorizationStrategy(){
+	def config = new Yaml().load("""
+permissions:
+  authenticated:
+    - hudson.model.Hudson.Read
+    - hudson.model.Item.Read
+    - hudson.model.Item.Discover
+    - hudson.model.Item.Cancel
+  junior-developers:
+    - hudson.model.Item.Read
+"""
+    )
+    def strategy = configHandler.createAuthorizationStrategy(config, 'admin')
+    assert strategy instanceof hudson.security.ProjectMatrixAuthorizationStrategy
+    def grantedPermissions = strategy.grantedPermissions
+    assert grantedPermissions[hudson.security.Permission.fromId('hudson.model.Hudson.Read')] == (['authenticated'] as Set)
+    assert grantedPermissions[hudson.security.Permission.fromId('hudson.model.Item.Read')] == (['authenticated', 'junior-developers'] as Set)
+    assert grantedPermissions[hudson.security.Permission.fromId('hudson.model.Item.Discover')] == (['authenticated'] as Set)
+    assert grantedPermissions[hudson.security.Permission.fromId('hudson.model.Item.Cancel')] == (['authenticated'] as Set)
+    assert grantedPermissions[hudson.security.Permission.fromId('hudson.model.Hudson.Administer')] == (['admin'] as Set)
+ }
+
 testLdap()
 testActiveDirectory()
+testAuthorizationStrategy()
