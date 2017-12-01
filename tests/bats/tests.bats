@@ -34,6 +34,10 @@ load tests_helpers
     run_groovy_test
 }
 
+@test "JiraConfig" {
+    run_groovy_test
+}
+
 @test "terminate container" {
     teardown_test_container
 }

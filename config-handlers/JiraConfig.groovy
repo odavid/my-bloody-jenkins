@@ -10,7 +10,7 @@ def setup(config) {
     def desc = jenkins.model.Jenkins.instance.getDescriptor(hudson.plugins.jira.JiraProjectProperty)
     def sites = config.sites?.collect{ siteConfig ->
         siteConfig.with{
-            return new hudson.plugins.jira.JiraSite(
+            def site = new hudson.plugins.jira.JiraSite(
                 url ? new URL(url) : null,
                 alternativeUrl ? new URL(alternativeUrl) : null,
                 username,
@@ -23,6 +23,11 @@ def setup(config) {
                 roleVisibility,
                 asBoolean(useHTTPAuth)
             )
+            site.disableChangelogAnnotations = asBoolean(disableChangelogAnnotations)
+            site.timeout = asInt(timeout, hudson.plugins.jira.JiraSite.DEFAULT_TIMEOUT)
+            site.dateTimePattern = dateTimePattern
+            site.appendChangeTimestamp = asBoolean(appendChangeTimestamp, null)
+            return site
         }
     }
     if(sites){
