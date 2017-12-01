@@ -3,7 +3,6 @@
 load tests_helpers
 
 @test "start container" {
-    docker_build
     run_test_container_and_wait
 }
 
@@ -16,6 +15,10 @@ load tests_helpers
 }
 
 @test "ToolsConfig" {
+    run_groovy_test
+}
+
+@test "SecurityConfig" {
     run_groovy_test
 }
 
