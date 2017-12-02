@@ -92,7 +92,7 @@ def dockerCloud(config){
                         temp.network?:'',
                         temp.command?:'',
                         temp.volumes?.join('\n'),
-                        temp.volumesFrom?.join(' '),
+                        temp.volumesFrom?.join('\n'),
                         temp.environment?.collect{k,v -> "${k}=${v}"}?.join("\n"),
                         temp.lxcConf?:'',
                         temp.hostname?:'',
@@ -116,7 +116,7 @@ def dockerCloud(config){
                 dockerTemplate.connector = new io.jenkins.docker.connector.DockerComputerJNLPConnector(
                     new JNLPLauncher(tunnel, temp.jvmArgs)
                 )
-                dockerTemplate.connector.user = config.jnlpUser?:''
+                dockerTemplate.connector.user = temp.jnlpUser ?: config.jnlpUser ?: ''
                 dockerTemplate.removeVolumes = asBoolean(temp.removeVolumes)
                 dockerTemplate.dockerTemplateBase.extraHosts = extraHosts?:[]
                 return dockerTemplate
@@ -128,7 +128,7 @@ def dockerCloud(config){
             asInt(containerCap, 100),
             asInt(connectTimeout),
             asInt(readTimeout),
-            apiVersion?:'',
+            apiVersion?.toString() ?: '',
             dockerHostname?:''
         )
         dockerCloud.exposeDockerHost = asBoolean(exposeDockerHost, true)

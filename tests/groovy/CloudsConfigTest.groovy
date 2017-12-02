@@ -233,9 +233,63 @@ kube-cloud:
     }
 }
 
+def testDocker(){
+	def config = new Yaml().load("""
+docker-cloud:
+  type: docker
+  dockerHostUri: unix:///var/run/docker.sock
+  credentialsId: docker-cert
+  containerCap: 20
+  connectTimeout: 10
+  readTimeout: 20
+  apiVersion: 1.24
+  dockerHostname: localhost
+  exposeDockerHost: false
+  templates:
+    - image: odavid/jenkins-jnlp-slave:latest
+      pullCredentialsId: pull-cred-id
+      dns:
+        - 8.8.8.8
+        - 8.8.7.7
+      network: host
+      command: /bin/bash
+      volumes:
+        - /home/xxx
+        - /home/bbb:ro
+        - /home/ccc:rw
+        - /home/yyy:/home/yyy
+        - /home/zzz:/home/zzz:ro
+        - /home/aaa:/home/aaa:rw
+        - /home/aaa1:/home/aaa1234:rw
+      volumesFrom:
+        - vvv1
+        - vvv2
+      environment:
+        ENV1: env1Value
+        ENV2: env2Value
+      lxcConf: xxx yyy
+      hostname: docker-host-name
+      memory: 50
+      memorySwap: 10
+      cpu: 1024
+      ports:
+        - 9090:8080
+        - 1500
+      bindAllPorts: true
+      privileged: true
+      tty: true
+      macAddress: max-address              
+""")
+    configHandler.setup(config)
+
+    assertCloud('docker-cloud', com.nirima.jenkins.plugins.docker.DockerCloud){
+    }
+}
+
 def testClouds(){
     testEcs()
     testKubernetes()
+    testDocker()
 }
 
 testClouds()
