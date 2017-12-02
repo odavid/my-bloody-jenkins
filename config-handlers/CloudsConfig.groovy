@@ -34,13 +34,17 @@ def parseContainerVolume(volume, closure){
     if(parts.size() == 1){
         container_path = parts[0]
     }
-    if(parts.size() == 2 && parts[1] != 'ro'){
+    if(parts.size() == 2 && !(parts[1] in ['ro', 'rw'])){
         host_path = parts[0]
         container_path = parts[1]
     }
     if(parts.size() == 2 && parts[1] == 'ro'){
         container_path = parts[0]
         read_only = true
+    }
+    if(parts.size() == 2 && parts[1] == 'rw'){
+        container_path = parts[0]
+        read_only = false
     }
     if(parts.size() == 3 && parts[2] == 'ro'){
         host_path = parts[0]
