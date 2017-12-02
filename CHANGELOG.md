@@ -18,7 +18,6 @@
     * durable-task:1.16
     * gitlab-plugin:1.5.1
     * junit:1.22.2
-    * lockable-resources:1.11.2
     * p4:1.8.1
     * pipeline-model-api:1.2.4
     * pipeline-model-definition:1.2.4
