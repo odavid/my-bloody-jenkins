@@ -10,7 +10,7 @@
         * JENKINS_ENV_CONFIG_YML_S3_URL --> JENKINS_ENV_CONFIG_YML_URL
         * JENKINS_ENV_CONFIG_YML_S3_DISABLE_WATCH --> JENKINS_ENV_CONFIG_YML_URL_DISABLE_WATCH
         * JENKINS_ENV_CONFIG_YML_S3_POLLING --> JENKINS_ENV_CONFIG_YML_URL_POLLING
-
+* docker cloud: Add jnlpUser in template level [#47](https://github.com/odavid/my-bloody-jenkins/issues/47)
 * Added [anchore-container-scanner:1.0.12 plugin](https://wiki.jenkins.io/display/JENKINS/Anchore+Container+Image+Scanner+Plugin)
 * Updated plugins:
     * blueocean-autofavorite:1.1.0
