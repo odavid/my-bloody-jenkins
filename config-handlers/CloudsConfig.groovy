@@ -192,10 +192,10 @@ def kubernetesCloud(config){
                 containerTemplate.alwaysPullImage = asBoolean(temp.alwaysPullImage)
                 containerTemplate.envVars = temp.environment?.collect{ k, v -> new ContainerEnvVar(k,v) } ?: []
                 containerTemplate.ports = temp.ports?.collect{ portMapping ->
-                    def parts = portMapping.split(':')
+                    def parts = portMapping?.toString().split(':')
                     def hostPort = parts.size() > 1 ? parts[0] : null
                     def containerPort = parts.size() > 1 ? parts[1] : parts[0]
-                    return PortMapping(null, containerPort?.toInteger(), hostPort?.toInteger())
+                    return new PortMapping(null, containerPort?.toInteger(), hostPort?.toInteger())
                 }
                 containerTemplate.resourceRequestMemory = temp.resourceRequestMemory
                 containerTemplate.resourceRequestCpu = temp.resourceRequestCpu

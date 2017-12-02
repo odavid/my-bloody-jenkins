@@ -11,7 +11,7 @@ def assertCloud(id, type, closure){
     }
 }
 
-def testClouds(){
+def testEcs(){
 	def config = new Yaml().load("""
 ecs-cloud:
   type: ecs
@@ -101,6 +101,81 @@ ecs-cloud:
         assertMountPoint('/home/zzz', '/home/zzz', '/home/zzz', true)
         assertMountPoint('/home/aaa1', '/home/aaa1', '/home/aaa1234', false)
     }
-    
 }
+
+def testKubernetes(){
+	def config = new Yaml().load("""
+kube-cloud:
+  type: kubernetes
+  namespace: jenkins-ns
+  jenkinsUrl: http://127.0.0.1:8080
+  serverUrl: http://127.0.0.1:6000
+  tunnel: 127.0.0.1:8080
+  credentialsId: kube-cred
+  skipTlsVerify: true
+  serverCertificate: kube-cred
+  maxRequestsPerHost: 10
+  connectTimeout: 10
+  retentionTimeout: 10
+  readTimeout: 10
+  containerCap: 10
+  defaultsProviderTemplate: defaultsProviderTemplate
+  templates:
+    - name: kube-cloud
+      namespace: jenkins-ns
+      inheritFrom: general-pod
+      nodeSelector: nodeSelector
+      serviceAccount: jenkins-service-account
+      slaveConnectTimeout: 60
+      instanceCap: 10
+      imagePullSecrets:
+        - xxx
+        - yyy
+      labels:
+        - generic
+        - kubernetes
+      image: odavid/jenkins-jnlp-template:latest
+      command: /run/me
+      args: x y z
+      tty: true
+      remoteFs: /home/jenkins
+      privileged: true
+      alwaysPullImage: true
+      environment:
+        ENV1: env1Value
+        ENV2: env2Value
+      ports:
+        - 9090:8080
+        - 1500
+      resourceRequestMemory: 1024Mi
+      resourceRequestCpu: 512m
+      resourceLimitCpu: 1024m
+      resourceLimitMemory: 512Mi
+      volumes:
+        - /home/xxx
+        - /home/bbb:ro
+        - /home/ccc:rw
+        - /home/yyy:/home/yyy
+        - /home/zzz:/home/zzz:ro
+        - /home/aaa:/home/aaa:rw
+        - /home/aaa1:/home/aaa1234:rw
+      livenessProbe:
+        timeoutSeconds: 10
+        initialDelaySeconds: 10
+        failureThreshold: 10
+        periodSeconds: 10
+        successThreshold: 10
+""")
+    configHandler.setup(config)
+
+    assertCloud('kube-cloud', org.csanchez.jenkins.plugins.kubernetes.KubernetesCloud){
+        assert it.credentialsId == 'kube-cred'
+    }
+}
+
+def testClouds(){
+    testEcs()
+    testKubernetes()
+}
+
 testClouds()
