@@ -37,7 +37,12 @@ load tests_helpers
 @test "JiraConfig" {
     run_groovy_test
 }
+
 @test "NotifiersConfig" {
+    run_groovy_test
+}
+
+@test "PipelineLibrariesConfig" {
     run_groovy_test
 }
 
