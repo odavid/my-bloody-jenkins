@@ -50,7 +50,7 @@ def seedJobConfig(config){
                         def type = parameter.contains('\n') ? 'text' : 'string'
                         parameter = [type: type, value: parameter]
                     }else if(parameter instanceof List){
-                        parameter = [type: 'choice', value: parameter]
+                        parameter = [type: 'choice', choices: parameter]
                     }else if(parameter instanceof Boolean){
                         parameter = [type: 'boolean', value: parameter]
                     }
