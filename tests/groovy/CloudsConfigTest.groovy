@@ -267,7 +267,7 @@ docker-cloud:
       environment:
         ENV1: env1Value
         ENV2: env2Value
-      lxcConf: xxx yyy
+      lxcConf: xxx=yyy,zzz=mmm
       hostname: docker-host-name
       memory: 50
       memorySwap: 10
@@ -278,11 +278,38 @@ docker-cloud:
       bindAllPorts: true
       privileged: true
       tty: true
-      macAddress: max-address              
+      macAddress: mac-address              
 """)
     configHandler.setup(config)
 
     assertCloud('docker-cloud', com.nirima.jenkins.plugins.docker.DockerCloud){
+        assert it.dockerHost.uri == 'unix:///var/run/docker.sock'
+        assert it.dockerHost.credentialsId == 'docker-cert'
+        assert it.containerCap == 20
+        assert it.connectTimeout == 10
+        assert it.readTimeout == 20
+        assert it.version == '1.24'
+        assert it.dockerHostname == 'localhost'
+        assert !it.exposeDockerHost
+        def template = it.templates[0]
+        assert template.image == 'odavid/jenkins-jnlp-slave:latest'
+        assert template.dockerTemplateBase.pullCredentialsId == 'pull-cred-id'
+        assert template.dockerTemplateBase.dnsString == '8.8.8.8 8.8.7.7'
+        assert template.dockerTemplateBase.network == 'host'
+        assert template.dockerTemplateBase.dockerCommand == '/bin/bash'
+        assert template.dockerTemplateBase.volumes == config['docker-cloud']['templates'][0].volumes
+        assert template.dockerTemplateBase.volumesFrom2 == config['docker-cloud']['templates'][0].volumesFrom
+        assert template.dockerTemplateBase.environmentsString == ['ENV1=env1Value', 'ENV2=env2Value'].join('\n')
+        assert template.dockerTemplateBase.lxcConf.collect{"${it.key}=${it.value}"}.join(',') == 'xxx=yyy,zzz=mmm'
+        assert template.dockerTemplateBase.hostname == 'docker-host-name'
+        assert template.dockerTemplateBase.memoryLimit == 50
+        assert template.dockerTemplateBase.memorySwap == 10
+        assert template.dockerTemplateBase.cpuShares == 1024
+        assert template.dockerTemplateBase.bindPorts == '9090:8080 1500'
+        assert template.dockerTemplateBase.bindAllPorts
+        assert template.dockerTemplateBase.privileged
+        assert template.dockerTemplateBase.tty
+        assert template.dockerTemplateBase.macAddress == 'mac-address'
     }
 }
 
