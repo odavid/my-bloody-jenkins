@@ -51,9 +51,9 @@ if(!new File(configFileName).exists()) {
 
     // TODO: General config is using only environment variables
     // Find a more elegant way to handle it 
+    handleConfig('Proxy', jenkinsConfig.proxy)
     handleConfig('General', [general: true])
     handleConfig('EnvironmentVars', jenkinsConfig.environment)
-    handleConfig('Proxy', jenkinsConfig.proxy)
     handleConfig('Creds', jenkinsConfig.credentials)
     handleConfig('Security', jenkinsConfig.security)
     handleConfig('Clouds', jenkinsConfig.clouds)

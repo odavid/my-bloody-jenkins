@@ -4,13 +4,14 @@
 
 
 ### 2.73.3-4
+* When Jenkins starts, sometimes tools dropdown lists are empty [#56](https://github.com/odavid/my-bloody-jenkins/issues/56)
 * Generalize S3 Watch to be able to watch other sources [#51](https://github.com/odavid/my-bloody-jenkins/issues/51)
     * **NOTE:** The Following variables were renamed:
         * JENKINS_ENV_CONFIG_YML_S3_URL --> JENKINS_ENV_CONFIG_YML_URL
         * JENKINS_ENV_CONFIG_YML_S3_DISABLE_WATCH --> JENKINS_ENV_CONFIG_YML_URL_DISABLE_WATCH
         * JENKINS_ENV_CONFIG_YML_S3_POLLING --> JENKINS_ENV_CONFIG_YML_URL_POLLING
 
-* Added [anchore-container-scanner:1.0.11 plugin](https://wiki.jenkins.io/display/JENKINS/Anchore+Container+Image+Scanner+Plugin)
+* Added [anchore-container-scanner:1.0.12 plugin](https://wiki.jenkins.io/display/JENKINS/Anchore+Container+Image+Scanner+Plugin)
 * Updated plugins:
     * blueocean-autofavorite:1.1.0
     * checkmarx:8.42.0
