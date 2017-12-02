@@ -137,8 +137,8 @@ kube-cloud:
       image: odavid/jenkins-jnlp-template:latest
       command: /run/me
       args: x y z
-      tty: true
       remoteFs: /home/jenkins
+      tty: true
       privileged: true
       alwaysPullImage: true
       environment:
@@ -160,6 +160,7 @@ kube-cloud:
         - /home/aaa:/home/aaa:rw
         - /home/aaa1:/home/aaa1234:rw
       livenessProbe:
+        execArgs: cat /xxx
         timeoutSeconds: 10
         initialDelaySeconds: 10
         failureThreshold: 10
@@ -170,6 +171,65 @@ kube-cloud:
 
     assertCloud('kube-cloud', org.csanchez.jenkins.plugins.kubernetes.KubernetesCloud){
         assert it.credentialsId == 'kube-cred'
+        assert it.namespace == 'jenkins-ns'
+        assert it.serverUrl == 'http://127.0.0.1:6000'
+        assert it.jenkinsUrl == 'http://127.0.0.1:8080'
+        assert it.jenkinsTunnel == '127.0.0.1:8080'
+        assert it.skipTlsVerify
+        assert it.serverCertificate == 'kube-cred'
+        assert it.maxRequestsPerHostStr == '10'
+        assert it.connectTimeout == 10
+        assert it.retentionTimeout == 10
+        assert it.readTimeout == 10
+        assert it.containerCap == 10
+        assert it.defaultsProviderTemplate == 'defaultsProviderTemplate'
+
+        def template = it.templates[0]
+
+        assert template.name == 'kube-cloud'
+        assert template.namespace == 'jenkins-ns'
+        assert template.inheritFrom == 'general-pod'
+        assert template.nodeSelector == 'nodeSelector'
+        assert template.serviceAccount == 'jenkins-service-account'
+        assert template.slaveConnectTimeout == 60
+        assert template.instanceCapStr == '10'
+        assert template.imagePullSecrets.collect{it.name} == ['xxx', 'yyy']
+        assert template.label == 'generic kubernetes'
+        assert template.image == 'odavid/jenkins-jnlp-template:latest'
+        assert template.command == '/run/me'
+        assert template.args == 'x y z'
+        assert template.remoteFs == '/home/jenkins'
+        
+        assert template.containers[0].name == 'jnlp'
+        assert template.containers[0].ttyEnabled
+        assert template.containers[0].privileged
+        assert template.containers[0].alwaysPullImage
+        assert template.containers[0].envVars.collect{"${it.key}=${it.value}"} == ['ENV1=env1Value', 'ENV2=env2Value']
+        assert template.containers[0].resourceRequestMemory == '1024Mi'
+        assert template.containers[0].resourceRequestCpu == '512m'
+        assert template.containers[0].resourceLimitCpu == '1024m'
+        assert template.containers[0].resourceLimitMemory == '512Mi'
+
+        def mountPoints = template.volumes
+        def assertMountPoint = { idx, type, mountPath, hostPath=null ->
+            def mpe = mountPoints[idx]
+            assert type.isInstance(mpe)
+            assert mpe.mountPath == mountPath
+            if(hostPath) assert mpe.hostPath == hostPath
+        }
+        assertMountPoint(0, org.csanchez.jenkins.plugins.kubernetes.volumes.EmptyDirVolume, '/home/xxx')
+        assertMountPoint(1, org.csanchez.jenkins.plugins.kubernetes.volumes.EmptyDirVolume, '/home/bbb')
+        assertMountPoint(2, org.csanchez.jenkins.plugins.kubernetes.volumes.EmptyDirVolume, '/home/ccc')
+        assertMountPoint(3, org.csanchez.jenkins.plugins.kubernetes.volumes.HostPathVolume, '/home/yyy', '/home/yyy')
+        assertMountPoint(4, org.csanchez.jenkins.plugins.kubernetes.volumes.HostPathVolume, '/home/zzz', '/home/zzz')
+        assertMountPoint(5, org.csanchez.jenkins.plugins.kubernetes.volumes.HostPathVolume, '/home/aaa', '/home/aaa')
+        assertMountPoint(6, org.csanchez.jenkins.plugins.kubernetes.volumes.HostPathVolume, '/home/aaa1234', '/home/aaa1')
+        assert template.containers[0].livenessProbe.execArgs == 'cat /xxx'
+        assert template.containers[0].livenessProbe.timeoutSeconds == 10
+        assert template.containers[0].livenessProbe.initialDelaySeconds == 10
+        assert template.containers[0].livenessProbe.failureThreshold == 10
+        assert template.containers[0].livenessProbe.periodSeconds == 10
+        assert template.containers[0].livenessProbe.successThreshold == 10
     }
 }
 
