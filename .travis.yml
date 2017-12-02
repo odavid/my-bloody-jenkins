@@ -9,8 +9,7 @@ before_install:
   - sudo apt-get install -qq bats
 
 script:
-  - docker build --rm --force-rm -t odavid/my-bloody-jenkins .
-  - bats tests/bats
+  - make
 
 deploy:
   - provider: script
