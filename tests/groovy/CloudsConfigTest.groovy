@@ -11,13 +11,6 @@ def assertCloud(id, type, closure){
     }
 }
 
-def assertMountPoint(mountPoints, name, sourcePath, containerPath, readOnly){
-    def mpe = mountPoints.find{it.name == configHandler.pathToVolumeName(name)}
-    assert mpe.sourcePath == sourcePath
-    assert mpe.containerPath == containerPath
-    assert mpe.readOnly == readOnly
-}
-
 def testClouds(){
 	def config = new Yaml().load("""
 ecs-cloud:
@@ -95,12 +88,18 @@ ecs-cloud:
         }
         
         def mountPoints = template.mountPoints
-        assertMountPoint(mountPoints, '/home/xxx', null, '/home/xxx', false)
-        assertMountPoint(mountPoints, '/home/bbb', null, '/home/bbb', true)
-        assertMountPoint(mountPoints, '/home/ccc', null, '/home/ccc', false)
-        assertMountPoint(mountPoints, '/home/yyy', '/home/yyy', '/home/yyy', false)
-        assertMountPoint(mountPoints, '/home/zzz', '/home/zzz', '/home/zzz', true)
-        assertMountPoint(mountPoints, '/home/aaa1', '/home/aaa1', '/home/aaa1234', false)
+        def assertMountPoint = { name, sourcePath, containerPath, readOnly ->
+            def mpe = mountPoints.find{it.name == configHandler.pathToVolumeName(name)}
+            assert mpe.sourcePath == sourcePath
+            assert mpe.containerPath == containerPath
+            assert mpe.readOnly == readOnly
+        }
+        assertMountPoint('/home/xxx', null, '/home/xxx', false)
+        assertMountPoint('/home/bbb', null, '/home/bbb', true)
+        assertMountPoint('/home/ccc', null, '/home/ccc', false)
+        assertMountPoint('/home/yyy', '/home/yyy', '/home/yyy', false)
+        assertMountPoint('/home/zzz', '/home/zzz', '/home/zzz', true)
+        assertMountPoint('/home/aaa1', '/home/aaa1', '/home/aaa1234', false)
     }
     
 }
