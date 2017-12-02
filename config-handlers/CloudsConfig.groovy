@@ -34,13 +34,17 @@ def parseContainerVolume(volume, closure){
     if(parts.size() == 1){
         container_path = parts[0]
     }
-    if(parts.size() == 2 && parts[1] != 'ro'){
+    if(parts.size() == 2 && !(parts[1] in ['ro', 'rw'])){
         host_path = parts[0]
         container_path = parts[1]
     }
     if(parts.size() == 2 && parts[1] == 'ro'){
         container_path = parts[0]
         read_only = true
+    }
+    if(parts.size() == 2 && parts[1] == 'rw'){
+        container_path = parts[0]
+        read_only = false
     }
     if(parts.size() == 3 && parts[2] == 'ro'){
         host_path = parts[0]
@@ -88,7 +92,7 @@ def dockerCloud(config){
                         temp.network?:'',
                         temp.command?:'',
                         temp.volumes?.join('\n'),
-                        temp.volumesFrom?.join(' '),
+                        temp.volumesFrom?.join('\n'),
                         temp.environment?.collect{k,v -> "${k}=${v}"}?.join("\n"),
                         temp.lxcConf?:'',
                         temp.hostname?:'',
@@ -112,7 +116,7 @@ def dockerCloud(config){
                 dockerTemplate.connector = new io.jenkins.docker.connector.DockerComputerJNLPConnector(
                     new JNLPLauncher(tunnel, temp.jvmArgs)
                 )
-                dockerTemplate.connector.user = config.jnlpUser?:''
+                dockerTemplate.connector.user = temp.jnlpUser ?: config.jnlpUser ?: ''
                 dockerTemplate.removeVolumes = asBoolean(temp.removeVolumes)
                 dockerTemplate.dockerTemplateBase.extraHosts = extraHosts?:[]
                 return dockerTemplate
@@ -124,7 +128,7 @@ def dockerCloud(config){
             asInt(containerCap, 100),
             asInt(connectTimeout),
             asInt(readTimeout),
-            apiVersion?:'',
+            apiVersion?.toString() ?: '',
             dockerHostname?:''
         )
         dockerCloud.exposeDockerHost = asBoolean(exposeDockerHost, true)
@@ -188,15 +192,15 @@ def kubernetesCloud(config){
                 containerTemplate.alwaysPullImage = asBoolean(temp.alwaysPullImage)
                 containerTemplate.envVars = temp.environment?.collect{ k, v -> new ContainerEnvVar(k,v) } ?: []
                 containerTemplate.ports = temp.ports?.collect{ portMapping ->
-                    def parts = portMapping.split(':')
+                    def parts = portMapping?.toString().split(':')
                     def hostPort = parts.size() > 1 ? parts[0] : null
                     def containerPort = parts.size() > 1 ? parts[1] : parts[0]
-                    return PortMapping(null, containerPort?.toInteger(), hostPort?.toInteger())
+                    return new PortMapping(null, containerPort?.toInteger(), hostPort?.toInteger())
                 }
                 containerTemplate.resourceRequestMemory = temp.resourceRequestMemory
                 containerTemplate.resourceRequestCpu = temp.resourceRequestCpu
                 containerTemplate.resourceLimitMemory = temp.resourceLimitMemory
-                containerTemplate.resourceLimitCpu = temp.containerTemplate
+                containerTemplate.resourceLimitCpu = temp.resourceLimitCpu
                 containerTemplate.livenessProbe = temp.livenessProbe ? new ContainerLivenessProbe(
                     temp.livenessProbe.execArgs,
                     asInt(temp.livenessProbe.timeoutSeconds),
@@ -214,10 +218,10 @@ def kubernetesCloud(config){
                 podTemplate.nodeUsageMode = Node.Mode.EXCLUSIVE
                 podTemplate.inheritFrom = temp.inheritFrom
                 podTemplate.nodeSelector = temp.nodeSelector
-                podTemplate.serviceAccount = serviceAccount
-                podTemplate.slaveConnectTimeout = asInt(slaveConnectTimeout, PodTemplate.DEFAULT_SLAVE_JENKINS_CONNECTION_TIMEOUT)
-                podTemplate.instanceCap = asInt(instanceCap, -1)
-                podTemplate.imagePullSecrets = imagePullSecrets?.collect{secretName -> new PodImagePullSecret(secretName)}
+                podTemplate.serviceAccount = temp.serviceAccount
+                podTemplate.slaveConnectTimeout = asInt(temp.slaveConnectTimeout, PodTemplate.DEFAULT_SLAVE_JENKINS_CONNECTION_TIMEOUT)
+                podTemplate.instanceCap = asInt(temp.instanceCap, -1)
+                podTemplate.imagePullSecrets = temp.imagePullSecrets?.collect{secretName -> new PodImagePullSecret(secretName)}
                 def simplePodVolumes = temp.volumes?.collect { vol -> parseContainerVolume(vol){
                     vol_name, host_path, container_path,read_only ->
                         if(host_path){

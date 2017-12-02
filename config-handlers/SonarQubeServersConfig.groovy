@@ -15,7 +15,7 @@ def sonarInstallation(config){
             databaseUrl,
             databaseLogin,
             databasePassword,
-            mojoVersion,
+            mojoVersion?.toString(),
             additionalProperties,
             new hudson.plugins.sonar.model.TriggersConfig(
                 asBoolean(triggers?.skipScmCause),

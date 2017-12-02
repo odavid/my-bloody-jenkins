@@ -1,9 +1,3 @@
-import jenkins.model.Jenkins
-import org.jenkinsci.plugins.workflow.libs.*
-import org.jenkinsci.plugins.workflow.libs.SCMSourceRetriever
-import jenkins.plugins.git.GitSCMSource
-import jenkins.plugins.git.traits.BranchDiscoveryTrait
-
 def asInt(value, defaultValue=0){
     return value ? value.toInteger() : defaultValue
 }
@@ -13,16 +7,16 @@ def asBoolean(value, defaultValue=false){
 
 def libraryConfig(config){
     config.with{
-        def libraryConfiguration = new LibraryConfiguration(
+        def libraryConfiguration = new org.jenkinsci.plugins.workflow.libs.LibraryConfiguration(
             name, 
-            new SCMSourceRetriever(
-                new GitSCMSource(
+            new org.jenkinsci.plugins.workflow.libs.SCMSourceRetriever(
+                new jenkins.plugins.git.GitSCMSource(
                     "git-scm-${name}",
                     source?.remote,
                     source?.credentialsId,
-                    '*',  //includes
-                    '',   //excludes
-                    false //ignoreOnPushNotifications
+                    source?.includes ?: '*',  //includes
+                    source?.excludes ?: '',   //excludes
+                    asBoolean(source.ignoreOnPushNotifications) //ignoreOnPushNotifications
                 )
             )
         )
@@ -35,10 +29,9 @@ def libraryConfig(config){
 }
 
 def setup(config){
-    def libs = Jenkins.instance.getDescriptor('org.jenkinsci.plugins.workflow.libs.GlobalLibraries')
     config = config ?: [:]
-    libs.get().setLibraries(config.collect{ k,v -> 
+    org.jenkinsci.plugins.workflow.libs.GlobalLibraries.get().libraries = config.collect{ k,v -> 
         libraryConfig([name: k] + v)
-    })
+    }
 }
 return this

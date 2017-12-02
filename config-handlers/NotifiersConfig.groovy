@@ -3,6 +3,7 @@ import jenkins.model.Jenkins
 import jenkins.plugins.hipchat.*
 import jenkins.plugins.hipchat.impl.*
 import jenkins.plugins.hipchat.model.*
+import jenkins.plugins.hipchat.model.notifications.Notification.Color
 import jenkins.plugins.slack.*
 import net.sf.json.JSONObject
 
@@ -25,9 +26,9 @@ def hipchatConfig(config){
         hipchat.defaultNotifications = defaultNotifications?.collect{ n ->
             return new NotificationConfig(
                 asBoolean(n.notifyEnabled), 
-                n.textFormat, 
+                asBoolean(n.textFormat), 
                 n.notificationType ? NotificationType.valueOf(n.notificationType): null, 
-                n.color ? jenkins.plugins.hipchat.model.notifications.Color.valueOf(n.color) : null,
+                n.color ? Color.valueOf(n.color) : null,
                 n.messageTemplate
             )
         }
@@ -58,7 +59,7 @@ def mailConfig(config){
     def mailer = Jenkins.instance.getDescriptor('hudson.tasks.Mailer')
     config.with{
         if(authUser){
-            mailer.setSmtpAuth(authUser, authPassowrd?:'')
+            mailer.setSmtpAuth(authUser, authPassword?:'')
         }
         mailer.replyToAddress = replyToAddress
         mailer.useSsl = asBoolean(useSsl)
@@ -86,15 +87,15 @@ def mailExtConfig(config){
         reqMap['ext_mailer_default_replyto'] = replyToAddress
         reqMap['ext_mailer_default_presend_script'] = defaultPresendScript
         reqMap['ext_mailer_default_postsend_script'] = defaultPostsendScript
-        reqMap['ext_mailer_max_attachment_size'] = maxAttachmentSize
+        reqMap['ext_mailer_max_attachment_size'] = maxAttachmentSize?.toString()
         reqMap['ext_mailer_default_recipients'] = recipientList?.join(',')
         reqMap['ext_mailer_excluded_committers'] = excludedCommitters?.join(',')
-        reqMap['ext_mailer_use_list_id'] = listId
+        if(listId){
+            reqMap['ext_mailer_use_list_id'] = 'true'
+            reqMap['ext_mailer_list_id'] = listId
+        }
         if(requireAdminForTemplateTesting){
             reqMap['ext_mailer_require_admin_for_template_testing'] = 'true'
-        }
-        if(enableWatching){
-            reqMap['ext_mailer_watching_enabled'] = 'true'
         }
         if(enableWatching){
             reqMap['ext_mailer_watching_enabled'] = 'true'
@@ -102,7 +103,7 @@ def mailExtConfig(config){
         if(authUser){
             reqMap['ext_mailer_use_smtp_auth'] = 'true'
             reqMap['ext_mailer_smtp_username'] = authUser
-            reqMap['ext_mailer_smtp_password'] = authPassowrd
+            reqMap['ext_mailer_smtp_password'] = authPassword
         }
         if(useSsl){
             reqMap['ext_mailer_smtp_use_ssl'] = 'true'

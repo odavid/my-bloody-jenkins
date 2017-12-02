@@ -85,6 +85,23 @@ def setupJenkinsDatabase(config){
     }
 }
 
+def createAuthorizationStrategy(config, adminUser){
+    def strategy = new ProjectMatrixAuthorizationStrategy()
+    strategy.add(Hudson.ADMINISTER, adminUser)
+    config?.permissions?.each{ principal, permissions ->
+        for(p in permissions){
+            try{
+                def permission = hudson.security.Permission.fromId(p)
+                strategy.add(permission, principal)
+            }catch(e){
+                println "Failed to set permission ${p} for principal ${principal}... ${e}"
+                e.printStackTrace()
+            }
+        }
+    }
+    return strategy
+}
+
 def setup(config){
     config = config ?: [:]
     def adminUser = config.adminUser
@@ -104,20 +121,7 @@ def setup(config){
     }
     if(realm){
         instance.setSecurityRealm(realm)
-        def strategy = new ProjectMatrixAuthorizationStrategy()
-        strategy.add(Hudson.ADMINISTER, adminUser)
-        config?.permissions?.each{ principal, permissions ->
-            for(p in permissions){
-                try{
-                    def permission = hudson.security.Permission.fromId(p)
-                    strategy.add(permission, principal)
-                }catch(e){
-                    println "Failed to set permission ${p} for principal ${principal}... ${e}"
-                    e.printStackTrace()
-                }
-            }
-        }
-
+        def strategy = createAuthorizationStrategy(config, adminUser)
         instance.setAuthorizationStrategy(strategy)
         instance.save()
     }
