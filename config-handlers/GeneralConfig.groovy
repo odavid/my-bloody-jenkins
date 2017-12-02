@@ -54,5 +54,13 @@ def setup(config){
     jenkins.model.GlobalConfiguration.all()
         .get(javaposse.jobdsl.plugin.GlobalJobDslSecurityConfiguration).useScriptSecurity =
             useScriptSecurity ? useScriptSecurity.toBoolean() : false
+
+    Thread.start{
+        sleep 1000
+        println 'updating Downloadables'
+        hudson.model.DownloadService.Downloadable.all().each{ d -> d.updateNow() }
+        println 'updating Downloadables. done...'
+    }
+
 }
 return this
