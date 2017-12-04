@@ -1,6 +1,6 @@
 ## Changelog
 
-### 2.73.3-6
+### 2.73.3-5
 * Config file should be stored in tmpfs by default for security reasons [#61](https://github.com/odavid/my-bloody-jenkins/pull/61)
 * Added lts tag in docker cloud to point to the latest release tag 
 
