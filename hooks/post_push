@@ -4,18 +4,19 @@ set -e
 # Skip if latest
 [[ "$CACHE_TAG" == 'latest' ]] && exit 0
 
-echo "IMAGE_TAG=$IMAGE_TAG"
-echo "IMAGE_TAG=$IMAGE_TAG"
 echo "DOCKER_REPO=$DOCKER_REPO"
 echo "SOURCE_BRANCH=$SOURCE_BRANCH"
 echo "SOURCE_COMMIT=$SOURCE_COMMIT"
 echo "COMMIT_MSG=$COMMIT_MSG"
 
-NEW_TAG=$(echo $CACHE_TAG | cut -d '-' -f 1)
+TAG=$(echo $SOURCE_BRANCH | sed 's/v//g')
+NEW_TAG=$(echo $TAG | cut -d '-' -f 1)
+
+echo "TAG=$TAG"
 echo "NEW_TAG=$NEW_TAG"
 
-docker tag "$DOCKER_REPO:$CACHE_TAG" "$DOCKER_REPO:$NEW_TAG"
-docker tag "$DOCKER_REPO:$CACHE_TAG" "$DOCKER_REPO:lts"
+docker tag "$DOCKER_REPO:$TAG" "$DOCKER_REPO:$NEW_TAG"
+docker tag "$DOCKER_REPO:$TAG" "$DOCKER_REPO:lts"
 
 docker push "$DOCKER_REPO:$NEW_TAG"
 docker push "$DOCKER_REPO:lts"
