@@ -50,6 +50,8 @@ VOLUME /jenkins-workspace-home
 # Rever to root
 USER root
 ENV CONFIG_FILE_LOCATION=/dev/shm/jenkins-config.yml
+ENV TOKEN_FILE_LOCATION=/dev/shm/.api-token
+ENV CONFIG_CACHE_DIR=/dev/shm/.jenkins-config-cache
 ####################################################################################
 # GENERAL Configuration variables
 ####################################################################################

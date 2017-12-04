@@ -13,12 +13,14 @@ if [[ $# -lt 1 ]] || [[ "$1" == "-"* ]]; then
     elif [ -n "${JENKINS_ENV_CONFIG_YML_URL}" ]; then
         echo "Fetching config from URL: ${JENKINS_ENV_CONFIG_YML_URL}"
         watch-file.sh \
+             --cache-dir $CONFIG_CACHE_DIR \
              --url "${JENKINS_ENV_CONFIG_YML_URL}" \
             --filename $CONFIG_FILE_LOCATION \
             --skip-watch
         if [ "$JENKINS_ENV_CONFIG_YML_URL_DISABLE_WATCH" != 'true' ]; then
             echo "Watching config from URL: ${JENKINS_ENV_CONFIG_YML_URL} in the backgroud"
             watch-file.sh \
+                --cache-dir $CONFIG_CACHE_DIR \
                 --url "${JENKINS_ENV_CONFIG_YML_URL}" \
                 --filename $CONFIG_FILE_LOCATION \
                 --polling-interval "${JENKINS_ENV_CONFIG_YML_URL_POLLING:-30}" \

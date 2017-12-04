@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 script_dir=$(cd $(dirname "$0"); pwd)
-token_file=/tmp/.api-token
+token_file="$TOKEN_FILE_LOCATION"
 AUTH_ARG=""
 
 if [ -f $token_file ]; then
