@@ -1,0 +1,35 @@
+security:
+  realm: jenkins_database
+  adminPassword: admin
+tools:
+  installations:
+    MVN-3.5.0:
+      type: maven
+      installers:
+        - id: '3.5.0'
+clouds:
+  docker-cloud:
+    type: docker
+    dockerHostUri: 'unix:///var/run/docker.sock'
+    templates:
+      - name: docker-slave
+        image: odavid/jenkins-jnlp-slave:latest
+        labels:
+          - generic
+        remoteFs: /home/jenkins
+        jvmArgs: -Xmx1g
+        volumes:
+          - '/var/run/docker.sock:/var/run/docker.sock'
+        instanceCap: '10'
+seed_jobs:
+  seed-job:
+    source: 
+      remote: https://github.com/odavid/my-bloody-jenkins.git
+      branch: 'master'
+    triggers: 
+      pollScm: 'H/2 * * * *'
+      periodic: '@hourly'
+    pipeline: examples/jobs/seed/Jenkinsfile
+    executeWhen: always #firstTimeOnly always never
+
+
