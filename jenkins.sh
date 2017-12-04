@@ -8,19 +8,21 @@ if [[ $# -lt 1 ]] || [[ "$1" == "-"* ]]; then
     done
 
     if [ -n "${JENKINS_ENV_CONFIG_YAML}" ]; then
-        echo -n "$JENKINS_ENV_CONFIG_YAML" > /etc/jenkins-config.yml
+        echo -n "$JENKINS_ENV_CONFIG_YAML" > $CONFIG_FILE_LOCATION
         unset JENKINS_ENV_CONFIG_YAML
     elif [ -n "${JENKINS_ENV_CONFIG_YML_URL}" ]; then
         echo "Fetching config from URL: ${JENKINS_ENV_CONFIG_YML_URL}"
         watch-file.sh \
+             --cache-dir $CONFIG_CACHE_DIR \
              --url "${JENKINS_ENV_CONFIG_YML_URL}" \
-            --filename /etc/jenkins-config.yml \
+            --filename $CONFIG_FILE_LOCATION \
             --skip-watch
         if [ "$JENKINS_ENV_CONFIG_YML_URL_DISABLE_WATCH" != 'true' ]; then
             echo "Watching config from URL: ${JENKINS_ENV_CONFIG_YML_URL} in the backgroud"
             watch-file.sh \
+                --cache-dir $CONFIG_CACHE_DIR \
                 --url "${JENKINS_ENV_CONFIG_YML_URL}" \
-                --filename /etc/jenkins-config.yml \
+                --filename $CONFIG_FILE_LOCATION \
                 --polling-interval "${JENKINS_ENV_CONFIG_YML_URL_POLLING:-30}" \
                 --command 'update-config.sh' &
         fi

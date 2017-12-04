@@ -1,7 +1,7 @@
 ## Changelog
 
 ### 2.73.3-5 (Not released yet)
-
+* Config file should be stored in tmpfs by default for security reasons [#61](https://github.com/odavid/my-bloody-jenkins/pull/61)
 
 ### 2.73.3-4
 * When Jenkins starts, sometimes tools dropdown lists are empty [#56](https://github.com/odavid/my-bloody-jenkins/issues/56)

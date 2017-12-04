@@ -6,6 +6,7 @@ services:
       - '8080:8080'
       - '50000:50000'
     volumes:
+      - '${PWD}/config.yml:/config.yml'
       - '.data/jenkins_home:/var/jenkins_home'
       - '.data/jenkins-workspace-home:/jenkins-workspace-home'
       - '/var/run/docker.sock:/var/run/docker.sock'
@@ -14,40 +15,4 @@ services:
       JENKINS_ENV_JENKINS_URL: http://${MY_HOST_IP}:8080
       JENKINS_ENV_ADMIN_USER: admin
       JENKINS_ENV_HOST_IP: ${MY_HOST_IP}
-      JENKINS_ENV_CONFIG_YAML: |
-        security:
-          realm: jenkins_database
-          adminPassword: admin
-        tools:
-          installations:
-            MVN-3.5.0:
-              type: maven
-              installers:
-                - id: '3.5.0'
-        clouds:
-          docker-cloud:
-            type: docker
-            dockerHostUri: 'unix:///var/run/docker.sock'
-            dockerHostname: ${MY_HOST_IP}
-            templates:
-              - name: docker-slave
-                image: odavid/jenkins-jnlp-slave:latest
-                labels:
-                  - generic
-                remoteFs: /home/jenkins
-                jvmArgs: -Xmx1g
-                volumes:
-                  - '/var/run/docker.sock:/var/run/docker.sock'
-                instanceCap: '10'
-        seed_jobs:
-          seed-job:
-            source: 
-              remote: https://github.com/odavid/my-bloody-jenkins.git
-              branch: 'master'
-            triggers: 
-              pollScm: 'H/2 * * * *'
-              periodic: '@hourly'
-            pipeline: examples/jobs/seed/Jenkinsfile
-            executeWhen: always #firstTimeOnly always never
-        
-
+      JENKINS_ENV_CONFIG_YML_URL: file:///config.yml

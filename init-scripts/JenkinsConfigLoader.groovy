@@ -38,14 +38,15 @@ def adminUser = getAdminUserName()
 if(!adminUser){
     println "JENKINS_ENV_ADMIN_USER was not set. This is mandatory variable"
 }else{
-    storeAdminApiToken(adminUser, '/tmp/.api-token')
+    storeAdminApiToken(adminUser, System.getenv()['TOKEN_FILE_LOCATION'])
 }
 
-def configFileName = '/etc/jenkins-config.yml'
+def configFileName = System.getenv()['CONFIG_FILE_LOCATION']
+
 if(!new File(configFileName).exists()) {
     println "${configFileName} does not exist. Set variable JENKINS_ENV_CONFIG_YAML! Skipping configuration..."
 } else {
-    def jenkinsConfig = loadYamlConfig('/etc/jenkins-config.yml')
+    def jenkinsConfig = loadYamlConfig(configFileName)
     // TODO: admin user should be global. Make it more generic....
     jenkinsConfig.security?.adminUser = adminUser
 
