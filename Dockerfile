@@ -49,7 +49,7 @@ VOLUME /jenkins-workspace-home
 
 # Rever to root
 USER root
-
+ENV CONFIG_FILE_LOCATION=/dev/shm/jenkins-config.yml
 ####################################################################################
 # GENERAL Configuration variables
 ####################################################################################

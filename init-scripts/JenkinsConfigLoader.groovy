@@ -41,11 +41,12 @@ if(!adminUser){
     storeAdminApiToken(adminUser, '/tmp/.api-token')
 }
 
-def configFileName = '/etc/jenkins-config.yml'
+def configFileName = System.getenv()['CONFIG_FILE_LOCATION']
+
 if(!new File(configFileName).exists()) {
     println "${configFileName} does not exist. Set variable JENKINS_ENV_CONFIG_YAML! Skipping configuration..."
 } else {
-    def jenkinsConfig = loadYamlConfig('/etc/jenkins-config.yml')
+    def jenkinsConfig = loadYamlConfig(configFileName)
     // TODO: admin user should be global. Make it more generic....
     jenkinsConfig.security?.adminUser = adminUser
 

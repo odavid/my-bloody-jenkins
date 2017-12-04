@@ -90,7 +90,7 @@ The following Environment variables are supported
     * JAVA_OPTS_CSP - Default content security policy for HTML Publisher/Gatling plugins - See [Configuring Content Security Policy](https://wiki.jenkins.io/display/JENKINS/Configuring+Content+Security+Policy)
     * JAVA_OPTS_LOAD_STATS_CLOCK - This one is sweet (: - Reducing the load stats clock enables ephemeral slaves to start immediately without waiting for suspended slaves to be reaped
 
-* __JENKINS_ENV_CONFIG_YAML__ - The [configuration](#configuration-reference) is stored in '/etc/jenkins-config.yml' file. When this variable is set, the contents of this variable is written to the file before starting Jenkins and can be fetched from Consul and also be watched so jenkins can update its configuration everytime this variable is being changed. Since the contents of this variable contains secrets, it is wise to store and pass it from Consul/S3 bucket. In any case, once the file is written, this variable is being unset, so it won't appear in Jenkins 'System Information' page (As I said, blood...)
+* __JENKINS_ENV_CONFIG_YAML__ - The [configuration](#configuration-reference) as yaml. When this variable is set, the contents of this variable can be fetched from Consul and also be watched so jenkins can update its configuration everytime this variable is being changed. Since the contents of this variable contains secrets, it is wise to store and pass it from Consul/S3 bucket. In any case, before Jenkins starts, this variable is being unset, so it won't appear in Jenkins 'System Information' page (As I said, blood...)
 
 * __JENKINS_ENV_CONFIG_YML_URL__ - A URL that will be used to fetch the configuration and updated jenkins everytime it changes. This is an alternative to __JENKINS_ENV_CONFIG_YAML__ setup. 
 Supported URLs:
@@ -116,7 +116,7 @@ Supported URLs:
 * __JENKINS_ENV_ADMIN_ADDRESS__ - Define the Jenkins admin email address
 
 ## Configuration Reference
-The '/etc/jenkins-config.yml' file is divided into main configuration sections. Each section is responsible for a specific aspect of jenkins configuration.
+The configuration is divided into main configuration sections. Each section is responsible for a specific aspect of jenkins configuration.
 
 ### Environment Variables Section
 Responsible for adding global environment variables to jenkins config.
