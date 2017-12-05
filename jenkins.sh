@@ -30,6 +30,13 @@ if [[ $# -lt 1 ]] || [[ "$1" == "-"* ]]; then
         unset AWS_SECRET_ACCESS_KEY
     fi
 
+    if [ -n "$JENKINS_ENV_PLUGINS" ]; then
+        echo "Installing additional plugins $JENKINS_ENV_PLUGINS"
+        install-plugins-with-retry.sh $(echo $JENKINS_ENV_PLUGINS | tr ',' ' ')
+        chown jenkins:jenkins /usr/share/jenkins/ref/
+        echo "Installing additional plugins. Done..."
+    fi
+
     # Because we are in docker, we need to fetch the real IP of jenkins, so ecs/kubernetes/docker cloud slaves will
     # be able to connect to it
     # If it is running with docker network=host, then the default ip address will be sufficient
