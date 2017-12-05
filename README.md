@@ -115,6 +115,8 @@ Supported URLs:
 
 * __JENKINS_ENV_ADMIN_ADDRESS__ - Define the Jenkins admin email address
 
+* __JENKINS_ENV_PLUGINS__ - Ability to define comma separated list of additional plugins to install before starting up. See [plugin-version-format](https://github.com/jenkinsci/docker#plugin-version-format). This is option is not recommended, but sometimes it is useful to run the container without creating an inherited image. 
+
 ## Configuration Reference
 The configuration is divided into main configuration sections. Each section is responsible for a specific aspect of jenkins configuration.
 
