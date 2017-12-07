@@ -2,7 +2,7 @@
 set -e
 
 # Skip if latest
-[[ "$CACHE_TAG" == 'latest' ]] && exit 0
+[[ "$SOURCE_BRANCH" == 'master' ]] && exit 0
 
 echo "DOCKER_REPO=$DOCKER_REPO"
 echo "SOURCE_BRANCH=$SOURCE_BRANCH"
