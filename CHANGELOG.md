@@ -1,7 +1,11 @@
 ## Changelog
 
 ### Not released yet
+
+
+### 2.73.3-6
 * Ability to install plugins that are not baked within image before jenkins starts [#50](https://github.com/odavid/my-bloody-jenkins/issues/50)
+* Fixed S3 Config Fetch error
 
 ### 2.73.3-5
 * Config file should be stored in tmpfs by default for security reasons [#61](https://github.com/odavid/my-bloody-jenkins/pull/61)
