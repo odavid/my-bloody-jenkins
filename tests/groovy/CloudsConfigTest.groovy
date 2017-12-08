@@ -267,7 +267,6 @@ docker-cloud:
       environment:
         ENV1: env1Value
         ENV2: env2Value
-      lxcConf: xxx=yyy,zzz=mmm
       hostname: docker-host-name
       memory: 50
       memorySwap: 10
