@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 script_dir=$(cd $(dirname "$0"); pwd)
-token_file=token_file="$TOKEN_FILE_LOCATION"
+token_file="$TOKEN_FILE_LOCATION"
 
 AUTH_ARG=""
 
