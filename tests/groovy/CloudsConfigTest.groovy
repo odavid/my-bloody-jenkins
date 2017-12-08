@@ -283,14 +283,13 @@ docker-cloud:
     configHandler.setup(config)
 
     assertCloud('docker-cloud', com.nirima.jenkins.plugins.docker.DockerCloud){
-        assert it.dockerHost.uri == 'unix:///var/run/docker.sock'
-        assert it.dockerHost.credentialsId == 'docker-cert'
         assert it.containerCap == 20
-        assert it.connectTimeout == 10
-        assert it.readTimeout == 20
-        assert it.version == '1.24'
-        assert it.dockerHostname == 'localhost'
         assert !it.exposeDockerHost
+        assert it.dockerApi.dockerHost.uri == 'unix:///var/run/docker.sock'
+        assert it.dockerApi.dockerHost.credentialsId == 'docker-cert'
+        assert it.dockerApi.connectTimeout == 10
+        assert it.dockerApi.apiVersion == '1.24'
+        assert it.dockerApi.hostname == 'localhost'
         def template = it.templates[0]
         assert template.image == 'odavid/jenkins-jnlp-slave:latest'
         assert template.dockerTemplateBase.pullCredentialsId == 'pull-cred-id'
@@ -300,7 +299,6 @@ docker-cloud:
         assert template.dockerTemplateBase.volumes == config['docker-cloud']['templates'][0].volumes
         assert template.dockerTemplateBase.volumesFrom2 == config['docker-cloud']['templates'][0].volumesFrom
         assert template.dockerTemplateBase.environmentsString == ['ENV1=env1Value', 'ENV2=env2Value'].join('\n')
-        assert template.dockerTemplateBase.lxcConf.collect{"${it.key}=${it.value}"}.join(',') == 'xxx=yyy,zzz=mmm'
         assert template.dockerTemplateBase.hostname == 'docker-host-name'
         assert template.dockerTemplateBase.memoryLimit == 50
         assert template.dockerTemplateBase.memorySwap == 10
