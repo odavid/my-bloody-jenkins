@@ -129,7 +129,7 @@ jnlpProtocols:
     assert !jenkins.model.Jenkins.instance.disableRememberMe
     assert jenkins.model.Jenkins.instance.injector.getInstance(jenkins.security.s2m.AdminWhitelistRule).masterKillSwitch
     assert !jenkins.CLI.get().enabled
-    assert jenkins.model.Jenkins.instance.agentProtocols == (['4'].collect{"JNLP$it-connect".toString()} + +['Ping']) as Set
+    assert jenkins.model.Jenkins.instance.agentProtocols == (['4'].collect{"JNLP$it-connect".toString()} +['Ping']) as Set
     assert org.jenkinsci.main.modules.sshd.SSHD.get().port == -1
 
  }
