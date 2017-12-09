@@ -57,16 +57,11 @@ ENV CONFIG_CACHE_DIR=/dev/shm/.jenkins-config-cache
 ####################################################################################
 # Let the master be a master, don't run any jobs on it
 ENV JENKINS_ENV_EXECUTERS=0
-# See https://jenkins.io/blog/2017/04/11/new-cli/
-ENV JENKINS_ENV_CLI_REMOTING_ENABLED=false
 # If true, then workspaceDir will changed its defaults from ${JENKINS_HOME}/workspace
 # to /jenkins-workspace-home/workspace/${ITEM_FULLNAME}
 # This is useful in case your JENKINS_HOME is mapped to NFS mount, 
 # slowing down the workspace
 ENV JENKINS_ENV_CHANGE_WORKSPACE_DIR=true
-# If true, every DSL script would have to be approved using the ScriptApproval console
-# See https://github.com/jenkinsci/job-dsl-plugin/wiki/Script-Security
-ENV JENKINS_ENV_USE_SCRIPT_SECURITY=false
 ####################################################################################
 # ADDITIONAL JAVA_OPTS
 ####################################################################################

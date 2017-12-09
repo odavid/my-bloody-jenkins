@@ -99,6 +99,42 @@ permissions:
     assert grantedPermissions[hudson.security.Permission.fromId('hudson.model.Hudson.Administer')] == (['admin'] as Set)
  }
 
+def testSecurityOptions(){
+    def config = new Yaml().load("""
+preventCSRF: true
+enableScriptSecurityForDSL: true
+enableCLIOverRemoting: true
+enableAgentMasterAccessControl: true
+disableRememberMe: true
+sshdEnabled: true
+jnlpProtocols:
+  - JNLP
+  - JNLP2
+  - JNLP3
+  - JNLP4
+"""
+    )
+    configHandler.setupSecurityOptions(config)
+    assert jenkins.model.Jenkins.instance.crumbIssuer && jenkins.model.Jenkins.instance.crumbIssuer.excludeClientIPFromCrumb
+    assert jenkins.model.GlobalConfiguration.all().get(javaposse.jobdsl.plugin.GlobalJobDslSecurityConfiguration).useScriptSecurity
+    assert jenkins.model.Jenkins.instance.disableRememberMe
+    assert !jenkins.model.Jenkins.instance.injector.getInstance(jenkins.security.s2m.AdminWhitelistRule).masterKillSwitch
+    assert jenkins.CLI.get().enabled
+    assert jenkins.model.Jenkins.instance.agentProtocols == (['','2','3','4'].collect{"JNLP$it-connect".toString()} +['Ping']) as Set
+    assert org.jenkinsci.main.modules.sshd.SSHD.get().port == 16022
+
+    configHandler.setupSecurityOptions(null)
+    assert !jenkins.model.Jenkins.instance.crumbIssuer
+    assert !jenkins.model.GlobalConfiguration.all().get(javaposse.jobdsl.plugin.GlobalJobDslSecurityConfiguration).useScriptSecurity
+    assert !jenkins.model.Jenkins.instance.disableRememberMe
+    assert jenkins.model.Jenkins.instance.injector.getInstance(jenkins.security.s2m.AdminWhitelistRule).masterKillSwitch
+    assert !jenkins.CLI.get().enabled
+    assert jenkins.model.Jenkins.instance.agentProtocols == (['4'].collect{"JNLP$it-connect".toString()} + +['Ping']) as Set
+    assert org.jenkinsci.main.modules.sshd.SSHD.get().port == -1
+
+ }
+
 testLdap()
 testActiveDirectory()
 testAuthorizationStrategy()
+testSecurityOptions()

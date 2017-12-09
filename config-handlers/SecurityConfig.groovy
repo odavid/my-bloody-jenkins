@@ -17,29 +17,29 @@ def asBoolean(value, defaultValue=false){
 def setupActiveDirectory(config){
     config.with{
         return new hudson.plugins.active_directory.ActiveDirectorySecurityRealm(
-            domain, 
+            domain,
             domains?.collect{ currentDomain ->
                 new hudson.plugins.active_directory.ActiveDirectoryDomain(
-                    currentDomain.name, 
-                    currentDomain.servers?.join(','), 
-                    currentDomain.site, 
-                    currentDomain.bindName, 
+                    currentDomain.name,
+                    currentDomain.servers?.join(','),
+                    currentDomain.site,
+                    currentDomain.bindName,
                     currentDomain.bindPassword
                 )
-            }, 
-            site, 
+            },
+            site,
             bindName,
-            bindPassword, 
-            server, 
-            groupLookupStrategy ? hudson.plugins.active_directory.GroupLookupStrategy.valueOf(groupLookupStrategy) : null, 
-            asBoolean(removeIrrelevantGroups), 
-            asBoolean(customDomain, null), 
+            bindPassword,
+            server,
+            groupLookupStrategy ? hudson.plugins.active_directory.GroupLookupStrategy.valueOf(groupLookupStrategy) : null,
+            asBoolean(removeIrrelevantGroups),
+            asBoolean(customDomain, null),
             cache ? new hudson.plugins.active_directory.CacheConfiguration(
                 asInt(cache.size, 0),
                 asInt(cache.ttl, 0)
-            ) : null, 
-            asBoolean(startTls, null), 
-            tlsConfiguration ? hudson.plugins.active_directory.TlsConfiguration.valueOf(tlsConfiguration) : null, 
+            ) : null,
+            asBoolean(startTls, null),
+            tlsConfiguration ? hudson.plugins.active_directory.TlsConfiguration.valueOf(tlsConfiguration) : null,
             jenkinsInternalUser ? new hudson.plugins.active_directory.ActiveDirectoryInternalUsersDatabase(jenkinsInternalUser) : null
         )
     }
@@ -102,6 +102,44 @@ def createAuthorizationStrategy(config, adminUser){
     return strategy
 }
 
+def setupSecurityOptions(config){
+    config = config ?: [:]
+    // https://wiki.jenkins.io/display/JENKINS/CSRF+Protection
+    config.preventCSRF = asBoolean(config.preventCSRF)
+    config.enableScriptSecurityForDSL = asBoolean(config.enableScriptSecurityForDSL)
+    // See https://jenkins.io/blog/2017/04/11/new-cli/
+    config.enableCLIOverRemoting = asBoolean(config.enableCLIOverRemoting)
+    // See https://wiki.jenkins.io/display/JENKINS/Slave+To+Master+Access+Control
+    config.enableAgentMasterAccessControl = asBoolean(config.enableAgentMasterAccessControl)
+    config.disableRememberMe = asBoolean(config.disableRememberMe)
+    config.sshdEnabled = asBoolean(config.sshdEnabled)
+    config.jnlpProtocols = config.jnlpProtocols != null ? config.jnlpProtocols : ['JNLP4']
+
+    config.with{
+        if(preventCSRF){
+            jenkins.model.Jenkins.instance.crumbIssuer = new hudson.security.csrf.DefaultCrumbIssuer(true)
+        }else{
+            jenkins.model.Jenkins.instance.setCrumbIssuer(null)
+        }
+        jenkins.model.GlobalConfiguration.all()
+            .get(javaposse.jobdsl.plugin.GlobalJobDslSecurityConfiguration)
+            .useScriptSecurity = enableScriptSecurityForDSL
+        jenkins.CLI.get().enabled = enableCLIOverRemoting
+        jenkins.model.Jenkins.instance.disableRememberMe = disableRememberMe
+        jenkins.model.Jenkins.instance
+            .injector.getInstance(jenkins.security.s2m.AdminWhitelistRule).masterKillSwitch = !enableAgentMasterAccessControl
+
+        jenkins.model.Jenkins.instance.agentProtocols = jnlpProtocols.collect{"${it}-connect".toString()} as Set
+
+        if(sshdEnabled){
+            org.jenkinsci.main.modules.sshd.SSHD.get().port = 16022
+        }else{
+            org.jenkinsci.main.modules.sshd.SSHD.get().port = -1
+        }
+        jenkins.model.Jenkins.instance.save()
+    }
+}
+
 def setup(config){
     config = config ?: [:]
     def adminUser = config.adminUser
@@ -125,6 +163,7 @@ def setup(config){
         instance.setAuthorizationStrategy(strategy)
         instance.save()
     }
+    setupSecurityOptions(config.securityOptions)
 }
 
 return this
