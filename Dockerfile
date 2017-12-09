@@ -2,7 +2,7 @@ FROM jenkins/jenkins:2.89.1-alpine
 
 ARG GOSU_VERSION=1.10
 
-# Using root to install and run entrypoint. 
+# Using root to install and run entrypoint.
 # We will change the user to jenkins using gosu
 USER root
 
@@ -20,7 +20,7 @@ RUN curl -SsLo /usr/bin/gosu https://github.com/tianon/gosu/releases/download/${
 
 COPY update-config.sh /usr/bin/
 
-# Separate between JENKINS_HOME and WORKSPACE dir. Best if we use NFS for JENKINS_HOME 
+# Separate between JENKINS_HOME and WORKSPACE dir. Best if we use NFS for JENKINS_HOME
 RUN mkdir -p /jenkins-workspace-home && \
     chown -R jenkins:jenkins /jenkins-workspace-home
 
@@ -40,7 +40,7 @@ RUN /usr/local/bin/install-plugins-with-retry.sh < /usr/share/jenkins/ref/plugin
 COPY init-scripts/* /usr/share/jenkins/ref/init.groovy.d/
 
 RUN cd /usr/share/jenkins/ref/init.groovy.d/ && \
-    for f in *.groovy; do mv "$f" "${f}.override"; done 
+    for f in *.groovy; do mv "$f" "${f}.override"; done
 
 # Add configuration handlers groovy scripts
 COPY config-handlers /usr/share/jenkins/config-handlers
@@ -59,7 +59,7 @@ ENV CONFIG_CACHE_DIR=/dev/shm/.jenkins-config-cache
 ENV JENKINS_ENV_EXECUTERS=0
 # If true, then workspaceDir will changed its defaults from ${JENKINS_HOME}/workspace
 # to /jenkins-workspace-home/workspace/${ITEM_FULLNAME}
-# This is useful in case your JENKINS_HOME is mapped to NFS mount, 
+# This is useful in case your JENKINS_HOME is mapped to NFS mount,
 # slowing down the workspace
 ENV JENKINS_ENV_CHANGE_WORKSPACE_DIR=true
 ####################################################################################
@@ -83,9 +83,9 @@ ENV JENKINS_HTTP_PORT_FOR_SLAVES=8080
 # This is used by docker slaves to get the actual jenkins URL
 # in case jenkins is behind a load-balancer or a reverse proxy
 #
-# JENKINS_IP_FOR_SLAVES will be evaluated in the following order: 
-#    $JENKINS_ENV_HOST_IP || 
-#    $(eval $JENKINS_ENV_HOST_IP_CMD) || 
+# JENKINS_IP_FOR_SLAVES will be evaluated in the following order:
+#    $JENKINS_ENV_HOST_IP ||
+#    $(eval $JENKINS_ENV_HOST_IP_CMD) ||
 #    ''
 #ENV JENKINS_ENV_HOST_IP=<REAL_IP>
 #ENV JENKINS_ENV_HOST_IP_CMD='<command to fetch ip>'
@@ -94,3 +94,5 @@ ENV JENKINS_HTTP_PORT_FOR_SLAVES=8080
 # General:  JENKINS_ENV_HOST_IP_CMD='ip route | grep default | awk '"'"'{print $3}'"'"''
 ####################################################################################
 
+# If sshd enabled, this will be the port
+EXPOSE 16022
