@@ -1,6 +1,31 @@
 ## Changelog
 
 <!-- ### Not released yet -->
+### 2.89.1 Not released yet
+* Using latest [LTS image 2.89.1](https://jenkins.io/changelog-stable/)
+* Upgrade the following plugins:
+    * [blueocean](https://plugins.jenkins.io/blueocean)
+    * [branch-api](https://plugins.jenkins.io/branch-api)
+    * [buildtriggerbadge](https://plugins.jenkins.io/buildtriggerbadge)
+    * [docker-plugin](https://plugins.jenkins.io/docker-plugin)
+    * [kubernetes](https://plugins.jenkins.io/kubernetes)
+    * [lockable-resources](https://plugins.jenkins.io/lockable-resources)
+    * [pipeline-build-step](https://plugins.jenkins.io/pipeline-build-step)
+    * [workflow-api](https://plugins.jenkins.io/workflow-api)
+    * [workflow-job](https://plugins.jenkins.io/workflow-job/workflow-job)
+* Added securityOptions config under security section with the following options:
+    * preventCSRF - boolean, default: true 
+    * enableScriptSecurityForDSL - boolean, default: false
+    * enableCLIOverRemoting - boolean, default: false
+    * enableAgentMasterAccessControl - boolean, default: true
+    * disableRememberMe - boolean, default: false
+    * sshdEnabled - boolean, default: false
+    * jnlpProtocols - list, default: [JNLP4] valid values: [JNLP, JNLP2, JNLP3, JNLP4]
+
+
+* By default jenkins security is configured with:
+    * CSRF prevention
+    * Master/Agent access control
 
 
 ### 2.73.3-6
