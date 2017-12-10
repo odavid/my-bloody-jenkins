@@ -1,15 +1,13 @@
 # My Bloody Jenkins - An opinionated Jenkins Docker Image
 [![Build Status](https://travis-ci.org/odavid/my-bloody-jenkins.svg?branch=master)](https://travis-ci.org/odavid/my-bloody-jenkins)
-[![Docker Stars](https://img.shields.io/docker/stars/odavid/my-bloody-jenkins.svg)](https://hub.docker.com/r/odavid/my-bloody-jenkins/)
+[![Docker Stars](https://img.shields.io/docker/stars/odavid/my-bloody-jenkins.svg)](https://hub.docker.com/r/odavid/my-bloody-jenkins/) 
 
 ## Introduction
 I've been working a lot with Jenkins/Pipline and Docker in the last couple of years, and wanted to share my experience on these subjects.
 
 Jenkins is great! Jenkins combined with Docker is even greater...
 
-But...
-
-It is HARD to get it work.
+But... It is HARD to get it work.
 
 Many small tweaks, plugins that do not work as expected in combination with other plugins, and not to mention configuration and automation.
 
@@ -27,58 +25,38 @@ So... Since I spilled some blood on that matter, I've decided to create an ***op
 
 Therefore ***My Bloody Jenkins***...
 
-### Main Decisions
+### Releases
+See [Changes](CHANGELOG.md)
 
-* Jenkins does not rely on external configuration management tools. I've decided to make it an 'autopilot' docker container, using environment variables that are passed to the container or can be fetched from a centrailized KV store such as Consul.
-* I am focusing in docker cloud environment - meaning Jenkins master is running inside docker, slaves are ephemeral docker containers running in Kubernetes/ECS/Swarm clusters
-* Only using JNLP slaves and not SSH slaves
-* By default, Jenkins master does not have any executer of its own - let the slaves do the actual job
-* SCM - Focusing only on git
-* Complex configuration items are defined in yaml and can be passed as environment variables
-* Plugins
-    * Focus on pipeline based plugins
-    * Plugins must be baked inside the image and should be treated as a the jenkins binary itself. Need to update/add/remove a plugin?? - Create a new image!
-* Focus on the following configuration items:
-    * Credentials
-        * User/Password
-        * SSH Keys
-        * Secret Text
-        * AWS Credentials
-        * Certificiate Credentials
-    * Security
-        * Jenkins database
-        * LDAP
-        * ActiveDirectory
-        * Using Project Matrix Authorization Strategy
-    * Clouds - As I said above - Only docker based and only JNLP
-        * ECS
-        * Kubernetes
-        * Docker plugin
-    * Notifications
-        * Email
-        * Slack
-        * Hipchat
-    * Script Approvals - since we are using pipeline, sometimes you must approve some groovy methods (We all understand why it is needed, but this one is bloody...)
-    * Tools and installers
-        * Apache Ant
-        * Apache Maven
-        * Gradle
-        * JDK
-        * Xvfb
-        * SonarQube Runner
-    * Global Pipeline Libraries - Yes yes yes. Use them a lot...
-    * Seed Jobs - As I said, it is an 'autoplilot' Jenkins! We do not want to add/remove/update jobs from the UI. Seed Jobs are also Jenkins pipeline jobs that can use JobDSL scripts to drive the jobs CRUD operations
-    * Misc R&D lifecycle tools
-        * Checkmarx
-        * Jira
-        * SonarQube
-        * Gitlab
+Docker Images are pushed to [Docker Hub](https://hub.docker.com/r/odavid/my-bloody-jenkins/)
 
-Ok, enough talking...
+Each release is a git tag v$LTS_VERSION-$INCREMENT where:
 
-# Examples
+* LTS_VERSION is the Jenkins LTS version
+* INCREMENT is a number representing that representing the release contents (i.e additional configuration options, bugs in configuration, plugins, etc...)
+
+For each git tag, there following tags will be created:
+* $LTS_VERSION-$INCREMENT - one to one releationship with git tag
+* $LTS_VERSION - latest release for that LTS version
+* lts - represents the latest release
+
+Each master commit, will be tagged as latest
+
+```bash
+# get the latest release
+docker pull odavid/my-bloody-jenkins:lts
+# get the latest 2.73.3 LTS
+docker pull odavid/my-bloody-jenkins:2.73.3
+# get a concrete 2.73.3 release
+docker pull odavid/my-bloody-jenkins:2.73.3-6
+# get the latest unstable image
+docker pull odavid/my-bloody-jenkins
+```  
+
+## Examples
 * [docker-plugin cloud](examples/docker/) cloud using Docker Plugin cloud with seed job. See [examples/docker](examples/docker/)
 * [kubernetes](examples/kubernetes/) cloud using Minikube with seed job. See [examples/kubernetes](examples/kubernetes/)
+
 
 ## Environment Variables
 The following Environment variables are supported
