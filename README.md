@@ -2,7 +2,38 @@
 [![Build Status](https://travis-ci.org/odavid/my-bloody-jenkins.svg?branch=master)](https://travis-ci.org/odavid/my-bloody-jenkins)
 [![Docker Stars](https://img.shields.io/docker/stars/odavid/my-bloody-jenkins.svg)](https://hub.docker.com/r/odavid/my-bloody-jenkins/) 
 
-[CHANGLOG](CHANGLOG.md)
+### Releases
+See [Changes](CHANGELOG.md)
+
+#### Docker Image Tags Format
+Images are pushed to [Docker Hub](https://hub.docker.com/r/odavid/my-bloody-jenkins/)
+
+Each release is a git tag v$LTS_VERSION-$INCREMENT where:
+
+* LTS_VERSION is the Jenkins LTS version
+* INCREMENT is a number representing that representing the release contents (i.e additional configuration options, bugs in configuration, plugins, etc...)
+
+For each git tag, there following tags will be created:
+* $LTS_VERSION-$INCREMENT - one to one releationship with git tag
+* $LTS_VERSION - latest release for that LTS version
+* lts - represents the latest release
+
+Each master commit, will be tagged as latest
+
+```bash
+# get the latest release
+docker pull odavid/my-bloody-jenkins:lts
+# get the latest 2.73.3 LTS
+docker pull odavid/my-bloody-jenkins:2.73.3
+# get a concrete 2.73.3 release
+docker pull odavid/my-bloody-jenkins:2.73.3-6
+# get the latest unstable image
+docker pull odavid/my-bloody-jenkins
+```  
+
+## Examples
+* [docker-plugin cloud](examples/docker/) cloud using Docker Plugin cloud with seed job. See [examples/docker](examples/docker/)
+* [kubernetes](examples/kubernetes/) cloud using Minikube with seed job. See [examples/kubernetes](examples/kubernetes/)
 
 ## Introduction
 I've been working a lot with Jenkins/Pipline and Docker in the last couple of years, and wanted to share my experience on these subjects.
@@ -77,10 +108,6 @@ Therefore ***My Bloody Jenkins***...
         * Gitlab
 
 Ok, enough talking...
-
-# Examples
-* [docker-plugin cloud](examples/docker/) cloud using Docker Plugin cloud with seed job. See [examples/docker](examples/docker/)
-* [kubernetes](examples/kubernetes/) cloud using Minikube with seed job. See [examples/kubernetes](examples/kubernetes/)
 
 ## Environment Variables
 The following Environment variables are supported
