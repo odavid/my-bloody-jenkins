@@ -1,6 +1,5 @@
 import jenkins.model.Jenkins
 import org.jenkinsci.plugins.scriptsecurity.scripts.ScriptApproval
-import jenkins.CLI
 
 def asInt(value, defaultValue=0){
     return value ? value.toInteger() : defaultValue
@@ -14,8 +13,6 @@ def setup(config){
     def instance = Jenkins.getInstance()
     def slaveAgentPorts = env['JENKINS_SLAVE_AGENT_PORT']
     def executersCount = env['JENKINS_ENV_EXECUTERS']
-    def cliOverRemoting = env['JENKINS_ENV_CLI_REMOTING_ENABLED']
-    def useScriptSecurity = env['JENKINS_ENV_USE_SCRIPT_SECURITY']
     def changeWorkspaceDir = env['JENKINS_ENV_CHANGE_WORKSPACE_DIR']
 
     def jenkinsUrl = env['JENKINS_ENV_JENKINS_URL']
@@ -37,10 +34,7 @@ def setup(config){
         jenkinsLocationConfig.save()
     }
 
-
-
     instance.setNumExecutors(executersCount  ? executersCount.toInteger() : 0)
-    CLI.get().setEnabled(cliOverRemoting ? cliOverRemoting.toBoolean() : false)
     // This is the only way to change the workspaceDir field at the moment... ):
     // We do that if the JENKINS_HOME is mapped to NFS volume (e.g. deployment on ECS or Kubernetes)
     if(changeWorkspaceDir){
@@ -50,10 +44,6 @@ def setup(config){
         Jenkins.instance.save()
     }
 
-
-    jenkins.model.GlobalConfiguration.all()
-        .get(javaposse.jobdsl.plugin.GlobalJobDslSecurityConfiguration).useScriptSecurity =
-            useScriptSecurity ? useScriptSecurity.toBoolean() : false
 
     Thread.start{
         sleep 1000

@@ -83,54 +83,55 @@ def dockerCloud(config){
     config.with{
         def dockerCloud = new DockerCloud(
             id,
+            new io.jenkins.docker.client.DockerAPI(
+                new org.jenkinsci.plugins.docker.commons.credentials.DockerServerEndpoint(
+                    dockerHostUri,
+                    credentialsId
+                )
+            ),
             templates?.collect{ temp ->
+                def dockerTemplateBase = new DockerTemplateBase(
+                    temp.image,
+                )
+                dockerTemplateBase.pullCredentialsId = temp.pullCredentialsId?:''
+                dockerTemplateBase.dnsString = temp.dns?.join(' ')
+                dockerTemplateBase.network = temp.network?:''
+                dockerTemplateBase.dockerCommand = temp.command?:''
+                dockerTemplateBase.volumesString = temp.volumes?.join('\n')
+                dockerTemplateBase.volumesFromString = temp.volumesFrom?.join('\n')
+                dockerTemplateBase.environmentsString = temp.environment?.collect{k,v -> "${k}=${v}"}?.join("\n")
+                dockerTemplateBase.hostname = temp.hostname?:''
+                dockerTemplateBase.memoryLimit = asInt(temp.memory)
+                dockerTemplateBase.memorySwap = asInt(temp.memorySwap)
+                dockerTemplateBase.cpuShares = asInt(temp.cpu)
+                dockerTemplateBase.bindPorts = temp.ports?.join(' ') ?:''
+                dockerTemplateBase.bindAllPorts = asBoolean(temp.bindAllPorts)
+                dockerTemplateBase.privileged = asBoolean(temp.privileged)
+                dockerTemplateBase.tty = asBoolean(temp.tty)
+                dockerTemplateBase.macAddress = temp.macAddress
+                dockerTemplateBase.extraHostsString = temp.extraHosts?.join('\n') ?: ''
+
                 def dockerTemplate = new DockerTemplate(
-                    new DockerTemplateBase(
-                        temp.image,
-                        temp.pullCredentialsId?:'',
-                        temp.dns?.join(' '),
-                        temp.network?:'',
-                        temp.command?:'',
-                        temp.volumes?.join('\n'),
-                        temp.volumesFrom?.join('\n'),
-                        temp.environment?.collect{k,v -> "${k}=${v}"}?.join("\n"),
-                        temp.lxcConf?:'',
-                        temp.hostname?:'',
-                        asInt(temp.memory),
-                        asInt(temp.memorySwap),
-                        asInt(temp.cpu),
-                        temp.ports?.join(' ') ?:'',
-                        asBoolean(temp.bindAllPorts),
-                        asBoolean(temp.privileged),
-                        asBoolean(temp.tty),
-                        temp.macAddress
+                    dockerTemplateBase,
+                    new io.jenkins.docker.connector.DockerComputerJNLPConnector(
+                        new JNLPLauncher(tunnel, temp.jvmArgs)
                     ),
                     temp.labels?.join(' '),
                     temp.remoteFs?:'',
-                    temp.remoteFsMapping?:'',
                     temp.instanceCap?.toString() ?: "",
                     []
                 )
                 dockerTemplate.mode = Node.Mode.EXCLUSIVE
                 dockerTemplate.numExecutors = asInt(temp.numExecutors, 1)
-                dockerTemplate.connector = new io.jenkins.docker.connector.DockerComputerJNLPConnector(
-                    new JNLPLauncher(tunnel, temp.jvmArgs)
-                )
                 dockerTemplate.connector.user = temp.jnlpUser ?: config.jnlpUser ?: ''
                 dockerTemplate.removeVolumes = asBoolean(temp.removeVolumes)
-                dockerTemplate.dockerTemplateBase.extraHosts = extraHosts?:[]
                 return dockerTemplate
-            },
-            new org.jenkinsci.plugins.docker.commons.credentials.DockerServerEndpoint(
-                dockerHostUri,
-                credentialsId
-            ),
-            asInt(containerCap, 100),
-            asInt(connectTimeout),
-            asInt(readTimeout),
-            apiVersion?.toString() ?: '',
-            dockerHostname?:''
+            }
         )
+        dockerCloud.containerCap = asInt(containerCap, 100)
+        dockerCloud.dockerApi?.apiVersion = apiVersion?.toString() ?: ''
+        dockerCloud.dockerApi?.connectTimeout = asInt(connectTimeout)
+        dockerCloud.dockerApi?.hostname = dockerHostname
         dockerCloud.exposeDockerHost = asBoolean(exposeDockerHost, true)
         return dockerCloud
     }
