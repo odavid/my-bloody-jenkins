@@ -105,12 +105,12 @@ def createAuthorizationStrategy(config, adminUser){
 def setupSecurityOptions(config){
     config = config ?: [:]
     // https://wiki.jenkins.io/display/JENKINS/CSRF+Protection
-    config.preventCSRF = asBoolean(config.preventCSRF)
+    config.preventCSRF = asBoolean(config.preventCSRF, true)
     config.enableScriptSecurityForDSL = asBoolean(config.enableScriptSecurityForDSL)
     // See https://jenkins.io/blog/2017/04/11/new-cli/
     config.enableCLIOverRemoting = asBoolean(config.enableCLIOverRemoting)
     // See https://wiki.jenkins.io/display/JENKINS/Slave+To+Master+Access+Control
-    config.enableAgentMasterAccessControl = asBoolean(config.enableAgentMasterAccessControl)
+    config.enableAgentMasterAccessControl = asBoolean(config.enableAgentMasterAccessControl, true)
     config.disableRememberMe = asBoolean(config.disableRememberMe)
     config.sshdEnabled = asBoolean(config.sshdEnabled)
     config.jnlpProtocols = config.jnlpProtocols != null ? config.jnlpProtocols : ['JNLP4']
