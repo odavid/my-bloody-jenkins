@@ -17,7 +17,8 @@ services:
         security:
           realm: jenkins_database
           adminPassword: admin
-        odavid/jenkins-jnlp-slave:
+        credentials:
+          minikube-cert:
             type: cert
             base64: ${MINIKUBE_CERT}
             password: ${MINIKUBE_CERT_PASSWORD}
