@@ -1,7 +1,7 @@
 ## Changelog
 
 <!-- ### Not released yet -->
-### 2.89.1 Not released yet
+### 2.89.1-7
 * Using latest [LTS image 2.89.1](https://jenkins.io/changelog-stable/)
 * Upgrade the following plugins:
     * [blueocean](https://plugins.jenkins.io/blueocean)
