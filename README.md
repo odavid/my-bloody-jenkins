@@ -25,7 +25,7 @@ So... Since I spilled some blood on that matter, I've decided to create an ***op
 
 Therefore ***My Bloody Jenkins***...
 
-### Releases
+## Releases
 See [Changes](CHANGELOG.md)
 
 Docker Images are pushed to [Docker Hub](https://hub.docker.com/r/odavid/my-bloody-jenkins/)
