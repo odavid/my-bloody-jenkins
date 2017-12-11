@@ -19,7 +19,7 @@ if [[ $# -lt 1 ]] || [[ "$1" == "-"* ]]; then
             --skip-watch
         if [ "$JENKINS_ENV_CONFIG_YML_URL_DISABLE_WATCH" != 'true' ]; then
             echo "Watching config from URL: ${JENKINS_ENV_CONFIG_YML_URL} in the backgroud"
-            watch-file.sh \
+            nohup watch-file.sh \
                 --cache-dir $CONFIG_CACHE_DIR \
                 --url "${JENKINS_ENV_CONFIG_YML_URL}" \
                 --filename $CONFIG_FILE_LOCATION \
@@ -65,7 +65,7 @@ if [[ $# -lt 1 ]] || [[ "$1" == "-"* ]]; then
     if [ -S /var/run/docker.sock ]; then
         DOCKER_SOCKET_OWNER_GROUP_ID=$(stat -c %g /var/run/docker.sock)
         echo "jenkins groups: $(id jenkins -G)"
-        getent group $DOCKER_SOCKET_OWNER_GROUP_ID || groupadd -g $DOCKER_SOCKET_OWNER_GROUP_ID docker 
+        getent group $DOCKER_SOCKET_OWNER_GROUP_ID || groupadd -g $DOCKER_SOCKET_OWNER_GROUP_ID docker
         id jenkins -G | grep $DOCKER_SOCKET_OWNER_GROUP_ID || usermod -G "$(id -G jenkins | tr ' ' ','),$DOCKER_SOCKET_OWNER_GROUP_ID" jenkins
         echo "jenkins new groups: $(id jenkins -G)"
     fi
