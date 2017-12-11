@@ -14,13 +14,14 @@
     * [workflow-api](https://plugins.jenkins.io/workflow-api)
     * [workflow-job](https://plugins.jenkins.io/workflow-job/workflow-job)
 * Added securityOptions config under security section with the following options:
-    * preventCSRF - boolean, default: true 
+    * preventCSRF - boolean, default: true
     * enableScriptSecurityForDSL - boolean, default: false
     * enableCLIOverRemoting - boolean, default: false
     * enableAgentMasterAccessControl - boolean, default: true
     * disableRememberMe - boolean, default: false
     * sshdEnabled - boolean, default: false
     * jnlpProtocols - list, default: [JNLP4] valid values: [JNLP, JNLP2, JNLP3, JNLP4]
+* Sometimes watch-file is stopped without any known reason [#65](https://github.com/odavid/my-bloody-jenkins/issues/65)
 
 
 * By default jenkins security is configured with:
