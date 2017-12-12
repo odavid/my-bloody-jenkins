@@ -8,20 +8,29 @@ import org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl
 import jenkins.model.Jenkins
 import hudson.util.Secret
 
+def asInt(value, defaultValue=0){
+    return value ? value.toInteger() : defaultValue
+}
+def asBoolean(value, defaultValue=false){
+    return value != null ? value.toBoolean() : defaultValue
+}
+
 def p4PassCred(config) {
     config.with{
-        return new org.jenkinsci.plugins.p4.credentials.P4PasswordImpl(
+        def p4cred = new org.jenkinsci.plugins.p4.credentials.P4PasswordImpl(
             CredentialsScope.GLOBAL, 
             id, 
             description, 
             p4port,
-            trust ? new org.jenkinsci.plugins.p4.credentials.TrustImpl(trust) : null, 
+            asBoolean(ssl) ? new org.jenkinsci.plugins.p4.credentials.TrustImpl(trust) : null, 
             username, 
             retry?.toString(),
             timeout?.toString(), 
             p4host, 
             password
         )
+        p4cred.allhosts = asBoolean(allhosts)
+        return p4cred
     }
 }
 
@@ -32,12 +41,16 @@ def p4TicketCred(config) {
             id, 
             description, 
             p4port,
-            trust ? new org.jenkinsci.plugins.p4.credentials.TrustImpl(trust) : null, 
+            asBoolean(ssl) ? new org.jenkinsci.plugins.p4.credentials.TrustImpl(trust) : null, 
             username, 
             retry?.toString(),
             timeout?.toString(),
             p4host, 
-            password
+            new org.jenkinsci.plugins.p4.credentials.TicketModeImpl(
+                '',
+                ticketValue,
+                ticketPath
+            )
         )
     }
 }
