@@ -33,6 +33,8 @@ aws-cred:
   access_key: xxxx
   secret_access_key: yyyy
   description: aws description
+  iamRoleArn: arn://xxx
+  iamMfaSerialNumber: 123
 userpass-cred:
   type: userpass
   username: user
@@ -59,6 +61,29 @@ cert-cred:
   description: cert description
   password: secret
   base64: ${base64Text}
+p4-pass-cred:
+  type: p4-pass
+  description: p4 pass description
+  p4port: localhost:1666
+  ssl: true
+  trust: my-trust
+  username: myp4user
+  retry: 20
+  timeout: 20
+  p4host: localhost
+  password: myp4pass
+  allhosts: true
+p4-ticket-cred:
+  type: p4-ticket
+  description: p4 ticket description
+  p4port: localhost:1666
+  ssl: true
+  trust: my-trust
+  username: myp4user
+  retry: 20
+  timeout: 20
+  p4host: localhost
+  ticketValue: myp4pass
 """)
 
     configHandler.setup(config)
@@ -71,6 +96,8 @@ cert-cred:
         assert it.description == "aws description"
         assert it.accessKey == "xxxx"
         assert it.secretKey.toString() == "yyyy"
+        assert it.iamRoleArn == 'arn://xxx'
+        assert it.iamMfaSerialNumber == '123'
     }
     assertCred("userpass-cred", com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl){
         assert it.description == "userpass description"
@@ -99,5 +126,26 @@ cert-cred:
         assert it.keyStoreSource instanceof com.cloudbees.plugins.credentials.impl.CertificateCredentialsImpl.UploadedKeyStoreSource
         assert it.keyStoreSource.keyStoreBytes
     }
+    assertCred("p4-pass-cred", org.jenkinsci.plugins.p4.credentials.P4PasswordImpl){
+        assert it.description == "p4 pass description"
+        assert it.password.toString() == "myp4pass"
+        assert it.p4port == 'localhost:1666'
+        assert it.trust == 'my-trust'
+        assert it.username == 'myp4user'
+        assert it.retry == 20
+        assert it.timeout == 20
+        assert it.p4host == 'localhost'
+        assert it.allhosts
+    }    
+    assertCred("p4-ticket-cred", org.jenkinsci.plugins.p4.credentials.P4TicketImpl){
+        assert it.description == "p4 ticket description"
+        assert it.p4port == 'localhost:1666'
+        assert it.trust == 'my-trust'
+        assert it.username == 'myp4user'
+        assert it.retry == 20
+        assert it.timeout == 20
+        assert it.p4host == 'localhost'
+        assert it.ticketValue == 'myp4pass'
+    }    
 }
 testCreds()

@@ -1,6 +1,13 @@
 ## Changelog
 
 <!-- ### Not released yet -->
+### 2.89.1-8 (Not released yet)
+* Added Perforce Credentials:
+    * p4-pass - p4 password
+    * p4-ticket - p4 ticket
+* Support iamMfaSerialNumber and iamRoleArn in aws-cred
+
+
 ### 2.89.1-7
 * Using latest [LTS image 2.89.1](https://jenkins.io/changelog-stable/)
 * Upgrade the following plugins:
