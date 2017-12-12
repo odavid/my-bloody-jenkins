@@ -1,7 +1,6 @@
 ## Changelog
 
-<!-- ### Not released yet -->
-### 2.89.1-8 (Not released yet)
+### 2.89.1-8
 * Added Perforce Credentials:
     * p4-pass - p4 password
     * p4-ticket - p4 ticket
@@ -11,7 +10,7 @@
     * [docker-commons](https://plugins.jenkins.io/docker-commons)
     * [docker-plugin](https://plugins.jenkins.io/docker-plugin)
     * [script-security](https://plugins.jenkins.io/script-security)
-    
+
 ### 2.89.1-7
 * Using latest [LTS image 2.89.1](https://jenkins.io/changelog-stable/)
 * Upgrade the following plugins:
