@@ -6,8 +6,12 @@
     * p4-pass - p4 password
     * p4-ticket - p4 ticket
 * Support iamMfaSerialNumber and iamRoleArn in aws-cred
-
-
+* Updated plugins:
+    * [blueocean](https://plugins.jenkins.io/blueocean)
+    * [docker-commons](https://plugins.jenkins.io/docker-commons)
+    * [docker-plugin](https://plugins.jenkins.io/docker-plugin)
+    * [script-security](https://plugins.jenkins.io/script-security)
+    
 ### 2.89.1-7
 * Using latest [LTS image 2.89.1](https://jenkins.io/changelog-stable/)
 * Upgrade the following plugins:
