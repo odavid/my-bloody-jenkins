@@ -8,6 +8,40 @@ import org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl
 import jenkins.model.Jenkins
 import hudson.util.Secret
 
+def p4PassCred(config) {
+    config.with{
+        return new org.jenkinsci.plugins.p4.credentials.P4PasswordImpl(
+            CredentialsScope.GLOBAL, 
+            id, 
+            description, 
+            p4port,
+            trust ? new org.jenkinsci.plugins.p4.credentials.TrustImpl(trust) : null, 
+            username, 
+            retry?.toString(),
+            timeout?.toString(), 
+            p4host, 
+            password
+        )
+    }
+}
+
+def p4TicketCred(config) {
+    config.with{
+        return new org.jenkinsci.plugins.p4.credentials.P4TicketImpl(
+            CredentialsScope.GLOBAL, 
+            id, 
+            description, 
+            p4port,
+            trust ? new org.jenkinsci.plugins.p4.credentials.TrustImpl(trust) : null, 
+            username, 
+            retry?.toString(),
+            timeout?.toString(),
+            p4host, 
+            password
+        )
+    }
+}
+
 def sshKeyCred(config) {
     def pk = config.privatekey ?: new String(config.base64?.decodeBase64(), 'UTF-8')
     config.with{
@@ -115,6 +149,10 @@ def setup(config){
                 return certCred(credConfig)
             case 'gitlab-api-token':
                 return gitlabApiToken(credConfig)
+            case 'p4-pass':
+                return p4PassCred(credConfig)
+            case 'p4-ticket':
+                return p4TicketCred(credConfig)
             default:
                 return null
         }
