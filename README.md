@@ -180,15 +180,32 @@ security:
 ```yaml
 # Permissions - each key represents a user/group and has list of Jenkins Permissions
 security:
-    realm: ...
-    permissions:
-        authenticated: # Special group
-            - hudson.model.Hudson.Read # Permission Id - see
-            - hudson.model.Item.Read
-            - hudson.model.Item.Discover
-            - hudson.model.Item.Cancel
-        junior-developers:
-            - hudson.model.Item.Build
+  realm: ...
+  permissions:
+    authenticated: # Special group
+      - hudson.model.Hudson.Read # Permission Id - see
+      - hudson.model.Item.Read
+      - hudson.model.Item.Discover
+      - hudson.model.Item.Cancel
+    junior-developers:
+      - hudson.model.Item.Build
+```
+
+```yaml
+# Misc security options
+security:
+  securityOptions:
+    preventCSRF: true # default true
+    enableScriptSecurityForDSL: false # default false
+    enableCLIOverRemoting: false # default false
+    enableAgentMasterAccessControl: true # default true
+    disableRememberMe: false # default false
+    sshdEnabled: true # default false, if true, port 16022 is exposed
+    jnlpProtocols: # by default only JNLP4 is enabled
+      - JNLP
+      - JNLP2
+      - JNLP3
+      - JNLP4
 ```
 
 ### Tools Section
