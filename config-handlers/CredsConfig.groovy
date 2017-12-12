@@ -47,7 +47,7 @@ def p4TicketCred(config) {
             timeout?.toString(),
             p4host, 
             new org.jenkinsci.plugins.p4.credentials.TicketModeImpl(
-                '',
+                ticketValue ? 'ticketValueSet' : ticketPath ? 'ticketPathSet' : null,
                 ticketValue,
                 ticketPath
             )
@@ -85,9 +85,11 @@ def awsCred(config){
         return new AWSCredentialsImpl(
             CredentialsScope.GLOBAL,
             id,
-            access_key,
-            secret_access_key,
-            description
+            access_key ?: accessKey,
+            secret_access_key ?: secretKey,
+            description,
+            iamRoleArn,
+            iamMfaSerialNumber?.toString()
         )
     }
 }
