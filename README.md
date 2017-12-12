@@ -1,6 +1,8 @@
 # My Bloody Jenkins - An opinionated Jenkins Docker Image
 [![Build Status](https://travis-ci.org/odavid/my-bloody-jenkins.svg?branch=master)](https://travis-ci.org/odavid/my-bloody-jenkins)
-[![Docker Stars](https://img.shields.io/docker/stars/odavid/my-bloody-jenkins.svg)](https://hub.docker.com/r/odavid/my-bloody-jenkins/) 
+[![Docker Stars](https://img.shields.io/docker/stars/odavid/my-bloody-jenkins.svg)](https://hub.docker.com/r/odavid/my-bloody-jenkins/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/odavid/my-bloody-jenkins.svg)](https://hub.docker.com/r/odavid/my-bloody-jenkins/)
+[![Docker Automated build](https://img.shields.io/docker/automated/odavid/my-bloody-jenkins.svg)](https://hub.docker.com/r/odavid/my-bloody-jenkins/)
 
 ## Introduction
 I've been working a lot with Jenkins/Pipline and Docker in the last couple of years, and wanted to share my experience on these subjects.
@@ -51,7 +53,7 @@ docker pull odavid/my-bloody-jenkins:2.73.3
 docker pull odavid/my-bloody-jenkins:2.73.3-6
 # get the latest unstable image
 docker pull odavid/my-bloody-jenkins
-```  
+```
 
 ## Examples
 * [docker-plugin cloud](examples/docker/) cloud using Docker Plugin cloud with seed job. See [examples/docker](examples/docker/)
@@ -70,11 +72,11 @@ The following Environment variables are supported
 
 * __JENKINS_ENV_CONFIG_YAML__ - The [configuration](#configuration-reference) as yaml. When this variable is set, the contents of this variable can be fetched from Consul and also be watched so jenkins can update its configuration everytime this variable is being changed. Since the contents of this variable contains secrets, it is wise to store and pass it from Consul/S3 bucket. In any case, before Jenkins starts, this variable is being unset, so it won't appear in Jenkins 'System Information' page (As I said, blood...)
 
-* __JENKINS_ENV_CONFIG_YML_URL__ - A URL that will be used to fetch the configuration and updated jenkins everytime it changes. This is an alternative to __JENKINS_ENV_CONFIG_YAML__ setup. 
+* __JENKINS_ENV_CONFIG_YML_URL__ - A URL that will be used to fetch the configuration and updated jenkins everytime it changes. This is an alternative to __JENKINS_ENV_CONFIG_YAML__ setup.
 Supported URLs:
   * s3://\<s3path> - s3 path
   * file://\<filepath> - a file path (should be mapped as volume)
-  * http[s]://\<path> - an http endpoint 
+  * http[s]://\<path> - an http endpoint
 
 
 * __JENKINS_ENV_CONFIG_YML_URL_DISABLE_WATCH__ - If equals to 'true', then the configuration file will be fetched only at startup, but won't be watched. Default 'false'
@@ -93,7 +95,7 @@ Supported URLs:
 
 * __JENKINS_ENV_ADMIN_ADDRESS__ - Define the Jenkins admin email address
 
-* __JENKINS_ENV_PLUGINS__ - Ability to define comma separated list of additional plugins to install before starting up. See [plugin-version-format](https://github.com/jenkinsci/docker#plugin-version-format). This is option is not recommended, but sometimes it is useful to run the container without creating an inherited image. 
+* __JENKINS_ENV_PLUGINS__ - Ability to define comma separated list of additional plugins to install before starting up. See [plugin-version-format](https://github.com/jenkinsci/docker#plugin-version-format). This is option is not recommended, but sometimes it is useful to run the container without creating an inherited image.
 
 ## Configuration Reference
 The configuration is divided into main configuration sections. Each section is responsible for a specific aspect of jenkins configuration.
@@ -106,7 +108,7 @@ Keys are environment variable names and values are their corresponding values. N
   environment:
     ENV_KEY_NAME1: ENV_VALUE1
     ENV_KEY_NAME2: ENV_VALUE1
-    
+
 ```
 
 
