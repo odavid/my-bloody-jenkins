@@ -1,5 +1,8 @@
 ## Changelog
 
+### 2.89.1-9 (Not Released yet)
+* Support of fileOnMaster for credentials type sshkey [#70](https://github.com/odavid/my-bloody-jenkins/issues/70)
+
 ### 2.89.1-8
 * Added Perforce Credentials:
     * p4-pass - p4 password

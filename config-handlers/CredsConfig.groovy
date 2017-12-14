@@ -56,12 +56,19 @@ def p4TicketCred(config) {
 }
 
 def sshKeyCred(config) {
-    def pk = config.privatekey ?: new String(config.base64?.decodeBase64(), 'UTF-8')
     config.with{
+        def keySource = null
+        if(fileOnMaster){
+            keySource = new BasicSSHUserPrivateKey.FileOnMasterPrivateKeySource(fileOnMaster)
+        }else if(privatekey || base64){
+            keySource = new BasicSSHUserPrivateKey.DirectEntryPrivateKeySource(
+                privatekey ?: new String(base64?.decodeBase64(), 'UTF-8')
+            )
+        }
         return new BasicSSHUserPrivateKey(CredentialsScope.GLOBAL,
             id,
             username,
-            new BasicSSHUserPrivateKey.DirectEntryPrivateKeySource(pk),
+            keySource,
             passphrase,
             description
         )
@@ -107,8 +114,13 @@ def textCred(config){
 
 def certCred(config){
     config.with{
-        def secretBytes = com.cloudbees.plugins.credentials.SecretBytes.fromString(base64)
-        def keyStoreSource = new com.cloudbees.plugins.credentials.impl.CertificateCredentialsImpl.UploadedKeyStoreSource(secretBytes)
+        def keyStoreSource = null
+        if(base64){
+            def secretBytes = com.cloudbees.plugins.credentials.SecretBytes.fromString(base64)
+            keyStoreSource = new com.cloudbees.plugins.credentials.impl.CertificateCredentialsImpl.UploadedKeyStoreSource(secretBytes)
+        }else if(fileOnMaster){
+            keyStoreSource = new com.cloudbees.plugins.credentials.impl.CertificateCredentialsImpl.FileOnMasterKeyStoreSource(fileOnMaster)
+        }
         return new com.cloudbees.plugins.credentials.impl.CertificateCredentialsImpl(
             CredentialsScope.GLOBAL,
             id,
