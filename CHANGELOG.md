@@ -1,6 +1,6 @@
 ## Changelog
 
-### 2.89.1-9 (Not Released yet)
+### 2.89.1-9
 * Support of fileOnMaster for credentials type sshkey [#70](https://github.com/odavid/my-bloody-jenkins/issues/70)
 
 ### 2.89.1-8
