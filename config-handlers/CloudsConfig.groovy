@@ -118,11 +118,9 @@ def dockerCloud(config){
                     ),
                     temp.labels?.join(' '),
                     temp.remoteFs?:'',
-                    temp.instanceCap?.toString() ?: "",
-                    []
+                    temp.instanceCap?.toString() ?: ""
                 )
                 dockerTemplate.mode = Node.Mode.EXCLUSIVE
-                dockerTemplate.numExecutors = asInt(temp.numExecutors, 1)
                 dockerTemplate.connector.user = temp.jnlpUser ?: config.jnlpUser ?: ''
                 dockerTemplate.removeVolumes = asBoolean(temp.removeVolumes)
                 return dockerTemplate
