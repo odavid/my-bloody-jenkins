@@ -1,5 +1,19 @@
 ## Changelog
 
+### 2.89.1-10 (Not released yet)
+* Updated plugins 
+    * [aws-java-sdk:1.11.248](https://plugins.jenkins.io/aws-java-sdk)
+    * [cloudbees-bitbucket-branch-source:2.2.8](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
+    * [cucumber-reports:3.13.0](https://plugins.jenkins.io/cucumber-reports)
+    * [docker-plugin:1.1.2](https://plugins.jenkins.io/docker-plugin)
+    * [git-client:2.7.0](https://plugins.jenkins.io/git-client)
+    * [github-branch-source:2.3.2](https://plugins.jenkins.io/github-branch-source)
+    * [jackson2-api:2.8.10.1](https://plugins.jenkins.io/jackson2-api)
+    * [scm-api:2.2.6](https://plugins.jenkins.io/scm-api)
+    * [script-security:1.39](https://plugins.jenkins.io/script-security)
+    * [ssh-slaves:1.23](https://plugins.jenkins.io/ssh-slaves)
+    * [timestamper:1.8.9](https://plugins.jenkins.io/timestamper)
+
 ### 2.89.1-9
 * Support of fileOnMaster for credentials type sshkey [#70](https://github.com/odavid/my-bloody-jenkins/issues/70)
 
