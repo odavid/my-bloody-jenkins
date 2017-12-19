@@ -1,11 +1,4 @@
 #! env python
-# set -e -o pipefail
-
-# ppp=$(cat plugins.txt| cut -d ':' -f 1 | xargs -I {} bash -c 'echo -n "{},"' | sed 's/\(.*\),$/\1/g')
-# cat update-center.json| jq --arg ppp 'docker-plugin,blueocean-web' '.plugins| map(select(.name == ($ppp | split(",")))) []| [.name, .version] | "\(.[0]):\(.[1])"'
-# # | xargs -I {} \
-# #     bash -c "cat update-center.json| jq '.plugins| map(select(.name == ({}))) []| [.name, .version] | \"\(.[0]):\(.[1])\"'"
-
 import requests
 import json
 import re
