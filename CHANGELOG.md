@@ -1,6 +1,7 @@
 ## Changelog
 
-### 2.89.1-10 (Not released yet)
+### 2.89.2-10 (Not released yet)
+* Changed lts version to [2.89.2](https://jenkins.io/changelog-stable/)
 * Updated plugins 
     * [aws-java-sdk:1.11.248](https://plugins.jenkins.io/aws-java-sdk)
     * [cloudbees-bitbucket-branch-source:2.2.8](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
