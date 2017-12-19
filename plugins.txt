@@ -123,7 +123,7 @@ sonar:2.6.1
 sse-gateway:1.15
 ssh-agent:1.15
 ssh-credentials:1.13
-ssh-slaves:1.23
+ssh-slaves:1.24
 structs:1.10
 swarm:3.6
 timestamper:1.8.9

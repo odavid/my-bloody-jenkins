@@ -1,6 +1,7 @@
 ## Changelog
 
-### 2.89.1-10 (Not released yet)
+### 2.89.2-10 (Not released yet)
+* Changed lts version to [2.89.2](https://jenkins.io/changelog-stable/)
 * Updated plugins 
     * [aws-java-sdk:1.11.248](https://plugins.jenkins.io/aws-java-sdk)
     * [cloudbees-bitbucket-branch-source:2.2.8](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
@@ -11,7 +12,7 @@
     * [jackson2-api:2.8.10.1](https://plugins.jenkins.io/jackson2-api)
     * [scm-api:2.2.6](https://plugins.jenkins.io/scm-api)
     * [script-security:1.39](https://plugins.jenkins.io/script-security)
-    * [ssh-slaves:1.23](https://plugins.jenkins.io/ssh-slaves)
+    * [ssh-slaves:1.24](https://plugins.jenkins.io/ssh-slaves)
     * [timestamper:1.8.9](https://plugins.jenkins.io/timestamper)
 
 ### 2.89.1-9
