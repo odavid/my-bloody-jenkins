@@ -1,6 +1,6 @@
 ## Changelog
 
-### 2.89.2-11 (Not released yet)
+### 2.89.2-11
 * JENKINS_ENV_QUIET_STARTUP_PERIOD - support for jenkins safe restart
 * Updated plugins
     * [git:3.7.0](https://plugins.jenkins.io/git)
