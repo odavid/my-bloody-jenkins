@@ -61,7 +61,7 @@ extensible-choice-parameter:1.4.1
 external-monitor-job:1.7
 favorite:2.3.1
 gatling:1.2.2
-git:3.6.4
+git:3.7.0
 git-client:2.7.0
 git-parameter:0.9.0
 git-server:1.7
