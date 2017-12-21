@@ -52,5 +52,19 @@ def setup(config){
         println 'updating Downloadables. done...'
     }
 
+    // activate quiet start if user specified quiet start using JENKINS_ENV_QUIET_STARTUP_PERIOD
+    File quietStartup = new File(env['QUIET_STARTUP_FILE_LOCATION'])
+    if(!quietStartup.exists() && env['JENKINS_ENV_QUIET_STARTUP_PERIOD']){
+        final def timeToWaitInSec = asInt(env['JENKINS_ENV_QUIET_STARTUP_PERIOD'])
+        quietStartup.text = env['JENKINS_ENV_QUIET_STARTUP_PERIOD']
+        println '--> Entering quiet mode'
+        jenkins.model.Jenkins.instance.doQuietDown()
+        Thread.start {
+            Thread.sleep(timeToWaitInSec * 1000)
+            hudson.security.ACL.impersonate(hudson.security.ACL.SYSTEM)
+            jenkins.model.Jenkins.instance.doCancelQuietDown()
+            println '--> Entering quiet mode. Done...'
+        }
+    }
 }
 return this

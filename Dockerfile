@@ -47,11 +47,13 @@ COPY config-handlers /usr/share/jenkins/config-handlers
 
 VOLUME /jenkins-workspace-home
 
-# Rever to root
+# Revert to root
 USER root
 ENV CONFIG_FILE_LOCATION=/dev/shm/jenkins-config.yml
 ENV TOKEN_FILE_LOCATION=/dev/shm/.api-token
 ENV CONFIG_CACHE_DIR=/dev/shm/.jenkins-config-cache
+ENV QUIET_STARTUP_FILE_LOCATION=/dev/shm/quiet-startup-mutex
+
 ####################################################################################
 # GENERAL Configuration variables
 ####################################################################################

@@ -16,3 +16,4 @@ services:
       JENKINS_ENV_ADMIN_USER: admin
       JENKINS_ENV_HOST_IP: ${MY_HOST_IP}
       JENKINS_ENV_CONFIG_YML_URL: file:///config.yml
+      JENKINS_ENV_QUIET_STARTUP_PERIOD: 120
