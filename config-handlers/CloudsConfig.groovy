@@ -122,6 +122,9 @@ def dockerCloud(config){
                 )
                 dockerTemplate.mode = Node.Mode.EXCLUSIVE
                 dockerTemplate.connector.user = temp.jnlpUser ?: config.jnlpUser ?: ''
+                if(jenkinsUrl){
+                    dockerTemplate.connector.jenkinsUrl(jenkinsUrl)
+                }
                 dockerTemplate.removeVolumes = asBoolean(temp.removeVolumes)
                 return dockerTemplate
             }
