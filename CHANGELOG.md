@@ -2,6 +2,8 @@
 
 ### 2.89.2-12 (Not released yet)
 * Using jenkinsUrl in docker-plugin. The plugin is now able to set an alternate jenkinsUrl. This means that the end user can only set JENKINS_ENV_HOST_IP and can define different JENKINS_ENV_JENKINS_URL value.
+* Updated plugins
+    * [swarm:3.7](https://plugins.jenkins.io/swarm)
 
 ### 2.89.2-11
 * JENKINS_ENV_QUIET_STARTUP_PERIOD - support for jenkins safe restart

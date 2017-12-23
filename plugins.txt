@@ -125,7 +125,7 @@ ssh-agent:1.15
 ssh-credentials:1.13
 ssh-slaves:1.24
 structs:1.10
-swarm:3.6
+swarm:3.7
 timestamper:1.8.9
 token-macro:2.3
 variant:1.1
