@@ -6,7 +6,7 @@ anchore-container-scanner:1.0.12
 ant:1.7
 antisamy-markup-formatter:1.5
 apache-httpcomponents-client-4-api:4.5.3-2.0
-artifactory:2.13.1
+artifactory:2.14.0
 authentication-tokens:1.3
 aws-credentials:1.23
 aws-java-sdk:1.11.248
@@ -31,7 +31,7 @@ blueocean-rest:1.3.5
 blueocean-rest-impl:1.3.5
 blueocean-web:1.3.5
 bouncycastle-api:2.16.2
-branch-api:2.0.16
+branch-api:2.0.17
 build-timeout:1.19
 build-user-vars-plugin:1.5
 buildtriggerbadge:2.9
@@ -56,7 +56,7 @@ durable-task:1.17
 email-ext:2.61
 embeddable-build-status:1.9
 envinject:2.1.5
-envinject-api:1.4
+envinject-api:1.5
 extensible-choice-parameter:1.4.1
 external-monitor-job:1.7
 favorite:2.3.1
@@ -95,11 +95,11 @@ maven-plugin:3.0
 mercurial:2.2
 metrics:3.1.2.10
 momentjs:1.1.1
-p4:1.8.3
+p4:1.8.4
 parallel-test-executor:1.9
 parameterized-trigger:2.35.2
 pipeline-build-step:2.6
-pipeline-graph-analysis:1.5
+pipeline-graph-analysis:1.6
 pipeline-input-step:2.8
 pipeline-milestone-step:1.3.1
 pipeline-model-api:1.2.5
