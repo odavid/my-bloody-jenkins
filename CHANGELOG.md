@@ -2,11 +2,11 @@
 
 ### 2.89.2-13 (Not released yet)
 * Updated plugins:
-    [artifactory:2.14.0](https://plugins.jenkins.io/artifactory)
-    [branch-api:2.0.17](https://plugins.jenkins.io/branch-api)
-    [envinject-api:1.5](https://plugins.jenkins.io/envinject-api)
-    [p4:1.8.4](https://plugins.jenkins.io/p4)
-    [pipeline-graph-analysis:1.6](https://plugins.jenkins.io/pipeline-graph-analysis)
+    * [artifactory:2.14.0](https://plugins.jenkins.io/artifactory)
+    * [branch-api:2.0.17](https://plugins.jenkins.io/branch-api)
+    * [envinject-api:1.5](https://plugins.jenkins.io/envinject-api)
+    * [p4:1.8.4](https://plugins.jenkins.io/p4)
+    * [pipeline-graph-analysis:1.6](https://plugins.jenkins.io/pipeline-graph-analysis)
 
 ### 2.89.2-12
 * Using jenkinsUrl in docker-plugin. The plugin is now able to set an alternate jenkinsUrl. This means that the end user can only set JENKINS_ENV_HOST_IP and can define different JENKINS_ENV_JENKINS_URL value.
