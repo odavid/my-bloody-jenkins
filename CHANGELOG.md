@@ -1,7 +1,7 @@
 ## Changelog
 
-### 2.89.2-13 (Not released yet)
-* Fixed: Users and groups of local jenkins db security realm are now persistent between restarts
+### 2.89.2-13
+* Users and groups of local jenkins_database security realm should be persistent between restarts [#78](https://github.com/odavid/my-bloody-jenkins/pull/78)
 * Updated plugins:
     * [artifactory:2.14.0](https://plugins.jenkins.io/artifactory)
     * [branch-api:2.0.17](https://plugins.jenkins.io/branch-api)
