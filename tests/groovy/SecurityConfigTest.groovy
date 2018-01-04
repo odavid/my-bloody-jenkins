@@ -134,7 +134,25 @@ jnlpProtocols:
 
  }
 
+ def testPersistentUsersAndGroups(){
+    def config = new Yaml().load("""
+jenkins_database:
+  adminPassword: admin
+"""
+    )
+    configHandler.setup(config)
+    assert (jenkins.model.Jenkins.instance.securityRealm instanceof hudson.security.HudsonPrivateSecurityRealm)
+    assert hudson.model.User.all.size() == 1
+    jenkins.model.Jenkins.instance.securityRealm.createAccount('another-user', 'password')
+    assert hudson.model.User.all.size() == 2
+    configHandler.setup(config)
+    assert hudson.model.User.all.size() == 2
+    assert jenkins.model.Jenkins.instance.securityRealm.loadUserByUsername('another-user') != null
+ }
+
+
 testLdap()
 testActiveDirectory()
 testAuthorizationStrategy()
 testSecurityOptions()
+testPersistentUsersAndGroups()

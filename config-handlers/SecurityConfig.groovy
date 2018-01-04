@@ -78,11 +78,12 @@ def setupLdap(config){
     }
 }
 def setupJenkinsDatabase(config){
+    def currnetRealm = jenkins.model.Jenkins.instance.securityRealm
+    def securityRealm = (currnetRealm instanceof HudsonPrivateSecurityRealm) ? currnetRealm : new HudsonPrivateSecurityRealm(false)
     config.with{
-        securityRealm = new HudsonPrivateSecurityRealm(false)
         securityRealm.createAccount(adminUser, adminPassword)
-        return securityRealm
     }
+    return securityRealm
 }
 
 def createAuthorizationStrategy(config, adminUser){
