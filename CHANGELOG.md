@@ -1,5 +1,12 @@
 ## Changelog
 
+### 2.89.2-14 (Not released yet)
+* Updated plugins:
+    * [cloudbees-folder:6.3](https://plugins.jenkins.io/cloudbees-folder)
+    * [docker-commons:1.11](https://plugins.jenkins.io/docker-commons)
+    * [parallel-test-executor:1.10](https://plugins.jenkins.io/parallel-test-executor)
+    * [ssh-slaves:1.25](https://plugins.jenkins.io/ssh-slaves)
+
 ### 2.89.2-13
 * Users and groups of local jenkins_database security realm should be persistent between restarts [#78](https://github.com/odavid/my-bloody-jenkins/pull/78)
 * Updated plugins:
