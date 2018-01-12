@@ -6,6 +6,12 @@
     * [docker-commons:1.11](https://plugins.jenkins.io/docker-commons)
     * [parallel-test-executor:1.10](https://plugins.jenkins.io/parallel-test-executor)
     * [ssh-slaves:1.25](https://plugins.jenkins.io/ssh-slaves)
+    * [branch-api:2.0.18](https://plugins.jenkins.io/branch-api)
+    * [kubernetes:1.1.3](https://plugins.jenkins.io/kubernetes)
+    * [pipeline-model-definition:1.2.6](https://plugins.jenkins.io/pipeline-model-definition)
+    * [script-security:1.40](https://plugins.jenkins.io/script-security)
+    * [swarm:3.8](https://plugins.jenkins.io/swarm)
+
 
 ### 2.89.2-13
 * Users and groups of local jenkins_database security realm should be persistent between restarts [#78](https://github.com/odavid/my-bloody-jenkins/pull/78)
