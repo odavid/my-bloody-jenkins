@@ -1,6 +1,6 @@
 ## Changelog
 
-### 2.89.2-14 (Not released yet)
+### 2.89.2-14
 * Updated plugins:
     * [cloudbees-folder:6.3](https://plugins.jenkins.io/cloudbees-folder)
     * [docker-commons:1.11](https://plugins.jenkins.io/docker-commons)
