@@ -2,7 +2,13 @@
 
 ### 2.89.3-15 (Not released yet)
 * [LTS-2.89.3](https://jenkins.io/changelog-stable/)
-
+* Updated plugins:
+    * [anchore-container-scanner:1.0.13](https://plugins.jenkins.io/anchore-container-scanner)
+    * [aws-java-sdk:1.11.264](https://plugins.jenkins.io/aws-java-sdk)
+    * [blueocean:1.4.0](https://plugins.jenkins.io/blueocean)
+    * [config-file-provider:2.17](https://plugins.jenkins.io/config-file-provider)
+    * [credentials-binding:1.14](https://plugins.jenkins.io/credentials-binding)
+    * [github:1.29.0](https://plugins.jenkins.io/github)
 
 ### 2.89.2-14
 * Updated plugins:
