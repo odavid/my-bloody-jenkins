@@ -1,5 +1,17 @@
 ## Changelog
 
+### 2.89.3-15 (Not released yet)
+* [LTS-2.89.3](https://jenkins.io/changelog-stable/)
+* Fixed: sometimes /var/run/docker.sock volume was not accessible for jenkins user, when mounted as a volume.
+* Updated plugins:
+    * [anchore-container-scanner:1.0.13](https://plugins.jenkins.io/anchore-container-scanner)
+    * [aws-java-sdk:1.11.264](https://plugins.jenkins.io/aws-java-sdk)
+    * [blueocean:1.4.0](https://plugins.jenkins.io/blueocean)
+    * [config-file-provider:2.17](https://plugins.jenkins.io/config-file-provider)
+    * [credentials-binding:1.14](https://plugins.jenkins.io/credentials-binding)
+    * [github:1.29.0](https://plugins.jenkins.io/github)
+    * [command-launcher:1.2](https://plugins.jenkins.io/command-launcher)
+
 ### 2.89.2-14
 * Updated plugins:
     * [cloudbees-folder:6.3](https://plugins.jenkins.io/cloudbees-folder)
