@@ -10,6 +10,7 @@
     * [config-file-provider:2.17](https://plugins.jenkins.io/config-file-provider)
     * [credentials-binding:1.14](https://plugins.jenkins.io/credentials-binding)
     * [github:1.29.0](https://plugins.jenkins.io/github)
+    * [command-launcher:1.2](https://plugins.jenkins.io/command-launcher)
 
 ### 2.89.2-14
 * Updated plugins:
