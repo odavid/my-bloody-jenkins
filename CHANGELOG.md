@@ -2,6 +2,7 @@
 
 ### 2.89.3-15 (Not released yet)
 * [LTS-2.89.3](https://jenkins.io/changelog-stable/)
+* Fixed: sometimes /var/run/docker.sock volume was not accessible for jenkins user, when mounted as a volume.
 * Updated plugins:
     * [anchore-container-scanner:1.0.13](https://plugins.jenkins.io/anchore-container-scanner)
     * [aws-java-sdk:1.11.264](https://plugins.jenkins.io/aws-java-sdk)
