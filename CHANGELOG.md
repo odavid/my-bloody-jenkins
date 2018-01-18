@@ -1,6 +1,6 @@
 ## Changelog
 
-### 2.89.3-15 (Not released yet)
+### 2.89.3-15
 * [LTS-2.89.3](https://jenkins.io/changelog-stable/)
 * Fixed: sometimes /var/run/docker.sock volume was not accessible for jenkins user, when mounted as a volume.
 * Updated plugins:
