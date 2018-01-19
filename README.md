@@ -3,29 +3,39 @@
 [![Docker Stars](https://img.shields.io/docker/stars/odavid/my-bloody-jenkins.svg)](https://hub.docker.com/r/odavid/my-bloody-jenkins/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/odavid/my-bloody-jenkins.svg)](https://hub.docker.com/r/odavid/my-bloody-jenkins/)
 
+## What's in the Box?
+*My Bloody Jenkins* is a re-distribution of the [Official LTS Jenkins Docker image](https://hub.docker.com/r/jenkins/jenkins/) bundled with most popular plugins and 
+ability to configure most aspects of Jenkins from a **simple** and **single source of truth** represented as YAML.
 
-## Introduction
-I've been working a lot with Jenkins/Pipline and Docker in the last couple of years, and wanted to share my experience on these subjects.
+The image can get the configuration from several data sources such as: File, S3, Environment Variable, HTTP, Kubernetes ConfigMap and Kubernetes Secret.
 
-Jenkins is great! Jenkins combined with Docker is even greater...
+The image supports "Watching" configuration changes and applying them immedately without restarting jenkins.
 
-But... It is HARD to get it work.
+The image is "Battle Proven" and serves as the baseground for several Jenkins deployments in production.
 
-Many small tweaks, plugins that do not work as expected in combination with other plugins, and not to mention configuration and automation.
+## Features
+* Configuration Coverage:
+  * Security Realm (LDAP/AD/Simple Jenkins database)
+  * Glabal Security Options
+  * Authorization
+  * Jenkins Clouds (Amazon ECS, Kubernetes, Docker)
+  * Global Pipeline Libraries
+  * Seed Jobs
+  * Script approvals
+  * Notifiers (Hipchat, Slack, Email, Email-Ext)
+  * Credentials (aws, userpass, sshkeys, certs, kubernetes, gitlab, simple secrets)
+  * Tools and installers (JDK, Ant, Maven, Gradle, SonarQube, Xvfb)
+  * Misc. Plugins configuration such as Jira, SonarQube, Checkmarx
+  * Misc. Configuration options such as Environment variables, Proxy
+* Support additional plugins installation during startup without the need to build your own image 
+* Supports quiet startup period to enable docker restarts with a graceful time which Jenkins is in *Quiet Mode*
+* Automated Re-Configure based on configuration data change without restarts
+* Supports Dynamic Host IP configuration passed to clouds when Jenkins is running in a cluster
 
-When it comes to Jenkins combined with Docker it is even harder:
+## Why Use the term "Bloody"?
+The term "My Bloody Jenkins" came from the fact that I tried to put all my "battle" experience, (i.e. blood, sweat and tears) within the image.
+I just thought it is a "catchy" name for this kind of a repository.
 
-* How to cope with Jenkins master data in a cluster of ECS/Kubernetes?
-    * IP Address is not static...
-    * JENKINS_HOME contents should be available at all time (Distributed Filesystem/NFS/EFS) - but master workspace should be faster.
-    * Ephemeral JNLP Docker Slaves can take time to start due to untuned node provisioning strategy
-    * How to keep Docker slaves build docker images
-    * Host mounted volumes permissions issues
-    * ...
-
-So... Since I spilled some blood on that matter, I've decided to create an ***opinionated*** Jenkins Docker Image that covers some of these subjects...
-
-Therefore ***My Bloody Jenkins***...
 
 ## Releases
 See [Changes](CHANGELOG.md)
@@ -55,7 +65,7 @@ docker pull odavid/my-bloody-jenkins:2.73.3-6
 docker pull odavid/my-bloody-jenkins
 ```
 
-## Examples
+## Some Usage Examples
 * [docker-plugin cloud](examples/docker/) cloud using Docker Plugin cloud with seed job. See [examples/docker](examples/docker/)
 * [kubernetes](examples/kubernetes/) cloud using Minikube with seed job. See [examples/kubernetes](examples/kubernetes/)
 
@@ -88,8 +98,6 @@ Supported URLs:
 * __JENKINS_ENV_HOST_IP_CMD__ - Same as ___JENKINS_ENV_HOST_IP___, but this time a shell command expression to fetch the IP Address. In AWS, it is useful to use the EC2 Magic IP: ```JENKINS_ENV_HOST_IP_CMD='curl http://169.254.169.254/latest/meta-data/local-ipv4'```
 
 * __JENKINS_HTTP_PORT_FOR_SLAVES__ - (Default: 8080) Used together with JENKINS_ENV_HOST_IP to construct the real jenkinsUrl for jnlp slaves.
-
-* __JENKINS_ENV_USE_SCRIPT_SECURITY__ - false by default, if true, it enables the [Script Security](https://github.com/jenkinsci/job-dsl-plugin/wiki/Script-Security) for dsl scripts
 
 * __JENKINS_ENV_JENKINS_URL__ - Define the Jenkins root URL in configuration. This can be useful when you cannot run the Jenkins master docker container with host network and you need it to be available to slaves
 
