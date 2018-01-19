@@ -7,8 +7,10 @@
 *My Bloody Jenkins* is a re-distribution of the [Official LTS Jenkins Docker image](https://hub.docker.com/r/jenkins/jenkins/) bundled with most popular plugins and 
 ability to configure most aspects of Jenkins from a **simple** and **single source of truth** represented as YAML.
 
-The image can get the configuration from several data sources such as: File, S3, Environment Variable, HTTP, Kubernetes ConfigMap and Secret
+The image can get the configuration from several data sources such as: File, S3, Environment Variable, HTTP, Kubernetes ConfigMap and Kubernetes Secret.
+
 The image supports "Watching" configuration changes and applying them immedately without restarting jenkins.
+
 The image is "Battle Proven" and serves as the baseground for several Jenkins deployments in production.
 
 ## Features
