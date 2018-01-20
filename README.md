@@ -1,6 +1,5 @@
 # My Bloody Jenkins - An opinionated Jenkins Docker Image
 [![Build Status](https://travis-ci.org/odavid/my-bloody-jenkins.svg?branch=master)](https://travis-ci.org/odavid/my-bloody-jenkins)
-[![Docker Stars](https://img.shields.io/docker/stars/odavid/my-bloody-jenkins.svg)](https://hub.docker.com/r/odavid/my-bloody-jenkins/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/odavid/my-bloody-jenkins.svg)](https://hub.docker.com/r/odavid/my-bloody-jenkins/)
 
 ## What's in the Box?
