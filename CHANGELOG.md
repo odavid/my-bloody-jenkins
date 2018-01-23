@@ -1,5 +1,17 @@
 ## Changelog
 
+### 2.89.3-16 (Not released yet)
+* Updated plugins:
+    * [ant:1.8](https://plugins.jenkins.io/ant)
+    * [apache-httpcomponents-client-4-api:4.5.3-2.1](https://plugins.jenkins.io/apache-httpcomponents-client-4-api)
+    * [cucumber-reports:3.14.0](https://plugins.jenkins.io/cucumber-reports)
+    * [workflow-api:2.25](https://plugins.jenkins.io/workflow-api)
+    * [workflow-cps:2.43](https://plugins.jenkins.io/workflow-cps)
+    * [workflow-durable-task-step:2.18](https://plugins.jenkins.io/workflow-durable-task-step)
+    * [workflow-job:2.17](https://plugins.jenkins.io/workflow-job)
+    * [workflow-multibranch:2.17](https://plugins.jenkins.io/workflow-multibranch)
+    * [workflow-support:2.17](https://plugins.jenkins.io/workflow-support)
+
 ### 2.89.3-15
 * [LTS-2.89.3](https://jenkins.io/changelog-stable/)
 * Fixed: sometimes /var/run/docker.sock volume was not accessible for jenkins user, when mounted as a volume.
