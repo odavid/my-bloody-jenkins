@@ -1,6 +1,6 @@
 ## Changelog
 
-### 2.89.3-16 (Not released yet)
+### 2.89.3-16
 * Updated plugins:
     * [ant:1.8](https://plugins.jenkins.io/ant)
     * [apache-httpcomponents-client-4-api:4.5.3-2.1](https://plugins.jenkins.io/apache-httpcomponents-client-4-api)
