@@ -1,5 +1,16 @@
 ## Changelog
 
+### 2.89.3-17
+* Updated plugins:
+    * [cloudbees-bitbucket-branch-source:2.2.9](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
+    * [extensible-choice-parameter:1.4.2](https://plugins.jenkins.io/extensible-choice-parameter)
+    * [git-client:2.7.1](https://plugins.jenkins.io/git-client)
+    * [jira:2.5.1](https://plugins.jenkins.io/jira)
+    * [job-dsl:1.67](https://plugins.jenkins.io/job-dsl)
+    * [maven-plugin:3.1](https://plugins.jenkins.io/maven-plugin)
+    * [pipeline-build-step:2.7](https://plugins.jenkins.io/pipeline-build-step)
+    * [ssh-slaves:1.25.1](https://plugins.jenkins.io/ssh-slaves)
+
 ### 2.89.3-16
 * Updated plugins:
     * [ant:1.8](https://plugins.jenkins.io/ant)
@@ -134,20 +145,20 @@
 * docker cloud: Add jnlpUser in template level [#47](https://github.com/odavid/my-bloody-jenkins/issues/47)
 * Added [anchore-container-scanner:1.0.12 plugin](https://wiki.jenkins.io/display/JENKINS/Anchore+Container+Image+Scanner+Plugin)
 * Updated plugins:
-    * blueocean-autofavorite:1.1.0
-    * checkmarx:8.42.0
-    * display-url-api:2.1.0
-    * durable-task:1.16
-    * gitlab-plugin:1.5.1
-    * junit:1.22.2
-    * p4:1.8.1
-    * pipeline-model-api:1.2.4
-    * pipeline-model-definition:1.2.4
-    * pipeline-model-extensions:1.2.4
-    * pipeline-stage-tags-metadata:1.2.4
-    * script-security:1.35
-    * workflow-cps:2.41
-    * workflow-step-api:2.13
+    * [blueocean-autofavorite:1.1.0](https://plugins.jenkins.io/blueocean-autofavorite)
+    * [checkmarx:8.42.0](https://plugins.jenkins.io/checkmarx)
+    * [display-url-api:2.1.0](https://plugins.jenkins.io/display-url-api)
+    * [durable-task:1.16](https://plugins.jenkins.io/durable-task)
+    * [gitlab-plugin:1.5.1](https://plugins.jenkins.io/gitlab-plugin)
+    * [junit:1.22.2](https://plugins.jenkins.io/junit)
+    * [p4:1.8.1](https://plugins.jenkins.io/p4)
+    * [pipeline-model-api:1.2.4](https://plugins.jenkins.io/pipeline-model-api)
+    * [pipeline-model-definition:1.2.4](https://plugins.jenkins.io/pipeline-model-definition)
+    * [pipeline-model-extensions:1.2.4](https://plugins.jenkins.io/pipeline-model-extensions)
+    * [pipeline-stage-tags-metadata:1.2.4](https://plugins.jenkins.io/pipeline-stage-tags-metadata)
+    * [script-security:1.35](https://plugins.jenkins.io/script-security)
+    * [workflow-cps:2.41](https://plugins.jenkins.io/workflow-cps)
+    * [workflow-step-api:2.13](https://plugins.jenkins.io/workflow-step-api)
 
 ### 2.73.3-3
 * add jenkins environment variables section [#45](https://github.com/odavid/my-bloody-jenkins/issues/45)
