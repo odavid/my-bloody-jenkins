@@ -1,5 +1,16 @@
 ## Changelog
 
+### 2.89.3-18
+
+* Updated plugins:
+    * [docker-workflow:1.15](https://plugins.jenkins.io/docker-workflow)
+    * [jira:2.5](https://plugins.jenkins.io/jira)
+    * [kubernetes:1.1.4](https://plugins.jenkins.io/kubernetes)
+    * [ldap:1.19](https://plugins.jenkins.io/ldap)
+    * [pipeline-model-definition:1.2.7](https://plugins.jenkins.io/pipeline-model-definition)
+    * [structs:1.13](https://plugins.jenkins.io/structs)
+    * [workflow-cps:2.44](https://plugins.jenkins.io/workflow-cps)
+
 ### 2.89.3-17
 * Updated plugins:
     * [cloudbees-bitbucket-branch-source:2.2.9](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
