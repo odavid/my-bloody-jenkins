@@ -1,5 +1,21 @@
 ## Changelog
 
+### 2.89.3-19
+
+* Updated plugins:
+    * [blueocean:1.4.1](https://plugins.jenkins.io/blueocean)
+    * [credentials-binding:1.15](https://plugins.jenkins.io/credentials-binding)
+    * [gitlab-plugin:1.5.3](https://plugins.jenkins.io/gitlab-plugin)
+    * [jackson2-api:2.8.11.1](https://plugins.jenkins.io/jackson2-api)
+    * [job-dsl:1.68](https://plugins.jenkins.io/job-dsl)
+    * [junit:1.24](https://plugins.jenkins.io/junit)
+    * [kubernetes:1.2](https://plugins.jenkins.io/kubernetes)
+    * [p4:1.8.5](https://plugins.jenkins.io/p4)
+    * [promoted-builds:2.31.1](https://plugins.jenkins.io/promoted-builds)
+    * [script-security:1.41](https://plugins.jenkins.io/script-security)
+    * [swarm:3.9](https://plugins.jenkins.io/swarm)
+    * [workflow-support:2.18](https://plugins.jenkins.io/workflow-support)
+
 ### 2.89.3-18
 
 * Updated plugins:
