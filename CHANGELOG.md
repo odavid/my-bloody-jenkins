@@ -1,5 +1,20 @@
 ## Changelog
 
+### 2.89.4-20
+* [LTS-2.89.4](https://jenkins.io/changelog-stable/)
+* Updated plugins:
+    * [blueocean:1.4.2](https://plugins.jenkins.io/blueocean)
+    * [cloudbees-bitbucket-branch-source:2.2.10](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
+    * [docker-plugin:1.1.3](https://plugins.jenkins.io/docker-plugin)
+    * [docker-workflow:1.15.1](https://plugins.jenkins.io/docker-workflow)
+    * [durable-task:1.18](https://plugins.jenkins.io/durable-task)
+    * [jsch:0.1.54.2](https://plugins.jenkins.io/jsch)
+    * [kubernetes:1.2.1](https://plugins.jenkins.io/kubernetes)
+    * [pipeline-utility-steps:2.0.1](https://plugins.jenkins.io/pipeline-utility-steps)
+    * [structs:1.14](https://plugins.jenkins.io/structs)
+    * [workflow-cps:2.45](https://plugins.jenkins.io/workflow-cps)
+    * [workflow-durable-task-step:2.19](https://plugins.jenkins.io/workflow-durable-task-step)
+
 ### 2.89.3-19
 
 * Updated plugins:

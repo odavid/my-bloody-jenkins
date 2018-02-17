@@ -238,6 +238,7 @@ def testDocker(){
 docker-cloud:
   type: docker
   dockerHostUri: unix:///var/run/docker.sock
+  jenkinsUrl: http://127.0.0.1:8080
   credentialsId: docker-cert
   containerCap: 20
   connectTimeout: 10
@@ -247,6 +248,7 @@ docker-cloud:
   exposeDockerHost: false
   templates:
     - image: odavid/jenkins-jnlp-slave:latest
+      jnlpUser: jenkins
       pullCredentialsId: pull-cred-id
       dns:
         - 8.8.8.8
@@ -291,6 +293,9 @@ docker-cloud:
         assert it.dockerApi.hostname == 'localhost'
         def template = it.templates[0]
         assert template.image == 'odavid/jenkins-jnlp-slave:latest'
+        assert template.connector.jenkinsUrl == 'http://127.0.0.1:8080'
+        assert template.connector.user == 'jenkins'
+        assert template.mode == hudson.model.Node.Mode.EXCLUSIVE
         assert template.dockerTemplateBase.pullCredentialsId == 'pull-cred-id'
         assert template.dockerTemplateBase.dnsString == '8.8.8.8 8.8.7.7'
         assert template.dockerTemplateBase.network == 'host'
