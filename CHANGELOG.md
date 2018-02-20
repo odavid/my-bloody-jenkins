@@ -1,6 +1,6 @@
 ## Changelog
 
-### 2.89.4-21 (Not released yet)
+### 2.89.4-21
 * Updated plugins:
     * [checkmarx:8.60.0](https://plugins.jenkins.io/checkmarx)
     * [git-parameter:0.9.1](https://plugins.jenkins.io/git-parameter)
