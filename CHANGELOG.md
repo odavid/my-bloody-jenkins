@@ -1,5 +1,11 @@
 ## Changelog
 
+### 2.89.4-21 (Not released yet)
+* Updated plugins:
+    * [checkmarx:8.60.0](https://plugins.jenkins.io/checkmarx)
+    * [git-parameter:0.9.1](https://plugins.jenkins.io/git-parameter)
+    * [ldap:1.20](https://plugins.jenkins.io/ldap)
+
 ### 2.89.4-20
 * [LTS-2.89.4](https://jenkins.io/changelog-stable/)
 * Updated plugins:

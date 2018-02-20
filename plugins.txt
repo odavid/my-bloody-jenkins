@@ -35,7 +35,7 @@ branch-api:2.0.18
 build-timeout:1.19
 build-user-vars-plugin:1.5
 buildtriggerbadge:2.9
-checkmarx:8.50.0
+checkmarx:8.60.0
 cloudbees-bitbucket-branch-source:2.2.10
 cloudbees-folder:6.3
 cobertura:1.12
@@ -64,7 +64,7 @@ favorite:2.3.1
 gatling:1.2.2
 git:3.7.0
 git-client:2.7.1
-git-parameter:0.9.0
+git-parameter:0.9.1
 git-server:1.7
 github:1.29.0
 github-api:1.90
@@ -86,7 +86,7 @@ jquery-detached:1.2.1
 jsch:0.1.54.2
 junit:1.24
 kubernetes:1.2.1
-ldap:1.19
+ldap:1.20
 lockable-resources:2.1
 mailer:1.20
 mask-passwords:2.10.1
