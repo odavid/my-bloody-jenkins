@@ -1,5 +1,12 @@
 ## Changelog
 
+### 2.89.4-22
+* Updated plugins:
+    * [anchore-container-scanner:1.0.14](https://plugins.jenkins.io/anchore-container-scanner)
+    * [kubernetes:1.3.1](https://plugins.jenkins.io/kubernetes)
+    * [swarm:3.10](https://plugins.jenkins.io/swarm)
+    * [workflow-api:2.26](https://plugins.jenkins.io/workflow-api)
+
 ### 2.89.4-21
 * Updated plugins:
     * [checkmarx:8.60.0](https://plugins.jenkins.io/checkmarx)
