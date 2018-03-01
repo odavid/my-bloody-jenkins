@@ -1,5 +1,15 @@
 ## Changelog
 
+### 2.89.4-23
+* Updated plugins:
+    * [blueocean-autofavorite:1.2.2](https://plugins.jenkins.io/blueocean-autofavorite)
+    * [cucumber-reports:3.15.0](https://plugins.jenkins.io/cucumber-reports)
+    * [git:3.8.0](https://plugins.jenkins.io/git)
+    * [mercurial:2.3](https://plugins.jenkins.io/mercurial)
+    * [p4:1.8.6](https://plugins.jenkins.io/p4)
+    * [promoted-builds:3.0](https://plugins.jenkins.io/promoted-builds)
+    * [ssh-slaves:1.26](https://plugins.jenkins.io/ssh-slaves)
+
 ### 2.89.4-22
 * Updated plugins:
     * [anchore-container-scanner:1.0.14](https://plugins.jenkins.io/anchore-container-scanner)
