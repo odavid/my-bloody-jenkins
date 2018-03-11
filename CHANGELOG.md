@@ -1,5 +1,11 @@
 ## Changelog
 
+### 2.89.4-24
+* Updated plugins:
+    * [durable-task:1.21](https://plugins.jenkins.io/durable-task)
+    * [kubernetes:1.3.2](https://plugins.jenkins.io/kubernetes)
+    * [lockable-resources:2.2](https://plugins.jenkins.io/lockable-resources)
+    * [metrics:3.1.2.11](https://plugins.jenkins.io/metrics)
 ### 2.89.4-23
 * Updated plugins:
     * [blueocean-autofavorite:1.2.2](https://plugins.jenkins.io/blueocean-autofavorite)
