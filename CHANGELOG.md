@@ -1,5 +1,19 @@
 ## Changelog
 
+### 2.107.1-25
+* [LTS-2.107.1](https://jenkins.io/changelog-stable/)
+* Updated plugins
+    * [artifactory:2.15.0](https://plugins.jenkins.io/artifactory)
+    * [cloudbees-folder:6.4](https://plugins.jenkins.io/cloudbees-folder)
+    * [config-file-provider:2.18](https://plugins.jenkins.io/config-file-provider)
+    * [durable-task:1.22](https://plugins.jenkins.io/durable-task)
+    * [extensible-choice-parameter:1.5.0](https://plugins.jenkins.io/extensible-choice-parameter)
+    * [github-branch-source:2.3.3](https://plugins.jenkins.io/github-branch-source)
+    * [kubernetes:1.3.3](https://plugins.jenkins.io/kubernetes)
+    * [mask-passwords:2.11.0](https://plugins.jenkins.io/mask-passwords)
+    * [promoted-builds:3.1](https://plugins.jenkins.io/promoted-builds)
+    * [script-security:1.42](https://plugins.jenkins.io/script-security)
+
 ### 2.89.4-24
 * Updated plugins:
     * [durable-task:1.21](https://plugins.jenkins.io/durable-task)
