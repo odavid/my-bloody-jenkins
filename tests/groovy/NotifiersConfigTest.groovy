@@ -107,8 +107,8 @@ mail:
     assert desc.listId == 'mailing-list'
     assert desc.adminRequiredForTemplateTesting
     assert desc.watchingEnabled
-    assert desc.smtpAuthUsername == 'mail-admin'
-    assert desc.smtpAuthPassword.toString() == 'password'
+    assert desc.smtpUsername == 'mail-admin'
+    assert desc.smtpPassword.toString() == 'password'
     assert desc.useSsl
     assert desc.debugMode
 

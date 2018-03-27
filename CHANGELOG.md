@@ -1,5 +1,19 @@
 ## Changelog
 
+### 2.107.1-26
+* Updated plugins
+    * [credentials-binding:1.16](https://plugins.jenkins.io/credentials-binding)
+    * [email-ext:2.62](https://plugins.jenkins.io/email-ext)
+    * [gitlab-plugin:1.5.4](https://plugins.jenkins.io/gitlab-plugin)
+    * [groovy-postbuild:2.4](https://plugins.jenkins.io/groovy-postbuild)
+    * [kubernetes:1.4](https://plugins.jenkins.io/kubernetes)
+    * [mailer:1.21](https://plugins.jenkins.io/mailer)
+    * [maven-plugin:3.1.2](https://plugins.jenkins.io/maven-plugin)
+    * [p4:1.8.7](https://plugins.jenkins.io/p4)
+    * [pipeline-utility-steps:2.0.2](https://plugins.jenkins.io/pipeline-utility-steps)
+    * [swarm:3.12](https://plugins.jenkins.io/swarm)
+* Adjustment for changes in configuration for [email-ext:2.62](https://plugins.jenkins.io/email-ext)
+
 ### 2.107.1-25
 * [LTS-2.107.1](https://jenkins.io/changelog-stable/)
 * Updated plugins

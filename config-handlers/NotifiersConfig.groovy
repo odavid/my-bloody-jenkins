@@ -7,6 +7,9 @@ import jenkins.plugins.hipchat.model.notifications.Notification.Color
 import jenkins.plugins.slack.*
 import net.sf.json.JSONObject
 
+def asLong(value, defaultValue=0){
+    return value ? value.toLong() : defaultValue
+}
 def asInt(value, defaultValue=0){
     return value ? value.toInteger() : defaultValue
 }
@@ -75,48 +78,29 @@ def mailConfig(config){
 def mailExtConfig(config){
     def extMail = Jenkins.instance.getDescriptor('hudson.plugins.emailext.ExtendedEmailPublisher')
     config.with{
-        def reqMap = [:]
-        reqMap['ext_mailer_smtp_server'] = host
-        reqMap['ext_mailer_smtp_port'] = port?.toString()
-        reqMap['ext_mailer_default_suffix'] = defaultSuffix
-        reqMap['ext_mailer_charset'] = charset
-        reqMap['ext_mailer_default_content_type'] = defaultContentType
-        reqMap['ext_mailer_default_subject'] = defaultSubject
-        reqMap['ext_mailer_default_body'] = defaultBody
-        reqMap['ext_mailer_emergency_reroute'] = emergencyReroute
-        reqMap['ext_mailer_default_replyto'] = replyToAddress
-        reqMap['ext_mailer_default_presend_script'] = defaultPresendScript
-        reqMap['ext_mailer_default_postsend_script'] = defaultPostsendScript
-        reqMap['ext_mailer_max_attachment_size'] = maxAttachmentSize?.toString()
-        reqMap['ext_mailer_default_recipients'] = recipientList?.join(',')
-        reqMap['ext_mailer_excluded_committers'] = excludedCommitters?.join(',')
-        if(listId){
-            reqMap['ext_mailer_use_list_id'] = 'true'
-            reqMap['ext_mailer_list_id'] = listId
-        }
-        if(requireAdminForTemplateTesting){
-            reqMap['ext_mailer_require_admin_for_template_testing'] = 'true'
-        }
-        if(enableWatching){
-            reqMap['ext_mailer_watching_enabled'] = 'true'
-        }
+        extMail.smtpServer = host
+        extMail.smtpPort = port?.toString()
+        extMail.defaultSuffix = defaultSuffix
+        extMail.charset = charset
+        extMail.defaultContentType = defaultContentType
+        extMail.defaultSubject = defaultSubject
+        extMail.defaultBody = defaultBody
+        extMail.emergencyReroute = emergencyReroute
+        extMail.defaultReplyTo = replyToAddress
+        extMail.defaultPresendScript = defaultPresendScript
+        extMail.defaultPostsendScript = defaultPostsendScript
+        extMail.maxAttachmentSizeMb = asLong(maxAttachmentSize, -1)
+        extMail.defaultRecipients = recipientList?.join(',')
+        extMail.excludedCommitters = excludedCommitters?.join(',')
+        extMail.listId = listId
+        extMail.requireAdminForTemplateTesting = asBoolean(requireAdminForTemplateTesting)
+        extMail.watchingEnabled = asBoolean(enableWatching)
         if(authUser){
-            reqMap['ext_mailer_use_smtp_auth'] = 'true'
-            reqMap['ext_mailer_smtp_username'] = authUser
-            reqMap['ext_mailer_smtp_password'] = authPassword
+            extMail.smtpUsername = authUser
+            extMail.smtpPassword = authPassword
         }
-        if(useSsl){
-            reqMap['ext_mailer_smtp_use_ssl'] = 'true'
-        }
-        if(debugMode){
-            reqMap['ext_mailer_debug_mode'] = 'true'
-        }
-        JSONObject formData = [:] as JSONObject
-        def req = [
-            getParameter: { name -> reqMap[name] },
-            hasParameter: {name -> reqMap[name] != null }
-        ] as org.kohsuke.stapler.StaplerRequest
-        extMail.configure(req, formData)
+        extMail.useSsl = asBoolean(useSsl)
+        extMail.debugMode = asBoolean(debugMode)
     }
     return extMail
 }
