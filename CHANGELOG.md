@@ -1,5 +1,13 @@
 ## Changelog
 
+### 2.107.1-27
+* Updated plugins
+    * [htmlpublisher:1.15](https://plugins.jenkins.io/htmlpublisher)
+    * [kubernetes:1.4.1](https://plugins.jenkins.io/kubernetes)
+    * [rebuild:1.28](https://plugins.jenkins.io/rebuild)
+    * [script-security:1.43](https://plugins.jenkins.io/script-security)
+    * [token-macro:2.4](https://plugins.jenkins.io/token-macro)
+
 ### 2.107.1-26
 * Updated plugins
     * [credentials-binding:1.16](https://plugins.jenkins.io/credentials-binding)

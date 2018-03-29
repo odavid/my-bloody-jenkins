@@ -77,7 +77,7 @@ groovy-postbuild:2.4
 handlebars:1.1.1
 handy-uri-templates-2-api:2.1.6-1.0
 hipchat:2.1.1
-htmlpublisher:1.14
+htmlpublisher:1.15
 icon-shim:2.0.3
 ivy:1.28
 jackson2-api:2.8.11.1
@@ -89,7 +89,7 @@ jquery:1.12.4-0
 jquery-detached:1.2.1
 jsch:0.1.54.2
 junit:1.24
-kubernetes:1.4
+kubernetes:1.4.1
 kubernetes-credentials:0.3.1
 ldap:1.20
 lockable-resources:2.2
@@ -120,10 +120,10 @@ pipeline-utility-steps:2.0.2
 plain-credentials:1.4
 promoted-builds:3.1
 pubsub-light:1.12
-rebuild:1.27
+rebuild:1.28
 run-condition:1.0
 scm-api:2.2.6
-script-security:1.42
+script-security:1.43
 slack:2.3
 sonar:2.6.1
 sse-gateway:1.15
@@ -133,7 +133,7 @@ ssh-slaves:1.26
 structs:1.14
 swarm:3.12
 timestamper:1.8.9
-token-macro:2.3
+token-macro:2.4
 variant:1.1
 workflow-aggregator:2.5
 workflow-api:2.26
