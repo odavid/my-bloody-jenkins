@@ -1,5 +1,14 @@
 ## Changelog
 
+### 2.107.1-28
+* Updated plugins
+    * [artifactory:2.15.1](https://plugins.jenkins.io/artifactory)
+    * [copyartifact:1.39.1](https://plugins.jenkins.io/copyartifact)
+    * [kubernetes:1.5](https://plugins.jenkins.io/kubernetes)
+    * [p4:1.8.8](https://plugins.jenkins.io/p4)
+    * [pipeline-rest-api:2.10](https://plugins.jenkins.io/pipeline-rest-api)
+    * [pipeline-stage-view:2.10](https://plugins.jenkins.io/pipeline-stage-view)
+
 ### 2.107.1-27
 * Updated plugins
     * [htmlpublisher:1.15](https://plugins.jenkins.io/htmlpublisher)
