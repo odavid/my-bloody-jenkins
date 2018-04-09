@@ -1,5 +1,21 @@
 ## Changelog
 
+### 2.107.1-29
+* Updated plugins
+    * [amazon-ecs:1.12](https://plugins.jenkins.io/amazon-ecs)
+    * [badge:1.4](https://plugins.jenkins.io/badge)
+    * [branch-api:2.0.19](https://plugins.jenkins.io/branch-api)
+    * [cucumber-reports:3.16.0](https://plugins.jenkins.io/cucumber-reports)
+    * [gitlab-plugin:1.5.5](https://plugins.jenkins.io/gitlab-plugin)
+    * [kubernetes:1.5.1](https://plugins.jenkins.io/kubernetes)
+    * [pipeline-model-api:1.2.8](https://plugins.jenkins.io/pipeline-model-api)
+    * [pipeline-model-definition:1.2.8](https://plugins.jenkins.io/pipeline-model-definition)
+    * [pipeline-model-extensions:1.2.8](https://plugins.jenkins.io/pipeline-model-extensions)
+    * [pipeline-stage-tags-metadata:1.2.8](https://plugins.jenkins.io/pipeline-stage-tags-metadata)
+    * [sonar:2.7](https://plugins.jenkins.io/sonar)
+    * [workflow-cps:2.47](https://plugins.jenkins.io/workflow-cps)
+    * [workflow-job:2.18](https://plugins.jenkins.io/workflow-job)
+
 ### 2.107.1-28
 * Updated plugins
     * [artifactory:2.15.1](https://plugins.jenkins.io/artifactory)

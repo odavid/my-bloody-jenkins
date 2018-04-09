@@ -10,11 +10,7 @@ def sonarInstallation(config){
         def sonarInstallation = new hudson.plugins.sonar.SonarInstallation(
             name,
             serverUrl,
-            serverVersion?.toString(),
             serverAuthenticationToken,
-            databaseUrl,
-            databaseLogin,
-            databasePassword,
             mojoVersion?.toString(),
             additionalProperties,
             new hudson.plugins.sonar.model.TriggersConfig(
@@ -22,8 +18,6 @@ def sonarInstallation(config){
                 asBoolean(triggers?.skipUpstreamCause),
                 triggers?.envVar
             ),
-            sonarLogin,
-            sonarPassword,
             additionalAnalysisProperties
         )
     }
