@@ -1,11 +1,11 @@
 ## Changelog
 
-### 2.107.1-30 (Not released yet)
+### 2.107.1-30
 * Updated plugins
     * [amazon-ecs:1.13](https://plugins.jenkins.io/amazon-ecs)
     * [matrix-project:1.13](https://plugins.jenkins.io/matrix-project)
     * [sonar:2.7.1](https://plugins.jenkins.io/sonar)
-    
+
 ### 2.107.1-29
 * Updated plugins
     * [amazon-ecs:1.12](https://plugins.jenkins.io/amazon-ecs)
