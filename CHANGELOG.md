@@ -1,5 +1,9 @@
 ## Changelog
 
+### 2.107.1-30 (Not released yet)
+* Updated plugins
+    * [amazon-ecs:1.13](https://plugins.jenkins.io/amazon-ecs)
+
 ### 2.107.1-29
 * Updated plugins
     * [amazon-ecs:1.12](https://plugins.jenkins.io/amazon-ecs)

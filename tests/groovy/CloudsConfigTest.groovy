@@ -36,6 +36,9 @@ ecs-cloud:
       logDriver: aws
       dns: 8.8.8.8
       privileged: true
+      containerUser: aUser
+      ports:
+        - 9000:9001
       logDriverOptions:
         optionA: optionAValue
         optionB: optionBValue
@@ -77,6 +80,7 @@ ecs-cloud:
         assert template.logDriver == 'aws'
         assert template.dnsSearchDomains == '8.8.8.8'
         assert template.privileged
+        assert template.containerUser == 'aUser'
         assert ['optionA=optionAValue', 'optionB=optionBValue'] == template.logDriverOptions.collect{ 
             "${it.name}=${it.value}"
         }
@@ -86,6 +90,9 @@ ecs-cloud:
         assert ['extrHost1=extrHost1', 'extrHost2=extrHost2'] == template.extraHosts.collect{ 
             "${it.ipAddress}=${it.hostname}"
         }
+        assert template.portMappings[0].containerPort == 9001
+        assert template.portMappings[0].hostPort == 9000
+        assert template.portMappings[0].protocol == 'tcp'
         
         def mountPoints = template.mountPoints
         def assertMountPoint = { name, sourcePath, containerPath, readOnly ->
