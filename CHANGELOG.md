@@ -1,5 +1,12 @@
 ## Changelog
 
+### 2.107.2-32
+* [LTS-2.107.2](https://jenkins.io/changelog-stable/)
+* Updated plugins
+    * [p4:1.8.9](https://plugins.jenkins.io/p4)
+    * [workflow-api:2.27](https://plugins.jenkins.io/workflow-api)
+    * [workflow-cps:2.48](https://plugins.jenkins.io/workflow-cps)
+
 ### 2.107.1-31
 * Updated plugins
     * [checkmarx:8.60.1](https://plugins.jenkins.io/checkmarx)

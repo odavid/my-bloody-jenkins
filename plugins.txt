@@ -101,7 +101,7 @@ maven-plugin:3.1.2
 mercurial:2.3
 metrics:3.1.2.11
 momentjs:1.1.1
-p4:1.8.8
+p4:1.8.9
 parallel-test-executor:1.10
 parameterized-trigger:2.35.2
 pipeline-build-step:2.7
@@ -136,9 +136,9 @@ timestamper:1.8.9
 token-macro:2.5
 variant:1.1
 workflow-aggregator:2.5
-workflow-api:2.26
+workflow-api:2.27
 workflow-basic-steps:2.6
-workflow-cps:2.47
+workflow-cps:2.48
 workflow-cps-global-lib:2.9
 workflow-durable-task-step:2.19
 workflow-job:2.18
