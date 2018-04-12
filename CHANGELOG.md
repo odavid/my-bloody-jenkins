@@ -1,5 +1,11 @@
 ## Changelog
 
+### 2.107.1-31 (Not released yet)
+* Updated plugins
+    * [checkmarx:8.60.1](https://plugins.jenkins.io/checkmarx)
+    * [token-macro:2.5](https://plugins.jenkins.io/token-macro)
+    * [blueocean:1.5.0](https://plugins.jenkins.io/blueocean)
+    
 ### 2.107.1-30
 * Updated plugins
     * [amazon-ecs:1.13](https://plugins.jenkins.io/amazon-ecs)
