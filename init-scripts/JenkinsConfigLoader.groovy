@@ -23,6 +23,16 @@ def handleConfig(handler, config){
     }
 }
 
+def handleCustomConfig(config){
+    if(!config){
+        return
+    }
+    File f = new File("/usr/share/jenkins/config-handlers/CustomConfig.groovy")
+    if(f.exists()){
+        handleConfig("Custom", config)
+    }
+}
+
 def getAdminUserName(){
     return System.getenv()['JENKINS_ENV_ADMIN_USER']
 }
@@ -51,7 +61,7 @@ if(!new File(configFileName).exists()) {
     jenkinsConfig.security?.adminUser = adminUser
 
     // TODO: General config is using only environment variables
-    // Find a more elegant way to handle it 
+    // Find a more elegant way to handle it
     handleConfig('Proxy', jenkinsConfig.proxy)
     handleConfig('General', [general: true])
     handleConfig('EnvironmentVars', jenkinsConfig.environment)
@@ -67,4 +77,6 @@ if(!new File(configFileName).exists()) {
     handleConfig('Gitlab', jenkinsConfig.gitlab)
     handleConfig('PipelineLibraries', jenkinsConfig.pipeline_libraries)
     handleConfig('SeedJobs', jenkinsConfig.seed_jobs)
+
+    handleCustomConfig(jenkins.customConfig)
 }
