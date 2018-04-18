@@ -659,3 +659,20 @@ proxy:
   noProxyHost: <comma delimited>
 
 ```
+
+### Custom Config Handler
+Sometimes, there is a need to have additional configuration that is not supported by this image.
+For that purpose, we have a __custom configuration hook__
+
+In order to use this hook, you will need to create your own docker image and add the following:
+
+* Have ```/usr/share/jenkins/config-handlers/CustomConfig.groovy``` within your image with a single method as an entrypoint:
+
+```groovy
+def setup(config){
+
+}
+```
+
+* In the configuration yaml file, have a ```customConfig``` top level key that will be passed to the above groovy script.
+
