@@ -1,5 +1,16 @@
 ## Changelog
 
+### 2.107.2-33
+* Updated plugins
+    * [amazon-ecs:1.14](https://plugins.jenkins.io/amazon-ecs)
+    * [git-parameter:0.9.2](https://plugins.jenkins.io/git-parameter)
+    * [htmlpublisher:1.16](https://plugins.jenkins.io/htmlpublisher)
+    * [job-dsl:1.69](https://plugins.jenkins.io/job-dsl)
+    * [kubernetes:1.5.2](https://plugins.jenkins.io/kubernetes)
+    * [pipeline-model-definition:1.2.9](https://plugins.jenkins.io/pipeline-model-definition)
+    * [script-security:1.44](https://plugins.jenkins.io/script-security)
+    * [workflow-job:2.19](https://plugins.jenkins.io/workflow-job)
+
 ### 2.107.2-32
 * [LTS-2.107.2](https://jenkins.io/changelog-stable/)
 * Updated plugins
