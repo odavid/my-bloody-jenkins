@@ -95,10 +95,29 @@ p4-ticket-cred:
   timeout: 20
   p4host: localhost
   ticketValue: myp4pass
+
+dymamic-username-password:
+  type: usernamepassword
+  username: 'username-dynamic'
+  description: 'description'
+  password: 'password'
+
+dynamic-p4-ticket-cred:
+  type: org.jenkinsci.plugins.p4.credentials.P4TicketImpl
+  description: p4 ticket description
+  p4port: localhost:1666
+  ssl:
+    trust: 'my-trust'
+  username: myp4user
+  retry: '20'
+  timeout: '20'
+  p4host: localhost
+  ticket:
+    ticketValue: myp4pass
 """)
 
     configHandler.setup(config)
-    
+
     assertCred("text-cred", org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl){
         assert it.description == "The slace secret token"
         assert it.secret.toString() == "slack-secret-token"
@@ -159,7 +178,7 @@ p4-ticket-cred:
         assert it.timeout == 20
         assert it.p4host == 'localhost'
         assert it.allhosts
-    }    
+    }
     assertCred("p4-ticket-cred", org.jenkinsci.plugins.p4.credentials.P4TicketImpl){
         assert it.description == "p4 ticket description"
         assert it.p4port == 'localhost:1666'
@@ -169,6 +188,21 @@ p4-ticket-cred:
         assert it.timeout == 20
         assert it.p4host == 'localhost'
         assert it.ticketValue == 'myp4pass'
-    }    
+    }
+    assertCred('dymamic-username-password', com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl){
+        assert it.description == "description"
+        assert it.username == "username-dynamic"
+        assert it.password.toString() == "password"
+    }
+    assertCred("dynamic-p4-ticket-cred", org.jenkinsci.plugins.p4.credentials.P4TicketImpl){
+        assert it.description == "p4 ticket description"
+        assert it.p4port == 'localhost:1666'
+        assert it.trust == 'my-trust'
+        assert it.username == 'myp4user'
+        assert it.retry == 20
+        assert it.timeout == 20
+        assert it.p4host == 'localhost'
+        assert it.ticketValue == 'myp4pass'
+    }
 }
 testCreds()

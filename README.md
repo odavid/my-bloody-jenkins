@@ -3,7 +3,7 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/odavid/my-bloody-jenkins.svg)](https://hub.docker.com/r/odavid/my-bloody-jenkins/)
 
 ## What's in the Box?
-*My Bloody Jenkins* is a re-distribution of the [Official LTS Jenkins Docker image](https://hub.docker.com/r/jenkins/jenkins/) bundled with most popular plugins and 
+*My Bloody Jenkins* is a re-distribution of the [Official LTS Jenkins Docker image](https://hub.docker.com/r/jenkins/jenkins/) bundled with most popular plugins and
 ability to configure most aspects of Jenkins from a **simple** and **single source of truth** represented as YAML.
 
 The image can get the configuration from several data sources such as: File, S3, Environment Variable, HTTP, Kubernetes ConfigMap and Kubernetes Secret.
@@ -26,7 +26,7 @@ The image is "Battle Proven" and serves as the baseground for several Jenkins de
   * Tools and installers (JDK, Ant, Maven, Gradle, SonarQube, Xvfb)
   * Misc. Plugins configuration such as Jira, SonarQube, Checkmarx
   * Misc. Configuration options such as Environment variables, Proxy
-* Support additional plugins installation during startup without the need to build your own image 
+* Support additional plugins installation during startup without the need to build your own image
 * Supports quiet startup period to enable docker restarts with a graceful time which Jenkins is in *Quiet Mode*
 * Automated Re-Configure based on configuration data change without restarts
 * Supports Dynamic Host IP configuration passed to clouds when Jenkins is running in a cluster
@@ -314,6 +314,21 @@ Responsible for:
       * text - the api token as text
 
 > `Note: Currently the configuration supports only the global credentials domain.`
+
+#### Dynamic Credentials
+
+When the type attribute is not one of the above types, the configuration will try to find the right credential type and configure it using [org.jenkinsci.plugins.structs.describable.DescribableModel](https://github.com/jenkinsci/structs-plugin/blob/master/plugin/src/main/java/org/jenkinsci/plugins/structs/describable/DescribableModel.java)
+
+The logic for dealing with unknown types is as follows:
+* If the type: <fully.qualified.credentials.class.name>, then we will try to use that class name
+  * ```type: org.jenkinsci.plugins.p4.credentials.P4TicketImpl``` will try to instantiate a [org.jenkinsci.plugins.p4.credentials.P4TicketImpl](https://github.com/jenkinsci/p4-plugin/blob/master/src/main/java/org/jenkinsci/plugins/p4/credentials/P4TicketImpl.java) credentials
+* If the type: <simpleNameWithoutDots>, then we will search all the available __Credentials Descriptors__ and we will try to find the one that starts with the same name ignoring case
+  * ```type: usernamePassword``` will match [com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl](https://github.com/jenkinsci/credentials-plugin/blob/master/src/main/java/com/cloudbees/plugins/credentials/impl/UsernamePasswordCredentialsImpl.java)
+  * ```type: usernamePasswordImpl``` will match the same above
+  * ```type: usernamepassword``` will match the same above
+
+> `Note: When dealing with dynamic credentials, you will have to follow the @DataBoundConstructor and @DataBoundSetter rules`
+
 
 ```yaml
 # Each top level key represents the credential id
