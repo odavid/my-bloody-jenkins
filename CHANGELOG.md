@@ -1,5 +1,10 @@
 ## Changelog
 
+
+### 2.107.2-34 (Not release yet)
+* Support Dynamic credentials [#59](https://github.com/odavid/my-bloody-jenkins/issues/59)
+
+
 ### 2.107.2-33
 * Updated plugins
     * [amazon-ecs:1.14](https://plugins.jenkins.io/amazon-ecs)
