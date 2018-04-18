@@ -320,9 +320,9 @@ Responsible for:
 When the type attribute is not one of the above types, the configuration will try to find the right credential type and configure it using [org.jenkinsci.plugins.structs.describable.DescribableModel](https://github.com/jenkinsci/structs-plugin/blob/master/plugin/src/main/java/org/jenkinsci/plugins/structs/describable/DescribableModel.java)
 
 The logic for dealing with unknown types is as follows:
-* If the type: <fully.qualified.credentials.class.name>, then we will try to use that class name
+* If the type: ```fully.qualified.credentials.class.name```, then we will try to use that class name
   * ```type: org.jenkinsci.plugins.p4.credentials.P4TicketImpl``` will try to instantiate a [org.jenkinsci.plugins.p4.credentials.P4TicketImpl](https://github.com/jenkinsci/p4-plugin/blob/master/src/main/java/org/jenkinsci/plugins/p4/credentials/P4TicketImpl.java) credentials
-* If the type: <simpleNameWithoutDots>, then we will search all the available __Credentials Descriptors__ and we will try to find the one that starts with the same name ignoring case
+* If the type: ```simpleNameWithoutDots```, then we will search all the available __Credentials Descriptors__ and we will try to find the one that starts with the same name ignoring case
   * ```type: usernamePassword``` will match [com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl](https://github.com/jenkinsci/credentials-plugin/blob/master/src/main/java/com/cloudbees/plugins/credentials/impl/UsernamePasswordCredentialsImpl.java)
   * ```type: usernamePasswordImpl``` will match the same above
   * ```type: usernamepassword``` will match the same above
