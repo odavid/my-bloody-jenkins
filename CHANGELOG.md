@@ -1,7 +1,7 @@
 ## Changelog
 
 
-### 2.107.2-34 (Not release yet)
+### 2.107.2-34
 * Support Dynamic credentials [#59](https://github.com/odavid/my-bloody-jenkins/issues/59)
 * Support for custom configuration [#86](https://github.com/odavid/my-bloody-jenkins/issues/86)
 
