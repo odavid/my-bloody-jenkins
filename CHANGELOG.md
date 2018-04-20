@@ -1,5 +1,8 @@
 ## Changelog
 
+### 2.107.2-36
+* Fixed type in custom config
+
 ### 2.107.2-35
 * Updated plugins
     * [docker-plugin:1.1.4](https://plugins.jenkins.io/docker-plugin)

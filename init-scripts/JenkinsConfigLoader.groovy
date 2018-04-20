@@ -78,5 +78,5 @@ if(!new File(configFileName).exists()) {
     handleConfig('PipelineLibraries', jenkinsConfig.pipeline_libraries)
     handleConfig('SeedJobs', jenkinsConfig.seed_jobs)
 
-    handleCustomConfig(jenkins.customConfig)
+    handleCustomConfig(jenkinsConfig.customConfig)
 }
