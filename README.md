@@ -672,6 +672,7 @@ In order to use this hook, you will need to create your own docker image and add
 def setup(config){
 
 }
+return this
 ```
 
 * In the configuration yaml file, have a ```customConfig``` top level key that will be passed to the above groovy script.
