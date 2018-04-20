@@ -1,10 +1,13 @@
 ## Changelog
 
+### 2.107.2-35
+* Updated plugins
+    * [docker-plugin:1.1.4](https://plugins.jenkins.io/docker-plugin)
+    * [workflow-basic-steps:2.7](https://plugins.jenkins.io/workflow-basic-steps)
 
 ### 2.107.2-34
 * Support Dynamic credentials [#59](https://github.com/odavid/my-bloody-jenkins/issues/59)
 * Support for custom configuration [#86](https://github.com/odavid/my-bloody-jenkins/issues/86)
-
 
 ### 2.107.2-33
 * Updated plugins
