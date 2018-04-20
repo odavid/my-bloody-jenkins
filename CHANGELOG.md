@@ -1,7 +1,7 @@
 ## Changelog
 
 ### 2.107.2-36
-* Fixed type in custom config
+* Fixed typo in custom config
 
 ### 2.107.2-35
 * Updated plugins
