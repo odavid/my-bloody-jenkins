@@ -1,7 +1,7 @@
 ## Changelog
 
 
-### 2.107.2-37 (not released yet)
+### 2.107.2-37
 * Updated plugins
     * [branch-api:2.0.20](https://plugins.jenkins.io/branch-api)
     * [github-branch-source:2.3.4](https://plugins.jenkins.io/github-branch-source)
