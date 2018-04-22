@@ -1,5 +1,15 @@
 ## Changelog
 
+
+### 2.107.2-37 (not released yet)
+* Updated plugins
+    * [branch-api:2.0.20](https://plugins.jenkins.io/branch-api)
+    * [github-branch-source:2.3.4](https://plugins.jenkins.io/github-branch-source)
+    * [scm-api:2.2.7](https://plugins.jenkins.io/scm-api)
+    * [workflow-cps:2.49](https://plugins.jenkins.io/workflow-cps)
+    * [workflow-job:2.20](https://plugins.jenkins.io/workflow-job)
+    * [workflow-multibranch:2.18](https://plugins.jenkins.io/workflow-multibranch)
+
 ### 2.107.2-36
 * Fixed typo in custom config
 

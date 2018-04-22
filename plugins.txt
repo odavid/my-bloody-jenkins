@@ -33,7 +33,7 @@ blueocean-rest:1.5.0
 blueocean-rest-impl:1.5.0
 blueocean-web:1.5.0
 bouncycastle-api:2.16.2
-branch-api:2.0.19
+branch-api:2.0.20
 build-timeout:1.19
 build-user-vars-plugin:1.5
 buildtriggerbadge:2.9
@@ -70,7 +70,7 @@ git-parameter:0.9.2
 git-server:1.7
 github:1.29.0
 github-api:1.90
-github-branch-source:2.3.3
+github-branch-source:2.3.4
 gitlab-plugin:1.5.5
 gradle:1.28
 groovy-postbuild:2.4
@@ -122,7 +122,7 @@ promoted-builds:3.1
 pubsub-light:1.12
 rebuild:1.28
 run-condition:1.0
-scm-api:2.2.6
+scm-api:2.2.7
 script-security:1.44
 slack:2.3
 sonar:2.7.1
@@ -138,11 +138,11 @@ variant:1.1
 workflow-aggregator:2.5
 workflow-api:2.27
 workflow-basic-steps:2.7
-workflow-cps:2.48
+workflow-cps:2.49
 workflow-cps-global-lib:2.9
 workflow-durable-task-step:2.19
-workflow-job:2.19
-workflow-multibranch:2.17
+workflow-job:2.20
+workflow-multibranch:2.18
 workflow-remote-loader:1.4
 workflow-scm-step:2.6
 workflow-step-api:2.14
