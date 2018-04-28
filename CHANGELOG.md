@@ -1,5 +1,10 @@
 ## Changelog
 
+### 2.107.2-38
+* Updated plugins
+    * [apache-httpcomponents-client-4-api:4.5.5-1.0](https://plugins.jenkins.io/apache-httpcomponents-client-4-api)
+    * [cloudbees-bitbucket-branch-source:2.2.11](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
+    * [kubernetes:1.6.0](https://plugins.jenkins.io/kubernetes)
 
 ### 2.107.2-37
 * Updated plugins
