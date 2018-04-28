@@ -306,9 +306,12 @@ Responsible for:
         * username
         * privatekey - PEM format text
         * base64 - PEM format text base64 encoded. Mandatory if privatekey is not provided
+        * fileOnMaster - A path that is accessible within the docker container. This option is required if privateKey or base64 are not provided. Also, this option is optimal when using _Kubernetes Secrets_
         * passphrase - not mandatory, but encouraged
+
     * type: cert - a [Certificate](https://wiki.jenkins.io/display/JENKINS/Credentials+Plugin). Mandatory attributes:
       * base64 - the PKCS12 certificate bytes base64 encoded
+      * fileOnMaster - A path that is accessible within the docker container. This option is required if base64 is not provided. Also, this option is optimal when using _Kubernetes Secrets_
       * password - not mandatory, but encouraged
     * type: gitlab-api-token - a [Gitlab API token](https://wiki.jenkins.io/display/JENKINS/GitLab+Plugin) to be used with the gitlab plugin
       * text - the api token as text
