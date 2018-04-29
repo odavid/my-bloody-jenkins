@@ -77,6 +77,7 @@ if(!new File(configFileName).exists()) {
     handleConfig('Gitlab', jenkinsConfig.gitlab)
     handleConfig('PipelineLibraries', jenkinsConfig.pipeline_libraries)
     handleConfig('SeedJobs', jenkinsConfig.seed_jobs)
+    handleConfig('JobDSLScripts', jenkinsConfig.job_dsl_scripts)
 
     handleCustomConfig(jenkinsConfig.customConfig)
 }
