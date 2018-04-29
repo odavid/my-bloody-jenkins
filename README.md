@@ -20,6 +20,7 @@ The image is "Battle Proven" and serves as the baseground for several Jenkins de
   * Jenkins Clouds (Amazon ECS, Kubernetes, Docker)
   * Global Pipeline Libraries
   * Seed Jobs
+  * JobDSL Scripts
   * Script approvals
   * Notifiers (Hipchat, Slack, Email, Email-Ext)
   * Credentials (aws, userpass, sshkeys, certs, kubernetes, gitlab, simple secrets)
@@ -648,6 +649,29 @@ seed_jobs:
           new lines
 
 ```
+### JobDSL Scripts Section
+A "lighter" version of [Seed Jobs Section](#seed-jobs-section). Contains a list of [jobdsl scriptlets](https://github.com/jenkinsci/job-dsl-plugin/wiki). Each script will be executed on startup without creating a dedicated job.
+
+```yaml
+# Each list item will be running at startup and during update
+job_dsl_scripts:
+  - |
+    // Creates a folder
+    folder('foo')
+  - |
+    // Creates a free style project
+    job('foo/bar'){
+      scm {
+          git('git://github.com/foo/bar.git')
+      }
+      triggers {
+          scm('H/15 * * * *')
+      }
+      steps {
+          maven('-e clean test')
+      }
+    }
+``` 
 
 ### Running Jenkins behind proxy
 When running Jenkins behind a proxy server, add the following to your config yaml file:
