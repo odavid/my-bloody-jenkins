@@ -1,6 +1,6 @@
 ## Changelog
 
-### 2.107.2-39 (Not released yet)
+### 2.107.2-39
 * Add ability to directly run jobDSL Scripts on startup/update [#89](https://github.com/odavid/my-bloody-jenkins/issues/89)
 * Updated plugins
     * [apache-httpcomponents-client-4-api:4.5.5-2.0](https://plugins.jenkins.io/apache-httpcomponents-client-4-api)
