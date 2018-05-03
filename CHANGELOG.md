@@ -1,5 +1,11 @@
 ## Changelog
 
+### 2.107.2-40
+* Updated plugins
+    * [artifactory:2.16.1](https://plugins.jenkins.io/artifactory)
+    * [workflow-cps:2.51](https://plugins.jenkins.io/workflow-cps)
+    * [workflow-job:2.21](https://plugins.jenkins.io/workflow-job)
+
 ### 2.107.2-39
 * Add ability to directly run jobDSL Scripts on startup/update [#89](https://github.com/odavid/my-bloody-jenkins/issues/89)
 * Updated plugins
