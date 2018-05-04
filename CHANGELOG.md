@@ -1,6 +1,6 @@
 ## Changelog
 
-### 2.107.2-41 (Not Released yet)
+### 2.107.2-41
 * Environment Variable substitution and ability to remove secret env vars patterns from System Info page [#91](https://github.com/odavid/my-bloody-jenkins/issues/91)
 
 
