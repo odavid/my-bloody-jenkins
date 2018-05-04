@@ -73,7 +73,7 @@ github-api:1.90
 github-branch-source:2.3.4
 gitlab-plugin:1.5.5
 gradle:1.28
-groovy-postbuild:2.4
+groovy-postbuild:2.4.1
 handlebars:1.1.1
 handy-uri-templates-2-api:2.1.6-1.0
 hipchat:2.1.1
@@ -83,7 +83,7 @@ ivy:1.28
 jackson2-api:2.8.11.1
 javadoc:1.4
 jenkins-design-language:1.5.0
-jira:2.5
+jira:2.5.2
 job-dsl:1.69
 jquery:1.12.4-0
 jquery-detached:1.2.1

@@ -1,5 +1,10 @@
 ## Changelog
 
+### 2.107.2-42 (Not released yet)
+* Updated plugins
+    * [groovy-postbuild:2.4.1](https://plugins.jenkins.io/groovy-postbuild)
+    * [jira:2.5.2](https://plugins.jenkins.io/jira)
+
 ### 2.107.2-41
 * Environment Variable substitution and ability to remove secret env vars patterns from System Info page [#91](https://github.com/odavid/my-bloody-jenkins/issues/91)
 
