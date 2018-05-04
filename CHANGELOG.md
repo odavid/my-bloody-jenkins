@@ -1,5 +1,9 @@
 ## Changelog
 
+### 2.107.2-41 (Not Released yet)
+* Environment Variable substitution and ability to remove secret env vars patterns from System Info page [#91](https://github.com/odavid/my-bloody-jenkins/issues/91)
+
+
 ### 2.107.2-40
 * Updated plugins
     * [artifactory:2.16.1](https://plugins.jenkins.io/artifactory)

@@ -10,6 +10,10 @@ load tests_helpers
     run_groovy_test
 }
 
+@test "RemoveMasterEnvVarsConfig" {
+    run_groovy_test
+}
+
 @test "CloudsConfig" {
     run_groovy_test
 }

@@ -2,10 +2,40 @@ import org.yaml.snakeyaml.Yaml
 import jenkins.security.ApiTokenProperty
 import hudson.model.User
 
+def replaceEnvironmentVariables(element){
+    if(element instanceof Map){
+        def newMap = [:]
+        element.each{k, v -> newMap[(k)] = replaceEnvironmentVariables(v)}
+        return newMap
+    }
+    if(element instanceof List){
+        return element.collect{replaceEnvironmentVariables(it)}
+    }
+    if(element instanceof String){
+        def finder = element =~ /\$\{(.*?)\}/
+        if(finder.count){
+            def keys = (0..(finder.count-1)).collect{finder[it][1]}
+            def contextMap = [:]
+            keys.each{
+                if(!System.getenv(it)){
+                    println "Cannot find env var: ${it}, setting empty value"
+                    contextMap[(it)] = ''
+                }else{
+                    contextMap[(it)] = System.getenv(it)
+                }
+            }
+            return new groovy.text.SimpleTemplateEngine().createTemplate(element).make(contextMap).toString()
+        }
+    }
+    return element
+}
+
 def loadYamlConfig(filename){
-    return new File(filename).withReader{
+    def conf = new File(filename).withReader{
         new Yaml().load(it)
     }
+    conf = replaceEnvironmentVariables(conf)
+    return conf
 }
 
 def handleConfig(handler, config){
@@ -64,6 +94,7 @@ if(!new File(configFileName).exists()) {
     // Find a more elegant way to handle it
     handleConfig('Proxy', jenkinsConfig.proxy)
     handleConfig('General', [general: true])
+    handleConfig('RemoveMasterEnvVars', jenkinsConfig.remove_master_envvars)
     handleConfig('EnvironmentVars', jenkinsConfig.environment)
     handleConfig('Creds', jenkinsConfig.credentials)
     handleConfig('Security', jenkinsConfig.security)
