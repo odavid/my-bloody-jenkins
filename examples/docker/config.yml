@@ -1,6 +1,10 @@
 security:
   realm: jenkins_database
-  adminPassword: admin
+  adminPassword: ${JENKINS_ADMIN_PASSWORD}
+
+  remove_master_envvars:
+  - '.*PASSWORD.*'
+
 tools:
   installations:
     MVN-3.5.0:
