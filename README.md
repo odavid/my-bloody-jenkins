@@ -130,7 +130,7 @@ When you pass secrets environment variables to the container, Jenkins will displ
 security:
   realm: ldap
   managerDN: cn=search-user,ou=users,dc=mydomain,dc=com
-  managerPassword: '${LDAP_PASSWORD} # Use LDAP_PASSWORD environment variable
+  managerPassword: '${LDAP_PASSWORD}' # Use LDAP_PASSWORD environment variable
   ...
 
 remove_master_envvars:
