@@ -1,6 +1,6 @@
 ## Changelog
 
-### 2.107.2-43 (not released yet)
+### 2.107.2-43
 * Updated plugins
     * [workflow-cps:2.53](https://plugins.jenkins.io/workflow-cps)
 
