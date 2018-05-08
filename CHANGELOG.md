@@ -1,5 +1,9 @@
 ## Changelog
 
+### 2.107.2-43 (not released yet)
+* Updated plugins
+    * [workflow-cps:2.53](https://plugins.jenkins.io/workflow-cps
+
 ### 2.107.2-42
 * Updated plugins
     * [groovy-postbuild:2.4.1](https://plugins.jenkins.io/groovy-postbuild)
