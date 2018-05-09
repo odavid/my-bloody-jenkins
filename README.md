@@ -704,6 +704,12 @@ proxy:
 
 ```
 
+Also, you should pass the following environment variables to the container:
+* http_proxy
+* https_proxy
+* no_proxy
+
+
 ### Custom Config Handler
 Sometimes, there is a need to have additional configuration that is not supported by this image.
 For that purpose, we have a __custom configuration hook__
