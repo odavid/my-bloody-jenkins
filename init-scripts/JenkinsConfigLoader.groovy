@@ -87,6 +87,10 @@ if(!new File(configFileName).exists()) {
     println "${configFileName} does not exist. Set variable JENKINS_ENV_CONFIG_YAML! Skipping configuration..."
 } else {
     def jenkinsConfig = loadYamlConfig(configFileName)
+    if(!jenkinsConfig){
+        println "jenkinsConfig is empty, skipping"
+        return 
+    }
     // TODO: admin user should be global. Make it more generic....
     jenkinsConfig.security?.adminUser = adminUser
 

@@ -78,6 +78,7 @@ handlebars:1.1.1
 handy-uri-templates-2-api:2.1.6-1.0
 hipchat:2.1.1
 htmlpublisher:1.16
+http_request:1.8.22
 icon-shim:2.0.3
 ivy:1.28
 jackson2-api:2.8.11.1

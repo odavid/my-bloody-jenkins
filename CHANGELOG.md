@@ -3,7 +3,9 @@
 ## 2.107.2-44 (Not Released yet)
 * Update plugins:
     * [timestamper:1.8.10](https://plugins.jenkins.io/timestamper)
-    
+* Added plugins:
+    * [http_request:1.8.22](https://plugins.jenkins.io/timestamper)
+
 ### 2.107.2-43
 * Updated plugins
     * [workflow-cps:2.53](https://plugins.jenkins.io/workflow-cps)
