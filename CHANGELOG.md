@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.107.2-44 (Not Released yet)
+## 2.107.2-44
 * Update plugins:
     * [timestamper:1.8.10](https://plugins.jenkins.io/timestamper)
 * Added plugins:
