@@ -132,7 +132,7 @@ ssh-credentials:1.13
 ssh-slaves:1.26
 structs:1.14
 swarm:3.12
-timestamper:1.8.9
+timestamper:1.8.10
 token-macro:2.5
 variant:1.1
 workflow-aggregator:2.5
