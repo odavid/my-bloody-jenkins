@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.107.2-alpine
+FROM jenkins/jenkins:2.107.3-alpine
 
 ARG GOSU_VERSION=1.10
 
@@ -32,8 +32,7 @@ COPY jenkins.sh /usr/local/bin/jenkins.sh
 USER jenkins
 # Install plugins
 COPY plugins.txt /usr/share/jenkins/ref/
-COPY install-plugins-with-retry.sh /usr/local/bin/install-plugins-with-retry.sh
-RUN /usr/local/bin/install-plugins-with-retry.sh < /usr/share/jenkins/ref/plugins.txt
+RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
 
 # Add all init groovy scripts to ref folder and change their ext to .override
 # so Jenkins will override them every time it starts

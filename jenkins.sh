@@ -32,7 +32,7 @@ if [[ $# -lt 1 ]] || [[ "$1" == "-"* ]]; then
 
     if [ -n "$JENKINS_ENV_PLUGINS" ]; then
         echo "Installing additional plugins $JENKINS_ENV_PLUGINS"
-        install-plugins-with-retry.sh $(echo $JENKINS_ENV_PLUGINS | tr ',' ' ')
+        install-plugins.sh $(echo $JENKINS_ENV_PLUGINS | tr ',' ' ')
         chown jenkins:jenkins /usr/share/jenkins/ref/
         echo "Installing additional plugins. Done..."
     fi

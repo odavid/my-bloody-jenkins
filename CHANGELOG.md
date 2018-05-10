@@ -1,5 +1,8 @@
 ## Changelog
 
+## 2.107.3-45 (Not released yet)
+* [LTS-2.107.3](https://jenkins.io/changelog-stable/)
+
 ## 2.107.2-44
 * Update plugins:
     * [timestamper:1.8.10](https://plugins.jenkins.io/timestamper)
