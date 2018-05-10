@@ -2,6 +2,8 @@
 
 ## 2.107.3-45 (Not released yet)
 * [LTS-2.107.3](https://jenkins.io/changelog-stable/)
+* Update plugins:
+    * [pipeline-utility-steps:2.1.0](https://plugins.jenkins.io/pipeline-utility-steps)
 
 ## 2.107.2-44
 * Update plugins:

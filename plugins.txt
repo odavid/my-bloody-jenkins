@@ -117,7 +117,7 @@ pipeline-rest-api:2.10
 pipeline-stage-step:2.3
 pipeline-stage-tags-metadata:1.2.9
 pipeline-stage-view:2.10
-pipeline-utility-steps:2.0.2
+pipeline-utility-steps:2.1.0
 plain-credentials:1.4
 promoted-builds:3.1
 pubsub-light:1.12
