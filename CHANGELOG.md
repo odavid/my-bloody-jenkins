@@ -1,5 +1,9 @@
 ## Changelog
 
+## 2.107.3-46 (Not Released Yet)
+* Update plugins:
+    * [cobertura:1.12.1](https://plugins.jenkins.io/cobertura)
+
 ## 2.107.3-45
 * [LTS-2.107.3](https://jenkins.io/changelog-stable/)
 * Update plugins:
