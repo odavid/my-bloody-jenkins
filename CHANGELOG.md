@@ -3,6 +3,10 @@
 ## 2.107.3-46 (Not Released Yet)
 * Update plugins:
     * [cobertura:1.12.1](https://plugins.jenkins.io/cobertura)
+    * [docker-commons:1.12](https://plugins.jenkins.io/docker-commons)
+    * [docker-workflow:1.16](https://plugins.jenkins.io/docker-workflow)
+    * [metrics:3.1.2.12](https://plugins.jenkins.io/metrics)
+
 
 ## 2.107.3-45
 * [LTS-2.107.3](https://jenkins.io/changelog-stable/)
