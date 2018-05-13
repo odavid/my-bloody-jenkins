@@ -6,6 +6,8 @@
     * [docker-commons:1.12](https://plugins.jenkins.io/docker-commons)
     * [docker-workflow:1.16](https://plugins.jenkins.io/docker-workflow)
     * [metrics:3.1.2.12](https://plugins.jenkins.io/metrics)
+    * [git:3.9.0](https://plugins.jenkins.io/git)
+    * [git-client:2.7.2](https://plugins.jenkins.io/git-client)
 
 
 ## 2.107.3-45
