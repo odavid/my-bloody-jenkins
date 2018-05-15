@@ -8,6 +8,7 @@
     * [metrics:3.1.2.12](https://plugins.jenkins.io/metrics)
     * [git:3.9.0](https://plugins.jenkins.io/git)
     * [git-client:2.7.2](https://plugins.jenkins.io/git-client)
+    * [jackson2-api:2.8.11.2](https://plugins.jenkins.io/jackson2-api)
 
 
 ## 2.107.3-45
