@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.107.3-46 (Not Released Yet)
+## 2.107.3-46
 * Update plugins:
     * [cobertura:1.12.1](https://plugins.jenkins.io/cobertura)
     * [docker-commons:1.12](https://plugins.jenkins.io/docker-commons)
