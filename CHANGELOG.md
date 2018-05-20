@@ -1,5 +1,18 @@
 ## Changelog
 
+## 2.107.3-47
+* Updated plugins:
+    * [checkmarx:8.70.0](https://plugins.jenkins.io/checkmarx)
+    * [cucumber-reports:3.17.0](https://plugins.jenkins.io/cucumber-reports)
+    * [docker-commons:1.13](https://plugins.jenkins.io/docker-commons)
+    * [docker-workflow:1.17](https://plugins.jenkins.io/docker-workflow)
+    * [extensible-choice-parameter:1.6.0](https://plugins.jenkins.io/extensible-choice-parameter)
+    * [gatling:1.2.3](https://plugins.jenkins.io/gatling)
+    * [jira:3.0.0](https://plugins.jenkins.io/jira)
+    * [workflow-multibranch:2.19](https://plugins.jenkins.io/workflow-multibranch)
+    * [workflow-step-api:2.15](https://plugins.jenkins.io/workflow-step-api)
+
+
 ## 2.107.3-46
 * Update plugins:
     * [cobertura:1.12.1](https://plugins.jenkins.io/cobertura)
