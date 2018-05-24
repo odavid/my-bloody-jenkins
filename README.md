@@ -553,7 +553,7 @@ clouds:
         #########################
         launchType: FARGATE
         securityGroups: sg-123,sg-456         # comma separated security groups
-        assignPublicIp: false                 # default fals
+        assignPublicIp: false                 # default false
         subnets: 192.10.0.0/21,192.12.0.0/21  # comma separated subnets
 ```
 
