@@ -1,5 +1,11 @@
 ## Changelog
 
+## 2.107.3-48 (Not released yet)
+* Updated plugins:
+    * [apache-httpcomponents-client-4-api:4.5.5-2.1](https://plugins.jenkins.io/apache-httpcomponents-client-4-api)
+    * [favorite:2.3.2](https://plugins.jenkins.io/favorite)
+    * [kubernetes:1.6.2](https://plugins.jenkins.io/kubernetes)
+
 ## 2.107.3-47
 * Updated plugins:
     * [checkmarx:8.70.0](https://plugins.jenkins.io/checkmarx)
