@@ -26,6 +26,7 @@ ecs-cloud:
       labels:
         - test
         - generic
+      taskDefinitionOverride: override
       image: odavid/jenkins-jnlp-slave:latest
       remoteFs: /home/jenkins
       memory: 4000
@@ -57,6 +58,45 @@ ecs-cloud:
         - /home/aaa:/home/aaa:rw
         - /home/aaa1:/home/aaa1234:rw
   
+    - name: ecs-template-fargate
+      labels:
+        - test
+        - generic
+      image: odavid/jenkins-jnlp-slave:latest
+      launchType: FARGATE
+      subnets: 192.10.0.0/21,192.12.0.0/21
+      securityGroups: sg-123-123,sg-124-124
+      assignPublicIp: true
+      remoteFs: /home/jenkins
+      memory: 4000
+      memoryReservation: 2000
+      cpu: 512
+      jvmArgs: -Xmx1G
+      entrypoint: /entrypoint.sh
+      logDriver: aws
+      dns: 8.8.8.8
+      privileged: true
+      containerUser: aUser
+      ports:
+        - 9000:9001
+      logDriverOptions:
+        optionA: optionAValue
+        optionB: optionBValue
+      environment:
+        ENV1: env1Value
+        ENV2: env2Value
+      extraHosts:
+        extrHost1: extrHost1
+        extrHost2: extrHost2
+      volumes:
+        - /home/xxx
+        - /home/bbb:ro
+        - /home/ccc:rw
+        - /home/yyy:/home/yyy
+        - /home/zzz:/home/zzz:ro
+        - /home/aaa:/home/aaa:rw
+        - /home/aaa1:/home/aaa1234:rw
+
 """)
     configHandler.setup(config)
 
@@ -68,7 +108,12 @@ ecs-cloud:
         assert it.jenkinsUrl == 'http://127.0.0.1:8080'
         assert it.tunnel == '127.0.0.1:8080'
         def template = it.templates[0]
-        assert template.templateName == 'ecs-template'
+        assert template.templateName == ''  // taskDefinitionOverride
+        assert template.launchType == 'EC2'
+        assert !template.subnets
+        assert !template.securityGroups
+        assert !template.assignPublicIp
+        assert template.taskDefinitionOverride == 'override'
         assert template.label == 'test generic'
         assert template.image == 'odavid/jenkins-jnlp-slave:latest'
         assert template.remoteFSRoot == '/home/jenkins'
@@ -107,6 +152,26 @@ ecs-cloud:
         assertMountPoint('/home/yyy', '/home/yyy', '/home/yyy', false)
         assertMountPoint('/home/zzz', '/home/zzz', '/home/zzz', true)
         assertMountPoint('/home/aaa1', '/home/aaa1', '/home/aaa1234', false)
+
+        template = it.templates[1]
+        assert template.templateName == 'ecs-template-fargate'
+        assert template.launchType == 'FARGATE'
+        assert template.subnets == '192.10.0.0/21,192.12.0.0/21'
+        assert template.securityGroups == 'sg-123-123,sg-124-124'
+        assert template.assignPublicIp
+        assert !template.taskDefinitionOverride
+        assert template.label == 'test generic'
+        assert template.image == 'odavid/jenkins-jnlp-slave:latest'
+        assert template.remoteFSRoot == '/home/jenkins'
+        assert template.memory == 4000
+        assert template.memoryReservation == 2000
+        assert template.cpu == 512
+        assert template.jvmArgs == '-Xmx1G'
+        assert template.entrypoint == '/entrypoint.sh'
+        assert template.logDriver == 'aws'
+        assert template.dnsSearchDomains == '8.8.8.8'
+        assert template.privileged
+        assert template.containerUser == 'aUser'
     }
 }
 

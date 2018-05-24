@@ -1,7 +1,7 @@
 ace-editor:1.1
 active-directory:2.6
 amazon-ecr:1.6
-amazon-ecs:1.14
+amazon-ecs:1.15
 anchore-container-scanner:1.0.14
 ant:1.8
 antisamy-markup-formatter:1.5
