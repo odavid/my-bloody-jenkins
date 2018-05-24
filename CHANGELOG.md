@@ -2,6 +2,7 @@
 
 ## 2.107.3-48 (Not released yet)
 * Updated plugins:
+    * [amazon-ecs:1.15](https://plugins.jenkins.io/amazon-ecs) - ECS Fargate Support!
     * [apache-httpcomponents-client-4-api:4.5.5-2.1](https://plugins.jenkins.io/apache-httpcomponents-client-4-api)
     * [favorite:2.3.2](https://plugins.jenkins.io/favorite)
     * [kubernetes:1.6.2](https://plugins.jenkins.io/kubernetes)
