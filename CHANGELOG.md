@@ -1,8 +1,9 @@
 ## Changelog
 
 ## 2.107.3-48 (Not released yet)
+* Added fargate support to ecs cloud [#96](https://github.com/odavid/my-bloody-jenkins/pull/96)
 * Updated plugins:
-    * [amazon-ecs:1.15](https://plugins.jenkins.io/amazon-ecs) - ECS Fargate Support!
+    * [amazon-ecs:1.15](https://plugins.jenkins.io/amazon-ecs)
     * [apache-httpcomponents-client-4-api:4.5.5-2.1](https://plugins.jenkins.io/apache-httpcomponents-client-4-api)
     * [favorite:2.3.2](https://plugins.jenkins.io/favorite)
     * [kubernetes:1.6.2](https://plugins.jenkins.io/kubernetes)
