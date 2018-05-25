@@ -177,6 +177,7 @@ def ecsCloud(config){
                 ecsTemplate.entrypoint = temp.entrypoint
                 ecsTemplate.logDriver = temp.logDriver
                 ecsTemplate.dnsSearchDomains = temp.dns
+                ecsTemplate.taskrole = temp.taskrole
                 return ecsTemplate
             },
             credentialsId ?: '',

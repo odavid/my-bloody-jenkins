@@ -57,7 +57,7 @@ ecs-cloud:
         - /home/zzz:/home/zzz:ro
         - /home/aaa:/home/aaa:rw
         - /home/aaa1:/home/aaa1234:rw
-  
+
     - name: ecs-template-fargate
       labels:
         - test
@@ -66,6 +66,7 @@ ecs-cloud:
       launchType: FARGATE
       subnets: 192.10.0.0/21,192.12.0.0/21
       securityGroups: sg-123-123,sg-124-124
+      taskrole: 'arn://task-role'
       assignPublicIp: true
       remoteFs: /home/jenkins
       memory: 4000
@@ -126,19 +127,19 @@ ecs-cloud:
         assert template.dnsSearchDomains == '8.8.8.8'
         assert template.privileged
         assert template.containerUser == 'aUser'
-        assert ['optionA=optionAValue', 'optionB=optionBValue'] == template.logDriverOptions.collect{ 
+        assert ['optionA=optionAValue', 'optionB=optionBValue'] == template.logDriverOptions.collect{
             "${it.name}=${it.value}"
         }
-        assert ['ENV1=env1Value', 'ENV2=env2Value'] == template.environments.collect{ 
+        assert ['ENV1=env1Value', 'ENV2=env2Value'] == template.environments.collect{
             "${it.name}=${it.value}"
         }
-        assert ['extrHost1=extrHost1', 'extrHost2=extrHost2'] == template.extraHosts.collect{ 
+        assert ['extrHost1=extrHost1', 'extrHost2=extrHost2'] == template.extraHosts.collect{
             "${it.ipAddress}=${it.hostname}"
         }
         assert template.portMappings[0].containerPort == 9001
         assert template.portMappings[0].hostPort == 9000
         assert template.portMappings[0].protocol == 'tcp'
-        
+
         def mountPoints = template.mountPoints
         def assertMountPoint = { name, sourcePath, containerPath, readOnly ->
             def mpe = mountPoints.find{it.name == configHandler.pathToVolumeName(name)}
@@ -158,6 +159,7 @@ ecs-cloud:
         assert template.launchType == 'FARGATE'
         assert template.subnets == '192.10.0.0/21,192.12.0.0/21'
         assert template.securityGroups == 'sg-123-123,sg-124-124'
+        assert template.taskrole == 'arn://task-role'
         assert template.assignPublicIp
         assert !template.taskDefinitionOverride
         assert template.label == 'test generic'
@@ -271,7 +273,7 @@ kube-cloud:
         assert template.command == '/run/me'
         assert template.args == 'x y z'
         assert template.remoteFs == '/home/jenkins'
-        
+
         assert template.containers[0].name == 'jnlp'
         assert template.containers[0].ttyEnabled
         assert template.containers[0].privileged
@@ -351,7 +353,7 @@ docker-cloud:
       bindAllPorts: true
       privileged: true
       tty: true
-      macAddress: mac-address              
+      macAddress: mac-address
 """)
     configHandler.setup(config)
 

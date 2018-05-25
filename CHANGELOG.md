@@ -1,5 +1,7 @@
 ## Changelog
 
+## 2.107.3-49 (Not relesed yet)
+
 ## 2.107.3-48
 * Added fargate support to ecs cloud [#96](https://github.com/odavid/my-bloody-jenkins/pull/96)
 * Updated plugins:
