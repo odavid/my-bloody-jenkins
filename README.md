@@ -124,7 +124,7 @@ Keys are environment variable names and values are their corresponding values. N
 ### Environment variable Substitution and Remove Master Env Vars
 You can use ```${ENV_VAR_NAME}``` within the config.yml in order to use environment variables substitution for sensitive data (e.g k8s secrets).
 When you pass secrets environment variables to the container, Jenkins will display them in the 'System Info' page. In order to disable that beheviour, you can use
-```remove_master_envvars``` section and add regular expressions for variables you don't want to show on the SystemInfo page. 
+```remove_master_envvars``` section and add regular expressions for variables you don't want to show on the SystemInfo page.
 
 ```yaml
 security:
@@ -134,7 +134,7 @@ security:
   ...
 
 remove_master_envvars:
-  - '.*PASS.*' 
+  - '.*PASS.*'
   - '.*SECRET.*'
   - 'MY_SPECIAL_VARIABLE'
 ```
@@ -547,7 +547,7 @@ clouds:
         # Environment variables to pass to the slave container
         environment:
           XXX: xxx
-        
+
         #########################
         ## FARGATE Only
         #########################
@@ -555,6 +555,7 @@ clouds:
         securityGroups: sg-123,sg-456         # comma separated security groups
         assignPublicIp: false                 # default false
         subnets: 192.10.0.0/21,192.12.0.0/21  # comma separated subnets
+        taskrole: '<TASKROLE_ARN>'            # an iam role arn for running in fargate
 ```
 
 
@@ -696,7 +697,7 @@ job_dsl_scripts:
           maven('-e clean test')
       }
     }
-``` 
+```
 
 ### Running Jenkins behind proxy
 When running Jenkins behind a proxy server, add the following to your config yaml file:
