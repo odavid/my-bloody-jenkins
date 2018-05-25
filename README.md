@@ -126,6 +126,8 @@ You can use ```${ENV_VAR_NAME}``` within the config.yml in order to use environm
 When you pass secrets environment variables to the container, Jenkins will display them in the 'System Info' page. In order to disable that beheviour, you can use
 ```remove_master_envvars``` section and add regular expressions for variables you don't want to show on the SystemInfo page.
 
+> Escaping `${VAR}` to be used as is without substitution, is done by using `\${VAR}` within the yaml file
+
 ```yaml
 security:
   realm: ldap
