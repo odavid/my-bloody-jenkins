@@ -64,7 +64,7 @@ ecs-cloud:
         - generic
       image: odavid/jenkins-jnlp-slave:latest
       launchType: FARGATE
-      subnets: 192.10.0.0/21,192.12.0.0/21
+      subnets: subnet-123,subnet-456
       securityGroups: sg-123-123,sg-124-124
       taskrole: 'arn://task-role'
       assignPublicIp: true
@@ -157,7 +157,7 @@ ecs-cloud:
         template = it.templates[1]
         assert template.templateName == 'ecs-template-fargate'
         assert template.launchType == 'FARGATE'
-        assert template.subnets == '192.10.0.0/21,192.12.0.0/21'
+        assert template.subnets == 'subnet-123,subnet-456'
         assert template.securityGroups == 'sg-123-123,sg-124-124'
         assert template.taskrole == 'arn://task-role'
         assert template.assignPublicIp

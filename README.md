@@ -554,7 +554,7 @@ clouds:
         launchType: FARGATE
         securityGroups: sg-123,sg-456         # comma separated security groups
         assignPublicIp: false                 # default false
-        subnets: 192.10.0.0/21,192.12.0.0/21  # comma separated subnets
+        subnets: subnet-123,subnet-456        # comma separated subnet ids
         taskrole: '<TASKROLE_ARN>'            # an iam role arn for running in fargate
 ```
 
