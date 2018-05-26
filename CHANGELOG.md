@@ -6,6 +6,11 @@ I've added the support needed for ecs plugin configuration to use FARGATE, howev
 [I've created a PR for the plugin maintainers](https://github.com/jenkinsci/amazon-ecs-plugin/pull/62) and waiting for the official release.
 In any case, the ecs plugin does work as before, just not FARGATE launch type.
 
+## 2.107.3-50 (Not released yet)
+* Updated plugins:
+    * [aws-java-sdk:1.11.329](https://plugins.jenkins.io/aws-java-sdk)
+    * [kubernetes:1.6.3](https://plugins.jenkins.io/kubernetes)
+
 ## 2.107.3-49
 * added taskrole [#97](https://github.com/odavid/my-bloody-jenkins/pull/97)
 
