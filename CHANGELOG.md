@@ -8,6 +8,7 @@ In any case, the ecs plugin does work as before, just not FARGATE launch type.
 
 ## 2.107.3-50 (Not released yet)
 * Updated plugins:
+    * [gitlab-plugin:1.5.6](https://plugins.jenkins.io/gitlab-plugin)
     * [aws-java-sdk:1.11.329](https://plugins.jenkins.io/aws-java-sdk)
     * [kubernetes:1.6.3](https://plugins.jenkins.io/kubernetes)
 
