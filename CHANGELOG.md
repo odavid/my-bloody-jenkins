@@ -6,6 +6,9 @@ I've added the support needed for ecs plugin configuration to use FARGATE, howev
 [I've created a PR for the plugin maintainers](https://github.com/jenkinsci/amazon-ecs-plugin/pull/62) and waiting for the official release.
 In any case, the ecs plugin does work as before, just not FARGATE launch type.
 
+## 2.107.3-51 (Not released yet)
+* Updated plugins:
+    * [mask-passwords:2.12.0](https://plugins.jenkins.io/mask-passwords)
 
 ## 2.107.3-50
 * Updated plugins:
