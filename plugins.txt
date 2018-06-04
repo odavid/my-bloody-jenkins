@@ -64,13 +64,13 @@ extensible-choice-parameter:1.6.0
 external-monitor-job:1.7
 favorite:2.3.2
 gatling:1.2.3
-git:3.9.0
+git:3.9.1
 git-client:2.7.2
 git-parameter:0.9.2
 git-server:1.7
-github:1.29.0
+github:1.29.1
 github-api:1.90
-github-branch-source:2.3.4
+github-branch-source:2.3.5
 gitlab-plugin:1.5.6
 gradle:1.28
 groovy-postbuild:2.4.1
@@ -90,7 +90,7 @@ jquery:1.12.4-0
 jquery-detached:1.2.1
 jsch:0.1.54.2
 junit:1.24
-kubernetes:1.7.0
+kubernetes:1.7.1
 kubernetes-credentials:0.3.1
 ldap:1.20
 lockable-resources:2.2

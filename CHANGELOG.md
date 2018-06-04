@@ -9,6 +9,10 @@ In any case, the ecs plugin does work as before, just not FARGATE launch type.
 ## 2.107.3-51 (Not released yet)
 * Updated plugins:
     * [mask-passwords:2.12.0](https://plugins.jenkins.io/mask-passwords)
+    * [git:3.9.1](https://plugins.jenkins.io/git)
+    * [github:1.29.1](https://plugins.jenkins.io/github)
+    * [github-branch-source:2.3.5](https://plugins.jenkins.io/github-branch-source)
+    * [kubernetes:1.7.1](https://plugins.jenkins.io/kubernetes)    
 
 ## 2.107.3-50
 * Updated plugins:
