@@ -28,6 +28,7 @@ ecs-cloud:
         - generic
       taskDefinitionOverride: override
       image: odavid/jenkins-jnlp-slave:latest
+      executionRole: ecsTaskExecutionRole111
       remoteFs: /home/jenkins
       memory: 4000
       memoryReservation: 2000
@@ -111,6 +112,7 @@ ecs-cloud:
         def template = it.templates[0]
         assert template.templateName == ''  // taskDefinitionOverride
         assert template.launchType == 'EC2'
+        assert template.executionRole == 'ecsTaskExecutionRole111'
         assert !template.subnets
         assert !template.securityGroups
         assert !template.assignPublicIp
@@ -160,6 +162,7 @@ ecs-cloud:
         assert template.subnets == 'subnet-123,subnet-456'
         assert template.securityGroups == 'sg-123-123,sg-124-124'
         assert template.taskrole == 'arn://task-role'
+        assert template.executionRole == 'ecsTaskExecutionRole'
         assert template.assignPublicIp
         assert !template.taskDefinitionOverride
         assert template.label == 'test generic'

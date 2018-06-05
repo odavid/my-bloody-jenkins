@@ -549,7 +549,10 @@ clouds:
         # Environment variables to pass to the slave container
         environment:
           XXX: xxx
-
+        
+        # an iam role arn for the task. If omitted, the EC2 instance IAM Role that runs the task will be in use
+        taskrole: '<TASKROLE_ARN>'
+        
         #########################
         ## FARGATE Only
         #########################
@@ -557,7 +560,7 @@ clouds:
         securityGroups: sg-123,sg-456         # comma separated security groups
         assignPublicIp: false                 # default false
         subnets: subnet-123,subnet-456        # comma separated subnet ids
-        taskrole: '<TASKROLE_ARN>'            # an iam role arn for running in fargate
+        executionRole: ecsTaskExecutionRole   # by default 'ecsTaskExecutionRole' - see https://github.com/jenkinsci/amazon-ecs-plugin/pull/62
 ```
 
 

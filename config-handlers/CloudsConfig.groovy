@@ -173,6 +173,7 @@ def ecsCloud(config){
                         return new ECSTaskTemplate.PortMappingEntry(asInt(containerPort), asInt(hostPort), "tcp")
                     }
                 )
+                ecsTemplate.executionRole = temp.executionRole ?: 'ecsTaskExecutionRole'
                 ecsTemplate.jvmArgs = temp.jvmArgs
                 ecsTemplate.entrypoint = temp.entrypoint
                 ecsTemplate.logDriver = temp.logDriver

@@ -1,10 +1,11 @@
 ## Changelog
 
-## Known issues:
-> FARGATE:
-I've added the support needed for ecs plugin configuration to use FARGATE, however, at this moment, it seems the plugin is not working with FARGATE due to missing executionRole field within the plugin.
-[I've created a PR for the plugin maintainers](https://github.com/jenkinsci/amazon-ecs-plugin/pull/62) and waiting for the official release.
-In any case, the ecs plugin does work as before, just not FARGATE launch type.
+## 2.107.3-52
+* Updated plugins:
+    * Support for task execution role in ecs so tasks can run in FARGATE - see (https://github.com/jenkinsci/amazon-ecs-plugin/pull/62)
+    * [amazon-ecs:1.16](https://plugins.jenkins.io/amazon-ecs)
+    * [jackson2-api:2.8.11.3](https://plugins.jenkins.io/jackson2-api)
+    * [promoted-builds:3.2](https://plugins.jenkins.io/promoted-builds)
 
 ## 2.107.3-51
 * Updated plugins:

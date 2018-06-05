@@ -1,7 +1,7 @@
 ace-editor:1.1
 active-directory:2.6
 amazon-ecr:1.6
-amazon-ecs:1.15
+amazon-ecs:1.16
 anchore-container-scanner:1.0.14
 ant:1.8
 antisamy-markup-formatter:1.5
@@ -81,7 +81,7 @@ htmlpublisher:1.16
 http_request:1.8.22
 icon-shim:2.0.3
 ivy:1.28
-jackson2-api:2.8.11.2
+jackson2-api:2.8.11.3
 javadoc:1.4
 jenkins-design-language:1.5.0
 jira:3.0.0
@@ -119,7 +119,7 @@ pipeline-stage-tags-metadata:1.2.9
 pipeline-stage-view:2.10
 pipeline-utility-steps:2.1.0
 plain-credentials:1.4
-promoted-builds:3.1
+promoted-builds:3.2
 pubsub-light:1.12
 rebuild:1.28
 run-condition:1.0
