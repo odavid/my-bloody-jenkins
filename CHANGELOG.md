@@ -1,5 +1,10 @@
 ## Changelog
 
+## 2.107.3-53 (Not released yet)
+* Updated plugins:
+    * [aws-java-sdk:1.11.341](https://plugins.jenkins.io/aws-java-sdk)
+    * [github-branch-source:2.3.6](https://plugins.jenkins.io/github-branch-source)
+
 ## 2.107.3-52
 * Updated plugins:
     * Support for task execution role in ecs so tasks can run in FARGATE - see (https://github.com/jenkinsci/amazon-ecs-plugin/pull/62)
