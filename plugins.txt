@@ -32,7 +32,7 @@ blueocean-pipeline-scm-api:1.5.0
 blueocean-rest:1.5.0
 blueocean-rest-impl:1.5.0
 blueocean-web:1.5.0
-bouncycastle-api:2.16.2
+bouncycastle-api:2.16.3
 branch-api:2.0.20
 build-timeout:1.19
 build-user-vars-plugin:1.5
@@ -69,7 +69,7 @@ git-client:2.7.2
 git-parameter:0.9.2
 git-server:1.7
 github:1.29.1
-github-api:1.90
+github-api:1.92
 github-branch-source:2.3.6
 gitlab-plugin:1.5.6
 gradle:1.28

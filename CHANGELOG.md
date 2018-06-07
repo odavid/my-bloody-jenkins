@@ -4,6 +4,8 @@
 * Updated plugins:
     * [aws-java-sdk:1.11.341](https://plugins.jenkins.io/aws-java-sdk)
     * [github-branch-source:2.3.6](https://plugins.jenkins.io/github-branch-source)
+    * [bouncycastle-api:2.16.3](https://plugins.jenkins.io/bouncycastle-api)
+    * [github-api:1.92](https://plugins.jenkins.io/github-api)
 
 ## 2.107.3-52
 * Updated plugins:
@@ -18,14 +20,14 @@
     * [git:3.9.1](https://plugins.jenkins.io/git)
     * [github:1.29.1](https://plugins.jenkins.io/github)
     * [github-branch-source:2.3.5](https://plugins.jenkins.io/github-branch-source)
-    * [kubernetes:1.7.1](https://plugins.jenkins.io/kubernetes)    
+    * [kubernetes:1.7.1](https://plugins.jenkins.io/kubernetes)
 
 ## 2.107.3-50
 * Updated plugins:
     * [gitlab-plugin:1.5.6](https://plugins.jenkins.io/gitlab-plugin)
     * [aws-java-sdk:1.11.329](https://plugins.jenkins.io/aws-java-sdk)
-    * [kubernetes:1.7.0](https://plugins.jenkins.io/kubernetes) 
-    
+    * [kubernetes:1.7.0](https://plugins.jenkins.io/kubernetes)
+
 ## 2.107.3-49
 * added taskrole [#97](https://github.com/odavid/my-bloody-jenkins/pull/97)
 
