@@ -1,11 +1,14 @@
 ## Changelog
 
-## 2.107.3-53 (Not released yet)
+## 2.121.1-53 (Not released yet)
+* [LTS-121.1](https://jenkins.io/changelog-stable/)
+* Using the [jdk-tool](https://plugins.jenkins.io/jdk-tool) plugin - see [JENKINS-22367](https://issues.jenkins-ci.org/browse/JENKINS-22367)
 * Updated plugins:
     * [aws-java-sdk:1.11.341](https://plugins.jenkins.io/aws-java-sdk)
     * [github-branch-source:2.3.6](https://plugins.jenkins.io/github-branch-source)
     * [bouncycastle-api:2.16.3](https://plugins.jenkins.io/bouncycastle-api)
     * [github-api:1.92](https://plugins.jenkins.io/github-api)
+    * [copyartifact:1.40](https://plugins.jenkins.io/copyartifact)
 
 ## 2.107.3-52
 * Updated plugins:
