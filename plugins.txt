@@ -44,7 +44,7 @@ cobertura:1.12.1
 command-launcher:1.2
 conditional-buildstep:1.3.6
 config-file-provider:2.18
-copyartifact:1.39.1
+copyartifact:1.40
 credentials:2.1.16
 credentials-binding:1.16
 cucumber-reports:3.17.0
@@ -83,6 +83,7 @@ icon-shim:2.0.3
 ivy:1.28
 jackson2-api:2.8.11.3
 javadoc:1.4
+jdk-tool:1.1
 jenkins-design-language:1.5.0
 jira:3.0.0
 job-dsl:1.69
