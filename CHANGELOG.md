@@ -1,7 +1,7 @@
 ## Changelog
 
 ## 2.121.1-53
-* [LTS-121.1](https://jenkins.io/changelog-stable/)
+* [LTS-2.121.1](https://jenkins.io/changelog-stable/)
 * Using the [jdk-tool](https://plugins.jenkins.io/jdk-tool) plugin - see [JENKINS-22367](https://issues.jenkins-ci.org/browse/JENKINS-22367)
 * Updated plugins:
     * [aws-java-sdk:1.11.341](https://plugins.jenkins.io/aws-java-sdk)
