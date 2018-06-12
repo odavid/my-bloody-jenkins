@@ -31,23 +31,27 @@ services:
       - '50000:50000'
     volumes:
       - './config.yml:/config.yml'
+      - '/var/run/docker.sock:/var/run/docker.sock'
     links:
       - ldap
 
     environment:
       JAVA_OPTS_MEM: '-Xmx1g'
-      # Disable hyper provision of slaves - docker plugin strategy is enough
-      JAVA_OPTS_LOAD_STATS_CLOCK: ''
       JENKINS_ENV_HOST_IP: 'host.docker.internal'
       JENKINS_ENV_CONFIG_YML_URL: file:///config.yml
-      JENKINS_ENV_QUIET_STARTUP_PERIOD: 120
       JENKINS_ENV_ADMIN_USER: jenkins.admin
+      # Disable hyper provision of slaves - docker plugin strategy is enough
+      JAVA_OPTS_LOAD_STATS_CLOCK: ''
 
-  # gitlab:
-  #   image: gitlab/gitlab-ce
-  #   links:
-  #     - ldap
-  #   ports:
-  #     - '7080:80'
-  #     - '7443:443'
-  #     - '7022:22'
+  jenkins-swarm:
+    image: csanchez/jenkins-swarm-slave
+    links:
+      - jenkins
+    environment:
+      MASTER: http://host.docker.internal:8080
+      LABELS: static-slave
+      PASSWORD: password
+      USERNAME: jenkins.swarm
+      FSROOT: /home/jenkins-slave
+      EXECUTORS: '2'
+      NAME: static-slave

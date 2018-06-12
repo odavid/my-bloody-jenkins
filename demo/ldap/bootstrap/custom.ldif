@@ -10,14 +10,6 @@ objectclass: top
 objectclass: organizationalUnit
 ou: groups
 
-dn: cn=all-users,ou=groups,{{ LDAP_BASE_DN }}
-changetype: add
-cn: all-users
-objectclass: top
-objectClass: groupOfNames
-member: uid=bob.dylan,ou=users,{{ LDAP_BASE_DN }}
-member: uid=james.dean,ou=users,{{ LDAP_BASE_DN }}
-
 dn: cn=developers,ou=groups,{{ LDAP_BASE_DN }}
 changetype: add
 cn: all-users
@@ -50,6 +42,16 @@ objectClass: top
 objectClass: inetOrgPerson
 userPassword: password
 mail: jenkins.admin@example.org
+
+dn: uid=jenkins.swarm,ou=users,{{ LDAP_BASE_DN }}
+changetype: add
+uid: jenkins.swarm
+cn: Jenkins Swarm
+sn: Jenkins
+objectClass: top
+objectClass: inetOrgPerson
+userPassword: password
+mail: jenkins.swarm@example.org
 
 dn: uid=bob.dylan,ou=users,{{ LDAP_BASE_DN }}
 changetype: add

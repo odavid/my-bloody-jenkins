@@ -13,6 +13,12 @@ security:
   emailAttr: mail
   
   permissions:
+    jenkins.swarm:
+      - hudson.model.Computer.Connect
+      - hudson.model.Computer.Disconnect
+      - hudson.model.Computer.Configure
+      - hudson.model.Computer.Create
+      - hudson.model.Computer.Delete
     authenticated: # Special group
       - hudson.model.Hudson.Read
       - hudson.model.Item.Read
@@ -26,4 +32,24 @@ security:
     jenkins-admins:
       - hudson.model.Hudson.Administer
 
+tools:
+  installations:
+    MVN-3.5.0:
+      type: maven
+      installers:
+        - id: '3.5.0'
 
+clouds:
+  docker-cloud:
+    type: docker
+    dockerHostUri: 'unix:///var/run/docker.sock'
+    templates:
+      - name: generic
+        image: odavid/jenkins-jnlp-slave:latest
+        labels:
+          - generic
+        remoteFs: /home/jenkins
+        jvmArgs: -Xmx1g
+        volumes:
+          - '/var/run/docker.sock:/var/run/docker.sock'
+        instanceCap: '10'
