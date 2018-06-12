@@ -14,4 +14,12 @@ services:
       LDAP_TLS: "false"
     command: --copy-service
 
+  ldap-admin:
+    image: osixia/phpldapadmin:0.7.1
+    ports:
+      - '6443:443'
+    environment:
+      PHPLDAPADMIN_LDAP_HOSTS: ldap
+    links:
+      - ldap
 
