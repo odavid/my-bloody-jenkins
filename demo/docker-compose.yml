@@ -23,3 +23,11 @@ services:
     links:
       - ldap
 
+  # gitlab:
+  #   image: gitlab/gitlab-ce
+  #   links:
+  #     - ldap
+  #   ports:
+  #     - '7080:80'
+  #     - '7443:443'
+  #     - '7022:22'
