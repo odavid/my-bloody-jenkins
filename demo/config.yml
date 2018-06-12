@@ -53,3 +53,10 @@ clouds:
         volumes:
           - '/var/run/docker.sock:/var/run/docker.sock'
         instanceCap: '10'
+      - name: cloudbees-tools
+        image: cloudbees/jnlp-slave-with-java-build-tools
+        remoteFs: /home/jenkins
+        jvmArgs: -Xmx1g
+        labels:
+          - cloudbees-tools
+
