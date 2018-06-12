@@ -1,0 +1,17 @@
+version: '2'
+services:
+  ldap:
+    image: osixia/openldap:1.2.1
+    volumes: 
+      - ./ldap/bootstrap/custom.ldif:/container/service/slapd/assets/config/bootstrap/ldif/100-custom.ldif
+    ports:
+      - '10389:389'
+    environment:
+      LDAP_DOMAIN: "example.org"
+      LDAP_BASE_DN: "dc=example,dc=org"
+      LDAP_ADMIN_PASSWORD: "admin"
+      LDAP_ADMIN_PASSWORD: "admin"
+      LDAP_TLS: "false"
+    command: --copy-service
+
+
