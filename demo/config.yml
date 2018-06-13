@@ -60,3 +60,15 @@ clouds:
         labels:
           - cloudbees-tools
 
+job_dsl_scripts:
+  - |
+    pipelineJob('nodejs-calc'){
+      definition{
+        cpsScm{
+          scm{
+            git('https://github.com/odavid/my-bloody-jenkins.git', 'demo')
+            scriptPath('demo/apps/nodejs-calc/Jenkinsfile')
+          }
+        }
+      }
+    }
