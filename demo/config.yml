@@ -32,6 +32,13 @@ security:
     jenkins-admins:
       - hudson.model.Hudson.Administer
 
+credentials:
+  artifact-repository-cred:
+    type: userpass
+    description: artifact-repository-cred
+    username: user
+    password: password1234
+
 tools:
   installations:
     MVN-3.5.0:
@@ -62,18 +69,21 @@ clouds:
 
 job_dsl_scripts:
   - |
-    pipelineJob('nodejs-calc'){
-      definition{
-        cpsScm{
-          lightweight(true)
-          scm{
-            git{
-              remote {
-                url('https://github.com/odavid/my-bloody-jenkins.git')
+    def projects = ['nodejs', 'java']
+    projects.each{
+      pipelineJob(it + '-calc'){
+        definition{
+          cpsScm{
+            lightweight(true)
+            scm{
+              git{
+                remote {
+                  url('https://github.com/odavid/my-bloody-jenkins.git')
+                }
+                branches("refs/heads/demo")
               }
-              branches("refs/heads/demo")
+              scriptPath('demo/apps/' + it + '-calc/Jenkinsfile')
             }
-            scriptPath('demo/apps/nodejs-calc/Jenkinsfile')
           }
         }
       }
