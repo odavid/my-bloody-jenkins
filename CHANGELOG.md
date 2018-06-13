@@ -1,8 +1,10 @@
 ## Changelog
 
-## 2.121.1-54 (Not released yet)
+## 2.121.1-54
 * Updated plugins
     * [swarm:3.13](https://plugins.jenkins.io/swarm)
+    * [apache-httpcomponents-client-4-api:4.5.5-3.0](https://plugins.jenkins.io/apache-httpcomponents-client-4-api)
+    * [kubernetes:1.8.1](https://plugins.jenkins.io/kubernetes)
 
 ## 2.121.1-53
 * [LTS-2.121.1](https://jenkins.io/changelog-stable/)
