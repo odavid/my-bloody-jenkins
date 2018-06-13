@@ -1,0 +1,11 @@
+node('cloudbees-tools'){
+    stage('install-deps'){
+        sh 'npm install'
+    }
+    stage('test'){
+        sh 'npm test'
+    }
+    stage('archive-tests'){
+        junit 'test-results.xml'
+    }
+}
