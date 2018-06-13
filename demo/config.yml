@@ -65,11 +65,13 @@ job_dsl_scripts:
     pipelineJob('nodejs-calc'){
       definition{
         cpsScm{
+          lightweight(true)
           scm{
-            git('https://github.com/odavid/my-bloody-jenkins.git', 'demo'){
-              extensions{
-                
+            git{
+              remote {
+                url('https://github.com/odavid/my-bloody-jenkins.git')
               }
+              branches("refs/heads/demo")
             }
             scriptPath('demo/apps/nodejs-calc/Jenkinsfile')
           }
