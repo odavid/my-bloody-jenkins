@@ -66,7 +66,11 @@ job_dsl_scripts:
       definition{
         cpsScm{
           scm{
-            git('https://github.com/odavid/my-bloody-jenkins.git', 'demo')
+            git('https://github.com/odavid/my-bloody-jenkins.git', 'demo'){
+              extensions{
+                
+              }
+            }
             scriptPath('demo/apps/nodejs-calc/Jenkinsfile')
           }
         }
