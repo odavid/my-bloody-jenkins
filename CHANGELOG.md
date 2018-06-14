@@ -1,5 +1,9 @@
 ## Changelog
 
+## 2.121.1-55 (Not released yet)
+* Updated plugins
+    * [pipeline-model-definition:1.3](https://plugins.jenkins.io/pipeline-model-definition)
+    
 ## 2.121.1-54
 * Updated plugins
     * [swarm:3.13](https://plugins.jenkins.io/swarm)
