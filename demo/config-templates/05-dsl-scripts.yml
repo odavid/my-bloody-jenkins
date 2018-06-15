@@ -1,0 +1,21 @@
+job_dsl_scripts:
+  - |
+    def projects = ['nodejs', 'java']
+    projects.each{ prj ->
+      pipelineJob(prj + '-calc'){
+        definition{
+          cpsScm{
+            lightweight(true)
+            scm{
+              git{
+                remote {
+                  url('https://github.com/odavid/my-bloody-jenkins.git')
+                }
+                branches("refs/heads/demo")
+              }
+              scriptPath('demo/apps/' + prj + '-calc/Jenkinsfile')
+            }
+          }
+        }
+      }
+    }

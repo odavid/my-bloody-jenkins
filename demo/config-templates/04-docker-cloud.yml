@@ -1,0 +1,20 @@
+clouds:
+  docker-cloud:
+    type: docker
+    dockerHostUri: 'unix:///var/run/docker.sock'
+    templates:
+      - name: generic
+        image: odavid/jenkins-jnlp-slave:latest
+        labels:
+          - generic
+        remoteFs: /home/jenkins
+        jvmArgs: -Xmx1g
+        volumes:
+          - '/var/run/docker.sock:/var/run/docker.sock'
+        instanceCap: '10'
+      - name: cloudbees-tools
+        image: cloudbees/jnlp-slave-with-java-build-tools
+        remoteFs: /home/jenkins
+        jvmArgs: -Xmx1g
+        labels:
+          - cloudbees-tools

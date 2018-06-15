@@ -13,6 +13,12 @@ security:
   emailAttr: mail
   
   permissions:
+    jenkins.swarm:
+      - hudson.model.Computer.Connect
+      - hudson.model.Computer.Disconnect
+      - hudson.model.Computer.Configure
+      - hudson.model.Computer.Create
+      - hudson.model.Computer.Delete
     authenticated: # Special group
       - hudson.model.Hudson.Read
       - hudson.model.Item.Read
@@ -25,5 +31,3 @@ security:
       - hudson.model.Item.Configure
     jenkins-admins:
       - hudson.model.Hudson.Administer
-
-
