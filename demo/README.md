@@ -6,7 +6,6 @@ Running [docker-compose.yml](docker-compose.yml) that contains the following ser
 * ldap - a simple openldap server that is prepopluated on startup using [bootstrap.ldif](ldap/bootstrap/custom.ldif)
 * ldap-admin - a simple ldap php admin for managing ldap [using ui](https://localhost:6443)
 * jenkins - My Bloody jenkins that watches changes from config.yml
-* jenkins-swarm - A [jenkins-swarm](https://plugins.jenkins.io/swarm) slave that emulates a static slave
 
 
 ## Prerequisites
@@ -61,3 +60,26 @@ cat config-templates/05-dsl-scripts.yml >> config.yml; sleep 10
 open http://localhost:8080/
 ```
 
+### Connecting a "Static Slave" using Jenkins Swarm
+For cases that jenkins cloud does not suite your needs, we will show that we can connect a [jenkins-swarm](https://plugins.jenkins.io/swarm) static slave
+
+We already created in LDAP a special service user called `jenkins.swarm` that will be responsible for creating the computer on the master. The `jenkins.swarm' user has the following permissions in jenkins:
+* `hudson.model.Computer.Connect`
+* `hudson.model.Computer.Disconnect`
+* `hudson.model.Computer.Configure`
+* `hudson.model.Computer.Create`
+* `hudson.model.Computer.Delete`
+
+```shell
+docker-compose --file docker-compose-swarm-slave.yml --project-name jenkins-swarm up -d; sleep 10
+open http://localhost:8080
+```
+
+## Cleaning up
+```shell
+# Terminate swarm slave
+docker-compose --file docker-compose-swarm-slave.yml --project-name jenkins-swarm down --remove-orphans --volumes
+
+# Terminate the main project
+docker-compose down --remove-orphans --volumes
+```
