@@ -4,7 +4,7 @@ node('generic'){
     }
     dir('demo/apps/java-calc'){
         stage('maven-build'){
-            sh 'mvnw clean install'
+            sh './mvnw -B clean install'
         }
         stage('archive-tests'){
             junit 'target/surefire-reports/TEST-*.xml'

@@ -70,8 +70,8 @@ clouds:
 job_dsl_scripts:
   - |
     def projects = ['nodejs', 'java']
-    projects.each{
-      pipelineJob(it + '-calc'){
+    projects.each{ prj ->
+      pipelineJob(prj + '-calc'){
         definition{
           cpsScm{
             lightweight(true)
@@ -82,7 +82,7 @@ job_dsl_scripts:
                 }
                 branches("refs/heads/demo")
               }
-              scriptPath('demo/apps/' + it + '-calc/Jenkinsfile')
+              scriptPath('demo/apps/' + prj + '-calc/Jenkinsfile')
             }
           }
         }
