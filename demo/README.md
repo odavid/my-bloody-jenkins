@@ -12,6 +12,8 @@ Running [docker-compose.yml](docker-compose.yml) that contains the following ser
 * docker for mac/windows
 * docker-compose
 
+> Jenkins slaves needs access to the host IP. We use [host.docker.internal](https://docs.docker.com/docker-for-mac/networking/#known-limitations-use-cases-and-workarounds) for docker for mac and windows. If you are using docker on Linux, you will need to replace this alias with you actual host IP Address
+
 
 ### Starting up a clean jenkins
 
