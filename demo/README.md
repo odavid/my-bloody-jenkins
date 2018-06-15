@@ -26,9 +26,7 @@ open http://localhost:8080
 ### Adding LDAP Config
 
 ```shell
-cat config-templates/01-ldap.yml >> config.yml
-
-sleep 30
+cat config-templates/01-ldap.yml >> config.yml; sleep 10
 open http://localhost:8080
 ```
 
@@ -41,33 +39,25 @@ open http://localhost:8080
 
 ### Adding credentials
 ```shell
-cat config-templates/02-credentials.yml >> config.yml
-
-sleep 30
+cat config-templates/02-credentials.yml >> config.yml; sleep 10
 open http://localhost:8080/credentials/
 ```
 
 ### Adding tools
 ```shell
-cat config-templates/03-tools.yml >> config.yml
-
-sleep 30
+cat config-templates/03-tools.yml >> config.yml; sleep 10
 open http://localhost:8080/configureTools/
 ```
 
 ### Adding docker cloud
 ```shell
-cat config-templates/04-docker-cloud.yml >> config.yml
-
-sleep 30
-open http://localhost:8080/configure/
+cat config-templates/04-docker-cloud.yml >> config.yml; sleep 10
+open http://localhost:8080/configure
 ```
 
 ### Adding dsl scripts
 ```shell
-cat config-templates/05-dsl-scripts.yml >> config.yml
-
-sleep 30
+cat config-templates/05-dsl-scripts.yml >> config.yml; sleep 10
 open http://localhost:8080/
 ```
 
