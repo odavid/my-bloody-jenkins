@@ -9,6 +9,11 @@ Running [docker-compose.yml](docker-compose.yml) that contains the following ser
 * jenkins-swarm - A [jenkins-swarm](https://plugins.jenkins.io/swarm) slave that emulates a static slave
 
 
+## Prerequisites
+* docker for mac/windows
+* docker-compose
+
+
 ### Starting up a clean jenkins
 
 ```shell

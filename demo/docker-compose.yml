@@ -40,6 +40,7 @@ services:
       JENKINS_ENV_HOST_IP: 'host.docker.internal'
       JENKINS_ENV_CONFIG_YML_URL: file:///config.yml
       JENKINS_ENV_ADMIN_USER: jenkins.admin
+      JENKINS_ENV_CONFIG_YML_URL_POLLING: '10'
       # Disable hyper provision of slaves - docker plugin strategy is enough
       JAVA_OPTS_LOAD_STATS_CLOCK: ''
 
