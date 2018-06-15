@@ -16,9 +16,7 @@ Running [docker-compose.yml](docker-compose.yml) that contains the following ser
 ### Starting up a clean jenkins
 
 ```shell
-docker-compose up -d
-
-sleep 30
+docker-compose up -d; sleep 30
 open http://localhost:8080
 ```
 
