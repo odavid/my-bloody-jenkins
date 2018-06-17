@@ -12,9 +12,18 @@ clouds:
         volumes:
           - '/var/run/docker.sock:/var/run/docker.sock'
         instanceCap: '10'
+        environment:
+          http_proxy: ${http_proxy}
+          https_proxy: ${https_proxy}
+          no_proxy: ${no_proxy}
+
       - name: cloudbees-tools
         image: cloudbees/jnlp-slave-with-java-build-tools
         remoteFs: /home/jenkins
         jvmArgs: -Xmx1g
         labels:
           - cloudbees-tools
+        environment:
+          http_proxy: ${http_proxy}
+          https_proxy: ${https_proxy}
+          no_proxy: ${no_proxy}

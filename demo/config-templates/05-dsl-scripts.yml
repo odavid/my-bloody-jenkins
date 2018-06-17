@@ -19,3 +19,10 @@ job_dsl_scripts:
         }
       }
     }
+
+# Using new URI inside one of the jobs for finding proxy settings    
+script_approval:
+  approvals:
+    - method java.net.URI getHost
+    - method java.net.URI getPort
+    - new java.net.URI java.lang.String

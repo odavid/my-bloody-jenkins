@@ -10,3 +10,6 @@ services:
       FSROOT: /home/jenkins-slave
       EXECUTORS: '2'
       NAME: static-slave
+      http_proxy: ${http_proxy}
+      https_proxy: ${https_proxy}
+      no_proxy: ${no_proxy}
