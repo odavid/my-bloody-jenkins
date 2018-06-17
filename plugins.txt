@@ -138,8 +138,8 @@ timestamper:1.8.10
 token-macro:2.5
 variant:1.1
 workflow-aggregator:2.5
-workflow-api:2.27
-workflow-basic-steps:2.7
+workflow-api:2.28
+workflow-basic-steps:2.9
 workflow-cps:2.53
 workflow-cps-global-lib:2.9
 workflow-durable-task-step:2.19
