@@ -1,6 +1,7 @@
 ## Changelog
 
 ## 2.121.1-55 (Not released yet)
+* Using env vars as node properties in docker plugin see - [#99](https://github.com/odavid/my-bloody-jenkins/pull/99)
 * Updated plugins
     * [pipeline-model-definition:1.3](https://plugins.jenkins.io/pipeline-model-definition)
     
