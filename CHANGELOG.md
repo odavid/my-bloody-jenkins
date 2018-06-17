@@ -1,12 +1,12 @@
 ## Changelog
 
-## 2.121.1-55 (Not released yet)
+## 2.121.1-55
 * Using env vars as node properties in docker plugin see - [#99](https://github.com/odavid/my-bloody-jenkins/pull/99)
 * Updated plugins
     * [pipeline-model-definition:1.3](https://plugins.jenkins.io/pipeline-model-definition)
     * [workflow-api:2.28](https://plugins.jenkins.io/workflow-api)
     * [workflow-basic-steps:2.9](https://plugins.jenkins.io/workflow-basic-steps)    
-    
+
 ## 2.121.1-54
 * Updated plugins
     * [swarm:3.13](https://plugins.jenkins.io/swarm)
