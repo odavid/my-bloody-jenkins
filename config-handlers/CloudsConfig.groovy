@@ -120,6 +120,15 @@ def dockerCloud(config){
                     temp.remoteFs?:'',
                     temp.instanceCap?.toString() ?: ""
                 )
+
+                if(temp.environment){
+                    dockerTemplate.nodeProperties = [
+                        new hudson.slaves.EnvironmentVariablesNodeProperty(
+                            temp.environment.collect{k,v -> new hudson.slaves.EnvironmentVariablesNodeProperty.Entry(k, v)}
+                        )
+                    ]
+                }
+
                 dockerTemplate.mode = Node.Mode.EXCLUSIVE
                 dockerTemplate.connector.user = temp.jnlpUser ?: config.jnlpUser ?: ''
                 if(jenkinsUrl){

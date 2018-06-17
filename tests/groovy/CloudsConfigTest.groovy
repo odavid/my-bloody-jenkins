@@ -389,6 +389,10 @@ docker-cloud:
         assert template.dockerTemplateBase.privileged
         assert template.dockerTemplateBase.tty
         assert template.dockerTemplateBase.macAddress == 'mac-address'
+        assert template.nodeProperties[0].envVars == new hudson.slaves.EnvironmentVariablesNodeProperty(
+          new hudson.slaves.EnvironmentVariablesNodeProperty.Entry("ENV1", "env1Value"),
+          new hudson.slaves.EnvironmentVariablesNodeProperty.Entry("ENV2", "env2Value"),
+        ).envVars
     }
 }
 
