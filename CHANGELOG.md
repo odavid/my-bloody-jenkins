@@ -1,5 +1,9 @@
 ## Changelog
 
+## 2.121.1-56 (Not releassed yet)
+* Updated plugins
+    * [active-directory:2.7](https://plugins.jenkins.io/active-directory)
+
 ## 2.121.1-55
 * Using env vars as node properties in docker plugin see - [#99](https://github.com/odavid/my-bloody-jenkins/pull/99)
 * Updated plugins

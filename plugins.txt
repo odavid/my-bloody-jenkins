@@ -1,5 +1,5 @@
 ace-editor:1.1
-active-directory:2.6
+active-directory:2.7
 amazon-ecr:1.6
 amazon-ecs:1.16
 anchore-container-scanner:1.0.14
