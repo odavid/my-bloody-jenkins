@@ -1,6 +1,7 @@
 # My Bloody Jenkins - An opinionated Jenkins Docker Image
 [![Build Status](https://travis-ci.org/odavid/my-bloody-jenkins.svg?branch=master)](https://travis-ci.org/odavid/my-bloody-jenkins)
 [![Docker Pulls](https://img.shields.io/docker/pulls/odavid/my-bloody-jenkins.svg)](https://hub.docker.com/r/odavid/my-bloody-jenkins/)
+[`CHANGELOG`](CHANGELOG.md)
 
 ## What's in the Box?
 *My Bloody Jenkins* is a re-distribution of the [Official LTS Jenkins Docker image](https://hub.docker.com/r/jenkins/jenkins/) bundled with most popular plugins and
@@ -36,10 +37,14 @@ The image is "Battle Proven" and serves as the baseground for several Jenkins de
 The term "My Bloody Jenkins" came from the fact that I tried to put all my "battle" experience, (i.e. blood, sweat and tears) within the image.
 I just thought it is a "catchy" name for this kind of a repository.
 
+## Demo
+A step by step demo can be found [here](demo)
+
+## Some Usage Examples
+* [docker-plugin cloud](examples/docker/) cloud using Docker Plugin cloud with seed job. See [examples/docker](examples/docker/)
+* [kubernetes](examples/kubernetes/) cloud using Minikube with seed job. See [examples/kubernetes](examples/kubernetes/)
 
 ## Releases
-See [Changes](CHANGELOG.md)
-
 Docker Images are pushed to [Docker Hub](https://hub.docker.com/r/odavid/my-bloody-jenkins/)
 
 Each release is a git tag v$LTS_VERSION-$INCREMENT where:
@@ -64,10 +69,6 @@ docker pull odavid/my-bloody-jenkins:2.73.3-6
 # get the latest unstable image
 docker pull odavid/my-bloody-jenkins
 ```
-
-## Some Usage Examples
-* [docker-plugin cloud](examples/docker/) cloud using Docker Plugin cloud with seed job. See [examples/docker](examples/docker/)
-* [kubernetes](examples/kubernetes/) cloud using Minikube with seed job. See [examples/kubernetes](examples/kubernetes/)
 
 
 ## Environment Variables
@@ -549,10 +550,10 @@ clouds:
         # Environment variables to pass to the slave container
         environment:
           XXX: xxx
-        
+
         # an iam role arn for the task. If omitted, the EC2 instance IAM Role that runs the task will be in use
         taskrole: '<TASKROLE_ARN>'
-        
+
         #########################
         ## FARGATE Only
         #########################
