@@ -41,7 +41,7 @@ The term "My Bloody Jenkins" came from the fact that I tried to put all my "batt
 I just thought it is a "catchy" name for this kind of a repository.
 
 ## Demo
-A step by step demo can be found [here](demo)
+A [step by step demo](demo) can be found [here](demo)
 
 ## Some Usage Examples
 * [docker-plugin cloud](examples/docker/) cloud using Docker Plugin cloud with seed job. See [examples/docker](examples/docker/)
