@@ -3,7 +3,8 @@
 ## 2.121.1-56 (Not releassed yet)
 * Updated plugins
     * [active-directory:2.7](https://plugins.jenkins.io/active-directory)
-
+    * [kubernetes:1.8.2](https://plugins.jenkins.io/kubernetes)
+    
 ## 2.121.1-55
 * Using env vars as node properties in docker plugin see - [#99](https://github.com/odavid/my-bloody-jenkins/pull/99)
 * Updated plugins
