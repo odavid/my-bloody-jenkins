@@ -1,0 +1,27 @@
+node('generic'){
+    stage('checkout'){
+        checkout scm
+    }
+    dir('demo/apps/java-calc'){
+        stage('maven-build'){
+            // Convert http_proxy to java opts If behind proxy
+            def mavenOpts = ''
+            if(env.http_proxy){
+                def proxyURI = new URI(env.http_proxy)
+                mavenOpts += "-Dhttp.proxyHost=${proxyURI.host} -Dhttp.proxyPort=${proxyURI.port} "
+            }
+            if(env.https_proxy){
+                def proxyURI = new URI(env.https_proxy)
+                mavenOpts += "-Dhttps.proxyHost=${proxyURI.host} -Dhttps.proxyPort=${proxyURI.port} "
+            }
+
+            withEnv(["MAVEN_OPTS=${mavenOpts}"]){
+                sh 'echo $MAVEN_OPTS'
+                sh './mvnw -B clean install'
+            }
+        }
+        stage('archive-tests'){
+            junit 'target/surefire-reports/TEST-*.xml'
+        }
+    }
+}
