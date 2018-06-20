@@ -1,5 +1,10 @@
 ## Changelog
 
+
+## 2.121.1-57 (Not Released Yet)
+* Updated plugins
+    * [blueocean:1.6.0](https://plugins.jenkins.io/blueocean)
+
 ## 2.121.1-56
 * Updated plugins
     * [active-directory:2.7](https://plugins.jenkins.io/active-directory)
