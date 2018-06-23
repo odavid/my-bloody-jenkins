@@ -9,7 +9,7 @@ USER root
 # Ability to use usermod + install awscli in order to be able to watch s3 if needed
 RUN apk add --no-cache shadow py-setuptools less outils-md5 && \
     easy_install-2.7 pip && \
-    pip install awscli
+    pip install awscli PyYAML
 
 ## Use this to be able to watch s3 configuration file and update jenkins everytime it changes
 RUN curl  -SsLo /usr/bin/watch-file.sh https://raw.githubusercontent.com/odavid/utility-scripts/master/scripts/watch-file.sh && \
