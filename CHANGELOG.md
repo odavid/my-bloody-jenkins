@@ -1,11 +1,13 @@
 ## Changelog
 
 
-## 2.121.1-57 (Not Released Yet)
+## 2.121.1-57
 * Updated plugins
     * [blueocean:1.6.0](https://plugins.jenkins.io/blueocean)
     * [git-parameter:0.9.3](https://plugins.jenkins.io/git-parameter)
-    * [metrics:4.0.2.1](https://plugins.jenkins.io/metrics)
+    * [active-directory:2.8](https://plugins.jenkins.io/active-directory)
+    * [kubernetes:1.8.4](https://plugins.jenkins.io/kubernetes)
+    * [metrics:4.0.2.2](https://plugins.jenkins.io/metrics)
 
 ## 2.121.1-56
 * Updated plugins
