@@ -31,7 +31,7 @@ def load_config(conffile):
 def write_config(config, conffile, backup=False):
     if backup:
         os.rename(conffile, "%s.bak" % conffile)
-    with open('%s.new' % conffile, 'w') as f:
+    with open(conffile, 'w') as f:
         return yaml.safe_dump(config, f, default_flow_style=False)
 
 def main():

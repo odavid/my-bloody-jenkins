@@ -14,7 +14,7 @@ if [ ! -f $script_dir/jenkins-cli.jar ]; then
 fi
 
 echo "Processing config environment variables"
-processconfig.py $CONFIG_FILE_LOCATION
+envconsul-wrapper.sh processconfig.py $CONFIG_FILE_LOCATION
 echo "config environment variables... done"
 
 echo "Updating Jenkins Configuration"
