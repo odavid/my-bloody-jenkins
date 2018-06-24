@@ -18,11 +18,6 @@ RUN apk add --no-cache shadow py-setuptools less outils-md5 && \
 RUN curl -SsL https://releases.hashicorp.com/envconsul/0.7.3/envconsul_0.7.3_linux_amd64.tgz | tar -C /usr/bin -xvzf - && \
     chmod +x /usr/bin/envconsul
 
-
-## Use this to be able to watch s3 configuration file and update jenkins everytime it changes
-RUN curl  -SsLo /usr/bin/watch-file.sh https://raw.githubusercontent.com/odavid/utility-scripts/master/scripts/watch-file.sh && \
-    chmod +x /usr/bin/watch-file.sh
-
 RUN curl -SsLo /usr/bin/gosu https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-amd64 && \
      chmod +x /usr/bin/gosu
 
