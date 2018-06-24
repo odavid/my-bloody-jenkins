@@ -16,6 +16,7 @@ if [[ $# -lt 1 ]] || [[ "$1" == "-"* ]]; then
              --cache-dir $CONFIG_CACHE_DIR \
              --url "${JENKINS_ENV_CONFIG_YML_URL}" \
             --filename $CONFIG_FILE_LOCATION \
+            --command "processconfig.py $CONFIG_FILE_LOCATION" 
             --skip-watch
         if [ "$JENKINS_ENV_CONFIG_YML_URL_DISABLE_WATCH" != 'true' ]; then
             echo "Watching config from URL: ${JENKINS_ENV_CONFIG_YML_URL} in the backgroud"

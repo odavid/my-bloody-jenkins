@@ -4,6 +4,7 @@ import os
 from six import string_types
 import yaml
 import re
+import sys
 
 def expand_envvars(data):
     if not data:
@@ -32,8 +33,16 @@ def write_config(config, conffile, backup=False):
         return yaml.safe_dump(config, f, default_flow_style=False)
 
 def main():
-    cfg = load_config('test.yml')
-    write_config(replace_envvars(cfg), 'test.yml')
+    if len(sys.argv) > 1:
+        source = sys.argv[1]
+        if len(sys.argv) > 2:
+            target = sys.argv[1]
+        else:
+            target = source
+    else:
+        sys.exit(0)
+    cfg = load_config(source)
+    write_config(replace_envvars(cfg), target, backup=True)
 
 if __name__ == '__main__':
     main()
