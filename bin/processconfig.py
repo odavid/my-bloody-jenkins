@@ -23,6 +23,8 @@ def replace_envvars(data):
     return data
 
 def load_config(conffile):
+    if not os.path.exists(conffile):
+        return None
     with open(conffile, 'r') as f:
         return yaml.safe_load(f)
 
@@ -42,7 +44,8 @@ def main():
     else:
         sys.exit(0)
     cfg = load_config(source)
-    write_config(replace_envvars(cfg), target, backup=True)
+    if cfg:
+        write_config(replace_envvars(cfg), target)
 
 if __name__ == '__main__':
     main()
