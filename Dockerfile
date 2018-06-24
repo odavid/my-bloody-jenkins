@@ -2,6 +2,10 @@ FROM jenkins/jenkins:2.121.1-alpine
 
 ARG GOSU_VERSION=1.10
 
+# Install plugins
+COPY plugins.txt /usr/share/jenkins/ref/
+RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
+
 # Using root to install and run entrypoint.
 # We will change the user to jenkins using gosu
 USER root
@@ -28,9 +32,6 @@ RUN mkdir -p /jenkins-workspace-home && \
 
 # Do things on behalf of jenkins user
 USER jenkins
-# Install plugins
-COPY plugins.txt /usr/share/jenkins/ref/
-RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
 
 # Add all init groovy scripts to ref folder and change their ext to .override
 # so Jenkins will override them every time it starts
@@ -47,11 +48,7 @@ VOLUME /jenkins-workspace-home
 # Revert to root
 USER root
 
-COPY update-config.sh /usr/bin/
-COPY processconfig.py /usr/bin/
-# Change the original entrypoint. We will later on run it using gosu
-RUN mv /usr/local/bin/jenkins.sh /usr/local/bin/jenkins-orig.sh
-COPY jenkins.sh /usr/local/bin/jenkins.sh
+COPY bin/* /usr/bin/
 
 ENV CONFIG_FILE_LOCATION=/dev/shm/jenkins-config.yml
 ENV TOKEN_FILE_LOCATION=/dev/shm/.api-token
@@ -102,3 +99,4 @@ ENV JENKINS_HTTP_PORT_FOR_SLAVES=8080
 
 # If sshd enabled, this will be the port
 EXPOSE 16022
+ENTRYPOINT ["/sbin/tini", "--", "/usr/bin/entrypoint.sh"]

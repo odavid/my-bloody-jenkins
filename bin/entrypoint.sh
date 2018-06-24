@@ -71,7 +71,7 @@ if [[ $# -lt 1 ]] || [[ "$1" == "-"* ]]; then
 
     # This changes the actual command to run the original jenkins entrypoint
     # using the jenkins user
-    set -- gosu jenkins /usr/local/bin/jenkins-orig.sh "$@"
+    set -- gosu jenkins /usr/local/bin/jenkins.sh "$@"
 fi
 
 exec "$@"
