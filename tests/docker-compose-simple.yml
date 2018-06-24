@@ -1,0 +1,17 @@
+version: '2'
+services:
+  jenkins:
+    image: odavid/my-bloody-jenkins
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - .:/data
+      - ${TESTS_CONF_DIR}:/confdir
+    environment:
+      JENKINS_ENV_ADMIN_USER: admin
+      JENKINS_ENV_CONFIG_YML_URL: file:///confdir/config.yml
+      JENKINS_ENV_CONFIG_YML_URL_POLLING: '5'
+      CONSUL_ADDR: 0.0.0.0:8500
+      ENVCONSUL_CONSUL_PREFIX: jenkins
+
