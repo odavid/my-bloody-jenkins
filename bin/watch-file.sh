@@ -82,7 +82,7 @@ fetch_config_s3(){
 exec_command(){
     if [ -n "$COMMAND" ]; then
         log "Running $COMMAND."
-        eval "$COMMAND"
+        $COMMAND
         log "Running $COMMAND. Done..."
     fi
 }
