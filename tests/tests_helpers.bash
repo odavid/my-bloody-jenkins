@@ -1,6 +1,7 @@
 #!/bin/bash
 
 SCRIPT_DIR="$BATS_TEST_DIRNAME"
+TESTS_DIR="$SCRIPT_DIR/.."
 
 TEST_CONTAINER_NAME="jenkins-test"
 TEST_IMAGE_NAME="odavid/my-bloody-jenkins"
@@ -38,3 +39,28 @@ function run_groovy_test(){
     docker exec -t $TEST_CONTAINER_NAME run-test.sh /tests/${test_name}Test.groovy
 }
 
+function docker_compose_up(){
+    file=$1
+    docker-compose -f $TESTS_DIR/$file up -d
+}
+
+function docker_compose_down(){
+    file=$1
+    docker-compose -f $TESTS_DIR/$file down -v --remove-orphans
+}
+
+function docker_compose_exec(){
+    file=$1
+    service=$2
+    command="${@:3}"
+    docker-compose -f $TESTS_DIR/$file exec $service $command
+}
+
+
+function health_check(){
+    url=$1
+    while ! curl -f -s $url > /dev/null
+    do 
+        sleep 5
+    done
+}

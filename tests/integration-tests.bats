@@ -1,6 +1,5 @@
 #!/usr/bin/env bats
 
-load consul_helpers
 load docker_compose_helpers
 
 export TESTS_CONF_DIR=$BATS_TEST_DIRNAME/../confdir
