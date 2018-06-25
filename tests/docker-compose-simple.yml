@@ -6,12 +6,12 @@ services:
       - "8080:8080"
       - "50000:50000"
     volumes:
-      - .:/data
-      - ${TESTS_CONF_DIR}:/confdir
+      - ${TESTS_DIR}:${TESTS_CONTAINER_TESTS_DIR}
+      - ${TESTS_HOST_CONF_DIR}:${TESTS_CONTAINER_CONF_DIR}
     environment:
       JENKINS_ENV_ADMIN_USER: admin
-      JENKINS_ENV_CONFIG_YML_URL: file:///confdir/config.yml
+      JENKINS_ENV_CONFIG_YML_URL: file://${TESTS_CONTAINER_CONF_DIR}/config.yml
       JENKINS_ENV_CONFIG_YML_URL_POLLING: '5'
-      CONSUL_ADDR: 0.0.0.0:8500
-      ENVCONSUL_CONSUL_PREFIX: jenkins
+      JAVA_OPTS_MEM: -Xmx1g
+      JENKINS_ENV_ADMIN_USER: admin
 

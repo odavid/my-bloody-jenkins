@@ -2,74 +2,81 @@
 
 load tests_helpers
 
-@test "start container" {
-    run_test_container_and_wait
+COMPOSE_FILE=docker-compose-simple.yml
+
+function groovy_unit_test(){
+    run_groovy_script $COMPOSE_FILE groovy/${BATS_TEST_DESCRIPTION}Test.groovy
+}
+
+@test "start jenkins" {
+    docker_compose_up $COMPOSE_FILE
+    health_check http://0.0.0.0:8080/login
 }
 
 @test "Sanity" {
-    run_groovy_test
+    groovy_unit_test
 }
 
 @test "RemoveMasterEnvVarsConfig" {
-    run_groovy_test
+    groovy_unit_test
 }
 
 @test "CloudsConfig" {
-    run_groovy_test
+    groovy_unit_test
 }
 
 @test "CredsConfig" {
-    run_groovy_test
+    groovy_unit_test
 }
 
 @test "ToolsConfig" {
-    run_groovy_test
+    groovy_unit_test
 }
 
 @test "SecurityConfig" {
-    run_groovy_test
+    groovy_unit_test
 }
 
 @test "CheckmarxConfig" {
-    run_groovy_test
+    groovy_unit_test
 }
 
 @test "EnvironmentVarsConfig" {
-    run_groovy_test
+    groovy_unit_test
 }
 
 @test "GitlabConfig" {
-    run_groovy_test
+    groovy_unit_test
 }
 
 @test "JiraConfig" {
-    run_groovy_test
+    groovy_unit_test
 }
 
 @test "NotifiersConfig" {
-    run_groovy_test
+    groovy_unit_test
 }
 
 @test "PipelineLibrariesConfig" {
-    run_groovy_test
+    groovy_unit_test
 }
 
 @test "ScriptApprovalConfig" {
-    run_groovy_test
+    groovy_unit_test
 }
 
 @test "SeedJobsConfig" {
-    run_groovy_test
+    groovy_unit_test
 }
 
 @test "JobDSLScriptsConfig" {
-    run_groovy_test
+    groovy_unit_test
 }
 
 @test "SonarQubeServersConfig" {
-    run_groovy_test
+    groovy_unit_test
 }
 
-@test "terminate container" {
-    teardown_test_container
+@test "terminate jenkins" {
+    docker_compose_down $COMPOSE_FILE 
 }
