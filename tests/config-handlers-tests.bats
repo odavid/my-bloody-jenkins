@@ -9,6 +9,7 @@ function groovy_test(){
 }
 
 @test ">>> setup config-handlers tests env" {
+    touch_config
     create_docker_network
     docker_compose_up $COMPOSE_FILE
     health_check http://0.0.0.0:8080/login
@@ -81,4 +82,5 @@ function groovy_test(){
 @test "<<< teardown config-handlers tests env" {
     docker_compose_down $COMPOSE_FILE 
     destroy_docker_network
+    rm -rf $TESTS_HOST_CONF_DIR
 }

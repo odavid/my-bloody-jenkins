@@ -5,13 +5,11 @@ program=$0
 
 usage(){
     cat << EOF
-Usage: $program [options...] --url <url> --file-name <destination-file>
+Usage: $program [options...] --url <url>
 Options:
 -u, --url <url>                                     - file to be watched and fetched. file://<file>, s3://<file>, http[s]://<file>
--f, --filename <destination-file>                  - Absolute destination filename
 -d,--cache-dir <cache-dir>                          - Cached directory (Default: /tmp/.s3.cache)
 --polling-interval <polling-interval-in-seconds>]   - Polling interval in seconds (Default 30)
---command <command-to-execute-on-change>            - Command to be executed if the file was changed
 --first-time-execute                                - Should execute command on first time (Default: false)
 --skip-watch                                        - Skip watch the file, only fetch it once (Default: false)
 --debug                                             - Log debug (Default: false)
@@ -40,6 +38,15 @@ fetch_config(){
             fetch_config_http
             ;;
     esac
+
+    if [[ "$DEBUG" == "YES" ]]; then
+        DEBUG=YES envconsul-wrapper.sh processconfig.py ${CACHE_DIR}/${FILE_BASENAME}
+    else
+        { 
+            envconsul-wrapper.sh processconfig.py "${CACHE_DIR}/${FILE_BASENAME}" 
+        } &>/dev/null 
+    fi
+
     debug "Calulating checksum of ${CACHE_DIR}/${FILE_BASENAME}"
     MD5_CHECKSUM=$(md5 -q ${CACHE_DIR}/${FILE_BASENAME})
     debug "MD5_CHECKSUM = $MD5_CHECKSUM"
@@ -88,6 +95,9 @@ exec_command(){
 }
 
 parseArgs(){
+    FILENAME=$CONFIG_FILE_LOCATION
+    COMMAND=update-config.sh
+
     POSITIONAL=()
     while [[ $# -gt 0 ]]
     do
@@ -108,18 +118,6 @@ parseArgs(){
 
         -p|--polling-interval)
         POLLING_INTERVAL="$2"
-        shift # past argument
-        shift # past value
-        ;;
-
-        -f|--filename)
-        FILENAME="$2"
-        shift # past argument
-        shift # past value
-        ;;
-
-        -c|--command)
-        COMMAND="$2"
         shift # past argument
         shift # past value
         ;;
@@ -192,7 +190,7 @@ log "URL = $URL"
 log "URL_TYPE = $URL_TYPE"
 log "CACHE_DIR = $CACHE_DIR"
 log "POLLING_INTERVAL = $POLLING_INTERVAL"
-log "FILENAME = $FILENAME"
+log "FILENAME = $CONFIG_FILE_LOCATION"
 log "COMMAND = $COMMAND"
 log "SKIP_WATCH = $SKIP_WATCH"
 log "DEBUG = $DEBUG"

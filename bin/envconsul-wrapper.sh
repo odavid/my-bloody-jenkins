@@ -39,5 +39,5 @@ if [[ -n "$ENVCONSUL_ARGS" ]]; then
     set -- envconsul "$ENVCONSUL_ARGS" "$@"
 fi
 
-echo "$@"
+[[ "$DEBUG" == "YES" ]] && echo "$@"
 exec $@

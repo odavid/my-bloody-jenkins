@@ -12,22 +12,18 @@ if [[ $# -lt 1 ]] || [[ "$1" == "-"* ]]; then
         unset JENKINS_ENV_CONFIG_YAML
     elif [ -n "${JENKINS_ENV_CONFIG_YML_URL}" ]; then
         echo "Fetching config from URL: ${JENKINS_ENV_CONFIG_YML_URL}"
-        watch-file.sh \
+        watch-config.sh \
+             --debug \
              --cache-dir $CONFIG_CACHE_DIR \
              --url "${JENKINS_ENV_CONFIG_YML_URL}" \
-            --filename $CONFIG_FILE_LOCATION \
-            --skip-watch \
-            --first-time-execute \
-            --command "envconsul-wrapper.sh processconfig.py $CONFIG_FILE_LOCATION" || true
+            --skip-watch
 
         if [ "$JENKINS_ENV_CONFIG_YML_URL_DISABLE_WATCH" != 'true' ]; then
             echo "Watching config from URL: ${JENKINS_ENV_CONFIG_YML_URL} in the backgroud"
-            nohup watch-file.sh \
+            nohup watch-config.sh \
                 --cache-dir $CONFIG_CACHE_DIR \
                 --url "${JENKINS_ENV_CONFIG_YML_URL}" \
-                --filename $CONFIG_FILE_LOCATION \
-                --polling-interval "${JENKINS_ENV_CONFIG_YML_URL_POLLING:-30}" \
-                --command 'update-config.sh' &
+                --polling-interval "${JENKINS_ENV_CONFIG_YML_URL_POLLING:-30}" &
         fi
         unset AWS_ACCESS_KEY_ID
         unset AWS_SECRET_ACCESS_KEY
