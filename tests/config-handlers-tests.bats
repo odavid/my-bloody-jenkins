@@ -8,7 +8,7 @@ function groovy_test(){
     run_groovy_script $COMPOSE_FILE groovy/config-handlers/${BATS_TEST_DESCRIPTION}Test.groovy
 }
 
-@test "setup config-handlers tests env" {
+@test ">>> setup config-handlers tests env" {
     create_docker_network
     docker_compose_up $COMPOSE_FILE
     health_check http://0.0.0.0:8080/login
@@ -78,7 +78,7 @@ function groovy_test(){
     groovy_test
 }
 
-@test "teardown config-handlers tests env" {
+@test "<<< teardown config-handlers tests env" {
     docker_compose_down $COMPOSE_FILE 
     destroy_docker_network
 }
