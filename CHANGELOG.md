@@ -1,5 +1,18 @@
 ## Changelog
 
+## Not Released yet
+* Updated plugins
+    * [badge:1.5](https://plugins.jenkins.io/badge)
+    * [blueocean:1.6.1](https://plugins.jenkins.io/blueocean)
+    * [cloudbees-folder:6.5.1](https://plugins.jenkins.io/cloudbees-folder)
+    * [credentials:2.1.17](https://plugins.jenkins.io/credentials)
+    * [cucumber-reports:3.18.0](https://plugins.jenkins.io/cucumber-reports)
+    * [github:1.29.2](https://plugins.jenkins.io/github)
+    * [pipeline-graph-analysis:1.7](https://plugins.jenkins.io/pipeline-graph-analysis)
+    * [ssh-credentials:1.14](https://plugins.jenkins.io/ssh-credentials)
+    * [workflow-cps:2.54](https://plugins.jenkins.io/workflow-cps)
+    * [workflow-step-api:2.16](https://plugins.jenkins.io/workflow-step-api)
+    * [workflow-support:2.19](https://plugins.jenkins.io/workflow-support) 
 
 ## 2.121.1-57
 * Updated plugins
