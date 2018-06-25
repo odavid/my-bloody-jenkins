@@ -31,13 +31,13 @@ function groovy_test(){
 
 @test "test values comming from consul" {
     config_from_fixture $TESTS_DIR/data/config-fixtures/creds-from-consul.yml
-    sleep 10
+    sleep 15
     groovy_test AssertCredsFromConsul.groovy
 }
 
 @test "test values comming from vault" {
     config_from_fixture $TESTS_DIR/data/config-fixtures/creds-from-vault.yml
-    sleep 10
+    sleep 15
     groovy_test AssertCredsFromVault.groovy
 }
 
