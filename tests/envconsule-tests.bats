@@ -4,8 +4,8 @@ load tests_helpers
 
 COMPOSE_FILE=docker-compose-simple.yml
 
-function groovy_unit_test(){
-    run_groovy_script $COMPOSE_FILE groovy/${BATS_TEST_DESCRIPTION}Test.groovy
+function groovy_test(){
+    run_groovy_script $COMPOSE_FILE groovy/envconsul/$1
 }
 
 @test "setup envconsul tests env" {
@@ -21,7 +21,7 @@ function groovy_unit_test(){
 @test "test values comming from consul" {
     config_from_fixture $TESTS_DIR/data/config-fixtures/creds-from-consul.yml
     sleep 10
-    run_groovy_script $COMPOSE_FILE groovy/AssertCredsFromConsul.groovy
+    groovy_test AssertCredsFromConsul.groovy
 }
 
 @test "teardown envconsul tests env" {

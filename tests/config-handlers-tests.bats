@@ -4,8 +4,8 @@ load tests_helpers
 
 COMPOSE_FILE=docker-compose-simple.yml
 
-function groovy_unit_test(){
-    run_groovy_script $COMPOSE_FILE groovy/${BATS_TEST_DESCRIPTION}Test.groovy
+function groovy_test(){
+    run_groovy_script $COMPOSE_FILE groovy/config-handlers/${BATS_TEST_DESCRIPTION}Test.groovy
 }
 
 @test "setup config-handlers tests env" {
@@ -15,67 +15,67 @@ function groovy_unit_test(){
 }
 
 @test "Sanity" {
-    groovy_unit_test
+    groovy_test
 }
 
 @test "RemoveMasterEnvVarsConfig" {
-    groovy_unit_test
+    groovy_test
 }
 
 @test "CloudsConfig" {
-    groovy_unit_test
+    groovy_test
 }
 
 @test "CredsConfig" {
-    groovy_unit_test
+    groovy_test
 }
 
 @test "ToolsConfig" {
-    groovy_unit_test
+    groovy_test
 }
 
 @test "SecurityConfig" {
-    groovy_unit_test
+    groovy_test
 }
 
 @test "CheckmarxConfig" {
-    groovy_unit_test
+    groovy_test
 }
 
 @test "EnvironmentVarsConfig" {
-    groovy_unit_test
+    groovy_test
 }
 
 @test "GitlabConfig" {
-    groovy_unit_test
+    groovy_test
 }
 
 @test "JiraConfig" {
-    groovy_unit_test
+    groovy_test
 }
 
 @test "NotifiersConfig" {
-    groovy_unit_test
+    groovy_test
 }
 
 @test "PipelineLibrariesConfig" {
-    groovy_unit_test
+    groovy_test
 }
 
 @test "ScriptApprovalConfig" {
-    groovy_unit_test
+    groovy_test
 }
 
 @test "SeedJobsConfig" {
-    groovy_unit_test
+    groovy_test
 }
 
 @test "JobDSLScriptsConfig" {
-    groovy_unit_test
+    groovy_test
 }
 
 @test "SonarQubeServersConfig" {
-    groovy_unit_test
+    groovy_test
 }
 
 @test "teardown config-handlers tests env" {
