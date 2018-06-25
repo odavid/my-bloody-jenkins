@@ -4,6 +4,7 @@ export TESTS_DIR="$BATS_TEST_DIRNAME"
 export TESTS_HOST_CONF_DIR="$TESTS_DIR/confdir"
 export TESTS_CONTAINER_TESTS_DIR=/tests
 export TESTS_CONTAINER_CONF_DIR=/confdir
+export JENKINS_DOCKER_NETWORK_NAME=jenkins-docker-bridge
 
 function run_groovy_script(){
     file=$1
@@ -36,4 +37,12 @@ function health_check(){
     do 
         sleep 5
     done
+}
+
+function create_docker_network(){
+    docker network create -d bridge --attachable $JENKINS_DOCKER_NETWORK_NAME
+}
+
+function destroy_docker_network(){
+    docker network rm $JENKINS_DOCKER_NETWORK_NAME
 }

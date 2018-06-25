@@ -9,6 +9,7 @@ function groovy_unit_test(){
 }
 
 @test "start jenkins" {
+    create_docker_network
     docker_compose_up $COMPOSE_FILE
     health_check http://0.0.0.0:8080/login
 }
@@ -79,4 +80,5 @@ function groovy_unit_test(){
 
 @test "terminate jenkins" {
     docker_compose_down $COMPOSE_FILE 
+    destroy_docker_network
 }
