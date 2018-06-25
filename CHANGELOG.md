@@ -1,5 +1,8 @@
 ## Changelog
 
+## Known Issues
+> Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
+
 ## Not Released yet
 * Ability to use [envconsul](https://github.com/hashicorp/envconsul) to dynamically fetch environment variables - [#101](https://github.com/odavid/my-bloody-jenkins/pull/101)
 * Updated plugins
