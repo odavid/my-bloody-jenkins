@@ -1,0 +1,4 @@
+credentials:
+  secret-from-vault:
+    type: text
+    text: ${SECRET_JENKINS_TOP_SECRET}

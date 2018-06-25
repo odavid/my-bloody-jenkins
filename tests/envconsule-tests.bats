@@ -18,7 +18,7 @@ function groovy_test(){
     docker_compose_exec docker-compose-consul.yml consul consul kv put jenkins/git_password password
     docker_compose_exec docker-compose-consul.yml consul consul kv put jenkins/git_username username
     docker_compose_exec docker-compose-consul.yml vault vault write secret/jenkins top_secret=very_SECRET
-    
+
     CONSUL_ADDR="consul:8500" \
     VAULT_TOKEN="vault-root-token" \
     VAULT_ADDR="http://vault:8200" \
@@ -33,6 +33,12 @@ function groovy_test(){
     config_from_fixture $TESTS_DIR/data/config-fixtures/creds-from-consul.yml
     sleep 10
     groovy_test AssertCredsFromConsul.groovy
+}
+
+@test "test values comming from vault" {
+    config_from_fixture $TESTS_DIR/data/config-fixtures/creds-from-vault.yml
+    sleep 10
+    groovy_test AssertCredsFromVault.groovy
 }
 
 @test "<<< teardown envconsul tests env" {
