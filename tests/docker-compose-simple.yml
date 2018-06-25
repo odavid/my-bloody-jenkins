@@ -1,0 +1,27 @@
+version: '2'
+services:
+  jenkins:
+    image: odavid/my-bloody-jenkins
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - ${TESTS_DIR}:${TESTS_CONTAINER_TESTS_DIR}
+      - ${TESTS_HOST_CONF_DIR}:${TESTS_CONTAINER_CONF_DIR}
+    environment:
+      JENKINS_ENV_ADMIN_USER: admin
+      JENKINS_ENV_CONFIG_YML_URL: file://${TESTS_CONTAINER_CONF_DIR}/config.yml
+      JENKINS_ENV_CONFIG_YML_URL_POLLING: '5'
+      JAVA_OPTS_MEM: -Xmx1g
+      CONSUL_ADDR: '${CONSUL_ADDR}'
+      ENVCONSUL_CONSUL_PREFIX: '${ENVCONSUL_CONSUL_PREFIX}'
+      VAULT_ADDR: '${VAULT_ADDR}'
+      VAULT_TOKEN: '${VAULT_TOKEN}'
+      ENVCONSUL_VAULT_PREFIX: '${ENVCONSUL_VAULT_PREFIX}'
+      ENVCONSUL_ADDITIONAL_ARGS: -vault-renew-token=false
+
+
+networks: 
+  default:
+    external:
+      name: ${JENKINS_DOCKER_NETWORK_NAME}

@@ -1,0 +1,6 @@
+credentials:
+  git-user-pass:
+    type: userpass
+    username: ${GIT_USERNAME}
+    password: ${GIT_PASSWORD}
+  

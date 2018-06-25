@@ -1,0 +1,12 @@
+[
+    {
+            "key": "jenkins/git_password",
+            "flags": 0,
+            "value": "cGFzc3dvcmQ="
+    },
+    {
+            "key": "jenkins/git_username",
+            "flags": 0,
+            "value": "dXNlcm5hbWU="
+    }
+]

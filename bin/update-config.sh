@@ -13,6 +13,7 @@ if [ ! -f $script_dir/jenkins-cli.jar ]; then
     curl -o $script_dir/jenkins-cli.jar http://localhost:8080/jnlpJars/jenkins-cli.jar
 fi
 
+
 echo "Updating Jenkins Configuration"
 java -jar $script_dir/jenkins-cli.jar \
     -s http://localhost:8080/ $AUTH_ARG \

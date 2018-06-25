@@ -35,6 +35,7 @@ The image is "Battle Proven" and serves as the baseground for several Jenkins de
 * Supports quiet startup period to enable docker restarts with a graceful time which Jenkins is in *Quiet Mode*
 * Automated Re-Configure based on configuration data change without restarts
 * Supports Dynamic Host IP configuration passed to clouds when Jenkins is running in a cluster
+* Support dynamic envrionment variables from [consul](https://www.consul.io/) and [vault](https://www.vaultproject.io/) using [envconsul](https://github.com/hashicorp/envconsul)
 
 ## Why Use the term "Bloody"?
 The term "My Bloody Jenkins" came from the fact that I tried to put all my "battle" experience, (i.e. blood, sweat and tears) within the image.
@@ -144,6 +145,28 @@ remove_master_envvars:
   - '.*SECRET.*'
   - 'MY_SPECIAL_VARIABLE'
 ```
+
+### Using envconsul to Fetch Dynamic Environment Variables from Consul and Vault
+When using [Environment Variable Substitution](#environment-variable-substitution) within the config.yml file, you can direct the container to automatically fetch them from from [consul](https://www.consul.io/) and [vault](https://www.vaultproject.io/) using [envconsul](https://github.com/hashicorp/envconsul)
+
+The following environment variables need to be provided in order to support it:
+
+* `ENVCONSUL_CONSUL_PREFIX` - Comma separated values of consul key prefixes - Mandatory if using consul to fetch information
+* `CONSUL_ADDR` - Consul address (host:port) - Mandatory if using consul to fetch information
+* `CONSUL_TOKEN` - Consul ACL Token - The token that used to be authorize the container to fetch the keys from consul - Mandatory if consul ACLs are in use
+* `ENVCONSUL_VAULT_PREFIX` - Comma separated values of vault key prefixes - Mandatory if using vault to fetch information
+* `VAULT_ADDR` - Vault address \(http\[s]://host:port) - Mandatory if using vault to fetch information
+* `VAULT_TOKEN` - Vault ACL Token - The token that used to be authorize the container to fetch the keys from vault - Mandatory
+* `ENVCONSUL_UNWRAP_TOKEN` - true/false (default = false), see - tells Envconsul that the provided token is actually a wrapped token that should be unwrapped using Vault's [cubbyhole response wrapping](https://www.vaultproject.io/guides/secret-mgmt/cubbyhole.html)
+* `ENVCONSUL_MAX_RETRIES` - (default = 5), How many time the envconsul will retry to fetch data  
+* `ENVCONSUL_ADDITIONAL_ARGS` - A list of command line arguments to append to the [envconsul](https://github.com/hashicorp/envconsul) CLI. For more details, please read the [envconsul READM](https://github.com/hashicorp/envconsul/blob/master/README.md)
+
+The following parameters are being added to the envconsul CLI:
+* -sanitize - replaces all invalid characters to underscore 
+* -upcase - All keys will become Uppercase
+
+> Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
+
 
 ### Security Section
 Responsible for:

@@ -6,7 +6,7 @@ build:
 	docker build --rm --force-rm -t odavid/my-bloody-jenkins --build-arg http_proxy=$(http_proxy) --build-arg https_proxy=$(https_proxy) --build-arg no_proxy=$(no_proxy) .
 
 test: build
-	bats tests/bats
+	bats tests
 
 update-plugins:
 	env python $(PWD)/get-latest-plugins.py

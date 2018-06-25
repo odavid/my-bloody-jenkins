@@ -1,0 +1,27 @@
+version: '2'
+services:
+  consul:
+    image: consul
+    ports:
+      - "8400:8400"
+      - "8500:8500"
+      - "8600:8600"
+      - "8600:8600/udp"
+    volumes:
+      - ${TESTS_DIR}:${TESTS_CONTAINER_TESTS_DIR}
+
+  vault:
+    image: vault:0.9.6
+    ports:
+      - "8200:8200"
+    volumes:
+      - ${TESTS_DIR}:${TESTS_CONTAINER_TESTS_DIR}
+    environment:
+      VAULT_DEV_ROOT_TOKEN_ID: vault-root-token
+      VAULT_TOKEN: vault-root-token
+      VAULT_ADDR: 'http://127.0.0.1:8200'
+
+networks:
+  default:
+    external:
+      name: ${JENKINS_DOCKER_NETWORK_NAME}
