@@ -11,7 +11,7 @@ job_dsl_scripts:
                 remote {
                   url('https://github.com/odavid/my-bloody-jenkins.git')
                 }
-                branches("refs/heads/demo")
+                branches("refs/heads/master")
               }
               scriptPath('demo/apps/' + prj + '-calc/Jenkinsfile')
             }
