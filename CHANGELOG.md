@@ -1,6 +1,7 @@
 ## Changelog
 
 ## Not Released yet
+* Ability to use [envconsul](https://github.com/hashicorp/envconsul) to dynamically fetch environment variables - [#101](https://github.com/odavid/my-bloody-jenkins/pull/101)
 * Updated plugins
     * [badge:1.5](https://plugins.jenkins.io/badge)
     * [blueocean:1.6.1](https://plugins.jenkins.io/blueocean)
