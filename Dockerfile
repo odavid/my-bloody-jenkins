@@ -13,7 +13,7 @@ USER root
 # Ability to use usermod + install awscli in order to be able to watch s3 if needed
 RUN apk add --no-cache shadow py-setuptools less outils-md5 && \
     easy_install-2.7 pip && \
-    pip install awscli PyYAML six
+    pip install awscli PyYAML==3.12 six
 
 RUN curl -SsL https://releases.hashicorp.com/envconsul/0.7.3/envconsul_0.7.3_linux_amd64.tgz | tar -C /usr/bin -xvzf - && \
     chmod +x /usr/bin/envconsul
