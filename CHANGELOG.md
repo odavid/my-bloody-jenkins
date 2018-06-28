@@ -10,7 +10,8 @@
     * [lockable-resources:2.3](https://plugins.jenkins.io/lockable-resources)
     * [mercurial:2.4](https://plugins.jenkins.io/mercurial)
     * [pipeline-model-definition:1.3.1](https://plugins.jenkins.io/pipeline-model-definition)
-
+    * [workflow-job:2.22](https://plugins.jenkins.io/workflow-job)
+    
 ## 2.121.1-58
 * Ability to use [envconsul](https://github.com/hashicorp/envconsul) to dynamically fetch environment variables - [#101](https://github.com/odavid/my-bloody-jenkins/pull/101)
 * Updated plugins
