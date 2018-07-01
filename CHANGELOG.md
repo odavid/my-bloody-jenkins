@@ -3,7 +3,7 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
-## 2.121.1-59 (Not released yet)
+## 2.121.1-59
 * Updated plugins
     * [kubernetes:1.9.2](https://plugins.jenkins.io/kubernetes)
     * [lockable-resources:2.3](https://plugins.jenkins.io/lockable-resources)
