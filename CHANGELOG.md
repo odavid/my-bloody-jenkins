@@ -4,14 +4,17 @@
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
 ## 2.121.1-59 (Not released yet)
-
 * Updated plugins
     * [kubernetes:1.9.2](https://plugins.jenkins.io/kubernetes)
     * [lockable-resources:2.3](https://plugins.jenkins.io/lockable-resources)
     * [mercurial:2.4](https://plugins.jenkins.io/mercurial)
     * [pipeline-model-definition:1.3.1](https://plugins.jenkins.io/pipeline-model-definition)
     * [workflow-job:2.22](https://plugins.jenkins.io/workflow-job)
-    
+    * [anchore-container-scanner:1.0.15](https://plugins.jenkins.io/anchore-container-scanner)
+    * [blueocean:1.6.2](https://plugins.jenkins.io/blueocean)
+    * [copyartifact:1.41](https://plugins.jenkins.io/copyartifact)
+    * [gitlab-plugin:1.5.7](https://plugins.jenkins.io/gitlab-plugin)
+
 ## 2.121.1-58
 * Ability to use [envconsul](https://github.com/hashicorp/envconsul) to dynamically fetch environment variables - [#101](https://github.com/odavid/my-bloody-jenkins/pull/101)
 * Updated plugins
