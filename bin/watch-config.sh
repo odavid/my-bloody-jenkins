@@ -28,11 +28,13 @@ debug(){
 
 fetch_config(){
     fetchconfig.py --source "${URL}" --out ${CACHE_DIR}/${FILE_BASENAME}
+    PROCESS_COMMAND="processconfig.py --source ${CACHE_DIR}/${FILE_BASENAME} --out ${CACHE_DIR}/${FILE_BASENAME}"
+    [[ -n "${ENVVARS_DIRS}" ]] && PROCESS_COMMAND="$PROCESS_COMMAND --env-dirs ${ENVVARS_DIRS}"
     if [[ "$DEBUG" == "YES" ]]; then
-        DEBUG=YES envconsul-wrapper.sh processconfig.py ${CACHE_DIR}/${FILE_BASENAME}
+        DEBUG=YES envconsul-wrapper.sh $PROCESS_COMMAND
     else
         {
-            envconsul-wrapper.sh processconfig.py "${CACHE_DIR}/${FILE_BASENAME}"
+            envconsul-wrapper.sh $PROCESS_COMMAND
         } &>/dev/null
     fi
 

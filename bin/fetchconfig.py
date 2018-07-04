@@ -99,7 +99,7 @@ def fetch_merged_config(source):
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Fetch configuration yaml form different data sources and merge them into one config file')
+    parser = argparse.ArgumentParser(description='Fetch configuration yaml from different data sources and merge them into one config file')
     parser.add_argument('--source', type=str, help='comma delimited source URIs')
     parser.add_argument('--out', type=str, help='Output config file')
     args = parser.parse_args()
