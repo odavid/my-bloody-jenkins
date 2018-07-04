@@ -68,7 +68,7 @@ def fetch_files(source):
         filenames = sorted(filenames, key=os.path.abspath)
         matched_files += [f for f in filenames if os.path.isfile(f)]
     elif os.path.isfile(source):
-        matched_files += source
+        matched_files.append(source)
 
     for src in matched_files:
         with open(src, 'r') as f:

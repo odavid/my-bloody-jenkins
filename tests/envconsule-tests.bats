@@ -25,7 +25,7 @@ function groovy_test(){
     ENVCONSUL_CONSUL_PREFIX=jenkins \
     ENVCONSUL_VAULT_PREFIX="secret/jenkins" \
     docker_compose_up $COMPOSE_FILE
-    
+
     health_check http://0.0.0.0:8080/login
 }
 
