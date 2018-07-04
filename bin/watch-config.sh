@@ -27,24 +27,13 @@ debug(){
 }
 
 fetch_config(){
-    case "$URL_TYPE" in
-        file)
-            fetch_config_file
-            ;;
-        s3)
-            fetch_config_s3
-            ;;
-        http)
-            fetch_config_http
-            ;;
-    esac
-
+    fetchconfig.py --source "${URL}" --out ${CACHE_DIR}/${FILE_BASENAME}
     if [[ "$DEBUG" == "YES" ]]; then
         DEBUG=YES envconsul-wrapper.sh processconfig.py ${CACHE_DIR}/${FILE_BASENAME}
     else
-        { 
-            envconsul-wrapper.sh processconfig.py "${CACHE_DIR}/${FILE_BASENAME}" 
-        } &>/dev/null 
+        {
+            envconsul-wrapper.sh processconfig.py "${CACHE_DIR}/${FILE_BASENAME}"
+        } &>/dev/null
     fi
 
     debug "Calulating checksum of ${CACHE_DIR}/${FILE_BASENAME}"
@@ -64,26 +53,7 @@ fetch_config(){
     fi
     rm -rf ${CACHE_DIR}/${FILE_BASENAME}
     return $RESULT
-        
-}
 
-fetch_config_file(){
-    debug "Fetching ${SOURCE_FILE} to ${CACHE_DIR}"
-    cp "${SOURCE_FILE}" "${CACHE_DIR}/${FILE_BASENAME}"
-}
-
-fetch_config_http(){
-    debug "Fetching ${URL} to ${CACHE_DIR}"
-    curl -SsLo ${CACHE_DIR}/${FILE_BASENAME} $URL
-}
-
-fetch_config_s3(){
-    if [ -z "$S3_BUCKET_LOCATION" ]; then
-        S3_BUCKET_LOCATION="$(aws s3api get-bucket-location --bucket ${S3_BUCKET} --output text)"
-        [[ "$S3_BUCKET_LOCATION" == 'None' ]] && S3_BUCKET_LOCATION='us-east-1'
-    fi    
-    debug "Fetching ${URL} to ${CACHE_DIR}"
-    aws --region=${S3_BUCKET_LOCATION} s3 cp ${URL} ${CACHE_DIR}/${FILE_BASENAME} --quiet
 }
 
 exec_command(){
@@ -164,23 +134,6 @@ parseArgs(){
 
     POLLING_INTERVAL=${POLLING_INTERVAL:-30}
     CACHE_DIR=${CACHE_DIR:-/tmp/.file-watch-cache}
-
-    URL_TYPE=""
-    if [[ $URL == file://* ]] ; then
-        URL_TYPE="file"
-        SOURCE_FILE="$(echo $URL | sed 's/file:\/\///g')"
-    elif [[ $URL == s3://* ]] ; then
-        URL_TYPE="s3"
-        S3_BUCKET=$(echo $URL | sed 's/s3:\/\///g' | cut -d'/' -f 1)
-    elif [[ "$URL" == http://* ]] ; then
-        URL_TYPE="http"
-    elif [[ "$URL" == https://* ]] ; then
-        URL_TYPE="http"
-    else
-        (>&2 echo "Error: invalid url: $URL")
-        usage
-    fi
-
     FILE_BASENAME=$(basename $FILENAME)
 }
 
