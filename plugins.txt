@@ -71,8 +71,8 @@ git-server:1.7
 github:1.29.2
 github-api:1.92
 github-branch-source:2.3.6
-gitlab-plugin:1.5.7
-gradle:1.28
+gitlab-plugin:1.5.8
+gradle:1.29
 groovy-postbuild:2.4.1
 handlebars:1.1.1
 handy-uri-templates-2-api:2.1.6-1.0
@@ -86,7 +86,7 @@ javadoc:1.4
 jdk-tool:1.1
 jenkins-design-language:1.6.2
 jira:3.0.0
-job-dsl:1.69
+job-dsl:1.70
 jquery:1.12.4-0
 jquery-detached:1.2.1
 jsch:0.1.54.2

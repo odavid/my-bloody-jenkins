@@ -3,6 +3,12 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+## 2.121.1-60 (Not released yet)
+* Updated plugins
+    * [gitlab-plugin:1.5.8](https://plugins.jenkins.io/gitlab-plugin)
+    * [gradle:1.29](https://plugins.jenkins.io/gradle)
+    * [job-dsl:1.70](https://plugins.jenkins.io/job-dsl)
+
 ## 2.121.1-59
 * Updated plugins
     * [kubernetes:1.9.2](https://plugins.jenkins.io/kubernetes)
@@ -28,7 +34,7 @@
     * [ssh-credentials:1.14](https://plugins.jenkins.io/ssh-credentials)
     * [workflow-cps:2.54](https://plugins.jenkins.io/workflow-cps)
     * [workflow-step-api:2.16](https://plugins.jenkins.io/workflow-step-api)
-    * [workflow-support:2.19](https://plugins.jenkins.io/workflow-support) 
+    * [workflow-support:2.19](https://plugins.jenkins.io/workflow-support)
 
 ## 2.121.1-57
 * Updated plugins
@@ -48,7 +54,7 @@
 * Updated plugins
     * [pipeline-model-definition:1.3](https://plugins.jenkins.io/pipeline-model-definition)
     * [workflow-api:2.28](https://plugins.jenkins.io/workflow-api)
-    * [workflow-basic-steps:2.9](https://plugins.jenkins.io/workflow-basic-steps)    
+    * [workflow-basic-steps:2.9](https://plugins.jenkins.io/workflow-basic-steps)
 
 ## 2.121.1-54
 * Updated plugins
