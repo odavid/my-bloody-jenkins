@@ -4,6 +4,7 @@
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
 ## 2.121.1-60 (Not released yet)
+* Support multiple data sources and secrets from files [#102](https://github.com/odavid/my-bloody-jenkins/pull/102)
 * Updated plugins
     * [gitlab-plugin:1.5.8](https://plugins.jenkins.io/gitlab-plugin)
     * [gradle:1.29](https://plugins.jenkins.io/gradle)
