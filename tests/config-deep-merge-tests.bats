@@ -8,7 +8,7 @@ function groovy_test(){
     run_groovy_script $COMPOSE_FILE groovy/deep-merge/$1
 }
 
-@test ">>> setup config deep-merge with 2 dirs tests env" {
+@test ">>> setup config deep-merge with multiple data sources env" {
     mkdir -p $TESTS_HOST_CONF_DIR/{dir1,dir2,dir3}
     create_docker_network
 
@@ -42,7 +42,7 @@ function groovy_test(){
     groovy_test AssertCredsFromDir32.groovy
 }
 
-@test "<<< teardown config deep-merge with 2 dirs tests env" {
+@test "<<< teardown config deep-merge with multiple data sources env" {
     docker_compose_down $COMPOSE_FILE
     rm -rf $TESTS_HOST_CONF_DIR
     destroy_docker_network

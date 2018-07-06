@@ -177,7 +177,7 @@ Will produce the following environment variables:
 * `SECRET_USERNAME` - contents of `/var/secret/username`
 * `SECRET_PASSWORD` - contents of `/var/secret/password`
 * `OTHER_SECRET` - contents of `/var/other-secret/ssh-key`
-* `OTHER_API_TOKEN` - contents of `/var/other-secret/api-token`
+* `OTHER_SECRET_API_TOKEN` - contents of `/var/other-secret/api-token`
 
 > Note that variable names are the `<FOLDER_NAME>_<FILE_NAME>` sanitized and uppercased
 
