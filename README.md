@@ -148,7 +148,15 @@ remove_master_envvars:
   - 'MY_SPECIAL_VARIABLE'
 ```
 
-### Environment variables values from files
+### Environment Variables Data Sources
+The image supports the following data sources for environment variables:
+* Native - Enviroment variables that passed to the container at start
+* [Files](#environment-variables-values-from-files) - By passing `ENVVARS_DIRS` variable to the container, selected directories can be treated as environment variable source
+* [Consul](#using-envconsul-to-fetch-dynamic-environment-variables-from-consul-and-vault) - using [envconsul](https://github.com/hashicorp/envconsul)
+* [Vault](#using-envconsul-to-fetch-dynamic-environment-variables-from-consul-and-vault) - using [envconsul](https://github.com/hashicorp/envconsul)
+
+
+### Environment Variables Values From Files
 When using [Environment Variable Substitution](#environment-variable-substitution) within the config.yml file, you can consume environment variables values directly from files contents within folders. This is useful especially when using [k8s secrets volume mappings](https://kubernetes.io/docs/concepts/storage/volumes/#secret)
 
 In order to activate this feature, you need to pass `ENVVARS_DIRS` variable to the container with a comma separated list of directories.
