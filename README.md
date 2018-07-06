@@ -150,7 +150,7 @@ remove_master_envvars:
 
 ### Environment Variables Data Sources
 The image supports the following data sources for environment variables:
-* Native - Enviroment variables that passed to the container at start
+* Native - Environment variables that are passed to the container at startup
 * [Files](#environment-variables-values-from-files) - By passing `ENVVARS_DIRS` variable to the container, selected directories can be treated as environment variable source
 * [Consul](#using-envconsul-to-fetch-dynamic-environment-variables-from-consul-and-vault) - using [envconsul](https://github.com/hashicorp/envconsul)
 * [Vault](#using-envconsul-to-fetch-dynamic-environment-variables-from-consul-and-vault) - using [envconsul](https://github.com/hashicorp/envconsul)
