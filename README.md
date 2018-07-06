@@ -87,11 +87,13 @@ The following Environment variables are supported
 
 * __JENKINS_ENV_CONFIG_YAML__ - The [configuration](#configuration-reference) as yaml. When this variable is set, the contents of this variable can be fetched from Consul and also be watched so jenkins can update its configuration everytime this variable is being changed. Since the contents of this variable contains secrets, it is wise to store and pass it from Consul/S3 bucket. In any case, before Jenkins starts, this variable is being unset, so it won't appear in Jenkins 'System Information' page (As I said, blood...)
 
-* __JENKINS_ENV_CONFIG_YML_URL__ - A URL that will be used to fetch the configuration and updated jenkins everytime it changes. This is an alternative to __JENKINS_ENV_CONFIG_YAML__ setup.
+* __JENKINS_ENV_CONFIG_YML_URL__ - A comma separated URLs that will be used to fetch the configuration and updated jenkins everytime the change. This is an alternative to __JENKINS_ENV_CONFIG_YAML__ setup.
 Supported URLs:
   * s3://\<s3path> - s3 path
-  * file://\<filepath> - a file path (should be mapped as volume)
+  * file://\<filepath> - a file path (should be mapped as volume) - can be a file, folder or glob expression (e.g. file:///dir/filename or file://dir or file:///dir/*.yml)
   * http[s]://\<path> - an http endpoint
+
+> Note: If multiple URLs are passed or the file url contains a dir name or a glob expression, all yaml files are being deep merged top to bottom. This behavior enables to separate the configuration into different files or override default configuration.
 
 
 * __JENKINS_ENV_CONFIG_YML_URL_DISABLE_WATCH__ - If equals to 'true', then the configuration file will be fetched only at startup, but won't be watched. Default 'false'
@@ -146,6 +148,31 @@ remove_master_envvars:
   - 'MY_SPECIAL_VARIABLE'
 ```
 
+### Environment variables values from files
+When using [Environment Variable Substitution](#environment-variable-substitution) within the config.yml file, you can consume environment variables values directly from files contents within folders. This is useful especially when using [k8s secrets volume mappings](https://kubernetes.io/docs/concepts/storage/volumes/#secret)
+
+In order to activate this feature, you need to pass `ENVVARS_DIRS` variable to the container with a comma separated list of directories.
+
+__Example__
+
+Assuming you have the following files within the container:
+* /var/secret/username
+* /var/secret/password
+* /var/other-secret/ssh-key
+* /var/other-secret/api-token
+
+Setting the following `ENVVARS_DIRS` environment variable as follows:
+```shell
+ENVVARS_DIRS=/var/secret/,/var/other-secret
+```
+Will produce the following environment variables:
+* `SECRET_USERNAME` - contents of `/var/secret/username`
+* `SECRET_PASSWORD` - contents of `/var/secret/password`
+* `OTHER_SECRET` - contents of `/var/other-secret/ssh-key`
+* `OTHER_API_TOKEN` - contents of `/var/other-secret/api-token`
+
+> Note that variable names are the `<FOLDER_NAME>_<FILE_NAME>` sanitized and uppercased
+
 ### Using envconsul to Fetch Dynamic Environment Variables from Consul and Vault
 When using [Environment Variable Substitution](#environment-variable-substitution) within the config.yml file, you can direct the container to automatically fetch them from from [consul](https://www.consul.io/) and [vault](https://www.vaultproject.io/) using [envconsul](https://github.com/hashicorp/envconsul)
 
@@ -158,11 +185,11 @@ The following environment variables need to be provided in order to support it:
 * `VAULT_ADDR` - Vault address \(http\[s]://host:port) - Mandatory if using vault to fetch information
 * `VAULT_TOKEN` - Vault ACL Token - The token that used to be authorize the container to fetch the keys from vault - Mandatory
 * `ENVCONSUL_UNWRAP_TOKEN` - true/false (default = false), see - tells Envconsul that the provided token is actually a wrapped token that should be unwrapped using Vault's [cubbyhole response wrapping](https://www.vaultproject.io/guides/secret-mgmt/cubbyhole.html)
-* `ENVCONSUL_MAX_RETRIES` - (default = 5), How many time the envconsul will retry to fetch data  
+* `ENVCONSUL_MAX_RETRIES` - (default = 5), How many time the envconsul will retry to fetch data
 * `ENVCONSUL_ADDITIONAL_ARGS` - A list of command line arguments to append to the [envconsul](https://github.com/hashicorp/envconsul) CLI. For more details, please read the [envconsul READM](https://github.com/hashicorp/envconsul/blob/master/README.md)
 
 The following parameters are being added to the envconsul CLI:
-* -sanitize - replaces all invalid characters to underscore 
+* -sanitize - replaces all invalid characters to underscore
 * -upcase - All keys will become Uppercase
 
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
