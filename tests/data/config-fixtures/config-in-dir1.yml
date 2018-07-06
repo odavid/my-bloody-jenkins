@@ -1,0 +1,5 @@
+credentials:
+  git-user-pass:
+    type: userpass
+    username: username-dir1
+    password: password-dir1
