@@ -8,6 +8,7 @@
     * [gitlab-plugin:1.5.8](https://plugins.jenkins.io/gitlab-plugin)
     * [gradle:1.29](https://plugins.jenkins.io/gradle)
     * [job-dsl:1.70](https://plugins.jenkins.io/job-dsl)
+    * [cloudbees-bitbucket-branch-source:2.2.12](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
 
 ## 2.121.1-59
 * Updated plugins
