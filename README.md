@@ -89,9 +89,9 @@ The following Environment variables are supported
 
 * __JENKINS_ENV_CONFIG_YML_URL__ - A comma separated URLs that will be used to fetch the configuration and updated jenkins everytime the change. This is an alternative to __JENKINS_ENV_CONFIG_YAML__ setup.
 Supported URLs:
-  * s3://\<s3path> - s3 path
-  * file://\<filepath> - a file path (should be mapped as volume) - can be a file, folder or glob expression (e.g. file:///dir/filename or file://dir or file:///dir/*.yml)
-  * http[s]://\<path> - an http endpoint
+  * `s3://\<s3path>` - s3 path
+  * `file://\<filepath>` - a file path (should be mapped as volume) - can be a file, folder or glob expression (e.g. `file:///dir/filename` or `file:///dir` or `file:///dir/*.yml`)
+  * `http[s]://<path>` - an http endpoint
 
 > Note: If multiple URLs are passed or the file url contains a dir name or a glob expression, all yaml files are being deep merged top to bottom. This behavior enables to separate the configuration into different files or override default configuration.
 
