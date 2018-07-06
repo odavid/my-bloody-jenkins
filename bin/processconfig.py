@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 from __future__ import print_function
+import argparse
 import os
 from six import string_types
 import yaml
@@ -34,18 +35,46 @@ def write_config(config, conffile, backup=False):
     with open(conffile, 'w') as f:
         return yaml.safe_dump(config, f, default_flow_style=False)
 
+def load_env_vars_from_dir(directory):
+    directory = os.path.expanduser(directory)
+    envvars = {}
+    if os.path.isdir(directory):
+        filenames = [os.path.join(directory, f) for f in os.listdir(directory)]
+        filenames = sorted(filenames, key=os.path.abspath)
+        for filename in filenames:
+            if(os.path.isfile(filename)):
+                name = os.path.basename(filename)
+                prefix = os.path.basename(os.path.dirname(filename))
+                env_var_name = ('%s_%s' % (prefix, name)).upper().replace('.', '_').replace('-', '_')
+                with open(filename, 'rb') as f:
+                    value = f.read()
+                    envvars[env_var_name] = value
+    return envvars
+
 def main():
-    if len(sys.argv) > 1:
-        source = sys.argv[1]
-        if len(sys.argv) > 2:
-            target = sys.argv[1]
-        else:
-            target = source
+    parser = argparse.ArgumentParser(description='Load configuration yaml and substitute environment variables. Also loads environment variables from files based on directory search path')
+    parser.add_argument('--source', type=str, help='Source config file')
+    parser.add_argument('--env-dirs', type=str, help='Directories to load environment variables from', default='')
+    parser.add_argument('--out', type=str, help='Output config file')
+    args = parser.parse_args()
+    if not args.source:
+        exit(parser.print_usage())
     else:
-        sys.exit(0)
+        source = args.source
+
+    if not args.out:
+        out = source
+    else:
+        out = args.out
+
+
     cfg = load_config(source)
     if cfg:
-        write_config(replace_envvars(cfg), target)
+        if args.env_dirs:
+            env_dirs = args.env_dirs.split(',')
+            for env_dir in env_dirs:
+                os.environ.update(load_env_vars_from_dir(env_dir))
+        write_config(replace_envvars(cfg), out)
 
 if __name__ == '__main__':
     main()

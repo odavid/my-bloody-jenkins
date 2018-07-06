@@ -24,8 +24,10 @@ function groovy_test(){
     VAULT_ADDR="http://vault:8200" \
     ENVCONSUL_CONSUL_PREFIX=jenkins \
     ENVCONSUL_VAULT_PREFIX="secret/jenkins" \
+    ENVCONSUL_ADDITIONAL_ARGS="-vault-renew-token=false" \
+    JENKINS_ENV_CONFIG_YML_URL=file://${TESTS_CONTAINER_CONF_DIR}/config.yml \
     docker_compose_up $COMPOSE_FILE
-    
+
     health_check http://0.0.0.0:8080/login
 }
 
