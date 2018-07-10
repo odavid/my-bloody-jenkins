@@ -3,6 +3,13 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+
+## 2.121.1-61 (Not released yet)
+* Updated plugins
+    * [artifactory:2.16.2](https://plugins.jenkins.io/artifactory)
+    * [envinject:2.1.6](https://plugins.jenkins.io/envinject)
+    * [workflow-multibranch:2.20](https://plugins.jenkins.io/workflow-multibranch)
+
 ## 2.121.1-60
 * Support multiple data sources and secrets from files [#102](https://github.com/odavid/my-bloody-jenkins/pull/102)
 * Updated plugins
