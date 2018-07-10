@@ -1,7 +1,7 @@
 # My Bloody Jenkins - An opinionated Jenkins Docker Image
 [![Build Status](https://travis-ci.org/odavid/my-bloody-jenkins.svg?branch=master)](https://travis-ci.org/odavid/my-bloody-jenkins)
 [![Docker Pulls](https://img.shields.io/docker/pulls/odavid/my-bloody-jenkins.svg)](https://hub.docker.com/r/odavid/my-bloody-jenkins/)
-
+[![Helm Chart](https://img.shields.io/badge/helm--chart-my--bloody--jenkins-blue.svg)](https://github.com/odavid/k8s-helm-charts/tree/master/charts/my-bloody-jenkins)
 ## Changelog
 
 [See Changelog](CHANGELOG.md)
