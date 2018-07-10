@@ -114,7 +114,7 @@ def main():
     else:
         out = os.path.expanduser(out)
         parent_dir = os.path.dirname(out)
-        if parent_dir and not not os.path.isdir(parent_dir):
+        if parent_dir and not os.path.isdir(parent_dir):
             os.makedirs(parent_dir)
         with open(out, 'wb') as f:
             if config:
