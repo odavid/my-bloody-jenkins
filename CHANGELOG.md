@@ -3,6 +3,11 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+## 2.121.1-62 (Not released yet)
+* Don't fail empty yaml files when merging multiple files
+* Updated plugins
+    * [matrix-auth:2.3](https://plugins.jenkins.io/matrix-auth)
+    * [p4:1.8.12](https://plugins.jenkins.io/p4)
 
 ## 2.121.1-61
 * Added [Helm Chart](https://github.com/odavid/k8s-helm-charts/tree/master/charts/my-bloody-jenkins) to enable simple deployment on k8s

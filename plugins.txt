@@ -97,13 +97,13 @@ ldap:1.20
 lockable-resources:2.3
 mailer:1.21
 mask-passwords:2.12.0
-matrix-auth:2.2
+matrix-auth:2.3
 matrix-project:1.13
 maven-plugin:3.1.2
 mercurial:2.4
 metrics:4.0.2.2
 momentjs:1.1.1
-p4:1.8.10
+p4:1.8.12
 parallel-test-executor:1.10
 parameterized-trigger:2.35.2
 pipeline-build-step:2.7
