@@ -44,6 +44,14 @@ I just thought it is a "catchy" name for this kind of a repository.
 ## Demo
 A [step by step demo](demo) can be found [here](demo)
 
+## k8s Helm Chart
+In order to deploy in k8s, A corresponding [Helm Chart](https://github.com/odavid/k8s-helm-charts/tree/master/charts/my-bloody-jenkins) can be found [Here](https://github.com/odavid/k8s-helm-charts/tree/master/charts/my-bloody-jenkins)
+
+```shell
+helm repo add odavid https://odavid.github.io/k8s-helm-charts
+helm install odavid/my-bloody-jenkins [-f values.yml]
+```
+
 ## Some Usage Examples
 * [docker-plugin cloud](examples/docker/) cloud using Docker Plugin cloud with seed job. See [examples/docker](examples/docker/)
 * [kubernetes](examples/kubernetes/) cloud using Minikube with seed job. See [examples/kubernetes](examples/kubernetes/)
