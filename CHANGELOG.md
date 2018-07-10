@@ -5,6 +5,7 @@
 
 
 ## 2.121.1-61 (Not released yet)
+* Added [Helm Chart](https://github.com/odavid/k8s-helm-charts/tree/master/charts/my-bloody-jenkins) to enable simple deployment on k8s
 * Updated plugins
     * [artifactory:2.16.2](https://plugins.jenkins.io/artifactory)
     * [envinject:2.1.6](https://plugins.jenkins.io/envinject)
