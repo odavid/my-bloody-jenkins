@@ -55,7 +55,6 @@ helm install odavid/my-bloody-jenkins [-f values.yml]
 ## Some Usage Examples
 * [docker-plugin cloud](examples/docker/) cloud using Docker Plugin cloud with seed job. See [examples/docker](examples/docker/)
 * [kubernetes](examples/kubernetes/) cloud using Minikube with seed job. See [examples/kubernetes](examples/kubernetes/)
-* [Helm Chart](https://github.com/odavid/k8s-helm-charts/tree/master/charts/my-bloody-jenkins) - Use this helm chart to deploy on k8s
 
 ## Releases
 Docker Images are pushed to [Docker Hub](https://hub.docker.com/r/odavid/my-bloody-jenkins/)
