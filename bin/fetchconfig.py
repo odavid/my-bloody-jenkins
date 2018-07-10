@@ -92,7 +92,9 @@ def fetch_merged_config(source):
     config = {}
     for rc in raw_configs:
         c = yaml.safe_load(rc['contents'])
-        if c is None or not isinstance(c, collections.Mapping):
+        if c is None:
+            continue
+        elif not isinstance(c, collections.Mapping):
             raise ValueError("Invalid Yaml content: %s" % rc['src'])
         config = merge_dict(config, c)
     return config
@@ -112,11 +114,11 @@ def main():
     else:
         out = os.path.expanduser(out)
         parent_dir = os.path.dirname(out)
-        if not os.path.isdir(parent_dir):
+        if parent_dir and not not os.path.isdir(parent_dir):
             os.makedirs(parent_dir)
         with open(out, 'wb') as f:
-            yaml.safe_dump(config, stream=f, default_flow_style=False)
-
+            if config:
+                yaml.safe_dump(config, stream=f, default_flow_style=False)
 
 if __name__ == '__main__':
     main()
