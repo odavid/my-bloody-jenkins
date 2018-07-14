@@ -6,6 +6,8 @@
 ## 2.121.1-63 (Not release yet)
 * Updated plugins
     * [kubernetes:1.10.0](https://plugins.jenkins.io/kubernetes)
+    * [blueocean:1.7.0](https://plugins.jenkins.io/blueocean)
+    * [workflow-job:2.23](https://plugins.jenkins.io/workflow-job)
 
 ## 2.121.1-62
 * Don't fail empty yaml files when merging multiple files
