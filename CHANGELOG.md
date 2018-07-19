@@ -7,6 +7,9 @@
 * [LTS-2.121.2](https://jenkins.io/changelog-stable/)
 * Updated plugins
     * [kubernetes:1.10.1](https://plugins.jenkins.io/kubernetes)
+    * [anchore-container-scanner:1.0.16](https://plugins.jenkins.io/anchore-container-scanner)
+    * [blueocean:1.7.1](https://plugins.jenkins.io/blueocean)
+    * [gatling:1.2.4](https://plugins.jenkins.io/gatling)
 
 ## 2.121.1-63
 * Updated plugins
