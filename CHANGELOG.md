@@ -3,9 +3,13 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
-## 2.121.1-64 (Not release yet)
+## 2.121.2-64 (Not release yet)
+* [LTS-2.121.2](https://jenkins.io/changelog-stable/)
 * Updated plugins
     * [kubernetes:1.10.1](https://plugins.jenkins.io/kubernetes)
+    * [anchore-container-scanner:1.0.16](https://plugins.jenkins.io/anchore-container-scanner)
+    * [blueocean:1.7.1](https://plugins.jenkins.io/blueocean)
+    * [gatling:1.2.4](https://plugins.jenkins.io/gatling)
 
 ## 2.121.1-63
 * Updated plugins
