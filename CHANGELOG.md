@@ -7,7 +7,8 @@
 * Updated plugins
     * [credentials:2.1.18](https://plugins.jenkins.io/credentials)
     * [cucumber-reports:3.19.1](https://plugins.jenkins.io/cucumber-reports)
-
+    * [gitlab-plugin:1.5.9](https://plugins.jenkins.io/gitlab-plugin)
+    
 ## 2.121.2-64
 * [LTS-2.121.2](https://jenkins.io/changelog-stable/)
 * Updated plugins

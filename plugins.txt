@@ -71,7 +71,7 @@ git-server:1.7
 github:1.29.2
 github-api:1.92
 github-branch-source:2.3.6
-gitlab-plugin:1.5.8
+gitlab-plugin:1.5.9
 gradle:1.29
 groovy-postbuild:2.4.1
 handlebars:1.1.1
