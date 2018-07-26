@@ -8,7 +8,12 @@
     * [credentials:2.1.18](https://plugins.jenkins.io/credentials)
     * [cucumber-reports:3.19.1](https://plugins.jenkins.io/cucumber-reports)
     * [gitlab-plugin:1.5.9](https://plugins.jenkins.io/gitlab-plugin)
-    
+    * [anchore-container-scanner:1.0.17](https://plugins.jenkins.io/anchore-container-scanner)
+    * [git-client:2.7.3](https://plugins.jenkins.io/git-client)
+    * [p4:1.8.14](https://plugins.jenkins.io/p4)
+    * [sonar:2.8](https://plugins.jenkins.io/sonar)
+    * [workflow-api:2.29](https://plugins.jenkins.io/workflow-api)
+
 ## 2.121.2-64
 * [LTS-2.121.2](https://jenkins.io/changelog-stable/)
 * Updated plugins
