@@ -1,25 +1,42 @@
+configuration-as-code:
+  version: "1"
 jenkins:
+  slaveAgentPort: 50000
+  numExecutors: 0
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: true
+  disableRememberMe: false
+  agentProtocols:
+  - "JNLP4-connect"
+  - "Ping"
+
   securityRealm:
     ldap:
-      configurations:
-        - server: ldap:389
-          rootDN: dc=example,dc=org
-          managerDN: cn=readonly,dc=example,dc=org
-          managerPasswordSecret: readonly
-          userSearchBase: ou=users
-          userSearch: uid={0}
-          groupSearchBase: ou=groups
-          groupSearchFilter: cn={0}
-          groupMembershipStrategy:
-            FromGroupSearchLDAPGroupMembershipStrategy:
-              filter: member={0}
-          displayNameAttributeName: cn
-          mailAddressAttributeName: mail
       cache:
-        size: 100
-        ttl: 10
-      userIdStrategy: CaseInsensitive
-      groupIdStrategy: CaseInsensitive
+        size: 20
+        ttl: 300
+      configurations:
+      - displayNameAttributeName: "cn"
+        environmentProperties:
+        - name: "com.sun.jndi.ldap.connect.timeout"
+          value: "5000"
+        - name: "com.sun.jndi.ldap.read.timeout"
+          value: "60000"
+        groupMembershipStrategy:
+          fromGroupSearch:
+            filter: "member={0}"
+        groupSearchBase: "ou=groups"
+        groupSearchFilter: "cn={0}"
+        inhibitInferRootDN: false
+        managerDN: "cn=readonly,dc=example,dc=org"
+        managerPasswordSecret: "readonly"
+        rootDN: "dc=example,dc=org"
+        server: "ldap:389"
+        userSearchBase: "ou=users"
+      disableMailAddressResolver: false
+      groupIdStrategy: "caseInsensitive"
+      userIdStrategy: "caseInsensitive"
 
   authorizationStrategy:
     projectMatrix:
@@ -47,5 +64,43 @@ jenkins:
           - "Job/Cancel"
           - "Job/Configure"
 
-  agentProtocols:
-  - "JNLP4-connect"
+  clouds:
+  - docker:
+      dockerApi:
+        dockerHost:
+          uri: "unix:///var/run/docker.sock"
+      exposeDockerHost: true
+      name: "docker-cloud"
+      templates:
+      - connector:
+          jnlp:
+            jenkinsUrl: "http://host.docker.internal:8080"
+            jnlpLauncher:
+              jnlp:
+                vmargs: "-Xmx1g"
+        labelString: "generic"
+        mode: EXCLUSIVE
+        remoteFs: "/home/jenkins"
+        dockerTemplateBase:
+          cpuShares: 0
+          memoryLimit: 0
+          memorySwap: 0
+          environmentsString: "http_proxy=\nhttps_proxy=\nno_proxy="
+          image: "odavid/jenkins-jnlp-slave:latest"
+          volumes:
+          - "/var/run/docker.sock:/var/run/docker.sock"
+          volumesString: "/var/run/docker.sock:/var/run/docker.sock"
+        instanceCapStr: "10"
+
+
+
+credentials:
+  system:
+    domainCredentials:
+    - credentials:
+      - usernamePassword:
+          description: "artifact-repository-cred"
+          id: "artifact-repository-cred"
+          password: "password1234"
+          scope: GLOBAL
+          username: "user"
