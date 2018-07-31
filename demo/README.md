@@ -4,7 +4,6 @@ Shows how to run jenkins and set it up in an incremental manner.
 
 Running [docker-compose.yml](docker-compose.yml) that contains the following services:
 * ldap - a simple openldap server that is prepopluated on startup using [bootstrap.ldif](ldap/bootstrap/custom.ldif)
-* ldap-admin - a simple ldap php admin for managing ldap [using ui](https://localhost:6443)
 * jenkins - My Bloody jenkins that watches changes from config.yml
 
 
