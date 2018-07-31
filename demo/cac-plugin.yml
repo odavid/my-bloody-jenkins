@@ -1,0 +1,51 @@
+jenkins:
+  securityRealm:
+    ldap:
+      configurations:
+        - server: ldap:389
+          rootDN: dc=example,dc=org
+          managerDN: cn=readonly,dc=example,dc=org
+          managerPasswordSecret: readonly
+          userSearchBase: ou=users
+          userSearch: uid={0}
+          groupSearchBase: ou=groups
+          groupSearchFilter: cn={0}
+          groupMembershipStrategy:
+            FromGroupSearchLDAPGroupMembershipStrategy:
+              filter: member={0}
+          displayNameAttributeName: cn
+          mailAddressAttributeName: mail
+      cache:
+        size: 100
+        ttl: 10
+      userIdStrategy: CaseInsensitive
+      groupIdStrategy: CaseInsensitive
+
+  authorizationStrategy:
+    projectMatrix:
+      grantedPermissions:
+      - name: "jenkins.swarm"
+        permissions:
+          - "Agent/Connect"
+          - "Agent/Disconnect"
+          - "Agent/Configure"
+          - "Agent/Create"
+          - "Agent/Delete"
+      - name: "jenkins-admins"
+        permissions:
+          - "Overall/Administer"
+      - name: "jenkins.admin"
+        permissions:
+          - "Overall/Administer"
+      - name: "authenticated"
+        permissions:
+          - "Overall/Read"
+          - "Job/Discover"
+      - name: "team-leaders"
+        permissions:
+          - "Job/Build"
+          - "Job/Cancel"
+          - "Job/Configure"
+
+  agentProtocols:
+  - "JNLP4-connect"
