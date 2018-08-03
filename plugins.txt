@@ -45,7 +45,7 @@ code-coverage-api:1.0.5
 command-launcher:1.2
 conditional-buildstep:1.3.6
 config-file-provider:3.4.1
-configuration-as-code:0.10-alpha
+configuration-as-code:0.11-alpha
 copyartifact:1.41
 credentials:2.1.18
 credentials-binding:1.17
