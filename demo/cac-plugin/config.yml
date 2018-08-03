@@ -109,6 +109,28 @@ credentials:
           scope: GLOBAL
           username: "user"
 
+jobs:
+  - |
+    def projects = ['nodejs', 'java']
+    projects.each{ prj ->
+      pipelineJob(prj + '-calc'){
+        definition{
+          cpsScm{
+            lightweight(true)
+            scm{
+              git{
+                remote {
+                  url('https://github.com/odavid/my-bloody-jenkins.git')
+                }
+                branches("refs/heads/master")
+              }
+              scriptPath('demo/assets/apps/' + prj + '-calc/Jenkinsfile')
+            }
+          }
+        }
+      }
+    }
+
 ## Waiting for https://github.com/jenkinsci/configuration-as-code-plugin/pull/414 to be fixed
 # tool:
 #   maven:
