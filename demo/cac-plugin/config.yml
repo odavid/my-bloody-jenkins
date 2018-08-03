@@ -1,5 +1,7 @@
-configuration-as-code:
-  version: "1"
+security:
+  remotingCLI:
+    enabled: false
+
 jenkins:
   slaveAgentPort: 50000
   numExecutors: 0
@@ -10,6 +12,9 @@ jenkins:
   agentProtocols:
   - "JNLP4-connect"
   - "Ping"
+
+  remotingSecurity:
+    enabled: true
 
   securityRealm:
     ldap:
@@ -74,10 +79,13 @@ jenkins:
       templates:
       - connector:
           jnlp:
-            jenkinsUrl: "http://host.docker.internal:8080"
+            jenkinsUrl: http://host.docker.internal:8080
             jnlpLauncher:
-              jnlp:
-                vmargs: "-Xmx1g"
+              vmargs: "-Xmx1G"
+              workDirSettings:
+                disabled: true
+                failIfWorkDirIsMissing: false
+                internalDir: "remoting"
         labelString: "generic"
         mode: EXCLUSIVE
         remoteFs: "/home/jenkins"
@@ -87,12 +95,8 @@ jenkins:
           memorySwap: 0
           environmentsString: "http_proxy=\nhttps_proxy=\nno_proxy="
           image: "odavid/jenkins-jnlp-slave:latest"
-          volumes:
-          - "/var/run/docker.sock:/var/run/docker.sock"
           volumesString: "/var/run/docker.sock:/var/run/docker.sock"
         instanceCapStr: "10"
-
-
 
 credentials:
   system:
@@ -104,3 +108,14 @@ credentials:
           password: "password1234"
           scope: GLOBAL
           username: "user"
+
+## Waiting for https://github.com/jenkinsci/configuration-as-code-plugin/pull/414 to be fixed
+# tool:
+#   maven:
+#     installations:
+#     - name: MVN-3.5.0
+#       properties:
+#         - installSourceProperty:
+#           installers:
+#           - mavenInstaller:
+#               id: '3.5.0'
