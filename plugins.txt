@@ -55,7 +55,7 @@ docker-commons:1.13
 docker-java-api:3.0.14
 docker-plugin:1.1.4
 docker-workflow:1.17
-durable-task:1.22
+durable-task:1.23
 email-ext:2.62
 embeddable-build-status:1.9
 envinject:2.1.6
@@ -91,7 +91,7 @@ jquery:1.12.4-0
 jquery-detached:1.2.1
 jsch:0.1.54.2
 junit:1.24
-kubernetes:1.10.1
+kubernetes:1.12.0
 kubernetes-credentials:0.3.1
 ldap:1.20
 lockable-resources:2.3
@@ -129,7 +129,7 @@ script-security:1.44
 slack:2.3
 sonar:2.8
 sse-gateway:1.15
-ssh-agent:1.15
+ssh-agent:1.16
 ssh-credentials:1.14
 ssh-slaves:1.26
 structs:1.14

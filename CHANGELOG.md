@@ -3,6 +3,12 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+## 2.121.2-66 (Not released yet)
+* Updated plugins
+    * [durable-task:1.23](https://plugins.jenkins.io/durable-task)
+    * [kubernetes:1.12.0](https://plugins.jenkins.io/kubernetes)
+    * [ssh-agent:1.16](https://plugins.jenkins.io/ssh-agent)
+
 ## 2.121.2-65
 * Updated plugins
     * [credentials:2.1.18](https://plugins.jenkins.io/credentials)
