@@ -13,14 +13,14 @@ job_dsl_scripts:
                 }
                 branches("refs/heads/master")
               }
-              scriptPath('demo/apps/' + prj + '-calc/Jenkinsfile')
+              scriptPath('demo/assets/apps/' + prj + '-calc/Jenkinsfile')
             }
           }
         }
       }
     }
 
-# Using new URI inside one of the jobs for finding proxy settings    
+# Using new URI inside one of the jobs for finding proxy settings
 script_approval:
   approvals:
     - method java.net.URI getHost
