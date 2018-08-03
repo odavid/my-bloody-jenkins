@@ -116,6 +116,6 @@ credentials:
 #     - name: MVN-3.5.0
 #       properties:
 #         - installSourceProperty:
-#           installers:
-#           - mavenInstaller:
-#               id: '3.5.0'
+#             installers:
+#             - mavenInstaller:
+#                 id: '3.5.0'
