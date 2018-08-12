@@ -5,9 +5,18 @@
 
 ## 2.121.2-66 (Not released yet)
 * Updated plugins
-    * [durable-task:1.23](https://plugins.jenkins.io/durable-task)
-    * [kubernetes:1.12.0](https://plugins.jenkins.io/kubernetes)
     * [ssh-agent:1.16](https://plugins.jenkins.io/ssh-agent)
+    * [blueocean:1.7.2](https://plugins.jenkins.io/blueocean)
+    * [docker-plugin:1.1.5](https://plugins.jenkins.io/docker-plugin)
+    * [durable-task:1.25](https://plugins.jenkins.io/durable-task)
+    * [email-ext:2.63](https://plugins.jenkins.io/email-ext)
+    * [gatling:1.2.5](https://plugins.jenkins.io/gatling)
+    * [jenkins-design-language:1.7.2](https://plugins.jenkins.io/jenkins-design-language)
+    * [kubernetes:1.12.3](https://plugins.jenkins.io/kubernetes)
+    * [p4:1.8.15](https://plugins.jenkins.io/p4)
+    * [workflow-durable-task-step:2.20](https://plugins.jenkins.io/workflow-durable-task-step)
+    * [workflow-job:2.24](https://plugins.jenkins.io/workflow-job)
+    * [workflow-support:2.20](https://plugins.jenkins.io/workflow-support)
 
 ## 2.121.2-65
 * Updated plugins
