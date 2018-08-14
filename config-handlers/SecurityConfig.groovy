@@ -115,6 +115,7 @@ def setupSecurityOptions(config){
     config.disableRememberMe = asBoolean(config.disableRememberMe)
     config.sshdEnabled = asBoolean(config.sshdEnabled)
     config.jnlpProtocols = config.jnlpProtocols != null ? config.jnlpProtocols : ['JNLP4']
+    config.markupFormatter = config.markupFormatter != null ? config.markupFormatter : 'plainText'
 
     config.with{
         if(preventCSRF){
@@ -137,6 +138,23 @@ def setupSecurityOptions(config){
         }else{
             org.jenkinsci.main.modules.sshd.SSHD.get().port = -1
         }
+
+        def mupFormatter
+        if((markupFormatter instanceof Map && markupFormatter.size() == 1)){
+            def key = markupFormatter.keySet()[0]
+            if(key.toLowerCase() == 'RawHtmlMarkupFormatter'.toLowerCase()){
+                def disableSyntaxHighlighting = asBoolean(markupFormatter[(key)]?.disableSyntaxHighlighting, false)
+                mupFormatter = new hudson.markup.RawHtmlMarkupFormatter(disableSyntaxHighlighting)
+            }
+        }else if(markupFormatter == 'plainText'){
+            mupFormatter = new hudson.markup.EscapedMarkupFormatter()
+        }else if(markupFormatter == 'safeHtml'){
+            mupFormatter = new hudson.markup.RawHtmlMarkupFormatter(false)
+        }
+        if(mupFormatter){
+            jenkins.model.Jenkins.instance.markupFormatter = mupFormatter
+        }
+
         jenkins.model.Jenkins.instance.save()
     }
 }

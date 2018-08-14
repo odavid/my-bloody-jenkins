@@ -146,8 +146,53 @@ adminPassword: admin
  }
 
 
+def testPlainTextMarkupFormatter(){
+    def config = new Yaml().load("""
+markupFormatter: plainText
+"""
+    )
+    configHandler.setupSecurityOptions(config)
+    assert jenkins.model.Jenkins.instance.markupFormatter instanceof hudson.markup.EscapedMarkupFormatter
+}
+
+def testSafeHtmlMarkupFormatter(){
+    def config = new Yaml().load("""
+markupFormatter: safeHtml
+"""
+    )
+    configHandler.setupSecurityOptions(config)
+    assert jenkins.model.Jenkins.instance.markupFormatter instanceof hudson.markup.RawHtmlMarkupFormatter
+}
+
+def testRawHtmlMarkupFormatter(){
+    def config = new Yaml().load("""
+markupFormatter:
+  rawHtmlMarkupFormatter:
+"""
+    )
+    configHandler.setupSecurityOptions(config)
+    assert jenkins.model.Jenkins.instance.markupFormatter instanceof hudson.markup.RawHtmlMarkupFormatter
+    assert !jenkins.model.Jenkins.instance.markupFormatter.disableSyntaxHighlighting
+}
+
+def testRawHtmlMarkupFormatterWithDisableSyntaxHighlighting(){
+    def config = new Yaml().load("""
+markupFormatter:
+  rawHtmlMarkupFormatter:
+    disableSyntaxHighlighting: true
+"""
+    )
+    configHandler.setupSecurityOptions(config)
+    assert jenkins.model.Jenkins.instance.markupFormatter instanceof hudson.markup.RawHtmlMarkupFormatter
+    assert jenkins.model.Jenkins.instance.markupFormatter.disableSyntaxHighlighting
+}
+
 testLdap()
 testActiveDirectory()
 testAuthorizationStrategy()
 testSecurityOptions()
 testJenkinsDatabase()
+testPlainTextMarkupFormatter()
+testSafeHtmlMarkupFormatter()
+testRawHtmlMarkupFormatter()
+testRawHtmlMarkupFormatterWithDisableSyntaxHighlighting()
