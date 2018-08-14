@@ -305,6 +305,19 @@ security:
       - JNLP2
       - JNLP3
       - JNLP4
+    
+    ## MarkupFormatter plainText
+    markupFormatter: plainText
+
+    ## MarkupFormatter safeHtml
+    markupFormatter: safeHtml
+
+    ## MarkupFormatter safeHtml with disableSyntaxHighlighting
+    markupFormatter:
+      rawHtmlMarkupFormatter:
+        disableSyntaxHighlighting: true
+
+
 ```
 
 ### Tools Section
