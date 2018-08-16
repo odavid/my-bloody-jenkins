@@ -6,7 +6,8 @@
 ## 2.121.2-68 (Not released yet)
 * Updated plugins
     * [blueocean:1.8.0](https://plugins.jenkins.io/blueocean)
-
+    * [git-parameter:0.9.4](https://plugins.jenkins.io/git-parameter)
+  
 ## 2.121.2-67
 * Added markupFormatter securityOption [#104](https://github.com/odavid/my-bloody-jenkins/pull/104)
 
