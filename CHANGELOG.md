@@ -3,7 +3,7 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
-## 2.121.2-68 (Not released yet)
+## 2.121.2-68
 * Updated plugins
     * [blueocean:1.8.2](https://plugins.jenkins.io/blueocean)
     * [git-parameter:0.9.4](https://plugins.jenkins.io/git-parameter)
