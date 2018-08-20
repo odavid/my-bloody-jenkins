@@ -5,9 +5,10 @@
 
 ## 2.121.2-68 (Not released yet)
 * Updated plugins
-    * [blueocean:1.8.0](https://plugins.jenkins.io/blueocean)
+    * [blueocean:1.8.2](https://plugins.jenkins.io/blueocean)
     * [git-parameter:0.9.4](https://plugins.jenkins.io/git-parameter)
-  
+    * [groovy-postbuild:2.4.2](https://plugins.jenkins.io/groovy-postbuild)
+
 ## 2.121.2-67
 * Added markupFormatter securityOption [#104](https://github.com/odavid/my-bloody-jenkins/pull/104)
 
