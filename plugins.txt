@@ -32,7 +32,7 @@ blueocean-pipeline-scm-api:1.8.2
 blueocean-rest:1.8.2
 blueocean-rest-impl:1.8.2
 blueocean-web:1.8.2
-bouncycastle-api:2.16.3
+bouncycastle-api:2.17
 branch-api:2.0.20
 build-timeout:1.19
 build-user-vars-plugin:1.5
@@ -76,7 +76,7 @@ gradle:1.29
 groovy-postbuild:2.4.2
 handlebars:1.1.1
 handy-uri-templates-2-api:2.1.6-1.0
-hipchat:2.1.1
+hipchat:2.2.0
 htmlpublisher:1.16
 http_request:1.8.22
 icon-shim:2.0.3
@@ -85,7 +85,7 @@ jackson2-api:2.8.11.3
 javadoc:1.4
 jdk-tool:1.1
 jenkins-design-language:1.8.2
-jira:3.0.0
+jira:3.0.1
 job-dsl:1.70
 jquery:1.12.4-0
 jquery-detached:1.2.1
@@ -139,10 +139,10 @@ token-macro:2.5
 variant:1.1
 workflow-aggregator:2.5
 workflow-api:2.29
-workflow-basic-steps:2.9
+workflow-basic-steps:2.10
 workflow-cps:2.54
-workflow-cps-global-lib:2.9
-workflow-durable-task-step:2.20
+workflow-cps-global-lib:2.10
+workflow-durable-task-step:2.21
 workflow-job:2.24
 workflow-multibranch:2.20
 workflow-remote-loader:1.4

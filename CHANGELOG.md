@@ -3,6 +3,16 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+
+## 2.121.2-69 (Not Released Yet)
+* Updated plugins
+    * [bouncycastle-api:2.17](https://plugins.jenkins.io/bouncycastle-api)
+    * [hipchat:2.2.0](https://plugins.jenkins.io/hipchat)
+    * [jira:3.0.1](https://plugins.jenkins.io/jira)
+    * [workflow-basic-steps:2.10](https://plugins.jenkins.io/workflow-basic-steps)
+    * [workflow-cps-global-lib:2.10](https://plugins.jenkins.io/workflow-cps-global-lib)
+    * [workflow-durable-task-step:2.21](https://plugins.jenkins.io/workflow-durable-task-step)
+
 ## 2.121.2-68
 * Updated plugins
     * [blueocean:1.8.2](https://plugins.jenkins.io/blueocean)
