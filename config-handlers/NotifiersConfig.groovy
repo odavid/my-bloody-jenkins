@@ -28,10 +28,11 @@ def hipchatConfig(config){
         hipchat.cardProvider = cardProvider ?: DefaultCardProvider.class.name
         hipchat.defaultNotifications = defaultNotifications?.collect{ n ->
             return new NotificationConfig(
-                asBoolean(n.notifyEnabled), 
-                asBoolean(n.textFormat), 
-                n.notificationType ? NotificationType.valueOf(n.notificationType): null, 
+                asBoolean(n.notifyEnabled),
+                asBoolean(n.textFormat),
+                n.notificationType ? NotificationType.valueOf(n.notificationType): null,
                 n.color ? Color.valueOf(n.color) : null,
+                n.icon,
                 n.messageTemplate
             )
         }
