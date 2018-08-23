@@ -10,19 +10,35 @@ def setup(config) {
     def desc = jenkins.model.Jenkins.instance.getDescriptor(hudson.plugins.jira.JiraProjectProperty)
     def sites = config.sites?.collect{ siteConfig ->
         siteConfig.with{
-            def site = new hudson.plugins.jira.JiraSite(
-                url ? new URL(url) : null,
-                alternativeUrl ? new URL(alternativeUrl) : null,
-                username,
-                password,
-                asBoolean(supportsWikiStyleComment),
-                asBoolean(recordScmChanges),
-                userPattern,
-                asBoolean(updateJiraIssueForAllStatus),
-                groupVisibility,
-                roleVisibility,
-                asBoolean(useHTTPAuth)
-            )
+            def site
+            if(username && password){
+                site = new hudson.plugins.jira.JiraSite(
+                    url ? new URL(url) : null,
+                    alternativeUrl ? new URL(alternativeUrl) : null,
+                    username,
+                    password,
+                    asBoolean(supportsWikiStyleComment),
+                    asBoolean(recordScmChanges),
+                    userPattern,
+                    asBoolean(updateJiraIssueForAllStatus),
+                    groupVisibility,
+                    roleVisibility,
+                    asBoolean(useHTTPAuth)
+                )
+            }else{
+                site = new hudson.plugins.jira.JiraSite(
+                    url ? new URL(url) : null,
+                    alternativeUrl ? new URL(alternativeUrl) : null,
+                    credentialsId,
+                    asBoolean(supportsWikiStyleComment),
+                    asBoolean(recordScmChanges),
+                    userPattern,
+                    asBoolean(updateJiraIssueForAllStatus),
+                    groupVisibility,
+                    roleVisibility,
+                    asBoolean(useHTTPAuth)
+                )
+            }
             site.disableChangelogAnnotations = asBoolean(disableChangelogAnnotations)
             site.timeout = asInt(timeout, hudson.plugins.jira.JiraSite.DEFAULT_TIMEOUT)
             site.dateTimePattern = dateTimePattern
