@@ -12,6 +12,7 @@
     * [workflow-basic-steps:2.10](https://plugins.jenkins.io/workflow-basic-steps)
     * [workflow-cps-global-lib:2.10](https://plugins.jenkins.io/workflow-cps-global-lib)
     * [workflow-durable-task-step:2.21](https://plugins.jenkins.io/workflow-durable-task-step)
+    * [cucumber-reports:3.20.0](https://plugins.jenkins.io/cucumber-reports)
 
 ## 2.121.2-68
 * Updated plugins
