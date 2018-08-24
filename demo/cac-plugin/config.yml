@@ -131,16 +131,15 @@ jobs:
       }
     }
 
-## Waiting for https://github.com/jenkinsci/configuration-as-code-plugin/pull/414 to be fixed
-# tool:
-#   maven:
-#     installations:
-#     - name: MVN-3.5.0
-#       properties:
-#         - installSourceProperty:
-#             installers:
-#             - mavenInstaller:
-#                 id: '3.5.0'
+tool:
+  maven:
+    installations:
+    - name: MVN-3.5.0
+      properties:
+      - installSourceProperty:
+          installers:
+          - mavenInstaller:
+              id: '3.5.0'
 
 ## Waiting for https://github.com/jenkinsci/configuration-as-code-plugin/pull/416
 # scriptApproval:
