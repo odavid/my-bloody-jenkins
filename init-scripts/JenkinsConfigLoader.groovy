@@ -101,12 +101,13 @@ if(!new File(configFileName).exists()) {
     }
     if(System.getenv()['JENKINS_ENV_CONFIG_MODE'] == 'cac-plugin'){
         println "--> Using configuration as code plugin to handle configuration"
-        System.setProperty(org.jenkinsci.plugins.casc.ConfigurationAsCode.CASC_JENKINS_CONFIG_PROPERTY, configFileName)
+        System.setProperty(io.jenkins.plugins.casc.ConfigurationAsCode.CASC_JENKINS_CONFIG_PROPERTY, configFileName)
         try{
-            org.jenkinsci.plugins.casc.ConfigurationAsCode.init()
+            io.jenkins.plugins.casc.ConfigurationAsCode.init()
             println "--> Using configuration as code plugin to handle configuration... done"
         }catch(e){
             println "--> Using configuration as code plugin to handle configuration... error: ${e}"
+            e.printStackTrace()
         }
         return
     }

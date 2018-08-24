@@ -46,28 +46,18 @@ jenkins:
   authorizationStrategy:
     projectMatrix:
       grantedPermissions:
-      - name: "jenkins.swarm"
-        permissions:
-          - "Agent/Connect"
-          - "Agent/Disconnect"
-          - "Agent/Configure"
-          - "Agent/Create"
-          - "Agent/Delete"
-      - name: "jenkins-admins"
-        permissions:
-          - "Overall/Administer"
-      - name: "jenkins.admin"
-        permissions:
-          - "Overall/Administer"
-      - name: "authenticated"
-        permissions:
-          - "Overall/Read"
-          - "Job/Discover"
-      - name: "team-leaders"
-        permissions:
-          - "Job/Build"
-          - "Job/Cancel"
-          - "Job/Configure"
+      - "Agent/Connect:jenkins.swarm"
+      - "Agent/Disconnect:jenkins.swarm"
+      - "Agent/Configure:jenkins.swarm"
+      - "Agent/Create:jenkins.swarm"
+      - "Agent/Delete:jenkins.swarm"
+      - "Overall/Administer:jenkins-admins"
+      - "Overall/Administer:jenkins.admin"
+      - "Overall/Read:authenticated"
+      - "Job/Discover:authenticated"
+      - "Job/Build:team-leaders"
+      - "Job/Cancel:team-leaders"
+      - "Job/Configure:team-leaders"
 
   clouds:
   - docker:
@@ -110,35 +100,35 @@ credentials:
           username: "user"
 
 jobs:
-  - |
-    def projects = ['nodejs', 'java']
-    projects.each{ prj ->
-      pipelineJob(prj + '-calc'){
-        definition{
-          cpsScm{
-            lightweight(true)
-            scm{
-              git{
-                remote {
-                  url('https://github.com/odavid/my-bloody-jenkins.git')
+  - script: |-
+      def projects = ['nodejs', 'java']
+      projects.each{ prj ->
+        pipelineJob(prj + '-calc'){
+          definition{
+            cpsScm{
+              lightweight(true)
+              scm{
+                git{
+                  remote {
+                    url('https://github.com/odavid/my-bloody-jenkins.git')
+                  }
+                  branches("refs/heads/master")
                 }
-                branches("refs/heads/master")
+                scriptPath('demo/assets/apps/' + prj + '-calc/Jenkinsfile')
               }
-              scriptPath('demo/assets/apps/' + prj + '-calc/Jenkinsfile')
             }
           }
         }
       }
-    }
 
 tool:
   maven:
     installations:
     - name: MVN-3.5.0
       properties:
-      - installSourceProperty:
+      - installSource:
           installers:
-          - mavenInstaller:
+          - maven:
               id: '3.5.0'
 
 ## Waiting for https://github.com/jenkinsci/configuration-as-code-plugin/pull/416
