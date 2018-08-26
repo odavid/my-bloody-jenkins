@@ -99,7 +99,7 @@ if(!new File(configFileName).exists()) {
         println "jenkinsConfig is empty, skipping"
         return
     }
-    if(System.getenv()['JENKINS_ENV_CONFIG_MODE'] == 'cac-plugin'){
+    if(System.getenv()['JENKINS_ENV_CONFIG_MODE'] == 'casc-plugin'){
         println "--> Using configuration as code plugin to handle configuration"
         System.setProperty(io.jenkins.plugins.casc.ConfigurationAsCode.CASC_JENKINS_CONFIG_PROPERTY, configFileName)
         try{
