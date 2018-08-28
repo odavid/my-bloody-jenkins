@@ -12,7 +12,7 @@ ou: groups
 
 dn: cn=developers,ou=groups,{{ LDAP_BASE_DN }}
 changetype: add
-cn: all-users
+cn: developers
 objectclass: top
 objectClass: groupOfNames
 member: uid=bob.dylan,ou=users,{{ LDAP_BASE_DN }}
@@ -21,14 +21,14 @@ member: uid=jenkins.admin,ou=users,{{ LDAP_BASE_DN }}
 
 dn: cn=team-leaders,ou=groups,{{ LDAP_BASE_DN }}
 changetype: add
-cn: all-users
+cn: team-leaders
 objectclass: top
 objectClass: groupOfNames
 member: uid=bob.dylan,ou=users,{{ LDAP_BASE_DN }}
 
 dn: cn=jenkins-admins,ou=groups,{{ LDAP_BASE_DN }}
 changetype: add
-cn: all-users
+cn: jenkins-admins
 objectclass: top
 objectClass: groupOfNames
 member: uid=jenkins.admin,ou=users,{{ LDAP_BASE_DN }}

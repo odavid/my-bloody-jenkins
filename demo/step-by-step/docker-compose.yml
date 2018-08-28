@@ -13,7 +13,7 @@ services:
       LDAP_ADMIN_PASSWORD: admin
       LDAP_READONLY_USER: 'true'
       LDAP_TLS: "false"
-    command: --copy-service
+    command: --copy-service --loglevel debug
 
   jenkins:
     image: odavid/my-bloody-jenkins
