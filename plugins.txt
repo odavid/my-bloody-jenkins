@@ -131,7 +131,7 @@ sonar:2.8
 sse-gateway:1.15
 ssh-agent:1.16
 ssh-credentials:1.14
-ssh-slaves:1.26
+ssh-slaves:1.28
 structs:1.14
 swarm:3.13
 timestamper:1.8.10
