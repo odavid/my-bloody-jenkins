@@ -89,7 +89,7 @@ if(!new File(configFileName).exists()) {
     def jenkinsConfig = loadYamlConfig(configFileName)
     if(!jenkinsConfig){
         println "jenkinsConfig is empty, skipping"
-        return 
+        return
     }
     // TODO: admin user should be global. Make it more generic....
     jenkinsConfig.security?.adminUser = adminUser
@@ -108,6 +108,7 @@ if(!new File(configFileName).exists()) {
     handleConfig('Tools', jenkinsConfig.tools)
     handleConfig('SonarQubeServers', jenkinsConfig.sonar_qube_servers)
     handleConfig('Jira', jenkinsConfig.jira)
+    handleConfig('JiraSteps', jenkinsConfig.jiraSteps)
     handleConfig('Checkmarx', jenkinsConfig.checkmarx)
     handleConfig('Gitlab', jenkinsConfig.gitlab)
     handleConfig('PipelineLibraries', jenkinsConfig.pipeline_libraries)
