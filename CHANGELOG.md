@@ -6,7 +6,8 @@
 ## 2.121.3-70 (Not released yet)
 * Updated plugins
     * [ssh-slaves:1.28](https://plugins.jenkins.io/ssh-slaves)
-
+    * [kubernetes:1.12.4](https://plugins.jenkins.io/kubernetes)
+    
 ## 2.121.3-69
 * [LTS-2.121.3](https://jenkins.io/changelog-stable/)
 * Updated plugins
