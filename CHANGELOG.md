@@ -8,7 +8,8 @@
     * [ssh-slaves:1.28](https://plugins.jenkins.io/ssh-slaves)
     * [kubernetes:1.12.4](https://plugins.jenkins.io/kubernetes)
     * Added [jira-steps:1.4.3](https://plugins.jenkins.io/jira-steps)
-    
+    * Support Jira steps plugin configuration [#105](https://github.com/odavid/my-bloody-jenkins/pull/105)
+
 ## 2.121.3-69
 * [LTS-2.121.3](https://jenkins.io/changelog-stable/)
 * Updated plugins
