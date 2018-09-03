@@ -3,6 +3,13 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+## 2.121.3-71 (Not released yet)
+* Updated plugins
+    * [config-file-provider:3.0](https://plugins.jenkins.io/config-file-provider)
+    * [jira-steps:1.4.4](https://plugins.jenkins.io/jira-steps)
+    * [pipeline-model-definition:1.3.2](https://plugins.jenkins.io/pipeline-model-definition)
+    * [run-condition:1.2](https://plugins.jenkins.io/run-condition)
+
 ## 2.121.3-70
 * Updated plugins
     * [ssh-slaves:1.28](https://plugins.jenkins.io/ssh-slaves)
