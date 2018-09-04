@@ -9,6 +9,8 @@
     * [jira-steps:1.4.4](https://plugins.jenkins.io/jira-steps)
     * [pipeline-model-definition:1.3.2](https://plugins.jenkins.io/pipeline-model-definition)
     * [run-condition:1.2](https://plugins.jenkins.io/run-condition)
+    * [config-file-provider:2.18](https://plugins.jenkins.io/config-file-provider)
+    * [swarm:3.14](https://plugins.jenkins.io/swarm)
 
 ## 2.121.3-70
 * Updated plugins
