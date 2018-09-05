@@ -105,7 +105,7 @@ mercurial:2.4
 metrics:4.0.2.2
 momentjs:1.1.1
 p4:1.8.15
-parallel-test-executor:1.10
+parallel-test-executor:1.11
 parameterized-trigger:2.35.2
 pipeline-build-step:2.7
 pipeline-graph-analysis:1.7
@@ -126,13 +126,13 @@ pubsub-light:1.12
 rebuild:1.28
 run-condition:1.2
 scm-api:2.2.7
-script-security:1.44
+script-security:1.46
 slack:2.3
 sonar:2.8
 sse-gateway:1.15
 ssh-agent:1.16
 ssh-credentials:1.14
-ssh-slaves:1.28
+ssh-slaves:1.28.1
 structs:1.14
 swarm:3.14
 timestamper:1.8.10

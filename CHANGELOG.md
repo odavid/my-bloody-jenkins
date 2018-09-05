@@ -11,6 +11,9 @@
     * [run-condition:1.2](https://plugins.jenkins.io/run-condition)
     * [config-file-provider:2.18](https://plugins.jenkins.io/config-file-provider)
     * [swarm:3.14](https://plugins.jenkins.io/swarm)
+    * [parallel-test-executor:1.11](https://plugins.jenkins.io/parallel-test-executor)
+    * [script-security:1.46](https://plugins.jenkins.io/script-security)
+    * [ssh-slaves:1.28.1](https://plugins.jenkins.io/ssh-slaves)
 
 ## 2.121.3-70
 * Updated plugins
