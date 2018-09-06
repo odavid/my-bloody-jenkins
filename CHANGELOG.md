@@ -14,6 +14,7 @@
     * [parallel-test-executor:1.11](https://plugins.jenkins.io/parallel-test-executor)
     * [script-security:1.46](https://plugins.jenkins.io/script-security)
     * [ssh-slaves:1.28.1](https://plugins.jenkins.io/ssh-slaves)
+    * [workflow-job:2.25](https://plugins.jenkins.io/workflow-job)
 
 ## 2.121.3-70
 * Updated plugins
