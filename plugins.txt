@@ -92,7 +92,7 @@ jquery:1.12.4-0
 jquery-detached:1.2.1
 jsch:0.1.54.2
 junit:1.24
-kubernetes:1.12.4
+kubernetes:1.12.6
 kubernetes-credentials:0.3.1
 ldap:1.20
 lockable-resources:2.3
@@ -140,9 +140,9 @@ token-macro:2.5
 variant:1.1
 workflow-aggregator:2.5
 workflow-api:2.29
-workflow-basic-steps:2.10
-workflow-cps:2.54
-workflow-cps-global-lib:2.10
+workflow-basic-steps:2.11
+workflow-cps:2.55
+workflow-cps-global-lib:2.11
 workflow-durable-task-step:2.21
 workflow-job:2.25
 workflow-multibranch:2.20

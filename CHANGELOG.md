@@ -7,6 +7,10 @@
 * Updated plugins
     * [aws-java-sdk:1.11.403](https://plugins.jenkins.io/aws-java-sdk)
     * [config-file-provider:3.1](https://plugins.jenkins.io/config-file-provider)
+    * [kubernetes:1.12.6](https://plugins.jenkins.io/kubernetes)
+    * [workflow-basic-steps:2.11](https://plugins.jenkins.io/workflow-basic-steps)
+    * [workflow-cps:2.55](https://plugins.jenkins.io/workflow-cps)
+    * [workflow-cps-global-lib:2.11](https://plugins.jenkins.io/workflow-cps-global-lib)
 
 ## 2.121.3-71
 * Updated plugins
