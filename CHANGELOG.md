@@ -3,7 +3,7 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
-## 2.121.3-72 (Not released yet)
+## 2.121.3-72
 * Updated plugins
     * [aws-java-sdk:1.11.403](https://plugins.jenkins.io/aws-java-sdk)
     * [config-file-provider:3.1](https://plugins.jenkins.io/config-file-provider)
