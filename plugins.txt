@@ -91,7 +91,7 @@ job-dsl:1.70
 jquery:1.12.4-0
 jquery-detached:1.2.1
 jsch:0.1.54.2
-junit:1.24
+junit:1.25
 kubernetes:1.12.6
 kubernetes-credentials:0.3.1
 ldap:1.20
