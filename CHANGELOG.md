@@ -3,9 +3,12 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
-## 2.121.3-73 (Not released yet)
+## 2.138.1-73 (Not released yet)
+* [LTS-2.138.1](https://jenkins.io/changelog-stable/)
 * Updated plugins
     * [junit:1.25](https://plugins.jenkins.io/junit)
+    * [cloudbees-folder:6.6](https://plugins.jenkins.io/cloudbees-folder)
+
 
 ## 2.121.3-72
 * Updated plugins

@@ -68,9 +68,17 @@ def getAdminUserName(){
 }
 
 def storeAdminApiToken(adminUser, filename){
-    def adminUserApiToken = User.get(adminUser, true)?.getProperty(ApiTokenProperty)?.apiTokenInsecure
-    if(adminUserApiToken){
-        new File(filename).withWriter{out -> out.println "${adminUser}:${adminUserApiToken}"}
+    final String JENKINS_TOKEN_NAME = 'JENKINS_CLI_INTERNAL'
+
+    def user = User.get(adminUser, true);
+    def token = user.getProperty(ApiTokenProperty)
+    if(token.hasLegacyToken() || !token.tokenList || !token.tokenList.find{ it.name == JENKINS_TOKEN_NAME }){
+        println "ADMIN has legacy token, deleting and generating a new token: $JENKINS_TOKEN_NAME"
+        token.deleteApiToken()
+        def generatedToken = token.tokenStore.generateNewToken(JENKINS_TOKEN_NAME)
+        new File(filename).withWriter{out -> out.println "${adminUser}:${generatedToken.plainValue}"}
+        // refresh
+        user.save()
     }
 }
 

@@ -161,9 +161,10 @@ def setupSecurityOptions(config){
 
 def setup(config){
     config = config ?: [:]
+    setupSecurityOptions(config.securityOptions)
+
     def adminUser = config.adminUser
     def instance = Jenkins.getInstance()
-
     def realm
     switch(config.realm){
         case 'ldap':
@@ -182,7 +183,6 @@ def setup(config){
         instance.setAuthorizationStrategy(strategy)
         instance.save()
     }
-    setupSecurityOptions(config.securityOptions)
 }
 
 return this
