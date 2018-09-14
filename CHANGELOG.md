@@ -6,7 +6,6 @@
 ## 2.121.3-73 (Not released yet)
 * Updated plugins
     * [junit:1.25](https://plugins.jenkins.io/junit)
-    * [cloudbees-folder:6.6](https://plugins.jenkins.io/cloudbees-folder)
 
 ## 2.121.3-72
 * Updated plugins
