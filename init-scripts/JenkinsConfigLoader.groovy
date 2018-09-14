@@ -72,13 +72,13 @@ def storeAdminApiToken(adminUser, filename){
 
     def user = User.get(adminUser, true);
     def token = user.getProperty(ApiTokenProperty)
-    if(token.hasLegacyToken() || !token.tokenList || !token.tokenList.find{ it.name == JENKINS_TOKEN_NAME }){
-        println "ADMIN has legacy token, deleting and generating a new token: $JENKINS_TOKEN_NAME"
+    def file = new File(filename)
+    if(token.hasLegacyToken() || !token.tokenList || !token.tokenList.find{ it.name == JENKINS_TOKEN_NAME } || !file.exists()){
+        println "generating a new token: $JENKINS_TOKEN_NAME"
         token.deleteApiToken()
         def generatedToken = token.tokenStore.generateNewToken(JENKINS_TOKEN_NAME)
-        new File(filename).withWriter{out -> out.println "${adminUser}:${generatedToken.plainValue}"}
-        // refresh
         user.save()
+        file.withWriter{out -> out.println "${adminUser}:${generatedToken.plainValue}"}
     }
 }
 
