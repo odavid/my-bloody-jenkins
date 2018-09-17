@@ -37,7 +37,7 @@ branch-api:2.0.20
 build-timeout:1.19
 build-user-vars-plugin:1.5
 buildtriggerbadge:2.9
-checkmarx:8.70.0
+checkmarx:8.80.0
 cloudbees-bitbucket-branch-source:2.2.12
 cloudbees-folder:6.6
 cobertura:1.13
