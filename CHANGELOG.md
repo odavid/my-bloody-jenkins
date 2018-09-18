@@ -6,6 +6,7 @@
 ## 2.138.1-74 (Not released yet)
 * Updated plugins
     * [checkmarx:8.80.0](https://plugins.jenkins.io/checkmarx)
+    * [git-parameter:0.9.5](https://plugins.jenkins.io/git-parameter)
 
 ## 2.138.1-73
 * [LTS-2.138.1](https://jenkins.io/changelog-stable/)

@@ -66,7 +66,7 @@ favorite:2.3.2
 gatling:1.2.5
 git:3.9.1
 git-client:2.7.3
-git-parameter:0.9.4
+git-parameter:0.9.5
 git-server:1.7
 github:1.29.2
 github-api:1.92
