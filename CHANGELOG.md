@@ -3,7 +3,7 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
-## 2.138.1-74 (Not released yet)
+## 2.138.1-74
 * Updated plugins
     * [checkmarx:8.80.0](https://plugins.jenkins.io/checkmarx)
     * [git-parameter:0.9.5](https://plugins.jenkins.io/git-parameter)
