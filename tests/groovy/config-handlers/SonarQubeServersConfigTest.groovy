@@ -23,7 +23,7 @@ installations:
     assert desc.buildWrapperEnabled
     def sonarServer = desc.installations.find{it.name == 'sonar-server-5.6'}
     assert sonarServer.serverUrl == 'https://sonar.domain.com'
-    assert sonarServer.serverAuthenticationToken == 'token'
+    assert sonarServer.serverAuthenticationToken?.toString() == 'token'
     assert sonarServer.mojoVersion == '5.6'
     assert sonarServer.additionalProperties == 'abc=abc'
     assert sonarServer.additionalAnalysisProperties == 'x=y'

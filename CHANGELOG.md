@@ -7,6 +7,10 @@
 * Updated plugins
     * [checkmarx:8.80.0](https://plugins.jenkins.io/checkmarx)
     * [git-parameter:0.9.5](https://plugins.jenkins.io/git-parameter)
+    * [blueocean:1.8.3](https://plugins.jenkins.io/blueocean)
+    * [sonar:2.8.1](https://plugins.jenkins.io/sonar)
+    * [sse-gateway:1.16](https://plugins.jenkins.io/sse-gateway)
+
 
 ## 2.138.1-73
 * [LTS-2.138.1](https://jenkins.io/changelog-stable/)
