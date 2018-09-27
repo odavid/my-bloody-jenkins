@@ -3,6 +3,20 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+## 2.138.1-75 (Not released yet)
+* Updated plugins
+    * [config-file-provider:3.2](https://plugins.jenkins.io/config-file-provider)
+    * [durable-task:1.26](https://plugins.jenkins.io/durable-task)
+    * [gitlab-plugin:1.5.10](https://plugins.jenkins.io/gitlab-plugin)
+    * [hipchat:2.2.1](https://plugins.jenkins.io/hipchat)
+    * [jira:3.0.2](https://plugins.jenkins.io/jira)
+    * [junit:1.26.1](https://plugins.jenkins.io/junit)
+    * [kubernetes-credentials:0.4.0](https://plugins.jenkins.io/kubernetes-credentials)
+    * [rebuild:1.29](https://plugins.jenkins.io/rebuild)
+    * [structs:1.15](https://plugins.jenkins.io/structs)
+    * [workflow-cps:2.56](https://plugins.jenkins.io/workflow-cps)
+    * [workflow-durable-task-step:2.22](https://plugins.jenkins.io/workflow-durable-task-step)
+
 ## 2.138.1-74
 * Updated plugins
     * [checkmarx:8.80.0](https://plugins.jenkins.io/checkmarx)
