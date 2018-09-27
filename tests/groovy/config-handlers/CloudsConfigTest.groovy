@@ -202,7 +202,13 @@ kube-cloud:
       namespace: jenkins-ns
       inheritFrom: general-pod
       nodeSelector: nodeSelector
+      annotations:
+        key1: value1
+        key2: value2
       serviceAccount: jenkins-service-account
+      yaml: |-
+        x: y
+        z: z
       slaveConnectTimeout: 60
       instanceCap: 10
       imagePullSecrets:
@@ -267,6 +273,11 @@ kube-cloud:
         assert template.namespace == 'jenkins-ns'
         assert template.inheritFrom == 'general-pod'
         assert template.nodeSelector == 'nodeSelector'
+        assert template.annotations.sort{a,b -> a.key.compareToIgnoreCase(b.key)} == [
+          new org.csanchez.jenkins.plugins.kubernetes.PodAnnotation('key1', 'value1'),
+          new org.csanchez.jenkins.plugins.kubernetes.PodAnnotation('key2', 'value2'),
+        ]
+        assert template.yaml.trim() == 'x: y\nz: z'
         assert template.serviceAccount == 'jenkins-service-account'
         assert template.slaveConnectTimeout == 60
         assert template.instanceCapStr == '10'

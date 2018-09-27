@@ -237,6 +237,8 @@ def kubernetesCloud(config){
 
                 def podTemplate = new PodTemplate()
                 podTemplate.name = name
+                podTemplate.yaml = temp.yaml
+                podTemplate.annotations = temp.annotations?.collect{k,v -> new org.csanchez.jenkins.plugins.kubernetes.PodAnnotation(k, v)}
                 podTemplate.containers << containerTemplate
                 podTemplate.namespace = temp.namespace
                 podTemplate.label = temp.labels?.join(' ')
