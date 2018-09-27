@@ -3,7 +3,7 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
-## 2.138.1-75 (Not released yet)
+## 2.138.1-75
 * Added PodTemplate annotations and yaml string for kubernetes plugin [#107](https://github.com/odavid/my-bloody-jenkins/pull/107)
 * Updated plugins
     * [config-file-provider:3.2](https://plugins.jenkins.io/config-file-provider)
