@@ -305,7 +305,7 @@ security:
       - JNLP2
       - JNLP3
       - JNLP4
-    
+
     ## MarkupFormatter plainText
     markupFormatter: plainText
 
@@ -680,6 +680,14 @@ clouds:
         # Environment variables to pass to the slave container
         environment:
           XXX: xxx
+        # Dictionary of annotations that will be added to the pod metadata
+        annotations:
+          annotation1: value1
+        # Ability to define a yaml string that will be merged with the pod manifest
+        yaml: |-
+          spec: xxx
+          metadata: yyy
+
 ```
 
 #### Docker Cloud
