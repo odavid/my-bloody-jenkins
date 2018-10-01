@@ -3,6 +3,13 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+## 2.138.1-76 (Not released yet)
+* Updated plugins
+    * [blueocean:1.8.4](https://plugins.jenkins.io/blueocean)
+    * [p4:1.9.1](https://plugins.jenkins.io/p4)
+    * [scm-api:2.2.8](https://plugins.jenkins.io/scm-api)
+
+
 ## 2.138.1-75
 * Added PodTemplate annotations and yaml string for kubernetes plugin [#107](https://github.com/odavid/my-bloody-jenkins/pull/107)
 * Updated plugins
