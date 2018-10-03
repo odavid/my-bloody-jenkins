@@ -6,9 +6,14 @@
 ## 2.138.1-76 (Not released yet)
 * Updated plugins
     * [blueocean:1.8.4](https://plugins.jenkins.io/blueocean)
-    * [p4:1.9.1](https://plugins.jenkins.io/p4)
     * [scm-api:2.2.8](https://plugins.jenkins.io/scm-api)
-
+    * [htmlpublisher:1.17](https://plugins.jenkins.io/htmlpublisher)
+    * [p4:1.9.2](https://plugins.jenkins.io/p4)
+    * [ssh-agent:1.17](https://plugins.jenkins.io/ssh-agent)
+    * [workflow-aggregator:2.6](https://plugins.jenkins.io/workflow-aggregator)
+    * [workflow-cps:2.57](https://plugins.jenkins.io/workflow-cps)
+    * [workflow-cps-global-lib:2.12](https://plugins.jenkins.io/workflow-cps-global-lib)
+    * [workflow-scm-step:2.7](https://plugins.jenkins.io/workflow-scm-step)
 
 ## 2.138.1-75
 * Added PodTemplate annotations and yaml string for kubernetes plugin [#107](https://github.com/odavid/my-bloody-jenkins/pull/107)
