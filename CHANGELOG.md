@@ -14,6 +14,7 @@
     * [workflow-cps:2.57](https://plugins.jenkins.io/workflow-cps)
     * [workflow-cps-global-lib:2.12](https://plugins.jenkins.io/workflow-cps-global-lib)
     * [workflow-scm-step:2.7](https://plugins.jenkins.io/workflow-scm-step)
+    * [github-branch-source:2.4.0](https://plugins.jenkins.io/github-branch-source)
 
 ## 2.138.1-75
 * Added PodTemplate annotations and yaml string for kubernetes plugin [#107](https://github.com/odavid/my-bloody-jenkins/pull/107)
