@@ -133,7 +133,7 @@ sse-gateway:1.16
 ssh-agent:1.17
 ssh-credentials:1.14
 ssh-slaves:1.28.1
-structs:1.15
+structs:1.16
 swarm:3.14
 timestamper:1.8.10
 token-macro:2.5
