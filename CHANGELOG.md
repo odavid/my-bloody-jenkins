@@ -3,10 +3,16 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+
+## 2.138.1-78 (Not released yet)
+* Updated plugins
+    * [badge:1.6](https://plugins.jenkins.io/badge)
+    * [github:1.29.3](https://plugins.jenkins.io/github)
+
 ## 2.138.1-77
 * Updated plugins
     * [structs:1.17](https://plugins.jenkins.io/structs)
-    
+
 ## 2.138.1-76
 * Updated plugins
     * [blueocean:1.8.4](https://plugins.jenkins.io/blueocean)
