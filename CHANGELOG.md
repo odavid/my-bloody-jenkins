@@ -4,7 +4,7 @@
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
 
-## 2.138.1-78 (Not released yet)
+## 2.138.1-78
 * Updated plugins
     * [badge:1.6](https://plugins.jenkins.io/badge)
     * [github:1.29.3](https://plugins.jenkins.io/github)
