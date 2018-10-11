@@ -8,6 +8,11 @@
 * Updated plugins
     * [badge:1.6](https://plugins.jenkins.io/badge)
     * [github:1.29.3](https://plugins.jenkins.io/github)
+    * [blueocean:1.9.0](https://plugins.jenkins.io/blueocean)
+    * [config-file-provider:3.3](https://plugins.jenkins.io/config-file-provider)
+    * [cucumber-reports:4.0.1](https://plugins.jenkins.io/cucumber-reports)
+    * [git-parameter:0.9.6](https://plugins.jenkins.io/git-parameter)
+    * [kubernetes:1.12.7](https://plugins.jenkins.io/kubernetes)
 
 ## 2.138.1-77
 * Updated plugins
