@@ -3,7 +3,7 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
-## 2.138.2-79 (Not released yet)
+## 2.138.2-79
 * [LTS-2.138.2](https://jenkins.io/changelog-stable/)
 * Locking plugins:
     * [code-coverage-api:1.0.5](https://plugins.jenkins.io/code-coverage-api)
