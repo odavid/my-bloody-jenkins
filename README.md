@@ -539,6 +539,8 @@ notifiers:
 Responsible for setting up [Global Pipeline Libraries](https://wiki.jenkins.io/display/JENKINS/Pipeline+Shared+Groovy+Libraries+Plugin)
 
 Configuration is composed of dicts where each top level key is the name of the library and its value contains the library configuration (source, default version)
+In case the SCM Source is not git, you can use dynamic configuration based on the SCMSource class.
+
 ```yaml
 pipeline_libraries:
   my-library: # the library name
@@ -549,6 +551,15 @@ pipeline_libraries:
     implicit: false # Default false - if true the library will be available within all pipeline jobs with declaring it with @Library
     allowVersionOverride: true # Default true, better to leave it as is
     includeInChangesets: true # see https://issues.jenkins-ci.org/browse/JENKINS-41497
+
+  library-from-p4:
+    ## retriever.scm.$class can be symbol or full class name
+    ## Other properties of retriever.scm should match the class properties.
+    retriever:
+      scm:
+        $class: org.jenkinsci.plugins.p4.scm.GlobalLibraryScmSource
+        path: //xxx/yyy
+        credential: p4-creds
 
   my-other-lib:
     source:
