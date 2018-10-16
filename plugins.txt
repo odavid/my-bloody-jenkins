@@ -71,7 +71,7 @@ git-parameter:0.9.6
 git-server:1.7
 github:1.29.3
 github-api:1.92
-github-branch-source:2.4.0
+github-branch-source:2.4.1
 gitlab-plugin:1.5.10
 gradle:1.29
 groovy-postbuild:2.4.2
@@ -86,7 +86,7 @@ jackson2-api:2.8.11.3
 javadoc:1.4
 jdk-tool:1.1
 jenkins-design-language:1.9.0
-jira:3.0.2
+jira:3.0.3
 jira-steps:1.4.4
 job-dsl:1.70
 jquery:1.12.4-0
