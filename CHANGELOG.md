@@ -8,6 +8,8 @@
 * Updated plugins:
     * [github-branch-source:2.4.1](https://plugins.jenkins.io/github-branch-source)
     * [jira:3.0.3](https://plugins.jenkins.io/jira)
+* Added plugins:
+    * [kubernetes-cli:1.2.0](https://plugins.jenkins.io/kubernetes-cli)
 
 ## 2.138.2-80
 * Added dynamic SCMSource for pipeline library retriever - [#108](https://github.com/odavid/my-bloody-jenkins/pull/108)
