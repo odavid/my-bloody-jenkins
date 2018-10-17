@@ -93,7 +93,7 @@ jquery:1.12.4-0
 jquery-detached:1.2.1
 jsch:0.1.54.2
 junit:1.26.1
-kubernetes:1.12.7
+kubernetes:1.12.8
 kubernetes-cli:1.2.0
 kubernetes-credentials:0.4.0
 ldap:1.20
@@ -127,7 +127,7 @@ promoted-builds:3.2
 pubsub-light:1.12
 rebuild:1.29
 run-condition:1.2
-scm-api:2.2.8
+scm-api:2.3.0
 script-security:1.46
 slack:2.3
 sonar:2.8.1
