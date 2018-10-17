@@ -8,7 +8,7 @@
 * Updated plugins:
     * [github-branch-source:2.4.1](https://plugins.jenkins.io/github-branch-source)
     * [jira:3.0.3](https://plugins.jenkins.io/jira)
-    * [kubernetes:1.12.8](https://plugins.jenkins.io/kubernetes)
+    * [kubernetes:1.12.9](https://plugins.jenkins.io/kubernetes)
     * [scm-api:2.3.0](https://plugins.jenkins.io/scm-api)
 * Added plugins:
     * [kubernetes-cli:1.2.0](https://plugins.jenkins.io/kubernetes-cli)
