@@ -66,6 +66,7 @@ external-monitor-job:1.7
 favorite:2.3.2
 gatling:1.2.5
 git:3.9.1
+git-changelog:2.11
 git-client:2.7.3
 git-parameter:0.9.6
 git-server:1.7
@@ -128,7 +129,7 @@ pubsub-light:1.12
 rebuild:1.29
 run-condition:1.2
 scm-api:2.3.0
-script-security:1.46
+script-security:1.47
 slack:2.3
 sonar:2.8.1
 sse-gateway:1.16

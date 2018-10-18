@@ -10,8 +10,10 @@
     * [jira:3.0.3](https://plugins.jenkins.io/jira)
     * [kubernetes:1.12.9](https://plugins.jenkins.io/kubernetes)
     * [scm-api:2.3.0](https://plugins.jenkins.io/scm-api)
+    * [script-security:1.47](https://plugins.jenkins.io/script-security)
 * Added plugins:
     * [kubernetes-cli:1.2.0](https://plugins.jenkins.io/kubernetes-cli)
+    * [git-changelog:2.11](https://plugins.jenkins.io/git-changelog)
 
 ## 2.138.2-80
 * Added dynamic SCMSource for pipeline library retriever - [#108](https://github.com/odavid/my-bloody-jenkins/pull/108)
