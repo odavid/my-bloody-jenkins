@@ -1,5 +1,5 @@
 ace-editor:1.1
-active-directory:2.8
+active-directory:2.9
 amazon-ecr:1.6
 amazon-ecs:1.16
 anchore-container-scanner:1.0.17
@@ -48,7 +48,7 @@ config-file-provider:3.3
 copyartifact:1.41
 credentials:2.1.18
 credentials-binding:1.16
-cucumber-reports:4.0.1
+cucumber-reports:4.1.0
 dashboard-view:2.9.11
 display-url-api:2.2.0
 docker-build-publish:1.3.2
@@ -94,12 +94,12 @@ jquery:1.12.4-0
 jquery-detached:1.2.1
 jsch:0.1.54.2
 junit:1.26.1
-kubernetes:1.12.9
+kubernetes:1.13.0
 kubernetes-cli:1.2.0
 kubernetes-credentials:0.4.0
 ldap:1.20
 lockable-resources:2.3
-mailer:1.21
+mailer:1.22
 mask-passwords:2.12.0
 matrix-auth:2.3
 matrix-project:1.13
