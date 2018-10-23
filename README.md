@@ -74,10 +74,10 @@ Each master commit, will be tagged as latest
 ```bash
 # get the latest release
 docker pull odavid/my-bloody-jenkins:lts
-# get the latest 2.73.3 LTS
-docker pull odavid/my-bloody-jenkins:2.73.3
-# get a concrete 2.73.3 release
-docker pull odavid/my-bloody-jenkins:2.73.3-6
+# get the latest 2.138.2 LTS
+docker pull odavid/my-bloody-jenkins:2.138.2
+# get a concrete 2.138.2 release
+docker pull odavid/my-bloody-jenkins:2.138.2-82
 # get the latest unstable image
 docker pull odavid/my-bloody-jenkins
 ```
