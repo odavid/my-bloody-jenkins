@@ -142,9 +142,9 @@ timestamper:1.8.10
 token-macro:2.5
 variant:1.1
 workflow-aggregator:2.6
-workflow-api:2.29
+workflow-api:2.30
 workflow-basic-steps:2.11
-workflow-cps:2.57
+workflow-cps:2.59
 workflow-cps-global-lib:2.12
 workflow-durable-task-step:2.24
 workflow-job:2.25
@@ -152,5 +152,5 @@ workflow-multibranch:2.20
 workflow-remote-loader:1.4
 workflow-scm-step:2.7
 workflow-step-api:2.16
-workflow-support:2.20
+workflow-support:2.21
 xvfb:1.1.3

@@ -6,6 +6,10 @@
 ## 2.138.2-83 (Not released yet)
 * Updated plugins:
     * [workflow-durable-task-step:2.24](https://plugins.jenkins.io/workflow-durable-task-step)
+    * [workflow-api:2.30](https://plugins.jenkins.io/workflow-api)
+    * [workflow-cps:2.59](https://plugins.jenkins.io/workflow-cps)
+    * [workflow-support:2.21](https://plugins.jenkins.io/workflow-support)
+
 
 ## 2.138.2-82
 * Updated plugins:
