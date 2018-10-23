@@ -3,7 +3,7 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
-## 2.138.2-82 (not released yet)
+## 2.138.2-82
 * Updated plugins:
     * [active-directory:2.9](https://plugins.jenkins.io/active-directory)
     * [cucumber-reports:4.1.0](https://plugins.jenkins.io/cucumber-reports)
