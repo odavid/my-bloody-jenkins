@@ -30,6 +30,7 @@ ecs-cloud:
       image: odavid/jenkins-jnlp-slave:latest
       executionRole: ecsTaskExecutionRole111
       remoteFs: /home/jenkins
+      networkMode: Awsvpc
       memory: 4000
       memoryReservation: 2000
       cpu: 512
@@ -159,6 +160,7 @@ ecs-cloud:
         template = it.templates[1]
         assert template.templateName == 'ecs-template-fargate'
         assert template.launchType == 'FARGATE'
+        assert template.networkMode == 'Awsvpc'
         assert template.subnets == 'subnet-123,subnet-456'
         assert template.securityGroups == 'sg-123-123,sg-124-124'
         assert template.taskrole == 'arn://task-role'

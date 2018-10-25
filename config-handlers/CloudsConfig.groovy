@@ -158,6 +158,7 @@ def ecsCloud(config){
                     temp.taskDefinitionOverride,
                     temp.image,
                     temp.launchType,
+                    temp.networkMode,
                     temp.remoteFs,
                     asInt(temp.memory),
                     asInt(temp.memoryReservation),
