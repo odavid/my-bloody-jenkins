@@ -9,7 +9,9 @@
     * [workflow-api:2.30](https://plugins.jenkins.io/workflow-api)
     * [workflow-cps:2.59](https://plugins.jenkins.io/workflow-cps)
     * [workflow-support:2.21](https://plugins.jenkins.io/workflow-support)
-    * [kubernetes:1.13.1](https://plugins.jenkins.io/kubernetes)
+    * [amazon-ecs:1.17](https://plugins.jenkins.io/amazon-ecs)
+    * [kubernetes:1.13.2](https://plugins.jenkins.io/kubernetes)
+    * [workflow-durable-task-step:2.25](https://plugins.jenkins.io/workflow-durable-task-step)
 
 ## 2.138.2-82
 * Updated plugins:

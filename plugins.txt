@@ -1,7 +1,7 @@
 ace-editor:1.1
 active-directory:2.9
 amazon-ecr:1.6
-amazon-ecs:1.16
+amazon-ecs:1.17
 anchore-container-scanner:1.0.17
 ant:1.8
 antisamy-markup-formatter:1.5
@@ -94,7 +94,7 @@ jquery:1.12.4-0
 jquery-detached:1.2.1
 jsch:0.1.54.2
 junit:1.26.1
-kubernetes:1.13.1
+kubernetes:1.13.2
 kubernetes-cli:1.2.0
 kubernetes-credentials:0.4.0
 ldap:1.20
@@ -146,7 +146,7 @@ workflow-api:2.30
 workflow-basic-steps:2.11
 workflow-cps:2.59
 workflow-cps-global-lib:2.12
-workflow-durable-task-step:2.24
+workflow-durable-task-step:2.25
 workflow-job:2.25
 workflow-multibranch:2.20
 workflow-remote-loader:1.4
