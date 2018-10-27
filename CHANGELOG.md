@@ -5,12 +5,15 @@
 
 ## 2.138.2-83 (Not released yet)
 * Updated plugins:
-    * [workflow-api:2.30](https://plugins.jenkins.io/workflow-api)
     * [workflow-cps:2.59](https://plugins.jenkins.io/workflow-cps)
     * [workflow-support:2.21](https://plugins.jenkins.io/workflow-support)
     * [amazon-ecs:1.17](https://plugins.jenkins.io/amazon-ecs)
     * [kubernetes:1.13.2](https://plugins.jenkins.io/kubernetes)
     * [workflow-durable-task-step:2.25](https://plugins.jenkins.io/workflow-durable-task-step)
+    * [git-changelog:2.12](https://plugins.jenkins.io/git-changelog)
+    * [jira:3.0.4](https://plugins.jenkins.io/jira)
+    * [workflow-api:2.31](https://plugins.jenkins.io/workflow-api)
+    * [workflow-basic-steps:2.12](https://plugins.jenkins.io/workflow-basic-steps)
 
 ## 2.138.2-82
 * Updated plugins:
