@@ -10,10 +10,11 @@
     * [amazon-ecs:1.17](https://plugins.jenkins.io/amazon-ecs)
     * [kubernetes:1.13.2](https://plugins.jenkins.io/kubernetes)
     * [workflow-durable-task-step:2.25](https://plugins.jenkins.io/workflow-durable-task-step)
-    * [git-changelog:2.12](https://plugins.jenkins.io/git-changelog)
     * [jira:3.0.4](https://plugins.jenkins.io/jira)
     * [workflow-api:2.31](https://plugins.jenkins.io/workflow-api)
     * [workflow-basic-steps:2.12](https://plugins.jenkins.io/workflow-basic-steps)
+    * [cloudbees-bitbucket-branch-source:2.2.13](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
+    * [git-changelog:2.14](https://plugins.jenkins.io/git-changelog)
 
 ## 2.138.2-82
 * Updated plugins:
