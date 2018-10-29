@@ -129,7 +129,7 @@ pubsub-light:1.12
 rebuild:1.29
 run-condition:1.2
 scm-api:2.3.0
-script-security:1.47
+script-security:1.48
 slack:2.3
 sonar:2.8.1
 sse-gateway:1.16
@@ -144,7 +144,7 @@ variant:1.1
 workflow-aggregator:2.6
 workflow-api:2.31
 workflow-basic-steps:2.12
-workflow-cps:2.59
+workflow-cps:2.60
 workflow-cps-global-lib:2.12
 workflow-durable-task-step:2.25
 workflow-job:2.25
