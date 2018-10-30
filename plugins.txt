@@ -3,7 +3,7 @@ active-directory:2.9
 amazon-ecr:1.6
 amazon-ecs:1.17
 anchore-container-scanner:1.0.17
-ant:1.8
+ant:1.9
 antisamy-markup-formatter:1.5
 apache-httpcomponents-client-4-api:4.5.5-3.0
 artifactory:2.16.2
@@ -47,7 +47,7 @@ conditional-buildstep:1.3.6
 config-file-provider:3.3
 copyartifact:1.41
 credentials:2.1.18
-credentials-binding:1.16
+credentials-binding:1.17
 cucumber-reports:4.1.0
 dashboard-view:2.9.11
 display-url-api:2.2.0

@@ -7,6 +7,8 @@
 * Updated plugins:
     * [script-security:1.48](https://plugins.jenkins.io/script-security)
     * [workflow-cps:2.60](https://plugins.jenkins.io/workflow-cps)
+    * [ant:1.9](https://plugins.jenkins.io/ant)
+    * [credentials-binding:1.17](https://plugins.jenkins.io/credentials-binding)
 
 ## 2.138.2-83
 * Updated plugins:
