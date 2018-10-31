@@ -3,6 +3,11 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+## 2.138.2-85 (Not released yet)
+* Updated plugins:
+    * [kubernetes:1.13.4](https://plugins.jenkins.io/kubernetes)
+    * [p4:1.9.3](https://plugins.jenkins.io/p4)
+
 ## 2.138.2-84
 * Updated plugins:
     * [script-security:1.48](https://plugins.jenkins.io/script-security)

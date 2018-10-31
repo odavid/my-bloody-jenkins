@@ -94,7 +94,7 @@ jquery:1.12.4-0
 jquery-detached:1.2.1
 jsch:0.1.54.2
 junit:1.26.1
-kubernetes:1.13.2
+kubernetes:1.13.4
 kubernetes-cli:1.2.0
 kubernetes-credentials:0.4.0
 ldap:1.20
@@ -107,7 +107,7 @@ maven-plugin:3.1.2
 mercurial:2.4
 metrics:4.0.2.2
 momentjs:1.1.1
-p4:1.9.2
+p4:1.9.3
 parallel-test-executor:1.11
 parameterized-trigger:2.35.2
 pipeline-build-step:2.7
