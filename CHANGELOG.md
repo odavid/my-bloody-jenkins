@@ -5,8 +5,10 @@
 
 ## 2.138.2-85 (Not released yet)
 * Updated plugins:
-    * [kubernetes:1.13.4](https://plugins.jenkins.io/kubernetes)
     * [p4:1.9.3](https://plugins.jenkins.io/p4)
+    * [cloudbees-bitbucket-branch-source:2.2.14](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
+    * [config-file-provider:3.4](https://plugins.jenkins.io/config-file-provider)
+    * [kubernetes:1.13.5](https://plugins.jenkins.io/kubernetes)
 
 ## 2.138.2-84
 * Updated plugins:
