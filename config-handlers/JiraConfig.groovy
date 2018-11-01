@@ -41,6 +41,7 @@ def setup(config) {
             }
             site.disableChangelogAnnotations = asBoolean(disableChangelogAnnotations)
             site.timeout = asInt(timeout, hudson.plugins.jira.JiraSite.DEFAULT_TIMEOUT)
+            site.readTimeout = asInt(readTimeout, hudson.plugins.jira.JiraSite.DEFAULT_READ_TIMEOUT)
             site.dateTimePattern = dateTimePattern
             site.appendChangeTimestamp = asBoolean(appendChangeTimestamp, null)
             return site

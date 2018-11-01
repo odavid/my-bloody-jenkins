@@ -21,7 +21,8 @@ sites:
     roleVisibility: visible
     useHTTPAuth: true
     disableChangelogAnnotations: true
-    timeout: 20
+    timeout: 200
+    readTimeout: 200
     dateTimePattern: '%MM:%%SS'
     appendChangeTimestamp: true
 
@@ -45,7 +46,8 @@ sites:
     assert site.roleVisibility == 'visible'
     assert site.useHTTPAuth
     assert site.disableChangelogAnnotations
-    assert site.timeout == 20
+    assert site.timeout == 200
+    assert site.readTimeout == 200
     assert site.dateTimePattern == '%MM:%%SS'
     assert site.appendChangeTimestamp
 }
