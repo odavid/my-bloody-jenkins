@@ -3,6 +3,13 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+## 2.138.2-86 (Not released yet)
+* Updated plugins:
+    * [config-file-provider:3.4.1](https://plugins.jenkins.io/config-file-provider)
+    * [durable-task:1.27](https://plugins.jenkins.io/durable-task)
+    * [workflow-durable-task-step:2.26](https://plugins.jenkins.io/workflow-durable-task-step)
+    * [workflow-job:2.27](https://plugins.jenkins.io/workflow-job)
+
 ## 2.138.2-85
 * Updated plugins:
     * [p4:1.9.3](https://plugins.jenkins.io/p4)
