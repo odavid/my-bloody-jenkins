@@ -1,5 +1,5 @@
 ace-editor:1.1
-active-directory:2.9
+active-directory:2.10
 amazon-ecr:1.6
 amazon-ecs:1.17
 anchore-container-scanner:1.0.17
@@ -83,7 +83,7 @@ htmlpublisher:1.17
 http_request:1.8.22
 icon-shim:2.0.3
 ivy:1.28
-jackson2-api:2.8.11.3
+jackson2-api:2.9.7.1
 javadoc:1.4
 jdk-tool:1.1
 jenkins-design-language:1.9.0

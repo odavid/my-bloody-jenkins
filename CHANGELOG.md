@@ -6,7 +6,9 @@
 ## 2.138.2-87 (Not released yet)
 * Updated plugins:
     * [workflow-support:2.22](https://plugins.jenkins.io/workflow-support)
-
+    * [active-directory:2.10](https://plugins.jenkins.io/active-directory)
+    * [jackson2-api:2.9.7.1](https://plugins.jenkins.io/jackson2-api)
+    
 ## 2.138.2-86
 * Updated plugins:
     * [config-file-provider:3.4.1](https://plugins.jenkins.io/config-file-provider)
