@@ -8,7 +8,10 @@
     * [workflow-support:2.22](https://plugins.jenkins.io/workflow-support)
     * [active-directory:2.10](https://plugins.jenkins.io/active-directory)
     * [jackson2-api:2.9.7.1](https://plugins.jenkins.io/jackson2-api)
-    
+    * [jira:3.0.5](https://plugins.jenkins.io/jira)
+    * [pipeline-utility-steps:2.2.0](https://plugins.jenkins.io/pipeline-utility-steps)
+    * [workflow-job:2.28](https://plugins.jenkins.io/workflow-job)
+
 ## 2.138.2-86
 * Updated plugins:
     * [config-file-provider:3.4.1](https://plugins.jenkins.io/config-file-provider)
