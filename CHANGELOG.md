@@ -11,6 +11,7 @@
     * [jira:3.0.5](https://plugins.jenkins.io/jira)
     * [pipeline-utility-steps:2.2.0](https://plugins.jenkins.io/pipeline-utility-steps)
     * [workflow-job:2.28](https://plugins.jenkins.io/workflow-job)
+    * [p4:1.9.4](https://plugins.jenkins.io/p4)
 
 ## 2.138.2-86
 * Updated plugins:
