@@ -5,6 +5,11 @@
 
 ## 2.138.3-88 (Not released yet)
 * [LTS-2.138.3](https://jenkins.io/changelog-stable/)
+* Updated plugins:
+    * [branch-api:2.0.21](https://plugins.jenkins.io/branch-api)
+    * [cucumber-reports:4.2.0](https://plugins.jenkins.io/cucumber-reports)
+    * [workflow-api:2.32](https://plugins.jenkins.io/workflow-api)
+    * [workflow-job:2.29](https://plugins.jenkins.io/workflow-job)
 
 ## 2.138.2-87
 * Updated plugins:
