@@ -3,6 +3,9 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+## 2.138.3-88 (Not released yet)
+* [LTS-2.138.3](https://jenkins.io/changelog-stable/)
+
 ## 2.138.2-87
 * Updated plugins:
     * [workflow-support:2.22](https://plugins.jenkins.io/workflow-support)
