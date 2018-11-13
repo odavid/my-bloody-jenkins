@@ -49,7 +49,7 @@ copyartifact:1.41
 credentials:2.1.18
 credentials-binding:1.17
 cucumber-reports:4.2.0
-dashboard-view:2.9.11
+dashboard-view:2.10
 display-url-api:2.2.0
 docker-build-publish:1.3.2
 docker-commons:1.13

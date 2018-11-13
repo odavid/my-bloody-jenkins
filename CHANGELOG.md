@@ -3,6 +3,10 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+## 2.138.3-89 (Not released yet)
+* Updated plugins:
+    * [dashboard-view:2.10](https://plugins.jenkins.io/dashboard-view)
+
 ## 2.138.3-88
 * [LTS-2.138.3](https://jenkins.io/changelog-stable/)
 * Updated plugins:
