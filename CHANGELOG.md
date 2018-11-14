@@ -6,6 +6,8 @@
 ## 2.138.3-89 (Not released yet)
 * Updated plugins:
     * [dashboard-view:2.10](https://plugins.jenkins.io/dashboard-view)
+    * [durable-task:1.28](https://plugins.jenkins.io/durable-task)
+    * [pipeline-graph-analysis:1.8](https://plugins.jenkins.io/pipeline-graph-analysis)
 
 ## 2.138.3-88
 * [LTS-2.138.3](https://jenkins.io/changelog-stable/)
