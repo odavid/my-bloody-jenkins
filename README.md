@@ -360,6 +360,7 @@ tools:
       type: maven
       home: /usr/share/apache-maven-3.1.1
     MAVEN-3.5.0:
+      type: maven
       installers:
         - id: '3.5.0' # The exact maven version to be downloaded
     ANT-1.9.4:
