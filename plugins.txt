@@ -2,7 +2,7 @@ ace-editor:1.1
 active-directory:2.10
 amazon-ecr:1.6
 amazon-ecs:1.17
-anchore-container-scanner:1.0.17
+anchore-container-scanner:1.0.18
 ant:1.9
 antisamy-markup-formatter:1.5
 apache-httpcomponents-client-4-api:4.5.5-3.0
@@ -111,7 +111,7 @@ p4:1.9.4
 parallel-test-executor:1.11
 parameterized-trigger:2.35.2
 pipeline-build-step:2.7
-pipeline-graph-analysis:1.8
+pipeline-graph-analysis:1.9
 pipeline-input-step:2.8
 pipeline-milestone-step:1.3.1
 pipeline-model-api:1.3.2
