@@ -19,6 +19,7 @@ ecs-cloud:
   region: us-east-1
   cluster: ecs-cluster
   connectTimeout: 60
+  retentionTimeout: 100
   jenkinsUrl: http://127.0.0.1:8080
   tunnel: 127.0.0.1:8080
   templates:
@@ -31,6 +32,7 @@ ecs-cloud:
       executionRole: ecsTaskExecutionRole111
       remoteFs: /home/jenkins
       networkMode: awsvpc
+      repositoryCredentials: xxx
       memory: 4000
       memoryReservation: 2000
       cpu: 512
@@ -108,6 +110,7 @@ ecs-cloud:
         assert it.regionName == 'us-east-1'
         assert it.cluster == 'ecs-cluster'
         assert it.slaveTimoutInSeconds == 60
+        assert it.retentionTimeout == 100
         assert it.jenkinsUrl == 'http://127.0.0.1:8080'
         assert it.tunnel == '127.0.0.1:8080'
         def template = it.templates[0]
@@ -120,6 +123,7 @@ ecs-cloud:
         assert template.taskDefinitionOverride == 'override'
         assert template.label == 'test generic'
         assert template.image == 'odavid/jenkins-jnlp-slave:latest'
+        assert template.repositoryCredentials == 'xxx'
         assert template.remoteFSRoot == '/home/jenkins'
         assert template.memory == 4000
         assert template.memoryReservation == 2000

@@ -157,6 +157,7 @@ def ecsCloud(config){
                     temp.labels?.join(' '),
                     temp.taskDefinitionOverride,
                     temp.image,
+                    temp.repositoryCredentials,
                     temp.launchType,
                     temp.networkMode,
                     temp.remoteFs,
@@ -195,7 +196,8 @@ def ecsCloud(config){
             cluster,
             region,
             jenkinsUrl,
-            asInt(connectTimeout)
+            asInt(connectTimeout),
+            asInt(retentionTimeout)
         )
         ecsCloud.tunnel = tunnel
         return ecsCloud

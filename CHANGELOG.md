@@ -3,6 +3,22 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+
+## 2.138.3-90 (Not released yet)
+* Updated plugins:
+    * [amazon-ecs:1.18](https://plugins.jenkins.io/amazon-ecs)
+    * [aws-credentials:1.24](https://plugins.jenkins.io/aws-credentials)
+    * [branch-api:2.1.1](https://plugins.jenkins.io/branch-api)
+    * [cloudbees-bitbucket-branch-source:2.2.15](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
+    * [cloudbees-folder:6.7](https://plugins.jenkins.io/cloudbees-folder)
+    * [cucumber-reports:4.2.1](https://plugins.jenkins.io/cucumber-reports)
+    * [display-url-api:2.3.0](https://plugins.jenkins.io/display-url-api)
+    * [git-client:2.7.4](https://plugins.jenkins.io/git-client)
+    * [gitlab-plugin:1.5.11](https://plugins.jenkins.io/gitlab-plugin)
+    * [groovy-postbuild:2.4.3](https://plugins.jenkins.io/groovy-postbuild)
+    * [ssh-slaves:1.29.1](https://plugins.jenkins.io/ssh-slaves)
+    * [workflow-api:2.33](https://plugins.jenkins.io/workflow-api)
+
 ## 2.138.3-89
 * Updated plugins:
     * [dashboard-view:2.10](https://plugins.jenkins.io/dashboard-view)
