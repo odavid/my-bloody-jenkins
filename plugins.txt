@@ -94,7 +94,7 @@ jquery:1.12.4-0
 jquery-detached:1.2.1
 jsch:0.1.54.2
 junit:1.26.1
-kubernetes:1.13.6
+kubernetes:1.13.5
 kubernetes-cli:1.2.0
 kubernetes-credentials:0.4.0
 ldap:1.20

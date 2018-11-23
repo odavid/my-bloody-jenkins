@@ -18,7 +18,6 @@
     * [groovy-postbuild:2.4.3](https://plugins.jenkins.io/groovy-postbuild)
     * [ssh-slaves:1.29.1](https://plugins.jenkins.io/ssh-slaves)
     * [workflow-api:2.33](https://plugins.jenkins.io/workflow-api)
-    * [kubernetes:1.13.6](https://plugins.jenkins.io/kubernetes)
 
 ## 2.138.3-89
 * Updated plugins:
