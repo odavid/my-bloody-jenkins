@@ -7,6 +7,7 @@
 * Updated plugins:
     * [kubernetes:1.13.6](https://plugins.jenkins.io/kubernetes)
     * [cucumber-reports:4.2.2](https://plugins.jenkins.io/cucumber-reports)
+    * [github-api:1.95](https://plugins.jenkins.io/github-api)
 
 ## 2.138.3-90
 * Updated plugins:
