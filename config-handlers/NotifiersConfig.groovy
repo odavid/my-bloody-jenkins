@@ -43,18 +43,13 @@ def hipchatConfig(config){
 def slackConfig(config){
     def slack = Jenkins.instance.getDescriptorByType(SlackNotifier.DescriptorImpl)
     config.with{
-        JSONObject formData = ['slack': ['tokenCredentialId': credentialId]] as JSONObject
-        def params = [
-            slackTeamDomain: teamDomain,
-            slackBotUser: asBoolean(botUser).toString(),
-            slackRoom: room,
-            slackBaseUrl: baseUrl,
-            slackSendAs: sendAs?:''
-        ]
-        def req = [
-            getParameter: { name -> params[name] }
-        ] as org.kohsuke.stapler.StaplerRequest
-        slack.configure(req, formData)
+        slack.baseUrl = baseUrl
+        slack.teamDomain = teamDomain
+        slack.token = token
+        slack.tokenCredentialId = (tokenCredentialId ?: credentialId) // backward compatible
+        slack.botUser = asBoolean(botUser)
+        slack.room = room
+        slack.sendAs = sendAs
     }
     return slack
 }

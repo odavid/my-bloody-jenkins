@@ -14,7 +14,7 @@ slack:
   room: channel1,channel2
   baseUrl: https://slack.domain.com
   sendAs: slackJenkins
-  
+
 """)
     configHandler.setup(config)
     def desc = jenkins.model.Jenkins.instance.getDescriptor(jenkins.plugins.slack.SlackNotifier)
@@ -22,7 +22,7 @@ slack:
     assert desc.teamDomain == 'slack'
     assert desc.botUser
     assert desc.room == 'channel1,channel2'
-    assert desc.baseUrl == 'https://slack.domain.com/'
+    assert desc.baseUrl == 'https://slack.domain.com'
     assert desc.sendAs == 'slackJenkins'
 }
 
@@ -48,9 +48,9 @@ hipchat:
     assert desc.sendAs == 'hipchatJenkins'
     assert desc.v2Enabled
     assert desc.credentialId == 'hipchat-token'
-    
+
     def defaultNotification = desc.defaultNotifications[0]
-    
+
     assert defaultNotification instanceof jenkins.plugins.hipchat.model.NotificationConfig
     assert defaultNotification.notifyEnabled
     assert defaultNotification.textFormat
@@ -120,7 +120,7 @@ mail:
     assert desc.smtpServer == 'mail.domain.com'
     assert desc.smtpPort == '265'
     assert desc.replyToAddress == 'jenkins.admin@domain.com'
-   
+
 }
 
 def testNotifiers(){
