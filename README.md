@@ -35,7 +35,8 @@ The image is "Battle Proven" and serves as the baseground for several Jenkins de
 * Supports quiet startup period to enable docker restarts with a graceful time which Jenkins is in *Quiet Mode*
 * Automated Re-Configure based on configuration data change without restarts
 * Supports Dynamic Host IP configuration passed to clouds when Jenkins is running in a cluster
-* Support dynamic envrionment variables from [consul](https://www.consul.io/) and [vault](https://www.vaultproject.io/) using [envconsul](https://github.com/hashicorp/envconsul)
+* Supports dynamic envrionment variables from [consul](https://www.consul.io/) and [vault](https://www.vaultproject.io/) using [envconsul](https://github.com/hashicorp/envconsul)
+* Supports [configuration-as-code-plugin](https://github.com/jenkinsci/configuration-as-code-plugin) as an alternative configuration syntax
 
 ## Why Use the term "Bloody"?
 The term "My Bloody Jenkins" came from the fact that I tried to put all my "battle" experience, (i.e. blood, sweat and tears) within the image.
@@ -86,16 +87,16 @@ docker pull odavid/my-bloody-jenkins
 ## Environment Variables
 The following Environment variables are supported
 
-* __JENKINS_ENV_ADMIN_USER__ - (***mandatory***) Represents the name of the admin user. If LDAP is your choice of authentication, then this should be a valid LDAP user id. If Using Jenkins Database, then you also need to pass the password of this user within the [configuration](#configuration-reference).
+* `JENKINS_ENV_ADMIN_USER` - (***mandatory***) Represents the name of the admin user. If LDAP is your choice of authentication, then this should be a valid LDAP user id. If Using Jenkins Database, then you also need to pass the password of this user within the [configuration](#configuration-reference).
 
 * __JAVA_OPTS\_*__ - All JAVA_OPTS_ variables will be appended to the JAVA_OPTS during startup. Use them to control options (system properties) or memory/gc options. I am using few of them by default to tweak some known issues:
     * JAVA_OPTS_DISABLE_WIZARD - disables the Jenkins 2 startup wizard
     * JAVA_OPTS_CSP - Default content security policy for HTML Publisher/Gatling plugins - See [Configuring Content Security Policy](https://wiki.jenkins.io/display/JENKINS/Configuring+Content+Security+Policy)
     * JAVA_OPTS_LOAD_STATS_CLOCK - This one is sweet (: - Reducing the load stats clock enables ephemeral slaves to start immediately without waiting for suspended slaves to be reaped
 
-* __JENKINS_ENV_CONFIG_YAML__ - The [configuration](#configuration-reference) as yaml. When this variable is set, the contents of this variable can be fetched from Consul and also be watched so jenkins can update its configuration everytime this variable is being changed. Since the contents of this variable contains secrets, it is wise to store and pass it from Consul/S3 bucket. In any case, before Jenkins starts, this variable is being unset, so it won't appear in Jenkins 'System Information' page (As I said, blood...)
+* `JENKINS_ENV_CONFIG_YAML` - The [configuration](#configuration-reference) as yaml. When this variable is set, the contents of this variable can be fetched from Consul and also be watched so jenkins can update its configuration everytime this variable is being changed. Since the contents of this variable contains secrets, it is wise to store and pass it from Consul/S3 bucket. In any case, before Jenkins starts, this variable is being unset, so it won't appear in Jenkins 'System Information' page (As I said, blood...)
 
-* __JENKINS_ENV_CONFIG_YML_URL__ - A comma separated URLs that will be used to fetch the configuration and updated jenkins everytime the change. This is an alternative to __JENKINS_ENV_CONFIG_YAML__ setup.
+* `JENKINS_ENV_CONFIG_YML_URL` - A comma separated URLs that will be used to fetch the configuration and updated jenkins everytime the change. This is an alternative to __JENKINS_ENV_CONFIG_YAML__ setup.
 Supported URLs:
   * `s3://<s3path>` - s3 path
   * `file://<filepath>` - a file path (should be mapped as volume) - can be a file, folder or glob expression (e.g. `file:///dir/filename` or `file:///dir` or `file:///dir/*.yml`)
@@ -104,23 +105,25 @@ Supported URLs:
 > Note: If multiple URLs are passed or the file url contains a dir name or a glob expression, all yaml files are being deep merged top to bottom. This behavior enables to separate the configuration into different files or override default configuration.
 
 
-* __JENKINS_ENV_CONFIG_YML_URL_DISABLE_WATCH__ - If equals to 'true', then the configuration file will be fetched only at startup, but won't be watched. Default 'false'
+* `JENKINS_ENV_CONFIG_YML_URL_DISABLE_WATCH` - If equals to 'true', then the configuration file will be fetched only at startup, but won't be watched. Default 'false'
 
-* __JENKINS_ENV_CONFIG_YML_URL_POLLING__ - polling interval in seconds to check if file changed in s3. Default (30)
+* `JENKINS_ENV_CONFIG_YML_URL_POLLING` - polling interval in seconds to check if file changed in s3. Default (30)
 
-* __JENKINS_ENV_HOST_IP__ - When Jenkins is running behind an ELB or a reverse proxy, JNLP slaves must know about the real IP of Jenkins, so they can access the 50000 port. Usually they are using the Jenkins URL to try to get to it, so it is very important to let them know what is the original Jenkins IP Address. If the master has a static IP address, then this variable should be set with the static IP address of the host.
+* `JENKINS_ENV_HOST_IP` - When Jenkins is running behind an ELB or a reverse proxy, JNLP slaves must know about the real IP of Jenkins, so they can access the 50000 port. Usually they are using the Jenkins URL to try to get to it, so it is very important to let them know what is the original Jenkins IP Address. If the master has a static IP address, then this variable should be set with the static IP address of the host.
 
-* __JENKINS_ENV_HOST_IP_CMD__ - Same as ___JENKINS_ENV_HOST_IP___, but this time a shell command expression to fetch the IP Address. In AWS, it is useful to use the EC2 Magic IP: ```JENKINS_ENV_HOST_IP_CMD='curl http://169.254.169.254/latest/meta-data/local-ipv4'```
+* `JENKINS_ENV_HOST_IP_CMD` - Same as ___JENKINS_ENV_HOST_IP___, but this time a shell command expression to fetch the IP Address. In AWS, it is useful to use the EC2 Magic IP: ```JENKINS_ENV_HOST_IP_CMD='curl http://169.254.169.254/latest/meta-data/local-ipv4'```
 
-* __JENKINS_HTTP_PORT_FOR_SLAVES__ - (Default: 8080) Used together with JENKINS_ENV_HOST_IP to construct the real jenkinsUrl for jnlp slaves.
+* `JENKINS_HTTP_PORT_FOR_SLAVES` - (Default: 8080) Used together with JENKINS_ENV_HOST_IP to construct the real jenkinsUrl for jnlp slaves.
 
-* __JENKINS_ENV_JENKINS_URL__ - Define the Jenkins root URL in configuration. This can be useful when you cannot run the Jenkins master docker container with host network and you need it to be available to slaves
+* `JENKINS_ENV_JENKINS_URL` - Define the Jenkins root URL in configuration. This can be useful when you cannot run the Jenkins master docker container with host network and you need it to be available to slaves
 
-* __JENKINS_ENV_ADMIN_ADDRESS__ - Define the Jenkins admin email address
+* `JENKINS_ENV_ADMIN_ADDRESS` - Define the Jenkins admin email address
 
-* __JENKINS_ENV_PLUGINS__ - Ability to define comma separated list of additional plugins to install before starting up. See [plugin-version-format](https://github.com/jenkinsci/docker#plugin-version-format). This is option is not recommended, but sometimes it is useful to run the container without creating an inherited image.
+* `JENKINS_ENV_PLUGINS` - Ability to define comma separated list of additional plugins to install before starting up. See [plugin-version-format](https://github.com/jenkinsci/docker#plugin-version-format). This is option is not recommended, but sometimes it is useful to run the container without creating an inherited image.
 
-* __JENKINS_ENV_QUIET_STARTUP_PERIOD__ - Time in seconds. If speficied, jenkins will start in quiet mode and disable all running jobs. Useful for major upgrade.
+* `JENKINS_ENV_QUIET_STARTUP_PERIOD` - Time in seconds. If speficied, jenkins will start in quiet mode and disable all running jobs. Useful for major upgrade.
+
+* `JENKINS_ENV_CONFIG_MODE` - If set to `jcasc`, then [Configuration as Code Plugin](https://github.com/jenkinsci/configuration-as-code-plugin) will be used instead of [Built-in Configuration Handlers](#configuration-reference). By using this mode, see [JCasC Demo](./demo/jcasc-plugin)
 
 ## Configuration Reference
 The configuration is divided into main configuration sections. Each section is responsible for a specific aspect of jenkins configuration.

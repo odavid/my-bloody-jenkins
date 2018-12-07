@@ -5,6 +5,7 @@
 
 ## 2.150.1-93 (Not released yet)
 * [LTS-2.150.1](https://jenkins.io/changelog-stable/)
+* Support JCASC (Jenkins Configuration as Code) Configuration style [#109](https://github.com/odavid/my-bloody-jenkins/pull/109)
 
 ## 2.138.3-92
 * Updated plugins:
