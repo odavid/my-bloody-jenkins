@@ -1,0 +1,40 @@
+version: '2'
+services:
+  ldap:
+    image: osixia/openldap:1.2.1
+    volumes:
+      - ../assets/ldap/bootstrap/custom.ldif:/container/service/slapd/assets/config/bootstrap/ldif/100-custom.ldif
+    ports:
+      - '10389:389'
+    environment:
+      LDAP_DOMAIN: example.org
+      LDAP_BASE_DN: dc=example,dc=org
+      LDAP_ADMIN_PASSWORD: admin
+      LDAP_ADMIN_PASSWORD: admin
+      LDAP_READONLY_USER: 'true'
+      LDAP_TLS: "false"
+    command: --copy-service --loglevel debug
+
+  jenkins:
+    image: odavid/my-bloody-jenkins
+    ports:
+      - '8080:8080'
+      - '50000:50000'
+    volumes:
+      - './config.yml:/config.yml'
+      - '/var/run/docker.sock:/var/run/docker.sock'
+    links:
+      - ldap
+
+    environment:
+      JAVA_OPTS_MEM: '-Xmx1g'
+      JENKINS_ENV_HOST_IP: 'host.docker.internal'
+      JENKINS_ENV_CONFIG_YML_URL: file:///config.yml
+      JENKINS_ENV_ADMIN_USER: jenkins.admin
+      JENKINS_ENV_CONFIG_YML_URL_POLLING: '10'
+      # Disable hyper provision of slaves - docker plugin strategy is enough
+      JAVA_OPTS_LOAD_STATS_CLOCK: ''
+      # proxy
+      http_proxy: ${http_proxy}
+      https_proxy: ${https_proxy}
+      no_proxy: ${no_proxy}

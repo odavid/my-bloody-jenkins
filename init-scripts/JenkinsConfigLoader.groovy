@@ -99,6 +99,18 @@ if(!new File(configFileName).exists()) {
         println "jenkinsConfig is empty, skipping"
         return
     }
+    if(System.getenv()['JENKINS_ENV_CONFIG_MODE'] == 'jcasc'){
+        println "--> Using configuration as code plugin to handle configuration"
+        System.setProperty(io.jenkins.plugins.casc.ConfigurationAsCode.CASC_JENKINS_CONFIG_PROPERTY, configFileName)
+        try{
+            io.jenkins.plugins.casc.ConfigurationAsCode.init()
+            println "--> Using configuration as code plugin to handle configuration... done"
+        }catch(e){
+            println "--> Using configuration as code plugin to handle configuration... error: ${e}"
+            e.printStackTrace()
+        }
+        return
+    }
     // TODO: admin user should be global. Make it more generic....
     jenkinsConfig.security?.adminUser = adminUser
 

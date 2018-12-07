@@ -1,6 +1,0 @@
-tools:
-  installations:
-    MVN-3.5.0:
-      type: maven
-      installers:
-        - id: '3.5.0'

@@ -1,0 +1,139 @@
+security:
+  remotingCLI:
+    enabled: false
+
+jenkins:
+  slaveAgentPort: 50000
+  numExecutors: 0
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: true
+  disableRememberMe: false
+  agentProtocols:
+  - "JNLP4-connect"
+  - "Ping"
+
+  remotingSecurity:
+    enabled: true
+
+  securityRealm:
+    ldap:
+      cache:
+        size: 20
+        ttl: 300
+      configurations:
+      - displayNameAttributeName: "cn"
+        environmentProperties:
+        - name: "com.sun.jndi.ldap.connect.timeout"
+          value: "5000"
+        - name: "com.sun.jndi.ldap.read.timeout"
+          value: "60000"
+        groupMembershipStrategy:
+          fromGroupSearch:
+            filter: "member={0}"
+        groupSearchBase: "ou=groups"
+        groupSearchFilter: "cn={0}"
+        inhibitInferRootDN: false
+        managerDN: "cn=readonly,dc=example,dc=org"
+        managerPasswordSecret: "readonly"
+        rootDN: "dc=example,dc=org"
+        server: "ldap:389"
+        userSearchBase: "ou=users"
+      disableMailAddressResolver: false
+      groupIdStrategy: "caseInsensitive"
+      userIdStrategy: "caseInsensitive"
+
+  authorizationStrategy:
+    projectMatrix:
+      grantedPermissions:
+      - "Agent/Connect:jenkins.swarm"
+      - "Agent/Disconnect:jenkins.swarm"
+      - "Agent/Configure:jenkins.swarm"
+      - "Agent/Create:jenkins.swarm"
+      - "Agent/Delete:jenkins.swarm"
+      - "Overall/Administer:jenkins-admins"
+      - "Overall/Administer:jenkins.admin"
+      - "Overall/Read:authenticated"
+      - "Job/Discover:authenticated"
+      - "Job/Build:team-leaders"
+      - "Job/Cancel:team-leaders"
+      - "Job/Configure:team-leaders"
+
+  clouds:
+  - docker:
+      dockerApi:
+        dockerHost:
+          uri: "unix:///var/run/docker.sock"
+      exposeDockerHost: true
+      name: "docker-cloud"
+      templates:
+      - connector:
+          jnlp:
+            jenkinsUrl: http://host.docker.internal:8080
+            jnlpLauncher:
+              vmargs: "-Xmx1G"
+              workDirSettings:
+                disabled: true
+                failIfWorkDirIsMissing: false
+                internalDir: "remoting"
+        labelString: "generic"
+        mode: EXCLUSIVE
+        remoteFs: "/home/jenkins"
+        dockerTemplateBase:
+          cpuShares: 0
+          memoryLimit: 0
+          memorySwap: 0
+          environmentsString: "http_proxy=\nhttps_proxy=\nno_proxy="
+          image: "odavid/jenkins-jnlp-slave:latest"
+          volumesString: "/var/run/docker.sock:/var/run/docker.sock"
+        instanceCapStr: "10"
+
+credentials:
+  system:
+    domainCredentials:
+    - credentials:
+      - usernamePassword:
+          description: "artifact-repository-cred"
+          id: "artifact-repository-cred"
+          password: "password1234"
+          scope: GLOBAL
+          username: "user"
+
+jobs:
+  - script: |-
+      def projects = ['nodejs', 'java']
+      projects.each{ prj ->
+        pipelineJob(prj + '-calc'){
+          definition{
+            cpsScm{
+              lightweight(true)
+              scm{
+                git{
+                  remote {
+                    url('https://github.com/odavid/my-bloody-jenkins.git')
+                  }
+                  branches("refs/heads/master")
+                }
+                scriptPath('demo/assets/apps/' + prj + '-calc/Jenkinsfile')
+              }
+            }
+          }
+        }
+      }
+
+tool:
+  maven:
+    installations:
+    - name: MVN-3.5.0
+      properties:
+      - installSource:
+          installers:
+          - maven:
+              id: '3.5.0'
+
+## Waiting for https://github.com/jenkinsci/configuration-as-code-plugin/pull/416
+# scriptApproval:
+#   approvedSignatures:
+#     - method java.net.URI getHost
+#     - method java.net.URI getPort
+#     - new java.net.URI java.lang.String
