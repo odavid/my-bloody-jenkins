@@ -3,16 +3,22 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
-## 2.138.3-92 (Not released yet)
+## 2.138.3-92
 * Updated plugins:
     * [kubernetes:1.13.7](https://plugins.jenkins.io/kubernetes)
     * [kubernetes-cli:1.3.0](https://plugins.jenkins.io/kubernetes-cli)
     * [maven-plugin:3.2](https://plugins.jenkins.io/maven-plugin)
     * [script-security:1.49](https://plugins.jenkins.io/script-security)
-    * [slack:2.4](https://plugins.jenkins.io/slack)
     * [workflow-basic-steps:2.13](https://plugins.jenkins.io/workflow-basic-steps)
     * [workflow-cps:2.61](https://plugins.jenkins.io/workflow-cps)
     * [workflow-support:2.23](https://plugins.jenkins.io/workflow-support)
+    * [aws-java-sdk:1.11.457](https://plugins.jenkins.io/aws-java-sdk)
+    * [branch-api:2.1.2](https://plugins.jenkins.io/branch-api)
+    * [jdk-tool:1.2](https://plugins.jenkins.io/jdk-tool)
+    * [p4:1.9.5](https://plugins.jenkins.io/p4)
+    * [slack:2.6](https://plugins.jenkins.io/slack)
+    * [workflow-job:2.30](https://plugins.jenkins.io/workflow-job)
+    * [workflow-step-api:2.17](https://plugins.jenkins.io/workflow-step-api)
 
 ## 2.138.3-91
 * Updated plugins:
