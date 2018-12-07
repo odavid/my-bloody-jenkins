@@ -35,7 +35,7 @@ services:
 
       ## Configuration handling is done by configuration-as-code plugin
       ## See https://github.com/jenkinsci/configuration-as-code-plugin
-      JENKINS_ENV_CONFIG_MODE: casc-plugin
+      JENKINS_ENV_CONFIG_MODE: jcasc
 
       # Disable hyper provision of slaves - docker plugin strategy is enough
       JAVA_OPTS_LOAD_STATS_CLOCK: ''
