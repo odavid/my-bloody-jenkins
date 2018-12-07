@@ -10,7 +10,6 @@ services:
       LDAP_DOMAIN: example.org
       LDAP_BASE_DN: dc=example,dc=org
       LDAP_ADMIN_PASSWORD: admin
-      LDAP_ADMIN_PASSWORD: admin
       LDAP_READONLY_USER: 'true'
       LDAP_TLS: "false"
     command: --copy-service

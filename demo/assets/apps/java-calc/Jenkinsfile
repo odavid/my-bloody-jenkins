@@ -2,7 +2,7 @@ node('generic'){
     stage('checkout'){
         checkout scm
     }
-    dir('demo/apps/java-calc'){
+    dir('demo/assets/apps/java-calc'){
         stage('maven-build'){
             // Convert http_proxy to java opts If behind proxy
             def mavenOpts = ''
