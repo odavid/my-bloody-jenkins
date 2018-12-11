@@ -7,6 +7,8 @@
 * Updated plugins:
     * [parallel-test-executor:1.12](https://plugins.jenkins.io/parallel-test-executor)
     * [pipeline-model-definition:1.3.4](https://plugins.jenkins.io/pipeline-model-definition)
+    * [plain-credentials:1.5](https://plugins.jenkins.io/plain-credentials)
+    * [swarm:3.15](https://plugins.jenkins.io/swarm)
 
 ## 2.150.1-93
 * [LTS-2.150.1](https://jenkins.io/changelog-stable/)
