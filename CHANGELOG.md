@@ -3,7 +3,7 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
-## 2.150.1-94 (Not Released yet)
+## 2.150.1-94
 * Updated plugins:
     * [parallel-test-executor:1.12](https://plugins.jenkins.io/parallel-test-executor)
     * [pipeline-model-definition:1.3.4](https://plugins.jenkins.io/pipeline-model-definition)
