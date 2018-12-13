@@ -9,6 +9,9 @@
     * [pipeline-model-definition:1.3.4](https://plugins.jenkins.io/pipeline-model-definition)
     * [plain-credentials:1.5](https://plugins.jenkins.io/plain-credentials)
     * [swarm:3.15](https://plugins.jenkins.io/swarm)
+    * [slack:2.7](https://plugins.jenkins.io/slack)
+    * [workflow-job:2.31](https://plugins.jenkins.io/workflow-job)
+    * [workflow-support:2.24](https://plugins.jenkins.io/workflow-support)
 
 ## 2.150.1-93
 * [LTS-2.150.1](https://jenkins.io/changelog-stable/)

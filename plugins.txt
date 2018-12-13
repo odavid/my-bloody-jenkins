@@ -132,7 +132,7 @@ rebuild:1.29
 run-condition:1.2
 scm-api:2.3.0
 script-security:1.49
-slack:2.6
+slack:2.7
 sonar:2.8.1
 sse-gateway:1.16
 ssh-agent:1.17
@@ -149,10 +149,10 @@ workflow-basic-steps:2.13
 workflow-cps:2.61
 workflow-cps-global-lib:2.12
 workflow-durable-task-step:2.26
-workflow-job:2.30
+workflow-job:2.31
 workflow-multibranch:2.20
 workflow-remote-loader:1.4
 workflow-scm-step:2.7
 workflow-step-api:2.17
-workflow-support:2.23
+workflow-support:2.24
 xvfb:1.1.3
