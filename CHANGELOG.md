@@ -3,6 +3,14 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+## 2.150.1-95 (Not released yet)
+* Updated plugins:
+    * [badge:1.7](https://plugins.jenkins.io/badge)
+    * [kubernetes:1.13.8](https://plugins.jenkins.io/kubernetes)
+    * [pipeline-input-step:2.9](https://plugins.jenkins.io/pipeline-input-step)
+    * [slack:2.9](https://plugins.jenkins.io/slack)
+    * [workflow-durable-task-step:2.27](https://plugins.jenkins.io/workflow-durable-task-step)
+
 ## 2.150.1-94
 * Updated plugins:
     * [parallel-test-executor:1.12](https://plugins.jenkins.io/parallel-test-executor)

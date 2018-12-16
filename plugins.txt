@@ -10,7 +10,7 @@ artifactory:2.16.2
 authentication-tokens:1.3
 aws-credentials:1.24
 aws-java-sdk:1.11.457
-badge:1.6
+badge:1.7
 blueocean:1.9.0
 blueocean-autofavorite:1.2.2
 blueocean-bitbucket-pipeline:1.9.0
@@ -96,7 +96,7 @@ jquery:1.12.4-0
 jquery-detached:1.2.1
 jsch:0.1.54.2
 junit:1.26.1
-kubernetes:1.13.7
+kubernetes:1.13.8
 kubernetes-cli:1.3.0
 kubernetes-credentials:0.4.0
 ldap:1.20
@@ -114,7 +114,7 @@ parallel-test-executor:1.12
 parameterized-trigger:2.35.2
 pipeline-build-step:2.7
 pipeline-graph-analysis:1.9
-pipeline-input-step:2.8
+pipeline-input-step:2.9
 pipeline-milestone-step:1.3.1
 pipeline-model-api:1.3.4
 pipeline-model-declarative-agent:1.1.1
@@ -132,7 +132,7 @@ rebuild:1.29
 run-condition:1.2
 scm-api:2.3.0
 script-security:1.49
-slack:2.7
+slack:2.9
 sonar:2.8.1
 sse-gateway:1.16
 ssh-agent:1.17
@@ -148,7 +148,7 @@ workflow-api:2.33
 workflow-basic-steps:2.13
 workflow-cps:2.61
 workflow-cps-global-lib:2.12
-workflow-durable-task-step:2.26
+workflow-durable-task-step:2.27
 workflow-job:2.31
 workflow-multibranch:2.20
 workflow-remote-loader:1.4
