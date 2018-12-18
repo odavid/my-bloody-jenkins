@@ -38,7 +38,7 @@ build-timeout:1.19
 build-user-vars-plugin:1.5
 buildtriggerbadge:2.9
 checkmarx:8.80.0
-cloudbees-bitbucket-branch-source:2.2.15
+cloudbees-bitbucket-branch-source:2.2.16
 cloudbees-folder:6.7
 cobertura:1.13
 code-coverage-api:1.0.5
@@ -85,7 +85,7 @@ htmlpublisher:1.17
 http_request:1.8.22
 icon-shim:2.0.3
 ivy:1.28
-jackson2-api:2.9.7.1
+jackson2-api:2.9.8
 javadoc:1.4
 jdk-tool:1.2
 jenkins-design-language:1.9.0
@@ -132,7 +132,7 @@ rebuild:1.29
 run-condition:1.2
 scm-api:2.3.0
 script-security:1.49
-slack:2.9
+slack:2.10
 sonar:2.8.1
 sse-gateway:1.16
 ssh-agent:1.17

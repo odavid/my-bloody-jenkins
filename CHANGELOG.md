@@ -10,6 +10,9 @@
     * [pipeline-input-step:2.9](https://plugins.jenkins.io/pipeline-input-step)
     * [slack:2.9](https://plugins.jenkins.io/slack)
     * [workflow-durable-task-step:2.27](https://plugins.jenkins.io/workflow-durable-task-step)
+    * [cloudbees-bitbucket-branch-source:2.2.16](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
+    * [jackson2-api:2.9.8](https://plugins.jenkins.io/jackson2-api)
+    * [slack:2.10](https://plugins.jenkins.io/slack)
 
 ## 2.150.1-94
 * Updated plugins:
