@@ -6,7 +6,6 @@
 ## 2.150.1-95 (Not released yet)
 * Updated plugins:
     * [badge:1.7](https://plugins.jenkins.io/badge)
-    * [kubernetes:1.13.8](https://plugins.jenkins.io/kubernetes)
     * [pipeline-input-step:2.9](https://plugins.jenkins.io/pipeline-input-step)
     * [slack:2.9](https://plugins.jenkins.io/slack)
     * [workflow-durable-task-step:2.27](https://plugins.jenkins.io/workflow-durable-task-step)
@@ -14,6 +13,7 @@
     * [jackson2-api:2.9.8](https://plugins.jenkins.io/jackson2-api)
     * [configuration-as-code:1.4](https://plugins.jenkins.io/configuration-as-code)
     * [slack:2.11](https://plugins.jenkins.io/slack)
+    * [kubernetes:1.14.0](https://plugins.jenkins.io/kubernetes)
 
 ## 2.150.1-94
 * Updated plugins:
