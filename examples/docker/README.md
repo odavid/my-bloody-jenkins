@@ -12,7 +12,7 @@ Running the example will:
 
 ## Prerequisites
 
-* docker-compose is installed
+* docker and docker-compose are installed
 
 # Running the example
 
@@ -21,12 +21,9 @@ In order to run the example
 $ # Clone the repository
 $ git clone https://github.com/odavid/my-bloody-jenkins.git
 $ cd my-bloody-jenkins/examples/docker
-$ # setup variables to be used by docker-compose
-$ . ./setup-env
-$ # run the docker-compose
-$ docker-compose up -d
-$ # view logs
-$ docker-compose logs -f
+$ # start the server including setup of variables. 
+$ # Before that step, you can also add a GIT user credential based on GIT_PRIVATE_KEY to config.yml
+$ . ./jenkins_server.sh start
 ```
 
 Wait until you'll see:
@@ -39,4 +36,4 @@ Open the browser:
 open http://localhost:8080/
 ```
 
-You should see the seed job running and waiting for a kubernetes slave to be started. Please be patient, pulling the jenkinsci/jnlp-slave:latest may take a while.
+You should see the seed job running and waiting for a kubernetes slave to be started. Please be patient, pulling the jenkinsci/jnlp-slave:latest may take a while (and it will start the server twice).
