@@ -5,6 +5,15 @@ security:
   remove_master_envvars:
   - '.*PASSWORD.*'
 
+credentials:
+  gitsshkey:
+    type: sshkey
+    description: gitsshkey
+    username: gitsshkey
+    passphrase:
+    privatekey: |
+      ${GIT_PRIVATE_KEY}
+
 tools:
   installations:
     MVN-3.5.0:
