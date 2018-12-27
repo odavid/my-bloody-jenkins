@@ -5,6 +5,8 @@
 
 ## 2.150.1-96 (Not released yet)
 * Artifactory config [#114](https://github.com/odavid/my-bloody-jenkins/pull/114)
+* Saml plugin configuration [#115](https://github.com/odavid/my-bloody-jenkins/pull/115)
+
 
 ## 2.150.1-95
 * Updated plugins:
