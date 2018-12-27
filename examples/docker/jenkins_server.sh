@@ -1,7 +1,5 @@
 #!/bin/bash
 
-. ./set_secrets.sh
-
 action='restart'
 if [[ $# > 0 ]]; then
    action=$1
