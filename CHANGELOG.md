@@ -6,7 +6,14 @@
 ## 2.150.1-96 (Not released yet)
 * Artifactory config [#114](https://github.com/odavid/my-bloody-jenkins/pull/114)
 * Saml plugin configuration [#115](https://github.com/odavid/my-bloody-jenkins/pull/115)
-
+* Updated plugins:
+    * [buildtriggerbadge:2.10](https://plugins.jenkins.io/buildtriggerbadge)
+    * [cloudbees-bitbucket-branch-source:2.3.0](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
+    * [cucumber-reports:4.3.0](https://plugins.jenkins.io/cucumber-reports)
+    * [git-client:2.7.5](https://plugins.jenkins.io/git-client)
+    * [kubernetes-cli:1.4.0](https://plugins.jenkins.io/kubernetes-cli)
+    * [kubernetes:1.14.1](https://plugins.jenkins.io/kubernetes)
+    * [slack:2.12](https://plugins.jenkins.io/slack)
 
 ## 2.150.1-95
 * Updated plugins:
