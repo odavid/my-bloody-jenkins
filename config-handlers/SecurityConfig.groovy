@@ -1,3 +1,4 @@
+import org.jenkinsci.plugins.structs.describable.DescribableModel
 import hudson.security.LDAPSecurityRealm
 import hudson.security.ProjectMatrixAuthorizationStrategy
 import hudson.security.HudsonPrivateSecurityRealm
@@ -77,6 +78,7 @@ def setupLdap(config){
         )
     }
 }
+
 def setupJenkinsDatabase(config){
     def currnetRealm = jenkins.model.Jenkins.instance.securityRealm
     def securityRealm = (currnetRealm instanceof HudsonPrivateSecurityRealm) ? currnetRealm : new HudsonPrivateSecurityRealm(false)
@@ -85,6 +87,12 @@ def setupJenkinsDatabase(config){
     }
     return securityRealm
 }
+
+def setupSaml(config){
+    def realmConfig = config.realmConfig
+    return realmConfig ? DescribableModel.of(org.jenkinsci.plugins.saml.SamlSecurityRealm).instantiate(realmConfig) : null
+}
+
 
 def createAuthorizationStrategy(config, adminUser){
     def strategy = new ProjectMatrixAuthorizationStrategy()
@@ -176,6 +184,10 @@ def setup(config){
         case 'active_directory':
             realm = setupActiveDirectory(config)
             break
+        case 'saml':
+            realm = setupSaml(config)
+            break
+
     }
     if(realm){
         instance.setSecurityRealm(realm)

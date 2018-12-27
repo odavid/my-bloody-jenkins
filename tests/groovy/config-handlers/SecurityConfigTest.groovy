@@ -3,6 +3,42 @@ import org.yaml.snakeyaml.Yaml
 handler = 'Security'
 configHandler = evaluate(new File("/usr/share/jenkins/config-handlers/${handler}Config.groovy"))
 
+def testSaml(){
+	def config = new Yaml().load("""
+realmConfig:
+  idpMetadataConfiguration:
+    xml: |-
+      <xml></xml>
+    url: http://xxx.yyy
+    period: 10
+  displayNameAttributeName: displayName
+  groupsAttributeName: group
+  maximumAuthenticationLifetime: 10
+  usernameAttributeName: user
+  emailAttributeName: email
+  logoutUrl: http://logout
+  usernameCaseConversion: lowercase
+  binding: "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+  samlCustomAttributes:
+  - name: xxx
+    displayName: wierdxxx
+    \$class: Attribute
+""")
+    def samlRealm = configHandler.setupSaml(config)
+    assert samlRealm instanceof org.jenkinsci.plugins.saml.SamlSecurityRealm
+    assert samlRealm.idpMetadataConfiguration.xml == '<xml></xml>'
+    assert samlRealm.idpMetadataConfiguration.url == 'http://xxx.yyy'
+    assert samlRealm.idpMetadataConfiguration.period == 10
+    assert samlRealm.displayNameAttributeName == 'displayName'
+    assert samlRealm.maximumAuthenticationLifetime == 10
+    assert samlRealm.usernameAttributeName == 'user'
+    assert samlRealm.emailAttributeName == 'email'
+    assert samlRealm.logoutUrl == 'http://logout'
+    assert samlRealm.usernameCaseConversion == 'lowercase'
+    assert samlRealm.binding == 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST'
+    assert samlRealm.samlCustomAttributes == [new org.jenkinsci.plugins.saml.conf.Attribute('xxx', 'wierdxxx')]
+}
+
 def testLdap(){
 	def config = new Yaml().load("""
 groupMembershipAttribute: memberOf
@@ -187,6 +223,7 @@ markupFormatter:
     assert jenkins.model.Jenkins.instance.markupFormatter.disableSyntaxHighlighting
 }
 
+testSaml()
 testLdap()
 testActiveDirectory()
 testAuthorizationStrategy()
