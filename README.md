@@ -29,7 +29,7 @@ The image is "Battle Proven" and serves as the baseground for several Jenkins de
   * Notifiers (Hipchat, Slack, Email, Email-Ext)
   * Credentials (aws, userpass, sshkeys, certs, kubernetes, gitlab, simple secrets)
   * Tools and installers (JDK, Ant, Maven, Gradle, SonarQube, Xvfb)
-  * Misc. Plugins configuration such as Jira, SonarQube, Checkmarx
+  * Misc. Plugins configuration such as Jira, SonarQube, Checkmarx, Artifactory
   * Misc. Configuration options such as Environment variables, Proxy
 * Support additional plugins installation during startup without the need to build your own image
 * Supports quiet startup period to enable docker restarts with a graceful time which Jenkins is in *Quiet Mode*
@@ -786,6 +786,7 @@ seed_jobs:
           new lines
 
 ```
+
 ### JobDSL Scripts Section
 A "lighter" version of [Seed Jobs Section](#seed-jobs-section). Contains a list of [jobdsl scriptlets](https://github.com/jenkinsci/job-dsl-plugin/wiki). Each script will be executed on startup without creating a dedicated job.
 
@@ -808,6 +809,31 @@ job_dsl_scripts:
           maven('-e clean test')
       }
     }
+```
+
+### Artifactory Section
+Respinsible for configuration of [Artifactory Plugin](https://www.jfrog.com/confluence/display/RTF/Jenkins+Artifactory+Plug-in)
+
+```yaml
+artifactory:
+  ## Should be true
+  useCredentialsPlugin: true
+  ## List of artifactory servers
+  artifactoryServers:
+  - serverId: serverId
+    artifactoryUrl: https://artifactory1
+    # default false
+    bypassProxy: true
+    # default 3
+    connectionRetry: 10
+    # default 300
+    timeout: 200
+    # use credentialsId
+    deployerCredentialsConfig:
+      credentialsId: 'cred1'
+    # if omitted same as deployerCredentialsConfig
+    resolverCredentialsConfig:
+      credentialsId: 'cred2'
 ```
 
 ### Running Jenkins behind proxy

@@ -12,7 +12,7 @@ jobGlobalStatusOnError: FAILURE
 prohibitProjectCreation: true
 hideResults: true
 enableCertificateValidation: true
-excludeFolders: xxx 
+excludeFolders: xxx
 filterPattern: xxx
 forcingVulnerabilityThresholdEnabled: true
 highThresholdEnforcement: 1000
