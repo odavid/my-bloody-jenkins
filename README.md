@@ -220,6 +220,7 @@ Responsible for:
     * jenkins_database - the adminPassword must be provided
     * ldap - LDAP Configuration must be provided
     * active_directory - Uses [active-directory plugin](https://wiki.jenkins.io/display/JENKINS/Active+Directory+plugin)
+    * saml - Uses [saml plugin](https://plugins.jenkins.io/saml)
 * User/Group Permissions dict - Each key represent a user or a group and its value is a list of Jenkins [Permissions IDs](https://wiki.jenkins.io/display/JENKINS/Matrix-based+security)
 
 ```yaml
@@ -278,6 +279,36 @@ security:
     tlsConfiguration: TRUST_ALL_CERTIFICATES # TRUST_ALL_CERTIFICATES, JDK_TRUSTSTORE
     jenkinsInternalUser: my-none-ad-user #
 ```
+
+```yaml
+# saml - saml configuration must be provided
+security:
+	realm: saml
+  realmConfig:
+    ### See https://github.com/jenkinsci/saml-plugin/blob/master/doc/CONFIGURE.md
+    idpMetadataConfiguration:
+      # Identity Provider Metadata in XML format
+      xml: |-
+        <xml>
+          your saml
+        </xml>
+      # The Identity Provider metadata file source URL (not need if you have set the IdP Metadata)
+      url: http://xxx.yyy
+      # The period of minutes we will wait until refresh the IdP Metadata
+      period: 10
+    displayNameAttributeName: displayName
+    groupsAttributeName: group
+    maximumAuthenticationLifetime: 10
+    usernameAttributeName: user
+    emailAttributeName: email
+    logoutUrl: http://logout
+    # lowercase / uppercase / none (default)
+    usernameCaseConversion: lowercase
+    # urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect (Default if omitted)
+    # urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST
+    binding: urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect
+```
+
 
 ```yaml
 # Permissions - each key represents a user/group and has list of Jenkins Permissions
