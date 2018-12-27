@@ -1,7 +1,8 @@
 def printActivePlugins(){
-	jenkins.model.Jenkins.instance.pluginManager.activePlugins.sort{it.shortName}.each{
-		out.println it.shortName + ':' + it.version
-	}
+  jenkins.model.Jenkins.instance.pluginManager.activePlugins
+    .collect{ it.shortName + ':' + it.version }
+  	.sort()
+    .each{println it}
 }
 
 def printLatestVersionsOfPlugins(){
