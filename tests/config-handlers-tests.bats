@@ -23,6 +23,10 @@ function groovy_test(){
     groovy_test
 }
 
+@test "ArtifactoryConfig" {
+    groovy_test
+}
+
 @test "CloudsConfig" {
     groovy_test
 }

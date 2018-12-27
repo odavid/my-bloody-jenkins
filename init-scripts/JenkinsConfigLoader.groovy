@@ -126,6 +126,7 @@ if(!new File(configFileName).exists()) {
     handleConfig('Notifiers', jenkinsConfig.notifiers)
     handleConfig('ScriptApproval', jenkinsConfig.script_approval)
     handleConfig('Tools', jenkinsConfig.tools)
+    handleConfig('Artifactory', jenkinsConfig.artifactory)
     handleConfig('SonarQubeServers', jenkinsConfig.sonar_qube_servers)
     handleConfig('Jira', jenkinsConfig.jira)
     handleConfig('JiraSteps', jenkinsConfig.jiraSteps)
