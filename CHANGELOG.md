@@ -3,6 +3,9 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+## 2.150.1-96 (Not released yet)
+* Artifactory config [#114](https://github.com/odavid/my-bloody-jenkins/pull/114)
+
 ## 2.150.1-95
 * Updated plugins:
     * [badge:1.7](https://plugins.jenkins.io/badge)
