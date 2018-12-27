@@ -283,7 +283,7 @@ security:
 ```yaml
 # saml - saml configuration must be provided
 security:
-	realm: saml
+  realm: saml
   realmConfig:
     ### See https://github.com/jenkinsci/saml-plugin/blob/master/doc/CONFIGURE.md
     idpMetadataConfiguration:
