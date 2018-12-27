@@ -143,6 +143,7 @@ structs:1.17
 swarm:3.15
 timestamper:1.8.10
 token-macro:2.5
+trilead-api:1.0.1
 variant:1.1
 workflow-aggregator:2.6
 workflow-api:2.33
