@@ -812,7 +812,7 @@ job_dsl_scripts:
 ```
 
 ### Artifactory Section
-Respinsible for configuration of [Artifactory Plugin](https://www.jfrog.com/confluence/display/RTF/Jenkins+Artifactory+Plug-in)
+Responsible for configuration of [Artifactory Plugin](https://www.jfrog.com/confluence/display/RTF/Jenkins+Artifactory+Plug-in)
 
 ```yaml
 artifactory:
