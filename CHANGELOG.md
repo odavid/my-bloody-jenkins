@@ -3,6 +3,13 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+## 2.160.1-97 (Not released yet)
+* Updated plugins:
+    * [artifactory:3.0.0](https://plugins.jenkins.io/artifactory)
+    * [kubernetes:1.14.2](https://plugins.jenkins.io/kubernetes)
+    * [sse-gateway:1.17](https://plugins.jenkins.io/sse-gateway)
+    * [ssh-slaves:1.29.4](https://plugins.jenkins.io/ssh-slaves)
+
 ## 2.150.1-96
 * Artifactory config [#114](https://github.com/odavid/my-bloody-jenkins/pull/114)
 * Saml plugin configuration [#115](https://github.com/odavid/my-bloody-jenkins/pull/115)
