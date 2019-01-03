@@ -25,6 +25,10 @@ my-seed-job:
   triggers:
     pollScm: H/2 * * * *
     periodic: H/1 * * * *
+    artifactory:
+      serverId: artifactory
+      path: /x/y/z
+      schedule: 'H/5 * * * *'
   parameters:
     SIMPLE_STRING: SIMPLE_STRING_VALUE
     SIMPLE_TEXT: |
