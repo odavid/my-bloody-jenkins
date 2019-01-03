@@ -789,8 +789,7 @@ seed_jobs:
       # Artifactory trigger
       # To use this trigger, Artifactory should be created also by using 'Artifactory' section.
       artifactory:
-        serverId: artName #Name of Artifactory, same as created Artifactory
-        artifactoryUrl: https://mycompany.com/artifactory #Url of Artifactory, same as created Artifactory
+        serverId: serverId #Name of Artifactory, same as created Artifactory
         path: my-repo/path/to/listen 
         schedule: 'H/5 * * * *'
     # Location of the pipeline script within the repository
