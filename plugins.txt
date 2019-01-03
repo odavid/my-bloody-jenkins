@@ -3,6 +3,7 @@ active-directory:2.10
 amazon-ecr:1.6
 amazon-ecs:1.18
 anchore-container-scanner:1.0.18
+ansicolor:0.5.2
 ant:1.9
 antisamy-markup-formatter:1.5
 apache-httpcomponents-client-4-api:4.5.5-3.0
@@ -60,6 +61,7 @@ docker-plugin:1.1.5
 docker-workflow:1.17
 durable-task:1.28
 email-ext:2.63
+emailext-template:1.1
 embeddable-build-status:1.9
 envinject-api:1.5
 envinject:2.1.6
@@ -133,6 +135,7 @@ run-condition:1.2
 saml:1.1.2
 scm-api:2.3.0
 script-security:1.49
+simple-theme-plugin:0.5.1
 slack:2.12
 sonar:2.8.1
 sse-gateway:1.17
@@ -140,7 +143,9 @@ ssh-agent:1.17
 ssh-credentials:1.14
 ssh-slaves:1.29.4
 structs:1.17
+subversion:2.12.1
 swarm:3.15
+throttle-concurrents:2.0.1
 timestamper:1.8.10
 token-macro:2.5
 trilead-api:1.0.1
@@ -157,4 +162,5 @@ workflow-remote-loader:1.4
 workflow-scm-step:2.7
 workflow-step-api:2.17
 workflow-support:2.24
+ws-cleanup:0.36
 xvfb:1.1.3
