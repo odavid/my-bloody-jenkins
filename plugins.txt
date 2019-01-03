@@ -156,5 +156,5 @@ workflow-multibranch:2.20
 workflow-remote-loader:1.4
 workflow-scm-step:2.7
 workflow-step-api:2.17
-workflow-support:3.0
+workflow-support:2.24
 xvfb:1.1.3
