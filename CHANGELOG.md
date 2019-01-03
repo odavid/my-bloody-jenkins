@@ -11,6 +11,8 @@
     * [kubernetes:1.14.2](https://plugins.jenkins.io/kubernetes)
     * [sse-gateway:1.17](https://plugins.jenkins.io/sse-gateway)
     * [ssh-slaves:1.29.4](https://plugins.jenkins.io/ssh-slaves)
+    * [blueocean:1.10.1](https://plugins.jenkins.io/blueocean)
+    * [workflow-support:3.0](https://plugins.jenkins.io/workflow-support)
 
 ## 2.150.1-96
 * Artifactory config [#114](https://github.com/odavid/my-bloody-jenkins/pull/114)
