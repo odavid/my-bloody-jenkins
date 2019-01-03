@@ -786,6 +786,12 @@ seed_jobs:
       pollScm: '* * * * *'
       # period trigger
       periodic: '* * * * *'
+      # Artifactory trigger
+      # To use this trigger, Artifactory should be created also by using 'Artifactory' section.
+      artifactory:
+        serverId: serverId #Name of Artifactory, same as created Artifactory
+        path: my-repo/path/to/listen 
+        schedule: 'H/5 * * * *'
     # Location of the pipeline script within the repository
     pipeline: example/SeedJobPipeline.groovy
     # always - will be executed everytime the config loader will run
