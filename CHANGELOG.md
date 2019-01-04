@@ -3,6 +3,17 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+## 2.160.1-98 (Not released yet)
+* Updated plugins:
+    * [workflow-support:3.0](https://plugins.jenkins.io/workflow-support)
+* Add plugins that are commonly used [#117](https://github.com/odavid/my-bloody-jenkins/pull/117)
+    * [ansicolor:0.6.0](https://plugins.jenkins.io/ansicolor)
+    * [emailext-template:1.1](https://plugins.jenkins.io/emailext-template)
+    * [simple-theme-plugin:0.5.1](https://plugins.jenkins.io/simple-theme-plugin)
+    * [subversion:2.12.1](https://plugins.jenkins.io/subversion)
+    * [throttle-concurrents:2.0.1](https://plugins.jenkins.io/throttle-concurrents)
+    * [ws-cleanup:0.37](https://plugins.jenkins.io/ws-cleanup)
+
 ## 2.160.1-97
 * Support trigger by polling Artifactory [#116](https://github.com/odavid/my-bloody-jenkins/pull/116)
 * Updated plugins:
