@@ -3,7 +3,7 @@ active-directory:2.10
 amazon-ecr:1.6
 amazon-ecs:1.18
 anchore-container-scanner:1.0.18
-ansicolor:0.5.2
+ansicolor:0.6.0
 ant:1.9
 antisamy-markup-formatter:1.5
 apache-httpcomponents-client-4-api:4.5.5-3.0
@@ -162,5 +162,5 @@ workflow-remote-loader:1.4
 workflow-scm-step:2.7
 workflow-step-api:2.17
 workflow-support:2.24
-ws-cleanup:0.36
+ws-cleanup:0.37
 xvfb:1.1.3
