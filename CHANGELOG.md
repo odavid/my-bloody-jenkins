@@ -3,7 +3,7 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
-## 2.160.1-98 (Not released yet)
+## 2.160.1-98
 * google-login-plugin Configuration [#119](https://github.com/odavid/my-bloody-jenkins/pull/119)
     * [google-login:1.4](https://plugins.jenkins.io/google-login)
 * Updated plugins:
