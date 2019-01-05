@@ -78,6 +78,7 @@ github-api:1.95
 github-branch-source:2.4.1
 github:1.29.3
 gitlab-plugin:1.5.11
+google-login:1.4
 gradle:1.29
 groovy-postbuild:2.4.3
 handlebars:1.1.1

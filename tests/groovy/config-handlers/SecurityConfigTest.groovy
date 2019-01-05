@@ -3,6 +3,20 @@ import org.yaml.snakeyaml.Yaml
 handler = 'Security'
 configHandler = evaluate(new File("/usr/share/jenkins/config-handlers/${handler}Config.groovy"))
 
+def testGoogleLogin(){
+	def config = new Yaml().load("""
+realmConfig:
+  clientId: client-id
+  clientSecret: client-secret
+  domain: domain.com
+""")
+    def googleOAuth2Realm = configHandler.setupGoogleOAuth2(config)
+    assert googleOAuth2Realm instanceof org.jenkinsci.plugins.googlelogin.GoogleOAuth2SecurityRealm
+    assert googleOAuth2Realm.clientId == "client-id"
+    assert googleOAuth2Realm.clientSecret.toString() == "client-secret"
+    assert googleOAuth2Realm.domain == "domain.com"
+}
+
 def testSaml(){
 	def config = new Yaml().load("""
 realmConfig:
@@ -223,6 +237,7 @@ markupFormatter:
     assert jenkins.model.Jenkins.instance.markupFormatter.disableSyntaxHighlighting
 }
 
+testGoogleLogin()
 testSaml()
 testLdap()
 testActiveDirectory()
