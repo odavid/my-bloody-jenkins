@@ -135,6 +135,7 @@ if(!new File(configFileName).exists()) {
     handleConfig('PipelineLibraries', jenkinsConfig.pipeline_libraries)
     handleConfig('SeedJobs', jenkinsConfig.seed_jobs)
     handleConfig('JobDSLScripts', jenkinsConfig.job_dsl_scripts)
+    handleConfig('ConfigurationAsCode', jenkinsConfig.configuration_as_code)
 
     handleCustomConfig(jenkinsConfig.customConfig)
 }
