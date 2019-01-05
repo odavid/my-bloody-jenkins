@@ -119,11 +119,13 @@ Supported URLs:
 
 * `JENKINS_ENV_ADMIN_ADDRESS` - Define the Jenkins admin email address
 
-* `JENKINS_ENV_PLUGINS` - Ability to define comma separated list of additional plugins to install before starting up. See [plugin-version-format](https://github.com/jenkinsci/docker#plugin-version-format). This is option is not recommended, but sometimes it is useful to run the container without creating an inherited image.
+* `JENKINS_ENV_PLUGINS` - Ability to define comma separated list of additional plugins to install before starting up. See [plugin-version-format](https://github.com/jenkinsci/docker#plugin-version-format).
+> This is option is not recommended, but sometimes it is useful to run the container without creating an inherited image.
 
 * `JENKINS_ENV_QUIET_STARTUP_PERIOD` - Time in seconds. If speficied, jenkins will start in quiet mode and disable all running jobs. Useful for major upgrade.
 
-* `JENKINS_ENV_CONFIG_MODE` - If set to `jcasc`, then [Configuration as Code Plugin](https://github.com/jenkinsci/configuration-as-code-plugin) will be used instead of [Built-in Configuration Handlers](#configuration-reference). By using this mode, see [JCasC Demo](./demo/jcasc-plugin)
+* `JENKINS_ENV_CONFIG_MODE` - If set to `jcasc`, then [Configuration as Code Plugin](https://github.com/jenkinsci/configuration-as-code-plugin) will be used instead of [Built-in Configuration Handlers](#configuration-reference). See [JCasC Demo](./demo/jcasc-plugin).
+> This option will disable all configuration handlers used by the image! If you still want to use builtin configuration handlers, together with dynamic JCasC snippets, please see [Configuration as Code Section](#configuration-as-code-section).
 
 ## Configuration Reference
 The configuration is divided into main configuration sections. Each section is responsible for a specific aspect of jenkins configuration.
@@ -361,6 +363,26 @@ security:
       rawHtmlMarkupFormatter:
         disableSyntaxHighlighting: true
 
+
+```
+
+### Configuration as Code Section
+The `configuration_as_code` yaml section enables *"Mixed-Mode"* configuration style. It enables embedding [configuration as code snippets](https://github.com/jenkinsci/configuration-as-code-plugin/tree/master/demos) within the configuration yaml. This enables out of the box support for plugins configuration that do not have a builtin configuration handler.
+
+```yaml
+configuration_as_code:
+  unclassified:
+  ## https://github.com/jenkinsci/configuration-as-code-plugin/blob/1f79326e902fe721a3a05077a7e46f98569804ff/demos/simple-theme-plugin/README.md
+    simple-theme-plugin:
+      elements:
+      - cssUrl:
+          url: "https://example.bogus/test.css"
+      - cssText:
+          text: ".testcss { color: red }"
+      - jsUrl:
+          url: "https://example.bogus/test.js"
+      - faviconUrl:
+          url: "https://vignette.wikia.nocookie.net/deadpool/images/6/64/Favicon.ico"
 
 ```
 
