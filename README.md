@@ -221,6 +221,7 @@ Responsible for:
     * ldap - LDAP Configuration must be provided
     * active_directory - Uses [active-directory plugin](https://wiki.jenkins.io/display/JENKINS/Active+Directory+plugin)
     * saml - Uses [saml plugin](https://plugins.jenkins.io/saml)
+    * google - Uses [google-login plugin](https://plugins.jenkins.io/google-login)
 * User/Group Permissions dict - Each key represent a user or a group and its value is a list of Jenkins [Permissions IDs](https://wiki.jenkins.io/display/JENKINS/Matrix-based+security)
 
 ```yaml
@@ -233,51 +234,51 @@ security:
 ```yaml
 # ldap - ldap configuration must be provided
 security:
-    realm: ldap
-    server: myldap.server.com:389 # mandatory
-    rootDN: dc=mydomain,dc=com # mandatory
-    managerDN: cn=search-user,ou=users,dc=mydomain,dc=com # mandatory
-    managerPassword: <passowrd> # mandatory
-    userSearchBase: ou=users
-    userSearchFilter: uid={0}
-    groupSearchBase: ou=groups
-    groupSearchFilter: cn={0}
-    ########################
-    # Only one is mandatory - depends on the group membership strategy
-    # If a user record contains the groups, then we need to set the
-    # groupMembershipAttribute.
-    # If a group contains the users belong to it, then groupMembershipFilter
-    # should be set.
-    groupMembershipAttribute: group
-    groupMembershipFilter: memberUid={1}
-    ########################
-    disableMailAddressResolver: false # default = false
-    connectTimeout: 5000 # default = 5000
-    readTimeout: 60000 # default = 60000
-    displayNameAttr: cn
-    emailAttr: email
+  realm: ldap
+  server: myldap.server.com:389 # mandatory
+  rootDN: dc=mydomain,dc=com # mandatory
+  managerDN: cn=search-user,ou=users,dc=mydomain,dc=com # mandatory
+  managerPassword: <passowrd> # mandatory
+  userSearchBase: ou=users
+  userSearchFilter: uid={0}
+  groupSearchBase: ou=groups
+  groupSearchFilter: cn={0}
+  ########################
+  # Only one is mandatory - depends on the group membership strategy
+  # If a user record contains the groups, then we need to set the
+  # groupMembershipAttribute.
+  # If a group contains the users belong to it, then groupMembershipFilter
+  # should be set.
+  groupMembershipAttribute: group
+  groupMembershipFilter: memberUid={1}
+  ########################
+  disableMailAddressResolver: false # default = false
+  connectTimeout: 5000 # default = 5000
+  readTimeout: 60000 # default = 60000
+  displayNameAttr: cn
+  emailAttr: email
 ```
 
 ```yaml
 # active_directory - active_directory configuration must be provided
 security:
-    realm: active_directory
-    domains:
-      - name: corp.mydomain.com
-        servers:
-          - dc1.corp.mydomain.com
-          - dc2.corp.mydomain.com
-        site: optional-site
-        bindName: CN=user,OU=myorg,OU=User,DC=mydoain,DC=com
-        bindPassword: secret
-    groupLookupStrategy: AUTO # AUTO, RECURSIVE, CHAIN, TOKENGROUPS
-    removeIrrelevantGroups: false
-    cache:
-      size: 500
-      ttl: 30
-    startTls: false
-    tlsConfiguration: TRUST_ALL_CERTIFICATES # TRUST_ALL_CERTIFICATES, JDK_TRUSTSTORE
-    jenkinsInternalUser: my-none-ad-user #
+  realm: active_directory
+  domains:
+    - name: corp.mydomain.com
+      servers:
+        - dc1.corp.mydomain.com
+        - dc2.corp.mydomain.com
+      site: optional-site
+      bindName: CN=user,OU=myorg,OU=User,DC=mydoain,DC=com
+      bindPassword: secret
+  groupLookupStrategy: AUTO # AUTO, RECURSIVE, CHAIN, TOKENGROUPS
+  removeIrrelevantGroups: false
+  cache:
+    size: 500
+    ttl: 30
+  startTls: false
+  tlsConfiguration: TRUST_ALL_CERTIFICATES # TRUST_ALL_CERTIFICATES, JDK_TRUSTSTORE
+  jenkinsInternalUser: my-none-ad-user #
 ```
 
 ```yaml
@@ -309,6 +310,15 @@ security:
     binding: urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect
 ```
 
+```yaml
+# google - google-login configuration must be provided
+security:
+  realm: google
+  realmConfig:
+    clientId: client-id
+    clientSecret: client-secret
+    domain: domain
+```
 
 ```yaml
 # Permissions - each key represents a user/group and has list of Jenkins Permissions
@@ -790,7 +800,7 @@ seed_jobs:
       # To use this trigger, Artifactory should be created also by using 'Artifactory' section.
       artifactory:
         serverId: serverId #Name of Artifactory, same as created Artifactory
-        path: my-repo/path/to/listen 
+        path: my-repo/path/to/listen
         schedule: 'H/5 * * * *'
     # Location of the pipeline script within the repository
     pipeline: example/SeedJobPipeline.groovy
