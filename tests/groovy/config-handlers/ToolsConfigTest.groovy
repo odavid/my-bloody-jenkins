@@ -102,7 +102,6 @@ installations:
     assertTool('DEFAULT-XVFB', org.jenkinsci.plugins.xvfb.Xvfb, '/usr/local/bin/')
     assertTool('sonar-auto-install', hudson.plugins.sonar.SonarRunnerInstallation, null, hudson.plugins.sonar.SonarRunnerInstaller, '3.0.3.778')
     assertTool('sonar-manual-install', hudson.plugins.sonar.SonarRunnerInstallation, '/usr/share/sonar-latest')
-    assertTool('sonar-manual-install', hudson.plugins.sonar.SonarRunnerInstallation, '/usr/share/sonar-latest')
     assertTool('XVFB-command-installer', org.jenkinsci.plugins.xvfb.Xvfb, null, hudson.tools.CommandInstaller, null){
         def installer = it.properties[0].installers[0]
         assert installer.label == 'command-label'
