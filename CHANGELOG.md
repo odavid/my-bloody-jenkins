@@ -6,6 +6,13 @@
 ## 2.150.1-99 (Not released yet)
 * Added configuration_as_code config handler [#120](https://github.com/odavid/my-bloody-jenkins/pull/120)
 * Add Golang tool [#121](https://github.com/odavid/my-bloody-jenkins/pull/121)
+* Updated plugins:
+    * [amazon-ecs:1.19](https://plugins.jenkins.io/amazon-ecs)
+    * [ansicolor:0.6.1](https://plugins.jenkins.io/ansicolor)
+    * [command-launcher:1.3](https://plugins.jenkins.io/command-launcher)
+    * [job-dsl:1.71](https://plugins.jenkins.io/job-dsl)
+    * [mailer:1.23](https://plugins.jenkins.io/mailer)
+
 
 ## 2.150.1-98
 * google-login-plugin Configuration [#119](https://github.com/odavid/my-bloody-jenkins/pull/119)

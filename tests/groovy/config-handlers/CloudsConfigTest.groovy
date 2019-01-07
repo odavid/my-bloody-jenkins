@@ -109,7 +109,7 @@ ecs-cloud:
         assert it.credentialsId == 'aws-cred'
         assert it.regionName == 'us-east-1'
         assert it.cluster == 'ecs-cluster'
-        assert it.slaveTimoutInSeconds == 60
+        assert it.slaveTimeoutInSeconds == 60
         assert it.retentionTimeout == 100
         assert it.jenkinsUrl == 'http://127.0.0.1:8080'
         assert it.tunnel == '127.0.0.1:8080'

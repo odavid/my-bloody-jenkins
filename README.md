@@ -686,8 +686,8 @@ clouds:
     cluster: 'arn:ssss'
     # Timeout (in second) for ECS task to be created, usefull if you use large docker
     # slave image, because the host will take more time to pull the docker image
-    # If empty or <= 0, the 900 is the default.
-    connectTimeout: 0
+    # If empty or <= 0, then 900 is the default.
+    slaveTimeoutInSeconds: 0
     # List of templates
     templates:
       - name: ecsSlave
