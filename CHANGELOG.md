@@ -5,6 +5,7 @@
 
 ## 2.150.1-99 (Not released yet)
 * Added configuration_as_code config handler [#120](https://github.com/odavid/my-bloody-jenkins/pull/120)
+* Add Golang tool [#121](https://github.com/odavid/my-bloody-jenkins/pull/121)
 
 ## 2.150.1-98
 * google-login-plugin Configuration [#119](https://github.com/odavid/my-bloody-jenkins/pull/119)
