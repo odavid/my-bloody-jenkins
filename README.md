@@ -28,7 +28,7 @@ The image is "Battle Proven" and serves as the baseground for several Jenkins de
   * Script approvals
   * Notifiers (Hipchat, Slack, Email, Email-Ext)
   * Credentials (aws, userpass, sshkeys, certs, kubernetes, gitlab, simple secrets)
-  * Tools and installers (JDK, Ant, Maven, Gradle, SonarQube, Xvfb)
+  * Tools and installers (JDK, Ant, Maven, Gradle, SonarQube, Xvfb,Golang)
   * Misc. Plugins configuration such as Jira, SonarQube, Checkmarx, Artifactory
   * Misc. Configuration options such as Environment variables, Proxy
 * Support additional plugins installation during startup without the need to build your own image
@@ -397,10 +397,11 @@ The following tools are currently supported:
 * Gradle (type: gradle)
 * Xvfb (type: xvfb)
 * SonarQube Runner (type: sonarQubeRunner)
+* Go language (type: golang)
 
 The following auto installers are currently supported:
 * Oracle JDK installers
-* Maven/Gradle/Ant/SonarQube version installers
+* Maven/Gradle/Ant/SonarQube/Golang version installers
 * Shell command installers (type: command)
 * Remote Zip/Tar files installers (type: zip)
 
@@ -457,6 +458,10 @@ tools:
           label: centos6 # nodes labels that will use this installer
           command: /opt/install-ant-xyz
           toolHome: # the directoy on the node where the tool exists after running the command
+    GOLANG-1.8:
+      type: golang
+      installers:
+        - id: '1.8'
 ```
 
 ### Credentials Section

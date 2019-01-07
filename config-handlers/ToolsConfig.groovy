@@ -31,6 +31,10 @@ def createInstallation(config){
             desc = Jenkins.instance.getDescriptor(hudson.plugins.sonar.SonarRunnerInstallation)
             installation = new hudson.plugins.sonar.SonarRunnerInstallation(config.name, config.home, toolsProperties)
             break
+        case 'golang':
+            desc = Jenkins.instance.getDescriptorByType(org.jenkinsci.plugins.golang.GolangInstallation.DescriptorImpl)
+            installation = new org.jenkinsci.plugins.golang.GolangInstallation(config.name, config.home, toolsProperties)
+            break
         default:
             return null
     }
@@ -59,6 +63,8 @@ def createInstaller(toolType, installer){
                 return new hudson.plugins.gradle.GradleInstaller(id)
             case 'sonarQubeRunner':
                 return new hudson.plugins.sonar.SonarRunnerInstaller(id)
+            case 'golang':
+                return new org.jenkinsci.plugins.golang.GolangInstaller(id)
         }
 
     } else if('type' in installer){
