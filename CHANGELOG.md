@@ -13,7 +13,6 @@
     * [job-dsl:1.71](https://plugins.jenkins.io/job-dsl)
     * [mailer:1.23](https://plugins.jenkins.io/mailer)
 
-
 ## 2.150.1-98
 * google-login-plugin Configuration [#119](https://github.com/odavid/my-bloody-jenkins/pull/119)
     * [google-login:1.4](https://plugins.jenkins.io/google-login)
