@@ -108,6 +108,12 @@ installations:
         assert installer.command == 'curl -Ssl http://some.web.site'
         assert installer.toolHome == '/usr/local/bin/'
     }
+    assertTool('XVFB-zip-installer', org.jenkinsci.plugins.xvfb.Xvfb, null, hudson.tools.ZipExtractionInstaller, null){	    assertTool('golang-1.11', org.jenkinsci.plugins.golang.GolangInstallation, null, org.jenkinsci.plugins.golang.GolangInstaller, '1.11')
+        def installer = it.properties[0].installers[0]
+	    assert installer.label == 'zip-label'
+	    assert installer.url == 'http://some.web.site/my.zip'
+	    assert installer.subdir == 'xxx'
+    }
     assertTool('golang-1.11', org.jenkinsci.plugins.golang.GolangInstallation, null, org.jenkinsci.plugins.golang.GolangInstaller, '1.11')
 }
 
