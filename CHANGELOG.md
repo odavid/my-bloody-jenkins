@@ -12,6 +12,12 @@
     * [command-launcher:1.3](https://plugins.jenkins.io/command-launcher)
     * [job-dsl:1.71](https://plugins.jenkins.io/job-dsl)
     * [mailer:1.23](https://plugins.jenkins.io/mailer)
+    * [code-coverage-api:1.0.6](https://plugins.jenkins.io/code-coverage-api)
+    * [git-changelog:2.15](https://plugins.jenkins.io/git-changelog)
+    * [kubernetes:1.14.3](https://plugins.jenkins.io/kubernetes)
+    * [pipeline-model-definition:1.3.4.1](https://plugins.jenkins.io/pipeline-model-definition)
+    * [script-security:1.50](https://plugins.jenkins.io/script-security)
+    * [workflow-cps:2.61.1](https://plugins.jenkins.io/workflow-cps)
 
 ## 2.150.1-98
 * google-login-plugin Configuration [#119](https://github.com/odavid/my-bloody-jenkins/pull/119)
