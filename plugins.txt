@@ -70,7 +70,7 @@ external-monitor-job:1.7
 favorite:2.3.2
 gatling:1.2.5
 git-changelog:2.15
-git-client:2.7.5
+git-client:2.7.6
 git-parameter:0.9.6
 git-server:1.7
 git:3.9.1
@@ -98,7 +98,7 @@ jira:3.0.5
 job-dsl:1.71
 jquery-detached:1.2.1
 jquery:1.12.4-0
-jsch:0.1.54.2
+jsch:0.1.55
 junit:1.26.1
 kubernetes-cli:1.4.0
 kubernetes-credentials:0.4.0
