@@ -3,6 +3,10 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+## 2.150.1-101 (Not released yet)
+* Added Plugins:
+    * [pipeline-maven:3.6.6](https://plugins.jenkins.io/pipeline-maven)
+
 ## 2.150.1-100
 * Updated plugins:
   * [git-client:2.7.6](https://plugins.jenkins.io/git-client)
