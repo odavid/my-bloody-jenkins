@@ -65,7 +65,6 @@ installations:
   sonar-manual-install:
    type: sonarQubeRunner
    home: /usr/share/sonar-latest
-
   XVFB-command-installer:
    type: xvfb
    installers:
@@ -80,6 +79,10 @@ installations:
        label: zip-label
        url: http://some.web.site/my.zip
        subdir: xxx
+  golang-1.11:
+   type: golang
+   installers:
+     - id: '1.11'
 
 """)
 	configHandler.setup(config)
@@ -99,19 +102,19 @@ installations:
     assertTool('DEFAULT-XVFB', org.jenkinsci.plugins.xvfb.Xvfb, '/usr/local/bin/')
     assertTool('sonar-auto-install', hudson.plugins.sonar.SonarRunnerInstallation, null, hudson.plugins.sonar.SonarRunnerInstaller, '3.0.3.778')
     assertTool('sonar-manual-install', hudson.plugins.sonar.SonarRunnerInstallation, '/usr/share/sonar-latest')
-    
     assertTool('XVFB-command-installer', org.jenkinsci.plugins.xvfb.Xvfb, null, hudson.tools.CommandInstaller, null){
         def installer = it.properties[0].installers[0]
         assert installer.label == 'command-label'
         assert installer.command == 'curl -Ssl http://some.web.site'
         assert installer.toolHome == '/usr/local/bin/'
     }
-    assertTool('XVFB-zip-installer', org.jenkinsci.plugins.xvfb.Xvfb, null, hudson.tools.ZipExtractionInstaller, null){
+    assertTool('XVFB-zip-installer', org.jenkinsci.plugins.xvfb.Xvfb, null, hudson.tools.ZipExtractionInstaller, null){	    assertTool('golang-1.11', org.jenkinsci.plugins.golang.GolangInstallation, null, org.jenkinsci.plugins.golang.GolangInstaller, '1.11')
         def installer = it.properties[0].installers[0]
 	    assert installer.label == 'zip-label'
 	    assert installer.url == 'http://some.web.site/my.zip'
 	    assert installer.subdir == 'xxx'
     }
+    assertTool('golang-1.11', org.jenkinsci.plugins.golang.GolangInstallation, null, org.jenkinsci.plugins.golang.GolangInstaller, '1.11')
 }
 
 testTools()

@@ -151,54 +151,55 @@ def ecsCloud(config){
     config.with{
         def ecsCloud = new ECSCloud(
             id,
-            templates?.collect{ temp ->
-                def ecsTemplate = new ECSTaskTemplate(
-                    temp.name ? temp.name : temp.labels?.join('-'),
-                    temp.labels?.join(' '),
-                    temp.taskDefinitionOverride,
-                    temp.image,
-                    temp.repositoryCredentials,
-                    temp.launchType,
-                    temp.networkMode,
-                    temp.remoteFs,
-                    asInt(temp.memory),
-                    asInt(temp.memoryReservation),
-                    asInt(temp.cpu),
-                    temp.subnets,
-                    temp.securityGroups,
-                    asBoolean(temp.assignPublicIp),
-                    asBoolean(temp.privileged),
-                    temp.containerUser,
-                    temp.logDriverOptions?.collect{ k,v -> new LogDriverOption(k,v) },
-                    temp.environment?.collect{ k, v -> new EnvironmentEntry(k,v) },
-                    temp.extraHosts?.collect { k, v -> new ExtraHostEntry(k,v) },
-                    temp.volumes?.collect { vol -> parseContainerVolume(vol){
-                        vol_name, host_path, container_path,read_only ->
-                            new MountPointEntry(vol_name, host_path, container_path,read_only)
-                        }
-                    },
-                    temp.ports?.collect {portMapping ->
-                        def parts = portMapping?.toString().split(':')
-                        def hostPort = parts.size() > 1 ? parts[0] : null
-                        def containerPort = parts.size() > 1 ? parts[1] : parts[0]
-                        return new ECSTaskTemplate.PortMappingEntry(asInt(containerPort), asInt(hostPort), "tcp")
-                    }
-                )
-                ecsTemplate.executionRole = temp.executionRole ?: 'ecsTaskExecutionRole'
-                ecsTemplate.jvmArgs = temp.jvmArgs
-                ecsTemplate.entrypoint = temp.entrypoint
-                ecsTemplate.logDriver = temp.logDriver
-                ecsTemplate.dnsSearchDomains = temp.dns
-                ecsTemplate.taskrole = temp.taskrole
-                return ecsTemplate
-            },
             credentialsId ?: '',
-            cluster,
-            region,
-            jenkinsUrl,
-            asInt(connectTimeout),
-            asInt(retentionTimeout)
+            cluster
         )
+        ecsCloud.regionName = region
+        ecsCloud.jenkinsUrl = jenkinsUrl
+        ecsCloud.slaveTimeoutInSeconds = asInt(slaveTimeoutInSeconds ?: connectTimeout)
+        ecsCloud.retentionTimeout = asInt(retentionTimeout)
+        ecsCloud.templates = templates?.collect{ temp ->
+            def ecsTemplate = new ECSTaskTemplate(
+                temp.name ? temp.name : temp.labels?.join('-'),
+                temp.labels?.join(' '),
+                temp.taskDefinitionOverride,
+                temp.image,
+                temp.repositoryCredentials,
+                temp.launchType,
+                temp.networkMode,
+                temp.remoteFs,
+                asInt(temp.memory),
+                asInt(temp.memoryReservation),
+                asInt(temp.cpu),
+                temp.subnets,
+                temp.securityGroups,
+                asBoolean(temp.assignPublicIp),
+                asBoolean(temp.privileged),
+                temp.containerUser,
+                temp.logDriverOptions?.collect{ k,v -> new LogDriverOption(k,v) },
+                temp.environment?.collect{ k, v -> new EnvironmentEntry(k,v) },
+                temp.extraHosts?.collect { k, v -> new ExtraHostEntry(k,v) },
+                temp.volumes?.collect { vol -> parseContainerVolume(vol){
+                    vol_name, host_path, container_path,read_only ->
+                        new MountPointEntry(vol_name, host_path, container_path,read_only)
+                    }
+                },
+                temp.ports?.collect {portMapping ->
+                    def parts = portMapping?.toString().split(':')
+                    def hostPort = parts.size() > 1 ? parts[0] : null
+                    def containerPort = parts.size() > 1 ? parts[1] : parts[0]
+                    return new ECSTaskTemplate.PortMappingEntry(asInt(containerPort), asInt(hostPort), "tcp")
+                }
+            )
+            ecsTemplate.executionRole = temp.executionRole ?: 'ecsTaskExecutionRole'
+            ecsTemplate.jvmArgs = temp.jvmArgs
+            ecsTemplate.entrypoint = temp.entrypoint
+            ecsTemplate.logDriver = temp.logDriver
+            ecsTemplate.dnsSearchDomains = temp.dns
+            ecsTemplate.taskrole = temp.taskrole
+            return ecsTemplate
+        }
+
         ecsCloud.tunnel = tunnel
         return ecsCloud
     }

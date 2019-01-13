@@ -93,6 +93,11 @@ def setupSaml(config){
     return realmConfig ? DescribableModel.of(org.jenkinsci.plugins.saml.SamlSecurityRealm).instantiate(realmConfig) : null
 }
 
+def setupGoogleOAuth2(config){
+    def realmConfig = config.realmConfig
+    return realmConfig ? DescribableModel.of(org.jenkinsci.plugins.googlelogin.GoogleOAuth2SecurityRealm).instantiate(realmConfig) : null
+}
+
 
 def createAuthorizationStrategy(config, adminUser){
     def strategy = new ProjectMatrixAuthorizationStrategy()
@@ -186,6 +191,9 @@ def setup(config){
             break
         case 'saml':
             realm = setupSaml(config)
+            break
+        case 'google':
+            realm = setupGoogleOAuth2(config)
             break
 
     }

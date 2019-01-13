@@ -28,7 +28,7 @@ The image is "Battle Proven" and serves as the baseground for several Jenkins de
   * Script approvals
   * Notifiers (Hipchat, Slack, Email, Email-Ext)
   * Credentials (aws, userpass, sshkeys, certs, kubernetes, gitlab, simple secrets)
-  * Tools and installers (JDK, Ant, Maven, Gradle, SonarQube, Xvfb)
+  * Tools and installers (JDK, Ant, Maven, Gradle, SonarQube, Xvfb,Golang)
   * Misc. Plugins configuration such as Jira, SonarQube, Checkmarx, Artifactory
   * Misc. Configuration options such as Environment variables, Proxy
 * Support additional plugins installation during startup without the need to build your own image
@@ -119,11 +119,13 @@ Supported URLs:
 
 * `JENKINS_ENV_ADMIN_ADDRESS` - Define the Jenkins admin email address
 
-* `JENKINS_ENV_PLUGINS` - Ability to define comma separated list of additional plugins to install before starting up. See [plugin-version-format](https://github.com/jenkinsci/docker#plugin-version-format). This is option is not recommended, but sometimes it is useful to run the container without creating an inherited image.
+* `JENKINS_ENV_PLUGINS` - Ability to define comma separated list of additional plugins to install before starting up. See [plugin-version-format](https://github.com/jenkinsci/docker#plugin-version-format).
+> This is option is not recommended, but sometimes it is useful to run the container without creating an inherited image.
 
 * `JENKINS_ENV_QUIET_STARTUP_PERIOD` - Time in seconds. If speficied, jenkins will start in quiet mode and disable all running jobs. Useful for major upgrade.
 
-* `JENKINS_ENV_CONFIG_MODE` - If set to `jcasc`, then [Configuration as Code Plugin](https://github.com/jenkinsci/configuration-as-code-plugin) will be used instead of [Built-in Configuration Handlers](#configuration-reference). By using this mode, see [JCasC Demo](./demo/jcasc-plugin)
+* `JENKINS_ENV_CONFIG_MODE` - If set to `jcasc`, then [Configuration as Code Plugin](https://github.com/jenkinsci/configuration-as-code-plugin) will be used instead of [Built-in Configuration Handlers](#configuration-reference). See [JCasC Demo](./demo/jcasc-plugin).
+> This option will disable all configuration handlers used by the image! If you still want to use builtin configuration handlers, together with dynamic JCasC snippets, please see [Configuration as Code Section](#configuration-as-code-section).
 
 ## Configuration Reference
 The configuration is divided into main configuration sections. Each section is responsible for a specific aspect of jenkins configuration.
@@ -221,6 +223,7 @@ Responsible for:
     * ldap - LDAP Configuration must be provided
     * active_directory - Uses [active-directory plugin](https://wiki.jenkins.io/display/JENKINS/Active+Directory+plugin)
     * saml - Uses [saml plugin](https://plugins.jenkins.io/saml)
+    * google - Uses [google-login plugin](https://plugins.jenkins.io/google-login)
 * User/Group Permissions dict - Each key represent a user or a group and its value is a list of Jenkins [Permissions IDs](https://wiki.jenkins.io/display/JENKINS/Matrix-based+security)
 
 ```yaml
@@ -233,51 +236,51 @@ security:
 ```yaml
 # ldap - ldap configuration must be provided
 security:
-    realm: ldap
-    server: myldap.server.com:389 # mandatory
-    rootDN: dc=mydomain,dc=com # mandatory
-    managerDN: cn=search-user,ou=users,dc=mydomain,dc=com # mandatory
-    managerPassword: <passowrd> # mandatory
-    userSearchBase: ou=users
-    userSearchFilter: uid={0}
-    groupSearchBase: ou=groups
-    groupSearchFilter: cn={0}
-    ########################
-    # Only one is mandatory - depends on the group membership strategy
-    # If a user record contains the groups, then we need to set the
-    # groupMembershipAttribute.
-    # If a group contains the users belong to it, then groupMembershipFilter
-    # should be set.
-    groupMembershipAttribute: group
-    groupMembershipFilter: memberUid={1}
-    ########################
-    disableMailAddressResolver: false # default = false
-    connectTimeout: 5000 # default = 5000
-    readTimeout: 60000 # default = 60000
-    displayNameAttr: cn
-    emailAttr: email
+  realm: ldap
+  server: myldap.server.com:389 # mandatory
+  rootDN: dc=mydomain,dc=com # mandatory
+  managerDN: cn=search-user,ou=users,dc=mydomain,dc=com # mandatory
+  managerPassword: <passowrd> # mandatory
+  userSearchBase: ou=users
+  userSearchFilter: uid={0}
+  groupSearchBase: ou=groups
+  groupSearchFilter: cn={0}
+  ########################
+  # Only one is mandatory - depends on the group membership strategy
+  # If a user record contains the groups, then we need to set the
+  # groupMembershipAttribute.
+  # If a group contains the users belong to it, then groupMembershipFilter
+  # should be set.
+  groupMembershipAttribute: group
+  groupMembershipFilter: memberUid={1}
+  ########################
+  disableMailAddressResolver: false # default = false
+  connectTimeout: 5000 # default = 5000
+  readTimeout: 60000 # default = 60000
+  displayNameAttr: cn
+  emailAttr: email
 ```
 
 ```yaml
 # active_directory - active_directory configuration must be provided
 security:
-    realm: active_directory
-    domains:
-      - name: corp.mydomain.com
-        servers:
-          - dc1.corp.mydomain.com
-          - dc2.corp.mydomain.com
-        site: optional-site
-        bindName: CN=user,OU=myorg,OU=User,DC=mydoain,DC=com
-        bindPassword: secret
-    groupLookupStrategy: AUTO # AUTO, RECURSIVE, CHAIN, TOKENGROUPS
-    removeIrrelevantGroups: false
-    cache:
-      size: 500
-      ttl: 30
-    startTls: false
-    tlsConfiguration: TRUST_ALL_CERTIFICATES # TRUST_ALL_CERTIFICATES, JDK_TRUSTSTORE
-    jenkinsInternalUser: my-none-ad-user #
+  realm: active_directory
+  domains:
+    - name: corp.mydomain.com
+      servers:
+        - dc1.corp.mydomain.com
+        - dc2.corp.mydomain.com
+      site: optional-site
+      bindName: CN=user,OU=myorg,OU=User,DC=mydoain,DC=com
+      bindPassword: secret
+  groupLookupStrategy: AUTO # AUTO, RECURSIVE, CHAIN, TOKENGROUPS
+  removeIrrelevantGroups: false
+  cache:
+    size: 500
+    ttl: 30
+  startTls: false
+  tlsConfiguration: TRUST_ALL_CERTIFICATES # TRUST_ALL_CERTIFICATES, JDK_TRUSTSTORE
+  jenkinsInternalUser: my-none-ad-user #
 ```
 
 ```yaml
@@ -309,6 +312,15 @@ security:
     binding: urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect
 ```
 
+```yaml
+# google - google-login configuration must be provided
+security:
+  realm: google
+  realmConfig:
+    clientId: client-id
+    clientSecret: client-secret
+    domain: domain
+```
 
 ```yaml
 # Permissions - each key represents a user/group and has list of Jenkins Permissions
@@ -354,6 +366,26 @@ security:
 
 ```
 
+### Configuration as Code Section
+The `configuration_as_code` yaml section enables *"Mixed-Mode"* configuration style. It enables embedding [configuration as code snippets](https://github.com/jenkinsci/configuration-as-code-plugin/tree/master/demos) within the configuration yaml. This enables out of the box support for plugins configuration that do not have a builtin configuration handler.
+
+```yaml
+configuration_as_code:
+  unclassified:
+  ## https://github.com/jenkinsci/configuration-as-code-plugin/blob/1f79326e902fe721a3a05077a7e46f98569804ff/demos/simple-theme-plugin/README.md
+    simple-theme-plugin:
+      elements:
+      - cssUrl:
+          url: "https://example.bogus/test.css"
+      - cssText:
+          text: ".testcss { color: red }"
+      - jsUrl:
+          url: "https://example.bogus/test.js"
+      - faviconUrl:
+          url: "https://vignette.wikia.nocookie.net/deadpool/images/6/64/Favicon.ico"
+
+```
+
 ### Tools Section
 Responsible for:
 * Setting up tools locations and auto installers
@@ -365,10 +397,11 @@ The following tools are currently supported:
 * Gradle (type: gradle)
 * Xvfb (type: xvfb)
 * SonarQube Runner (type: sonarQubeRunner)
+* Go language (type: golang)
 
 The following auto installers are currently supported:
 * Oracle JDK installers
-* Maven/Gradle/Ant/SonarQube version installers
+* Maven/Gradle/Ant/SonarQube/Golang version installers
 * Shell command installers (type: command)
 * Remote Zip/Tar files installers (type: zip)
 
@@ -425,6 +458,10 @@ tools:
           label: centos6 # nodes labels that will use this installer
           command: /opt/install-ant-xyz
           toolHome: # the directoy on the node where the tool exists after running the command
+    GOLANG-1.8:
+      type: golang
+      installers:
+        - id: '1.8'
 ```
 
 ### Credentials Section
@@ -649,8 +686,8 @@ clouds:
     cluster: 'arn:ssss'
     # Timeout (in second) for ECS task to be created, usefull if you use large docker
     # slave image, because the host will take more time to pull the docker image
-    # If empty or <= 0, the 900 is the default.
-    connectTimeout: 0
+    # If empty or <= 0, then 900 is the default.
+    slaveTimeoutInSeconds: 0
     # List of templates
     templates:
       - name: ecsSlave
@@ -790,7 +827,7 @@ seed_jobs:
       # To use this trigger, Artifactory should be created also by using 'Artifactory' section.
       artifactory:
         serverId: serverId #Name of Artifactory, same as created Artifactory
-        path: my-repo/path/to/listen 
+        path: my-repo/path/to/listen
         schedule: 'H/5 * * * *'
     # Location of the pipeline script within the repository
     pipeline: example/SeedJobPipeline.groovy

@@ -19,6 +19,10 @@ function groovy_test(){
     groovy_test
 }
 
+@test "ConfigurationAsCodeConfig" {
+    groovy_test
+}
+
 @test "RemoveMasterEnvVarsConfig" {
     groovy_test
 }
