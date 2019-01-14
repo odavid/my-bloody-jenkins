@@ -5,13 +5,47 @@ def asBoolean(value, defaultValue=false){
     return value != null ? value.toBoolean() : defaultValue
 }
 
+def getOrCreateFolder(def parent, def name) {
+    def folder
+    if (parent == null) {
+        folder = jenkins.model.Jenkins.instance.getItem(name)
+    } else {
+        folder = parent.getItem(name)
+    }
+
+    if (folder != null) {
+        if (folder instanceof com.cloudbees.hudson.plugins.folder.Folder) {
+            return folder
+        } else {
+            throw new Exception("${folder} already exists, but it's not a folder")
+        }
+    }
+    return jenkins.model.Jenkins.instance.createProject(com.cloudbees.hudson.plugins.folder.Folder, name)
+}
+
 
 def seedJobConfig(config){
     config.with{
-        def job = jenkins.model.Jenkins.instance.getItem(name)
+        def items = name.split("/")
+        def jobName = items[-1] //Get the job name from the path
+        def folders = items.dropRight(1)
+        def currentFolder = null
+        folders.each {
+            currentFolder = getOrCreateFolder(currentFolder, it)
+        }
+        def job
+        if (currentFolder) {
+            job = currentFolder.getItem(jobName)
+        } else {
+            job = jenkins.model.Jenkins.instance.getItem(jobName)
+        }
         def exists = (job != null)
         if(!exists){
-            job = jenkins.model.Jenkins.instance.createProject(org.jenkinsci.plugins.workflow.job.WorkflowJob, name)
+            if (currentFolder) {
+                job = currentFolder.createProject(org.jenkinsci.plugins.workflow.job.WorkflowJob, jobName)
+            } else {
+                job = jenkins.model.Jenkins.instance.createProject(org.jenkinsci.plugins.workflow.job.WorkflowJob, jobName)
+            }
         }
         def scm = new hudson.plugins.git.GitSCM(
             hudson.plugins.git.GitSCM.createRepoList(
