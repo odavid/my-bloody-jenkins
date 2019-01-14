@@ -6,6 +6,7 @@
 ## 2.150.1-101 (Not released yet)
 * Added Plugins:
     * [pipeline-maven:3.6.6](https://plugins.jenkins.io/pipeline-maven)
+* Support creating jobs within folders [#123](https://github.com/odavid/my-bloody-jenkins/pull/123)
 
 ## 2.150.1-100
 * Updated plugins:
