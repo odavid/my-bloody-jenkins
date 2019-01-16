@@ -4,8 +4,16 @@
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
 ## 2.150.1-101 (Not released yet)
+* Updated plugins:
+    * [cloudbees-bitbucket-branch-source:2.4.0](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
+    * [gradle:1.30](https://plugins.jenkins.io/gradle)
+    * [slack:2.14](https://plugins.jenkins.io/slack)
+    * [workflow-basic-steps:2.14](https://plugins.jenkins.io/workflow-basic-steps)
+    * [workflow-cps:2.62](https://plugins.jenkins.io/workflow-cps)
+    * [workflow-durable-task-step:2.28](https://plugins.jenkins.io/workflow-durable-task-step)
+    * [workflow-step-api:2.18](https://plugins.jenkins.io/workflow-step-api)
 * Added Plugins:
-    * [pipeline-maven:3.6.6](https://plugins.jenkins.io/pipeline-maven)
+    * [pipeline-maven:3.6.7](https://plugins.jenkins.io/pipeline-maven)
 * Support creating jobs within folders [#123](https://github.com/odavid/my-bloody-jenkins/pull/123)
 
 ## 2.150.1-100

@@ -39,7 +39,7 @@ build-timeout:1.19
 build-user-vars-plugin:1.5
 buildtriggerbadge:2.10
 checkmarx:8.80.0
-cloudbees-bitbucket-branch-source:2.3.0
+cloudbees-bitbucket-branch-source:2.4.0
 cloudbees-folder:6.7
 cobertura:1.13
 code-coverage-api:1.0.6
@@ -80,7 +80,7 @@ github:1.29.3
 gitlab-plugin:1.5.11
 golang:1.2
 google-login:1.4
-gradle:1.29
+gradle:1.30
 groovy-postbuild:2.4.3
 handlebars:1.1.1
 handy-uri-templates-2-api:2.1.6-1.0
@@ -120,7 +120,7 @@ parameterized-trigger:2.35.2
 pipeline-build-step:2.7
 pipeline-graph-analysis:1.9
 pipeline-input-step:2.9
-pipeline-maven:3.6.6
+pipeline-maven:3.6.7
 pipeline-milestone-step:1.3.1
 pipeline-model-api:1.3.4.1
 pipeline-model-declarative-agent:1.1.1
@@ -141,7 +141,7 @@ saml:1.1.2
 scm-api:2.3.0
 script-security:1.50
 simple-theme-plugin:0.5.1
-slack:2.12
+slack:2.14
 sonar:2.8.1
 sse-gateway:1.17
 ssh-agent:1.17
@@ -157,15 +157,15 @@ trilead-api:1.0.1
 variant:1.1
 workflow-aggregator:2.6
 workflow-api:2.33
-workflow-basic-steps:2.13
+workflow-basic-steps:2.14
 workflow-cps-global-lib:2.12
-workflow-cps:2.61.1
-workflow-durable-task-step:2.27
+workflow-cps:2.62
+workflow-durable-task-step:2.28
 workflow-job:2.31
 workflow-multibranch:2.20
 workflow-remote-loader:1.4
 workflow-scm-step:2.7
-workflow-step-api:2.17
+workflow-step-api:2.18
 workflow-support:3.0
 ws-cleanup:0.37
 xvfb:1.1.3
