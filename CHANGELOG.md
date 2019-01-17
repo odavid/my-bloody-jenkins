@@ -3,7 +3,8 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
-## 2.150.1-101 (Not released yet)
+## 2.150.2-101 (Not released yet)
+* [LTS-2.150.2](https://jenkins.io/changelog-stable/)
 * Updated plugins:
     * [cloudbees-bitbucket-branch-source:2.4.0](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
     * [gradle:1.30](https://plugins.jenkins.io/gradle)
@@ -12,6 +13,12 @@
     * [workflow-cps:2.62](https://plugins.jenkins.io/workflow-cps)
     * [workflow-durable-task-step:2.28](https://plugins.jenkins.io/workflow-durable-task-step)
     * [workflow-step-api:2.18](https://plugins.jenkins.io/workflow-step-api)
+    * [artifactory:3.1.0](https://plugins.jenkins.io/artifactory)
+    * [blueocean-autofavorite:1.2.3](https://plugins.jenkins.io/blueocean-autofavorite)
+    * [github-branch-source:2.4.2](https://plugins.jenkins.io/github-branch-source)
+    * [htmlpublisher:1.18](https://plugins.jenkins.io/htmlpublisher)
+    * [p4:1.9.6](https://plugins.jenkins.io/p4)
+    * [workflow-support:3.1](https://plugins.jenkins.io/workflow-support)
 * Added Plugins:
     * [pipeline-maven:3.6.7](https://plugins.jenkins.io/pipeline-maven)
 * Support creating jobs within folders [#123](https://github.com/odavid/my-bloody-jenkins/pull/123)
