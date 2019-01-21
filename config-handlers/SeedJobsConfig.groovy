@@ -51,8 +51,8 @@ def seedJobConfig(config){
             hudson.plugins.git.GitSCM.createRepoList(
                 source?.remote, 
                 source?.credentialsId
-            ), 
-            source?.branch ? [new hudson.plugins.git.BranchSpec("*/${source?.branch}")] : [], 
+            ),
+                source?.branch ? [new hudson.plugins.git.BranchSpec("*/${source?.branch}")] : (source?.tag ? [new hudson.plugins.git.BranchSpec("${source?.tag}")] : []),
             null, 
             null, 
             null, 
