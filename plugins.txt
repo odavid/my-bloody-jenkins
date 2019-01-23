@@ -104,7 +104,7 @@ kubernetes-cli:1.4.0
 kubernetes-credentials:0.4.0
 kubernetes:1.14.3
 ldap:1.20
-lockable-resources:2.3
+lockable-resources:2.4
 mailer:1.23
 mapdb-api:1.0.9.0
 mask-passwords:2.12.0
