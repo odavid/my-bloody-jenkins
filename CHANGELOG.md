@@ -3,7 +3,7 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
-## 2.150.2-102 (Not released yet)
+## 2.150.2-102
 * Updated plugins:
     * [lockable-resources:2.4](https://plugins.jenkins.io/lockable-resources)
 
