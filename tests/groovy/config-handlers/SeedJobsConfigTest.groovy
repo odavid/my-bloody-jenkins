@@ -74,7 +74,7 @@ my-seed-job:
     assert job instanceof org.jenkinsci.plugins.workflow.job.WorkflowJob
     assert job.definition.scm.userRemoteConfigs[0].url == 'git@github.com:odavid/my-bloody-jenkins.git'
     assert job.definition.scm.userRemoteConfigs[0].credentialsId == 'my-git-key'
-    assert job.definition.scm.branches[0].name == '*/my-test-branch'
+    assert job.definition.scm.branches[0].name == 'my-test-branch'
     assert job.definition.scriptPath == 'src/groovy/Jenkinsfile-config'
 
     def paramsDef = job.getProperty(hudson.model.ParametersDefinitionProperty).parameterDefinitions

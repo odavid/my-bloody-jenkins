@@ -52,7 +52,7 @@ def seedJobConfig(config){
                 source?.remote, 
                 source?.credentialsId
             ), 
-            source?.branch ? [new hudson.plugins.git.BranchSpec("*/${source?.branch}")] : [], 
+            source?.branch ? [new hudson.plugins.git.BranchSpec("${source?.branch}")] : [],
             null, 
             null, 
             null, 
