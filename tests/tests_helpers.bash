@@ -5,6 +5,7 @@ export TESTS_HOST_CONF_DIR="$TESTS_DIR/confdir"
 export TESTS_CONTAINER_TESTS_DIR=/tests
 export TESTS_CONTAINER_CONF_DIR=/confdir
 export JENKINS_DOCKER_NETWORK_NAME=jenkins-docker-bridge
+export SLEEP_TIME_BEFORE_CHECKS=${SLEEP_TIME_BEFORE_CHECKS:-25}
 
 function touch_config(){
     mkdir -p $TESTS_HOST_CONF_DIR
@@ -47,7 +48,7 @@ function docker_compose_exec(){
 function health_check(){
     url=$1
     while ! curl -f -s $url > /dev/null
-    do 
+    do
         sleep 5
     done
 }

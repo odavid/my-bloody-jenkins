@@ -25,20 +25,20 @@ function groovy_test(){
 
 @test "test values comming from secret1" {
     cp $TESTS_DIR/data/config-fixtures/config-envvars-secret1.yml $TESTS_HOST_CONF_DIR/conf/config.yml
-    sleep 15
+    sleep $SLEEP_TIME_BEFORE_CHECKS
     groovy_test AssertCredsFromSecret1.groovy
 }
 
 @test "test values comming from secret2" {
     cp $TESTS_DIR/data/config-fixtures/config-envvars-secret2.yml $TESTS_HOST_CONF_DIR/conf/config.yml
-    sleep 15
+    sleep $SLEEP_TIME_BEFORE_CHECKS
     groovy_test AssertCredsFromSecret2.groovy
 }
 
 @test "test values changed " {
     echo -n "username-secret1" > $TESTS_HOST_CONF_DIR/secret2/username
     echo -n "password-secret1" > $TESTS_HOST_CONF_DIR/secret2/password
-    sleep 15
+    sleep $SLEEP_TIME_BEFORE_CHECKS
     groovy_test AssertCredsFromSecret1.groovy
 }
 

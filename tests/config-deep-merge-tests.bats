@@ -20,25 +20,25 @@ function groovy_test(){
 
 @test "test values comming from dir1" {
     cp $TESTS_DIR/data/config-fixtures/config-in-dir1.yml $TESTS_HOST_CONF_DIR/dir1
-    sleep 15
+    sleep $SLEEP_TIME_BEFORE_CHECKS
     groovy_test AssertCredsFromDir1.groovy
 }
 
 @test "test values comming from dir1 and dir2" {
     cp $TESTS_DIR/data/config-fixtures/config-in-dir2.yml $TESTS_HOST_CONF_DIR/dir2
-    sleep 15
+    sleep $SLEEP_TIME_BEFORE_CHECKS
     groovy_test AssertCredsFromDir2.groovy
 }
 
 @test "test values comming from dir1 and dir2 and dir3-1 (glob expression)" {
     cp $TESTS_DIR/data/config-fixtures/config-in-dir3-1.yml $TESTS_HOST_CONF_DIR/dir3
-    sleep 15
+    sleep $SLEEP_TIME_BEFORE_CHECKS
     groovy_test AssertCredsFromDir31.groovy
 }
 
 @test "test values comming from dir1 and dir2 and dir3-2 (glob expression)" {
     cp $TESTS_DIR/data/config-fixtures/config-in-dir3-2.yml $TESTS_HOST_CONF_DIR/dir3
-    sleep 15
+    sleep $SLEEP_TIME_BEFORE_CHECKS
     groovy_test AssertCredsFromDir32.groovy
 }
 
