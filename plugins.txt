@@ -42,7 +42,7 @@ checkmarx:8.80.0
 cloudbees-bitbucket-branch-source:2.4.0
 cloudbees-folder:6.7
 cobertura:1.13
-code-coverage-api:1.0.6
+code-coverage-api:1.0.7
 command-launcher:1.3
 conditional-buildstep:1.3.6
 config-file-provider:3.4.1
@@ -51,7 +51,7 @@ configuration-as-code:1.4
 copyartifact:1.41
 credentials-binding:1.17
 credentials:2.1.18
-cucumber-reports:4.3.0
+cucumber-reports:4.4.0
 dashboard-view:2.10
 display-url-api:2.3.0
 docker-build-publish:1.3.2
@@ -111,7 +111,7 @@ mask-passwords:2.12.0
 matrix-auth:2.3
 matrix-project:1.13
 maven-plugin:3.2
-mercurial:2.4
+mercurial:2.5
 metrics:4.0.2.2
 momentjs:1.1.1
 p4:1.9.6

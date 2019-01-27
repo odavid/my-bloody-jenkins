@@ -6,6 +6,10 @@
 
 ## 2.150.2-103 (Not released yet)
 * Enable to put a tag in the 'branch' setting of a seed-job [#125](https://github.com/odavid/my-bloody-jenkins/pull/125)
+* Updated plugins:
+    * [code-coverage-api:1.0.7](https://plugins.jenkins.io/code-coverage-api)
+    * [cucumber-reports:4.4.0](https://plugins.jenkins.io/cucumber-reports)
+    * [mercurial:2.5](https://plugins.jenkins.io/mercurial)
 
 ## 2.150.2-102
 * Updated plugins:
