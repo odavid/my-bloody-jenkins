@@ -10,6 +10,12 @@
     * [code-coverage-api:1.0.7](https://plugins.jenkins.io/code-coverage-api)
     * [cucumber-reports:4.4.0](https://plugins.jenkins.io/cucumber-reports)
     * [mercurial:2.5](https://plugins.jenkins.io/mercurial)
+    * [active-directory:2.11](https://plugins.jenkins.io/active-directory)
+    * [blueocean:1.10.2](https://plugins.jenkins.io/blueocean)
+    * [config-file-provider:3.5](https://plugins.jenkins.io/config-file-provider)
+    * [git:3.9.2](https://plugins.jenkins.io/git)
+    * [script-security:1.51](https://plugins.jenkins.io/script-security)
+    * [token-macro:2.6](https://plugins.jenkins.io/token-macro)
 
 ## 2.150.2-102
 * Updated plugins:
