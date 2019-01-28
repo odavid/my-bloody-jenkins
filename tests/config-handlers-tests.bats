@@ -15,33 +15,33 @@ function groovy_test(){
     health_check http://0.0.0.0:8080/login
 }
 
-@test "Sanity" {
-    groovy_test
-}
+# @test "Sanity" {
+#     groovy_test
+# }
 
-@test "ConfigurationAsCodeConfig" {
-    groovy_test
-}
+# @test "ConfigurationAsCodeConfig" {
+#     groovy_test
+# }
 
-@test "RemoveMasterEnvVarsConfig" {
-    groovy_test
-}
+# @test "RemoveMasterEnvVarsConfig" {
+#     groovy_test
+# }
 
-@test "ArtifactoryConfig" {
-    groovy_test
-}
+# @test "ArtifactoryConfig" {
+#     groovy_test
+# }
 
-@test "CloudsConfig" {
-    groovy_test
-}
+# @test "CloudsConfig" {
+#     groovy_test
+# }
 
-@test "CredsConfig" {
-    groovy_test
-}
+# @test "CredsConfig" {
+#     groovy_test
+# }
 
-@test "ToolsConfig" {
-    groovy_test
-}
+# @test "ToolsConfig" {
+#     groovy_test
+# }
 
 @test "SecurityConfig" {
     groovy_test

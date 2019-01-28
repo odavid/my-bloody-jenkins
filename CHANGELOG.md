@@ -11,6 +11,7 @@
     * [cucumber-reports:4.4.0](https://plugins.jenkins.io/cucumber-reports)
     * [mercurial:2.5](https://plugins.jenkins.io/mercurial)
     * [active-directory:2.11](https://plugins.jenkins.io/active-directory)
+        * NOTE: `tlsConfiguration` should be configured within domain element, instead of realm element
     * [blueocean:1.10.2](https://plugins.jenkins.io/blueocean)
     * [config-file-provider:3.5](https://plugins.jenkins.io/config-file-provider)
     * [git:3.9.2](https://plugins.jenkins.io/git)

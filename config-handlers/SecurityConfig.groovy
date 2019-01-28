@@ -25,7 +25,8 @@ def setupActiveDirectory(config){
                     currentDomain.servers?.join(','),
                     currentDomain.site,
                     currentDomain.bindName,
-                    currentDomain.bindPassword
+                    currentDomain.bindPassword,
+                    currentDomain.tlsConfiguration ? hudson.plugins.active_directory.TlsConfiguration.valueOf(currentDomain.tlsConfiguration) : null
                 )
             },
             site,
@@ -40,7 +41,6 @@ def setupActiveDirectory(config){
                 asInt(cache.ttl, 0)
             ) : null,
             asBoolean(startTls, null),
-            tlsConfiguration ? hudson.plugins.active_directory.TlsConfiguration.valueOf(tlsConfiguration) : null,
             jenkinsInternalUser ? new hudson.plugins.active_directory.ActiveDirectoryInternalUsersDatabase(jenkinsInternalUser) : null
         )
     }

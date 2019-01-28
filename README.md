@@ -273,13 +273,13 @@ security:
       site: optional-site
       bindName: CN=user,OU=myorg,OU=User,DC=mydoain,DC=com
       bindPassword: secret
+      tlsConfiguration: TRUST_ALL_CERTIFICATES # TRUST_ALL_CERTIFICATES, JDK_TRUSTSTORE
   groupLookupStrategy: AUTO # AUTO, RECURSIVE, CHAIN, TOKENGROUPS
   removeIrrelevantGroups: false
   cache:
     size: 500
     ttl: 30
   startTls: false
-  tlsConfiguration: TRUST_ALL_CERTIFICATES # TRUST_ALL_CERTIFICATES, JDK_TRUSTSTORE
   jenkinsInternalUser: my-none-ad-user #
 ```
 
