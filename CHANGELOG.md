@@ -17,6 +17,10 @@
     * [git:3.9.2](https://plugins.jenkins.io/git)
     * [script-security:1.51](https://plugins.jenkins.io/script-security)
     * [token-macro:2.6](https://plugins.jenkins.io/token-macro)
+* Added plugins:
+    * [custom-tools-plugin:0.6](https://plugins.jenkins.io/custom-tools-plugin)
+    * [nodejs:1.2.7](https://plugins.jenkins.io/nodejs)
+    * [sbt:1.5](https://plugins.jenkins.io/sbt)
 
 ## 2.150.2-102
 * Updated plugins:
