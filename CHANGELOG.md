@@ -17,6 +17,9 @@
     * [git:3.9.2](https://plugins.jenkins.io/git)
     * [script-security:1.51](https://plugins.jenkins.io/script-security)
     * [token-macro:2.6](https://plugins.jenkins.io/token-macro)
+    * [configuration-as-code:1.5](https://plugins.jenkins.io/configuration-as-code)
+    * [git-client:3.0.0-rc](https://plugins.jenkins.io/git-client)
+    * [git:4.0.0-rc](https://plugins.jenkins.io/git)
 * Added plugins:
     * [custom-tools-plugin:0.6](https://plugins.jenkins.io/custom-tools-plugin)
     * [nodejs:1.2.7](https://plugins.jenkins.io/nodejs)
