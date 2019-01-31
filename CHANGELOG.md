@@ -4,7 +4,7 @@
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
 
-## 2.150.2-103 (Not released yet)
+## 2.150.2-103
 * Enable to put a tag in the 'branch' setting of a seed-job [#125](https://github.com/odavid/my-bloody-jenkins/pull/125)
 * Updated plugins:
     * [code-coverage-api:1.0.7](https://plugins.jenkins.io/code-coverage-api)
