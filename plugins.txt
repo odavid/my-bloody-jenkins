@@ -3,7 +3,7 @@ active-directory:2.11
 amazon-ecr:1.6
 amazon-ecs:1.19
 anchore-container-scanner:1.0.18
-ansicolor:0.6.1
+ansicolor:0.6.2
 ant:1.9
 antisamy-markup-formatter:1.5
 apache-httpcomponents-client-4-api:4.5.5-3.0
@@ -39,7 +39,7 @@ build-timeout:1.19
 build-user-vars-plugin:1.5
 buildtriggerbadge:2.10
 checkmarx:8.80.0
-cloudbees-bitbucket-branch-source:2.4.0
+cloudbees-bitbucket-branch-source:2.4.1
 cloudbees-folder:6.7
 cobertura:1.13
 code-coverage-api:1.0.7
@@ -60,7 +60,7 @@ docker-commons:1.13
 docker-java-api:3.0.14
 docker-plugin:1.1.5
 docker-workflow:1.17
-durable-task:1.28
+durable-task:1.29
 email-ext:2.63
 emailext-template:1.1
 embeddable-build-status:1.9
@@ -144,7 +144,7 @@ sbt:1.5
 scm-api:2.3.0
 script-security:1.51
 simple-theme-plugin:0.5.1
-slack:2.14
+slack:2.15
 sonar:2.8.1
 sse-gateway:1.17
 ssh-agent:1.17
@@ -161,14 +161,14 @@ variant:1.1
 workflow-aggregator:2.6
 workflow-api:2.33
 workflow-basic-steps:2.14
-workflow-cps-global-lib:2.12
-workflow-cps:2.62
-workflow-durable-task-step:2.28
+workflow-cps-global-lib:2.13
+workflow-cps:2.63
+workflow-durable-task-step:2.29
 workflow-job:2.31
 workflow-multibranch:2.20
 workflow-remote-loader:1.4
 workflow-scm-step:2.7
-workflow-step-api:2.18
-workflow-support:3.1
+workflow-step-api:2.19
+workflow-support:3.2
 ws-cleanup:0.37
 xvfb:1.1.3

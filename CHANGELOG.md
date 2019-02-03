@@ -4,6 +4,18 @@
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
 
+## 2.150.2-104 (Not Released Yet)
+* Updated plugins:
+    * [ansicolor:0.6.2](https://plugins.jenkins.io/ansicolor)
+    * [cloudbees-bitbucket-branch-source:2.4.1](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
+    * [durable-task:1.29](https://plugins.jenkins.io/durable-task)
+    * [slack:2.15](https://plugins.jenkins.io/slack)
+    * [workflow-cps-global-lib:2.13](https://plugins.jenkins.io/workflow-cps-global-lib)
+    * [workflow-cps:2.63](https://plugins.jenkins.io/workflow-cps)
+    * [workflow-durable-task-step:2.29](https://plugins.jenkins.io/workflow-durable-task-step)
+    * [workflow-step-api:2.19](https://plugins.jenkins.io/workflow-step-api)
+    * [workflow-support:3.2](https://plugins.jenkins.io/workflow-support)
+
 ## 2.150.2-103
 * Enable to put a tag in the 'branch' setting of a seed-job [#125](https://github.com/odavid/my-bloody-jenkins/pull/125)
 * Updated plugins:
