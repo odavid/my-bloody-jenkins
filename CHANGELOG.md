@@ -4,7 +4,7 @@
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
 
-## 2.150.2-104 (Not Released Yet)
+## 2.150.2-104
 * Updated plugins:
     * [ansicolor:0.6.2](https://plugins.jenkins.io/ansicolor)
     * [cloudbees-bitbucket-branch-source:2.4.1](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
