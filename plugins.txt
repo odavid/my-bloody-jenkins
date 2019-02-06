@@ -113,7 +113,7 @@ matrix-auth:2.3
 matrix-project:1.13
 maven-plugin:3.2
 mercurial:2.5
-metrics:4.0.2.2
+metrics:4.0.2.3
 momentjs:1.1.1
 nodejs:1.2.7
 p4:1.9.6
