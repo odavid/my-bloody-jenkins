@@ -760,6 +760,9 @@ clouds:
         # has privileges to that socket within the entrypoint
         volumes:
           - '/var/run/docker.sock:/var/run/docker.sock'
+        # EXCLUSIVE (Default) - Only build jobs with label expressions matching this node
+        # NORAL = Use this node as much as possible
+        nodeUsageMode: EXCLUSIVE
         # Environment variables to pass to the slave container
         environment:
           XXX: xxx
@@ -770,6 +773,7 @@ clouds:
         yaml: |-
           spec: xxx
           metadata: yyy
+
 
 ```
 
@@ -803,6 +807,9 @@ clouds:
         # Environment variables to pass to the slave container
         environment:
           XXX: xxx
+        # EXCLUSIVE (Default) - Only build jobs with label expressions matching this node
+        # NORAL = Use this node as much as possible
+        mode: EXCLUSIVE
 ```
 
 
