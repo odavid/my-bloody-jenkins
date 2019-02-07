@@ -129,7 +129,7 @@ def dockerCloud(config){
                     ]
                 }
 
-                dockerTemplate.mode = Node.Mode.EXCLUSIVE
+                dockerTemplate.mode = temp.mode ? Node.Mode.valueOf(temp.mode) : Node.Mode.EXCLUSIVE
                 dockerTemplate.connector.user = temp.jnlpUser ?: config.jnlpUser ?: ''
                 if(jenkinsUrl){
                     dockerTemplate.connector.jenkinsUrl = jenkinsUrl
@@ -246,7 +246,7 @@ def kubernetesCloud(config){
                 podTemplate.containers << containerTemplate
                 podTemplate.namespace = temp.namespace
                 podTemplate.label = temp.labels?.join(' ')
-                podTemplate.nodeUsageMode = Node.Mode.EXCLUSIVE
+                podTemplate.nodeUsageMode = temp.nodeUsageMode ? Node.Mode.valueOf(temp.nodeUsageMode) : Node.Mode.EXCLUSIVE
                 podTemplate.inheritFrom = temp.inheritFrom
                 podTemplate.nodeSelector = temp.nodeSelector
                 podTemplate.serviceAccount = temp.serviceAccount
