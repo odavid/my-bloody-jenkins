@@ -5,8 +5,13 @@
 
 ## 2.150.2-105 (Not Released Yet)
 * Updated plugins:
-  * [metrics:4.0.2.3](https://plugins.jenkins.io/metrics)
-  
+    * [metrics:4.0.2.3](https://plugins.jenkins.io/metrics)
+    * [docker-plugin:1.1.6](https://plugins.jenkins.io/docker-plugin)
+    * [git-client:2.7.6](https://plugins.jenkins.io/git-client)
+    * [git:3.9.3](https://plugins.jenkins.io/git)
+    * [slack:2.16](https://plugins.jenkins.io/slack)
+    * [timestamper:1.9](https://plugins.jenkins.io/timestamper)
+
 ## 2.150.2-104
 * Updated plugins:
     * [ansicolor:0.6.2](https://plugins.jenkins.io/ansicolor)
