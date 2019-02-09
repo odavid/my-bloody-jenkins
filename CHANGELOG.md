@@ -3,6 +3,9 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+## 2.150.2-106 (Not released yet)
+* Support file credential [#130](https://github.com/odavid/my-bloody-jenkins/pull/130)
+
 ## 2.150.2-105
 * Support mode = NORMAL or EXCLUSIVE in docker templates [#129](https://github.com/odavid/my-bloody-jenkins/pull/129)
 * Updated plugins:
