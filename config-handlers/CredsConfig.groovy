@@ -113,6 +113,19 @@ def textCred(config){
     }
 }
 
+def fileCred(config){
+    config.with{
+        return new org.jenkinsci.plugins.plaincredentials.impl.FileCredentialsImpl(
+            CredentialsScope.GLOBAL,
+            id,
+            description,
+            null,
+            fileName,
+            com.cloudbees.plugins.credentials.SecretBytes.fromString(secretBytes)
+        )
+    }
+}
+
 def certCred(config){
     config.with{
         def keyStoreSource = null
@@ -208,6 +221,8 @@ def setup(config){
                 return userPassCred(credConfig)
             case 'text':
                 return textCred(credConfig)
+            case 'file':
+                return fileCred(credConfig)
             case 'sshkey':
                 return sshKeyCred(credConfig)
             case 'cert':

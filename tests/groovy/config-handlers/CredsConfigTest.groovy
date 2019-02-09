@@ -28,6 +28,11 @@ text-cred:
   type: text
   description: The slace secret token
   text: slack-secret-token
+file-cred:
+  type: file
+  description: This is a file
+  secretBytes: QUJDREVG
+  fileName: myFile
 aws-cred:
   type: aws
   access_key: xxxx
@@ -121,6 +126,11 @@ dynamic-p4-ticket-cred:
     assertCred("text-cred", org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl){
         assert it.description == "The slace secret token"
         assert it.secret.toString() == "slack-secret-token"
+    }
+    assertCred("file-cred", org.jenkinsci.plugins.plaincredentials.impl.FileCredentialsImpl){
+        assert it.description == "This is a file"
+        assert it.secretBytes.plainData.encodeBase64().toString() == "QUJDREVG"
+        assert it.fileName == "myFile"
     }
     assertCred("aws-cred", com.cloudbees.jenkins.plugins.awscredentials.AWSCredentialsImpl){
         assert it.description == "aws description"

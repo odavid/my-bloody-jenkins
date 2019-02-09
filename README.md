@@ -471,6 +471,9 @@ Responsible for:
 * The following types are supported:
     * type: text - [simple secret](https://wiki.jenkins.io/display/JENKINS/Plain+Credentials+Plugin). Mandatory attributes:
         * text - the text to encrypt
+    * type: file - [file secret](https://wiki.jenkins.io/display/JENKINS/Plain+Credentials+Plugin). Mandatory attributes:
+        * fileName - the fileName
+        * secretBytes - a base64 encoded string of the file contents.
     * type: aws - an [aws secret](https://wiki.jenkins.io/display/JENKINS/CloudBees+AWS+Credentials+Plugin). Mandatory attributes:
         * access_key - AWS access key
         * secret_access_key - AWS secret access key
@@ -513,8 +516,14 @@ The logic for dealing with unknown types is as follows:
 credentials:
   slack:
     type: text
-    description: The slace secret token
+    description: The slak secret token
     text: slack-secret-token
+  a-secret-file:
+    type: file
+    description: An encrypted file with contents
+    # Always base64
+    secretBytes: VGhpcyBpcyBhIHBsYWluIGNvbnRlbnQK # -> 'This is a plain content' | base64
+    fileName: my-secret-file
   hipchat:
     type: text
     text: hipchat-token
