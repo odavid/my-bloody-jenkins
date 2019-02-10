@@ -1,5 +1,5 @@
 ace-editor:1.1
-active-directory:2.11
+active-directory:2.12
 amazon-ecr:1.6
 amazon-ecs:1.19
 anchore-container-scanner:1.0.18
@@ -100,7 +100,7 @@ job-dsl:1.71
 jquery-detached:1.2.1
 jquery:1.12.4-0
 jsch:0.1.55
-junit:1.26.1
+junit:1.27
 kubernetes-cli:1.4.0
 kubernetes-credentials:0.4.0
 kubernetes:1.14.3
