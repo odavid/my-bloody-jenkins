@@ -7,7 +7,8 @@
 * Updated plugins:
     * [active-directory:2.12](https://plugins.jenkins.io/active-directory)
     * [junit:1.27](https://plugins.jenkins.io/junit)
-
+    * [artifactory:3.1.2](https://plugins.jenkins.io/artifactory)
+    
 ## 2.150.2-106
 * Support file credential [#130](https://github.com/odavid/my-bloody-jenkins/pull/130)
 
