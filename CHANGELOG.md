@@ -8,9 +8,9 @@
     * [active-directory:2.12](https://plugins.jenkins.io/active-directory)
     * [junit:1.27](https://plugins.jenkins.io/junit)
     * [artifactory:3.1.2](https://plugins.jenkins.io/artifactory)
-    * [blueocean:1.11.0](https://plugins.jenkins.io/blueocean)
+    * [blueocean:1.11.1](https://plugins.jenkins.io/blueocean)
     * [script-security:1.52](https://plugins.jenkins.io/script-security)
-
+    * [slack:2.17](https://plugins.jenkins.io/slack)
 
 ## 2.150.2-106
 * Support file credential [#130](https://github.com/odavid/my-bloody-jenkins/pull/130)
