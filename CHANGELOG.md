@@ -3,6 +3,9 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+## 2.150.3-108 (Not released yet)
+* [LTS-2.150.3](https://jenkins.io/changelog-stable/)
+
 ## 2.150.2-107
 * Updated plugins:
     * [active-directory:2.12](https://plugins.jenkins.io/active-directory)
