@@ -7,7 +7,7 @@ ansicolor:0.6.2
 ant:1.9
 antisamy-markup-formatter:1.5
 apache-httpcomponents-client-4-api:4.5.5-3.0
-artifactory:3.1.2
+artifactory:3.2.0
 authentication-tokens:1.3
 aws-credentials:1.24
 aws-java-sdk:1.11.457
@@ -70,14 +70,14 @@ extensible-choice-parameter:1.6.0
 external-monitor-job:1.7
 favorite:2.3.2
 gatling:1.2.5
-git-changelog:2.15
+git-changelog:2.16
 git-client:2.7.6
-git-parameter:0.9.6
+git-parameter:0.9.9
 git-server:1.7
 git:3.9.3
 github-api:1.95
 github-branch-source:2.4.2
-github:1.29.3
+github:1.29.4
 gitlab-plugin:1.5.11
 golang:1.2
 google-login:1.4
@@ -103,7 +103,7 @@ jsch:0.1.55
 junit:1.27
 kubernetes-cli:1.4.0
 kubernetes-credentials:0.4.0
-kubernetes:1.14.3
+kubernetes:1.14.5
 ldap:1.20
 lockable-resources:2.4
 mailer:1.23
@@ -157,7 +157,7 @@ throttle-concurrents:2.0.1
 timestamper:1.9
 token-macro:2.6
 trilead-api:1.0.1
-variant:1.1
+variant:1.2
 workflow-aggregator:2.6
 workflow-api:2.33
 workflow-basic-steps:2.14
