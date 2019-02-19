@@ -72,7 +72,7 @@ favorite:2.3.2
 gatling:1.2.5
 git-changelog:2.16
 git-client:2.7.6
-git-parameter:0.9.9
+git-parameter:0.9.10
 git-server:1.7
 git:3.9.3
 github-api:1.95
@@ -144,7 +144,7 @@ sbt:1.5
 scm-api:2.3.0
 script-security:1.52
 simple-theme-plugin:0.5.1
-slack:2.17
+slack:2.18
 sonar:2.8.1
 sse-gateway:1.17
 ssh-agent:1.17

@@ -5,12 +5,15 @@
 
 
 ## 2.150.3-109 (Not released yet)
-* [artifactory:3.2.0](https://plugins.jenkins.io/artifactory)
-* [git-changelog:2.16](https://plugins.jenkins.io/git-changelog)
-* [git-parameter:0.9.9](https://plugins.jenkins.io/git-parameter)
-* [github:1.29.4](https://plugins.jenkins.io/github)
-* [kubernetes:1.14.5](https://plugins.jenkins.io/kubernetes)
-* [variant:1.2](https://plugins.jenkins.io/variant)
+* Updated plugins:
+    * [artifactory:3.2.0](https://plugins.jenkins.io/artifactory)
+    * [git-changelog:2.16](https://plugins.jenkins.io/git-changelog)
+    * [git-parameter:0.9.9](https://plugins.jenkins.io/git-parameter)
+    * [github:1.29.4](https://plugins.jenkins.io/github)
+    * [kubernetes:1.14.5](https://plugins.jenkins.io/kubernetes)
+    * [variant:1.2](https://plugins.jenkins.io/variant)
+    * [git-parameter:0.9.10](https://plugins.jenkins.io/git-parameter)
+    * [slack:2.18](https://plugins.jenkins.io/slack)
 
 ## 2.150.3-108
 * [LTS-2.150.3](https://jenkins.io/changelog-stable/)
