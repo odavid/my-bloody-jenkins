@@ -14,6 +14,10 @@
     * [variant:1.2](https://plugins.jenkins.io/variant)
     * [git-parameter:0.9.10](https://plugins.jenkins.io/git-parameter)
     * [slack:2.18](https://plugins.jenkins.io/slack)
+    * [artifactory:3.2.1](https://plugins.jenkins.io/artifactory)
+    * [cloudbees-bitbucket-branch-source:2.4.2](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
+    * [configuration-as-code:1.6](https://plugins.jenkins.io/configuration-as-code)
+    * [script-security:1.53](https://plugins.jenkins.io/script-security)
 
 ## 2.150.3-108
 * [LTS-2.150.3](https://jenkins.io/changelog-stable/)
