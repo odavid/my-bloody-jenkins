@@ -8,6 +8,15 @@ echo "DOCKER_REPO=$DOCKER_REPO"
 echo "SOURCE_BRANCH=$SOURCE_BRANCH"
 echo "SOURCE_COMMIT=$SOURCE_COMMIT"
 echo "COMMIT_MSG=$COMMIT_MSG"
+echo "DOCKER_REPO=$DOCKER_REPO"
+echo "DOCKERFILE_PATH=$DOCKERFILE_PATH"
+echo "CACHE_TAG=$CACHE_TAG"
+echo "IMAGE_NAME=$IMAGE_NAME"
+
+if [ $SOURCE_BRANCH == 'multi-image-dist' ] ; then
+
+fi
+exit 0
 
 TAG=$(echo $SOURCE_BRANCH | sed 's/v//g')
 NEW_TAG=$(echo $TAG | cut -d '-' -f 1)
