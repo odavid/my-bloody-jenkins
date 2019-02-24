@@ -26,6 +26,10 @@ debug(){
     [[ "$DEBUG" == "YES" ]] && log "$1"
 }
 
+_md5(){
+    md5sum $1 | cut -f1 -d ' '
+}
+
 fetch_config(){
     fetchconfig.py --source "${URL}" --out ${CACHE_DIR}/${FILE_BASENAME}
     PROCESS_COMMAND="processconfig.py --source ${CACHE_DIR}/${FILE_BASENAME} --out ${CACHE_DIR}/${FILE_BASENAME}"
@@ -39,7 +43,7 @@ fetch_config(){
     fi
 
     debug "Calulating checksum of ${CACHE_DIR}/${FILE_BASENAME}"
-    MD5_CHECKSUM=$(md5 -q ${CACHE_DIR}/${FILE_BASENAME})
+    MD5_CHECKSUM=$(_md5 ${CACHE_DIR}/${FILE_BASENAME})
     debug "MD5_CHECKSUM = $MD5_CHECKSUM"
     if [ -f ${CACHE_DIR}/${FILE_BASENAME}.md5 ]; then
         ORIG_MD5_CHECKSUM=$(cat ${CACHE_DIR}/${FILE_BASENAME}.md5)
@@ -47,7 +51,7 @@ fetch_config(){
         ORIG_MD5_CHECKSUM=''
     fi
     debug "ORIG_MD5_CHECKSUM = $ORIG_MD5_CHECKSUM"
-    md5 -q ${CACHE_DIR}/${FILE_BASENAME} > ${CACHE_DIR}/${FILE_BASENAME}.md5
+    _md5 ${CACHE_DIR}/${FILE_BASENAME} > ${CACHE_DIR}/${FILE_BASENAME}.md5
     RESULT=0
     if [ "$ORIG_MD5_CHECKSUM" != "$MD5_CHECKSUM" ]; then
         cp ${CACHE_DIR}/${FILE_BASENAME} ${FILENAME}

@@ -1,4 +1,6 @@
-FROM jenkins/jenkins:2.150.3-alpine
+ARG FROM_TAG=2.150.3-alpine
+
+FROM jenkins/jenkins:${FROM_TAG}
 
 ARG GOSU_VERSION=1.10
 
@@ -10,10 +12,22 @@ RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
 # We will change the user to jenkins using gosu
 USER root
 
-# Ability to use usermod + install awscli in order to be able to watch s3 if needed
-RUN apk add --no-cache shadow py-setuptools less outils-md5 && \
-    easy_install-2.7 pip==18.1 && \
-    pip install --no-cache-dir awscli PyYAML==3.12 six requests botocore boto3
+RUN \
+     # alpine - Install pip and shadow for usermod
+     if [ -f /etc/alpine-release ] ; then \
+          apk add --no-cache shadow py-setuptools && \
+          easy_install-2.7 pip==18.1 \
+          ; \
+     # debian - Install pip
+     elif [ -f /etc/debian_version ] ; then \
+          apt-get update -y && \
+          apt-get install -y --no-install-recommends python-setuptools && \
+          easy_install pip==18.1 && \
+          rm -rf /var/lib/apt/lists/* \
+          ; \
+     fi
+
+RUN pip install --no-cache-dir awscli PyYAML==3.12 six requests botocore boto3
 
 RUN curl -SsL https://releases.hashicorp.com/envconsul/0.7.3/envconsul_0.7.3_linux_amd64.tgz | tar -C /usr/bin -xvzf - && \
     chmod +x /usr/bin/envconsul
