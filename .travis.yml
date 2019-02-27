@@ -16,32 +16,27 @@ before_install:
   - sudo mv docker-compose /usr/local/bin
   - npm install -g bats
 
-matrix:
+jobs:
   include:
-    - name: "debian"
-      env: MAKE_TARGET=test-debian
-    - name: "slim"
-      env: MAKE_TARGET=test-slim
-    - name: "alpine"
-      env: MAKE_TARGET=test-alpine
-script:
-  - make $MAKE_TARGET
+    - script: make test-debian
+    - script: make test-slim
+    - script: make test-alpine
+    - stage: publish
+      script: echo "publishing...."
+      deploy:
+        - provider: script
+          # script: curl --request POST --header Content-Type:application/json --data '{"build":true}' --url ${DOCKER_CLOUD_TRIGGER_URL}
+          script: ./publish.sh latest
+          on:
+            branch: master
 
-deploy:
+        - provider: script
+          script: ./publish.sh $TRAVIS_TAG
+          on:
+            tags: true
+            condition: $TRAVIS_TAG =~ ^v.*$
 
-  - provider: script
-    # script: curl --request POST --header Content-Type:application/json --data '{"build":true}' --url ${DOCKER_CLOUD_TRIGGER_URL}
-    script: ./publish.sh latest
-    on:
-      branch: master
-
-  - provider: script
-    script: ./publish.sh $TRAVIS_TAG
-    on:
-      tags: true
-      condition: $TRAVIS_TAG =~ ^v.*$
-
-  - provider: script
-    script: ./publish.sh multi-image-dist
-    on:
-      branch: multi-image-dist
+        - provider: script
+          script: ./publish.sh multi-image-dist
+          on:
+            branch: multi-image-dist
