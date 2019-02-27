@@ -18,12 +18,12 @@ before_install:
 
 matrix:
   include:
-    - name: "alpine"
-      env: MAKE_TARGET=test-alpine
     - name: "debian"
       env: MAKE_TARGET=test-debian
     - name: "slim"
       env: MAKE_TARGET=test-slim
+    - name: "alpine"
+      env: MAKE_TARGET=test-alpine
 script:
   - make $MAKE_TARGET
 
@@ -31,6 +31,7 @@ jobs:
   include:
     - stage: deploy
       name: "alpine"
+      env: MAKE_TARGET=test-alpine
       deploy:
         - provider: script
           # script: curl --request POST --header Content-Type:application/json --data '{"build":true}' --url ${DOCKER_CLOUD_TRIGGER_URL}
