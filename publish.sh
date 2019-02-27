@@ -23,6 +23,7 @@ docker-build(){
     echo "docker build --rm --force-rm -t odavid/my-bloody-jenkins:${tag}${to} --build-arg=FROM_TAG=${from_tag} ."
     docker build --rm --pull --force-rm -t odavid/my-bloody-jenkins:${tag}${to} --build-arg=FROM_TAG=${from_tag} .
     echo "docker push odavid/my-bloody-jenkins:${tag}${to}"
+    docker push odavid/my-bloody-jenkins:${tag}${to}
 }
 
 lts_version=$(cat LTS_VERSION.txt)
