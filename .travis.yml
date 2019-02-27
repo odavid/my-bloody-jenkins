@@ -27,8 +27,24 @@ matrix:
 script:
   - make $MAKE_TARGET
 
-deploy:
-  - provider: script
-    script: curl --request POST --header Content-Type:application/json --data '{"build":true}' --url ${DOCKER_CLOUD_TRIGGER_URL}
-    on:
-      branch: master
+jobs:
+  include:
+    - stage: deploy
+      name: "alpine"
+      deploy:
+        - provider: script
+          # script: curl --request POST --header Content-Type:application/json --data '{"build":true}' --url ${DOCKER_CLOUD_TRIGGER_URL}
+          script: ./publish.sh latest
+          on:
+            branch: master
+
+        - provider: script
+          script: ./publish.sh $TRAVIS_TAG
+          on:
+            tags: true
+            condition: $TRAVIS_TAG =~ ^v.*$
+
+        - provider: script
+          script: ./publish.sh multi-image-dist
+          on:
+            branch: multi-image-dist
