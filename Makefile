@@ -3,11 +3,11 @@ LTS_VERSION_FILE = LTS_VERSION.txt
 LTS_VERSION = `cat $(LTS_VERSION_FILE)`
 DEFAULT_BUILD_ARGS = --build-arg http_proxy=$(http_proxy) --build-arg https_proxy=$(https_proxy) --build-arg no_proxy=$(no_proxy)
 
-default: test
+default: test-all
 
-build: build-alpine build-debian build-slim
+build-all: build-alpine build-debian build-slim
 
-test: test-alpine test-debian test-slim
+test-all: test-alpine test-debian test-slim
 
 build-alpine:
 	docker build --rm --force-rm -t odavid/my-bloody-jenkins $(DEFAULT_BUILD_ARGS) --build-arg=FROM_TAG=$(LTS_VERSION)-alpine .
