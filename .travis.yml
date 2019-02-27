@@ -30,8 +30,6 @@ script:
 jobs:
   include:
     - stage: deploy
-      name: "alpine"
-      env: MAKE_TARGET=test-alpine
       deploy:
         - provider: script
           # script: curl --request POST --header Content-Type:application/json --data '{"build":true}' --url ${DOCKER_CLOUD_TRIGGER_URL}
