@@ -1,4 +1,4 @@
-ARG FROM_TAG=2.150.3-alpine
+ARG FROM_TAG=2.150.3
 
 FROM jenkins/jenkins:${FROM_TAG}
 
@@ -6,6 +6,9 @@ ARG GOSU_VERSION=1.10
 
 # Install plugins
 COPY plugins.txt /usr/share/jenkins/ref/
+
+## Issue with jenkins update site and letsencrypt cert. Using -k for the time being
+ARG CURL_OPTIONS=-sSfLk
 RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
 
 # Using root to install and run entrypoint.
