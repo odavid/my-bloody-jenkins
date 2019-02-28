@@ -34,4 +34,4 @@ update-plugins:
 release:
 	$(eval NEW_INCREMENT := $(shell expr `git describe --tags --abbrev=0 | cut -d'-' -f2` + 1))
 	git tag v$(LTS_VERSION)-$(NEW_INCREMENT)
-	git push origin v$(BASE_VERSION)-$(NEW_INCREMENT)
+	git push origin v$(LTS_VERSION)-$(NEW_INCREMENT)

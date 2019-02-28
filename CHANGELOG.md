@@ -3,7 +3,7 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
-## 2.150.3-110 (Not released yet)
+## 2.150.3-110
 * Multiple images distribution [#134](https://github.com/odavid/my-bloody-jenkins/pull/134)
 * Updated plugins:
     * [aws-credentials:1.26](https://plugins.jenkins.io/aws-credentials)
