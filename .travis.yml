@@ -25,7 +25,6 @@ jobs:
       script: echo "publishing...."
       deploy:
         - provider: script
-          # script: curl --request POST --header Content-Type:application/json --data '{"build":true}' --url ${DOCKER_CLOUD_TRIGGER_URL}
           script: ./publish.sh latest
           on:
             branch: master

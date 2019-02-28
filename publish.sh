@@ -1,38 +1,48 @@
 #!/bin/bash -e
 
 docker-build(){
-    local tag=${1}
-    local lts_version=${2}
-    local from=${3}
-    local to=${4}
-    if [[ $from == '-' ]]; then
-        local from=""
-    fi
-    if [[ $to == '-' ]]; then
-        local to=""
-    fi
-    if [ -z $tag ]; then
-        echo "tag is required!"
-        exit 1
-    fi
-    if [ -z $lts_version ]; then
-        echo "lts_version is required!"
-        exit 1
-    fi
-    [[ -n $from ]] && local from_tag=${lts_version}-${from} || local from_tag=${lts_version}
-    echo "docker build --rm --force-rm -t odavid/my-bloody-jenkins:${tag}${to} --build-arg=FROM_TAG=${from_tag} ."
-    docker build --rm --pull --force-rm -t odavid/my-bloody-jenkins:${tag}${to} --build-arg=FROM_TAG=${from_tag} .
-    echo "docker push odavid/my-bloody-jenkins:${tag}${to}"
-    docker push odavid/my-bloody-jenkins:${tag}${to}
+    local from_tag=${1}
+    local to_tag=${2}
+    echo "docker build --rm --force-rm -t odavid/my-bloody-jenkins:${to_tag} --build-arg=FROM_TAG=${from_tag} ."
+    docker build --rm --pull --force-rm -t odavid/my-bloody-jenkins:${to_tag} --build-arg=FROM_TAG=${from_tag} .
+    echo "docker push odavid/my-bloody-jenkins:${to_tag}"
+    docker push odavid/my-bloody-jenkins:${to_tag}
 }
 
+echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
 lts_version=$(cat LTS_VERSION.txt)
-tag=${1:-latest}
-tag=$(echo $tag | sed 's/^v//g')
+version_type=$1
+case $version_type in
+latest)
+    docker-build ${lts_version}-alpine latest
+    docker-build ${lts_version}-alpine alpine
+    docker-build ${lts_version}-slim slim
+    docker-build ${lts_version} debian
+    ;;
+v*)
+    tag=$(echo $version_type | sed 's/v//g')
+    short_tag=$(echo $tag | cut -d '-' -f 1)
 
-docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+    docker-build ${lts_version}-alpine $tag
+    docker-build ${lts_version}-alpine $short_tag
+    docker-build ${lts_version}-alpine lts
+    docker-build ${lts_version}-alpine lts-alpine
 
-docker-build $tag $lts_version alpine -
-docker-build $tag $lts_version alpine -alpine
-docker-build $tag $lts_version - -debian
-docker-build $tag $lts_version slim -slim
+    docker-build ${lts_version}-slim ${tag}-slim
+    docker-build ${lts_version}-slim ${short_tag}-slim
+    docker-build ${lts_version}-slim lts-slim
+
+    docker-build ${lts_version} ${tag}-debian
+    docker-build ${lts_version} ${short_tag}-debian
+    docker-build ${lts_version} lts-debian
+    ;;
+*)
+    tag=$version_type
+    docker-build ${lts_version}-alpine $tag
+    docker-build ${lts_version}-alpine $tag-alpine
+    docker-build ${lts_version}-slim $tag-slim
+    docker-build ${lts_version} $tag-debian
+
+    ;;
+esac
+#docker-build $1 $2
