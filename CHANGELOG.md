@@ -5,6 +5,14 @@
 
 ## 2.150.3-110 (Not released yet)
 * Multiple images distribution [#134](https://github.com/odavid/my-bloody-jenkins/pull/134)
+* Updated plugins:
+    * [aws-credentials:1.26](https://plugins.jenkins.io/aws-credentials)
+    * [configuration-as-code:1.7](https://plugins.jenkins.io/configuration-as-code)
+    * [credentials-binding:1.18](https://plugins.jenkins.io/credentials-binding)
+    * [email-ext:2.64](https://plugins.jenkins.io/email-ext)
+    * [kubernetes-cli:1.6.0](https://plugins.jenkins.io/kubernetes-cli)
+    * [kubernetes:1.14.6](https://plugins.jenkins.io/kubernetes)
+
 
 ## 2.150.3-109
 * Updated plugins:
