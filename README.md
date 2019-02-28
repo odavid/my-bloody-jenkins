@@ -12,14 +12,14 @@ ability to configure most aspects of Jenkins from a **simple** and **single sour
 
 The image can get the configuration from several data sources such as: File, S3, Environment Variable, HTTP, Kubernetes ConfigMap and Kubernetes Secret.
 
-The image supports "Watching" configuration changes and applying them immedately without restarting jenkins.
+The image supports "Watching" configuration changes and applying them immediately without restarting jenkins.
 
-The image is "Battle Proven" and serves as the baseground for several Jenkins deployments in production.
+The image is "Battle Proven" and serves as the base ground for several Jenkins deployments in production.
 
 ## Features
 * Configuration Coverage:
   * Security Realm (LDAP/AD/Simple Jenkins database)
-  * Glabal Security Options
+  * Global Security Options
   * Authorization
   * Jenkins Clouds (Amazon ECS, Kubernetes, Docker)
   * Global Pipeline Libraries
@@ -93,11 +93,11 @@ docker pull odavid/my-bloody-jenkins:v2.150.3-109
 # get the latest unstable image (alpine)
 docker pull odavid/my-bloody-jenkins
 
-[# get the latest unstable debian image
+# get the latest unstable debian image
 docker pull odavid/my-bloody-jenkins:debian
-](# get the latest unstable slim image
+# get the latest unstable slim image
 docker pull odavid/my-bloody-jenkins:slim
-)```
+```
 
 
 ## Environment Variables
