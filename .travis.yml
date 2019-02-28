@@ -34,8 +34,3 @@ jobs:
           on:
             tags: true
             condition: $TRAVIS_TAG =~ ^v.*$
-
-        - provider: script
-          script: ./publish.sh multi-image-dist
-          on:
-            branch: multi-image-dist

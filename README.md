@@ -90,9 +90,9 @@ docker pull odavid/my-bloody-jenkins:2.150.3-slim
 
 # get a concrete 2.150.3 release
 docker pull odavid/my-bloody-jenkins:v2.150.3-109
+
 # get the latest unstable image (alpine)
 docker pull odavid/my-bloody-jenkins
-
 # get the latest unstable debian image
 docker pull odavid/my-bloody-jenkins:debian
 # get the latest unstable slim image
