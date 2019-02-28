@@ -70,18 +70,34 @@ For each git tag, there following tags will be created:
 * $LTS_VERSION - latest release for that LTS version
 * lts - represents the latest release
 
+
 Each master commit, will be tagged as latest
 
 ```bash
-# get the latest release
+# get the latest release, alpine
 docker pull odavid/my-bloody-jenkins:lts
-# get the latest 2.138.2 LTS
-docker pull odavid/my-bloody-jenkins:2.138.2
-# get a concrete 2.138.2 release
-docker pull odavid/my-bloody-jenkins:2.138.2-82
-# get the latest unstable image
+# get the latest debian release
+docker pull odavid/my-bloody-jenkins:lts-debian
+# get the latest slim release
+docker pull odavid/my-bloody-jenkins:lts-slim
+
+# get the latest 2.150.3 LTS
+docker pull odavid/my-bloody-jenkins:2.150.3
+# get the latest 2.150.3 debian LTS
+docker pull odavid/my-bloody-jenkins:2.150.3-debian
+# get the latest 2.150.3 slim LTS
+docker pull odavid/my-bloody-jenkins:2.150.3-slim
+
+# get a concrete 2.150.3 release
+docker pull odavid/my-bloody-jenkins:v2.150.3-109
+# get the latest unstable image (alpine)
 docker pull odavid/my-bloody-jenkins
-```
+
+[# get the latest unstable debian image
+docker pull odavid/my-bloody-jenkins:debian
+](# get the latest unstable slim image
+docker pull odavid/my-bloody-jenkins:slim
+)```
 
 
 ## Environment Variables
