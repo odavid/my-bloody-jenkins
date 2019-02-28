@@ -1,8 +1,5 @@
 sudo: required
 
-env:
-  - DOCKER_COMPOSE_VERSION=1.21.1
-
 language: node_js
 node_js:
   - node
@@ -14,16 +11,26 @@ addons:
 
 before_install:
   - sudo rm /usr/local/bin/docker-compose
-  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - curl -L https://github.com/docker/compose/releases/download/1.23.2/docker-compose-`uname -s`-`uname -m` > docker-compose
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
   - npm install -g bats
 
-script:
-  - make
+jobs:
+  include:
+    - script: make test-debian
+    - script: make test-slim
+    - script: make test-alpine
+    - stage: publish
+      script: echo "publishing...."
+      deploy:
+        - provider: script
+          script: ./publish.sh latest
+          on:
+            branch: master
 
-deploy:
-  - provider: script
-    script: curl --request POST --header Content-Type:application/json --data '{"build":true}' --url ${DOCKER_CLOUD_TRIGGER_URL}
-    on:
-      branch: master
+        - provider: script
+          script: ./publish.sh $TRAVIS_TAG
+          on:
+            tags: true
+            condition: $TRAVIS_TAG =~ ^v.*$
