@@ -10,6 +10,7 @@
     * [copyartifact:1.42](https://plugins.jenkins.io/copyartifact)
     * [handy-uri-templates-2-api:2.1.7-1.0](https://plugins.jenkins.io/handy-uri-templates-2-api)
     * [pipeline-model-definition:1.3.5](https://plugins.jenkins.io/pipeline-model-definition)
+    * [cucumber-reports:4.5.0](https://plugins.jenkins.io/cucumber-reports)
 
 ## 2.150.3-110
 * Multiple images distribution [#134](https://github.com/odavid/my-bloody-jenkins/pull/134)
