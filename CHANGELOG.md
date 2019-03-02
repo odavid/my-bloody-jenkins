@@ -3,6 +3,14 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+
+## 2.150.3-111 (Not released yet)
+* Updated plugins:
+    * [blueocean:1.13.1](https://plugins.jenkins.io/blueocean)
+    * [copyartifact:1.42](https://plugins.jenkins.io/copyartifact)
+    * [handy-uri-templates-2-api:2.1.7-1.0](https://plugins.jenkins.io/handy-uri-templates-2-api)
+    * [pipeline-model-definition:1.3.5](https://plugins.jenkins.io/pipeline-model-definition)
+
 ## 2.150.3-110
 * Multiple images distribution [#134](https://github.com/odavid/my-bloody-jenkins/pull/134)
 * Updated plugins:
