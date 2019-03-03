@@ -38,7 +38,7 @@ branch-api:2.1.2
 build-timeout:1.19
 build-user-vars-plugin:1.5
 buildtriggerbadge:2.10
-checkmarx:8.80.0
+checkmarx:8.80.3
 cloudbees-bitbucket-branch-source:2.4.2
 cloudbees-folder:6.7
 cobertura:1.13
@@ -94,7 +94,7 @@ jackson2-api:2.9.8
 javadoc:1.4
 jdk-tool:1.2
 jenkins-design-language:1.13.1
-jira-steps:1.4.4
+jira-steps:1.4.5
 jira:3.0.5
 job-dsl:1.71
 jquery-detached:1.2.1
