@@ -63,7 +63,7 @@ docker-workflow:1.17
 durable-task:1.29
 email-ext:2.64
 emailext-template:1.1
-embeddable-build-status:1.9
+embeddable-build-status:2.0
 envinject-api:1.5
 envinject:2.1.6
 extensible-choice-parameter:1.6.0
@@ -103,7 +103,7 @@ jsch:0.1.55
 junit:1.27
 kubernetes-cli:1.6.0
 kubernetes-credentials:0.4.0
-kubernetes:1.14.6
+kubernetes:1.14.8
 ldap:1.20
 lockable-resources:2.4
 mailer:1.23

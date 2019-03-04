@@ -13,6 +13,8 @@
     * [cucumber-reports:4.5.0](https://plugins.jenkins.io/cucumber-reports)
     * [checkmarx:8.80.3](https://plugins.jenkins.io/checkmarx)
     * [jira-steps:1.4.5](https://plugins.jenkins.io/jira-steps)
+    * [embeddable-build-status:2.0](https://plugins.jenkins.io/embeddable-build-status)
+    * [kubernetes:1.14.8](https://plugins.jenkins.io/kubernetes)
 
 
 ## 2.150.3-110
