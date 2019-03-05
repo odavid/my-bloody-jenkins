@@ -15,7 +15,7 @@
     * [jira-steps:1.4.5](https://plugins.jenkins.io/jira-steps)
     * [embeddable-build-status:2.0](https://plugins.jenkins.io/embeddable-build-status)
     * [kubernetes:1.14.8](https://plugins.jenkins.io/kubernetes)
-
+    * [javadoc:1.5](https://plugins.jenkins.io/javadoc)
 
 ## 2.150.3-110
 * Multiple images distribution [#134](https://github.com/odavid/my-bloody-jenkins/pull/134)
