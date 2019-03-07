@@ -6,7 +6,6 @@
 
 ## 2.150.3-111 (Not released yet)
 * Updated plugins:
-    * [blueocean:1.13.1](https://plugins.jenkins.io/blueocean)
     * [copyartifact:1.42](https://plugins.jenkins.io/copyartifact)
     * [handy-uri-templates-2-api:2.1.7-1.0](https://plugins.jenkins.io/handy-uri-templates-2-api)
     * [pipeline-model-definition:1.3.6](https://plugins.jenkins.io/pipeline-model-definition)
@@ -21,6 +20,10 @@
     * [matrix-project:1.14](https://plugins.jenkins.io/matrix-project)
     * [script-security:1.54](https://plugins.jenkins.io/script-security)
     * [workflow-cps:2.64](https://plugins.jenkins.io/workflow-cps)
+    * [blueocean:1.13.2](https://plugins.jenkins.io/blueocean)
+    * [pipeline-utility-steps:2.3.0](https://plugins.jenkins.io/pipeline-utility-steps)
+    * [token-macro:2.7](https://plugins.jenkins.io/token-macro)
+    * [workflow-multibranch:2.21](https://plugins.jenkins.io/workflow-multibranch)
 
 ## 2.150.3-110
 * Multiple images distribution [#134](https://github.com/odavid/my-bloody-jenkins/pull/134)
