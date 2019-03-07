@@ -4,7 +4,7 @@
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
 
-## 2.150.3-111 (Not released yet)
+## 2.150.3-111
 * Updated plugins:
     * [copyartifact:1.42](https://plugins.jenkins.io/copyartifact)
     * [handy-uri-templates-2-api:2.1.7-1.0](https://plugins.jenkins.io/handy-uri-templates-2-api)
