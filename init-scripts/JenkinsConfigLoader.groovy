@@ -120,6 +120,7 @@ if(!new File(configFileName).exists()) {
     handleConfig('General', [general: true])
     handleConfig('RemoveMasterEnvVars', jenkinsConfig.remove_master_envvars)
     handleConfig('EnvironmentVars', jenkinsConfig.environment)
+    handleConfig('ConfigurationAsCode', jenkinsConfig.configuration_as_code)
     handleConfig('Creds', jenkinsConfig.credentials)
     handleConfig('Security', jenkinsConfig.security)
     handleConfig('Clouds', jenkinsConfig.clouds)
@@ -134,7 +135,6 @@ if(!new File(configFileName).exists()) {
     handleConfig('PipelineLibraries', jenkinsConfig.pipeline_libraries)
     handleConfig('SeedJobs', jenkinsConfig.seed_jobs)
     handleConfig('JobDSLScripts', jenkinsConfig.job_dsl_scripts)
-    handleConfig('ConfigurationAsCode', jenkinsConfig.configuration_as_code)
     handleConfig('ScriptApproval', jenkinsConfig.script_approval)
 
     handleCustomConfig(jenkinsConfig.customConfig)
