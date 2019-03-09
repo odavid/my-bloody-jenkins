@@ -147,7 +147,7 @@ slack:2.18
 sonar:2.8.1
 sse-gateway:1.17
 ssh-agent:1.17
-ssh-credentials:1.14
+ssh-credentials:1.15
 ssh-slaves:1.29.4
 structs:1.17
 subversion:2.12.1
@@ -163,7 +163,7 @@ workflow-basic-steps:2.14
 workflow-cps-global-lib:2.13
 workflow-cps:2.64
 workflow-durable-task-step:2.29
-workflow-job:2.31
+workflow-job:2.32
 workflow-multibranch:2.21
 workflow-remote-loader:1.4
 workflow-scm-step:2.7

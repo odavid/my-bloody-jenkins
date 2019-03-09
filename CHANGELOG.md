@@ -5,7 +5,9 @@
 
 ## 2.150.3-112 (Not released yet)
 * Removed Hipchat [#139](https://github.com/odavid/my-bloody-jenkins/pull/139)
-
+* Updated plugins:
+    * [ssh-credentials:1.15](https://plugins.jenkins.io/ssh-credentials)
+    * [workflow-job:2.32](https://plugins.jenkins.io/workflow-job)
 
 ## 2.150.3-111
 * Updated plugins:
