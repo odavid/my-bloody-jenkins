@@ -3,7 +3,7 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
-## 2.150.3-112 (Not released yet)
+## 2.150.3-112
 * Removed Hipchat [#139](https://github.com/odavid/my-bloody-jenkins/pull/139)
 * Updated plugins:
     * [ssh-credentials:1.15](https://plugins.jenkins.io/ssh-credentials)
