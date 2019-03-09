@@ -540,9 +540,6 @@ credentials:
     # Always base64
     secretBytes: VGhpcyBpcyBhIHBsYWluIGNvbnRlbnQK # -> 'This is a plain content' | base64
     fileName: my-secret-file
-  hipchat:
-    type: text
-    text: hipchat-token
   awscred:
     type: aws
     access_key: xxxx
@@ -604,7 +601,6 @@ credentials:
 Responsible for Configuration of the following notifiers:
 * Mail - [Default Mailer](https://wiki.jenkins.io/display/JENKINS/Mailer) and [Email-ext](https://wiki.jenkins.io/display/JENKINS/Email-ext+plugin) plugin
 * [Slack plugin](https://wiki.jenkins.io/display/JENKINS/Slack+Plugin)
-* [Hipchat plugin](https://wiki.jenkins.io/display/JENKINS/Hipchat+Plugin)
 
 ```yaml
 notifiers:
@@ -617,12 +613,6 @@ notifiers:
     defaultSuffix: '@mydomain.com'
     useSsl: true
     charset: UTF-8
-  hipchat:
-    server: my.api.hipchat.com
-    room: JenkinsNotificationRoom
-    sendAs: TestSendAs
-    v2Enabled: true
-    credentialId: hipchat # should be defined in credentials section
   slack:
     teamDomain: teamDoamin
     botUser: true
