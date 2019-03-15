@@ -4,7 +4,9 @@
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
 
-## 2.150.3-113 (Not released yet)
+## 2.164.1-113
+* [LTS-2.164.1](https://jenkins.io/changelog-stable/)
+* Add support for a Java 11 Jenkins image [#132](https://github.com/odavid/my-bloody-jenkins/issues/132)
 * Updated plugins:
     * [nodejs:1.2.8](https://plugins.jenkins.io/nodejs)
 

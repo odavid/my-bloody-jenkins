@@ -80,16 +80,20 @@ docker pull odavid/my-bloody-jenkins:lts
 docker pull odavid/my-bloody-jenkins:lts-debian
 # get the latest slim release
 docker pull odavid/my-bloody-jenkins:lts-slim
+# get the latest jdk11 release
+docker pull odavid/my-bloody-jenkins:lts-jdk11
 
-# get the latest 2.150.3 LTS
-docker pull odavid/my-bloody-jenkins:2.150.3
-# get the latest 2.150.3 debian LTS
-docker pull odavid/my-bloody-jenkins:2.150.3-debian
-# get the latest 2.150.3 slim LTS
-docker pull odavid/my-bloody-jenkins:2.150.3-slim
+# get the latest 2.164.1 LTS
+docker pull odavid/my-bloody-jenkins:2.164.1
+# get the latest 2.164.1 debian LTS
+docker pull odavid/my-bloody-jenkins:2.164.1-debian
+# get the latest 2.164.1 slim LTS
+docker pull odavid/my-bloody-jenkins:2.164.1-slim
+# get the latest 2.164.1 jdk11 LTS
+docker pull odavid/my-bloody-jenkins:2.164.1-jdk
 
-# get a concrete 2.150.3 release
-docker pull odavid/my-bloody-jenkins:v2.150.3-109
+# get a concrete 2.164.1 release
+docker pull odavid/my-bloody-jenkins:v2.164.1-109
 
 # get the latest unstable image (alpine)
 docker pull odavid/my-bloody-jenkins
@@ -97,6 +101,8 @@ docker pull odavid/my-bloody-jenkins
 docker pull odavid/my-bloody-jenkins:debian
 # get the latest unstable slim image
 docker pull odavid/my-bloody-jenkins:slim
+# get the latest unstable jdk1 image
+docker pull odavid/my-bloody-jenkins:jdk11
 ```
 
 
