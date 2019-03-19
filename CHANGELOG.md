@@ -4,6 +4,18 @@
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
 
+## 2.164.1-114 (Not released yet)
+* Updated plugins:
+    * [configuration-as-code:1.8](https://plugins.jenkins.io/configuration-as-code)
+    * [gradle:1.31](https://plugins.jenkins.io/gradle)
+    * [ivy:2.0](https://plugins.jenkins.io/ivy)
+    * [kubernetes:1.14.9](https://plugins.jenkins.io/kubernetes)
+    * [pipeline-build-step:2.8](https://plugins.jenkins.io/pipeline-build-step)
+    * [pipeline-input-step:2.10](https://plugins.jenkins.io/pipeline-input-step)
+    * [script-security:1.55](https://plugins.jenkins.io/script-security)
+    * [slack:2.19](https://plugins.jenkins.io/slack)
+    * [workflow-basic-steps:2.15](https://plugins.jenkins.io/workflow-basic-steps)
+
 ## 2.164.1-113
 * [LTS-2.164.1](https://jenkins.io/changelog-stable/)
 * Add support for a Java 11 Jenkins image [#132](https://github.com/odavid/my-bloody-jenkins/issues/132)
