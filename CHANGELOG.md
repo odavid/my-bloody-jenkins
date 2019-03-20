@@ -15,6 +15,8 @@
     * [script-security:1.55](https://plugins.jenkins.io/script-security)
     * [slack:2.19](https://plugins.jenkins.io/slack)
     * [workflow-basic-steps:2.15](https://plugins.jenkins.io/workflow-basic-steps)
+    * [code-coverage-api:1.0.8](https://plugins.jenkins.io/code-coverage-api)
+    * [pipeline-model-definition:1.3.7](https://plugins.jenkins.io/pipeline-model-definition)
 
 ## 2.164.1-113
 * [LTS-2.164.1](https://jenkins.io/changelog-stable/)
