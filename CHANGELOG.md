@@ -4,7 +4,7 @@
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
 
-## 2.164.1-114 (Not released yet)
+## 2.164.1-114
 * Updated plugins:
     * [configuration-as-code:1.8](https://plugins.jenkins.io/configuration-as-code)
     * [gradle:1.31](https://plugins.jenkins.io/gradle)
