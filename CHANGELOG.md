@@ -17,6 +17,10 @@
     * [workflow-basic-steps:2.15](https://plugins.jenkins.io/workflow-basic-steps)
     * [code-coverage-api:1.0.8](https://plugins.jenkins.io/code-coverage-api)
     * [pipeline-model-definition:1.3.7](https://plugins.jenkins.io/pipeline-model-definition)
+    * [blueocean:1.14.0](https://plugins.jenkins.io/blueocean)
+    * [branch-api:2.2.0](https://plugins.jenkins.io/branch-api)
+    * [nodejs:1.2.9](https://plugins.jenkins.io/nodejs)
+    * [scm-api:2.4.0](https://plugins.jenkins.io/scm-api)
 
 ## 2.164.1-113
 * [LTS-2.164.1](https://jenkins.io/changelog-stable/)
