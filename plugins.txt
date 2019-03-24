@@ -45,7 +45,7 @@ cobertura:1.13
 code-coverage-api:1.0.8
 command-launcher:1.3
 conditional-buildstep:1.3.6
-config-file-provider:3.5
+config-file-provider:3.6
 configuration-as-code-support:1.8
 configuration-as-code:1.8
 copyartifact:1.42
@@ -61,7 +61,7 @@ docker-java-api:3.0.14
 docker-plugin:1.1.6
 docker-workflow:1.17
 durable-task:1.29
-email-ext:2.65
+email-ext:2.66
 emailext-template:1.1
 embeddable-build-status:2.0
 envinject-api:1.5
