@@ -104,7 +104,7 @@ kubernetes-cli:1.6.0
 kubernetes-credentials:0.4.0
 kubernetes:1.14.9
 ldap:1.20
-lockable-resources:2.4
+lockable-resources:2.5
 mailer:1.23
 mapdb-api:1.0.9.0
 mask-passwords:2.12.0
@@ -135,15 +135,15 @@ pipeline-utility-steps:2.3.0
 plain-credentials:1.5
 promoted-builds:3.2
 pubsub-light:1.12
-rebuild:1.29
+rebuild:1.30
 resource-disposer:0.12
 run-condition:1.2
 saml:1.1.2
 sbt:1.5
 scm-api:2.4.0
-script-security:1.55
+script-security:1.56
 simple-theme-plugin:0.5.1
-slack:2.19
+slack:2.20
 sonar:2.8.1
 sse-gateway:1.17
 ssh-agent:1.17
@@ -161,7 +161,7 @@ workflow-aggregator:2.6
 workflow-api:2.33
 workflow-basic-steps:2.15
 workflow-cps-global-lib:2.13
-workflow-cps:2.64
+workflow-cps:2.65
 workflow-durable-task-step:2.29
 workflow-job:2.32
 workflow-multibranch:2.21

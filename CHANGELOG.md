@@ -7,6 +7,11 @@
 * Updated plugins:
     * [config-file-provider:3.6](https://plugins.jenkins.io/config-file-provider)
     * [email-ext:2.66](https://plugins.jenkins.io/email-ext)
+    * [lockable-resources:2.5](https://plugins.jenkins.io/lockable-resources)
+    * [rebuild:1.30](https://plugins.jenkins.io/rebuild)
+    * [script-security:1.56](https://plugins.jenkins.io/script-security)
+    * [slack:2.20](https://plugins.jenkins.io/slack)
+    * [workflow-cps:2.65](https://plugins.jenkins.io/workflow-cps)
 
 ## 2.164.1-114
 * Updated plugins:
