@@ -12,6 +12,8 @@
     * [script-security:1.56](https://plugins.jenkins.io/script-security)
     * [slack:2.20](https://plugins.jenkins.io/slack)
     * [workflow-cps:2.65](https://plugins.jenkins.io/workflow-cps)
+    * [code-coverage-api:1.0.9](https://plugins.jenkins.io/code-coverage-api)
+    * [display-url-api:2.3.1](https://plugins.jenkins.io/display-url-api)
 
 ## 2.164.1-114
 * Updated plugins:

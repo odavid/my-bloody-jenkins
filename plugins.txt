@@ -42,7 +42,7 @@ checkmarx:8.80.3
 cloudbees-bitbucket-branch-source:2.4.2
 cloudbees-folder:6.7
 cobertura:1.13
-code-coverage-api:1.0.8
+code-coverage-api:1.0.9
 command-launcher:1.3
 conditional-buildstep:1.3.6
 config-file-provider:3.6
@@ -54,7 +54,7 @@ credentials:2.1.18
 cucumber-reports:4.5.0
 custom-tools-plugin:0.6
 dashboard-view:2.10
-display-url-api:2.3.0
+display-url-api:2.3.1
 docker-build-publish:1.3.2
 docker-commons:1.13
 docker-java-api:3.0.14
