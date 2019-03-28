@@ -14,6 +14,8 @@
     * [workflow-cps:2.65](https://plugins.jenkins.io/workflow-cps)
     * [code-coverage-api:1.0.9](https://plugins.jenkins.io/code-coverage-api)
     * [display-url-api:2.3.1](https://plugins.jenkins.io/display-url-api)
+    * [github-branch-source:2.4.5](https://plugins.jenkins.io/github-branch-source)
+    * [pipeline-maven:3.6.8](https://plugins.jenkins.io/pipeline-maven)
 
 ## 2.164.1-114
 * Updated plugins:
