@@ -3,7 +3,7 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
-## 2.164.1-115 (Not relesed yet)
+## 2.164.1-115
 * Updated plugins:
     * [config-file-provider:3.6](https://plugins.jenkins.io/config-file-provider)
     * [email-ext:2.66](https://plugins.jenkins.io/email-ext)
