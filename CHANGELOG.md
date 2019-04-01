@@ -3,6 +3,17 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+
+## 2.164.1-116 (Not released yet)
+* Updated plugins:
+    * [active-directory:2.13](https://plugins.jenkins.io/active-directory)
+    * [artifactory:3.2.2](https://plugins.jenkins.io/artifactory)
+    * [blueocean-autofavorite:1.2.4](https://plugins.jenkins.io/blueocean-autofavorite)
+    * [configuration-as-code:1.9](https://plugins.jenkins.io/configuration-as-code)
+    * [jira:3.0.6](https://plugins.jenkins.io/jira)
+    * [pipeline-maven:3.6.9](https://plugins.jenkins.io/pipeline-maven)
+    * [trilead-api:1.0.3](https://plugins.jenkins.io/trilead-api)
+
 ## 2.164.1-115
 * Updated plugins:
     * [config-file-provider:3.6](https://plugins.jenkins.io/config-file-provider)

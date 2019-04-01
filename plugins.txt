@@ -1,5 +1,5 @@
 ace-editor:1.1
-active-directory:2.12
+active-directory:2.13
 amazon-ecr:1.6
 amazon-ecs:1.19
 anchore-container-scanner:1.0.18
@@ -7,12 +7,12 @@ ansicolor:0.6.2
 ant:1.9
 antisamy-markup-formatter:1.5
 apache-httpcomponents-client-4-api:4.5.5-3.0
-artifactory:3.2.1
+artifactory:3.2.2
 authentication-tokens:1.3
 aws-credentials:1.26
 aws-java-sdk:1.11.457
 badge:1.7
-blueocean-autofavorite:1.2.3
+blueocean-autofavorite:1.2.4
 blueocean-bitbucket-pipeline:1.14.0
 blueocean-commons:1.14.0
 blueocean-config:1.14.0
@@ -46,8 +46,8 @@ code-coverage-api:1.0.9
 command-launcher:1.3
 conditional-buildstep:1.3.6
 config-file-provider:3.6
-configuration-as-code-support:1.8
-configuration-as-code:1.8
+configuration-as-code-support:1.9
+configuration-as-code:1.9
 copyartifact:1.42
 credentials-binding:1.18
 credentials:2.1.18
@@ -94,7 +94,7 @@ javadoc:1.5
 jdk-tool:1.2
 jenkins-design-language:1.14.0
 jira-steps:1.4.5
-jira:3.0.5
+jira:3.0.6
 job-dsl:1.72
 jquery-detached:1.2.1
 jquery:1.12.4-0
@@ -121,7 +121,7 @@ parameterized-trigger:2.35.2
 pipeline-build-step:2.8
 pipeline-graph-analysis:1.9
 pipeline-input-step:2.10
-pipeline-maven:3.6.8
+pipeline-maven:3.6.9
 pipeline-milestone-step:1.3.1
 pipeline-model-api:1.3.7
 pipeline-model-declarative-agent:1.1.1
@@ -155,7 +155,7 @@ swarm:3.15
 throttle-concurrents:2.0.1
 timestamper:1.9
 token-macro:2.7
-trilead-api:1.0.1
+trilead-api:1.0.3
 variant:1.2
 workflow-aggregator:2.6
 workflow-api:2.33
