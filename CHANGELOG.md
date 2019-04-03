@@ -9,10 +9,12 @@
     * [active-directory:2.13](https://plugins.jenkins.io/active-directory)
     * [artifactory:3.2.2](https://plugins.jenkins.io/artifactory)
     * [blueocean-autofavorite:1.2.4](https://plugins.jenkins.io/blueocean-autofavorite)
-    * [configuration-as-code:1.9](https://plugins.jenkins.io/configuration-as-code)
     * [jira:3.0.6](https://plugins.jenkins.io/jira)
     * [pipeline-maven:3.6.9](https://plugins.jenkins.io/pipeline-maven)
     * [trilead-api:1.0.3](https://plugins.jenkins.io/trilead-api)
+    * [configuration-as-code:1.10](https://plugins.jenkins.io/configuration-as-code)
+    * [docker-commons:1.14](https://plugins.jenkins.io/docker-commons)
+    * [docker-workflow:1.18](https://plugins.jenkins.io/docker-workflow)
 
 ## 2.164.1-115
 * Updated plugins:
