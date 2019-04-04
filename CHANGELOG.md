@@ -15,6 +15,8 @@
     * [configuration-as-code:1.10](https://plugins.jenkins.io/configuration-as-code)
     * [docker-commons:1.14](https://plugins.jenkins.io/docker-commons)
     * [docker-workflow:1.18](https://plugins.jenkins.io/docker-workflow)
+    * [branch-api:2.3.0](https://plugins.jenkins.io/branch-api)
+    * [workflow-durable-task-step:2.30](https://plugins.jenkins.io/workflow-durable-task-step)
 
 ## 2.164.1-115
 * Updated plugins:

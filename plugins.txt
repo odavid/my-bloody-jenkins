@@ -34,7 +34,7 @@ blueocean-rest:1.14.0
 blueocean-web:1.14.0
 blueocean:1.14.0
 bouncycastle-api:2.17
-branch-api:2.2.0
+branch-api:2.3.0
 build-timeout:1.19
 build-user-vars-plugin:1.5
 buildtriggerbadge:2.10
@@ -162,7 +162,7 @@ workflow-api:2.33
 workflow-basic-steps:2.15
 workflow-cps-global-lib:2.13
 workflow-cps:2.65
-workflow-durable-task-step:2.29
+workflow-durable-task-step:2.30
 workflow-job:2.32
 workflow-multibranch:2.21
 workflow-remote-loader:1.4
