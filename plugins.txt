@@ -63,7 +63,7 @@ docker-workflow:1.18
 durable-task:1.29
 email-ext:2.66
 emailext-template:1.1
-embeddable-build-status:2.0
+embeddable-build-status:2.0.1
 envinject-api:1.5
 envinject:2.1.6
 extensible-choice-parameter:1.6.0
@@ -111,7 +111,7 @@ mask-passwords:2.12.0
 matrix-auth:2.3
 matrix-project:1.14
 maven-plugin:3.2
-mercurial:2.5
+mercurial:2.6
 metrics:4.0.2.3
 momentjs:1.1.1
 nodejs:1.2.9

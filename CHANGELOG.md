@@ -5,10 +5,12 @@
 
 ## 2.164.1-117 (Not released yet)
 * Updated plugins:
-  * [branch-api:2.4.0](https://plugins.jenkins.io/branch-api)
-  * [cloudbees-bitbucket-branch-source:2.4.4](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
-  * [cloudbees-folder:6.8](https://plugins.jenkins.io/cloudbees-folder)
-  * [scm-api:2.4.1](https://plugins.jenkins.io/scm-api)
+    * [branch-api:2.4.0](https://plugins.jenkins.io/branch-api)
+    * [cloudbees-bitbucket-branch-source:2.4.4](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
+    * [cloudbees-folder:6.8](https://plugins.jenkins.io/cloudbees-folder)
+    * [scm-api:2.4.1](https://plugins.jenkins.io/scm-api)
+    * [embeddable-build-status:2.0.1](https://plugins.jenkins.io/embeddable-build-status)
+    * [mercurial:2.6](https://plugins.jenkins.io/mercurial)
 
 ## 2.164.1-116
 * Updated plugins:
