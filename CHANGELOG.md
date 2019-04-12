@@ -11,6 +11,12 @@
     * [scm-api:2.4.1](https://plugins.jenkins.io/scm-api)
     * [embeddable-build-status:2.0.1](https://plugins.jenkins.io/embeddable-build-status)
     * [mercurial:2.6](https://plugins.jenkins.io/mercurial)
+    * [configuration-as-code:1.11](https://plugins.jenkins.io/configuration-as-code)
+    * [git-client:2.7.7](https://plugins.jenkins.io/git-client)
+    * [p4:1.9.7](https://plugins.jenkins.io/p4)
+    * [script-security:1.57](https://plugins.jenkins.io/script-security)
+    * [slack:2.21](https://plugins.jenkins.io/slack)
+    * [workflow-cps:2.66](https://plugins.jenkins.io/workflow-cps)
 
 ## 2.164.1-116
 * Updated plugins:
