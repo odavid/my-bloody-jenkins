@@ -3,6 +3,10 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+## 2.164.1-118 (Not released yet)
+* Updated plugins:
+    * [cucumber-reports:4.6.0](https://plugins.jenkins.io/cucumber-reports)
+
 ## 2.164.1-117
 * Updated plugins:
     * [branch-api:2.4.0](https://plugins.jenkins.io/branch-api)
