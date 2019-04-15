@@ -6,6 +6,8 @@
 ## 2.164.1-118 (Not released yet)
 * Updated plugins:
     * [cucumber-reports:4.6.0](https://plugins.jenkins.io/cucumber-reports)
+    * [pipeline-build-step:2.9](https://plugins.jenkins.io/pipeline-build-step)
+    * [pipeline-model-definition:1.3.8](https://plugins.jenkins.io/pipeline-model-definition)
 
 ## 2.164.1-117
 * Updated plugins:
