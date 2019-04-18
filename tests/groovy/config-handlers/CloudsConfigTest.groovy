@@ -293,7 +293,7 @@ kube-cloud:
           new org.csanchez.jenkins.plugins.kubernetes.PodAnnotation('key1', 'value1'),
           new org.csanchez.jenkins.plugins.kubernetes.PodAnnotation('key2', 'value2'),
         ]
-        assert template.yaml.trim() == 'x: y\nz: z'
+        assert template.yamls[0].trim() == 'x: y\nz: z'
         assert template.serviceAccount == 'jenkins-service-account'
         assert template.slaveConnectTimeout == 60
         assert template.instanceCapStr == '10'
