@@ -8,6 +8,10 @@
     * [gitlab-plugin:1.5.12](https://plugins.jenkins.io/gitlab-plugin)
     * [kubernetes:1.15.1](https://plugins.jenkins.io/kubernetes)
     * [slack:2.22](https://plugins.jenkins.io/slack)
+    * [configuration-as-code:1.12](https://plugins.jenkins.io/configuration-as-code)
+    * [pipeline-stage-view:2.11](https://plugins.jenkins.io/pipeline-stage-view)
+    * [script-security:1.58](https://plugins.jenkins.io/script-security)
+    * [workflow-cps:2.67](https://plugins.jenkins.io/workflow-cps)
 
 ## 2.164.2-118
 * [LTS-2.164.2](https://jenkins.io/changelog-stable/)

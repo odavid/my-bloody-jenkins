@@ -46,8 +46,8 @@ code-coverage-api:1.0.9
 command-launcher:1.3
 conditional-buildstep:1.3.6
 config-file-provider:3.6
-configuration-as-code-support:1.11
-configuration-as-code:1.11
+configuration-as-code-support:1.12
+configuration-as-code:1.12
 copyartifact:1.42
 credentials-binding:1.18
 credentials:2.1.18
@@ -127,10 +127,10 @@ pipeline-model-api:1.3.8
 pipeline-model-declarative-agent:1.1.1
 pipeline-model-definition:1.3.8
 pipeline-model-extensions:1.3.8
-pipeline-rest-api:2.10
+pipeline-rest-api:2.11
 pipeline-stage-step:2.3
 pipeline-stage-tags-metadata:1.3.8
-pipeline-stage-view:2.10
+pipeline-stage-view:2.11
 pipeline-utility-steps:2.3.0
 plain-credentials:1.5
 promoted-builds:3.2
@@ -141,7 +141,7 @@ run-condition:1.2
 saml:1.1.2
 sbt:1.5
 scm-api:2.4.1
-script-security:1.57
+script-security:1.58
 simple-theme-plugin:0.5.1
 slack:2.22
 sonar:2.8.1
@@ -161,7 +161,7 @@ workflow-aggregator:2.6
 workflow-api:2.33
 workflow-basic-steps:2.15
 workflow-cps-global-lib:2.13
-workflow-cps:2.66
+workflow-cps:2.67
 workflow-durable-task-step:2.30
 workflow-job:2.32
 workflow-multibranch:2.21
