@@ -12,6 +12,8 @@
     * [pipeline-stage-view:2.11](https://plugins.jenkins.io/pipeline-stage-view)
     * [script-security:1.58](https://plugins.jenkins.io/script-security)
     * [workflow-cps:2.67](https://plugins.jenkins.io/workflow-cps)
+    * [pipeline-maven:3.6.10](https://plugins.jenkins.io/pipeline-maven)
+    * [ssh-credentials:1.16](https://plugins.jenkins.io/ssh-credentials)
 
 ## 2.164.2-118
 * [LTS-2.164.2](https://jenkins.io/changelog-stable/)
