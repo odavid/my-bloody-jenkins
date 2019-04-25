@@ -7,18 +7,13 @@
 * Updated plugins:
     * [gitlab-plugin:1.5.12](https://plugins.jenkins.io/gitlab-plugin)
     * [kubernetes:1.15.1](https://plugins.jenkins.io/kubernetes)
+    * [slack:2.22](https://plugins.jenkins.io/slack)
+    * [configuration-as-code:1.12](https://plugins.jenkins.io/configuration-as-code)
     * [pipeline-stage-view:2.11](https://plugins.jenkins.io/pipeline-stage-view)
     * [script-security:1.58](https://plugins.jenkins.io/script-security)
     * [workflow-cps:2.67](https://plugins.jenkins.io/workflow-cps)
     * [pipeline-maven:3.6.10](https://plugins.jenkins.io/pipeline-maven)
     * [ssh-credentials:1.16](https://plugins.jenkins.io/ssh-credentials)
-    * [configuration-as-code:1.13](https://plugins.jenkins.io/configuration-as-code)
-    * [git:3.9.4](https://plugins.jenkins.io/git)
-    * [kubernetes:1.15.2](https://plugins.jenkins.io/kubernetes)
-    * [matrix-auth:2.4](https://plugins.jenkins.io/matrix-auth)
-    * [slack:2.23](https://plugins.jenkins.io/slack)
-    * [structs:1.18](https://plugins.jenkins.io/structs)
-    * [workflow-support:3.3](https://plugins.jenkins.io/workflow-support)
 
 ## 2.164.2-118
 * [LTS-2.164.2](https://jenkins.io/changelog-stable/)
