@@ -3,7 +3,7 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
-## 2.164.2-119 (Not released yet)
+## 2.164.2-119
 * Updated plugins:
     * [gitlab-plugin:1.5.12](https://plugins.jenkins.io/gitlab-plugin)
     * [configuration-as-code:1.12](https://plugins.jenkins.io/configuration-as-code)
