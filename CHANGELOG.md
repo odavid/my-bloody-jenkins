@@ -3,6 +3,18 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+
+## 2.164.2-120 (Not released yet)
+* Updated plugins:
+    * [amazon-ecs:1.20](https://plugins.jenkins.io/amazon-ecs)
+    * [blueocean:1.16.0](https://plugins.jenkins.io/blueocean)
+    * [code-coverage-api:1.0.10](https://plugins.jenkins.io/code-coverage-api)
+    * [github-branch-source:2.5.0](https://plugins.jenkins.io/github-branch-source)
+    * [jira:3.0.7](https://plugins.jenkins.io/jira)
+    * [matrix-auth:2.4.1](https://plugins.jenkins.io/matrix-auth)
+    * [rebuild:1.31](https://plugins.jenkins.io/rebuild)
+    * [structs:1.19](https://plugins.jenkins.io/structs)
+
 ## 2.164.2-119
 * Updated plugins:
     * [gitlab-plugin:1.5.12](https://plugins.jenkins.io/gitlab-plugin)
