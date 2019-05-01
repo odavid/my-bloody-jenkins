@@ -53,6 +53,7 @@ ecs-cloud:
       extraHosts:
         extrHost1: extrHost1
         extrHost2: extrHost2
+      inheritFrom: xxx
       volumes:
         - /home/xxx
         - /home/bbb:ro
@@ -114,6 +115,7 @@ ecs-cloud:
         assert it.jenkinsUrl == 'http://127.0.0.1:8080'
         assert it.tunnel == '127.0.0.1:8080'
         def template = it.templates[0]
+        assert template.inheritFrom == 'xxx'
         assert template.templateName == ''  // taskDefinitionOverride
         assert template.launchType == 'EC2'
         assert template.executionRole == 'ecsTaskExecutionRole111'
