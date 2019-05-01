@@ -7,7 +7,7 @@ def asBoolean(value, defaultValue=false){
 
 def setup(config) {
     config = config ?: [:]
-    def desc = jenkins.model.Jenkins.instance.getDescriptor(hudson.plugins.jira.JiraProjectProperty)
+    def desc = hudson.plugins.jira.JiraGlobalConfiguration.get()
     def sites = config.sites?.collect{ siteConfig ->
         siteConfig.with{
             def site
@@ -48,11 +48,7 @@ def setup(config) {
         }
     }
     if(sites){
-        def formData = [:] as net.sf.json.JSONObject
-        def req = [
-            bindJSONToList: {clz, obj -> return sites}
-        ] as org.kohsuke.stapler.StaplerRequest
-        desc.configure(req, formData)
+        desc.sites = sites
     }
 }
 return this

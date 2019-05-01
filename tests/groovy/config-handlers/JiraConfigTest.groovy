@@ -29,7 +29,7 @@ sites:
 """)
 
     configHandler.setup(config)
-    def desc = jenkins.model.Jenkins.instance.getDescriptor(hudson.plugins.jira.JiraProjectProperty)
+    def desc = hudson.plugins.jira.JiraGlobalConfiguration.get()
     def site = desc.sites[0]
     // It is private, but I want to see it has value
     def credIdField = hudson.plugins.jira.JiraSite.getDeclaredField('credentialsId')
@@ -82,7 +82,7 @@ sites:
 """)
 
     configHandler.setup(config)
-    def desc = jenkins.model.Jenkins.instance.getDescriptor(hudson.plugins.jira.JiraProjectProperty)
+    def desc = hudson.plugins.jira.JiraGlobalConfiguration.get()
     def site = desc.sites[0]
     // It is private, but I want to see it has value
     def credIdField = hudson.plugins.jira.JiraSite.getDeclaredField('credentialsId')
