@@ -74,7 +74,7 @@ git-changelog:2.16
 git-client:2.7.7
 git-parameter:0.9.10
 git-server:1.7
-git:3.9.4
+git:3.10.0
 github-api:1.95
 github-branch-source:2.5.1
 github:1.29.4
@@ -108,7 +108,7 @@ lockable-resources:2.5
 mailer:1.23
 mapdb-api:1.0.9.0
 mask-passwords:2.12.0
-matrix-auth:2.4.1
+matrix-auth:2.4.2
 matrix-project:1.14
 maven-plugin:3.2
 mercurial:2.6

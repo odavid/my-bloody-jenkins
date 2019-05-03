@@ -17,6 +17,8 @@
     * [github-branch-source:2.5.1](https://plugins.jenkins.io/github-branch-source)
     * [job-dsl:1.74](https://plugins.jenkins.io/job-dsl)
     * [pipeline-maven:3.6.11](https://plugins.jenkins.io/pipeline-maven)
+    * [git:3.10.0](https://plugins.jenkins.io/git)
+    * [matrix-auth:2.4.2](https://plugins.jenkins.io/matrix-auth)
 
 ## 2.164.2-119
 * Updated plugins:
