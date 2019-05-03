@@ -4,7 +4,7 @@
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
 
-## 2.164.2-120 (Not released yet)
+## 2.164.2-120
 * Updated plugins:
     * [amazon-ecs:1.20](https://plugins.jenkins.io/amazon-ecs)
     * [blueocean:1.16.0](https://plugins.jenkins.io/blueocean)
