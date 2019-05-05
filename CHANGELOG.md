@@ -3,6 +3,10 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+## 2.164.2-121 (Not released yet)
+* Added plugins:
+    * [stashNotifier:1.18](https://plugins.jenkins.io/stashNotifier)
+    * [extended-choice-parameter:0.78](https://plugins.jenkins.io/extended-choice-parameter)
 
 ## 2.164.2-120
 * Updated plugins:

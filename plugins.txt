@@ -66,6 +66,7 @@ emailext-template:1.1
 embeddable-build-status:2.0.1
 envinject-api:1.5
 envinject:2.1.6
+extended-choice-parameter:0.78
 extensible-choice-parameter:1.6.0
 external-monitor-job:1.7
 favorite:2.3.2
@@ -149,6 +150,7 @@ sse-gateway:1.17
 ssh-agent:1.17
 ssh-credentials:1.16
 ssh-slaves:1.29.4
+stashNotifier:1.18
 structs:1.19
 subversion:2.12.1
 swarm:3.15
