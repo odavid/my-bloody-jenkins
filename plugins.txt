@@ -1,5 +1,5 @@
 ace-editor:1.1
-active-directory:2.13
+active-directory:2.14
 amazon-ecr:1.6
 amazon-ecs:1.20
 anchore-container-scanner:1.0.18
@@ -46,8 +46,8 @@ code-coverage-api:1.0.10
 command-launcher:1.3
 conditional-buildstep:1.3.6
 config-file-provider:3.6
-configuration-as-code-support:1.13
-configuration-as-code:1.13
+configuration-as-code-support:1.14
+configuration-as-code:1.14
 copyartifact:1.42
 credentials-binding:1.18
 credentials:2.1.18

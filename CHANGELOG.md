@@ -7,6 +7,9 @@
 * Added plugins:
     * [stashNotifier:1.18](https://plugins.jenkins.io/stashNotifier)
     * [extended-choice-parameter:0.78](https://plugins.jenkins.io/extended-choice-parameter)
+* Updated plugins:
+    * [active-directory:2.14](https://plugins.jenkins.io/active-directory)
+    * [configuration-as-code:1.14](https://plugins.jenkins.io/configuration-as-code)
 
 ## 2.164.2-120
 * Updated plugins:
