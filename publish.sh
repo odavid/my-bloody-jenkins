@@ -3,8 +3,8 @@
 docker-build(){
     local from_tag=${1}
     local to_tag=${2}
-    echo "docker build --rm --force-rm -t odavid/my-bloody-jenkins:${to_tag} --build-arg=FROM_TAG=${from_tag} ."
-    docker build --rm --pull --force-rm -t odavid/my-bloody-jenkins:${to_tag} --build-arg=FROM_TAG=${from_tag} .
+    echo "docker build --network=host --rm --force-rm -t odavid/my-bloody-jenkins:${to_tag} --build-arg=FROM_TAG=${from_tag} ."
+    docker build --network=host --rm --pull --force-rm -t odavid/my-bloody-jenkins:${to_tag} --build-arg=FROM_TAG=${from_tag} .
     echo "docker push odavid/my-bloody-jenkins:${to_tag}"
     docker push odavid/my-bloody-jenkins:${to_tag}
 }
