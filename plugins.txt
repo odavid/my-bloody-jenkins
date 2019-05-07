@@ -159,6 +159,7 @@ timestamper:1.9
 token-macro:2.7
 trilead-api:1.0.3
 variant:1.2
+whitesource:19.1.1
 workflow-aggregator:2.6
 workflow-api:2.33
 workflow-basic-steps:2.15
