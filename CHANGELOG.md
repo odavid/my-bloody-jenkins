@@ -3,7 +3,7 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
-## 2.164.3-123 (Not released yet)
+## 2.164.3-123
 * [LTS-2.164.3](https://jenkins.io/changelog-stable/)
 * Updated plugins:
     * [github-branch-source:2.5.2](https://plugins.jenkins.io/github-branch-source)
