@@ -9,6 +9,7 @@
     * [configuration-as-code:1.15](https://plugins.jenkins.io/configuration-as-code)
     * [workflow-api:2.34](https://plugins.jenkins.io/workflow-api)
     * [workflow-cps:2.68](https://plugins.jenkins.io/workflow-cps)
+    * [docker-commons:1.15](https://plugins.jenkins.io/docker-commons)
 
 ## 2.164.3-123
 * [LTS-2.164.3](https://jenkins.io/changelog-stable/)
