@@ -10,6 +10,11 @@
     * [workflow-api:2.34](https://plugins.jenkins.io/workflow-api)
     * [workflow-cps:2.68](https://plugins.jenkins.io/workflow-cps)
     * [docker-commons:1.15](https://plugins.jenkins.io/docker-commons)
+    * [aws-credentials:1.27](https://plugins.jenkins.io/aws-credentials)
+    * [gatling:1.2.6](https://plugins.jenkins.io/gatling)
+    * [junit:1.28](https://plugins.jenkins.io/junit)
+    * [workflow-basic-steps:2.16](https://plugins.jenkins.io/workflow-basic-steps)
+
 
 ## 2.164.3-123
 * [LTS-2.164.3](https://jenkins.io/changelog-stable/)
