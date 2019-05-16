@@ -14,6 +14,8 @@
     * [gatling:1.2.6](https://plugins.jenkins.io/gatling)
     * [junit:1.28](https://plugins.jenkins.io/junit)
     * [workflow-basic-steps:2.16](https://plugins.jenkins.io/workflow-basic-steps)
+    * [pipeline-graph-analysis:1.10](https://plugins.jenkins.io/pipeline-graph-analysis)
+    * [pipeline-maven:3.6.13](https://plugins.jenkins.io/pipeline-maven)
 
 
 ## 2.164.3-123
