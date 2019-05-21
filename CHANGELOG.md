@@ -6,7 +6,8 @@
 ## 2.164.3-125 (Not released yet)
 * Updated plugins:
     * [pipeline-maven:3.6.14](https://plugins.jenkins.io/pipeline-maven)
-
+    * [active-directory:2.15](https://plugins.jenkins.io/active-directory)
+    
 ## 2.164.3-124
 * Updated plugins:
     * [configuration-as-code:1.15](https://plugins.jenkins.io/configuration-as-code)
