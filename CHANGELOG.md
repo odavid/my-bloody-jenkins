@@ -7,7 +7,18 @@
 * Updated plugins:
     * [pipeline-maven:3.6.14](https://plugins.jenkins.io/pipeline-maven)
     * [active-directory:2.15](https://plugins.jenkins.io/active-directory)
-    
+    * [anchore-container-scanner:1.0.19](https://plugins.jenkins.io/anchore-container-scanner)
+    * [blueocean-display-url:2.3.0](https://plugins.jenkins.io/blueocean-display-url)
+    * [branch-api:2.5.1](https://plugins.jenkins.io/branch-api)
+    * [code-coverage-api:1.0.11](https://plugins.jenkins.io/code-coverage-api)
+    * [configuration-as-code:1.16](https://plugins.jenkins.io/configuration-as-code)
+    * [credentials:2.1.19](https://plugins.jenkins.io/credentials)
+    * [cucumber-reports:4.7.0](https://plugins.jenkins.io/cucumber-reports)
+    * [jackson2-api:2.9.9](https://plugins.jenkins.io/jackson2-api)
+    * [kubernetes:1.15.5](https://plugins.jenkins.io/kubernetes)
+    * [sonar:2.9](https://plugins.jenkins.io/sonar)
+    * [swarm:3.16](https://plugins.jenkins.io/swarm)
+
 ## 2.164.3-124
 * Updated plugins:
     * [configuration-as-code:1.15](https://plugins.jenkins.io/configuration-as-code)

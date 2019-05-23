@@ -2,7 +2,7 @@ ace-editor:1.1
 active-directory:2.15
 amazon-ecr:1.6
 amazon-ecs:1.20
-anchore-container-scanner:1.0.18
+anchore-container-scanner:1.0.19
 ansicolor:0.6.2
 ant:1.9
 antisamy-markup-formatter:1.5
@@ -18,7 +18,7 @@ blueocean-commons:1.16.0
 blueocean-config:1.16.0
 blueocean-core-js:1.16.0
 blueocean-dashboard:1.16.0
-blueocean-display-url:2.2.0
+blueocean-display-url:2.3.0
 blueocean-events:1.16.0
 blueocean-git-pipeline:1.16.0
 blueocean-github-pipeline:1.16.0
@@ -34,7 +34,7 @@ blueocean-rest:1.16.0
 blueocean-web:1.16.0
 blueocean:1.16.0
 bouncycastle-api:2.17
-branch-api:2.4.0
+branch-api:2.5.1
 build-timeout:1.19
 build-user-vars-plugin:1.5
 buildtriggerbadge:2.10
@@ -42,16 +42,16 @@ checkmarx:8.80.3
 cloudbees-bitbucket-branch-source:2.4.4
 cloudbees-folder:6.8
 cobertura:1.13
-code-coverage-api:1.0.10
+code-coverage-api:1.0.11
 command-launcher:1.3
 conditional-buildstep:1.3.6
 config-file-provider:3.6
-configuration-as-code-support:1.15
-configuration-as-code:1.15
+configuration-as-code-support:1.16
+configuration-as-code:1.16
 copyartifact:1.42
 credentials-binding:1.18
-credentials:2.1.18
-cucumber-reports:4.6.0
+credentials:2.1.19
+cucumber-reports:4.7.0
 custom-tools-plugin:0.6
 dashboard-view:2.10
 display-url-api:2.3.1
@@ -90,7 +90,7 @@ htmlpublisher:1.18
 http_request:1.8.22
 icon-shim:2.0.3
 ivy:2.1
-jackson2-api:2.9.8
+jackson2-api:2.9.9
 javadoc:1.5
 jdk-tool:1.2
 jenkins-design-language:1.16.0
@@ -103,7 +103,7 @@ jsch:0.1.55
 junit:1.28
 kubernetes-cli:1.6.0
 kubernetes-credentials:0.4.0
-kubernetes:1.15.4
+kubernetes:1.15.5
 ldap:1.20
 lockable-resources:2.5
 mailer:1.23
@@ -145,7 +145,7 @@ scm-api:2.4.1
 script-security:1.58
 simple-theme-plugin:0.5.1
 slack:2.23
-sonar:2.8.1
+sonar:2.9
 sse-gateway:1.17
 ssh-agent:1.17
 ssh-credentials:1.16
@@ -153,7 +153,7 @@ ssh-slaves:1.29.4
 stashNotifier:1.18
 structs:1.19
 subversion:2.12.1
-swarm:3.15
+swarm:3.16
 throttle-concurrents:2.0.1
 timestamper:1.9
 token-macro:2.7
