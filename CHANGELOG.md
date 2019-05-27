@@ -3,6 +3,17 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+
+## 2.164.3-126 (Not released yet)
+* Updated plugins:
+    * [active-directory:2.16](https://plugins.jenkins.io/active-directory)
+    * [branch-api:2.5.2](https://plugins.jenkins.io/branch-api)
+    * [copyartifact:1.42.1](https://plugins.jenkins.io/copyartifact)
+    * [github-branch-source:2.5.3](https://plugins.jenkins.io/github-branch-source)
+    * [gradle:1.32](https://plugins.jenkins.io/gradle)
+    * [pipeline-maven:3.7.0](https://plugins.jenkins.io/pipeline-maven)
+    * [script-security:1.59](https://plugins.jenkins.io/script-security)
+
 ## 2.164.3-125
 * Updated plugins:
     * [pipeline-maven:3.6.14](https://plugins.jenkins.io/pipeline-maven)
