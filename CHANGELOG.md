@@ -13,6 +13,7 @@
     * [gradle:1.32](https://plugins.jenkins.io/gradle)
     * [pipeline-maven:3.7.0](https://plugins.jenkins.io/pipeline-maven)
     * [script-security:1.59](https://plugins.jenkins.io/script-security)
+    * [configuration-as-code:1.17](https://plugins.jenkins.io/configuration-as-code)
 
 ## 2.164.3-125
 * Updated plugins:
