@@ -38,7 +38,7 @@ branch-api:2.5.2
 build-timeout:1.19
 build-user-vars-plugin:1.5
 buildtriggerbadge:2.10
-checkmarx:8.80.3
+checkmarx:8.90.1
 cloudbees-bitbucket-branch-source:2.4.4
 cloudbees-folder:6.8
 cobertura:1.13
@@ -116,7 +116,7 @@ mercurial:2.6
 metrics:4.0.2.3
 momentjs:1.1.1
 nodejs:1.2.9
-p4:1.9.7
+p4:1.10.0
 parallel-test-executor:1.12
 parameterized-trigger:2.35.2
 pipeline-build-step:2.9
