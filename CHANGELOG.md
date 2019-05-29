@@ -4,7 +4,7 @@
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
 
-## 2.164.3-126 (Not released yet)
+## 2.164.3-126
 * Updated plugins:
     * [active-directory:2.16](https://plugins.jenkins.io/active-directory)
     * [branch-api:2.5.2](https://plugins.jenkins.io/branch-api)
