@@ -7,6 +7,12 @@
 * Updated plugins:
     * [checkmarx:8.90.1](https://plugins.jenkins.io/checkmarx)
     * [p4:1.10.0](https://plugins.jenkins.io/p4)
+    * [configuration-as-code:1.18](https://plugins.jenkins.io/configuration-as-code)
+    * [credentials-binding:1.19](https://plugins.jenkins.io/credentials-binding)
+    * [credentials:2.2.0](https://plugins.jenkins.io/credentials)
+    * [pipeline-maven:3.7.1](https://plugins.jenkins.io/pipeline-maven)
+    * [script-security:1.60](https://plugins.jenkins.io/script-security)
+    * [workflow-remote-loader:1.5](https://plugins.jenkins.io/workflow-remote-loader)
 
 ## 2.164.3-126
 * Updated plugins:
