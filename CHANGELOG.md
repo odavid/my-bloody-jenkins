@@ -13,6 +13,7 @@
     * [pipeline-maven:3.7.1](https://plugins.jenkins.io/pipeline-maven)
     * [script-security:1.60](https://plugins.jenkins.io/script-security)
     * [workflow-remote-loader:1.5](https://plugins.jenkins.io/workflow-remote-loader)
+    * [nodejs:1.3.0](https://plugins.jenkins.io/nodejs)
 
 ## 2.164.3-126
 * Updated plugins:

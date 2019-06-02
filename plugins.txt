@@ -115,7 +115,7 @@ maven-plugin:3.2
 mercurial:2.6
 metrics:4.0.2.3
 momentjs:1.1.1
-nodejs:1.2.9
+nodejs:1.3.0
 p4:1.10.0
 parallel-test-executor:1.12
 parameterized-trigger:2.35.2
