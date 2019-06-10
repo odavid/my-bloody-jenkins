@@ -3,7 +3,7 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
-## 2.164.3-129 (Not released yet)
+## 2.164.3-129
 * Updated plugins:
     * [artifactory:3.2.4](https://plugins.jenkins.io/artifactory)
     * [badge:1.8](https://plugins.jenkins.io/badge)
@@ -20,7 +20,6 @@
     * [workflow-durable-task-step:2.31](https://plugins.jenkins.io/workflow-durable-task-step)
     * [workflow-scm-step:2.9](https://plugins.jenkins.io/workflow-scm-step)
     * [workflow-step-api:2.20](https://plugins.jenkins.io/workflow-step-api)
-
 
 ## 2.164.3-128
 * Updated plugins:
