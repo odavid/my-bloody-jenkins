@@ -3,6 +3,25 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+## 2.164.3-129 (Not released yet)
+* Updated plugins:
+    * [artifactory:3.2.4](https://plugins.jenkins.io/artifactory)
+    * [badge:1.8](https://plugins.jenkins.io/badge)
+    * [configuration-as-code:1.20](https://plugins.jenkins.io/configuration-as-code)
+    * [kubernetes:1.15.6](https://plugins.jenkins.io/kubernetes)
+    * [nodejs:1.3.1](https://plugins.jenkins.io/nodejs)
+    * [pipeline-model-definition:1.3.9](https://plugins.jenkins.io/pipeline-model-definition)
+    * [slack:2.24](https://plugins.jenkins.io/slack)
+    * [ssh-credentials:1.17](https://plugins.jenkins.io/ssh-credentials)
+    * [ssh-slaves:1.30.0](https://plugins.jenkins.io/ssh-slaves)
+    * [workflow-api:2.35](https://plugins.jenkins.io/workflow-api)
+    * [workflow-basic-steps:2.18](https://plugins.jenkins.io/workflow-basic-steps)
+    * [workflow-cps:2.70](https://plugins.jenkins.io/workflow-cps)
+    * [workflow-durable-task-step:2.31](https://plugins.jenkins.io/workflow-durable-task-step)
+    * [workflow-scm-step:2.9](https://plugins.jenkins.io/workflow-scm-step)
+    * [workflow-step-api:2.20](https://plugins.jenkins.io/workflow-step-api)
+
+
 ## 2.164.3-128
 * Updated plugins:
     * [aws-java-sdk:1.11.562](https://plugins.jenkins.io/aws-java-sdk)
