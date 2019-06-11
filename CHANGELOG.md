@@ -3,6 +3,12 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+## 2.164.3-130 (Not released yet)
+* Updated plugins:
+    * [git-changelog:2.17](https://plugins.jenkins.io/git-changelog)
+    * [kubernetes:1.16.0](https://plugins.jenkins.io/kubernetes)
+    * [token-macro:2.8](https://plugins.jenkins.io/token-macro)
+
 ## 2.164.3-129
 * Updated plugins:
     * [artifactory:3.2.4](https://plugins.jenkins.io/artifactory)
