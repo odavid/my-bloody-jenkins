@@ -1,7 +1,7 @@
 .PHONY: default
 LTS_VERSION_FILE = LTS_VERSION.txt
 LTS_VERSION = `cat $(LTS_VERSION_FILE)`
-DEFAULT_BUILD_ARGS = --build-arg http_proxy=$(http_proxy) --build-arg https_proxy=$(https_proxy) --build-arg no_proxy=$(no_proxy)
+DEFAULT_BUILD_ARGS = --build-arg http_proxy=$(http_proxy) --build-arg https_proxy=$(https_proxy) --build-arg no_proxy=$(no_proxy) --network=host
 
 default: test-all
 
