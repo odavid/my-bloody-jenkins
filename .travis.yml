@@ -19,7 +19,6 @@ before_install:
 jobs:
   include:
     - script: make test-debian
-    - script: make test-slim
     - script: make test-alpine
     - script: make test-jdk11
     - stage: publish

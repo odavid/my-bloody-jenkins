@@ -16,7 +16,6 @@ case $version_type in
 latest)
     docker-build ${lts_version}-alpine latest
     docker-build ${lts_version}-alpine alpine
-    docker-build ${lts_version}-slim slim
     docker-build ${lts_version} debian
     docker-build ${lts_version}-jdk11 jdk11
     ;;
@@ -28,10 +27,6 @@ v*)
     docker-build ${lts_version}-alpine $short_tag
     docker-build ${lts_version}-alpine lts
     docker-build ${lts_version}-alpine lts-alpine
-
-    docker-build ${lts_version}-slim ${tag}-slim
-    docker-build ${lts_version}-slim ${short_tag}-slim
-    docker-build ${lts_version}-slim lts-slim
 
     docker-build ${lts_version} ${tag}-debian
     docker-build ${lts_version} ${short_tag}-debian
@@ -45,7 +40,6 @@ v*)
     tag=$version_type
     docker-build ${lts_version}-alpine $tag
     docker-build ${lts_version}-alpine $tag-alpine
-    docker-build ${lts_version}-slim $tag-slim
     docker-build ${lts_version} $tag-debian
     docker-build ${lts_version}-jdk11 $tag-jdk11
     ;;

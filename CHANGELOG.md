@@ -5,6 +5,7 @@
 
 ## 2.176.1-130 (Not released yet)
 * [LTS-2.176.1](https://jenkins.io/changelog-stable/)
+    * Stop distribution of slim based images
 * Updated plugins:
     * [git-changelog:2.17](https://plugins.jenkins.io/git-changelog)
     * [kubernetes:1.16.0](https://plugins.jenkins.io/kubernetes)
