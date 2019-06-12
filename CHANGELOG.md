@@ -3,6 +3,12 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+## 2.176.1-131 (Not released yet)
+* Updated plugins:
+    * [cloudbees-folder:6.9](https://plugins.jenkins.io/cloudbees-folder)
+    * [cobertura:1.14](https://plugins.jenkins.io/cobertura)
+    * [metrics:4.0.2.4](https://plugins.jenkins.io/metrics)
+
 ## 2.176.1-130
 * [LTS-2.176.1](https://jenkins.io/changelog-stable/)
     * Stop distribution of slim based images
