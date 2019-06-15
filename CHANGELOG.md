@@ -8,6 +8,8 @@
     * [cloudbees-folder:6.9](https://plugins.jenkins.io/cloudbees-folder)
     * [cobertura:1.14](https://plugins.jenkins.io/cobertura)
     * [metrics:4.0.2.4](https://plugins.jenkins.io/metrics)
+    * [maven-plugin:3.3](https://plugins.jenkins.io/maven-plugin)
+    * [nodejs:1.3.2](https://plugins.jenkins.io/nodejs)
 
 ## 2.176.1-130
 * [LTS-2.176.1](https://jenkins.io/changelog-stable/)
