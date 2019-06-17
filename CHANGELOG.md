@@ -10,6 +10,12 @@
     * [metrics:4.0.2.4](https://plugins.jenkins.io/metrics)
     * [maven-plugin:3.3](https://plugins.jenkins.io/maven-plugin)
     * [nodejs:1.3.2](https://plugins.jenkins.io/nodejs)
+    * [artifactory:3.3.0](https://plugins.jenkins.io/artifactory)
+    * [git-client:2.8.0](https://plugins.jenkins.io/git-client)
+    * [scm-api:2.5.0](https://plugins.jenkins.io/scm-api)
+    * [slack:2.25](https://plugins.jenkins.io/slack)
+* Removed plugins:
+    * [configuration-as-code-support](https://plugins.jenkins.io/configuration-as-code)
 
 ## 2.176.1-130
 * [LTS-2.176.1](https://jenkins.io/changelog-stable/)
