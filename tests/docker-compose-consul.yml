@@ -11,7 +11,7 @@ services:
       - ${TESTS_DIR}:${TESTS_CONTAINER_TESTS_DIR}
 
   vault:
-    image: vault:0.9.6
+    image: vault
     ports:
       - "8200:8200"
     volumes:
