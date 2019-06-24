@@ -3,6 +3,13 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+
+## 2.176.1-133 (Not released yet)
+* Updated plugins:
+    * [groovy-postbuild:2.5](https://plugins.jenkins.io/groovy-postbuild)
+    * [pipeline-maven:3.8.0](https://plugins.jenkins.io/pipeline-maven)
+    * [promoted-builds:3.3](https://plugins.jenkins.io/promoted-builds)
+
 ## 2.176.1-132
 * Updated plugins:
     * [config-file-provider:3.6.2](https://plugins.jenkins.io/config-file-provider)

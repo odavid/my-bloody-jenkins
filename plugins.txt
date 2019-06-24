@@ -82,7 +82,7 @@ gitlab-plugin:1.5.12
 golang:1.2
 google-login:1.4
 gradle:1.32
-groovy-postbuild:2.4.3
+groovy-postbuild:2.5
 handlebars:1.1.1
 handy-uri-templates-2-api:2.1.7-1.0
 htmlpublisher:1.18
@@ -121,7 +121,7 @@ parameterized-trigger:2.35.2
 pipeline-build-step:2.9
 pipeline-graph-analysis:1.10
 pipeline-input-step:2.10
-pipeline-maven:3.7.1
+pipeline-maven:3.8.0
 pipeline-milestone-step:1.3.1
 pipeline-model-api:1.3.9
 pipeline-model-declarative-agent:1.1.1
@@ -133,7 +133,7 @@ pipeline-stage-tags-metadata:1.3.9
 pipeline-stage-view:2.11
 pipeline-utility-steps:2.3.0
 plain-credentials:1.5
-promoted-builds:3.2
+promoted-builds:3.3
 pubsub-light:1.12
 rebuild:1.31
 resource-disposer:0.12
