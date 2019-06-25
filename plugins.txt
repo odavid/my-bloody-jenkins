@@ -39,7 +39,7 @@ build-timeout:1.19
 build-user-vars-plugin:1.5
 buildtriggerbadge:2.10
 checkmarx:8.90.1
-cloudbees-bitbucket-branch-source:2.4.4
+cloudbees-bitbucket-branch-source:2.4.5
 cloudbees-folder:6.9
 cobertura:1.14
 code-coverage-api:1.0.11
@@ -86,7 +86,7 @@ groovy-postbuild:2.5
 handlebars:1.1.1
 handy-uri-templates-2-api:2.1.7-1.0
 htmlpublisher:1.18
-http_request:1.8.22
+http_request:1.8.23
 icon-shim:2.0.3
 ivy:2.1
 jackson2-api:2.9.9

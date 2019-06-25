@@ -9,6 +9,8 @@
     * [groovy-postbuild:2.5](https://plugins.jenkins.io/groovy-postbuild)
     * [pipeline-maven:3.8.0](https://plugins.jenkins.io/pipeline-maven)
     * [promoted-builds:3.3](https://plugins.jenkins.io/promoted-builds)
+    * [cloudbees-bitbucket-branch-source:2.4.5](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
+    * [http_request:1.8.23](https://plugins.jenkins.io/http_request)
 
 ## 2.176.1-132
 * Updated plugins:
