@@ -11,7 +11,8 @@
     * [promoted-builds:3.3](https://plugins.jenkins.io/promoted-builds)
     * [cloudbees-bitbucket-branch-source:2.4.5](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
     * [http_request:1.8.23](https://plugins.jenkins.io/http_request)
-
+    * [sse-gateway:1.18](https://plugins.jenkins.io/sse-gateway)
+    
 ## 2.176.1-132
 * Updated plugins:
     * [config-file-provider:3.6.2](https://plugins.jenkins.io/config-file-provider)

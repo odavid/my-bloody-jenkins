@@ -145,7 +145,7 @@ script-security:1.60
 simple-theme-plugin:0.5.1
 slack:2.27
 sonar:2.9
-sse-gateway:1.17
+sse-gateway:1.18
 ssh-agent:1.17
 ssh-credentials:1.17
 ssh-slaves:1.30.0
