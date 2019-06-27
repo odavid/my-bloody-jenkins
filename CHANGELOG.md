@@ -4,7 +4,7 @@
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
 
-## 2.176.1-133 (Not released yet)
+## 2.176.1-133
 * Updated plugins:
     * [groovy-postbuild:2.5](https://plugins.jenkins.io/groovy-postbuild)
     * [pipeline-maven:3.8.0](https://plugins.jenkins.io/pipeline-maven)
@@ -12,7 +12,7 @@
     * [cloudbees-bitbucket-branch-source:2.4.5](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
     * [http_request:1.8.23](https://plugins.jenkins.io/http_request)
     * [sse-gateway:1.18](https://plugins.jenkins.io/sse-gateway)
-    
+
 ## 2.176.1-132
 * Updated plugins:
     * [config-file-provider:3.6.2](https://plugins.jenkins.io/config-file-provider)
