@@ -94,7 +94,7 @@ javadoc:1.5
 jdk-tool:1.2
 jenkins-design-language:1.17.0
 jira-steps:1.4.5
-jira:3.0.7
+jira:3.0.8
 job-dsl:1.74
 jquery-detached:1.2.1
 jquery:1.12.4-0
@@ -102,7 +102,7 @@ jsch:0.1.55
 junit:1.28
 kubernetes-cli:1.6.0
 kubernetes-credentials:0.4.0
-kubernetes:1.16.1
+kubernetes:1.16.2
 ldap:1.20
 lockable-resources:2.5
 mailer:1.23
@@ -165,7 +165,7 @@ workflow-basic-steps:2.18
 workflow-cps-global-lib:2.13
 workflow-cps:2.70
 workflow-durable-task-step:2.31
-workflow-job:2.32
+workflow-job:2.33
 workflow-multibranch:2.21
 workflow-remote-loader:1.5
 workflow-scm-step:2.9
