@@ -9,6 +9,7 @@
     * [jira:3.0.8](https://plugins.jenkins.io/jira)
     * [kubernetes:1.16.2](https://plugins.jenkins.io/kubernetes)
     * [workflow-job:2.33](https://plugins.jenkins.io/workflow-job)
+    * [configuration-as-code:1.22](https://plugins.jenkins.io/configuration-as-code)
 
 ## 2.176.1-133
 * Updated plugins:
