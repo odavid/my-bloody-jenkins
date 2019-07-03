@@ -7,9 +7,14 @@
 ## 2.176.1-134 (Not released yet)
 * Updated plugins:
     * [jira:3.0.8](https://plugins.jenkins.io/jira)
-    * [kubernetes:1.16.2](https://plugins.jenkins.io/kubernetes)
     * [workflow-job:2.33](https://plugins.jenkins.io/workflow-job)
     * [configuration-as-code:1.22](https://plugins.jenkins.io/configuration-as-code)
+    * [artifactory:3.3.2](https://plugins.jenkins.io/artifactory)
+    * [branch-api:2.5.3](https://plugins.jenkins.io/branch-api)
+    * [kubernetes:1.16.3](https://plugins.jenkins.io/kubernetes)
+    * [metrics:4.0.2.5](https://plugins.jenkins.io/metrics)
+    * [p4:1.10.1](https://plugins.jenkins.io/p4)
+
 
 ## 2.176.1-133
 * Updated plugins:
