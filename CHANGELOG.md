@@ -4,7 +4,7 @@
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
 
-## 2.176.1-134 (Not released yet)
+## 2.176.1-134
 * Updated plugins:
     * [jira:3.0.8](https://plugins.jenkins.io/jira)
     * [workflow-job:2.33](https://plugins.jenkins.io/workflow-job)
