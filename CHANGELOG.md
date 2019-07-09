@@ -3,6 +3,19 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+## 2.176.1-135 (Not released yet)
+* Updated plugins:
+    * [durable-task:1.30](https://plugins.jenkins.io/durable-task)
+    * [embeddable-build-status:2.0.2](https://plugins.jenkins.io/embeddable-build-status)
+    * [git:3.10.1](https://plugins.jenkins.io/git)
+    * [gradle:1.33](https://plugins.jenkins.io/gradle)
+    * [jackson2-api:2.9.9.1](https://plugins.jenkins.io/jackson2-api)
+    * [kubernetes:1.16.7](https://plugins.jenkins.io/kubernetes)
+    * [script-security:1.61](https://plugins.jenkins.io/script-security)
+    * [timestamper:1.10](https://plugins.jenkins.io/timestamper)
+    * [workflow-cps:2.71](https://plugins.jenkins.io/workflow-cps)
+    * [workflow-durable-task-step:2.32](https://plugins.jenkins.io/workflow-durable-task-step)
+
 
 ## 2.176.1-134
 * Updated plugins:
