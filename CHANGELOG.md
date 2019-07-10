@@ -3,7 +3,7 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
-## 2.176.1-135 (Not released yet)
+## 2.176.1-135
 * Updated plugins:
     * [durable-task:1.30](https://plugins.jenkins.io/durable-task)
     * [embeddable-build-status:2.0.2](https://plugins.jenkins.io/embeddable-build-status)
