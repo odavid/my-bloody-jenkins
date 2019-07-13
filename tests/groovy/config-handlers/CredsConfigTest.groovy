@@ -152,13 +152,13 @@ dynamic-p4-ticket-cred:
         assert it.description == "git-ssh-key"
         assert it.username == "user"
         assert it.passphrase.toString() == "password1234"
-        assert it.privateKey == text
+        assert it.privateKey.trim() == text.trim()
     }
     assertCred("ssh-key-as-base64", com.cloudbees.jenkins.plugins.sshcredentials.impl.BasicSSHUserPrivateKey){
         assert it.description == "git-ssh-key"
         assert it.username == "user"
         assert it.passphrase.toString() == "password1234"
-        assert it.privateKey == text
+        assert it.privateKey.trim() == text.trim()
     }
     assertCred("ssh-key-fileOnMaster", com.cloudbees.jenkins.plugins.sshcredentials.impl.BasicSSHUserPrivateKey){
         assert it.description == "git-ssh-key"
