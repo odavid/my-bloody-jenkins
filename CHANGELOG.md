@@ -3,6 +3,21 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+
+## 2.176.1-136 (Not released yet)
+* Updated plugins:
+    * [configuration-as-code:1.23](https://plugins.jenkins.io/configuration-as-code)
+    * [cucumber-reports:4.8.0](https://plugins.jenkins.io/cucumber-reports)
+    * [docker-plugin:1.1.7](https://plugins.jenkins.io/docker-plugin)
+    * [kubernetes:1.17.1](https://plugins.jenkins.io/kubernetes)
+    * [mercurial:2.7](https://plugins.jenkins.io/mercurial)
+    * [p4:1.10.2](https://plugins.jenkins.io/p4)
+    * [scm-api:2.6.3](https://plugins.jenkins.io/scm-api)
+    * [ssh-credentials:1.17.1](https://plugins.jenkins.io/ssh-credentials)
+    * [subversion:2.12.2](https://plugins.jenkins.io/subversion)
+    * [workflow-cps-global-lib:2.14](https://plugins.jenkins.io/workflow-cps-global-lib)
+    * [workflow-cps:2.72](https://plugins.jenkins.io/workflow-cps)
+
 ## 2.176.1-135
 * Updated plugins:
     * [durable-task:1.30](https://plugins.jenkins.io/durable-task)
