@@ -9,7 +9,7 @@ buildWrapperEnabled: true
 installations:
   sonar-server-5.6:
     serverUrl: https://sonar.domain.com
-    serverAuthenticationToken: token
+    credentialsId: token
     mojoVersion: 5.6
     additionalProperties: abc=abc
     additionalAnalysisProperties: x=y
@@ -23,7 +23,7 @@ installations:
     assert desc.buildWrapperEnabled
     def sonarServer = desc.installations.find{it.name == 'sonar-server-5.6'}
     assert sonarServer.serverUrl == 'https://sonar.domain.com'
-    assert sonarServer.serverAuthenticationToken?.toString() == 'token'
+    assert sonarServer.credentialsId == 'token'
     assert sonarServer.mojoVersion == '5.6'
     assert sonarServer.additionalProperties == 'abc=abc'
     assert sonarServer.additionalAnalysisProperties == 'x=y'

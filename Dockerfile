@@ -32,10 +32,10 @@ RUN \
 
 RUN pip install --no-cache-dir awscli PyYAML==3.12 six requests botocore boto3
 
-RUN curl -SsL https://releases.hashicorp.com/envconsul/0.7.3/envconsul_0.7.3_linux_amd64.tgz | tar -C /usr/bin -xvzf - && \
+RUN curl $CURL_OPTIONS https://releases.hashicorp.com/envconsul/0.7.3/envconsul_0.7.3_linux_amd64.tgz | tar -C /usr/bin -xvzf - && \
     chmod +x /usr/bin/envconsul
 
-RUN curl -SsLo /usr/bin/gosu https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-amd64 && \
+RUN curl $CURL_OPTIONS -o /usr/bin/gosu https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-amd64 && \
      chmod +x /usr/bin/gosu
 
 # Separate between JENKINS_HOME and WORKSPACE dir. Best if we use NFS for JENKINS_HOME
