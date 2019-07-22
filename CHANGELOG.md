@@ -4,7 +4,8 @@
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
 
-## 2.176.1-137 (Not released yet)
+## 2.176.2-137 (Not released yet)
+* [LTS-2.176.2](https://jenkins.io/changelog-stable/)
 * Updated plugins:
     * [code-coverage-api:1.0.12](https://plugins.jenkins.io/code-coverage-api)
     * [google-login:1.5](https://plugins.jenkins.io/google-login)
