@@ -10,6 +10,16 @@
     * [code-coverage-api:1.0.12](https://plugins.jenkins.io/code-coverage-api)
     * [google-login:1.5](https://plugins.jenkins.io/google-login)
     * [kubernetes:1.17.2](https://plugins.jenkins.io/kubernetes)
+    * [aws-java-sdk:1.11.594](https://plugins.jenkins.io/aws-java-sdk)
+    * [checkmarx:8.90.3](https://plugins.jenkins.io/checkmarx)
+    * [envinject-api:1.6](https://plugins.jenkins.io/envinject-api)
+    * [envinject:2.2.0](https://plugins.jenkins.io/envinject)
+    * [github-branch-source:2.5.4](https://plugins.jenkins.io/github-branch-source)
+    * [google-login:1.6](https://plugins.jenkins.io/google-login)
+    * [jdk-tool:1.3](https://plugins.jenkins.io/jdk-tool)
+    * [p4:1.10.3](https://plugins.jenkins.io/p4)
+    * [resource-disposer:0.13](https://plugins.jenkins.io/resource-disposer)
+    * [ssh-slaves:1.30.1](https://plugins.jenkins.io/ssh-slaves)
 
 ## 2.176.1-136
 * Updated plugins:
