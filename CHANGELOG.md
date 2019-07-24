@@ -4,6 +4,13 @@
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
 
+## 2.176.2-138 (Not released yet)
+* Updated plugins:
+    * [amazon-ecs:1.22](https://plugins.jenkins.io/amazon-ecs)
+    * [checkmarx:8.90.4](https://plugins.jenkins.io/checkmarx)
+    * [configuration-as-code:1.24](https://plugins.jenkins.io/configuration-as-code)
+    * [kubernetes-cli:1.7.0](https://plugins.jenkins.io/kubernetes-cli)
+
 ## 2.176.2-137
 * [LTS-2.176.2](https://jenkins.io/changelog-stable/)
 * Updated plugins:
