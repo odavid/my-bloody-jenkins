@@ -10,6 +10,9 @@
     * [checkmarx:8.90.4](https://plugins.jenkins.io/checkmarx)
     * [configuration-as-code:1.24](https://plugins.jenkins.io/configuration-as-code)
     * [kubernetes-cli:1.7.0](https://plugins.jenkins.io/kubernetes-cli)
+    * [blueocean:1.18.0](https://plugins.jenkins.io/blueocean)
+    * [branch-api:2.5.4](https://plugins.jenkins.io/branch-api)
+    * [slack:2.28](https://plugins.jenkins.io/slack)
 
 ## 2.176.2-137
 * [LTS-2.176.2](https://jenkins.io/changelog-stable/)
