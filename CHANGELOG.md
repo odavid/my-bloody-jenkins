@@ -4,6 +4,20 @@
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
 
+## 2.176.2-139 (Not released yet)
+* Updated plugins:
+    * [code-coverage-api:1.0.13](https://plugins.jenkins.io/code-coverage-api)
+    * [git:3.11.0](https://plugins.jenkins.io/git)
+    * [github-branch-source:2.5.5](https://plugins.jenkins.io/github-branch-source)
+    * [jsch:0.1.55.1](https://plugins.jenkins.io/jsch)
+    * [kubernetes-credentials:0.4.1](https://plugins.jenkins.io/kubernetes-credentials)
+    * [kubernetes:1.17.3](https://plugins.jenkins.io/kubernetes)
+    * [mailer:1.24](https://plugins.jenkins.io/mailer)
+    * [stashNotifier:1.19](https://plugins.jenkins.io/stashNotifier)
+    * [structs:1.20](https://plugins.jenkins.io/structs)
+    * [variant:1.3](https://plugins.jenkins.io/variant)
+    * [workflow-durable-task-step:2.33](https://plugins.jenkins.io/workflow-durable-task-step)
+
 ## 2.176.2-138
 * Updated plugins:
     * [amazon-ecs:1.22](https://plugins.jenkins.io/amazon-ecs)
