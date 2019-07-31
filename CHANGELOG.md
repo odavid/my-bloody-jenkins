@@ -11,12 +11,13 @@
     * [github-branch-source:2.5.5](https://plugins.jenkins.io/github-branch-source)
     * [jsch:0.1.55.1](https://plugins.jenkins.io/jsch)
     * [kubernetes-credentials:0.4.1](https://plugins.jenkins.io/kubernetes-credentials)
-    * [kubernetes:1.17.3](https://plugins.jenkins.io/kubernetes)
     * [mailer:1.24](https://plugins.jenkins.io/mailer)
     * [stashNotifier:1.19](https://plugins.jenkins.io/stashNotifier)
     * [structs:1.20](https://plugins.jenkins.io/structs)
     * [variant:1.3](https://plugins.jenkins.io/variant)
     * [workflow-durable-task-step:2.33](https://plugins.jenkins.io/workflow-durable-task-step)
+    * [kubernetes:1.18.0](https://plugins.jenkins.io/kubernetes)
+    * [mercurial:2.8](https://plugins.jenkins.io/mercurial)
 
 ## 2.176.2-138
 * Updated plugins:
