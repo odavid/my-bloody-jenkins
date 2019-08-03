@@ -4,6 +4,20 @@
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
 
+## 2.176.2-140 (Not released yet)
+* Updated plugins:
+    * [configuration-as-code:1.25](https://plugins.jenkins.io/configuration-as-code)
+    * [credentials:2.2.1](https://plugins.jenkins.io/credentials)
+    * [display-url-api:2.3.2](https://plugins.jenkins.io/display-url-api)
+    * [docker-workflow:1.19](https://plugins.jenkins.io/docker-workflow)
+    * [kubernetes:1.18.1](https://plugins.jenkins.io/kubernetes)
+    * [maven-plugin:3.4](https://plugins.jenkins.io/maven-plugin)
+    * [script-security:1.62](https://plugins.jenkins.io/script-security)
+    * [sse-gateway:1.19](https://plugins.jenkins.io/sse-gateway)
+    * [workflow-api:2.36](https://plugins.jenkins.io/workflow-api)
+    * [workflow-cps-global-lib:2.15](https://plugins.jenkins.io/workflow-cps-global-lib)
+    * [workflow-cps:2.73](https://plugins.jenkins.io/workflow-cps)
+
 ## 2.176.2-139
 * Updated plugins:
     * [code-coverage-api:1.0.13](https://plugins.jenkins.io/code-coverage-api)
