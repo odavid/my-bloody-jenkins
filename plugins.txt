@@ -83,6 +83,7 @@ golang:1.2
 google-login:1.6
 gradle:1.33
 groovy-postbuild:2.5
+h2-api:1.4.199
 handlebars:1.1.1
 handy-uri-templates-2-api:2.1.7-1.0
 htmlpublisher:1.18
@@ -116,6 +117,7 @@ metrics:4.0.2.5
 momentjs:1.1.1
 nodejs:1.3.3
 p4:1.10.3
+pam-auth:1.5.1
 parallel-test-executor:1.12
 parameterized-trigger:2.35.2
 pipeline-build-step:2.9
@@ -159,6 +161,7 @@ token-macro:2.8
 trilead-api:1.0.3
 variant:1.3
 whitesource:19.1.1
+windows-slaves:1.4
 workflow-aggregator:2.6
 workflow-api:2.36
 workflow-basic-steps:2.18

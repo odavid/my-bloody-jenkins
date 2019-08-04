@@ -4,6 +4,12 @@
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
 
+## 2.176.2-141
+* Updated plugins:
+    * [h2-api:1.4.199](https://plugins.jenkins.io/h2-api)
+    * [pam-auth:1.5.1](https://plugins.jenkins.io/pam-auth)
+    * [windows-slaves:1.4](https://plugins.jenkins.io/windows-slaves)
+
 ## 2.176.2-140
 * Updated plugins:
     * [configuration-as-code:1.25](https://plugins.jenkins.io/configuration-as-code)
