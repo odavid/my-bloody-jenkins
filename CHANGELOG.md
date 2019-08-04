@@ -4,7 +4,7 @@
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
 
-## 2.176.2-140 (Not released yet)
+## 2.176.2-140
 * Updated plugins:
     * [configuration-as-code:1.25](https://plugins.jenkins.io/configuration-as-code)
     * [credentials:2.2.1](https://plugins.jenkins.io/credentials)
