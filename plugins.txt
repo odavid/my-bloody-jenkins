@@ -20,6 +20,7 @@ blueocean-core-js:1.18.0
 blueocean-dashboard:1.18.0
 blueocean-display-url:2.3.0
 blueocean-events:1.18.0
+blueocean-executor-info:1.18.0
 blueocean-git-pipeline:1.18.0
 blueocean-github-pipeline:1.18.0
 blueocean-i18n:1.18.0
