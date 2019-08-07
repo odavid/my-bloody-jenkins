@@ -3,6 +3,14 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+## 2.176.2-143
+* Updated plugins:
+    * [blueocean:1.18.1](https://plugins.jenkins.io/blueocean)
+    * [configuration-as-code:1.27](https://plugins.jenkins.io/configuration-as-code)
+    * [credentials-binding:1.20](https://plugins.jenkins.io/credentials-binding)
+    * [dashboard-view:2.11](https://plugins.jenkins.io/dashboard-view)
+    * [pipeline-stage-view:2.12](https://plugins.jenkins.io/pipeline-stage-view)
+
 ## 2.176.2-142
 * Updated plugins:
     * [pipeline-maven:3.8.1](https://plugins.jenkins.io/pipeline-maven)
