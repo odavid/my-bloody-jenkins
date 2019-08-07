@@ -6,6 +6,8 @@
 ## 2.176.2-142 (Not released yet)
 * Updated plugins:
     * [pipeline-maven:3.8.1](https://plugins.jenkins.io/pipeline-maven)
+* Added plugins:
+    * [pipeline-aws:1.38](https://plugins.jenkins.io/pipeline-aws)
 
 ## 2.176.2-141
 * Updated plugins:

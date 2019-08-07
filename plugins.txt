@@ -121,6 +121,7 @@ p4:1.10.3
 pam-auth:1.5.1
 parallel-test-executor:1.12
 parameterized-trigger:2.35.2
+pipeline-aws:1.38
 pipeline-build-step:2.9
 pipeline-graph-analysis:1.10
 pipeline-input-step:2.10
