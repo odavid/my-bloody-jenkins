@@ -7,6 +7,7 @@
 * Updated plugins:
     * [git-server:1.8](https://plugins.jenkins.io/git-server)
     * [slack:2.29](https://plugins.jenkins.io/slack)
+    * [cucumber-reports:4.9.0](https://plugins.jenkins.io/cucumber-reports)
 
 ## 2.176.2-143
 * Updated plugins:

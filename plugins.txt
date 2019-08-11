@@ -51,7 +51,7 @@ configuration-as-code:1.27
 copyartifact:1.42.1
 credentials-binding:1.20
 credentials:2.2.1
-cucumber-reports:4.8.0
+cucumber-reports:4.9.0
 custom-tools-plugin:0.6
 dashboard-view:2.11
 display-url-api:2.3.2
