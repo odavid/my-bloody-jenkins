@@ -14,7 +14,7 @@ def setup(config) {
                 name,
                 url,
                 apiTokenId,
-                clientBuilderId ?: 'autodetect', //autodetect, v3, v4 
+                clientBuilderId ?: 'autodetect', //autodetect, v3, v4
                 asBoolean(ignoreCertificateErrors),
                 asInt(connectionTimeout, 10),
                 asInt(readTimeout, 10)
