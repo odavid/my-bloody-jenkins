@@ -3,7 +3,7 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
-## 2.176.2-144 (Not released yet)
+## 2.176.2-144
 * Updated plugins:
     * [git-server:1.8](https://plugins.jenkins.io/git-server)
     * [slack:2.29](https://plugins.jenkins.io/slack)
