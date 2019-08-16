@@ -8,6 +8,9 @@
     * [git-server:1.8](https://plugins.jenkins.io/git-server)
     * [slack:2.29](https://plugins.jenkins.io/slack)
     * [cucumber-reports:4.9.0](https://plugins.jenkins.io/cucumber-reports)
+    * [github-branch-source:2.5.6](https://plugins.jenkins.io/github-branch-source)
+    * [job-dsl:1.75](https://plugins.jenkins.io/job-dsl)
+    * [pubsub-light:1.13](https://plugins.jenkins.io/pubsub-light)
 
 ## 2.176.2-143
 * Updated plugins:

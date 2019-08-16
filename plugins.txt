@@ -77,7 +77,7 @@ git-parameter:0.9.11
 git-server:1.8
 git:3.11.0
 github-api:1.95
-github-branch-source:2.5.5
+github-branch-source:2.5.6
 github:1.29.4
 gitlab-plugin:1.5.12
 golang:1.2
@@ -97,7 +97,7 @@ jdk-tool:1.3
 jenkins-design-language:1.18.1
 jira-steps:1.4.5
 jira:3.0.8
-job-dsl:1.74
+job-dsl:1.75
 jquery-detached:1.2.1
 jquery:1.12.4-0
 jsch:0.1.55.1
@@ -138,7 +138,7 @@ pipeline-stage-view:2.12
 pipeline-utility-steps:2.3.0
 plain-credentials:1.5
 promoted-builds:3.3
-pubsub-light:1.12
+pubsub-light:1.13
 rebuild:1.31
 resource-disposer:0.13
 run-condition:1.2
