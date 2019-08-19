@@ -3,7 +3,7 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
-## 2.176.2.145 (Not released yet)
+## 2.176.2.145
 * Updated plugins:
     * [custom-tools-plugin:0.7](https://plugins.jenkins.io/custom-tools-plugin)
     * [git:3.12.0](https://plugins.jenkins.io/git)
