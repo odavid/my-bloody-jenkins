@@ -3,6 +3,12 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+## 2.176.2.146 (Not released yet)
+* Updated plugins:
+    * [jira:3.0.9](https://plugins.jenkins.io/jira)
+    * [jquery:1.12.4-1](https://plugins.jenkins.io/jquery)
+    * [slack:2.32](https://plugins.jenkins.io/slack)
+
 ## 2.176.2.145
 * Updated plugins:
     * [custom-tools-plugin:0.7](https://plugins.jenkins.io/custom-tools-plugin)

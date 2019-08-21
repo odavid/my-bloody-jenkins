@@ -96,10 +96,10 @@ javadoc:1.5
 jdk-tool:1.3
 jenkins-design-language:1.18.1
 jira-steps:1.4.5
-jira:3.0.8
+jira:3.0.9
 job-dsl:1.75
 jquery-detached:1.2.1
-jquery:1.12.4-0
+jquery:1.12.4-1
 jsch:0.1.55.1
 junit:1.28
 kubernetes-cli:1.7.0
@@ -147,7 +147,7 @@ sbt:1.5
 scm-api:2.6.3
 script-security:1.62
 simple-theme-plugin:0.5.1
-slack:2.31
+slack:2.32
 sonar:2.9
 sse-gateway:1.19
 ssh-agent:1.17
