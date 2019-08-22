@@ -170,7 +170,7 @@ workflow-basic-steps:2.18
 workflow-cps-global-lib:2.15
 workflow-cps:2.73
 workflow-durable-task-step:2.33
-workflow-job:2.33
+workflow-job:2.34
 workflow-multibranch:2.21
 workflow-remote-loader:1.5
 workflow-scm-step:2.9

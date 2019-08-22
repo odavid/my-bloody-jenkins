@@ -8,7 +8,8 @@
     * [jira:3.0.9](https://plugins.jenkins.io/jira)
     * [jquery:1.12.4-1](https://plugins.jenkins.io/jquery)
     * [slack:2.32](https://plugins.jenkins.io/slack)
-
+    * [workflow-job:2.34](https://plugins.jenkins.io/workflow-job)
+    
 ## 2.176.2.145
 * Updated plugins:
     * [custom-tools-plugin:0.7](https://plugins.jenkins.io/custom-tools-plugin)
