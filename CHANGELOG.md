@@ -3,7 +3,7 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
-## 2.176.2.147 (Not released yet)
+## 2.176.2.147
 * Updated plugins:
     * [cloudbees-bitbucket-branch-source:2.4.6](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
     * [configuration-as-code:1.28](https://plugins.jenkins.io/configuration-as-code)
