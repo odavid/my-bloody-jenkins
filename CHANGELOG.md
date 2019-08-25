@@ -3,21 +3,21 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
-## 2.176.2.147
+## 2.176.2-147
 * Updated plugins:
     * [cloudbees-bitbucket-branch-source:2.4.6](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
     * [configuration-as-code:1.28](https://plugins.jenkins.io/configuration-as-code)
     * [git-client:2.8.2](https://plugins.jenkins.io/git-client)
     * [job-dsl:1.76](https://plugins.jenkins.io/job-dsl)
 
-## 2.176.2.146
+## 2.176.2-146
 * Updated plugins:
     * [jira:3.0.9](https://plugins.jenkins.io/jira)
     * [jquery:1.12.4-1](https://plugins.jenkins.io/jquery)
     * [slack:2.32](https://plugins.jenkins.io/slack)
     * [workflow-job:2.34](https://plugins.jenkins.io/workflow-job)
 
-## 2.176.2.145
+## 2.176.2-145
 * Updated plugins:
     * [custom-tools-plugin:0.7](https://plugins.jenkins.io/custom-tools-plugin)
     * [git:3.12.0](https://plugins.jenkins.io/git)
