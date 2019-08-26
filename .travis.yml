@@ -18,9 +18,9 @@ before_install:
 
 jobs:
   include:
-    - script: make test-debian
-    - script: make test-alpine
-    - script: make test-jdk11
+    - script: travis_retry make test-debian
+    - script: travis_retry make test-alpine
+    - script: travis_retry make test-jdk11
     - stage: publish
       script: echo "publishing...."
       deploy:
