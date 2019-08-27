@@ -4,7 +4,7 @@ amazon-ecr:1.6
 amazon-ecs:1.22
 anchore-container-scanner:1.0.19
 ansicolor:0.6.2
-ant:1.9
+ant:1.10
 antisamy-markup-formatter:1.5
 apache-httpcomponents-client-4-api:4.5.5-3.0
 artifactory:3.3.2

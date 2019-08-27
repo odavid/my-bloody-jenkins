@@ -3,6 +3,10 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+## 2.176.2-149 (Not released yet)
+* Updated plugins:
+    * [ant:1.10](https://plugins.jenkins.io/ant)
+
 ## 2.176.2-148
 * Updated plugins:
     * [configuration-as-code:1.29](https://plugins.jenkins.io/configuration-as-code)
