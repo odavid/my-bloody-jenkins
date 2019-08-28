@@ -6,6 +6,9 @@
 ## 2.176.2-149 (Not released yet)
 * Updated plugins:
     * [ant:1.10](https://plugins.jenkins.io/ant)
+    * [antisamy-markup-formatter:1.6](https://plugins.jenkins.io/antisamy-markup-formatter)
+    * [kubernetes:1.18.3](https://plugins.jenkins.io/kubernetes)
+    * [pipeline-input-step:2.11](https://plugins.jenkins.io/pipeline-input-step)
 
 ## 2.176.2-148
 * Updated plugins:
