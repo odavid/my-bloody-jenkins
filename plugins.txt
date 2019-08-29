@@ -149,7 +149,7 @@ script-security:1.62
 simple-theme-plugin:0.5.1
 slack:2.32
 sonar:2.9
-sse-gateway:1.19
+sse-gateway:1.20
 ssh-agent:1.17
 ssh-credentials:1.17.1
 ssh-slaves:1.30.1

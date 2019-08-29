@@ -9,6 +9,7 @@
     * [antisamy-markup-formatter:1.6](https://plugins.jenkins.io/antisamy-markup-formatter)
     * [kubernetes:1.18.3](https://plugins.jenkins.io/kubernetes)
     * [pipeline-input-step:2.11](https://plugins.jenkins.io/pipeline-input-step)
+    * [sse-gateway:1.20](https://plugins.jenkins.io/sse-gateway)
 
 ## 2.176.2-148
 * Updated plugins:
