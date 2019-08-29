@@ -3,7 +3,7 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
-## 2.176.2-149 (Not released yet)
+## 2.176.2-149
 * Updated plugins:
     * [ant:1.10](https://plugins.jenkins.io/ant)
     * [antisamy-markup-formatter:1.6](https://plugins.jenkins.io/antisamy-markup-formatter)
