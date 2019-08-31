@@ -3,6 +3,13 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+## 2.176.2-150 (Not released yet)
+* Updated plugins:
+    * [mailer:1.25](https://plugins.jenkins.io/mailer)
+    * [stashNotifier:1.20](https://plugins.jenkins.io/stashNotifier)
+    * [workflow-api:2.37](https://plugins.jenkins.io/workflow-api)
+    * [workflow-cps:2.74](https://plugins.jenkins.io/workflow-cps)
+
 ## 2.176.2-149
 * Updated plugins:
     * [ant:1.10](https://plugins.jenkins.io/ant)
