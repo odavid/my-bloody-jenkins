@@ -80,8 +80,8 @@ mail:
 
     desc = jenkins.model.Jenkins.instance.getDescriptor(hudson.tasks.Mailer)
     assert desc.useSsl
-    assert desc.smtpAuthUsername == 'mail-admin'
-    assert desc.smtpAuthPassword.toString() == 'password'
+    assert desc.authentication.username == 'mail-admin'
+    assert desc.authentication.password.toString() == 'password'
     assert desc.charset == 'UTF-8'
     assert desc.smtpServer == 'mail.domain.com'
     assert desc.smtpPort == '265'

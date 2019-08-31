@@ -32,7 +32,7 @@ def mailConfig(config){
     def mailer = Jenkins.instance.getDescriptor('hudson.tasks.Mailer')
     config.with{
         if(authUser){
-            mailer.setSmtpAuth(authUser, authPassword?:'')
+            mailer.setAuthentication(new hudson.tasks.SMTPAuthentication(authUser, hudson.util.Secret.fromString(authPassword?:'')))
         }
         mailer.replyToAddress = replyToAddress
         mailer.useSsl = asBoolean(useSsl)
