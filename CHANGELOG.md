@@ -10,7 +10,8 @@
     * [stashNotifier:1.20](https://plugins.jenkins.io/stashNotifier)
     * [workflow-api:2.37](https://plugins.jenkins.io/workflow-api)
     * [workflow-cps:2.74](https://plugins.jenkins.io/workflow-cps)
-
+    * [jira-steps:1.5.0](https://plugins.jenkins.io/jira-steps)
+    
 ## 2.176.2-149
 * Updated plugins:
     * [ant:1.10](https://plugins.jenkins.io/ant)
