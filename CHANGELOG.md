@@ -3,7 +3,7 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
-## 2.176.3-150 (Not released yet)
+## 2.176.3-150
 * [LTS-2.176.3](https://jenkins.io/changelog-stable/)
 * Updated plugins:
     * [mailer:1.25](https://plugins.jenkins.io/mailer)
@@ -11,7 +11,7 @@
     * [workflow-api:2.37](https://plugins.jenkins.io/workflow-api)
     * [workflow-cps:2.74](https://plugins.jenkins.io/workflow-cps)
     * [jira-steps:1.5.0](https://plugins.jenkins.io/jira-steps)
-    
+
 ## 2.176.2-149
 * Updated plugins:
     * [ant:1.10](https://plugins.jenkins.io/ant)
