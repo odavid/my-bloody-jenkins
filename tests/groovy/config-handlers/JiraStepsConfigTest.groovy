@@ -19,7 +19,7 @@ sites:
 """)
 
     configHandler.setup(config)
-    def desc = org.thoughtslive.jenkins.plugins.jira.Config.DESCRIPTOR
+    def desc = org.thoughtslive.jenkins.plugins.jira.JiraStepsConfig.DESCRIPTOR
     def site = desc.sites[0]
     assert site.name == ('JIRA')
     assert site.url == (new URL('https://jira.domain.com'))

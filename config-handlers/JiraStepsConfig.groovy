@@ -7,7 +7,7 @@ def asBoolean(value, defaultValue=false){
 
 def setup(config) {
     config = config ?: [:]
-    def desc = org.thoughtslive.jenkins.plugins.jira.Config.DESCRIPTOR
+    def desc = org.thoughtslive.jenkins.plugins.jira.JiraStepsConfig.DESCRIPTOR
     def sites = config.sites?.collect{ siteConfig ->
         siteConfig.with{
             def site = new org.thoughtslive.jenkins.plugins.jira.Site(
@@ -25,11 +25,7 @@ def setup(config) {
         }
     }
     if(sites){
-        def formData = [:] as net.sf.json.JSONObject
-        def req = [
-            bindJSONToList: {clz, obj -> return sites}
-        ] as org.kohsuke.stapler.StaplerRequest
-        desc.configure(req, formData)
+        desc.setSites(sites as org.thoughtslive.jenkins.plugins.jira.Site[])
     }
 }
 return this
