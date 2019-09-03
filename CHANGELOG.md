@@ -3,6 +3,11 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+
+## 2.176.3-151 (Not released yet)
+* Updated plugins:
+    * [aws-credentials:1.28](https://plugins.jenkins.io/aws-credentials)
+
 ## 2.176.3-150
 * [LTS-2.176.3](https://jenkins.io/changelog-stable/)
 * Updated plugins:
