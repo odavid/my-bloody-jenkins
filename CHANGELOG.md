@@ -7,6 +7,11 @@
 ## 2.176.3-151 (Not released yet)
 * Updated plugins:
     * [aws-credentials:1.28](https://plugins.jenkins.io/aws-credentials)
+    * [artifactory:3.4.0](https://plugins.jenkins.io/artifactory)
+    * [blueocean:1.19.0](https://plugins.jenkins.io/blueocean)
+    * [envinject:2.2.1](https://plugins.jenkins.io/envinject)
+    * [gradle:1.34](https://plugins.jenkins.io/gradle)
+    * [mailer:1.26](https://plugins.jenkins.io/mailer)
 
 ## 2.176.3-150
 * [LTS-2.176.3](https://jenkins.io/changelog-stable/)
