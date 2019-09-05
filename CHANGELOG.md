@@ -4,7 +4,7 @@
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
 
-## 2.176.3-151 (Not released yet)
+## 2.176.3-151
 * Updated plugins:
     * [aws-credentials:1.28](https://plugins.jenkins.io/aws-credentials)
     * [artifactory:3.4.0](https://plugins.jenkins.io/artifactory)
