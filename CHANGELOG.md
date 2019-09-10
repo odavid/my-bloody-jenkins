@@ -5,8 +5,14 @@
 
 ## 2.176.3-152 (Not released yet)
 * Updated plugins:
-  * [code-coverage-api:1.1.0](https://plugins.jenkins.io/code-coverage-api)
-  * [git-client:2.8.4](https://plugins.jenkins.io/git-client)
+    * [code-coverage-api:1.1.0](https://plugins.jenkins.io/code-coverage-api)
+    * [git-client:2.8.4](https://plugins.jenkins.io/git-client)
+    * [configuration-as-code:1.30](https://plugins.jenkins.io/configuration-as-code)
+    * [git:3.12.1](https://plugins.jenkins.io/git)
+    * [kubernetes:1.19.0](https://plugins.jenkins.io/kubernetes)
+    * [mailer:1.27](https://plugins.jenkins.io/mailer)
+    * [metrics:4.0.2.6](https://plugins.jenkins.io/metrics)
+    * [ssh-credentials:1.17.2](https://plugins.jenkins.io/ssh-credentials)
 
 ## 2.176.3-151
 * Updated plugins:
