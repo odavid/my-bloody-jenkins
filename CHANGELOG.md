@@ -13,6 +13,9 @@
     * [mailer:1.27](https://plugins.jenkins.io/mailer)
     * [metrics:4.0.2.6](https://plugins.jenkins.io/metrics)
     * [ssh-credentials:1.17.2](https://plugins.jenkins.io/ssh-credentials)
+    * [github-branch-source:2.5.7](https://plugins.jenkins.io/github-branch-source)
+    * [workflow-durable-task-step:2.34](https://plugins.jenkins.io/workflow-durable-task-step)
+    * [workflow-job:2.35](https://plugins.jenkins.io/workflow-job)
 
 ## 2.176.3-151
 * Updated plugins:

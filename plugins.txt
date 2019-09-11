@@ -77,7 +77,7 @@ git-parameter:0.9.11
 git-server:1.8
 git:3.12.1
 github-api:1.95
-github-branch-source:2.5.6
+github-branch-source:2.5.7
 github:1.29.4
 gitlab-plugin:1.5.12
 golang:1.2
@@ -169,8 +169,8 @@ workflow-api:2.37
 workflow-basic-steps:2.18
 workflow-cps-global-lib:2.15
 workflow-cps:2.74
-workflow-durable-task-step:2.33
-workflow-job:2.34
+workflow-durable-task-step:2.34
+workflow-job:2.35
 workflow-multibranch:2.21
 workflow-remote-loader:1.5
 workflow-scm-step:2.9
