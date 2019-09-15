@@ -3,6 +3,16 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+
+## 2.176.3-153 (Not released yet)
+* Updated plugins:
+    * [apache-httpcomponents-client-4-api:4.5.10-1.0](https://plugins.jenkins.io/apache-httpcomponents-client-4-api)
+    * [dashboard-view:2.12](https://plugins.jenkins.io/dashboard-view)
+    * [git-changelog:2.19](https://plugins.jenkins.io/git-changelog)
+    * [git-client:2.8.6](https://plugins.jenkins.io/git-client)
+    * [gitlab-plugin:1.5.13](https://plugins.jenkins.io/gitlab-plugin)
+    * [script-security:1.64](https://plugins.jenkins.io/script-security)
+
 ## 2.176.3-152
 * Updated plugins:
     * [code-coverage-api:1.1.0](https://plugins.jenkins.io/code-coverage-api)
