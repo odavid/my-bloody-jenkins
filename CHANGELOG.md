@@ -4,7 +4,7 @@
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
 
-## 2.176.3-153 (Not released yet)
+## 2.176.3-153
 * Updated plugins:
     * [apache-httpcomponents-client-4-api:4.5.10-1.0](https://plugins.jenkins.io/apache-httpcomponents-client-4-api)
     * [dashboard-view:2.12](https://plugins.jenkins.io/dashboard-view)
