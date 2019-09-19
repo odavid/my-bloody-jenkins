@@ -51,7 +51,7 @@ configuration-as-code:1.30
 copyartifact:1.42.1
 credentials-binding:1.20
 credentials:2.3.0
-cucumber-reports:4.9.0
+cucumber-reports:4.10.0
 custom-tools-plugin:0.7
 dashboard-view:2.12
 display-url-api:2.3.2
@@ -107,7 +107,7 @@ kubernetes-credentials:0.4.1
 kubernetes:1.19.0
 ldap:1.20
 lockable-resources:2.5
-mailer:1.27
+mailer:1.28
 mapdb-api:1.0.9.0
 mask-passwords:2.12.0
 matrix-auth:2.4.2
@@ -147,7 +147,7 @@ sbt:1.5
 scm-api:2.6.3
 script-security:1.64
 simple-theme-plugin:0.5.1
-slack:2.32
+slack:2.33
 sonar:2.9
 sse-gateway:1.20
 ssh-agent:1.17
