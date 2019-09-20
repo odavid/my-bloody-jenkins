@@ -3,7 +3,7 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
-## 2.176.3-154 (Not released yet)
+## 2.176.3-154
 * Updated plugins:
   * [cucumber-reports:4.10.0](https://plugins.jenkins.io/cucumber-reports)
   * [mailer:1.28](https://plugins.jenkins.io/mailer)
