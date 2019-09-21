@@ -135,7 +135,7 @@ pipeline-rest-api:2.12
 pipeline-stage-step:2.3
 pipeline-stage-tags-metadata:1.3.9
 pipeline-stage-view:2.12
-pipeline-utility-steps:2.3.0
+pipeline-utility-steps:2.3.1
 plain-credentials:1.5
 promoted-builds:3.3
 pubsub-light:1.13
@@ -147,7 +147,7 @@ sbt:1.5
 scm-api:2.6.3
 script-security:1.64
 simple-theme-plugin:0.5.1
-slack:2.33
+slack:2.34
 sonar:2.9
 sse-gateway:1.20
 ssh-agent:1.17
