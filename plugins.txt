@@ -7,7 +7,7 @@ ansicolor:0.6.2
 ant:1.10
 antisamy-markup-formatter:1.6
 apache-httpcomponents-client-4-api:4.5.10-1.0
-artifactory:3.4.0
+artifactory:3.4.1
 authentication-tokens:1.3
 aws-credentials:1.28
 aws-java-sdk:1.11.594
@@ -87,11 +87,11 @@ groovy-postbuild:2.5
 h2-api:1.4.199
 handlebars:1.1.1
 handy-uri-templates-2-api:2.1.7-1.0
-htmlpublisher:1.18
+htmlpublisher:1.19
 http_request:1.8.23
 icon-shim:2.0.3
 ivy:2.1
-jackson2-api:2.9.9.1
+jackson2-api:2.9.10
 javadoc:1.5
 jdk-tool:1.3
 jenkins-design-language:1.19.0
@@ -142,7 +142,7 @@ pubsub-light:1.13
 rebuild:1.31
 resource-disposer:0.13
 run-condition:1.2
-saml:1.1.2
+saml:1.1.3
 sbt:1.5
 scm-api:2.6.3
 script-security:1.64
