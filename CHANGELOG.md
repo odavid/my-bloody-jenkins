@@ -3,7 +3,7 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
-## 2.176.3-156 (Not released yet)
+## 2.176.3-156
 * Updated plugins:
   * [artifactory:3.4.1](https://plugins.jenkins.io/artifactory)
   * [htmlpublisher:1.19](https://plugins.jenkins.io/htmlpublisher)
