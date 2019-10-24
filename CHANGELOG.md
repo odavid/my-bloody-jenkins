@@ -3,6 +3,9 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
+## 2.190.1-157
+* [LTS-2.190.1](https://jenkins.io/changelog-stable/)
+
 ## 2.176.3-156
 * Updated plugins:
   * [artifactory:3.4.1](https://plugins.jenkins.io/artifactory)
