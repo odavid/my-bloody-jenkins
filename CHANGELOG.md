@@ -5,6 +5,8 @@
 
 ## 2.190.1-157 (Not released yet)
 * [LTS-2.190.1](https://jenkins.io/changelog-stable/)
+* Added plugins:
+    * [kubernetes-client-api:4.6.0-2](https://plugins.jenkins.io/kubernetes-client-api)
 * Updated plugins:
     * [amazon-ecs:1.23](https://plugins.jenkins.io/amazon-ecs)
     * [anchore-container-scanner:1.0.20](https://plugins.jenkins.io/anchore-container-scanner)

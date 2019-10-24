@@ -103,6 +103,7 @@ jquery:1.12.4-1
 jsch:0.1.55.1
 junit:1.28
 kubernetes-cli:1.7.0
+kubernetes-client-api:4.6.0-2
 kubernetes-credentials:0.4.1
 kubernetes:1.20.2
 ldap:1.20
