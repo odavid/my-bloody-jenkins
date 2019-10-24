@@ -10,6 +10,7 @@ installations:
   sonar-server-5.6:
     serverUrl: https://sonar.domain.com
     credentialsId: token
+    webhookSecretId: webhook
     mojoVersion: 5.6
     additionalProperties: abc=abc
     additionalAnalysisProperties: x=y
@@ -24,6 +25,7 @@ installations:
     def sonarServer = desc.installations.find{it.name == 'sonar-server-5.6'}
     assert sonarServer.serverUrl == 'https://sonar.domain.com'
     assert sonarServer.credentialsId == 'token'
+    assert sonarServer.webhookSecretId == 'webhook'
     assert sonarServer.mojoVersion == '5.6'
     assert sonarServer.additionalProperties == 'abc=abc'
     assert sonarServer.additionalAnalysisProperties == 'x=y'
