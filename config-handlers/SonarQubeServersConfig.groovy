@@ -12,6 +12,7 @@ def sonarInstallation(config){
             serverUrl,
             credentialsId,
             serverAuthenticationToken,
+            webhookSecretId,
             mojoVersion?.toString(),
             additionalProperties,
             additionalAnalysisProperties,

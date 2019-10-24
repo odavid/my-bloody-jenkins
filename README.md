@@ -733,6 +733,12 @@ clouds:
         # an iam role arn for the task. If omitted, the EC2 instance IAM Role that runs the task will be in use
         taskrole: '<TASKROLE_ARN>'
 
+        # See https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-strategies.html
+        placementStrategies:
+          - type: random
+          - type: spread
+            field: attribute:ecs.availability-zone
+            
         #########################
         ## FARGATE Only
         #########################

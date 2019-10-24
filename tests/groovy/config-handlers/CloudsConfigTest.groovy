@@ -62,6 +62,10 @@ ecs-cloud:
         - /home/zzz:/home/zzz:ro
         - /home/aaa:/home/aaa:rw
         - /home/aaa1:/home/aaa1234:rw
+      placementStrategies:
+        - type: random
+        - type: spread
+          field: attribute:ecs.availability-zone
 
     - name: ecs-template-fargate
       labels:
@@ -164,6 +168,10 @@ ecs-cloud:
         assertMountPoint('/home/yyy', '/home/yyy', '/home/yyy', false)
         assertMountPoint('/home/zzz', '/home/zzz', '/home/zzz', true)
         assertMountPoint('/home/aaa1', '/home/aaa1', '/home/aaa1234', false)
+
+        assert template.placementStrategyEntries[0].type == 'random'
+        assert template.placementStrategyEntries[1].type == 'spread'
+        assert template.placementStrategyEntries[1].field == 'attribute:ecs.availability-zone'
 
         template = it.templates[1]
         assert template.templateName == 'ecs-template-fargate'

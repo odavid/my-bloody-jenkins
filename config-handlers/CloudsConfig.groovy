@@ -191,6 +191,9 @@ def ecsCloud(config){
                     return new ECSTaskTemplate.PortMappingEntry(asInt(containerPort), asInt(hostPort), "tcp")
                 },
                 temp.executionRole ?: 'ecsTaskExecutionRole',
+                temp.placementStrategies?.collect { placementStrategyEntry ->
+                    new ECSTaskTemplate.PlacementStrategyEntry(placementStrategyEntry.type, placementStrategyEntry.field)
+                },
                 temp.taskrole,
                 temp.inheritFrom,
                 asInt(temp.sharedMemorySize),
