@@ -17,7 +17,7 @@ function groovy_test(){
 
     docker_compose_exec docker-compose-consul.yml consul consul kv put jenkins/git_password password
     docker_compose_exec docker-compose-consul.yml consul consul kv put jenkins/git_username username
-    docker_compose_exec docker-compose-consul.yml vault vault write secret/jenkins top_secret=very_SECRET
+    docker_compose_exec docker-compose-consul.yml vault vault kv put secret/jenkins top_secret=very_SECRET
 
     CONSUL_ADDR="consul:8500" \
     VAULT_TOKEN="vault-root-token" \
