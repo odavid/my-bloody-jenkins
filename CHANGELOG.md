@@ -3,8 +3,49 @@
 ## Known Issues
 > Due to [An open Issue with envconsul and vault > 0.9.6](https://github.com/hashicorp/envconsul/issues/175), Only Vault versions <= 0.9.6 can be used
 
-## 2.190.1-157
+## 2.190.1-157 (Not released yet)
 * [LTS-2.190.1](https://jenkins.io/changelog-stable/)
+* Updated plugins:
+    * [amazon-ecs:1.23](https://plugins.jenkins.io/amazon-ecs)
+    * [anchore-container-scanner:1.0.20](https://plugins.jenkins.io/anchore-container-scanner)
+    * [apache-httpcomponents-client-4-api:4.5.10-2.0](https://plugins.jenkins.io/apache-httpcomponents-client-4-api)
+    * [aws-java-sdk:1.11.650](https://plugins.jenkins.io/aws-java-sdk)
+    * [cloudbees-bitbucket-branch-source:2.5.0](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
+    * [cobertura:1.15](https://plugins.jenkins.io/cobertura)
+    * [code-coverage-api:1.1.1](https://plugins.jenkins.io/code-coverage-api)
+    * [configuration-as-code:1.32](https://plugins.jenkins.io/configuration-as-code)
+    * [copyartifact:1.43](https://plugins.jenkins.io/copyartifact)
+    * [docker-plugin:1.1.8](https://plugins.jenkins.io/docker-plugin)
+    * [docker-workflow:1.21](https://plugins.jenkins.io/docker-workflow)
+    * [durable-task:1.31](https://plugins.jenkins.io/durable-task)
+    * [email-ext:2.68](https://plugins.jenkins.io/email-ext)
+    * [git-client:2.9.0](https://plugins.jenkins.io/git-client)
+    * [github-branch-source:2.5.8](https://plugins.jenkins.io/github-branch-source)
+    * [github:1.29.5](https://plugins.jenkins.io/github)
+    * [handy-uri-templates-2-api:2.1.8-1.0](https://plugins.jenkins.io/handy-uri-templates-2-api)
+    * [htmlpublisher:1.21](https://plugins.jenkins.io/htmlpublisher)
+    * [jackson2-api:2.10.0](https://plugins.jenkins.io/jackson2-api)
+    * [jira-steps:1.5.1](https://plugins.jenkins.io/jira-steps)
+    * [jira:3.0.10](https://plugins.jenkins.io/jira)
+    * [kubernetes:1.20.2](https://plugins.jenkins.io/kubernetes)
+    * [lockable-resources:2.6](https://plugins.jenkins.io/lockable-resources)
+    * [mailer:1.29](https://plugins.jenkins.io/mailer)
+    * [matrix-auth:2.5](https://plugins.jenkins.io/matrix-auth)
+    * [nodejs:1.3.4](https://plugins.jenkins.io/nodejs)
+    * [p4:1.10.5](https://plugins.jenkins.io/p4)
+    * [pam-auth:1.6](https://plugins.jenkins.io/pam-auth)
+    * [pipeline-maven:3.8.2](https://plugins.jenkins.io/pipeline-maven)
+    * [promoted-builds:3.4](https://plugins.jenkins.io/promoted-builds)
+    * [resource-disposer:0.14](https://plugins.jenkins.io/resource-disposer)
+    * [saml:1.1.4](https://plugins.jenkins.io/saml)
+    * [script-security:1.66](https://plugins.jenkins.io/script-security)
+    * [sonar:2.10](https://plugins.jenkins.io/sonar)
+    * [ssh-credentials:1.18](https://plugins.jenkins.io/ssh-credentials)
+    * [ssh-slaves:1.31.0](https://plugins.jenkins.io/ssh-slaves)
+    * [token-macro:2.10](https://plugins.jenkins.io/token-macro)
+    * [trilead-api:1.0.5](https://plugins.jenkins.io/trilead-api)
+    * [windows-slaves:1.5](https://plugins.jenkins.io/windows-slaves)
+
 
 ## 2.176.3-156
 * Updated plugins:
