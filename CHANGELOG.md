@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.190.1-158 (Not released yet)
+## 2.190.1-158
 * envconsul upgrade [#144](https://github.com/odavid/my-bloody-jenkins/pull/144)
 * Need to be able to set "directConnection" in K8s plugin to false [#145](https://github.com/odavid/my-bloody-jenkins/issues/145)
 
