@@ -60,7 +60,7 @@ docker-commons:1.15
 docker-java-api:3.0.14
 docker-plugin:1.1.8
 docker-workflow:1.21
-durable-task:1.31
+durable-task:1.30
 email-ext:2.68
 emailext-template:1.1
 embeddable-build-status:2.0.2
