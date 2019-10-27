@@ -738,7 +738,7 @@ clouds:
           - type: random
           - type: spread
             field: attribute:ecs.availability-zone
-            
+
         #########################
         ## FARGATE Only
         #########################
@@ -755,6 +755,8 @@ clouds:
 clouds:
   # Top level key -> name of the cloud
   kube-cloud:
+    ## default is false
+    directConnection: false
     # type is mandatory
     type: kubernetes
     # Kubernetes URL

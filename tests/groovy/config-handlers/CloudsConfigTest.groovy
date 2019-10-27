@@ -213,6 +213,7 @@ kube-cloud:
   retentionTimeout: 10
   readTimeout: 10
   containerCap: 10
+  directConnection: false
   defaultsProviderTemplate: defaultsProviderTemplate
   templates:
     - name: kube-cloud
@@ -290,6 +291,7 @@ kube-cloud:
         assert it.retentionTimeout == 10
         assert it.readTimeout == 10
         assert it.containerCap == 10
+        assert !it.directConnection
         assert it.defaultsProviderTemplate == 'defaultsProviderTemplate'
 
         def template = it.templates[0]
