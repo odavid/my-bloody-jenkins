@@ -1,5 +1,14 @@
 ## Changelog
 
+## 2.190.1-160 (Not released yet)
+* Updated plugins:
+    * [cucumber-reports:4.11.0](https://plugins.jenkins.io/cucumber-reports)
+    * [durable-task:1.33](https://plugins.jenkins.io/durable-task)
+    * [envinject-api:1.7](https://plugins.jenkins.io/envinject-api)
+    * [envinject:2.3.0](https://plugins.jenkins.io/envinject)
+    * [git-changelog:2.20](https://plugins.jenkins.io/git-changelog)
+    * [p4:1.10.6](https://plugins.jenkins.io/p4)
+
 ## 2.190.1-159
 * Docker inside has stopped working due to plugins upgrade [#147](https://github.com/odavid/my-bloody-jenkins/issues/147)
 
