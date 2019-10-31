@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.190.1-160 (Not released yet)
+## 2.190.1-160
 * Updated plugins:
     * [cucumber-reports:4.11.0](https://plugins.jenkins.io/cucumber-reports)
     * [durable-task:1.33](https://plugins.jenkins.io/durable-task)
