@@ -8,6 +8,7 @@
     * [envinject:2.3.0](https://plugins.jenkins.io/envinject)
     * [git-changelog:2.20](https://plugins.jenkins.io/git-changelog)
     * [p4:1.10.6](https://plugins.jenkins.io/p4)
+    * [kubernetes:1.21.1](https://plugins.jenkins.io/kubernetes)
 
 ## 2.190.1-159
 * Docker inside has stopped working due to plugins upgrade [#147](https://github.com/odavid/my-bloody-jenkins/issues/147)

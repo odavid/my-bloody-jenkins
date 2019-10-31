@@ -105,7 +105,7 @@ junit:1.28
 kubernetes-cli:1.7.0
 kubernetes-client-api:4.6.0-2
 kubernetes-credentials:0.4.1
-kubernetes:1.20.2
+kubernetes:1.21.1
 ldap:1.20
 lockable-resources:2.6
 mailer:1.29
