@@ -1,6 +1,7 @@
 ## Changelog
 
 ## 2.190.2-161 (Not released yet)
+* Fixed directConnection default value [#148](https://github.com/odavid/my-bloody-jenkins/pull/148)
 * [LTS-2.190.2](https://jenkins.io/changelog-stable/)
 * Updated plugins:
     * [embeddable-build-status:2.0.3](https://plugins.jenkins.io/embeddable-build-status)
