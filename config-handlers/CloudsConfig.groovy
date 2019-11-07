@@ -286,7 +286,7 @@ def kubernetesCloud(config){
         kubernetesCloud.serverCertificate = serverCertificate
         kubernetesCloud.maxRequestsPerHostStr = maxRequestsPerHost ? maxRequestsPerHost.toString() : null
         kubernetesCloud.defaultsProviderTemplate = defaultsProviderTemplate
-        kubernetesCloud.directConnection = directConnection
+        kubernetesCloud.directConnection = asBoolean(directConnection)
 
         return kubernetesCloud
     }
