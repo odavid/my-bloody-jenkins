@@ -2,6 +2,21 @@
 
 ## 2.190.2-161 (Not released yet)
 * [LTS-2.190.1](https://jenkins.io/changelog-stable/)
+* Updated plugins:
+    * [embeddable-build-status:2.0.3](https://plugins.jenkins.io/embeddable-build-status)
+    * [git-client:3.0.0](https://plugins.jenkins.io/git-client)
+    * [git:4.0.0](https://plugins.jenkins.io/git)
+    * [kubernetes-client-api:4.6.2-1](https://plugins.jenkins.io/kubernetes-client-api)
+    * [kubernetes:1.21.2](https://plugins.jenkins.io/kubernetes)
+    * [lockable-resources:2.7](https://plugins.jenkins.io/lockable-resources)
+    * [pipeline-aws:1.39](https://plugins.jenkins.io/pipeline-aws)
+    * [pipeline-model-api:1.4.0](https://plugins.jenkins.io/pipeline-model-api)
+    * [pipeline-model-definition:1.4.0](https://plugins.jenkins.io/pipeline-model-definition)
+    * [pipeline-model-extensions:1.4.0](https://plugins.jenkins.io/pipeline-model-extensions)
+    * [pipeline-stage-tags-metadata:1.4.0](https://plugins.jenkins.io/pipeline-stage-tags-metadata)
+    * [workflow-cps:2.75](https://plugins.jenkins.io/workflow-cps)
+    * [workflow-durable-task-step:2.35](https://plugins.jenkins.io/workflow-durable-task-step)
+    * [workflow-job:2.36](https://plugins.jenkins.io/workflow-job)
 
 ## 2.190.1-160
 * Updated plugins:
