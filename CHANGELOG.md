@@ -1,5 +1,15 @@
 ## Changelog
 
+
+## 2.190.2-162 (Not released yet)
+* Updated plugins:
+    * [aws-java-sdk:1.11.670](https://plugins.jenkins.io/aws-java-sdk)
+    * [cloudbees-bitbucket-branch-source:2.6.0](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
+    * [gatling:1.2.7](https://plugins.jenkins.io/gatling)
+    * [git-changelog:2.21](https://plugins.jenkins.io/git-changelog)
+    * [ldap:1.21](https://plugins.jenkins.io/ldap)
+    * [workflow-cps:2.76](https://plugins.jenkins.io/workflow-cps)
+
 ## 2.190.2-161
 * Fixed directConnection default value [#148](https://github.com/odavid/my-bloody-jenkins/pull/148)
 * [LTS-2.190.2](https://jenkins.io/changelog-stable/)

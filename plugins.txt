@@ -10,7 +10,7 @@ apache-httpcomponents-client-4-api:4.5.10-2.0
 artifactory:3.4.1
 authentication-tokens:1.3
 aws-credentials:1.28
-aws-java-sdk:1.11.650
+aws-java-sdk:1.11.670
 badge:1.8
 blueocean-autofavorite:1.2.4
 blueocean-bitbucket-pipeline:1.19.0
@@ -40,7 +40,7 @@ build-timeout:1.19
 build-user-vars-plugin:1.5
 buildtriggerbadge:2.10
 checkmarx:8.90.4
-cloudbees-bitbucket-branch-source:2.5.0
+cloudbees-bitbucket-branch-source:2.6.0
 cloudbees-folder:6.9
 cobertura:1.15
 code-coverage-api:1.1.1
@@ -70,8 +70,8 @@ extended-choice-parameter:0.78
 extensible-choice-parameter:1.6.0
 external-monitor-job:1.7
 favorite:2.3.2
-gatling:1.2.6
-git-changelog:2.20
+gatling:1.2.7
+git-changelog:2.21
 git-client:3.0.0
 git-parameter:0.9.11
 git-server:1.8
@@ -106,7 +106,7 @@ kubernetes-cli:1.7.0
 kubernetes-client-api:4.6.2-1
 kubernetes-credentials:0.4.1
 kubernetes:1.21.2
-ldap:1.20
+ldap:1.21
 lockable-resources:2.7
 mailer:1.29
 mapdb-api:1.0.9.0
@@ -169,7 +169,7 @@ workflow-aggregator:2.6
 workflow-api:2.37
 workflow-basic-steps:2.18
 workflow-cps-global-lib:2.15
-workflow-cps:2.75
+workflow-cps:2.76
 workflow-durable-task-step:2.35
 workflow-job:2.36
 workflow-multibranch:2.21
