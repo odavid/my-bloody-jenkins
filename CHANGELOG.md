@@ -1,7 +1,7 @@
 ## Changelog
 
 
-## 2.190.2-162 (Not released yet)
+## 2.190.2-162
 * Updated plugins:
     * [aws-java-sdk:1.11.670](https://plugins.jenkins.io/aws-java-sdk)
     * [cloudbees-bitbucket-branch-source:2.6.0](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
