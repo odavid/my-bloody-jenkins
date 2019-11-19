@@ -1,5 +1,11 @@
 ## Changelog
 
+## 2.190.2-163 (Not released yet)
+* Updated plugins:
+    * [blueocean:1.21.0](https://plugins.jenkins.io/blueocean)
+    * [configuration-as-code:1.33](https://plugins.jenkins.io/configuration-as-code)
+    * [kubernetes:1.21.3](https://plugins.jenkins.io/kubernetes)
+    * [script-security:1.67](https://plugins.jenkins.io/script-security)
 
 ## 2.190.2-162
 * Updated plugins:
