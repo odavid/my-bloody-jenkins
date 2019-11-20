@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.190.2-163 (Not released yet)
+## 2.190.2-163
 * Updated plugins:
     * [blueocean:1.21.0](https://plugins.jenkins.io/blueocean)
     * [configuration-as-code:1.33](https://plugins.jenkins.io/configuration-as-code)
