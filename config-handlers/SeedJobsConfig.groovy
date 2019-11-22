@@ -7,6 +7,9 @@ def asBoolean(value, defaultValue=false){
 
 def getOrCreateFolder(def parent, def name) {
     def folder
+    if (name == "") {
+        return null
+    }
     if (parent == null) {
         parent = jenkins.model.Jenkins.instance
         folder = jenkins.model.Jenkins.instance.getItem(name)
