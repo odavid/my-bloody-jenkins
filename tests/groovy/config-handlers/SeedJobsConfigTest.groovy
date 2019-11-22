@@ -118,7 +118,7 @@ SIMPLE_TEXT_LINE2
     def jobInsideFolder = jenkins.model.Jenkins.instance.getItemByFullName('/myfolder/my-seed-job-inside-folder')
     assert jobInsideFolder instanceof org.jenkinsci.plugins.workflow.job.WorkflowJob
 
-    def jobInsideSubFolder = jenkins.model.Jenkins.instance.getItemByFullName('/myfolder/mysubfolder/my-seed-job-inside-folder')
+    def jobInsideSubFolder = jenkins.model.Jenkins.instance.getItemByFullName('/myfolder/mysubfolder/my-seed-job-inside-subfolder')
     assert jobInsideSubFolder instanceof org.jenkinsci.plugins.workflow.job.WorkflowJob
 
 }
