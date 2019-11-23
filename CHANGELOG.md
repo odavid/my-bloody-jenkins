@@ -1,5 +1,8 @@
 ## Changelog
 
+## 2.190.2-164 (Not released yet)
+* Adding support creating jobs within subfolders [#149](https://github.com/odavid/my-bloody-jenkins/pull/149)
+
 ## 2.190.2-163
 * Updated plugins:
     * [blueocean:1.21.0](https://plugins.jenkins.io/blueocean)
