@@ -67,6 +67,12 @@ my-seed-job:
     branch: my-test-branch
     credentialsId: my-git-key
   pipeline: src/groovy/Jenkinsfile-config
+/myfolder/mysubfolder/my-seed-job-inside-subfolder:
+  source:
+    remote: git@github.com:odavid/my-bloody-jenkins.git
+    branch: my-test-branch
+    credentialsId: my-git-key
+  pipeline: src/groovy/Jenkinsfile-config
 
 """)
     configHandler.setup(config)
@@ -111,6 +117,9 @@ SIMPLE_TEXT_LINE2
 
     def jobInsideFolder = jenkins.model.Jenkins.instance.getItemByFullName('/myfolder/my-seed-job-inside-folder')
     assert jobInsideFolder instanceof org.jenkinsci.plugins.workflow.job.WorkflowJob
+
+    def jobInsideSubFolder = jenkins.model.Jenkins.instance.getItemByFullName('/myfolder/mysubfolder/my-seed-job-inside-subfolder')
+    assert jobInsideSubFolder instanceof org.jenkinsci.plugins.workflow.job.WorkflowJob
 
 }
 

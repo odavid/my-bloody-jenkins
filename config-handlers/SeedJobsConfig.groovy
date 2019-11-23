@@ -7,10 +7,14 @@ def asBoolean(value, defaultValue=false){
 
 def getOrCreateFolder(def parent, def name) {
     def folder
+    if (name == "") {
+        return null
+    }
     if (parent == null) {
+        parent = jenkins.model.Jenkins.instance
         folder = jenkins.model.Jenkins.instance.getItem(name)
     } else {
-        folder = parent.getItem(name)
+        folder = jenkins.model.Jenkins.instance.getItemByFullName("${parent.getName()}/${name}")
     }
 
     if (folder != null) {
@@ -20,7 +24,7 @@ def getOrCreateFolder(def parent, def name) {
             throw new Exception("${folder} already exists, but it's not a folder")
         }
     }
-    return jenkins.model.Jenkins.instance.createProject(com.cloudbees.hudson.plugins.folder.Folder, name)
+    return parent.createProject(com.cloudbees.hudson.plugins.folder.Folder, name)
 }
 
 
