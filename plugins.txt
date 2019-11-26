@@ -58,7 +58,7 @@ display-url-api:2.3.2
 docker-build-publish:1.3.2
 docker-commons:1.15
 docker-java-api:3.0.14
-docker-plugin:1.1.8
+docker-plugin:1.1.9
 docker-workflow:1.21
 durable-task:1.33
 email-ext:2.68
@@ -93,17 +93,17 @@ icon-shim:2.0.3
 ivy:2.1
 jackson2-api:2.10.0
 javadoc:1.5
-jdk-tool:1.3
+jdk-tool:1.4
 jenkins-design-language:1.21.0
 jira-steps:1.5.1
-jira:3.0.10
+jira:3.0.11
 job-dsl:1.76
 jquery-detached:1.2.1
 jquery:1.12.4-1
 jsch:0.1.55.1
 junit:1.28
 kubernetes-cli:1.7.0
-kubernetes-client-api:4.6.2-1
+kubernetes-client-api:4.6.3-1
 kubernetes-credentials:0.4.1
 kubernetes:1.21.3
 ldap:1.21
@@ -146,7 +146,7 @@ run-condition:1.2
 saml:1.1.4
 sbt:1.5
 scm-api:2.6.3
-script-security:1.67
+script-security:1.68
 simple-theme-plugin:0.5.1
 slack:2.34
 sonar:2.10
@@ -175,7 +175,7 @@ workflow-job:2.36
 workflow-multibranch:2.21
 workflow-remote-loader:1.5
 workflow-scm-step:2.9
-workflow-step-api:2.20
+workflow-step-api:2.21
 workflow-support:3.3
 ws-cleanup:0.37
 xvfb:1.1.3

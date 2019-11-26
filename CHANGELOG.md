@@ -2,6 +2,13 @@
 
 ## 2.190.2-164 (Not released yet)
 * Adding support creating jobs within subfolders [#149](https://github.com/odavid/my-bloody-jenkins/pull/149)
+* Updated plugins:
+  * [docker-plugin:1.1.9](https://plugins.jenkins.io/docker-plugin)
+  * [jdk-tool:1.4](https://plugins.jenkins.io/jdk-tool)
+  * [jira:3.0.11](https://plugins.jenkins.io/jira)
+  * [kubernetes-client-api:4.6.3-1](https://plugins.jenkins.io/kubernetes-client-api)
+  * [script-security:1.68](https://plugins.jenkins.io/script-security)
+  * [workflow-step-api:2.21](https://plugins.jenkins.io/workflow-step-api)
 
 ## 2.190.2-163
 * Updated plugins:
