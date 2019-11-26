@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.190.2-164 (Not released yet)
+## 2.190.2-164
 * Adding support creating jobs within subfolders [#149](https://github.com/odavid/my-bloody-jenkins/pull/149)
 * Updated plugins:
   * [docker-plugin:1.1.9](https://plugins.jenkins.io/docker-plugin)
