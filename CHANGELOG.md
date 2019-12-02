@@ -1,5 +1,16 @@
 ## Changelog
 
+## 2.190.2-165 (Not released yet)
+* Updated plugins:
+    * [anchore-container-scanner:1.0.21](https://plugins.jenkins.io/anchore-container-scanner)
+    * [command-launcher:1.4](https://plugins.jenkins.io/command-launcher)
+    * [configuration-as-code:1.34](https://plugins.jenkins.io/configuration-as-code)
+    * [http_request:1.8.24](https://plugins.jenkins.io/http_request)
+    * [jackson2-api:2.10.1](https://plugins.jenkins.io/jackson2-api)
+    * [p4:1.10.7](https://plugins.jenkins.io/p4)
+    * [pipeline-build-step:2.10](https://plugins.jenkins.io/pipeline-build-step)
+    * [workflow-cps:2.77](https://plugins.jenkins.io/workflow-cps)
+
 ## 2.190.2-164
 * Adding support creating jobs within subfolders [#149](https://github.com/odavid/my-bloody-jenkins/pull/149)
 * Updated plugins:
