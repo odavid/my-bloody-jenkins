@@ -22,15 +22,15 @@ my-lib-with-defaults:
     remote: git@github.com:odavid/my-bloody-jenkins.git
     credentialsId: my-git-key
 my-fsscm-lib:
+  defaultVersion: default    
+  implicit: true
   retriever:
     scm:
       \$class: hudson.plugins.filesystem_scm.FSSCM
       path: "//zzz/aaa"
       clearWorkspace: true
       copyHidden: false
-      filterSettings: null
-  defaultVersion: default    
-  implicit: true  
+      filterSettings: null    
 dynamic-scm-source:
   defaultVersion: p4-version
   implicit: true
@@ -80,7 +80,7 @@ dynamic-scm-source:
     assert (myLib.retriever.scm instanceof hudson.scm.SCM)
     assert myLib.retriever.scm.clearWorkspace
     assert myLib.retriever.scm.copyHidden == false
-    assert myLib.retriever.scm.path == '//xxx/yyy'
+    assert myLib.retriever.scm.path == '//zzz/aaa'
 }
 
 testLibraries()
