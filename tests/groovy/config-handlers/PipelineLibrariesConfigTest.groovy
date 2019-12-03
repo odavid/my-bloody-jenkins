@@ -23,14 +23,14 @@ my-lib-with-defaults:
     credentialsId: my-git-key
 my-fsscm-lib:
   retriever:
-      scm:
-        \$class: hudson.plugins.filesystem_scm.FSSCM
-        path: "//zzz/aaa"
-        clearWorkspace: true
-        copyHidden: false
-        filterSettings: null
-    defaultVersion: default    
-    implicit: true  
+    scm:
+      \$class: hudson.plugins.filesystem_scm.FSSCM
+      path: "//zzz/aaa"
+      clearWorkspace: true
+      copyHidden: false
+      filterSettings: null
+  defaultVersion: default    
+  implicit: true  
 dynamic-scm-source:
   defaultVersion: p4-version
   implicit: true
