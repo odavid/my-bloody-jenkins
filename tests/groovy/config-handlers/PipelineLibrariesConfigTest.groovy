@@ -21,6 +21,15 @@ my-lib-with-defaults:
   source:
     remote: git@github.com:odavid/my-bloody-jenkins.git
     credentialsId: my-git-key
+my-fsscm-lib:
+  retriever:
+      scm:
+        \$class: hudson.plugins.filesystem_scm.FSSCM
+        path: "//zzz/aaa"
+        clearWorkspace: true
+        copyHidden: false
+        filterSettings: null    
+    implicit: true  
 dynamic-scm-source:
   defaultVersion: p4-version
   implicit: true
@@ -62,6 +71,14 @@ dynamic-scm-source:
     assert myLib.implicit
     assert (myLib.retriever.scm instanceof org.jenkinsci.plugins.p4.scm.GlobalLibraryScmSource)
     assert myLib.retriever.scm.credential == 'p4-creds'
+    assert myLib.retriever.scm.path == '//xxx/yyy'
+
+    myLib = org.jenkinsci.plugins.workflow.libs.GlobalLibraries.get().libraries.find{ it.name == 'my-fsscm-lib'}
+    assert myLib.defaultVersion == ''
+    assert myLib.implicit
+    assert (myLib.retriever.scm instanceof hudson.scm.SCM)
+    assert myLib.retriever.scm.clearWorkspace
+    assert myLib.retriever.scm.copyHidden == false
     assert myLib.retriever.scm.path == '//xxx/yyy'
 }
 
