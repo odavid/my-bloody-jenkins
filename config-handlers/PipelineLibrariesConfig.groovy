@@ -1,4 +1,5 @@
 import org.jenkinsci.plugins.structs.describable.DescribableModel
+import org.jenkinsci.plugins.workflow.libs.*
 import jenkins.model.Jenkins
 
 def asInt(value, defaultValue=0){

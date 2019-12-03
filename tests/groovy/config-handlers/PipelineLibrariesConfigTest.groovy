@@ -28,7 +28,8 @@ my-fsscm-lib:
         path: "//zzz/aaa"
         clearWorkspace: true
         copyHidden: false
-        filterSettings: null    
+        filterSettings: null
+    defaultVersion: default    
     implicit: true  
 dynamic-scm-source:
   defaultVersion: p4-version
@@ -74,7 +75,7 @@ dynamic-scm-source:
     assert myLib.retriever.scm.path == '//xxx/yyy'
 
     myLib = org.jenkinsci.plugins.workflow.libs.GlobalLibraries.get().libraries.find{ it.name == 'my-fsscm-lib'}
-    assert myLib.defaultVersion == ''
+    assert myLib.defaultVersion == 'default'
     assert myLib.implicit
     assert (myLib.retriever.scm instanceof hudson.scm.SCM)
     assert myLib.retriever.scm.clearWorkspace
