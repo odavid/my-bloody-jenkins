@@ -1,4 +1,5 @@
 import org.jenkinsci.plugins.structs.describable.DescribableModel
+import org.jenkinsci.plugins.workflow.libs.*
 import jenkins.model.Jenkins
 
 def asInt(value, defaultValue=0){
@@ -62,9 +63,10 @@ def libraryConfig(config){
             scm = tryCreateDynamicSCMSource(name, scmConfig)
         }
         if(scm){
+            //support of legacySCM
+            def scmSource = scm instanceof hudson.scm.SCM ? new SCMRetriever(scm) : new SCMSourceRetriever(scm)
             def libraryConfiguration = new org.jenkinsci.plugins.workflow.libs.LibraryConfiguration(
-                name,
-                new org.jenkinsci.plugins.workflow.libs.SCMSourceRetriever(scm)
+                    name, scmSource
             )
             libraryConfiguration.defaultVersion = defaultVersion
             libraryConfiguration.implicit = asBoolean(implicit)

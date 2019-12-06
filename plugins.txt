@@ -70,6 +70,7 @@ extended-choice-parameter:0.78
 extensible-choice-parameter:1.6.0
 external-monitor-job:1.7
 favorite:2.3.2
+filesystem_scm:2.0
 gatling:1.2.7
 git-changelog:2.21
 git-client:3.0.0
