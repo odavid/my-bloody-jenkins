@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.190.2-165 (Not released yet)
+## 2.190.2-165
 * Updated plugins:
     * [anchore-container-scanner:1.0.21](https://plugins.jenkins.io/anchore-container-scanner)
     * [command-launcher:1.4](https://plugins.jenkins.io/command-launcher)
@@ -10,6 +10,7 @@
     * [p4:1.10.7](https://plugins.jenkins.io/p4)
     * [pipeline-build-step:2.10](https://plugins.jenkins.io/pipeline-build-step)
     * [workflow-cps:2.77](https://plugins.jenkins.io/workflow-cps)
+* Allow FSSCM for shared libraries [#150](https://github.com/odavid/my-bloody-jenkins/pull/150)
 
 ## 2.190.2-164
 * Adding support creating jobs within subfolders [#149](https://github.com/odavid/my-bloody-jenkins/pull/149)
