@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.190.3-166 (Not released yet)
+## 2.190.3-166
 * [LTS-2.190.3](https://jenkins.io/changelog-stable/)
 
 ## 2.190.2-165
