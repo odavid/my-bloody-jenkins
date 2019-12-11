@@ -1,5 +1,18 @@
 ## Changelog
 
+## 2.190.3-167 (Not released yet)
+* Updated plugins:
+    * [aws-java-sdk:1.11.687](https://plugins.jenkins.io/aws-java-sdk)
+    * [branch-api:2.5.5](https://plugins.jenkins.io/branch-api)
+    * [cloudbees-folder:6.10.0](https://plugins.jenkins.io/cloudbees-folder)
+    * [filesystem_scm:2.1](https://plugins.jenkins.io/filesystem_scm)
+    * [kubernetes:1.21.4](https://plugins.jenkins.io/kubernetes)
+    * [parameterized-trigger:2.36](https://plugins.jenkins.io/parameterized-trigger)
+    * [pipeline-model-definition:1.5.0](https://plugins.jenkins.io/pipeline-model-definition)
+    * [promoted-builds:3.5](https://plugins.jenkins.io/promoted-builds)
+    * [workflow-api:2.38](https://plugins.jenkins.io/workflow-api)
+    * [workflow-cps:2.78](https://plugins.jenkins.io/workflow-cps)
+
 ## 2.190.3-166
 * [LTS-2.190.3](https://jenkins.io/changelog-stable/)
 
