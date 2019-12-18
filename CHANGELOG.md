@@ -1,5 +1,16 @@
 ## Changelog
 
+## 2.190.3-168 (Not released yet)
+* Updated plugins:
+    * [cloudbees-folder:6.10.1](https://plugins.jenkins.io/cloudbees-folder)
+    * [code-coverage-api:1.1.2](https://plugins.jenkins.io/code-coverage-api)
+    * [git-server:1.9](https://plugins.jenkins.io/git-server)
+    * [gradle:1.35](https://plugins.jenkins.io/gradle)
+    * [kubernetes-client-api:4.6.4-1](https://plugins.jenkins.io/kubernetes-client-api)
+    * [kubernetes:1.22.1](https://plugins.jenkins.io/kubernetes)
+    * [slack:2.35](https://plugins.jenkins.io/slack)
+    * [subversion:2.13.0](https://plugins.jenkins.io/subversion)
+
 ## 2.190.3-167
 * Updated plugins:
     * [aws-java-sdk:1.11.687](https://plugins.jenkins.io/aws-java-sdk)

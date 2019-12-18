@@ -41,9 +41,9 @@ build-user-vars-plugin:1.5
 buildtriggerbadge:2.10
 checkmarx:8.90.4
 cloudbees-bitbucket-branch-source:2.6.0
-cloudbees-folder:6.10.0
+cloudbees-folder:6.10.1
 cobertura:1.15
-code-coverage-api:1.1.1
+code-coverage-api:1.1.2
 command-launcher:1.4
 conditional-buildstep:1.3.6
 config-file-provider:3.6.2
@@ -75,7 +75,7 @@ gatling:1.2.7
 git-changelog:2.21
 git-client:3.0.0
 git-parameter:0.9.11
-git-server:1.8
+git-server:1.9
 git:4.0.0
 github-api:1.95
 github-branch-source:2.5.8
@@ -83,7 +83,7 @@ github:1.29.5
 gitlab-plugin:1.5.13
 golang:1.2
 google-login:1.6
-gradle:1.34
+gradle:1.35
 groovy-postbuild:2.5
 h2-api:1.4.199
 handlebars:1.1.1
@@ -104,9 +104,9 @@ jquery:1.12.4-1
 jsch:0.1.55.1
 junit:1.28
 kubernetes-cli:1.7.0
-kubernetes-client-api:4.6.3-1
+kubernetes-client-api:4.6.4-1
 kubernetes-credentials:0.4.1
-kubernetes:1.21.4
+kubernetes:1.22.1
 ldap:1.21
 lockable-resources:2.7
 mailer:1.29
@@ -149,7 +149,7 @@ sbt:1.5
 scm-api:2.6.3
 script-security:1.68
 simple-theme-plugin:0.5.1
-slack:2.34
+slack:2.35
 sonar:2.10
 sse-gateway:1.20
 ssh-agent:1.17
@@ -157,7 +157,7 @@ ssh-credentials:1.18
 ssh-slaves:1.31.0
 stashNotifier:1.20
 structs:1.20
-subversion:2.12.2
+subversion:2.13.0
 swarm:3.17
 throttle-concurrents:2.0.1
 timestamper:1.10
