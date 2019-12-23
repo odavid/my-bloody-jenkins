@@ -2,6 +2,14 @@
 
 ## 2.204.1-169 (Not released yet)
 * [LTS-2.204.1](https://jenkins.io/changelog-stable/)
+* Updated plugins:
+    * [amazon-ecs:1.24](https://plugins.jenkins.io/amazon-ecs)
+    * [config-file-provider:3.6.3](https://plugins.jenkins.io/config-file-provider)
+    * [cucumber-reports:5.0.1](https://plugins.jenkins.io/cucumber-reports)
+    * [docker-commons:1.16](https://plugins.jenkins.io/docker-commons)
+    * [kubernetes-client-api:4.6.4-2](https://plugins.jenkins.io/kubernetes-client-api)
+    * [kubernetes:1.22.3](https://plugins.jenkins.io/kubernetes)
+    * [ws-cleanup:0.38](https://plugins.jenkins.io/ws-cleanup)
 
 ## 2.190.3-168
 * Updated plugins:
