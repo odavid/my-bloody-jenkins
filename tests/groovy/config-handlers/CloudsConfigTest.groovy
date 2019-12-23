@@ -211,7 +211,7 @@ kube-cloud:
   maxRequestsPerHost: 10
   connectTimeout: 10
   retentionTimeout: 10
-  readTimeout: 10
+  readTimeout: 20
   containerCap: 10
   directConnection: false
   defaultsProviderTemplate: defaultsProviderTemplate
@@ -289,7 +289,7 @@ kube-cloud:
         assert it.maxRequestsPerHostStr == '10'
         assert it.connectTimeout == 10
         assert it.retentionTimeout == 10
-        assert it.readTimeout == 10
+        assert it.readTimeout == 20
         assert it.containerCap == 10
         assert !it.directConnection
         assert it.defaultsProviderTemplate == 'defaultsProviderTemplate'
