@@ -4,6 +4,7 @@
 * Updated plugins:
     * [artifactory:3.5.0](https://plugins.jenkins.io/artifactory)
     * [windows-slaves:1.6](https://plugins.jenkins.io/windows-slaves)
+    * [bouncycastle-api:2.18](https://plugins.jenkins.io/bouncycastle-api)
 
 ## 2.204.1-169
 * [LTS-2.204.1](https://jenkins.io/changelog-stable/)

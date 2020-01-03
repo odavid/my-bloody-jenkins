@@ -34,7 +34,7 @@ blueocean-rest-impl:1.21.0
 blueocean-rest:1.21.0
 blueocean-web:1.21.0
 blueocean:1.21.0
-bouncycastle-api:2.17
+bouncycastle-api:2.18
 branch-api:2.5.5
 build-timeout:1.19
 build-user-vars-plugin:1.5
