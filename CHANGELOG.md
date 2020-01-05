@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.204.1-170 (Not released yet)
+## 2.204.1-170
 * Updated plugins:
     * [artifactory:3.5.0](https://plugins.jenkins.io/artifactory)
     * [windows-slaves:1.6](https://plugins.jenkins.io/windows-slaves)
