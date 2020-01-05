@@ -83,7 +83,7 @@ github:1.29.5
 gitlab-plugin:1.5.13
 golang:1.2
 google-login:1.6
-gradle:1.35
+gradle:1.36
 groovy-postbuild:2.5
 h2-api:1.4.199
 handlebars:1.1.1
@@ -124,7 +124,7 @@ pam-auth:1.6
 parallel-test-executor:1.12
 parameterized-trigger:2.36
 pipeline-aws:1.39
-pipeline-build-step:2.10
+pipeline-build-step:2.11
 pipeline-graph-analysis:1.10
 pipeline-input-step:2.11
 pipeline-maven:3.8.2
@@ -168,7 +168,7 @@ whitesource:19.1.1
 windows-slaves:1.6
 workflow-aggregator:2.6
 workflow-api:2.38
-workflow-basic-steps:2.18
+workflow-basic-steps:2.19
 workflow-cps-global-lib:2.15
 workflow-cps:2.78
 workflow-durable-task-step:2.35
@@ -176,7 +176,7 @@ workflow-job:2.36
 workflow-multibranch:2.21
 workflow-remote-loader:1.5
 workflow-scm-step:2.9
-workflow-step-api:2.21
+workflow-step-api:2.22
 workflow-support:3.3
 ws-cleanup:0.38
 xvfb:1.1.3

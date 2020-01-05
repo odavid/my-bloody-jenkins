@@ -5,6 +5,10 @@
     * [artifactory:3.5.0](https://plugins.jenkins.io/artifactory)
     * [windows-slaves:1.6](https://plugins.jenkins.io/windows-slaves)
     * [bouncycastle-api:2.18](https://plugins.jenkins.io/bouncycastle-api)
+    * [gradle:1.36](https://plugins.jenkins.io/gradle)
+    * [pipeline-build-step:2.11](https://plugins.jenkins.io/pipeline-build-step)
+    * [workflow-basic-steps:2.19](https://plugins.jenkins.io/workflow-basic-steps)
+    * [workflow-step-api:2.22](https://plugins.jenkins.io/workflow-step-api)
 
 ## 2.204.1-169
 * [LTS-2.204.1](https://jenkins.io/changelog-stable/)
