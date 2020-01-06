@@ -111,6 +111,15 @@ if(!new File(configFileName).exists()) {
         }
         return
     }
+
+    //Need to setup default security options if empty, so config handler will start.
+    if (!jenkinsConfig.security?.securityOptions){
+        if(!jenkinsConfig.security){
+            jenkinsConfig.security = [:]
+        }
+        jenkinsConfig.security.securityOptions = [:]
+    }
+
     // TODO: admin user should be global. Make it more generic....
     jenkinsConfig.security?.adminUser = adminUser
 
