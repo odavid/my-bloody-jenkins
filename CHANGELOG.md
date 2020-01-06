@@ -1,5 +1,8 @@
 ## Changelog
 
+## 2.204.1-171
+* Set an empty security/securityOptions to activate default security options [#151](https://github.com/odavid/my-bloody-jenkins/issues/151)
+
 ## 2.204.1-170
 * Updated plugins:
     * [artifactory:3.5.0](https://plugins.jenkins.io/artifactory)
