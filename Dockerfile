@@ -18,14 +18,14 @@ USER root
 RUN \
      # alpine - Install pip and shadow for usermod
      if [ -f /etc/alpine-release ] ; then \
-          apk add --no-cache shadow py-setuptools && \
-          easy_install-2.7 pip==19.1 \
+          apk add --no-cache shadow python3 py3-setuptools && \
+          easy_install-3.6 pip==19.1 \
           ; \
      # debian - Install pip
      elif [ -f /etc/debian_version ] ; then \
           apt-get update -y && \
-          apt-get install -y --no-install-recommends python-setuptools && \
-          easy_install pip==19.1 && \
+          apt-get install -y --no-install-recommends python3-setuptools && \
+          easy_install3 pip==19.1 && \
           rm -rf /var/lib/apt/lists/* \
           ; \
      fi
