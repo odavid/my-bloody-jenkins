@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 from __future__ import print_function
 import argparse
 import os
@@ -46,7 +46,7 @@ def load_env_vars_from_dir(directory):
                 name = os.path.basename(filename)
                 prefix = os.path.basename(os.path.dirname(filename))
                 env_var_name = ('%s_%s' % (prefix, name)).upper().replace('.', '_').replace('-', '_')
-                with open(filename, 'rb') as f:
+                with open(filename, 'r') as f:
                     value = f.read()
                     envvars[env_var_name] = value
     return envvars

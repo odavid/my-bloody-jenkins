@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 from __future__ import print_function
 import argparse
 import collections
@@ -9,8 +9,10 @@ import os
 import requests
 import yaml
 from shutil import copyfile
-import StringIO
-
+try:
+    from StringIO import StringIO ## for Python 2
+except ImportError:
+    from io import StringIO ## for Python 3
 
 def merge_dict(source, target):
     source = source.copy()
@@ -116,7 +118,7 @@ def main():
         parent_dir = os.path.dirname(out)
         if parent_dir and not os.path.isdir(parent_dir):
             os.makedirs(parent_dir)
-        with open(out, 'wb') as f:
+        with open(out, 'w') as f:
             if config:
                 yaml.safe_dump(config, stream=f, default_flow_style=False)
 
