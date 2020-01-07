@@ -1,5 +1,14 @@
 ## Changelog
 
+## 2.204.1-172 (Not released yet)
+* Updated plugins:
+    * [anchore-container-scanner:1.0.22](https://plugins.jenkins.io/anchore-container-scanner)
+    * [aws-java-sdk:1.11.700](https://plugins.jenkins.io/aws-java-sdk)
+    * [jackson2-api:2.10.2](https://plugins.jenkins.io/jackson2-api)
+    * [kubernetes:1.22.4](https://plugins.jenkins.io/kubernetes)
+    * [sonar:2.11](https://plugins.jenkins.io/sonar)
+* Move scripts to python3 [#152](https://github.com/odavid/my-bloody-jenkins/issues/152)
+
 ## 2.204.1-171
 * Set an empty security/securityOptions to activate default security options [#151](https://github.com/odavid/my-bloody-jenkins/issues/151)
 
