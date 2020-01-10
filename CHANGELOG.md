@@ -5,8 +5,10 @@
     * [anchore-container-scanner:1.0.22](https://plugins.jenkins.io/anchore-container-scanner)
     * [aws-java-sdk:1.11.700](https://plugins.jenkins.io/aws-java-sdk)
     * [jackson2-api:2.10.2](https://plugins.jenkins.io/jackson2-api)
-    * [kubernetes:1.22.4](https://plugins.jenkins.io/kubernetes)
     * [sonar:2.11](https://plugins.jenkins.io/sonar)
+    * [kubernetes-credentials:0.5.0](https://plugins.jenkins.io/kubernetes-credentials)
+    * [kubernetes:1.22.5](https://plugins.jenkins.io/kubernetes)
+    * [p4:1.10.9](https://plugins.jenkins.io/p4)
 * Move scripts to python3 [#152](https://github.com/odavid/my-bloody-jenkins/issues/152)
 
 ## 2.204.1-171

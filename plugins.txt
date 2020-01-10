@@ -105,8 +105,8 @@ jsch:0.1.55.1
 junit:1.28
 kubernetes-cli:1.7.0
 kubernetes-client-api:4.6.4-2
-kubernetes-credentials:0.4.1
-kubernetes:1.22.4
+kubernetes-credentials:0.5.0
+kubernetes:1.22.5
 ldap:1.21
 lockable-resources:2.7
 mailer:1.29
@@ -119,7 +119,7 @@ mercurial:2.8
 metrics:4.0.2.6
 momentjs:1.1.1
 nodejs:1.3.4
-p4:1.10.7
+p4:1.10.9
 pam-auth:1.6
 parallel-test-executor:1.12
 parameterized-trigger:2.36
