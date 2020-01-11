@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.204.1-172 (Not released yet)
+## 2.204.1-172
 * Updated plugins:
     * [anchore-container-scanner:1.0.22](https://plugins.jenkins.io/anchore-container-scanner)
     * [aws-java-sdk:1.11.700](https://plugins.jenkins.io/aws-java-sdk)
