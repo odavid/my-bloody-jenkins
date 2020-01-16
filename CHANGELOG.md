@@ -1,5 +1,22 @@
 ## Changelog
 
+
+## 2.204.1-173 (Not released yet)
+* Updated plugins:
+    * [amazon-ecs:1.26](https://plugins.jenkins.io/amazon-ecs)
+    * [ant:1.11](https://plugins.jenkins.io/ant)
+    * [antisamy-markup-formatter:1.8](https://plugins.jenkins.io/antisamy-markup-formatter)
+    * [cloudbees-folder:6.11](https://plugins.jenkins.io/cloudbees-folder)
+    * [configuration-as-code:1.35](https://plugins.jenkins.io/configuration-as-code)
+    * [credentials:2.3.1](https://plugins.jenkins.io/credentials)
+    * [kubernetes-credentials:0.6.0](https://plugins.jenkins.io/kubernetes-credentials)
+    * [kubernetes:1.23.0](https://plugins.jenkins.io/kubernetes)
+    * [mailer:1.30](https://plugins.jenkins.io/mailer)
+    * [saml:1.1.5](https://plugins.jenkins.io/saml)
+    * [ssh-agent:1.19](https://plugins.jenkins.io/ssh-agent)
+    * [ssh-credentials:1.18.1](https://plugins.jenkins.io/ssh-credentials)
+    * [workflow-support:3.4](https://plugins.jenkins.io/workflow-support)
+
 ## 2.204.1-172
 * Updated plugins:
     * [anchore-container-scanner:1.0.22](https://plugins.jenkins.io/anchore-container-scanner)
