@@ -714,6 +714,8 @@ clouds:
           - ecs-slave
         # The directory within the container that is used as root filesystem
         remoteFs: /home/jenkins
+        # Indicates whether to append a unique agent ID (the agent name) at the end of the remoteFSRoot path. false by default
+        uniqueRemoteFSRoot: false
         # JVM arguments to pass to the jnlp jar
         jvmArgs: -Xmx1g
         # ECS memory reservation
