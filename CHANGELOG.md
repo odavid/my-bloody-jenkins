@@ -1,7 +1,7 @@
 ## Changelog
 
 
-## 2.204.1-173 (Not released yet)
+## 2.204.1-173
 * Updated plugins:
     * [amazon-ecs:1.26](https://plugins.jenkins.io/amazon-ecs)
     * [ant:1.11](https://plugins.jenkins.io/ant)
