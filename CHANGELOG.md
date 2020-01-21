@@ -1,5 +1,11 @@
 ## Changelog
 
+## 2.204.1-174 (Not released yet)
+* Updated plugins:
+    * [git-client:3.1.1](https://plugins.jenkins.io/git-client)
+    * [git:4.1.1](https://plugins.jenkins.io/git)
+    * [kubernetes:1.23.1](https://plugins.jenkins.io/kubernetes)
+    * [pipeline-utility-steps:2.4.0](https://plugins.jenkins.io/pipeline-utility-steps)
 
 ## 2.204.1-173
 * Updated plugins:
