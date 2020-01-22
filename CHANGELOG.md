@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.204.1-174 (Not released yet)
+## 2.204.1-174
 * Updated plugins:
     * [git-client:3.1.1](https://plugins.jenkins.io/git-client)
     * [git:4.1.1](https://plugins.jenkins.io/git)
