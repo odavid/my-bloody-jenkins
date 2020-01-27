@@ -1,5 +1,10 @@
 ## Changelog
 
+## 2.204.1-175 (Not released yet)
+* Updated plugins:
+    * [cucumber-reports:5.0.2](https://plugins.jenkins.io/cucumber-reports)
+    * [workflow-scm-step:2.10](https://plugins.jenkins.io/workflow-scm-step)
+
 ## 2.204.1-174
 * Updated plugins:
     * [git-client:3.1.1](https://plugins.jenkins.io/git-client)
