@@ -364,7 +364,6 @@ security:
     jnlpProtocols: # by default only JNLP4 is enabled
       - JNLP
       - JNLP2
-      - JNLP3
       - JNLP4
 
     ## MarkupFormatter plainText
