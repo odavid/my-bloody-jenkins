@@ -4,6 +4,18 @@
 * Updated plugins:
     * [cucumber-reports:5.0.2](https://plugins.jenkins.io/cucumber-reports)
     * [workflow-scm-step:2.10](https://plugins.jenkins.io/workflow-scm-step)
+    * [blueocean:1.22.0](https://plugins.jenkins.io/blueocean)
+    * [cloudbees-bitbucket-branch-source:2.7.0](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
+    * [code-coverage-api:1.1.3](https://plugins.jenkins.io/code-coverage-api)
+    * [github-api:1.106](https://plugins.jenkins.io/github-api)
+    * [jira-steps:1.5.3](https://plugins.jenkins.io/jira-steps)
+    * [jira:3.0.12](https://plugins.jenkins.io/jira)
+    * [jsch:0.1.55.2](https://plugins.jenkins.io/jsch)
+    * [pipeline-model-api:1.5.1](https://plugins.jenkins.io/pipeline-model-api)
+    * [plain-credentials:1.7](https://plugins.jenkins.io/plain-credentials)
+    * [script-security:1.69](https://plugins.jenkins.io/script-security)
+
+
 
 ## 2.204.1-174
 * Updated plugins:
