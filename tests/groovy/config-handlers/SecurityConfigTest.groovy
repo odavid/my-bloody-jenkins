@@ -159,7 +159,6 @@ sshdEnabled: true
 jnlpProtocols:
   - JNLP
   - JNLP2
-  - JNLP3
   - JNLP4
 """
     )
