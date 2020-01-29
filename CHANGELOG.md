@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.204.2-176 (Not released yet)
+## 2.204.2-176
 * [LTS-2.204.2](https://jenkins.io/changelog-stable/)
 
 ## 2.204.1-175
