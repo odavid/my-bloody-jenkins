@@ -1,5 +1,15 @@
 ## Changelog
 
+## 2.204.2-177 (Not released yet)
+* Updated plugins:
+    * [cloudbees-folder:6.11.1](https://plugins.jenkins.io/cloudbees-folder)
+    * [kubernetes-cli:1.8.0](https://plugins.jenkins.io/kubernetes-cli)
+    * [kubernetes:1.23.2](https://plugins.jenkins.io/kubernetes)
+    * [pipeline-rest-api:2.13](https://plugins.jenkins.io/pipeline-rest-api)
+    * [pipeline-stage-view:2.13](https://plugins.jenkins.io/pipeline-stage-view)
+    * [pipeline-utility-steps:2.5.0](https://plugins.jenkins.io/pipeline-utility-steps)
+    * [ssh-slaves:1.31.1](https://plugins.jenkins.io/ssh-slaves)
+
 ## 2.204.2-176
 * [LTS-2.204.2](https://jenkins.io/changelog-stable/)
 
