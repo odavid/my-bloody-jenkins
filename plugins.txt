@@ -148,8 +148,8 @@ saml:1.1.5
 sbt:1.5
 scm-api:2.6.3
 script-security:1.69
-simple-theme-plugin:0.5.1
-slack:2.35
+simple-theme-plugin:0.6
+slack:2.36
 sonar:2.11
 sse-gateway:1.20
 ssh-agent:1.19
