@@ -11,7 +11,8 @@
     * [ssh-slaves:1.31.1](https://plugins.jenkins.io/ssh-slaves)
     * [simple-theme-plugin:0.6](https://plugins.jenkins.io/simple-theme-plugin)
     * [slack:2.36](https://plugins.jenkins.io/slack)
-
+    * [github-branch-source:2.6.0](https://plugins.jenkins.io/github-branch-source)
+    
 ## 2.204.2-176
 * [LTS-2.204.2](https://jenkins.io/changelog-stable/)
 

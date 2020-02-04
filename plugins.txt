@@ -78,7 +78,7 @@ git-parameter:0.9.11
 git-server:1.9
 git:4.1.1
 github-api:1.106
-github-branch-source:2.5.8
+github-branch-source:2.6.0
 github:1.29.5
 gitlab-plugin:1.5.13
 golang:1.2
