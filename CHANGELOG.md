@@ -1,5 +1,10 @@
 ## Changelog
 
+## 2.204.2-178 (Not released yet)
+* Updated plugins:
+    * [kubernetes-credentials:0.6.2](https://plugins.jenkins.io/kubernetes-credentials)
+    * [p4:1.10.10](https://plugins.jenkins.io/p4)
+
 ## 2.204.2-177
 * Updated plugins:
     * [cloudbees-folder:6.11.1](https://plugins.jenkins.io/cloudbees-folder)
