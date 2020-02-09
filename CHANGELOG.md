@@ -4,8 +4,8 @@
 * Updated plugins:
     * [kubernetes-credentials:0.6.2](https://plugins.jenkins.io/kubernetes-credentials)
     * [p4:1.10.10](https://plugins.jenkins.io/p4)
-    * [kubernetes-cli:1.8.1](https://plugins.jenkins.io/kubernetes-cli)
-
+    * [kubernetes-cli:1.8.2](https://plugins.jenkins.io/kubernetes-cli)
+    
 ## 2.204.2-177
 * Updated plugins:
     * [cloudbees-folder:6.11.1](https://plugins.jenkins.io/cloudbees-folder)

@@ -103,7 +103,7 @@ jquery-detached:1.2.1
 jquery:1.12.4-1
 jsch:0.1.55.2
 junit:1.28
-kubernetes-cli:1.8.1
+kubernetes-cli:1.8.2
 kubernetes-client-api:4.6.4-2
 kubernetes-credentials:0.6.2
 kubernetes:1.23.2
