@@ -74,7 +74,7 @@ filesystem_scm:2.1
 gatling:1.2.7
 git-changelog:2.21
 git-client:3.1.1
-git-parameter:0.9.11
+git-parameter:0.9.12
 git-server:1.9
 git:4.1.1
 github-api:1.106
@@ -106,7 +106,7 @@ junit:1.28
 kubernetes-cli:1.8.2
 kubernetes-client-api:4.6.4-2
 kubernetes-credentials:0.6.2
-kubernetes:1.23.2
+kubernetes:1.23.3
 ldap:1.21
 lockable-resources:2.7
 mailer:1.30
@@ -147,7 +147,7 @@ run-condition:1.2
 saml:1.1.5
 sbt:1.5
 scm-api:2.6.3
-script-security:1.69
+script-security:1.70
 simple-theme-plugin:0.6
 slack:2.36
 sonar:2.11
@@ -157,7 +157,7 @@ ssh-credentials:1.18.1
 ssh-slaves:1.31.1
 stashNotifier:1.20
 structs:1.20
-subversion:2.13.0
+subversion:2.13.1
 swarm:3.17
 throttle-concurrents:2.0.1
 timestamper:1.10
@@ -170,7 +170,7 @@ workflow-aggregator:2.6
 workflow-api:2.39
 workflow-basic-steps:2.19
 workflow-cps-global-lib:2.15
-workflow-cps:2.78
+workflow-cps:2.79
 workflow-durable-task-step:2.35
 workflow-job:2.36
 workflow-multibranch:2.21

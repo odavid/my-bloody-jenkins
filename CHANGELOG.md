@@ -5,7 +5,12 @@
     * [kubernetes-credentials:0.6.2](https://plugins.jenkins.io/kubernetes-credentials)
     * [p4:1.10.10](https://plugins.jenkins.io/p4)
     * [kubernetes-cli:1.8.2](https://plugins.jenkins.io/kubernetes-cli)
-    
+    * [git-parameter:0.9.12](https://plugins.jenkins.io/git-parameter)
+    * [kubernetes:1.23.3](https://plugins.jenkins.io/kubernetes)
+    * [script-security:1.70](https://plugins.jenkins.io/script-security)
+    * [subversion:2.13.1](https://plugins.jenkins.io/subversion)
+    * [workflow-cps:2.79](https://plugins.jenkins.io/workflow-cps)
+
 ## 2.204.2-177
 * Updated plugins:
     * [cloudbees-folder:6.11.1](https://plugins.jenkins.io/cloudbees-folder)
