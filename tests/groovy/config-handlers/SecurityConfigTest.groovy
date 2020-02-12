@@ -192,6 +192,20 @@ adminPassword: admin
  }
 
 
+ def testJenkinsDatabaseUsers(){
+    def config = new Yaml().load("""
+adminUser: admin
+adminPassword: admin
+users:
+  - id: user1
+    password: user1pass
+"""
+    )
+    def realm = configHandler.setupJenkinsDatabase(config)
+    assert (realm instanceof hudson.security.HudsonPrivateSecurityRealm)
+    assert hudson.model.User.get('user1', false) != null
+ }
+
 def testPlainTextMarkupFormatter(){
     def config = new Yaml().load("""
 markupFormatter: plainText
@@ -240,6 +254,7 @@ testActiveDirectory()
 testAuthorizationStrategy()
 testSecurityOptions()
 testJenkinsDatabase()
+testJenkinsDatabaseUsers()
 testPlainTextMarkupFormatter()
 testSafeHtmlMarkupFormatter()
 testRawHtmlMarkupFormatter()

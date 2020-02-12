@@ -84,6 +84,9 @@ def setupJenkinsDatabase(config){
     def securityRealm = (currnetRealm instanceof HudsonPrivateSecurityRealm) ? currnetRealm : new HudsonPrivateSecurityRealm(false)
     config.with{
         securityRealm.createAccount(adminUser, adminPassword)
+        users?.each{ user ->
+            securityRealm.createAccount(user.id, user.password)
+        }
     }
     return securityRealm
 }
