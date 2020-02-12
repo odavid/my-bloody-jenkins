@@ -247,6 +247,12 @@ Responsible for:
 security:
     realm: jenkins_database
     adminPassword: S3cr3t
+    # When using jenkins_database, you can also create user accounts from YAML configuration
+    users:
+      - id: user1
+        password: passwordOf-user#1
+      - id: user2
+        password: other-password#2
 ```
 
 ```yaml
