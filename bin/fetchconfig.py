@@ -8,11 +8,8 @@ import glob
 import os
 import requests
 import yaml
+import io
 from shutil import copyfile
-try:
-    from StringIO import StringIO ## for Python 2
-except ImportError:
-    from io import StringIO ## for Python 3
 
 def merge_dict(source, target):
     source = source.copy()
@@ -42,7 +39,7 @@ def fetch_s3(source):
     bucket_name = source.split('/')[0]
     s3_key = '/'.join(source.split('/')[1:])
     try:
-        outbuff = StringIO.StringIO()
+        outbuff = io.BytesIO()
         s3.Bucket(bucket_name).download_fileobj(s3_key, outbuff)
         data = outbuff.getvalue()
         configs.append(dict(src=source, contents=data))
