@@ -773,10 +773,12 @@ clouds:
         # Your pipeline jobs will need to use node(label){} in order to use this slave template
         labels:
           - kubeslave
+
+        # If you want to run this slave on a specific node based on k8s node labels
+        nodeSelector: 'key=value'
+
         # The directory within the container that is used as root filesystem
         remoteFs: /home/jenkins
-        # JVM arguments to pass to the jnlp jar
-        jvmArgs: -Xmx1g
         # Volume mappings
         # If your slave need to build docker images, then map the host docker socket
         # to the container docker socket. Also make sure the user within the container
