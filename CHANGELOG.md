@@ -1,6 +1,7 @@
 ## Changelog
 
 ## 2.204.2-178 (Not released yet)
+* Support for user accounts in jenkins_database realm [#155](https://github.com/odavid/my-bloody-jenkins/issues/155)
 * Updated plugins:
     * [kubernetes-credentials:0.6.2](https://plugins.jenkins.io/kubernetes-credentials)
     * [p4:1.10.10](https://plugins.jenkins.io/p4)
