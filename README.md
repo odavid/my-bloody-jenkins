@@ -783,6 +783,13 @@ clouds:
         # If you want to run this slave on a specific node based on k8s node labels
         nodeSelector: 'key=value'
 
+
+        # If you want to control the agent container resources
+        resourceRequestMemory: 1024Mi
+        resourceRequestCpu: 512m
+        resourceLimitCpu: 1024m
+        resourceLimitMemory: 512Mi
+
         # The directory within the container that is used as root filesystem
         remoteFs: /home/jenkins
         # Volume mappings
