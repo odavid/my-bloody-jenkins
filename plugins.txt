@@ -18,7 +18,7 @@ blueocean-commons:1.22.0
 blueocean-config:1.22.0
 blueocean-core-js:1.22.0
 blueocean-dashboard:1.22.0
-blueocean-display-url:2.3.0
+blueocean-display-url:2.3.1
 blueocean-events:1.22.0
 blueocean-executor-info:1.22.0
 blueocean-git-pipeline:1.22.0
@@ -36,7 +36,7 @@ blueocean-web:1.22.0
 blueocean:1.22.0
 bouncycastle-api:2.18
 branch-api:2.5.5
-build-timeout:1.19
+build-timeout:1.19.1
 build-user-vars-plugin:1.5
 buildtriggerbadge:2.10
 checkmarx:8.90.4
@@ -151,14 +151,14 @@ script-security:1.70
 simple-theme-plugin:0.6
 slack:2.36
 sonar:2.11
-sse-gateway:1.20
+sse-gateway:1.21
 ssh-agent:1.19
 ssh-credentials:1.18.1
 ssh-slaves:1.31.1
 stashNotifier:1.20
 structs:1.20
 subversion:2.13.1
-swarm:3.17
+swarm:3.18
 throttle-concurrents:2.0.1
 timestamper:1.10
 token-macro:2.10
@@ -170,7 +170,7 @@ workflow-aggregator:2.6
 workflow-api:2.39
 workflow-basic-steps:2.19
 workflow-cps-global-lib:2.15
-workflow-cps:2.79
+workflow-cps:2.80
 workflow-durable-task-step:2.35
 workflow-job:2.36
 workflow-multibranch:2.21

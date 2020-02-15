@@ -1,5 +1,13 @@
 ## Changelog
 
+## 2.204.2-179 (Not released yet)
+* Updated plugins:
+    * [blueocean-display-url:2.3.1](https://plugins.jenkins.io/blueocean-display-url)
+    * [build-timeout:1.19.1](https://plugins.jenkins.io/build-timeout)
+    * [sse-gateway:1.21](https://plugins.jenkins.io/sse-gateway)
+    * [swarm:3.18](https://plugins.jenkins.io/swarm)
+    * [workflow-cps:2.80](https://plugins.jenkins.io/workflow-cps)
+
 ## 2.204.2-178
 * Fix S3 handler in fetchconfig.py [#154](https://github.com/odavid/my-bloody-jenkins/issues/154)
 * Support for user accounts in jenkins_database realm [#155](https://github.com/odavid/my-bloody-jenkins/issues/155)
