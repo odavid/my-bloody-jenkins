@@ -7,6 +7,8 @@
     * [sse-gateway:1.21](https://plugins.jenkins.io/sse-gateway)
     * [swarm:3.18](https://plugins.jenkins.io/swarm)
     * [workflow-cps:2.80](https://plugins.jenkins.io/workflow-cps)
+    * [aws-java-sdk:1.11.723](https://plugins.jenkins.io/aws-java-sdk)
+    * [kubernetes:1.23.4](https://plugins.jenkins.io/kubernetes)
 
 ## 2.204.2-178
 * Fix S3 handler in fetchconfig.py [#154](https://github.com/odavid/my-bloody-jenkins/issues/154)
