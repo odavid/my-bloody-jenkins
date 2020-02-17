@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.204.2-179 (Not released yet)
+## 2.204.2-179
 * Updated plugins:
     * [blueocean-display-url:2.3.1](https://plugins.jenkins.io/blueocean-display-url)
     * [build-timeout:1.19.1](https://plugins.jenkins.io/build-timeout)
