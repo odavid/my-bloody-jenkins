@@ -779,6 +779,9 @@ clouds:
         # Your pipeline jobs will need to use node(label){} in order to use this slave template
         labels:
           - kubeslave
+      
+        # Time in minutes to retain agent when idle
+        idleMinutes: 10
 
         # If you want to run this slave on a specific node based on k8s node labels
         nodeSelector: 'key=value'
