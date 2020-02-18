@@ -236,6 +236,7 @@ kube-cloud:
       labels:
         - generic
         - kubernetes
+      idleMinutes: 10
       image: odavid/jenkins-jnlp-template:latest
       command: /run/me
       args: x y z
@@ -311,6 +312,7 @@ kube-cloud:
         assert template.instanceCapStr == '10'
         assert template.imagePullSecrets.collect{it.name} == ['xxx', 'yyy']
         assert template.label == 'generic kubernetes'
+        assert template.idleMinutes == 10
         assert template.image == 'odavid/jenkins-jnlp-template:latest'
         assert template.command == '/run/me'
         assert template.args == 'x y z'
