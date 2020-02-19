@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.204.2-178 (Not released yet)
+## 2.204.2-180
 * Time in minutes to retain agent when idle for kubernetes[#158](https://github.com/odavid/my-bloody-jenkins/pull/158)
 * Updated plugins:
     * [credentials-binding:1.21](https://plugins.jenkins.io/credentials-binding)
