@@ -230,13 +230,13 @@ kube-cloud:
         z: z
       slaveConnectTimeout: 60
       instanceCap: 10
+      idleMinutes: 10
       imagePullSecrets:
         - xxx
         - yyy
       labels:
         - generic
         - kubernetes
-      idleMinutes: 10
       image: odavid/jenkins-jnlp-template:latest
       command: /run/me
       args: x y z
