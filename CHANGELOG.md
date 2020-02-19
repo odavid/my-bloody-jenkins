@@ -1,5 +1,14 @@
 ## Changelog
 
+## 2.204.2-178 (Not released yet)
+* Time in minutes to retain agent when idle for kubernetes[#158](https://github.com/odavid/my-bloody-jenkins/pull/158)
+* Updated plugins:
+    * [credentials-binding:1.21](https://plugins.jenkins.io/credentials-binding)
+    * [kubernetes:1.24.0](https://plugins.jenkins.io/kubernetes)
+    * [throttle-concurrents:2.0.2](https://plugins.jenkins.io/throttle-concurrents)
+    * [timestamper:1.11](https://plugins.jenkins.io/timestamper)
+    * [token-macro:2.11](https://plugins.jenkins.io/token-macro)
+
 ## 2.204.2-179
 * Updated plugins:
     * [blueocean-display-url:2.3.1](https://plugins.jenkins.io/blueocean-display-url)
