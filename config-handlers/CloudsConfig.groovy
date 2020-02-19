@@ -252,6 +252,7 @@ def kubernetesCloud(config){
                 podTemplate.containers << containerTemplate
                 podTemplate.namespace = temp.namespace
                 podTemplate.label = temp.labels?.join(' ')
+                podTemplate.idleMinutes = asInt(temp.idleMinutes, 0)
                 podTemplate.nodeUsageMode = temp.nodeUsageMode ? Node.Mode.valueOf(temp.nodeUsageMode) : Node.Mode.EXCLUSIVE
                 podTemplate.inheritFrom = temp.inheritFrom
                 podTemplate.nodeSelector = temp.nodeSelector
