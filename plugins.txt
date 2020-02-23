@@ -88,7 +88,7 @@ groovy-postbuild:2.5
 h2-api:1.4.199
 handlebars:1.1.1
 handy-uri-templates-2-api:2.1.8-1.0
-htmlpublisher:1.21
+htmlpublisher:1.22
 http_request:1.8.24
 icon-shim:2.0.3
 ivy:2.1
@@ -106,7 +106,7 @@ junit:1.28
 kubernetes-cli:1.8.2
 kubernetes-client-api:4.6.4-2
 kubernetes-credentials:0.6.2
-kubernetes:1.24.0
+kubernetes:1.24.1
 ldap:1.21
 lockable-resources:2.7
 mailer:1.30
