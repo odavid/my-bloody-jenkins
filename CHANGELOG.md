@@ -3,7 +3,7 @@
 ## 2.204.2-181 (Not released yet)
 * Updated plugins:
     * [htmlpublisher:1.22](https://plugins.jenkins.io/htmlpublisher)
-    * [kubernetes:1.24.1](https://plugins.jenkins.io/kubernetes
+    * [kubernetes:1.24.1](https://plugins.jenkins.io/kubernetes)
 
 ## 2.204.2-180
 * Time in minutes to retain agent when idle for kubernetes[#158](https://github.com/odavid/my-bloody-jenkins/pull/158)
