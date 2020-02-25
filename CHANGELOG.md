@@ -4,6 +4,7 @@
 * Updated plugins:
     * [htmlpublisher:1.22](https://plugins.jenkins.io/htmlpublisher)
     * [kubernetes:1.24.1](https://plugins.jenkins.io/kubernetes)
+    * [ansicolor:0.6.3](https://plugins.jenkins.io/ansicolor)
 
 ## 2.204.2-180
 * Time in minutes to retain agent when idle for kubernetes[#158](https://github.com/odavid/my-bloody-jenkins/pull/158)
