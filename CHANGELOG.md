@@ -1,5 +1,15 @@
 ## Changelog
 
+## 2.204.2-182 (Not released yet)
+* Updated plugins:
+    * [configuration-as-code:1.36](https://plugins.jenkins.io/configuration-as-code)
+    * [credentials:2.3.3](https://plugins.jenkins.io/credentials)
+    * [docker-workflow:1.22](https://plugins.jenkins.io/docker-workflow)
+    * [email-ext:2.69](https://plugins.jenkins.io/email-ext)
+    * [kubernetes-client-api:4.8.0-1](https://plugins.jenkins.io/kubernetes-client-api)
+    * [sse-gateway:1.22](https://plugins.jenkins.io/sse-gateway)
+    * [workflow-api:2.40](https://plugins.jenkins.io/workflow-api)
+
 ## 2.204.2-181
 * Updated plugins:
     * [htmlpublisher:1.22](https://plugins.jenkins.io/htmlpublisher)
