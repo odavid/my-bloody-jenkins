@@ -73,10 +73,10 @@ favorite:2.3.2
 filesystem_scm:2.1
 gatling:1.2.7
 git-changelog:2.21
-git-client:3.1.1
+git-client:3.2.0
 git-parameter:0.9.12
 git-server:1.9
-git:4.1.1
+git:4.2.0
 github-api:1.106
 github-branch-source:2.6.0
 github:1.29.5
@@ -149,7 +149,7 @@ sbt:1.5
 scm-api:2.6.3
 script-security:1.70
 simple-theme-plugin:0.6
-slack:2.36
+slack:2.37
 sonar:2.11
 sse-gateway:1.22
 ssh-agent:1.19
@@ -160,8 +160,8 @@ structs:1.20
 subversion:2.13.1
 swarm:3.18
 throttle-concurrents:2.0.2
-timestamper:1.11
-token-macro:2.11
+timestamper:1.11.1
+token-macro:2.12
 trilead-api:1.0.5
 variant:1.3
 whitesource:19.1.1

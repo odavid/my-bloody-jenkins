@@ -2,6 +2,12 @@
 
 ## 2.204.4-183 (Not releasded yete)
 * [LTS-2.204.4](https://jenkins.io/changelog-stable/)
+* Updated plugins:
+    * [git-client:3.2.0](https://plugins.jenkins.io/git-client)
+    * [git:4.2.0](https://plugins.jenkins.io/git)
+    * [slack:2.37](https://plugins.jenkins.io/slack)
+    * [timestamper:1.11.1](https://plugins.jenkins.io/timestamper)
+    * [token-macro:2.12](https://plugins.jenkins.io/token-macro)
 
 ## 2.204.2-182
 * Updated plugins:
