@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.204.4-183 (Not releasded yete)
+## 2.204.4-183
 * [LTS-2.204.4](https://jenkins.io/changelog-stable/)
 * Updated plugins:
     * [git-client:3.2.0](https://plugins.jenkins.io/git-client)
