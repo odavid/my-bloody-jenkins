@@ -1,5 +1,19 @@
 ## Changelog
 
+## 2.204.4-184
+* Updated plugins:
+    * [artifactory:3.6.0](https://plugins.jenkins.io/artifactory)
+    * [cobertura:1.16](https://plugins.jenkins.io/cobertura)
+    * [copyartifact:1.43.1](https://plugins.jenkins.io/copyartifact)
+    * [git:4.2.1](https://plugins.jenkins.io/git)
+    * [jackson2-api:2.10.3](https://plugins.jenkins.io/jackson2-api)
+    * [jira:3.0.13](https://plugins.jenkins.io/jira)
+    * [p4:1.10.11](https://plugins.jenkins.io/p4)
+    * [parallel-test-executor:1.13](https://plugins.jenkins.io/parallel-test-executor)
+    * [pipeline-aws:1.40](https://plugins.jenkins.io/pipeline-aws)
+    * [script-security:1.71](https://plugins.jenkins.io/script-security)
+    * [timestamper:1.11.2](https://plugins.jenkins.io/timestamper)
+
 ## 2.204.4-183
 * [LTS-2.204.4](https://jenkins.io/changelog-stable/)
 * Updated plugins:
