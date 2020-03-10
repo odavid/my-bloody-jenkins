@@ -13,6 +13,7 @@
     * [pipeline-aws:1.40](https://plugins.jenkins.io/pipeline-aws)
     * [script-security:1.71](https://plugins.jenkins.io/script-security)
     * [timestamper:1.11.2](https://plugins.jenkins.io/timestamper)
+    * [pipeline-model-definition:1.6.0](https://plugins.jenkins.io/pipeline-model-definition)
 
 ## 2.204.4-183
 * [LTS-2.204.4](https://jenkins.io/changelog-stable/)
