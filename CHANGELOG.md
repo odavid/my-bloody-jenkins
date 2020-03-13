@@ -1,5 +1,15 @@
 ## Changelog
 
+## 2.204.5-185 (Not released yet)
+* Updated plugins:
+    * [docker-workflow:1.23](https://plugins.jenkins.io/docker-workflow)
+    * [durable-task:1.34](https://plugins.jenkins.io/durable-task)
+    * [git-client:3.2.1](https://plugins.jenkins.io/git-client)
+    * [git:4.2.2](https://plugins.jenkins.io/git)
+    * [job-dsl:1.77](https://plugins.jenkins.io/job-dsl)
+    * [p4:1.10.12](https://plugins.jenkins.io/p4)
+    * [workflow-job:2.37](https://plugins.jenkins.io/workflow-job)
+
 ## 2.204.5-184
 * [LTS-2.204.5](https://jenkins.io/changelog-stable/)
 * Updated plugins:

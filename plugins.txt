@@ -59,8 +59,8 @@ docker-build-publish:1.3.2
 docker-commons:1.16
 docker-java-api:3.0.14
 docker-plugin:1.1.9
-docker-workflow:1.22
-durable-task:1.33
+docker-workflow:1.23
+durable-task:1.34
 email-ext:2.69
 emailext-template:1.1
 embeddable-build-status:2.0.3
@@ -73,10 +73,10 @@ favorite:2.3.2
 filesystem_scm:2.1
 gatling:1.2.7
 git-changelog:2.21
-git-client:3.2.0
+git-client:3.2.1
 git-parameter:0.9.12
 git-server:1.9
-git:4.2.1
+git:4.2.2
 github-api:1.106
 github-branch-source:2.6.0
 github:1.29.5
@@ -98,7 +98,7 @@ jdk-tool:1.4
 jenkins-design-language:1.22.0
 jira-steps:1.5.3
 jira:3.0.13
-job-dsl:1.76
+job-dsl:1.77
 jquery-detached:1.2.1
 jquery:1.12.4-1
 jsch:0.1.55.2
@@ -119,7 +119,7 @@ mercurial:2.8
 metrics:4.0.2.6
 momentjs:1.1.1
 nodejs:1.3.4
-p4:1.10.11
+p4:1.10.12
 pam-auth:1.6
 parallel-test-executor:1.13
 parameterized-trigger:2.36
@@ -172,7 +172,7 @@ workflow-basic-steps:2.19
 workflow-cps-global-lib:2.15
 workflow-cps:2.80
 workflow-durable-task-step:2.35
-workflow-job:2.36
+workflow-job:2.37
 workflow-multibranch:2.21
 workflow-remote-loader:1.5
 workflow-scm-step:2.10
