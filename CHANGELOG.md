@@ -9,7 +9,14 @@
     * [job-dsl:1.77](https://plugins.jenkins.io/job-dsl)
     * [p4:1.10.12](https://plugins.jenkins.io/p4)
     * [workflow-job:2.37](https://plugins.jenkins.io/workflow-job)
-
+    * [code-coverage-api:1.1.4](https://plugins.jenkins.io/code-coverage-api)
+    * [credentials:2.3.4](https://plugins.jenkins.io/credentials)
+    * [maven-plugin:3.5](https://plugins.jenkins.io/maven-plugin)
+    * [pipeline-aws:1.41](https://plugins.jenkins.io/pipeline-aws)
+    * [pipeline-build-step:2.12](https://plugins.jenkins.io/pipeline-build-step)
+    * [trilead-api:1.0.6](https://plugins.jenkins.io/trilead-api)
+    * [workflow-cps-global-lib:2.16](https://plugins.jenkins.io/workflow-cps-global-lib)
+    
 ## 2.204.5-184
 * [LTS-2.204.5](https://jenkins.io/changelog-stable/)
 * Updated plugins:
