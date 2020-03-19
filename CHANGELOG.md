@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.204.5-185 (Not released yet)
+## 2.204.5-185
 * Updated plugins:
     * [docker-workflow:1.23](https://plugins.jenkins.io/docker-workflow)
     * [durable-task:1.34](https://plugins.jenkins.io/durable-task)
@@ -16,7 +16,7 @@
     * [pipeline-build-step:2.12](https://plugins.jenkins.io/pipeline-build-step)
     * [trilead-api:1.0.6](https://plugins.jenkins.io/trilead-api)
     * [workflow-cps-global-lib:2.16](https://plugins.jenkins.io/workflow-cps-global-lib)
-    
+
 ## 2.204.5-184
 * [LTS-2.204.5](https://jenkins.io/changelog-stable/)
 * Updated plugins:
