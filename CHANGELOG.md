@@ -1,5 +1,13 @@
 ## Changelog
 
+## 2.204.5-186 (Not released yet)
+* Updated plugins:
+    * [antisamy-markup-formatter:2.0](https://plugins.jenkins.io/antisamy-markup-formatter)
+    * [artifactory:3.6.1](https://plugins.jenkins.io/artifactory)
+    * [credentials:2.3.5](https://plugins.jenkins.io/credentials)
+    * [jira:3.0.14](https://plugins.jenkins.io/jira)
+    * [kubernetes:1.25.1](https://plugins.jenkins.io/kubernetes)
+
 ## 2.204.5-185
 * Updated plugins:
     * [docker-workflow:1.23](https://plugins.jenkins.io/docker-workflow)
