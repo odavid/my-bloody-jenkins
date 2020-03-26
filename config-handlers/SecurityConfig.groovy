@@ -128,7 +128,6 @@ def setupSecurityOptions(config){
     config.enableAgentMasterAccessControl = asBoolean(config.enableAgentMasterAccessControl, true)
     config.disableRememberMe = asBoolean(config.disableRememberMe)
     config.sshdEnabled = asBoolean(config.sshdEnabled)
-    config.jnlpProtocols = config.jnlpProtocols != null ? config.jnlpProtocols : ['JNLP4']
     config.markupFormatter = config.markupFormatter != null ? config.markupFormatter : 'plainText'
 
     config.with{
@@ -144,7 +143,6 @@ def setupSecurityOptions(config){
         jenkins.model.Jenkins.instance
             .injector.getInstance(jenkins.security.s2m.AdminWhitelistRule).masterKillSwitch = !enableAgentMasterAccessControl
 
-        jenkins.model.Jenkins.instance.agentProtocols = jnlpProtocols.collect{"${it}-connect".toString()} as Set
 
         if(sshdEnabled){
             org.jenkinsci.main.modules.sshd.SSHD.get().port = 16022

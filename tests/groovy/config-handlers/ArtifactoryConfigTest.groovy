@@ -40,7 +40,7 @@ artifactoryServers:
     assert server.deployerCredentialsConfig.credentialsId == 'cred1'
     assert server.deployerCredentialsConfig.overridingCredentials
     assert server.resolverCredentialsConfig.username == 'username1'
-    assert server.resolverCredentialsConfig.password == 'password1'
+    assert server.resolverCredentialsConfig.password.toString() == 'password1'
 }
 
 testArtifactory()

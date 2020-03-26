@@ -1,6 +1,8 @@
 ## Changelog
 
-## 2.204.5-186 (Not released yet)
+## 2.222.1-186 (Not released yet)
+* [LTS-2.222.1](https://jenkins.io/changelog-stable/)
+* Removed `security.securityOptions.jnlpProtocols` option from configuration. Only JNLP4 is supported now
 * Updated plugins:
     * [antisamy-markup-formatter:2.0](https://plugins.jenkins.io/antisamy-markup-formatter)
     * [artifactory:3.6.1](https://plugins.jenkins.io/artifactory)

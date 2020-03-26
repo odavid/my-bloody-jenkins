@@ -367,10 +367,6 @@ security:
     enableAgentMasterAccessControl: true # default true
     disableRememberMe: false # default false
     sshdEnabled: true # default false, if true, port 16022 is exposed
-    jnlpProtocols: # by default only JNLP4 is enabled
-      - JNLP
-      - JNLP2
-      - JNLP4
 
     ## MarkupFormatter plainText
     markupFormatter: plainText
@@ -779,7 +775,7 @@ clouds:
         # Your pipeline jobs will need to use node(label){} in order to use this slave template
         labels:
           - kubeslave
-      
+
         # Time in minutes to retain agent when idle
         idleMinutes: 10
 
