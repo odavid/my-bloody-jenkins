@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.222.1-186 (Not released yet)
+## 2.222.1-186
 * [LTS-2.222.1](https://jenkins.io/changelog-stable/)
 * Removed `security.securityOptions.jnlpProtocols` option from configuration. Only JNLP4 is supported now
 * Updated plugins:
