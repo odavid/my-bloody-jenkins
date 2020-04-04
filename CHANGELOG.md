@@ -1,5 +1,21 @@
 ## Changelog
 
+## 2.222.1-187 (Not released yet)
+* Updated plugins:
+    * [configuration-as-code:1.38](https://plugins.jenkins.io/configuration-as-code)
+    * [docker-java-api:3.1.5.1](https://plugins.jenkins.io/docker-java-api)
+    * [docker-plugin:1.2.0](https://plugins.jenkins.io/docker-plugin)
+    * [gatling:1.3.0](https://plugins.jenkins.io/gatling)
+    * [github-api:1.109](https://plugins.jenkins.io/github-api)
+    * [kubernetes:1.25.2](https://plugins.jenkins.io/kubernetes)
+    * [ldap:1.22](https://plugins.jenkins.io/ldap)
+    * [mask-passwords:2.13](https://plugins.jenkins.io/mask-passwords)
+    * [mercurial:2.9](https://plugins.jenkins.io/mercurial)
+    * [run-condition:1.3](https://plugins.jenkins.io/run-condition)
+    * [sse-gateway:1.23](https://plugins.jenkins.io/sse-gateway)
+    * [swarm:3.19](https://plugins.jenkins.io/swarm)
+    * [workflow-job:2.38](https://plugins.jenkins.io/workflow-job)
+
 ## 2.222.1-186
 * [LTS-2.222.1](https://jenkins.io/changelog-stable/)
 * Removed `security.securityOptions.jnlpProtocols` option from configuration. Only JNLP4 is supported now
