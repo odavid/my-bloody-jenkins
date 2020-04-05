@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.222.1-187 (Not released yet)
+## 2.222.1-187
 * Updated plugins:
     * [configuration-as-code:1.38](https://plugins.jenkins.io/configuration-as-code)
     * [docker-java-api:3.1.5.1](https://plugins.jenkins.io/docker-java-api)
