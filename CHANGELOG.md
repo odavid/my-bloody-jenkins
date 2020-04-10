@@ -1,5 +1,18 @@
 ## Changelog
 
+## 2.222.1-188 (Not released yet)
+* Updated plugins:
+    * [cloudbees-folder:6.12](https://plugins.jenkins.io/cloudbees-folder)
+    * [code-coverage-api:1.1.5](https://plugins.jenkins.io/code-coverage-api)
+    * [docker-java-api:3.1.5.2](https://plugins.jenkins.io/docker-java-api)
+    * [github-api:1.110](https://plugins.jenkins.io/github-api)
+    * [http_request:1.8.25](https://plugins.jenkins.io/http_request)
+    * [jira:3.0.15](https://plugins.jenkins.io/jira)
+    * [mailer:1.32](https://plugins.jenkins.io/mailer)
+    * [maven-plugin:3.6](https://plugins.jenkins.io/maven-plugin)
+    * [slack:2.39](https://plugins.jenkins.io/slack)
+    * [ssh-slaves:1.31.2](https://plugins.jenkins.io/ssh-slaves)
+
 ## 2.222.1-187
 * Updated plugins:
     * [configuration-as-code:1.38](https://plugins.jenkins.io/configuration-as-code)
