@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.222.1-188 (Not released yet)
+## 2.222.1-188
 * Updated plugins:
     * [cloudbees-folder:6.12](https://plugins.jenkins.io/cloudbees-folder)
     * [code-coverage-api:1.1.5](https://plugins.jenkins.io/code-coverage-api)
