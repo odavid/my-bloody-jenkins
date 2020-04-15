@@ -1,7 +1,7 @@
 ace-editor:1.1
 active-directory:2.16
 amazon-ecr:1.6
-amazon-ecs:1.26
+amazon-ecs:1.27
 anchore-container-scanner:1.0.22
 ansicolor:0.6.3
 ant:1.11
@@ -89,7 +89,7 @@ h2-api:1.4.199
 handlebars:1.1.1
 handy-uri-templates-2-api:2.1.8-1.0
 htmlpublisher:1.22
-http_request:1.8.25
+http_request:1.8.26
 icon-shim:2.0.3
 ivy:2.1
 jackson2-api:2.10.3
@@ -118,7 +118,7 @@ maven-plugin:3.6
 mercurial:2.9
 metrics:4.0.2.6
 momentjs:1.1.1
-nodejs:1.3.4
+nodejs:1.3.5
 p4:1.10.12
 pam-auth:1.6
 parallel-test-executor:1.13

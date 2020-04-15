@@ -1,5 +1,11 @@
 ## Changelog
 
+## 2.222.1-189 (Not released yet)
+* Updated plugins:
+    * [amazon-ecs:1.27](https://plugins.jenkins.io/amazon-ecs)
+    * [http_request:1.8.26](https://plugins.jenkins.io/http_request)
+    * [nodejs:1.3.5](https://plugins.jenkins.io/nodejs)
+
 ## 2.222.1-188
 * Updated plugins:
     * [cloudbees-folder:6.12](https://plugins.jenkins.io/cloudbees-folder)
