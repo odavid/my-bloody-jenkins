@@ -2,9 +2,18 @@
 
 ## 2.222.1-189 (Not released yet)
 * Updated plugins:
-    * [amazon-ecs:1.27](https://plugins.jenkins.io/amazon-ecs)
     * [http_request:1.8.26](https://plugins.jenkins.io/http_request)
     * [nodejs:1.3.5](https://plugins.jenkins.io/nodejs)
+    * [amazon-ecs:1.31](https://plugins.jenkins.io/amazon-ecs)
+    * [branch-api:2.5.6](https://plugins.jenkins.io/branch-api)
+    * [configuration-as-code:1.39](https://plugins.jenkins.io/configuration-as-code)
+    * [credentials:2.3.7](https://plugins.jenkins.io/credentials)
+    * [git-changelog:2.22](https://plugins.jenkins.io/git-changelog)
+    * [github-api:1.111](https://plugins.jenkins.io/github-api)
+    * [kubernetes:1.25.3](https://plugins.jenkins.io/kubernetes)
+    * [ldap:1.23](https://plugins.jenkins.io/ldap)
+    * [slack:2.40](https://plugins.jenkins.io/slack)
+    * [timestamper:1.11.3](https://plugins.jenkins.io/timestamper)
 
 ## 2.222.1-188
 * Updated plugins:

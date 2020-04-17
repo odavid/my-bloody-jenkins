@@ -1,7 +1,7 @@
 ace-editor:1.1
 active-directory:2.16
 amazon-ecr:1.6
-amazon-ecs:1.27
+amazon-ecs:1.31
 anchore-container-scanner:1.0.22
 ansicolor:0.6.3
 ant:1.11
@@ -35,7 +35,7 @@ blueocean-rest:1.22.0
 blueocean-web:1.22.0
 blueocean:1.22.0
 bouncycastle-api:2.18
-branch-api:2.5.5
+branch-api:2.5.6
 build-timeout:1.19.1
 build-user-vars-plugin:1.5
 buildtriggerbadge:2.10
@@ -47,10 +47,10 @@ code-coverage-api:1.1.5
 command-launcher:1.4
 conditional-buildstep:1.3.6
 config-file-provider:3.6.3
-configuration-as-code:1.38
+configuration-as-code:1.39
 copyartifact:1.43.1
 credentials-binding:1.21
-credentials:2.3.5
+credentials:2.3.7
 cucumber-reports:5.0.2
 custom-tools-plugin:0.7
 dashboard-view:2.12
@@ -72,12 +72,12 @@ external-monitor-job:1.7
 favorite:2.3.2
 filesystem_scm:2.1
 gatling:1.3.0
-git-changelog:2.21
+git-changelog:2.22
 git-client:3.2.1
 git-parameter:0.9.12
 git-server:1.9
 git:4.2.2
-github-api:1.110
+github-api:1.111
 github-branch-source:2.6.0
 github:1.29.5
 gitlab-plugin:1.5.13
@@ -106,8 +106,8 @@ junit:1.28
 kubernetes-cli:1.8.2
 kubernetes-client-api:4.8.0-1
 kubernetes-credentials:0.6.2
-kubernetes:1.25.2
-ldap:1.22
+kubernetes:1.25.3
+ldap:1.23
 lockable-resources:2.7
 mailer:1.32
 mapdb-api:1.0.9.0
@@ -149,7 +149,7 @@ sbt:1.5
 scm-api:2.6.3
 script-security:1.71
 simple-theme-plugin:0.6
-slack:2.39
+slack:2.40
 sonar:2.11
 sse-gateway:1.23
 ssh-agent:1.19
@@ -160,7 +160,7 @@ structs:1.20
 subversion:2.13.1
 swarm:3.19
 throttle-concurrents:2.0.2
-timestamper:1.11.2
+timestamper:1.11.3
 token-macro:2.12
 trilead-api:1.0.6
 variant:1.3
