@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.222.1-189 (Not released yet)
+## 2.222.1-189
 * Updated plugins:
     * [http_request:1.8.26](https://plugins.jenkins.io/http_request)
     * [nodejs:1.3.5](https://plugins.jenkins.io/nodejs)
