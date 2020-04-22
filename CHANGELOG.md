@@ -1,5 +1,17 @@
 ## Changelog
 
+## 2.222.1-190  (Not release yet)
+* Updated plugins:
+    * [amazon-ecs:1.33](https://plugins.jenkins.io/amazon-ecs)
+    * [blueocean:1.23.0](https://plugins.jenkins.io/blueocean)
+    * [credentials-binding:1.22](https://plugins.jenkins.io/credentials-binding)
+    * [git-changelog:2.23](https://plugins.jenkins.io/git-changelog)
+    * [kubernetes-client-api:4.9.1-1](https://plugins.jenkins.io/kubernetes-client-api)
+    * [ldap:1.24](https://plugins.jenkins.io/ldap)
+    * [mercurial:2.10](https://plugins.jenkins.io/mercurial)
+    * [workflow-basic-steps:2.20](https://plugins.jenkins.io/workflow-basic-steps)
+    * [workflow-scm-step:2.11](https://plugins.jenkins.io/workflow-scm-step)
+
 ## 2.222.1-189
 * Updated plugins:
     * [http_request:1.8.26](https://plugins.jenkins.io/http_request)
