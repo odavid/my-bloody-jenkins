@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.222.1-190  (Not release yet)
+## 2.222.1-190
 * Updated plugins:
     * [amazon-ecs:1.33](https://plugins.jenkins.io/amazon-ecs)
     * [blueocean:1.23.0](https://plugins.jenkins.io/blueocean)
