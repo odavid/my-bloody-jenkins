@@ -4,6 +4,7 @@ import hudson.security.ProjectMatrixAuthorizationStrategy
 import hudson.security.HudsonPrivateSecurityRealm
 import jenkins.security.plugins.ldap.FromGroupSearchLDAPGroupMembershipStrategy
 import jenkins.security.plugins.ldap.FromUserRecordLDAPGroupMembershipStrategy
+import org.jenkinsci.plugins.oic.OicSecurityRealm
 import jenkins.model.Jenkins
 import hudson.model.Hudson
 import hudson.model.Item
@@ -170,6 +171,11 @@ def setupSecurityOptions(config){
     }
 }
 
+def setupOpenIDConnect(config){
+    def realmConfig = config.realmConfig
+    return realmConfig ? DescribableModel.of(org.jenkinsci.plugins.oic.OicSecurityRealm).instantiate(realmConfig) : null
+}
+
 def setup(config){
     config = config ?: [:]
     setupSecurityOptions(config.securityOptions)
@@ -193,7 +199,9 @@ def setup(config){
         case 'google':
             realm = setupGoogleOAuth2(config)
             break
-
+        case 'oic':
+            realm = setupOpenIDConnect(config)
+            break
     }
     if(realm){
         instance.setSecurityRealm(realm)

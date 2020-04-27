@@ -240,6 +240,7 @@ Responsible for:
     * active_directory - Uses [active-directory plugin](https://wiki.jenkins.io/display/JENKINS/Active+Directory+plugin)
     * saml - Uses [saml plugin](https://plugins.jenkins.io/saml)
     * google - Uses [google-login plugin](https://plugins.jenkins.io/google-login)
+    * oic - Uses [oic-auth plugin](https://plugins.jenkins.io/oic-auth/)
 * User/Group Permissions dict - Each key represent a user or a group and its value is a list of Jenkins [Permissions IDs](https://wiki.jenkins.io/display/JENKINS/Matrix-based+security)
 
 ```yaml
@@ -342,6 +343,39 @@ security:
     clientId: client-id
     clientSecret: client-secret
     domain: domain
+```
+
+```yaml
+# oid - openid-connect configuration must be provided
+security:
+  realm: oic
+  realmConfig:
+    ### See https://plugins.jenkins.io/oic-auth/
+    clientId: String
+    clientSecret: String
+    # auto / manual
+    automanualconfigure: manual
+    # The Well Known Configuration source URL
+    wellKnownOpenIDConfigurationUrl: http://xxx.yyy
+    # Manual Configuration (not need if you have set the wellKnownOpenIDConfigurationUrl)
+    tokenServerUrl: http://xxx.yyy
+    authorizationServerUrl: http://xxx.yyy
+    userInfoServerUrl: http://xxx.yyy
+    logoutFromOpenidProvider: true
+    endSessionEndpoint: http://xxx.yyy
+    postLogoutRedirectUrl: http://jenkins
+    userNameField: preferred_username
+    fullNameFieldName: name
+    emailFieldName: email
+    scopes: openid profile email
+    groupsFieldName: groups
+    disableSslVerification: false
+    tokenFieldToCheckKey:
+    tokenFieldToCheckValue:
+    escapeHatchEnabled: true
+    escapeHatchUsername: admin
+    escapeHatchSecret: password
+    escapeHatchGroup:
 ```
 
 ```yaml
