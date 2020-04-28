@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.222.3-191 (Not released yet)
+## 2.222.3-191
 * [LTS-2.222.3](https://www.jenkins.io/changelog-stable/)
 * Adds support to use OpenID Connect Auth [#162](https://github.com/odavid/my-bloody-jenkins/pull/162)
 * Updated plugins:
