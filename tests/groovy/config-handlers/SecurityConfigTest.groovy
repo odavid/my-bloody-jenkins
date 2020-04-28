@@ -84,8 +84,7 @@ realmConfig:
     assert oicRealm instanceof org.jenkinsci.plugins.oic.OicSecurityRealm
     assert oicRealm.clientId == '111222333'
     assert oicRealm.clientSecret.toString() == '33322211'
-    assert oicRealm.automanualconfigure == 'manual'
-    assert oicRealm.wellKnownOpenIDConfigurationUrl == 'http://xxx1.yyy'
+    assert oicRealm.wellKnownOpenIDConfigurationUrl == null // relevant only in auto
     assert oicRealm.tokenServerUrl == 'http://xxx2.yyy'
     assert oicRealm.authorizationServerUrl == 'http://xxx3.yyy'
     assert oicRealm.userInfoServerUrl == 'http://xxx4.yyy'
