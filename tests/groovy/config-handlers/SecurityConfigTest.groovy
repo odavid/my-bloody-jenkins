@@ -83,7 +83,7 @@ realmConfig:
     def oicRealm = configHandler.setupOpenIDConnect(config)
     assert oicRealm instanceof org.jenkinsci.plugins.oic.OicSecurityRealm
     assert oicRealm.clientId == '111222333'
-    assert oicRealm.clientSecret == '33322211'
+    assert oicRealm.clientSecret.toString() == '33322211'
     assert oicRealm.automanualconfigure == 'manual'
     assert oicRealm.wellKnownOpenIDConfigurationUrl == 'http://xxx1.yyy'
     assert oicRealm.tokenServerUrl == 'http://xxx2.yyy'
@@ -102,8 +102,8 @@ realmConfig:
     assert oicRealm.tokenFieldToCheckValue == 'value1'
     assert oicRealm.escapeHatchEnabled
     assert oicRealm.escapeHatchUsername == 'admin'
-    assert oicRealm.escapeHatchSecret == 'password'
-    assert oicRealm.escapeHatchSecret == 'test1'
+    assert oicRealm.escapeHatchSecret.toString() == 'password'
+    assert oicRealm.escapeHatchGroup == 'test1'
 }
 
 def testLdap(){
@@ -297,6 +297,7 @@ markupFormatter:
 testGoogleLogin()
 testSaml()
 testLdap()
+testOIC()
 testActiveDirectory()
 testAuthorizationStrategy()
 testSecurityOptions()

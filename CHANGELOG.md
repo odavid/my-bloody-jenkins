@@ -2,6 +2,7 @@
 
 ## 2.222.3-191 (Not released yet)
 * [LTS-2.222.3](https://www.jenkins.io/changelog-stable/)
+* Adds support to use OpenID Connect Auth [#162](https://github.com/odavid/my-bloody-jenkins/pull/162)
 * Updated plugins:
     * [code-coverage-api:1.1.6](https://plugins.jenkins.io/code-coverage-api)
     * [github-branch-source:2.7.1](https://plugins.jenkins.io/github-branch-source)
