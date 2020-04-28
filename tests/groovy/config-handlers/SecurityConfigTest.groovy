@@ -56,8 +56,8 @@ realmConfig:
 def testOIC(){
 	def config = new Yaml().load("""
 realmConfig:
-  clientId: 111222333
-  clientSecret: 33322211
+  clientId: '111222333'
+  clientSecret: '33322211'
   automanualconfigure: manual
   wellKnownOpenIDConfigurationUrl: http://xxx1.yyy
   tokenServerUrl: http://xxx2.yyy
