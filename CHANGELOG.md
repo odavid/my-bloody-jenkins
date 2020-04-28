@@ -1,5 +1,13 @@
 ## Changelog
 
+## 2.222.1-191 (Not released yet)
+* Updated plugins:
+    * [code-coverage-api:1.1.6](https://plugins.jenkins.io/code-coverage-api)
+    * [github-branch-source:2.7.1](https://plugins.jenkins.io/github-branch-source)
+    * [kubernetes:1.25.4](https://plugins.jenkins.io/kubernetes)
+    * [lockable-resources:2.8](https://plugins.jenkins.io/lockable-resources)
+    * [workflow-job:2.39](https://plugins.jenkins.io/workflow-job)
+
 ## 2.222.1-190
 * Updated plugins:
     * [amazon-ecs:1.33](https://plugins.jenkins.io/amazon-ecs)
