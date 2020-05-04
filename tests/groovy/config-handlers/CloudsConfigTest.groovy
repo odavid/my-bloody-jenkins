@@ -133,8 +133,6 @@ ecs-cloud:
         assert template.image == 'odavid/jenkins-jnlp-slave:latest'
         assert template.repositoryCredentials == 'xxx'
         assert template.remoteFSRoot == '/home/jenkins'
-        assert template.uniqueRemoteFSRoot
-        assert template.plaformVersion == 'LATEST'
         assert template.memory == 4000
         assert template.memoryReservation == 2000
         assert template.cpu == 512
@@ -198,6 +196,9 @@ ecs-cloud:
         assert template.dnsSearchDomains == '8.8.8.8'
         assert template.privileged
         assert template.containerUser == 'aUser'
+        assert template.uniqueRemoteFSRoot
+        assert template.plaformVersion == 'LATEST'
+
     }
 }
 
