@@ -87,7 +87,7 @@ ecs-cloud:
       dns: 8.8.8.8
       privileged: true
       containerUser: aUser
-      plaformVersion: LATEST
+      platformVersion: LATEST
       uniqueRemoteFSRoot: true
       ports:
         - 9000:9001
@@ -197,7 +197,7 @@ ecs-cloud:
         assert template.privileged
         assert template.containerUser == 'aUser'
         assert template.uniqueRemoteFSRoot
-        assert template.plaformVersion == 'LATEST'
+        assert template.platformVersion == 'LATEST'
 
     }
 }
