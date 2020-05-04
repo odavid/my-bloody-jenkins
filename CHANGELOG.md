@@ -1,5 +1,15 @@
 ## Changelog
 
+## 2.222.3-192 (Not released yet)
+* Updated plugins:
+    * [amazon-ecs:1.34](https://plugins.jenkins.io/amazon-ecs)
+    * [artifactory:3.6.2](https://plugins.jenkins.io/artifactory)
+    * [blueocean:1.23.1](https://plugins.jenkins.io/blueocean)
+    * [jackson2-api:2.11.0](https://plugins.jenkins.io/jackson2-api)
+    * [jira-steps:1.5.4](https://plugins.jenkins.io/jira-steps)
+    * [junit:1.29](https://plugins.jenkins.io/junit)
+    * [matrix-auth:2.6](https://plugins.jenkins.io/matrix-auth)
+
 ## 2.222.3-191
 * [LTS-2.222.3](https://www.jenkins.io/changelog-stable/)
 * Adds support to use OpenID Connect Auth [#162](https://github.com/odavid/my-bloody-jenkins/pull/162)
