@@ -169,6 +169,7 @@ def ecsCloud(config){
                 temp.networkMode,
                 temp.remoteFs,
                 asBoolean(temp.uniqueRemoteFSRoot),
+                temp.platformVersion,
                 asInt(temp.memory),
                 asInt(temp.memoryReservation),
                 asInt(temp.cpu),

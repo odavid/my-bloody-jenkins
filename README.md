@@ -751,6 +751,8 @@ clouds:
         remoteFs: /home/jenkins
         # Indicates whether to append a unique agent ID (the agent name) at the end of the remoteFSRoot path. false by default
         uniqueRemoteFSRoot: false
+        # Platform version needs to be specified for fargate launch type. Default is LATEST
+        platformVersion: LATEST
         # JVM arguments to pass to the jnlp jar
         jvmArgs: -Xmx1g
         # ECS memory reservation

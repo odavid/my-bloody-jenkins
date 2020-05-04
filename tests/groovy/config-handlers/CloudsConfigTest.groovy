@@ -87,6 +87,8 @@ ecs-cloud:
       dns: 8.8.8.8
       privileged: true
       containerUser: aUser
+      plaformVersion: LATEST
+      uniqueRemoteFSRoot: true
       ports:
         - 9000:9001
       logDriverOptions:
@@ -131,6 +133,8 @@ ecs-cloud:
         assert template.image == 'odavid/jenkins-jnlp-slave:latest'
         assert template.repositoryCredentials == 'xxx'
         assert template.remoteFSRoot == '/home/jenkins'
+        assert template.uniqueRemoteFSRoot
+        assert template.plaformVersion == 'LATEST'
         assert template.memory == 4000
         assert template.memoryReservation == 2000
         assert template.cpu == 512
