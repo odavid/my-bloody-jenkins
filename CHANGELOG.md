@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.222.3-193 (Not released yet)
+## 2.222.3-193
 * Updated plugins:
     * [cloudbees-bitbucket-branch-source:2.8.0](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
     * [configuration-as-code:1.40](https://plugins.jenkins.io/configuration-as-code)
