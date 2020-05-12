@@ -40,16 +40,16 @@ build-timeout:1.19.1
 build-user-vars-plugin:1.5
 buildtriggerbadge:2.10
 checkmarx:8.90.4
-cloudbees-bitbucket-branch-source:2.7.0
+cloudbees-bitbucket-branch-source:2.8.0
 cloudbees-folder:6.12
 cobertura:1.16
 code-coverage-api:1.1.6
 command-launcher:1.4
 conditional-buildstep:1.3.6
 config-file-provider:3.6.3
-configuration-as-code:1.39
-copyartifact:1.43.1
-credentials-binding:1.22
+configuration-as-code:1.40
+copyartifact:1.44
+credentials-binding:1.23
 credentials:2.3.7
 cucumber-reports:5.0.2
 custom-tools-plugin:0.7
@@ -79,7 +79,7 @@ git-server:1.9
 git:4.2.2
 github-api:1.111
 github-branch-source:2.7.1
-github:1.29.5
+github:1.30.0
 gitlab-plugin:1.5.13
 golang:1.2
 google-login:1.6
@@ -88,7 +88,7 @@ groovy-postbuild:2.5
 h2-api:1.4.199
 handlebars:1.1.1
 handy-uri-templates-2-api:2.1.8-1.0
-htmlpublisher:1.22
+htmlpublisher:1.23
 http_request:1.8.26
 icon-shim:2.0.3
 ivy:2.1
@@ -96,7 +96,7 @@ jackson2-api:2.11.0
 javadoc:1.5
 jdk-tool:1.4
 jenkins-design-language:1.23.1
-jira-steps:1.5.4
+jira-steps:1.5.5
 jira:3.0.15
 job-dsl:1.77
 jquery-detached:1.2.1
@@ -112,7 +112,7 @@ lockable-resources:2.8
 mailer:1.32
 mapdb-api:1.0.9.0
 mask-passwords:2.13
-matrix-auth:2.6
+matrix-auth:2.6.1
 matrix-project:1.14
 maven-plugin:3.6
 mercurial:2.10
@@ -148,7 +148,7 @@ run-condition:1.3
 saml:1.1.5
 sbt:1.5
 scm-api:2.6.3
-script-security:1.71
+script-security:1.72
 simple-theme-plugin:0.6
 slack:2.40
 sonar:2.11

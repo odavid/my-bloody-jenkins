@@ -1,5 +1,17 @@
 ## Changelog
 
+## 2.222.3-193 (Not released yet)
+* Updated plugins:
+    * [cloudbees-bitbucket-branch-source:2.8.0](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
+    * [configuration-as-code:1.40](https://plugins.jenkins.io/configuration-as-code)
+    * [copyartifact:1.44](https://plugins.jenkins.io/copyartifact)
+    * [credentials-binding:1.23](https://plugins.jenkins.io/credentials-binding)
+    * [github:1.30.0](https://plugins.jenkins.io/github)
+    * [htmlpublisher:1.23](https://plugins.jenkins.io/htmlpublisher)
+    * [jira-steps:1.5.5](https://plugins.jenkins.io/jira-steps)
+    * [matrix-auth:2.6.1](https://plugins.jenkins.io/matrix-auth)
+    * [script-security:1.72](https://plugins.jenkins.io/script-security)
+
 ## 2.222.3-192
 * Updated plugins:
     * [amazon-ecs:1.34](https://plugins.jenkins.io/amazon-ecs)
