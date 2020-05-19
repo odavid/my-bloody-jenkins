@@ -1,5 +1,12 @@
 ## Changelog
 
+## 2.222.3-194 (Not released yet)
+* Updated plugins:
+    * [blueocean:1.23.2](https://plugins.jenkins.io/blueocean)
+    * [jira-steps:1.6.0](https://plugins.jenkins.io/jira-steps)
+    * [kubernetes:1.25.5](https://plugins.jenkins.io/kubernetes)
+    * [saml:1.1.6](https://plugins.jenkins.io/saml)
+
 ## 2.222.3-193
 * Updated plugins:
     * [cloudbees-bitbucket-branch-source:2.8.0](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
