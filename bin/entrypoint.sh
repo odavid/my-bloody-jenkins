@@ -52,11 +52,20 @@ if [[ $# -lt 1 ]] || [[ "$1" == "-"* ]]; then
     # This is important if you let docker create the host mounted volumes.
     # We need to make sure they will be owned by the jenkins user
     mkdir -p /jenkins-workspace-home/workspace
+    echo "Chowning /jenkins-workspace-home"
     if [ "jenkins" != "$(stat -c %U /jenkins-workspace-home/workspace)" ]; then
         chown -R jenkins:jenkins /jenkins-workspace-home
     fi
-    if [ "jenkins" != "$(stat -c %U ${JENKINS_HOME})" ]; then
-        chown -R jenkins:jenkins $JENKINS_HOME
+    echo "Chowning /jenkins-workspace-home. Done"
+    if [ ! -n "${DISABLE_CHOWN_ON_STARTUP}" ]; then
+        echo "Chowning $JENKINS_HOME"
+        if [ "jenkins" != "$(stat -c %U ${JENKINS_HOME})" ]; then
+            chown -R jenkins:jenkins $JENKINS_HOME
+        fi
+        echo "Chowning $JENKINS_HOME. Done"
+        unset DISABLE_CHOWN_ON_STARTUP
+    else
+        echo "Chowning $JENKINS_HOME disabled"
     fi
 
     # To enable docker cloud based on docker socket,
