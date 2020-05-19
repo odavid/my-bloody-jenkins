@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.222.3-194 (Not released yet)
+## 2.222.3-194
 * Updated plugins:
     * [blueocean:1.23.2](https://plugins.jenkins.io/blueocean)
     * [jira-steps:1.6.0](https://plugins.jenkins.io/jira-steps)
