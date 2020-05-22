@@ -1,5 +1,9 @@
 ## Changelog
 
+## 2.222.3-195 (Not released yet)
+* Adds ability to disable Matrix-based Authorization [#163](https://github.com/odavid/my-bloody-jenkins/pull/163)
+* Adds ability to disable chown on startup [#164](https://github.com/odavid/my-bloody-jenkins/pull/164)
+
 ## 2.222.3-194
 * Updated plugins:
     * [blueocean:1.23.2](https://plugins.jenkins.io/blueocean)
