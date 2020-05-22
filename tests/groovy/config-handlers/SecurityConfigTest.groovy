@@ -199,7 +199,16 @@ permissions:
     assert grantedPermissions[hudson.security.Permission.fromId('hudson.model.Item.Discover')] == (['authenticated'] as Set)
     assert grantedPermissions[hudson.security.Permission.fromId('hudson.model.Item.Cancel')] == (['authenticated'] as Set)
     assert grantedPermissions[hudson.security.Permission.fromId('hudson.model.Hudson.Administer')] == (['admin'] as Set)
- }
+}
+
+def testUnsecureAuthorizationStrategy(){
+	def config = new Yaml().load("""
+unsecureStrategy: true
+"""
+    )
+    def strategy = configHandler.createAuthorizationStrategy(config, 'admin')
+    assert strategy instanceof hudson.security.AuthorizationStrategy$Unsecured
+}
 
 def testSecurityOptions(){
     def config = new Yaml().load("""
@@ -299,6 +308,7 @@ testLdap()
 testOIC()
 testActiveDirectory()
 testAuthorizationStrategy()
+testUnsecureAuthorizationStrategy()
 testSecurityOptions()
 testJenkinsDatabase()
 testJenkinsDatabaseUsers()

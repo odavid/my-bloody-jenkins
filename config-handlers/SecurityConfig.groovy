@@ -5,6 +5,7 @@ import hudson.security.HudsonPrivateSecurityRealm
 import jenkins.security.plugins.ldap.FromGroupSearchLDAPGroupMembershipStrategy
 import jenkins.security.plugins.ldap.FromUserRecordLDAPGroupMembershipStrategy
 import org.jenkinsci.plugins.oic.OicSecurityRealm
+import hudson.security.AuthorizationStrategy
 import jenkins.model.Jenkins
 import hudson.model.Hudson
 import hudson.model.Item
@@ -104,16 +105,19 @@ def setupGoogleOAuth2(config){
 
 
 def createAuthorizationStrategy(config, adminUser){
-    def strategy = new ProjectMatrixAuthorizationStrategy()
-    strategy.add(Hudson.ADMINISTER, adminUser)
-    config?.permissions?.each{ principal, permissions ->
-        for(p in permissions){
-            try{
-                def permission = hudson.security.Permission.fromId(p)
-                strategy.add(permission, principal)
-            }catch(e){
-                println "Failed to set permission ${p} for principal ${principal}... ${e}"
-                e.printStackTrace()
+    def strategy = new hudson.security.AuthorizationStrategy.Unsecured()
+    if (!asBoolean(config['unsecureStrategy'], false)){
+        strategy = new ProjectMatrixAuthorizationStrategy()
+        strategy.add(Hudson.ADMINISTER, adminUser)
+        config?.permissions?.each{ principal, permissions ->
+            for(p in permissions){
+                try{
+                    def permission = hudson.security.Permission.fromId(p)
+                    strategy.add(permission, principal)
+                }catch(e){
+                    println "Failed to set permission ${p} for principal ${principal}... ${e}"
+                    e.printStackTrace()
+                }
             }
         }
     }
@@ -206,7 +210,9 @@ def setup(config){
     if(realm){
         instance.setSecurityRealm(realm)
         def strategy = createAuthorizationStrategy(config, adminUser)
-        instance.setAuthorizationStrategy(strategy)
+        if (strategy instanceof hudson.security.ProjectMatrixAuthorizationStrategy){
+            instance.setAuthorizationStrategy(strategy)
+        }
         instance.save()
     }
 }
