@@ -97,7 +97,7 @@ javadoc:1.5
 jdk-tool:1.4
 jenkins-design-language:1.23.2
 jira-steps:1.6.0
-jira:3.0.15
+jira:3.0.16
 job-dsl:1.77
 jquery-detached:1.2.1
 jquery:1.12.4-1
@@ -106,7 +106,7 @@ junit:1.29
 kubernetes-cli:1.8.2
 kubernetes-client-api:4.9.1-1
 kubernetes-credentials:0.6.2
-kubernetes:1.25.5
+kubernetes:1.25.7
 ldap:1.24
 lockable-resources:2.8
 mailer:1.32

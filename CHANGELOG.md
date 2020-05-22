@@ -3,6 +3,9 @@
 ## 2.222.3-195 (Not released yet)
 * Adds ability to disable Matrix-based Authorization [#163](https://github.com/odavid/my-bloody-jenkins/pull/163)
 * Adds ability to disable chown on startup [#164](https://github.com/odavid/my-bloody-jenkins/pull/164)
+* Updated plugins:
+    * [jira:3.0.16](https://plugins.jenkins.io/jira)
+    * [kubernetes:1.25.7](https://plugins.jenkins.io/kubernetes)
 
 ## 2.222.3-194
 * Updated plugins:
