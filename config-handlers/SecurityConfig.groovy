@@ -106,7 +106,7 @@ def setupGoogleOAuth2(config){
 
 def createAuthorizationStrategy(config, adminUser){
     def strategy = new hudson.security.AuthorizationStrategy.Unsecured()
-    if (asBoolean(config['projectMatrixAuthorizationStrategy'], true)){
+    if (!asBoolean(config['unsecureStrategy'], false)){
         strategy = new ProjectMatrixAuthorizationStrategy()
         strategy.add(Hudson.ADMINISTER, adminUser)
         config?.permissions?.each{ principal, permissions ->
@@ -210,7 +210,7 @@ def setup(config){
     if(realm){
         instance.setSecurityRealm(realm)
         def strategy = createAuthorizationStrategy(config, adminUser)
-        if (!strategy instanceof hudson.security.AuthorizationStrategy$Unsecured){
+        if (strategy instanceof hudson.security.ProjectMatrixAuthorizationStrategy){
             instance.setAuthorizationStrategy(strategy)
         }
         instance.save()

@@ -242,7 +242,7 @@ Responsible for:
     * google - Uses [google-login plugin](https://plugins.jenkins.io/google-login)
     * oic - Uses [oic-auth plugin](https://plugins.jenkins.io/oic-auth/)
 * User/Group Permissions dict - Each key represent a user or a group and its value is a list of Jenkins [Permissions IDs](https://wiki.jenkins.io/display/JENKINS/Matrix-based+security)
-    * For disable configure Matrix based Security you should add "projectMatrixAuthorizationStrategy: false" (Anyone can do anything)
+    * For disable configure Matrix based Security you should add "unsecureStrategy: true" (Anyone can do anything)
 
 ```yaml
 # jenkins_database - adminPassword must be provided

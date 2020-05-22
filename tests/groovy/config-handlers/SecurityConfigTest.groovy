@@ -203,7 +203,7 @@ permissions:
 
 def testUnsecureAuthorizationStrategy(){
 	def config = new Yaml().load("""
-projectMatrixAuthorizationStrategy: false
+unsecureStrategy: true
 """
     )
     def strategy = configHandler.createAuthorizationStrategy(config, 'admin')
