@@ -284,6 +284,7 @@ def kubernetesCloud(config){
             asInt(retentionTimeout, KubernetesCloud.DEFAULT_RETENTION_TIMEOUT_MINUTES)
         )
         kubernetesCloud.jenkinsTunnel = tunnel
+        kubernetesCloud.webSocket = asBoolean(webSocket)
         kubernetesCloud.credentialsId = credentialsId
         kubernetesCloud.skipTlsVerify = asBoolean(skipTlsVerify)
         kubernetesCloud.serverCertificate = serverCertificate

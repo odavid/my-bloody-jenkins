@@ -219,6 +219,7 @@ kube-cloud:
   readTimeout: 20
   containerCap: 10
   directConnection: false
+  webSocket: true
   defaultsProviderTemplate: defaultsProviderTemplate
   templates:
     - name: kube-cloud
@@ -298,6 +299,7 @@ kube-cloud:
         assert it.readTimeout == 20
         assert it.containerCap == 10
         assert !it.directConnection
+        assert it.webSocket
         assert it.defaultsProviderTemplate == 'defaultsProviderTemplate'
 
         def template = it.templates[0]
