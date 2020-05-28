@@ -1,6 +1,7 @@
 ## Changelog
 
 ## 2.222.3-196 (Not released yet)
+* Adds ability to use webSocket connection instead of TCP [#165](https://github.com/odavid/my-bloody-jenkins/pull/165)
 * Fixed issue with SeedJobs in subfolders which nesting > 1 [#166](https://github.com/odavid/my-bloody-jenkins/pull/166)
 * Updated plugins:
     * [ansicolor:0.7.0](https://plugins.jenkins.io/ansicolor)
