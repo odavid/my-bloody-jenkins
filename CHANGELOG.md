@@ -1,5 +1,14 @@
 ## Changelog
 
+## 2.222.3-196 (Not released yet)
+* Fixed issue with SeedJobs in subfolders which nesting > 1 [#166](https://github.com/odavid/my-bloody-jenkins/pull/166)
+* Updated plugins:
+    * [ansicolor:0.7.0](https://plugins.jenkins.io/ansicolor)
+    * [build-timeout:1.20](https://plugins.jenkins.io/build-timeout)
+    * [configuration-as-code:1.41](https://plugins.jenkins.io/configuration-as-code)
+    * [cucumber-reports:5.2.0](https://plugins.jenkins.io/cucumber-reports)
+    * [kubernetes-client-api:4.9.2-1](https://plugins.jenkins.io/kubernetes-client-api)
+
 ## 2.222.3-195
 * Adds ability to disable Matrix-based Authorization [#163](https://github.com/odavid/my-bloody-jenkins/pull/163)
 * Adds ability to disable chown on startup [#164](https://github.com/odavid/my-bloody-jenkins/pull/164)
