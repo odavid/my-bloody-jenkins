@@ -14,7 +14,7 @@ def getOrCreateFolder(def parent, def name) {
         parent = jenkins.model.Jenkins.instance
         folder = jenkins.model.Jenkins.instance.getItem(name)
     } else {
-        folder = jenkins.model.Jenkins.instance.getItemByFullName("${parent.getName()}/${name}")
+        folder = jenkins.model.Jenkins.instance.getItemByFullName("${parent.getFullName()}/${name}")
     }
 
     if (folder != null) {
@@ -53,14 +53,14 @@ def seedJobConfig(config){
         }
         def scm = new hudson.plugins.git.GitSCM(
             hudson.plugins.git.GitSCM.createRepoList(
-                source?.remote, 
+                source?.remote,
                 source?.credentialsId
-            ), 
+            ),
             source?.branch ? [new hudson.plugins.git.BranchSpec("${source?.branch}")] : [],
-            null, 
-            null, 
-            null, 
-            null, 
+            null,
+            null,
+            null,
+            null,
             null
         )
         job.definition = new org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition(scm, pipeline)
@@ -99,8 +99,8 @@ def seedJobConfig(config){
                         switch(type){
                             case 'choice':
                                 new hudson.model.ChoiceParameterDefinition(
-                                    name, 
-                                    choices?.join('\n')?:'', 
+                                    name,
+                                    choices?.join('\n')?:'',
                                     description?:''
                                 )
                                 break
@@ -147,7 +147,7 @@ def seedJobConfig(config){
 
 def setup(config){
     config = config ?: [:]
-    config.collect{k,v -> 
+    config.collect{k,v ->
         seedJobConfig([name: k] << v)
     }
 }
