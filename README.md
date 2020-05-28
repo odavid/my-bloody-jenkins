@@ -797,6 +797,8 @@ clouds:
   kube-cloud:
     ## default is false
     directConnection: false
+    ## Use WebSocket to connect agents rather than the TCP port. Default is false
+    webSocket: false
     # type is mandatory
     type: kubernetes
     # Kubernetes URL
