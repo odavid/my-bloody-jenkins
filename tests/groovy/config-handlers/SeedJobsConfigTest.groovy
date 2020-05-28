@@ -73,7 +73,24 @@ my-seed-job:
     branch: my-test-branch
     credentialsId: my-git-key
   pipeline: src/groovy/Jenkinsfile-config
-
+/myfolder/mysubfolder/mysubfolder2/my-seed-job-inside-subfolder:
+  source:
+    remote: git@github.com:odavid/my-bloody-jenkins.git
+    branch: my-test-branch
+    credentialsId: my-git-key
+  pipeline: src/groovy/Jenkinsfile-config
+/myfolder/mysubfolder/mysubfolder2/mysubfolder3/my-seed-job-inside-subfolder:
+  source:
+    remote: git@github.com:odavid/my-bloody-jenkins.git
+    branch: my-test-branch
+    credentialsId: my-git-key
+  pipeline: src/groovy/Jenkinsfile-config
+/myfolder/mysubfolder/mysubfolder2/mysubfolder3/mysubfolder4/my-seed-job-inside-subfolder:
+  source:
+    remote: git@github.com:odavid/my-bloody-jenkins.git
+    branch: my-test-branch
+    credentialsId: my-git-key
+  pipeline: src/groovy/Jenkinsfile-config
 """)
     configHandler.setup(config)
     def job = jenkins.model.Jenkins.instance.getItem('my-seed-job')
@@ -121,6 +138,14 @@ SIMPLE_TEXT_LINE2
     def jobInsideSubFolder = jenkins.model.Jenkins.instance.getItemByFullName('/myfolder/mysubfolder/my-seed-job-inside-subfolder')
     assert jobInsideSubFolder instanceof org.jenkinsci.plugins.workflow.job.WorkflowJob
 
+    def jobInsideSubFolder2 = jenkins.model.Jenkins.instance.getItemByFullName('/myfolder/mysubfolder/mysubfolder2/my-seed-job-inside-subfolder')
+    assert jobInsideSubFolder2 instanceof org.jenkinsci.plugins.workflow.job.WorkflowJob
+
+    def jobInsideSubFolder3 = jenkins.model.Jenkins.instance.getItemByFullName('/myfolder/mysubfolder/mysubfolder2/mysubfolder3/my-seed-job-inside-subfolder')
+    assert jobInsideSubFolder3 instanceof org.jenkinsci.plugins.workflow.job.WorkflowJob
+
+    def jobInsideSubFolder4 = jenkins.model.Jenkins.instance.getItemByFullName('/myfolder/mysubfolder/mysubfolder2/mysubfolder3/mysubfolder4/my-seed-job-inside-subfolder')
+    assert jobInsideSubFolder4 instanceof org.jenkinsci.plugins.workflow.job.WorkflowJob
 }
 
 testSeedJobs()
