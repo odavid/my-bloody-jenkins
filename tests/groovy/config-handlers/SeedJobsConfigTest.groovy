@@ -61,6 +61,13 @@ my-seed-job:
       type: password
       description: PASSWORD_PARAM
       value: password
+my-seed-job-with-concurrent:
+  source:
+    remote: git@github.com:odavid/my-bloody-jenkins.git
+    branch: my-test-branch
+    credentialsId: my-git-key
+  pipeline: src/groovy/Jenkinsfile-config
+  concurrentBuild: true
 /myfolder/my-seed-job-inside-folder:
   source:
     remote: git@github.com:odavid/my-bloody-jenkins.git
@@ -99,6 +106,7 @@ my-seed-job:
     assert job.definition.scm.userRemoteConfigs[0].credentialsId == 'my-git-key'
     assert job.definition.scm.branches[0].name == 'my-test-branch'
     assert job.definition.scriptPath == 'src/groovy/Jenkinsfile-config'
+    assert !job.concurrentBuild
 
     def paramsDef = job.getProperty(hudson.model.ParametersDefinitionProperty).parameterDefinitions
 
@@ -131,6 +139,14 @@ SIMPLE_TEXT_LINE2
     assertParam(paramsDef, 'PASSWORD_PARAM', hudson.model.PasswordParameterValue, 'PASSWORD_PARAM'){
       assert it.value.toString() == 'password'
     }
+
+    def jobconcurrent = jenkins.model.Jenkins.instance.getItem('my-seed-job-with-concurrent')
+    assert jobconcurrent instanceof org.jenkinsci.plugins.workflow.job.WorkflowJob
+    assert jobconcurrent.definition.scm.userRemoteConfigs[0].url == 'git@github.com:odavid/my-bloody-jenkins.git'
+    assert jobconcurrent.definition.scm.userRemoteConfigs[0].credentialsId == 'my-git-key'
+    assert jobconcurrent.definition.scm.branches[0].name == 'my-test-branch'
+    assert jobconcurrent.definition.scriptPath == 'src/groovy/Jenkinsfile-config'
+    assert jobconcurrent.concurrentBuild
 
     def jobInsideFolder = jenkins.model.Jenkins.instance.getItemByFullName('/myfolder/my-seed-job-inside-folder')
     assert jobInsideFolder instanceof org.jenkinsci.plugins.workflow.job.WorkflowJob

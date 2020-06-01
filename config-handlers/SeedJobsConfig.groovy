@@ -64,7 +64,7 @@ def seedJobConfig(config){
             null
         )
         job.definition = new org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition(scm, pipeline)
-        job.concurrentBuild = false
+        job.concurrentBuild = asBoolean(concurrentBuild)
         triggers?.collect{ type, expression ->
             switch(type){
                 case 'pollScm':

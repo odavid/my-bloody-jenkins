@@ -918,6 +918,8 @@ seed_jobs:
     # firstTimeOnly - will be executed only if the job was not exist
     # never - don't execute the job, let the triggers do their job
     executeWhen: always #firstTimeOnly always never
+    # Allow concurrent builds. default - false
+    concurrentBuild: false
 
     # Define parameters with default values to the seed job
     parameters:
