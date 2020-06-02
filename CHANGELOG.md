@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.222.4-197 (Not released yet)
+## 2.222.4-197
 * [LTS-2.222.4](https://www.jenkins.io/changelog-stable/)
 * Adds ability to set concurrentBuild=true [#167](https://github.com/odavid/my-bloody-jenkins/pull/167)
 * Updated plugins:
