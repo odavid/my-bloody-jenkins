@@ -3,6 +3,15 @@
 ## 2.222.4-197 (Not released yet)
 * [LTS-2.222.4](https://www.jenkins.io/changelog-stable/)
 * Adds ability to set concurrentBuild=true [#167](https://github.com/odavid/my-bloody-jenkins/pull/167)
+* Updated plugins:
+    * [aws-java-sdk:1.11.791](https://plugins.jenkins.io/aws-java-sdk)
+    * [git-changelog:3.0](https://plugins.jenkins.io/git-changelog)
+    * [github-api:1.111.1](https://plugins.jenkins.io/github-api)
+    * [github-branch-source:2.7.2](https://plugins.jenkins.io/github-branch-source)
+    * [jira:3.0.17](https://plugins.jenkins.io/jira)
+    * [pipeline-model-definition:1.7.0](https://plugins.jenkins.io/pipeline-model-definition)
+    * [pipeline-utility-steps:2.6.0](https://plugins.jenkins.io/pipeline-utility-steps)
+    * [swarm:3.20](https://plugins.jenkins.io/swarm)
 
 ## 2.222.3-196
 * Adds ability to use webSocket connection instead of TCP [#165](https://github.com/odavid/my-bloody-jenkins/pull/165)
