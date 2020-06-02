@@ -1,5 +1,9 @@
 ## Changelog
 
+## 2.222.4-197 (Not released yet)
+* [LTS-2.222.4](https://www.jenkins.io/changelog-stable/)
+* Adds ability to set concurrentBuild=true [#167](https://github.com/odavid/my-bloody-jenkins/pull/167)
+
 ## 2.222.3-196
 * Adds ability to use webSocket connection instead of TCP [#165](https://github.com/odavid/my-bloody-jenkins/pull/165)
 * Fixed issue with SeedJobs in subfolders which nesting > 1 [#166](https://github.com/odavid/my-bloody-jenkins/pull/166)
