@@ -1,5 +1,19 @@
 ## Changelog
 
+## 2.222.4-198 (Not released yet)
+* Updated plugins:
+    * [cloudbees-folder:6.13](https://plugins.jenkins.io/cloudbees-folder)
+    * [credentials:2.3.8](https://plugins.jenkins.io/credentials)
+    * [github-api:1.112.0](https://plugins.jenkins.io/github-api)
+    * [github-branch-source:2.8.0](https://plugins.jenkins.io/github-branch-source)
+    * [jira:3.0.18](https://plugins.jenkins.io/jira)
+    * [kubernetes-cli:1.8.3](https://plugins.jenkins.io/kubernetes-cli)
+    * [kubernetes-client-api:4.9.2-2](https://plugins.jenkins.io/kubernetes-client-api)
+    * [kubernetes:1.26.0](https://plugins.jenkins.io/kubernetes)
+    * [script-security:1.73](https://plugins.jenkins.io/script-security)
+    * [swarm:3.21](https://plugins.jenkins.io/swarm)
+    * [trilead-api:1.0.8](https://plugins.jenkins.io/trilead-api)
+
 ## 2.222.4-197
 * [LTS-2.222.4](https://www.jenkins.io/changelog-stable/)
 * Adds ability to set concurrentBuild=true [#167](https://github.com/odavid/my-bloody-jenkins/pull/167)
