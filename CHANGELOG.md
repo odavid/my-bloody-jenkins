@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.222.4-198 (Not released yet)
+## 2.222.4-198
 * Updated plugins:
     * [cloudbees-folder:6.13](https://plugins.jenkins.io/cloudbees-folder)
     * [credentials:2.3.8](https://plugins.jenkins.io/credentials)
