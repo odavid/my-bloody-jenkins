@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.222.4-199 (Not released yet)
+## 2.222.4-199
 * Updated plugins:
     * [aws-java-sdk:1.11.799](https://plugins.jenkins.io/aws-java-sdk)
     * [github-api:1.114.1](https://plugins.jenkins.io/github-api)
