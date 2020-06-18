@@ -163,6 +163,7 @@ def ecsCloud(config){
                 temp.name ? temp.name : temp.labels?.join('-'),
                 temp.labels?.join(' '),
                 temp.taskDefinitionOverride,
+                temp.dynamicTaskDefinitionOverride,
                 temp.image,
                 temp.repositoryCredentials,
                 temp.launchType,

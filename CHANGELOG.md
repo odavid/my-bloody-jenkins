@@ -1,5 +1,17 @@
 ## Changelog
 
+## 2.222.4-200 (Not released yet)
+* Updated plugins:
+    * [amazon-ecs:1.36](https://plugins.jenkins.io/amazon-ecs)
+    * [cloudbees-folder:6.14](https://plugins.jenkins.io/cloudbees-folder)
+    * [credentials:2.3.9](https://plugins.jenkins.io/credentials)
+    * [github-api:1.114.2](https://plugins.jenkins.io/github-api)
+    * [jira:3.1.1](https://plugins.jenkins.io/jira)
+    * [kubernetes-credentials:0.7.0](https://plugins.jenkins.io/kubernetes-credentials)
+    * [matrix-project:1.16](https://plugins.jenkins.io/matrix-project)
+    * [swarm:3.22](https://plugins.jenkins.io/swarm)
+    * [workflow-support:3.5](https://plugins.jenkins.io/workflow-support)
+
 ## 2.222.4-199
 * Updated plugins:
     * [aws-java-sdk:1.11.799](https://plugins.jenkins.io/aws-java-sdk)
