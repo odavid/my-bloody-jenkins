@@ -1,6 +1,7 @@
 ## Changelog
 
-## 2.222.4-200 (Not released yet)
+## 2.235.1-200 (Not released yet)
+* [LTS-2.235.1](https://www.jenkins.io/changelog-stable/)
 * Updated plugins:
     * [amazon-ecs:1.36](https://plugins.jenkins.io/amazon-ecs)
     * [cloudbees-folder:6.14](https://plugins.jenkins.io/cloudbees-folder)
