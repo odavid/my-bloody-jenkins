@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.235.1-200 (Not released yet)
+## 2.235.1-200
 * [LTS-2.235.1](https://www.jenkins.io/changelog-stable/)
 * Updated plugins:
     * [amazon-ecs:1.36](https://plugins.jenkins.io/amazon-ecs)
