@@ -80,6 +80,8 @@ git:4.2.2
 github-api:1.114.2
 github-branch-source:2.8.2
 github:1.30.0
+gitlab-api:1.0.6
+gitlab-branch-source:1.5.1
 gitlab-plugin:1.5.13
 golang:1.2
 google-login:1.6

@@ -1,5 +1,10 @@
 ## Changelog
 
+## 2.235.1-201
+* Added plugins:
+    * [gitlab-branch-source:1.5.1](https://plugins.jenkins.io/gitlab-branch-source)
+    * [gitlab-api:1.0.6](https://plugins.jenkins.io/gitlab-api)
+
 ## 2.235.1-200
 * [LTS-2.235.1](https://www.jenkins.io/changelog-stable/)
 * Updated plugins:
