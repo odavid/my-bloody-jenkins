@@ -12,6 +12,7 @@ authentication-tokens:1.4
 aws-credentials:1.28
 aws-java-sdk:1.11.799
 badge:1.8
+basic-branch-build-strategies:1.3.2
 blueocean-autofavorite:1.2.4
 blueocean-bitbucket-pipeline:1.23.2
 blueocean-commons:1.23.2
