@@ -1,5 +1,12 @@
 ## Changelog
 
+## 2.235.1-202 (Not released yet)
+* Updated plugins:
+    * [authentication-tokens:1.4](https://plugins.jenkins.io/authentication-tokens)
+    * [git-client:3.3.0](https://plugins.jenkins.io/git-client)
+    * [git:4.3.0](https://plugins.jenkins.io/git)
+    * [github-api:1.114.3](https://plugins.jenkins.io/github-api)
+
 ## 2.235.1-201
 * Added plugins:
     * [gitlab-branch-source:1.5.1](https://plugins.jenkins.io/gitlab-branch-source)
