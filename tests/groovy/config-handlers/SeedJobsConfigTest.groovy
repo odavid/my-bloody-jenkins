@@ -1,4 +1,8 @@
 import org.yaml.snakeyaml.Yaml
+import com.tikal.hudson.plugins.notification.HudsonNotificationProperty
+import com.tikal.hudson.plugins.notification.Endpoint
+import com.tikal.hudson.plugins.notification.Protocol
+import com.tikal.hudson.plugins.notification.Format
 
 handler = 'SeedJobs'
 configHandler = evaluate(new File("/usr/share/jenkins/config-handlers/${handler}Config.groovy"))
@@ -61,6 +65,15 @@ my-seed-job:
       type: password
       description: PASSWORD_PARAM
       value: password
+  notifications:
+  - endpoint: 'http://test:1234'
+    event: started
+  - endpoint: 'www.test.ru:1235'
+    event: failed
+    protocol: 'TCP'
+    format: 'XML'
+    timeout: 600000
+    logLines: 1000
 my-seed-job-with-concurrent:
   source:
     remote: git@github.com:odavid/my-bloody-jenkins.git
@@ -139,6 +152,20 @@ SIMPLE_TEXT_LINE2
     assertParam(paramsDef, 'PASSWORD_PARAM', hudson.model.PasswordParameterValue, 'PASSWORD_PARAM'){
       assert it.value.toString() == 'password'
     }
+
+    def notificationsEndpoints = job.getProperty(HudsonNotificationProperty).getEndpoints()
+    assert notificationsEndpoints[0] as String == 'HTTP:http://test:1234'
+    assert notificationsEndpoints[0].event == 'started'
+    assert notificationsEndpoints[0].protocol as String == 'HTTP'
+    assert notificationsEndpoints[0].format as String == 'JSON'
+    assert notificationsEndpoints[0].timeout == 30000
+    assert notificationsEndpoints[0].loglines == 0
+    assert notificationsEndpoints[1] as String == 'TCP:www.test.ru:1235'
+    assert notificationsEndpoints[1].event == 'failed'
+    assert notificationsEndpoints[1].protocol as String == 'TCP'
+    assert notificationsEndpoints[1].format as String == 'XML'
+    assert notificationsEndpoints[1].timeout == 600000
+    assert notificationsEndpoints[1].loglines == 1000
 
     def jobconcurrent = jenkins.model.Jenkins.instance.getItem('my-seed-job-with-concurrent')
     assert jobconcurrent instanceof org.jenkinsci.plugins.workflow.job.WorkflowJob

@@ -944,6 +944,15 @@ seed_jobs:
           A text with
           new lines
 
+    # Define job notifications
+    notifications:
+      - endpoint: 'http://endpoint:1234' # Endpoint. HTTP event target urls must start with 'http'
+        event: all # Possible values are 'all', 'queued', 'started', 'completed', 'finalized' and 'failed'. Defaults to 'all'.
+        protocol: 'HTTP' # Possible values are 'HTTP', 'TCP', and 'UDP'. Defaults to 'HTTP'
+        format: 'JSON' # Possible values are 'JSON' and 'XML'. Defaults to 'JSON'
+        timeout: 30000 # Defaults to 30000
+        logLines: 0 # Defaults to 0
+
 ```
 
 ### JobDSL Scripts Section

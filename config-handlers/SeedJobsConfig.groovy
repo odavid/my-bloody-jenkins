@@ -1,3 +1,8 @@
+import com.tikal.hudson.plugins.notification.HudsonNotificationProperty
+import com.tikal.hudson.plugins.notification.Endpoint
+import com.tikal.hudson.plugins.notification.Protocol
+import com.tikal.hudson.plugins.notification.Format
+
 def asInt(value, defaultValue=0){
     return value ? value.toInteger() : defaultValue
 }
@@ -137,6 +142,23 @@ def seedJobConfig(config){
                     }
                 } ?: []
             )
+        }
+        if(notifications){
+          while (job.getProperty(HudsonNotificationProperty))
+          {
+            job.removeProperty(HudsonNotificationProperty.class)
+          }
+          ArrayList<Endpoint> endpointsList = new ArrayList<Endpoint>()
+          notifications?.each{
+            Protocol protocol = it.protocol ? it.protocol as Protocol : 'HTTP' as Protocol
+            Format format = it.format ? it.format as Format : 'JSON' as Format
+            String event = it.event ? it.event : 'all'
+            Integer timeout = it.timeout ? it.timeout : 30000
+            Integer logLines = it.logLines ? it.logLines : 0
+            endpointsList.add(new Endpoint(protocol, it.endpoint, event, format , timeout, logLines))
+          }
+          JobProperty notificationProperty = new HudsonNotificationProperty(endpointsList)
+          job.addProperty(notificationProperty)
         }
         if((executeWhen == 'firstTimeOnly' && !exists) || executeWhen == 'always'){
             println "Scheduling ${name}"
