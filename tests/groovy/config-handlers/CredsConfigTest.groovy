@@ -206,7 +206,7 @@ dynamic-p4-ticket-cred:
     }
     assertCred("dynamic-p4-ticket-cred", org.jenkinsci.plugins.p4.credentials.P4TicketImpl){
         assert it.description == "p4 ticket description"
-        assert it.p4port == 'localhost:1666'
+        assert it.p4port == 'ssl:localhost:1666'
         assert it.trust == 'my-trust'
         assert it.username == 'myp4user'
         assert it.retry == 20
