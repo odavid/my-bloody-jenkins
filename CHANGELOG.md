@@ -1,5 +1,21 @@
 ## Changelog
 
+## 2.235.1-203 (Not released yet)
+* Updated plugins:
+    * [artifactory:3.7.0](https://plugins.jenkins.io/artifactory)
+    * [copyartifact:1.45](https://plugins.jenkins.io/copyartifact)
+    * [credentials:2.3.11](https://plugins.jenkins.io/credentials)
+    * [cucumber-reports:5.3.0](https://plugins.jenkins.io/cucumber-reports)
+    * [jackson2-api:2.11.1](https://plugins.jenkins.io/jackson2-api)
+    * [kubernetes:1.26.2](https://plugins.jenkins.io/kubernetes)
+    * [nodejs:1.3.7](https://plugins.jenkins.io/nodejs)
+    * [oic-auth:1.8](https://plugins.jenkins.io/oic-auth)
+    * [p4:1.10.13](https://plugins.jenkins.io/p4)
+    * [parameterized-trigger:2.37](https://plugins.jenkins.io/parameterized-trigger)
+    * [pipeline-stage-step:2.5](https://plugins.jenkins.io/pipeline-stage-step)
+    * [pipeline-utility-steps:2.6.1](https://plugins.jenkins.io/pipeline-utility-steps)
+    * [ssh-agent:1.20](https://plugins.jenkins.io/ssh-agent)
+
 ## 2.235.1-202
 * Updated plugins:
     * [authentication-tokens:1.4](https://plugins.jenkins.io/authentication-tokens)
