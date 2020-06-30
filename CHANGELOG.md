@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.235.1-203 (Not released yet)
+## 2.235.1-203
 * Updated plugins:
     * [artifactory:3.7.0](https://plugins.jenkins.io/artifactory)
     * [copyartifact:1.45](https://plugins.jenkins.io/copyartifact)
