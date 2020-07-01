@@ -4,6 +4,9 @@
 * Updated plugins:
     * [script-security:1.74](https://plugins.jenkins.io/script-security)
     * [workflow-cps:2.81](https://plugins.jenkins.io/workflow-cps)
+    * [antisamy-markup-formatter:2.1](https://plugins.jenkins.io/antisamy-markup-formatter)
+    * [docker-commons:1.17](https://plugins.jenkins.io/docker-commons)
+    * [p4:1.10.14](https://plugins.jenkins.io/p4)
 
 ## 2.235.1-203
 * Updated plugins:
