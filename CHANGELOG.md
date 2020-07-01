@@ -1,5 +1,10 @@
 ## Changelog
 
+## 2.235.1-204 (Not released yet)
+* Updated plugins:
+    * [script-security:1.74](https://plugins.jenkins.io/script-security)
+    * [workflow-cps:2.81](https://plugins.jenkins.io/workflow-cps)
+
 ## 2.235.1-203
 * Updated plugins:
     * [artifactory:3.7.0](https://plugins.jenkins.io/artifactory)
