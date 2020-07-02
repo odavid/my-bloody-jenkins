@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.235.1-204 (Not released yet)
+## 2.235.1-204
 * Updated plugins:
     * [script-security:1.74](https://plugins.jenkins.io/script-security)
     * [workflow-cps:2.81](https://plugins.jenkins.io/workflow-cps)
