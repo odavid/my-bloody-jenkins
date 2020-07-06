@@ -866,6 +866,10 @@ clouds:
         instanceCap: 100
         # Only JNLP slaves are supported
         image: jenkinsci/jnlp-slave:latest
+        # PULL_LATEST (default) - Pull once and update latest
+        # PULL_ALWAYS - Pull all images every time
+        # PULL_NEVER - Never pull
+        pullStrategy: PULL_LATEST
         # Labels are mandatory!
         # Your pipeline jobs will need to use node(label){} in order to use this slave template
         labels:
