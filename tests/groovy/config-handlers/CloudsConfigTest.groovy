@@ -377,6 +377,7 @@ docker-cloud:
     - image: odavid/jenkins-jnlp-slave:latest
       jnlpUser: jenkins
       pullCredentialsId: pull-cred-id
+      pullStrategy: PULL_LATEST
       dns:
         - 8.8.8.8
         - 8.8.7.7
@@ -428,6 +429,7 @@ docker-cloud:
         assert template.image == 'odavid/jenkins-jnlp-slave:latest'
         assert template.connector.jenkinsUrl == 'http://127.0.0.1:8080'
         assert template.connector.user == 'jenkins'
+        assert template.pullStrategy == com.nirima.jenkins.plugins.docker.DockerImagePullStrategy.PULL_LATEST
         assert template.mode == hudson.model.Node.Mode.EXCLUSIVE
         assert template.dockerTemplateBase.pullCredentialsId == 'pull-cred-id'
         assert template.dockerTemplateBase.dnsString == '8.8.8.8 8.8.7.7'
