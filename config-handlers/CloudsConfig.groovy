@@ -129,6 +129,7 @@ def dockerCloud(config){
                     ]
                 }
 
+                dockerTemplate.pullStrategy = temp.pullStrategy ? DockerImagePullStrategy.valueOf(temp.pullStrategy) : DockerImagePullStrategy.PULL_LATEST
                 dockerTemplate.mode = temp.mode ? Node.Mode.valueOf(temp.mode) : Node.Mode.EXCLUSIVE
                 dockerTemplate.connector.user = temp.jnlpUser ?: config.jnlpUser ?: ''
                 if(jenkinsUrl){
