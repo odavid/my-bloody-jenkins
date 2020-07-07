@@ -4,8 +4,7 @@
 * Add support for configuration of docker pull strategy [#169](https://github.com/odavid/my-bloody-jenkins/pull/169)
 * Updated plugins:
     * [git-client:3.3.1](https://plugins.jenkins.io/git-client)
-    * [artifactory:3.7.1](https://plugins.jenkins.io/artifactory)
-    
+
 ## 2.235.1-204
 * Updated plugins:
     * [script-security:1.74](https://plugins.jenkins.io/script-security)
