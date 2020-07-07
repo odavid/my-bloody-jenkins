@@ -7,7 +7,7 @@ ansicolor:0.7.0
 ant:1.11
 antisamy-markup-formatter:2.1
 apache-httpcomponents-client-4-api:4.5.10-2.0
-artifactory:3.7.0
+artifactory:3.7.1
 authentication-tokens:1.4
 aws-credentials:1.28
 aws-java-sdk:1.11.799
