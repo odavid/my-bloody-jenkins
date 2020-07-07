@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.235.1-205 (Not released yet)
+## 2.235.1-205
 * Add support for configuration of docker pull strategy [#169](https://github.com/odavid/my-bloody-jenkins/pull/169)
 * Updated plugins:
     * [git-client:3.3.1](https://plugins.jenkins.io/git-client)
