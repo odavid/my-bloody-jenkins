@@ -1,5 +1,15 @@
 ## Changelog
 
+## 2.235.1-207 (Not released yet)
+* Updated plugins:
+    * [ansicolor:0.7.1](https://plugins.jenkins.io/ansicolor)
+    * [checkmarx:2020.2.20](https://plugins.jenkins.io/checkmarx)
+    * [display-url-api:2.3.3](https://plugins.jenkins.io/display-url-api)
+    * [github:1.31.0](https://plugins.jenkins.io/github)
+    * [matrix-auth:2.6.2](https://plugins.jenkins.io/matrix-auth)
+    * [matrix-project:1.17](https://plugins.jenkins.io/matrix-project)
+    * [maven-plugin:3.7](https://plugins.jenkins.io/maven-plugin)
+
 ## 2.235.1-206
 * Updated plugins:
     * [artifactory:3.7.3](https://plugins.jenkins.io/artifactory)
