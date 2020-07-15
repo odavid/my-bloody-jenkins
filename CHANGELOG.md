@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.235.1-207 (Not released yet)
+## 2.235.1-207
 * Updated plugins:
     * [ansicolor:0.7.1](https://plugins.jenkins.io/ansicolor)
     * [checkmarx:2020.2.20](https://plugins.jenkins.io/checkmarx)
