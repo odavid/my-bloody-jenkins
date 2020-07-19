@@ -1,5 +1,14 @@
 ## Changelog
 
+## 2.235.2-209 (Not released yet)
+* Updated plugins:
+    * [aws-java-sdk:1.11.821](https://plugins.jenkins.io/aws-java-sdk)
+    * [branch-api:2.5.8](https://plugins.jenkins.io/branch-api)
+    * [cloudbees-bitbucket-branch-source:2.9.0](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
+    * [credentials:2.3.12](https://plugins.jenkins.io/credentials)
+    * [github-api:1.115](https://plugins.jenkins.io/github-api)
+    * [kubernetes:1.26.4](https://plugins.jenkins.io/kubernetes)
+
 ## 2.235.2-208
 * [LTS-2.235.2](https://www.jenkins.io/changelog-stable/)
 
