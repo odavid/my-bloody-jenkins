@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.235.2-209 (Not released yet)
+## 2.235.2-209
 * Updated plugins:
     * [aws-java-sdk:1.11.821](https://plugins.jenkins.io/aws-java-sdk)
     * [branch-api:2.5.8](https://plugins.jenkins.io/branch-api)
