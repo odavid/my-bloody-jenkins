@@ -1,5 +1,13 @@
 ## Changelog
 
+## 2.235.2-210 (Not released yet)
+* Updated plugins:
+    * [configuration-as-code:1.42](https://plugins.jenkins.io/configuration-as-code)
+    * [copyartifact:1.45.1](https://plugins.jenkins.io/copyartifact)
+    * [email-ext:2.71](https://plugins.jenkins.io/email-ext)
+    * [github-branch-source:2.8.3](https://plugins.jenkins.io/github-branch-source)
+    * [workflow-cps-global-lib:2.17](https://plugins.jenkins.io/workflow-cps-global-lib)
+
 ## 2.235.2-209
 * Updated plugins:
     * [aws-java-sdk:1.11.821](https://plugins.jenkins.io/aws-java-sdk)
