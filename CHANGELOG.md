@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.235.3-211 (Not released yet)
+## 2.235.3-211
 * [LTS-2.235.3](https://www.jenkins.io/changelog-stable/)
 * Updated plugins:
     * [build-user-vars-plugin:1.6](https://plugins.jenkins.io/build-user-vars-plugin)
