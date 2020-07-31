@@ -1,5 +1,14 @@
 ## Changelog
 
+## 2.235.2-211 (Not released yet)
+* Updated plugins:
+    * [build-user-vars-plugin:1.6](https://plugins.jenkins.io/build-user-vars-plugin)
+    * [cloudbees-bitbucket-branch-source:2.9.1](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
+    * [git-client:3.3.2](https://plugins.jenkins.io/git-client)
+    * [junit:1.30](https://plugins.jenkins.io/junit)
+    * [timestamper:1.11.5](https://plugins.jenkins.io/timestamper)
+    * [workflow-cps:2.82](https://plugins.jenkins.io/workflow-cps)
+
 ## 2.235.2-210
 * Updated plugins:
     * [configuration-as-code:1.42](https://plugins.jenkins.io/configuration-as-code)
