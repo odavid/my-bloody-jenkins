@@ -1,6 +1,7 @@
 ## Changelog
 
-## 2.235.2-211 (Not released yet)
+## 2.235.3-211 (Not released yet)
+* [LTS-2.235.3](https://www.jenkins.io/changelog-stable/)
 * Updated plugins:
     * [build-user-vars-plugin:1.6](https://plugins.jenkins.io/build-user-vars-plugin)
     * [cloudbees-bitbucket-branch-source:2.9.1](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
