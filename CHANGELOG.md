@@ -1,5 +1,18 @@
 ## Changelog
 
+## 2.235.3-212 (Not released yet)
+* Updated plugins:
+  * [ansicolor:0.7.2](https://plugins.jenkins.io/ansicolor)
+  * [code-coverage-api:1.2.0](https://plugins.jenkins.io/code-coverage-api)
+  * [configuration-as-code:1.43](https://plugins.jenkins.io/configuration-as-code)
+  * [dashboard-view:2.13](https://plugins.jenkins.io/dashboard-view)
+  * [email-ext:2.73](https://plugins.jenkins.io/email-ext)
+  * [jackson2-api:2.11.2](https://plugins.jenkins.io/jackson2-api)
+  * [javadoc:1.6](https://plugins.jenkins.io/javadoc)
+  * [pipeline-aws:1.42](https://plugins.jenkins.io/pipeline-aws)
+  * [pipeline-build-step:2.13](https://plugins.jenkins.io/pipeline-build-step)
+  * [workflow-multibranch:2.22](https://plugins.jenkins.io/workflow-multibranch)
+
 ## 2.235.3-211
 * [LTS-2.235.3](https://www.jenkins.io/changelog-stable/)
 * Updated plugins:
