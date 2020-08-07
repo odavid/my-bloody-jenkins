@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.235.3-212 (Not released yet)
+## 2.235.3-212
 * Updated plugins:
   * [ansicolor:0.7.2](https://plugins.jenkins.io/ansicolor)
   * [code-coverage-api:1.2.0](https://plugins.jenkins.io/code-coverage-api)
