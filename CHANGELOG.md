@@ -1,5 +1,17 @@
 ## Changelog
 
+## 2.235.3-213 (Not released yet)
+* Updated plugins:
+  * [aws-java-sdk:1.11.838](https://plugins.jenkins.io/aws-java-sdk)
+  * [branch-api:2.5.9](https://plugins.jenkins.io/branch-api)
+  * [cucumber-reports:5.3.1](https://plugins.jenkins.io/cucumber-reports)
+  * [email-ext:2.74](https://plugins.jenkins.io/email-ext)
+  * [junit:1.31](https://plugins.jenkins.io/junit)
+  * [pipeline-maven:3.8.3](https://plugins.jenkins.io/pipeline-maven)
+  * [pipeline-rest-api:2.14](https://plugins.jenkins.io/pipeline-rest-api)
+  * [pipeline-stage-view:2.14](https://plugins.jenkins.io/pipeline-stage-view)
+  * [saml:1.1.7](https://plugins.jenkins.io/saml)
+
 ## 2.235.3-212
 * Updated plugins:
   * [ansicolor:0.7.2](https://plugins.jenkins.io/ansicolor)
