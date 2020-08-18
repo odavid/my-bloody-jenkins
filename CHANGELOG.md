@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.235.5-214 (Not released yet)
+## 2.235.5-214
 * [LTS-2.235.5](https://www.jenkins.io/changelog-stable/)
     * Major update of the Alpine-based Jenkins Docker image. Jenkins Docker image for Alpine now uses Alpine 3.12 and AdoptOpenJDK 8u262.
 * Updated plugins:
