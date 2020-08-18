@@ -3,6 +3,11 @@
 ## 2.235.5-214 (Not released yet)
 * [LTS-2.235.5](https://www.jenkins.io/changelog-stable/)
     * Major update of the Alpine-based Jenkins Docker image. Jenkins Docker image for Alpine now uses Alpine 3.12 and AdoptOpenJDK 8u262.
+* Updated plugins:
+    * [artifactory:3.8.0](https://plugins.jenkins.io/artifactory)
+    * [cloudbees-bitbucket-branch-source:2.9.2](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
+    * [email-ext:2.75](https://plugins.jenkins.io/email-ext)
+    * [git-client:3.4.1](https://plugins.jenkins.io/git-client)
 
 ## 2.235.3-213
 * Updated plugins:
