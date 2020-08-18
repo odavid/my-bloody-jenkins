@@ -32,8 +32,8 @@ artifactoryServers:
     assert desc.useCredentialsPlugin
     assert desc.artifactoryServers.size() == 2
     def server = desc.artifactoryServers[0]
-    assert server.name == 'artifactory1'
-    assert server.url == 'http://artifactory1'
+    assert server.serverId == 'artifactory1'
+    assert server.artifactoryUrl == 'http://artifactory1'
     assert server.bypassProxy
     assert server.connectionRetry == 10
     assert server.timeout == 200
