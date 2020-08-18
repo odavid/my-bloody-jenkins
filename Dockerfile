@@ -1,4 +1,4 @@
-ARG FROM_TAG=2.235.3
+ARG FROM_TAG=2.235.5
 
 FROM jenkins/jenkins:${FROM_TAG}
 
@@ -18,8 +18,7 @@ USER root
 RUN \
      # alpine - Install pip and shadow for usermod
      if [ -f /etc/alpine-release ] ; then \
-          apk add --no-cache shadow python3 py3-setuptools && \
-          easy_install-3.6 pip==19.1 \
+          apk add --no-cache shadow python3 py3-setuptools py3-pip \
           ; \
      # debian - Install pip
      elif [ -f /etc/debian_version ] ; then \
