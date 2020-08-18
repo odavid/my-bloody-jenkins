@@ -997,6 +997,28 @@ artifactory:
       credentialsId: 'cred2'
 ```
 
+### SonarQube Section
+Responsible for setting up [sonar](https://plugins.jenkins.io/sonar/) plugin
+
+```yaml
+# sonar_qube_servers - map of sonar server
+sonar_qube_servers:
+  buildWrapperEnabled: true
+  installations:
+    sonar-server-5.6:
+      serverUrl: https://sonar.domain.com
+      credentialsId: token
+      webhookSecretId: webhook
+      mojoVersion: 5.6
+      additionalProperties: abc=abc
+      additionalAnalysisProperties: x=y
+      triggers:
+        skipScmCause: true
+        skipUpstreamCause: true
+        envVar: ENV_VAR
+```
+
+
 ### Running Jenkins behind proxy
 When running Jenkins behind a proxy server, add the following to your config yaml file:
 
