@@ -72,8 +72,9 @@ def seedJobConfig(config){
                 case 'periodic':
                     return new hudson.triggers.TimerTrigger(expression)
                 case 'artifactory':
-                    return new org.jfrog.hudson.trigger.ArtifactoryTrigger(expression.path, expression.schedule,
-                            new org.jfrog.hudson.ServerDetails(expression.serverId, null, null, null, null, null))
+                    trigger = new org.jfrog.hudson.trigger.ArtifactoryTrigger(expression.path, expression.schedule)
+                    trigger.details = new org.jfrog.hudson.ServerDetails(expression.serverId, null, null, null, null, null)
+                    return trigger
                 default:
                     return null
             }
