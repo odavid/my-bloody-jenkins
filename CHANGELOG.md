@@ -1,5 +1,14 @@
 ## Changelog
 
+## 2.235.5-215 (Not released yet)
+* Updated plugins:
+    * [checkmarx:2020.3.3](https://plugins.jenkins.io/checkmarx)
+    * [docker-workflow:1.24](https://plugins.jenkins.io/docker-workflow)
+    * [git-client:3.4.2](https://plugins.jenkins.io/git-client)
+    * [junit:1.32](https://plugins.jenkins.io/junit)
+    * [p4:1.11.0](https://plugins.jenkins.io/p4)
+    * [slack:2.41](https://plugins.jenkins.io/slack)
+
 ## 2.235.5-214
 * [LTS-2.235.5](https://www.jenkins.io/changelog-stable/)
     * Major update of the Alpine-based Jenkins Docker image. Jenkins Docker image for Alpine now uses Alpine 3.12 and AdoptOpenJDK 8u262.
