@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.235.5-215 (Not released yet)
+## 2.235.5-215
 * Updated plugins:
     * [checkmarx:2020.3.3](https://plugins.jenkins.io/checkmarx)
     * [docker-workflow:1.24](https://plugins.jenkins.io/docker-workflow)
