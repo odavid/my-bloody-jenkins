@@ -1,5 +1,12 @@
 ## Changelog
 
+## 2.235.5-216 (Not released yet)
+* Updated plugins:
+  * [artifactory:3.8.1](https://plugins.jenkins.io/artifactory)
+  * [blueocean-display-url:2.4.0](https://plugins.jenkins.io/blueocean-display-url)
+  * [git:4.4.0](https://plugins.jenkins.io/git)
+  * [kubernetes:1.27.0](https://plugins.jenkins.io/kubernetes)
+
 ## 2.235.5-215
 * Updated plugins:
     * [checkmarx:2020.3.3](https://plugins.jenkins.io/checkmarx)
