@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.235.5-216 (Not released yet)
+## 2.235.5-216
 * Updated plugins:
   * [artifactory:3.8.1](https://plugins.jenkins.io/artifactory)
   * [blueocean-display-url:2.4.0](https://plugins.jenkins.io/blueocean-display-url)
