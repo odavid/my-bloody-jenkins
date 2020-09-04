@@ -1,5 +1,25 @@
 ## Changelog
 
+## 2.235.5-217 (Not released yet)
+* Updated plugins:
+    * [aws-java-sdk:1.11.854](https://plugins.jenkins.io/aws-java-sdk)
+    * [branch-api:2.6.0](https://plugins.jenkins.io/branch-api)
+    * [credentials:2.3.13](https://plugins.jenkins.io/credentials)
+    * [durable-task:1.35](https://plugins.jenkins.io/durable-task)
+    * [git-parameter:0.9.13](https://plugins.jenkins.io/git-parameter)
+    * [git:4.4.1](https://plugins.jenkins.io/git)
+    * [github-api:1.116](https://plugins.jenkins.io/github-api)
+    * [github-branch-source:2.9.0](https://plugins.jenkins.io/github-branch-source)
+    * [junit:1.34](https://plugins.jenkins.io/junit)
+    * [kubernetes:1.27.1](https://plugins.jenkins.io/kubernetes)
+    * [pipeline-input-step:2.12](https://plugins.jenkins.io/pipeline-input-step)
+    * [pipeline-model-api:1.7.2](https://plugins.jenkins.io/pipeline-model-api)
+    * [sonar:2.12](https://plugins.jenkins.io/sonar)
+    * [throttle-concurrents:2.0.3](https://plugins.jenkins.io/throttle-concurrents)
+    * [whitesource:20.8.1](https://plugins.jenkins.io/whitesource)
+    * [workflow-cps:2.83](https://plugins.jenkins.io/workflow-cps)
+    * [workflow-job:2.40](https://plugins.jenkins.io/workflow-job)
+
 ## 2.235.5-216
 * Updated plugins:
   * [artifactory:3.8.1](https://plugins.jenkins.io/artifactory)
