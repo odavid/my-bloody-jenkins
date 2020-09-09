@@ -1,5 +1,17 @@
 ## Changelog
 
+## 2.235.5-218 (Not released yet)
+* Updated plugins:
+    * [extended-choice-parameter:0.82](https://plugins.jenkins.io/extended-choice-parameter)
+    * [kubernetes-client-api:4.11.1](https://plugins.jenkins.io/kubernetes-client-api)
+    * [parameterized-trigger:2.38](https://plugins.jenkins.io/parameterized-trigger)
+    * [pipeline-maven:3.9.2](https://plugins.jenkins.io/pipeline-maven)
+    * [pipeline-rest-api:2.15](https://plugins.jenkins.io/pipeline-rest-api)
+    * [pipeline-stage-view:2.15](https://plugins.jenkins.io/pipeline-stage-view)
+    * [slack:2.42](https://plugins.jenkins.io/slack)
+    * [swarm:3.23](https://plugins.jenkins.io/swarm)
+    * [trilead-api:1.0.10](https://plugins.jenkins.io/trilead-api)
+
 ## 2.235.5-217
 * Updated plugins:
     * [aws-java-sdk:1.11.854](https://plugins.jenkins.io/aws-java-sdk)
