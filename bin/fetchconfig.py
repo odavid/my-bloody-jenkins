@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 from __future__ import print_function
 import argparse
-import collections
 import boto3
 import botocore
 import glob
@@ -11,11 +10,16 @@ import yaml
 import io
 from shutil import copyfile
 
+try:
+    from collections.abc import Mapping
+except ImportError:
+    from collections import Mapping
+
 def merge_dict(source, target):
     source = source.copy()
     for k, v in target.items():
-        if (k in source and isinstance(source[k], collections.Mapping)
-                and isinstance(target[k], collections.Mapping)):
+        if (k in source and isinstance(source[k], Mapping)
+                and isinstance(target[k], Mapping)):
             source[k] = merge_dict(source[k], target[k])
         else:
             source[k] = target[k]
@@ -93,7 +97,7 @@ def fetch_merged_config(source):
         c = yaml.safe_load(rc['contents'])
         if c is None:
             continue
-        elif not isinstance(c, collections.Mapping):
+        elif not isinstance(c, Mapping):
             raise ValueError("Invalid Yaml content: %s" % rc['src'])
         config = merge_dict(config, c)
     return config
