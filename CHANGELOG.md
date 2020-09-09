@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.235.5-218 (Not released yet)
+## 2.235.5-218
 * Updated plugins:
     * [extended-choice-parameter:0.82](https://plugins.jenkins.io/extended-choice-parameter)
     * [kubernetes-client-api:4.11.1](https://plugins.jenkins.io/kubernetes-client-api)
