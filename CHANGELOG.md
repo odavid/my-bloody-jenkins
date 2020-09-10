@@ -1,5 +1,8 @@
 ## Changelog
 
+## 2.235.5-219 (Not released yet)
+* Fix for repeated deprecation warning raised in fetchconfig.py. [#172](https://github.com/odavid/my-bloody-jenkins/pull/172)
+
 ## 2.235.5-218
 * Updated plugins:
     * [extended-choice-parameter:0.82](https://plugins.jenkins.io/extended-choice-parameter)
