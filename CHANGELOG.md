@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.249.1-219 (Not released yet)
+## 2.249.1-219
 * [LTS-2.249.1](https://www.jenkins.io/changelog-stable/)
 * Fix for repeated deprecation warning raised in fetchconfig.py. [#172](https://github.com/odavid/my-bloody-jenkins/pull/172)
 
