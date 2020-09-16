@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.249.1-220 (Not released yet)
+## 2.249.1-220
 * Updated plugins:
     * [ansicolor:0.7.3](https://plugins.jenkins.io/ansicolor)
     * [git:4.4.2](https://plugins.jenkins.io/git)
