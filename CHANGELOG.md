@@ -1,5 +1,15 @@
 ## Changelog
 
+## 2.249.1-220 (Not released yet)
+* Updated plugins:
+    * [ansicolor:0.7.3](https://plugins.jenkins.io/ansicolor)
+    * [git:4.4.2](https://plugins.jenkins.io/git)
+    * [ldap:1.26](https://plugins.jenkins.io/ldap)
+    * [matrix-auth:2.6.3](https://plugins.jenkins.io/matrix-auth)
+    * [nodejs:1.3.8](https://plugins.jenkins.io/nodejs)
+    * [workflow-basic-steps:2.21](https://plugins.jenkins.io/workflow-basic-steps)
+    * [workflow-durable-task-step:2.36](https://plugins.jenkins.io/workflow-durable-task-step)
+
 ## 2.249.1-219
 * [LTS-2.249.1](https://www.jenkins.io/changelog-stable/)
 * Fix for repeated deprecation warning raised in fetchconfig.py. [#172](https://github.com/odavid/my-bloody-jenkins/pull/172)
