@@ -819,6 +819,12 @@ clouds:
         # If you want to run this slave on a specific node based on k8s node labels
         nodeSelector: 'key=value'
 
+        # runAs* must be a number
+        runAsUser: 1000
+        runAsUser: 1000
+
+        # Comma delimeted numbers
+        supplementalGroups: 1001,1002
 
         # If you want to control the agent container resources
         resourceRequestMemory: 1024Mi

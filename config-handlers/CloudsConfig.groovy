@@ -20,7 +20,9 @@ def asInt(value, defaultValue=0){
 def asBoolean(value, defaultValue=false){
     return value != null ? value.toBoolean() : defaultValue
 }
-
+def asString(value, defaultValue=null){
+    return value != null ? value.toString() : defaultValue
+}
 def pathToVolumeName(path){
     path.split('/').collect{ org.apache.commons.lang.StringUtils.capitalize(it)}.join('').replaceAll('\\.', '_')
 }
@@ -275,6 +277,10 @@ def kubernetesCloud(config){
                 if(simplePodVolumes){
                     podTemplate.volumes.addAll(simplePodVolumes)
                 }
+                podTemplate.runAsUser = asString(temp.runAsUser)
+                podTemplate.runAsGroup = asString(temp.runAsGroup)
+                podTemplate.supplementalGroups = asString(temp.supplementalGroups)
+
                 return podTemplate
             },
             serverUrl,
