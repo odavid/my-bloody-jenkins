@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.249.1-221 (Not released yet)
+## 2.249.1-221
 * Update [gosu](https://github.com/tianon/gosu/releases/tag/1.12)
 * Update PyYAML
 * Update [envconsul](https://github.com/hashicorp/envconsul/releases/tag/v0.10.0)
