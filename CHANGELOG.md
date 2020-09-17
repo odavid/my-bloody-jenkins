@@ -1,5 +1,10 @@
 ## Changelog
 
+## 2.249.1-221 (Not released yet)
+* Update [gosu](https://github.com/tianon/gosu/releases/tag/1.12)
+* Update PyYAML
+* Update [envconsul](https://github.com/hashicorp/envconsul/releases/tag/v0.10.0)
+
 ## 2.249.1-220
 * Updated plugins:
     * [ansicolor:0.7.3](https://plugins.jenkins.io/ansicolor)
