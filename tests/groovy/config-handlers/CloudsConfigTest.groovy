@@ -227,6 +227,9 @@ kube-cloud:
       inheritFrom: general-pod
       nodeSelector: nodeSelector
       nodeUsageMode: NORMAL
+      runAsUser: 1000
+      runAsGroup: 1000
+      supplementalGroups: 1001,1002
       annotations:
         key1: value1
         key2: value2
@@ -324,6 +327,10 @@ kube-cloud:
         assert template.command == '/run/me'
         assert template.args == 'x y z'
         assert template.remoteFs == '/home/jenkins'
+
+        assert template.runAsUser == "1000"
+        assert template.runAsGroup == "1000"
+        assert template.supplementalGroups == "1001,1002"
 
         assert template.containers[0].name == 'jnlp'
         assert template.containers[0].ttyEnabled
