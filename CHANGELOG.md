@@ -1,5 +1,8 @@
 ## Changelog
 
+## 2.249.1-222 (Not released yet)
+* Added runAsUser, runAsGroup and supplementalGroups for k8s plugin [#174](https://github.com/odavid/my-bloody-jenkins/pull/174)
+
 ## 2.249.1-221
 * Update [gosu](https://github.com/tianon/gosu/releases/tag/1.12)
 * Update PyYAML
