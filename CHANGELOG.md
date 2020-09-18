@@ -2,6 +2,13 @@
 
 ## 2.249.1-222 (Not released yet)
 * Added runAsUser, runAsGroup and supplementalGroups for k8s plugin [#174](https://github.com/odavid/my-bloody-jenkins/pull/174)
+* Updated plugins:
+    * [active-directory:2.17](https://plugins.jenkins.io/active-directory)
+    * [blueocean:1.24.0](https://plugins.jenkins.io/blueocean)
+    * [email-ext:2.76](https://plugins.jenkins.io/email-ext)
+    * [mailer:1.32.1](https://plugins.jenkins.io/mailer)
+    * [parameterized-trigger:2.39](https://plugins.jenkins.io/parameterized-trigger)
+    * [pipeline-maven:3.9.3](https://plugins.jenkins.io/pipeline-maven)
 
 ## 2.249.1-221
 * Update [gosu](https://github.com/tianon/gosu/releases/tag/1.12)
