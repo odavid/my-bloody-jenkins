@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.249.1-222 (Not released yet)
+## 2.249.1-222
 * Added runAsUser, runAsGroup and supplementalGroups for k8s plugin [#174](https://github.com/odavid/my-bloody-jenkins/pull/174)
 * Updated plugins:
     * [active-directory:2.17](https://plugins.jenkins.io/active-directory)
