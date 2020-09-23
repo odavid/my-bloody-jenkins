@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.249.1-223 (Not release yet)
+## 2.249.1-223
 * Updated plugins:
     * [active-directory:2.18](https://plugins.jenkins.io/active-directory)
     * [amazon-ecs:1.37](https://plugins.jenkins.io/amazon-ecs)
