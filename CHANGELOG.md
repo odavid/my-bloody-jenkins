@@ -1,5 +1,20 @@
 ## Changelog
 
+## 2.249.1-223 (Not release yet)
+* Updated plugins:
+    * [active-directory:2.18](https://plugins.jenkins.io/active-directory)
+    * [amazon-ecs:1.37](https://plugins.jenkins.io/amazon-ecs)
+    * [cloudbees-bitbucket-branch-source:2.9.3](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
+    * [config-file-provider:3.7.0](https://plugins.jenkins.io/config-file-provider)
+    * [email-ext:2.77](https://plugins.jenkins.io/email-ext)
+    * [git-client:3.5.0](https://plugins.jenkins.io/git-client)
+    * [git:4.4.3](https://plugins.jenkins.io/git)
+    * [junit:1.36](https://plugins.jenkins.io/junit)
+    * [kubernetes:1.27.1.1](https://plugins.jenkins.io/kubernetes)
+    * [lockable-resources:2.9](https://plugins.jenkins.io/lockable-resources)
+    * [nodejs:1.3.9](https://plugins.jenkins.io/nodejs)
+    * [script-security:1.75](https://plugins.jenkins.io/script-security)
+
 ## 2.249.1-222
 * Added runAsUser, runAsGroup and supplementalGroups for k8s plugin [#174](https://github.com/odavid/my-bloody-jenkins/pull/174)
 * Updated plugins:
