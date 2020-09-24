@@ -1,5 +1,9 @@
 ## Changelog
 
+## 2.249.1-224 (Not released yet)
+* Updated plugins:
+    * [active-directory:2.19](https://plugins.jenkins.io/active-directory)
+
 ## 2.249.1-223
 * Updated plugins:
     * [active-directory:2.18](https://plugins.jenkins.io/active-directory)
