@@ -3,6 +3,14 @@
 ## 2.249.1-224 (Not released yet)
 * Updated plugins:
     * [active-directory:2.19](https://plugins.jenkins.io/active-directory)
+    * [cloudbees-bitbucket-branch-source:2.9.4](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
+    * [docker-plugin:1.2.1](https://plugins.jenkins.io/docker-plugin)
+    * [git-client:3.5.1](https://plugins.jenkins.io/git-client)
+    * [git:4.4.4](https://plugins.jenkins.io/git)
+    * [junit:1.37](https://plugins.jenkins.io/junit)
+    * [lockable-resources:2.10](https://plugins.jenkins.io/lockable-resources)
+    * [scm-api:2.6.4](https://plugins.jenkins.io/scm-api)
+    * [trilead-api:1.0.11](https://plugins.jenkins.io/trilead-api)
 
 ## 2.249.1-223
 * Updated plugins:
