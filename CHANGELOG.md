@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.249.1-224 (Not released yet)
+## 2.249.1-224
 * Updated plugins:
     * [active-directory:2.19](https://plugins.jenkins.io/active-directory)
     * [cloudbees-bitbucket-branch-source:2.9.4](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
