@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.249.1-225 (Not released yet)
+## 2.249.1-225
 * Updated plugins:
   * [blueocean:1.24.1](https://plugins.jenkins.io/blueocean)
   * [jackson2-api:2.11.3](https://plugins.jenkins.io/jackson2-api)
