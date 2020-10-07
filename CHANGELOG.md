@@ -1,5 +1,18 @@
 ## Changelog
 
+## 2.249.1-225 (Not released yet)
+* Updated plugins:
+  * [blueocean:1.24.1](https://plugins.jenkins.io/blueocean)
+  * [jackson2-api:2.11.3](https://plugins.jenkins.io/jackson2-api)
+  * [kubernetes-cli:1.9.0](https://plugins.jenkins.io/kubernetes-cli)
+  * [kubernetes:1.27.2](https://plugins.jenkins.io/kubernetes)
+  * [matrix-project:1.18](https://plugins.jenkins.io/matrix-project)
+  * [pipeline-rest-api:2.16](https://plugins.jenkins.io/pipeline-rest-api)
+  * [pipeline-stage-view:2.16](https://plugins.jenkins.io/pipeline-stage-view)
+  * [promoted-builds:3.6](https://plugins.jenkins.io/promoted-builds)
+  * [windows-slaves:1.7](https://plugins.jenkins.io/windows-slaves)
+  * [workflow-basic-steps:2.22](https://plugins.jenkins.io/workflow-basic-steps)
+
 ## 2.249.1-224
 * Updated plugins:
     * [active-directory:2.19](https://plugins.jenkins.io/active-directory)
