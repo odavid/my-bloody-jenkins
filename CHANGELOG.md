@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.249.2-226 (Not releasd yet)
+## 2.249.2-226
 * [LTS-2.249.2](https://www.jenkins.io/changelog-stable/)
 * Updated plugins:
   * [github-branch-source:2.9.1](https://plugins.jenkins.io/github-branch-source)
