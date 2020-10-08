@@ -1,5 +1,8 @@
 ## Changelog
 
+## 2.249.2-226 (Not releasd yet)
+* [LTS-2.249.2](https://www.jenkins.io/changelog-stable/)
+
 ## 2.249.1-225
 * Updated plugins:
   * [blueocean:1.24.1](https://plugins.jenkins.io/blueocean)

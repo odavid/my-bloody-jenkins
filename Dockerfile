@@ -1,4 +1,4 @@
-ARG FROM_TAG=2.249.1
+ARG FROM_TAG=2.249.2
 
 FROM jenkins/jenkins:${FROM_TAG}
 
