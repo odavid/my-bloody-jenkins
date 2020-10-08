@@ -2,6 +2,10 @@
 
 ## 2.249.2-226 (Not releasd yet)
 * [LTS-2.249.2](https://www.jenkins.io/changelog-stable/)
+* Updated plugins:
+  * [github-branch-source:2.9.1](https://plugins.jenkins.io/github-branch-source)
+  * [junit:1.38](https://plugins.jenkins.io/junit)
+  * [slack:2.43](https://plugins.jenkins.io/slack)
 
 ## 2.249.1-225
 * Updated plugins:
