@@ -1,5 +1,19 @@
 ## Changelog
 
+## 2.249.2-227 (Not released yet)
+* Updated plugins:
+    * [configuration-as-code:1.44](https://plugins.jenkins.io/configuration-as-code)
+    * [copyartifact:1.45.2](https://plugins.jenkins.io/copyartifact)
+    * [credentials-binding:1.24](https://plugins.jenkins.io/credentials-binding)
+    * [junit:1.39](https://plugins.jenkins.io/junit)
+    * [kubernetes:1.27.3](https://plugins.jenkins.io/kubernetes)
+    * [maven-plugin:3.8](https://plugins.jenkins.io/maven-plugin)
+    * [pipeline-rest-api:2.17](https://plugins.jenkins.io/pipeline-rest-api)
+    * [pipeline-stage-view:2.17](https://plugins.jenkins.io/pipeline-stage-view)
+    * [timestamper:1.11.6](https://plugins.jenkins.io/timestamper)
+    * [whitesource:20.9.2](https://plugins.jenkins.io/whitesource)
+    * [workflow-step-api:2.23](https://plugins.jenkins.io/workflow-step-api)
+
 ## 2.249.2-226
 * [LTS-2.249.2](https://www.jenkins.io/changelog-stable/)
 * Updated plugins:
