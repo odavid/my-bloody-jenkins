@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.249.2-227 (Not released yet)
+## 2.249.2-227
 * Updated plugins:
     * [configuration-as-code:1.44](https://plugins.jenkins.io/configuration-as-code)
     * [copyartifact:1.45.2](https://plugins.jenkins.io/copyartifact)
