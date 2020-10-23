@@ -1,5 +1,13 @@
 ## Changelog
 
+## 2.249.2-228 (Not released yet)
+* Updated plugins:
+    * [emailext-template:1.2](https://plugins.jenkins.io/emailext-template)
+    * [junit:1.41](https://plugins.jenkins.io/junit)
+    * [pipeline-rest-api:2.18](https://plugins.jenkins.io/pipeline-rest-api)
+    * [pipeline-stage-view:2.18](https://plugins.jenkins.io/pipeline-stage-view)
+    * [timestamper:1.11.7](https://plugins.jenkins.io/timestamper)
+
 ## 2.249.2-227
 * Updated plugins:
     * [configuration-as-code:1.44](https://plugins.jenkins.io/configuration-as-code)

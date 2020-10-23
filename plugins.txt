@@ -63,7 +63,7 @@ docker-plugin:1.2.1
 docker-workflow:1.24
 durable-task:1.35
 email-ext:2.77
-emailext-template:1.1
+emailext-template:1.2
 embeddable-build-status:2.0.3
 envinject-api:1.7
 envinject:2.3.0
@@ -105,7 +105,7 @@ job-dsl:1.77
 jquery-detached:1.2.1
 jquery:1.12.4-1
 jsch:0.1.55.2
-junit:1.39
+junit:1.41
 kubernetes-cli:1.9.0
 kubernetes-client-api:4.11.1
 kubernetes-credentials:0.7.0
@@ -137,10 +137,10 @@ pipeline-model-api:1.7.2
 pipeline-model-declarative-agent:1.1.1
 pipeline-model-definition:1.7.2
 pipeline-model-extensions:1.7.2
-pipeline-rest-api:2.17
+pipeline-rest-api:2.18
 pipeline-stage-step:2.5
 pipeline-stage-tags-metadata:1.7.2
-pipeline-stage-view:2.17
+pipeline-stage-view:2.18
 pipeline-utility-steps:2.6.1
 plain-credentials:1.7
 promoted-builds:3.6
@@ -164,7 +164,7 @@ structs:1.20
 subversion:2.13.1
 swarm:3.23
 throttle-concurrents:2.0.3
-timestamper:1.11.6
+timestamper:1.11.7
 token-macro:2.12
 trilead-api:1.0.11
 variant:1.3
