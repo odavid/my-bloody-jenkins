@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.249.2-228 (Not released yet)
+## 2.249.2-228
 * Updated plugins:
     * [emailext-template:1.2](https://plugins.jenkins.io/emailext-template)
     * [junit:1.41](https://plugins.jenkins.io/junit)
