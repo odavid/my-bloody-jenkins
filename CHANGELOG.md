@@ -1,5 +1,21 @@
 ## Changelog
 
+## 2.249.2-229 (Not released yet)
+* Updated plugins:
+    * [artifactory:3.9.0](https://plugins.jenkins.io/artifactory)
+    * [blueocean:1.24.2](https://plugins.jenkins.io/blueocean)
+    * [checkmarx:2020.4.3](https://plugins.jenkins.io/checkmarx)
+    * [command-launcher:1.5](https://plugins.jenkins.io/command-launcher)
+    * [configuration-as-code:1.45](https://plugins.jenkins.io/configuration-as-code)
+    * [git:4.4.5](https://plugins.jenkins.io/git)
+    * [junit:1.43](https://plugins.jenkins.io/junit)
+    * [matrix-auth:2.6.4](https://plugins.jenkins.io/matrix-auth)
+    * [mercurial:2.11](https://plugins.jenkins.io/mercurial)
+    * [p4:1.11.1](https://plugins.jenkins.io/p4)
+    * [promoted-builds:3.7](https://plugins.jenkins.io/promoted-builds)
+    * [timestamper:1.11.8](https://plugins.jenkins.io/timestamper)
+    * [trilead-api:1.0.12](https://plugins.jenkins.io/trilead-api)
+
 ## 2.249.2-228
 * Updated plugins:
     * [emailext-template:1.2](https://plugins.jenkins.io/emailext-template)
