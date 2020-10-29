@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.249.2-229 (Not released yet)
+## 2.249.2-229
 * Updated plugins:
     * [artifactory:3.9.0](https://plugins.jenkins.io/artifactory)
     * [blueocean:1.24.2](https://plugins.jenkins.io/blueocean)
