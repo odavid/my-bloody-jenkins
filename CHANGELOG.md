@@ -1,9 +1,9 @@
 ## Changelog
 
-## 2.249.2-230 (Not released yet)
+## 2.249.2-230
 * Added plugins:
     * [image-tag-parameter:1.9](https://plugins.jenkins.io/image-tag-parameter)
-    
+
 * Updated plugins:
     * [blueocean:1.24.3](https://plugins.jenkins.io/blueocean)
     * [email-ext:2.78](https://plugins.jenkins.io/email-ext)
