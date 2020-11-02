@@ -94,6 +94,7 @@ handy-uri-templates-2-api:2.1.8-1.0
 htmlpublisher:1.23
 http_request:1.8.26
 icon-shim:2.0.3
+image-tag-parameter:1.9
 ivy:2.1
 jackson2-api:2.11.3
 javadoc:1.6
