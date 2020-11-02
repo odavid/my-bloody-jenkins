@@ -1,5 +1,15 @@
 ## Changelog
 
+## 2.249.2-230 (Not released yet)
+* Updated plugins:
+    * [blueocean:1.24.3](https://plugins.jenkins.io/blueocean)
+    * [email-ext:2.78](https://plugins.jenkins.io/email-ext)
+    * [github:1.32.0](https://plugins.jenkins.io/github)
+    * [jenkins-design-language:1.24.3](https://plugins.jenkins.io/jenkins-design-language)
+    * [sse-gateway:1.24](https://plugins.jenkins.io/sse-gateway)
+    * [swarm:3.24](https://plugins.jenkins.io/swarm)
+    * [workflow-cps:2.84](https://plugins.jenkins.io/workflow-cps)
+
 ## 2.249.2-229
 * Updated plugins:
     * [artifactory:3.9.0](https://plugins.jenkins.io/artifactory)
