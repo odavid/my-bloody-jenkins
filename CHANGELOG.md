@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.249.2-231 (Not released yet)
+## 2.249.2-231
 * Updated plugins:
   * [active-directory:2.20](https://plugins.jenkins.io/active-directory)
   * [branch-api:2.6.1](https://plugins.jenkins.io/branch-api)
