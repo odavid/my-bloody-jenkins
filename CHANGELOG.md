@@ -1,5 +1,19 @@
 ## Changelog
 
+## 2.249.2-231 (Not released yet)
+* Updated plugins:
+  * [active-directory:2.20](https://plugins.jenkins.io/active-directory)
+  * [branch-api:2.6.1](https://plugins.jenkins.io/branch-api)
+  * [configuration-as-code:1.46](https://plugins.jenkins.io/configuration-as-code)
+  * [dashboard-view:2.14](https://plugins.jenkins.io/dashboard-view)
+  * [email-ext:2.79](https://plugins.jenkins.io/email-ext)
+  * [http_request:1.8.27](https://plugins.jenkins.io/http_request)
+  * [jira:3.1.2](https://plugins.jenkins.io/jira)
+  * [kubernetes:1.27.4](https://plugins.jenkins.io/kubernetes)
+  * [mercurial:2.12](https://plugins.jenkins.io/mercurial)
+  * [subversion:2.13.2](https://plugins.jenkins.io/subversion)
+  * [workflow-support:3.6](https://plugins.jenkins.io/workflow-support)
+
 ## 2.249.2-230
 * Added plugins:
     * [image-tag-parameter:1.9](https://plugins.jenkins.io/image-tag-parameter)

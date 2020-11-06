@@ -1,5 +1,5 @@
 ace-editor:1.1
-active-directory:2.19
+active-directory:2.20
 amazon-ecr:1.6
 amazon-ecs:1.37
 anchore-container-scanner:1.0.22
@@ -36,7 +36,7 @@ blueocean-rest:1.24.3
 blueocean-web:1.24.3
 blueocean:1.24.3
 bouncycastle-api:2.18
-branch-api:2.6.0
+branch-api:2.6.1
 build-timeout:1.20
 build-user-vars-plugin:1.6
 buildtriggerbadge:2.10
@@ -48,13 +48,13 @@ code-coverage-api:1.2.0
 command-launcher:1.5
 conditional-buildstep:1.3.6
 config-file-provider:3.7.0
-configuration-as-code:1.45
+configuration-as-code:1.46
 copyartifact:1.45.2
 credentials-binding:1.24
 credentials:2.3.13
 cucumber-reports:5.3.1
 custom-tools-plugin:0.7
-dashboard-view:2.13
+dashboard-view:2.14
 display-url-api:2.3.3
 docker-build-publish:1.3.2
 docker-commons:1.17
@@ -62,7 +62,7 @@ docker-java-api:3.1.5.2
 docker-plugin:1.2.1
 docker-workflow:1.24
 durable-task:1.35
-email-ext:2.78
+email-ext:2.79
 emailext-template:1.2
 embeddable-build-status:2.0.3
 envinject-api:1.7
@@ -92,7 +92,7 @@ h2-api:1.4.199
 handlebars:1.1.1
 handy-uri-templates-2-api:2.1.8-1.0
 htmlpublisher:1.23
-http_request:1.8.26
+http_request:1.8.27
 icon-shim:2.0.3
 image-tag-parameter:1.9
 ivy:2.1
@@ -101,7 +101,7 @@ javadoc:1.6
 jdk-tool:1.4
 jenkins-design-language:1.24.3
 jira-steps:1.6.0
-jira:3.1.1
+jira:3.1.2
 job-dsl:1.77
 jquery-detached:1.2.1
 jquery:1.12.4-1
@@ -110,7 +110,7 @@ junit:1.43
 kubernetes-cli:1.9.0
 kubernetes-client-api:4.11.1
 kubernetes-credentials:0.7.0
-kubernetes:1.27.3
+kubernetes:1.27.4
 ldap:1.26
 lockable-resources:2.10
 mailer:1.32.1
@@ -119,7 +119,7 @@ mask-passwords:2.13
 matrix-auth:2.6.4
 matrix-project:1.18
 maven-plugin:3.8
-mercurial:2.11
+mercurial:2.12
 metrics:4.0.2.6
 momentjs:1.1.1
 nodejs:1.3.9
@@ -162,7 +162,7 @@ ssh-credentials:1.18.1
 ssh-slaves:1.31.2
 stashNotifier:1.20
 structs:1.20
-subversion:2.13.1
+subversion:2.13.2
 swarm:3.24
 throttle-concurrents:2.0.3
 timestamper:1.11.8
@@ -182,6 +182,6 @@ workflow-multibranch:2.22
 workflow-remote-loader:1.5
 workflow-scm-step:2.11
 workflow-step-api:2.23
-workflow-support:3.5
+workflow-support:3.6
 ws-cleanup:0.38
 xvfb:1.1.3
