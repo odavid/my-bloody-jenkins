@@ -68,7 +68,7 @@ embeddable-build-status:2.0.3
 envinject-api:1.7
 envinject:2.3.0
 extended-choice-parameter:0.82
-extensible-choice-parameter:1.6.0
+extensible-choice-parameter:1.7.0
 external-monitor-job:1.7
 favorite:2.3.2
 filesystem_scm:2.1
@@ -101,7 +101,7 @@ javadoc:1.6
 jdk-tool:1.4
 jenkins-design-language:1.24.3
 jira-steps:1.6.0
-jira:3.1.2
+jira:3.1.3
 job-dsl:1.77
 jquery-detached:1.2.1
 jquery:1.12.4-1
@@ -110,7 +110,7 @@ junit:1.43
 kubernetes-cli:1.9.0
 kubernetes-client-api:4.11.1
 kubernetes-credentials:0.7.0
-kubernetes:1.27.4
+kubernetes:1.27.5
 ldap:1.26
 lockable-resources:2.10
 mailer:1.32.1

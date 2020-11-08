@@ -12,3 +12,4 @@ vars/aws_generated/
 .data
 *.hpi
 .vscode
+.venv

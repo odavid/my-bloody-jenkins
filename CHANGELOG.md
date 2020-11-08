@@ -1,5 +1,11 @@
 ## Changelog
 
+## 2.249.2-232 (Not released yet)
+* Updated plugins:
+    * [extensible-choice-parameter:1.7.0](https://plugins.jenkins.io/extensible-choice-parameter)
+    * [jira:3.1.3](https://plugins.jenkins.io/jira)
+    * [kubernetes:1.27.5](https://plugins.jenkins.io/kubernetes)
+
 ## 2.249.2-231
 * Updated plugins:
   * [active-directory:2.20](https://plugins.jenkins.io/active-directory)
