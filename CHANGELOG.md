@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.249.3-232 (Not released yet)
+## 2.249.3-232
 * [LTS-2.249.3](https://www.jenkins.io/changelog-stable/)
 * Updated plugins:
     * [extensible-choice-parameter:1.7.0](https://plugins.jenkins.io/extensible-choice-parameter)
