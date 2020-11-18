@@ -1,5 +1,19 @@
 ## Changelog
 
+## 2.249.3-233 (Not released yet)
+* Updated plugins:
+    * [branch-api:2.6.2](https://plugins.jenkins.io/branch-api)
+    * [cloudbees-folder:6.15](https://plugins.jenkins.io/cloudbees-folder)
+    * [conditional-buildstep:1.4.0](https://plugins.jenkins.io/conditional-buildstep)
+    * [credentials:2.3.14](https://plugins.jenkins.io/credentials)
+    * [cucumber-reports:5.4.0](https://plugins.jenkins.io/cucumber-reports)
+    * [display-url-api:2.3.4](https://plugins.jenkins.io/display-url-api)
+    * [docker-workflow:1.25](https://plugins.jenkins.io/docker-workflow)
+    * [junit:1.44](https://plugins.jenkins.io/junit)
+    * [kubernetes:1.27.6](https://plugins.jenkins.io/kubernetes)
+    * [slack:2.44](https://plugins.jenkins.io/slack)
+    * [workflow-cps:2.85](https://plugins.jenkins.io/workflow-cps)
+
 ## 2.249.3-232
 * [LTS-2.249.3](https://www.jenkins.io/changelog-stable/)
 * Updated plugins:
