@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.249.3-233 (Not released yet)
+## 2.249.3-233
 * Updated plugins:
     * [branch-api:2.6.2](https://plugins.jenkins.io/branch-api)
     * [cloudbees-folder:6.15](https://plugins.jenkins.io/cloudbees-folder)
