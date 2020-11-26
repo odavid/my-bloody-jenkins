@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.249.3-234 (Not released yet)
+## 2.249.3-234
 * Updated plugins:
   * [active-directory:2.22](https://plugins.jenkins.io/active-directory)
   * [artifactory:3.9.1](https://plugins.jenkins.io/artifactory)
