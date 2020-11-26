@@ -1,5 +1,19 @@
 ## Changelog
 
+## 2.249.3-234 (Not released yet)
+* Updated plugins:
+  * [active-directory:2.22](https://plugins.jenkins.io/active-directory)
+  * [artifactory:3.9.1](https://plugins.jenkins.io/artifactory)
+  * [checkmarx:2020.4.8](https://plugins.jenkins.io/checkmarx)
+  * [github-api:1.117](https://plugins.jenkins.io/github-api)
+  * [htmlpublisher:1.25](https://plugins.jenkins.io/htmlpublisher)
+  * [kubernetes:1.27.7](https://plugins.jenkins.io/kubernetes)
+  * [pipeline-aws:1.43](https://plugins.jenkins.io/pipeline-aws)
+  * [pipeline-rest-api:2.19](https://plugins.jenkins.io/pipeline-rest-api)
+  * [pipeline-stage-view:2.19](https://plugins.jenkins.io/pipeline-stage-view)
+  * [workflow-cps:2.86](https://plugins.jenkins.io/workflow-cps)
+  * [workflow-durable-task-step:2.37](https://plugins.jenkins.io/workflow-durable-task-step)
+
 ## 2.249.3-233
 * Updated plugins:
     * [branch-api:2.6.2](https://plugins.jenkins.io/branch-api)

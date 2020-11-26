@@ -1,5 +1,5 @@
 ace-editor:1.1
-active-directory:2.20
+active-directory:2.22
 amazon-ecr:1.6
 amazon-ecs:1.37
 anchore-container-scanner:1.0.22
@@ -7,7 +7,7 @@ ansicolor:0.7.3
 ant:1.11
 antisamy-markup-formatter:2.1
 apache-httpcomponents-client-4-api:4.5.10-2.0
-artifactory:3.9.0
+artifactory:3.9.1
 authentication-tokens:1.4
 aws-credentials:1.28
 aws-java-sdk:1.11.854
@@ -40,7 +40,7 @@ branch-api:2.6.2
 build-timeout:1.20
 build-user-vars-plugin:1.6
 buildtriggerbadge:2.10
-checkmarx:2020.4.3
+checkmarx:2020.4.8
 cloudbees-bitbucket-branch-source:2.9.4
 cloudbees-folder:6.15
 cobertura:1.16
@@ -78,7 +78,7 @@ git-client:3.5.1
 git-parameter:0.9.13
 git-server:1.9
 git:4.4.5
-github-api:1.116
+github-api:1.117
 github-branch-source:2.9.1
 github:1.32.0
 gitlab-api:1.0.6
@@ -91,7 +91,7 @@ groovy-postbuild:2.5
 h2-api:1.4.199
 handlebars:1.1.1
 handy-uri-templates-2-api:2.1.8-1.0
-htmlpublisher:1.23
+htmlpublisher:1.25
 http_request:1.8.27
 icon-shim:2.0.3
 image-tag-parameter:1.9
@@ -110,7 +110,7 @@ junit:1.44
 kubernetes-cli:1.9.0
 kubernetes-client-api:4.11.1
 kubernetes-credentials:0.7.0
-kubernetes:1.27.6
+kubernetes:1.27.7
 ldap:1.26
 lockable-resources:2.10
 mailer:1.32.1
@@ -128,7 +128,7 @@ p4:1.11.1
 pam-auth:1.6
 parallel-test-executor:1.13
 parameterized-trigger:2.39
-pipeline-aws:1.42
+pipeline-aws:1.43
 pipeline-build-step:2.13
 pipeline-graph-analysis:1.10
 pipeline-input-step:2.12
@@ -138,10 +138,10 @@ pipeline-model-api:1.7.2
 pipeline-model-declarative-agent:1.1.1
 pipeline-model-definition:1.7.2
 pipeline-model-extensions:1.7.2
-pipeline-rest-api:2.18
+pipeline-rest-api:2.19
 pipeline-stage-step:2.5
 pipeline-stage-tags-metadata:1.7.2
-pipeline-stage-view:2.18
+pipeline-stage-view:2.19
 pipeline-utility-steps:2.6.1
 plain-credentials:1.7
 promoted-builds:3.7
@@ -175,8 +175,8 @@ workflow-aggregator:2.6
 workflow-api:2.40
 workflow-basic-steps:2.22
 workflow-cps-global-lib:2.17
-workflow-cps:2.85
-workflow-durable-task-step:2.36
+workflow-cps:2.86
+workflow-durable-task-step:2.37
 workflow-job:2.40
 workflow-multibranch:2.22
 workflow-remote-loader:1.5
