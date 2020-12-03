@@ -1,8 +1,7 @@
 ## Changelog
 
-## 2.263.1-235 (Not released yet)
+## 2.263.1-235
 * [LTS-2.263.1](https://www.jenkins.io/changelog-stable/)
-
 * Updated plugins:
   * [artifactory:3.10.0](https://plugins.jenkins.io/artifactory)
   * [cloudbees-bitbucket-branch-source:2.9.5](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
