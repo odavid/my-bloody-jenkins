@@ -3,6 +3,19 @@
 ## 2.263.1-235 (Not released yet)
 * [LTS-2.263.1](https://www.jenkins.io/changelog-stable/)
 
+* Updated plugins:
+  * [artifactory:3.10.0](https://plugins.jenkins.io/artifactory)
+  * [cloudbees-bitbucket-branch-source:2.9.5](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
+  * [copyartifact:1.45.3](https://plugins.jenkins.io/copyartifact)
+  * [email-ext:2.80](https://plugins.jenkins.io/email-ext)
+  * [github-branch-source:2.9.2](https://plugins.jenkins.io/github-branch-source)
+  * [jackson2-api:2.12.0](https://plugins.jenkins.io/jackson2-api)
+  * [kubernetes:1.28.3](https://plugins.jenkins.io/kubernetes)
+  * [slack:2.45](https://plugins.jenkins.io/slack)
+  * [sonar:2.13](https://plugins.jenkins.io/sonar)
+  * [workflow-basic-steps:2.23](https://plugins.jenkins.io/workflow-basic-steps)
+  * [workflow-cps:2.87](https://plugins.jenkins.io/workflow-cps)
+  * [workflow-support:3.7](https://plugins.jenkins.io/workflow-support)
 ## 2.249.3-234
 * Updated plugins:
   * [active-directory:2.22](https://plugins.jenkins.io/active-directory)
