@@ -1,13 +1,16 @@
 ## Changelog
 
 ## 2.263.1-236 (Not released yet)
-* Updated plugins
+* Updated plugins:
   * [anchore-container-scanner:1.0.23](https://plugins.jenkins.io/anchore-container-scanner)
   * [cloudbees-bitbucket-branch-source:2.9.6](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
   * [git:4.5.0](https://plugins.jenkins.io/git)
   * [junit:1.46](https://plugins.jenkins.io/junit)
   * [ssh-slaves:1.31.4](https://plugins.jenkins.io/ssh-slaves)
   * [trilead-api:1.0.13](https://plugins.jenkins.io/trilead-api)
+* Downgrade plugins:
+  * [jackson2-api:2.12.0 -> 2.11.3](https://plugins.jenkins.io/jackson2-api) - See https://github.com/jenkinsci/docker-plugin/issues/821#issuecomment-738609196
+      * You will need to delete the `$JENKINS_HOME/plugins` directory before upgrading, so the downgrade will take effect
 
 ## 2.263.1-235
 * [LTS-2.263.1](https://www.jenkins.io/changelog-stable/)
