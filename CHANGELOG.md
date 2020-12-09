@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.263.1-236 (Not released yet)
+## 2.263.1-236
 * Updated plugins:
   * [anchore-container-scanner:1.0.23](https://plugins.jenkins.io/anchore-container-scanner)
   * [cloudbees-bitbucket-branch-source:2.9.6](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
