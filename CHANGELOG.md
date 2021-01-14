@@ -1,5 +1,29 @@
 ## Changelog
 
+## 2.263.2-237 (Not released yet)
+* [LTS-2.263.2](https://www.jenkins.io/changelog-stable/)
+* Updated plugins:
+    * [active-directory:2.23](https://plugins.jenkins.io/active-directory)
+    * [apache-httpcomponents-client-4-api:4.5.13-1.0](https://plugins.jenkins.io/apache-httpcomponents-client-4-api)
+    * [artifactory:3.10.3](https://plugins.jenkins.io/artifactory)
+    * [aws-java-sdk:1.11.930](https://plugins.jenkins.io/aws-java-sdk)
+    * [conditional-buildstep:1.4.1](https://plugins.jenkins.io/conditional-buildstep)
+    * [email-ext:2.81](https://plugins.jenkins.io/email-ext)
+    * [git-client:3.6.0](https://plugins.jenkins.io/git-client)
+    * [git:4.5.2](https://plugins.jenkins.io/git)
+    * [github-branch-source:2.9.3](https://plugins.jenkins.io/github-branch-source)
+    * [gitlab-branch-source:1.5.3](https://plugins.jenkins.io/gitlab-branch-source)
+    * [golang:1.3](https://plugins.jenkins.io/golang)
+    * [jackson2-api:2.12.1](https://plugins.jenkins.io/jackson2-api)
+    * [junit:1.48](https://plugins.jenkins.io/junit)
+    * [kubernetes:1.28.5](https://plugins.jenkins.io/kubernetes)
+    * [metrics:4.0.2.7](https://plugins.jenkins.io/metrics)
+    * [nodejs:1.3.10](https://plugins.jenkins.io/nodejs)
+    * [run-condition:1.5](https://plugins.jenkins.io/run-condition)
+    * [ssh-slaves:1.31.5](https://plugins.jenkins.io/ssh-slaves)
+    * [throttle-concurrents:2.1](https://plugins.jenkins.io/throttle-concurrents)
+    * [token-macro:2.13](https://plugins.jenkins.io/token-macro)
+    * [variant:1.4](https://plugins.jenkins.io/variant)
 ## 2.263.1-236
 * Updated plugins:
   * [anchore-container-scanner:1.0.23](https://plugins.jenkins.io/anchore-container-scanner)
