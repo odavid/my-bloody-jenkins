@@ -793,6 +793,8 @@ clouds:
 clouds:
   # Top level key -> name of the cloud
   kube-cloud:
+    ## Max connections to Kubernetes API (Default 32)
+    maxRequestsPerHost: 32
     ## default is false
     directConnection: false
     ## Use WebSocket to connect agents rather than the TCP port. Default is false
