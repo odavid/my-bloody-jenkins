@@ -3,7 +3,7 @@ active-directory:2.23
 amazon-ecr:1.6
 amazon-ecs:1.37
 anchore-container-scanner:1.0.23
-ansicolor:0.7.3
+ansicolor:0.7.4
 ant:1.11
 antisamy-markup-formatter:2.1
 apache-httpcomponents-client-4-api:4.5.13-1.0
@@ -40,7 +40,7 @@ build-timeout:1.20
 build-user-vars-plugin:1.6
 buildtriggerbadge:2.10
 checkmarx:2020.4.8
-cloudbees-bitbucket-branch-source:2.9.6
+cloudbees-bitbucket-branch-source:2.9.7
 cloudbees-folder:6.15
 cobertura:1.16
 code-coverage-api:1.2.0
@@ -72,12 +72,12 @@ external-monitor-job:1.7
 favorite:2.3.2
 filesystem_scm:2.1
 gatling:1.3.0
-git-changelog:3.0
+git-changelog:3.1
 git-client:3.6.0
 git-parameter:0.9.13
 git-server:1.9
 git:4.5.2
-github-api:1.117
+github-api:1.122
 github-branch-source:2.9.3
 github:1.32.0
 gitlab-api:1.0.6
@@ -109,7 +109,7 @@ junit:1.48
 kubernetes-cli:1.9.0
 kubernetes-client-api:4.11.1
 kubernetes-credentials:0.7.0
-kubernetes:1.28.5
+kubernetes:1.28.6
 ldap:1.26
 lockable-resources:2.10
 mailer:1.32.1
@@ -123,7 +123,7 @@ metrics:4.0.2.7
 momentjs:1.1.1
 nodejs:1.3.10
 oic-auth:1.8
-p4:1.11.1
+p4:1.11.2
 pam-auth:1.6
 parallel-test-executor:1.13
 parameterized-trigger:2.39

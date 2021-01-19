@@ -1,5 +1,14 @@
 ## Changelog
 
+## 2.263.2-238 (Not released yet)
+* Updated plugins:
+    * [ansicolor:0.7.4](https://plugins.jenkins.io/ansicolor)
+    * [cloudbees-bitbucket-branch-source:2.9.7](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
+    * [git-changelog:3.1](https://plugins.jenkins.io/git-changelog)
+    * [github-api:1.122](https://plugins.jenkins.io/github-api)
+    * [kubernetes:1.28.6](https://plugins.jenkins.io/kubernetes)
+    * [p4:1.11.2](https://plugins.jenkins.io/p4)
+
 ## 2.263.2-237
 * [LTS-2.263.2](https://www.jenkins.io/changelog-stable/)
 * Updated plugins:
