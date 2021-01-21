@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.263.2-238 (Not released yet)
+## 2.263.2-238
 * Updated plugins:
     * [ansicolor:0.7.4](https://plugins.jenkins.io/ansicolor)
     * [cloudbees-bitbucket-branch-source:2.9.7](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
