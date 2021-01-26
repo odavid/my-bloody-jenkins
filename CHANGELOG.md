@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.263.3-239 (Not released yet)
+## 2.263.3-239
 * [LTS-2.263.3](https://www.jenkins.io/changelog-stable/)
 * Updated plugins:
     * [artifactory:3.10.4](https://plugins.jenkins.io/artifactory)
