@@ -1,5 +1,18 @@
 ## Changelog
 
+## 2.263.2-239 (Not released yet)
+* Updated plugins:
+    * [artifactory:3.10.4](https://plugins.jenkins.io/artifactory)
+    * [blueocean:1.24.4](https://plugins.jenkins.io/blueocean)
+    * [copyartifact:1.46](https://plugins.jenkins.io/copyartifact)
+    * [docker-plugin:1.2.2](https://plugins.jenkins.io/docker-plugin)
+    * [jenkins-design-language:1.24.4](https://plugins.jenkins.io/jenkins-design-language)
+    * [kubernetes-cli:1.10.0](https://plugins.jenkins.io/kubernetes-cli)
+    * [kubernetes-credentials:0.8.0](https://plugins.jenkins.io/kubernetes-credentials)
+    * [kubernetes:1.28.7](https://plugins.jenkins.io/kubernetes)
+    * [matrix-auth:2.6.5](https://plugins.jenkins.io/matrix-auth)
+    * [subversion:2.14.0](https://plugins.jenkins.io/subversion)
+    * [workflow-api:2.41](https://plugins.jenkins.io/workflow-api)
 ## 2.263.2-238
 * Updated plugins:
     * [ansicolor:0.7.4](https://plugins.jenkins.io/ansicolor)
