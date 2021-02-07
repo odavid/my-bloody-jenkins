@@ -1,5 +1,22 @@
 ## Changelog
 
+## 2.263.3-240 (Not released yet)
+* Updated plugins:
+    * [ansicolor:0.7.5](https://plugins.jenkins.io/ansicolor)
+    * [blueocean-display-url:2.4.1](https://plugins.jenkins.io/blueocean-display-url)
+    * [code-coverage-api:1.3.1](https://plugins.jenkins.io/code-coverage-api)
+    * [configuration-as-code:1.47](https://plugins.jenkins.io/configuration-as-code)
+    * [cucumber-reports:5.5.0](https://plugins.jenkins.io/cucumber-reports)
+    * [github-branch-source:2.9.5](https://plugins.jenkins.io/github-branch-source)
+    * [gitlab-branch-source:1.5.4](https://plugins.jenkins.io/gitlab-branch-source)
+    * [golang:1.4](https://plugins.jenkins.io/golang)
+    * [kubernetes-client-api:4.13.2-1](https://plugins.jenkins.io/kubernetes-client-api)
+    * [kubernetes:1.29.0](https://plugins.jenkins.io/kubernetes)
+    * [nodejs:1.3.11](https://plugins.jenkins.io/nodejs)
+    * [pipeline-milestone-step:1.3.2](https://plugins.jenkins.io/pipeline-milestone-step)
+    * [pipeline-model-api:1.8.3](https://plugins.jenkins.io/pipeline-model-api)
+    * [script-security:1.76](https://plugins.jenkins.io/script-security)
+    * [structs:1.21](https://plugins.jenkins.io/structs)
 ## 2.263.3-239
 * [LTS-2.263.3](https://www.jenkins.io/changelog-stable/)
 * Updated plugins:
