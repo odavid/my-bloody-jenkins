@@ -16,6 +16,7 @@ jobs:
         run: make test-${{ matrix.dist }}
 
   deploy-tag:
+    needs: test
     runs-on: ubuntu-latest
     if: startsWith(github.ref, 'refs/tags/v')
     steps:
@@ -27,6 +28,7 @@ jobs:
           ./publish.sh $TAG
 
   deploy-latest:
+    needs: test
     runs-on: ubuntu-latest
     if: github.event.ref == 'refs/heads/master'
     steps:
