@@ -41,7 +41,7 @@ function docker_compose_exec(){
     file=$1
     service=$2
     command="${@:3}"
-    docker-compose -f $TESTS_DIR/$file exec $service $command
+    docker-compose -f $TESTS_DIR/$file exec -T $service $command
 }
 
 

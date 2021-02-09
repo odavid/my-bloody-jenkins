@@ -1,0 +1,39 @@
+name: main
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dist: [debian, alpine, jdk11]
+    steps:
+      - name: Setup BATS
+        uses: mig4/setup-bats@v1
+
+      - uses: actions/checkout@v2
+
+      - name: test test-${{ matrix.dist }}
+        run: make test-${{ matrix.dist }}
+
+  deploy-tag:
+    needs: test
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/v')
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: deploy
+        run: |-
+          TAG="$(echo ${{ github.event.ref }} | sed 's|refs/tags/||g'"
+          ./publish.sh $TAG
+
+  deploy-latest:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.event.ref == 'refs/heads/master'
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: deploy
+        run: ./publish.sh latest
+
