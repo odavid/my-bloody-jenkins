@@ -29,7 +29,7 @@ jobs:
         run: echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
       - name: deploy
         run: |-
-          TAG="$(echo ${{ github.event.ref }} | sed 's|refs/tags/||g'"
+          TAG="$(echo ${{ github.event.ref }} | sed 's|refs/tags/||g')"
           ./publish.sh $TAG
 
   deploy-latest:

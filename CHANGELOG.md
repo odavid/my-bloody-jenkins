@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.263.3-240 (Not released yet)
+## 2.263.3-240
 * Updated plugins:
     * [ansicolor:0.7.5](https://plugins.jenkins.io/ansicolor)
     * [blueocean-display-url:2.4.1](https://plugins.jenkins.io/blueocean-display-url)
