@@ -17,10 +17,19 @@ jobs:
 
   deploy-tag:
     runs-on: ubuntu-latest
-    if: startsWith(github.ref, 'refs/tags/v') || github.event.ref == 'master'
+    # if: startsWith(github.ref, 'refs/tags/v')
     steps:
       - uses: actions/checkout@v2
 
       - name: deploy
         run: echo "tag - ${{ github.event.ref }}"
+
+  deploy-latest:
+    runs-on: ubuntu-latest
+    # if: github.event.ref == 'master'
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: deploy
+        run: echo "tag - ${{ github.event.ref }}, ${{ github.ref }}"
 
