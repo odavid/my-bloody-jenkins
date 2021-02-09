@@ -9,7 +9,6 @@ docker-build(){
     docker push odavid/my-bloody-jenkins:${to_tag}
 }
 
-echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
 lts_version=$(cat LTS_VERSION.txt)
 version_type=$1
 case $version_type in
