@@ -3,9 +3,12 @@ on: push
 jobs:
   test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dist: [debian, alpine, jdk11]
     steps:
       - name: Setup BATS
         uses: mig4/setup-bats@v1
       - uses: actions/checkout@v2
-      - name: test test-debian
-        run: make test-debian
+      - name: test test-${{ matrix.dist }}
+        run: make test-${{ matrix.dist }}
