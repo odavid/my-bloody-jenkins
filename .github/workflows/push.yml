@@ -4,8 +4,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: Setup BATS
+        uses: mig4/setup-bats@v1
       - uses: actions/checkout@v2
-      - name: install bats
-        run: npm install -g bats
       - name: test test-debian
         run: make test-debian
