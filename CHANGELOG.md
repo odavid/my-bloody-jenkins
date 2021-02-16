@@ -1,5 +1,8 @@
 ## Changelog
 
+## 2.263.4-241 (Not released yet)
+* [LTS-2.263.4](https://www.jenkins.io/changelog-stable/)
+
 ## 2.263.3-240
 * Updated plugins:
     * [ansicolor:0.7.5](https://plugins.jenkins.io/ansicolor)
