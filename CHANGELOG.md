@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.263.4-242 (Not released yet)
+## 2.263.4-242
 * Updated plugins:
     * [aws-java-sdk:1.11.955](https://plugins.jenkins.io/aws-java-sdk)
     * [build-user-vars-plugin:1.7](https://plugins.jenkins.io/build-user-vars-plugin)
