@@ -1,5 +1,21 @@
 ## Changelog
 
+## 2.263.4-242 (Not released yet)
+* Updated plugins:
+    * [aws-java-sdk:1.11.955](https://plugins.jenkins.io/aws-java-sdk)
+    * [build-user-vars-plugin:1.7](https://plugins.jenkins.io/build-user-vars-plugin)
+    * [credentials:2.3.15](https://plugins.jenkins.io/credentials)
+    * [git:4.6.0](https://plugins.jenkins.io/git)
+    * [github-branch-source:2.9.6](https://plugins.jenkins.io/github-branch-source)
+    * [github:1.33.1](https://plugins.jenkins.io/github)
+    * [jdk-tool:1.5](https://plugins.jenkins.io/jdk-tool)
+    * [jira:3.2](https://plugins.jenkins.io/jira)
+    * [pipeline-maven:3.10.0](https://plugins.jenkins.io/pipeline-maven)
+    * [pipeline-model-api:1.8.4](https://plugins.jenkins.io/pipeline-model-api)
+    * [ssh-agent:1.21](https://plugins.jenkins.io/ssh-agent)
+    * [structs:1.22](https://plugins.jenkins.io/structs)
+    * [whitesource:21.1.2](https://plugins.jenkins.io/whitesource)
+    * [workflow-cps:2.89](https://plugins.jenkins.io/workflow-cps)
 ## 2.263.4-241
 * [LTS-2.263.4](https://www.jenkins.io/changelog-stable/)
 
