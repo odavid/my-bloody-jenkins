@@ -1,5 +1,19 @@
 ## Changelog
 
+## 2.263.4-243 (Not released yet)
+* Updated plugins:
+    * [artifactory:3.10.5](https://plugins.jenkins.io/artifactory)
+    * [checkmarx:2021.1.2](https://plugins.jenkins.io/checkmarx)
+    * [docker-build-publish:1.3.3](https://plugins.jenkins.io/docker-build-publish)
+    * [docker-workflow:1.26](https://plugins.jenkins.io/docker-workflow)
+    * [kubernetes:1.29.1](https://plugins.jenkins.io/kubernetes)
+    * [p4:1.11.3](https://plugins.jenkins.io/p4)
+    * [resource-disposer:0.15](https://plugins.jenkins.io/resource-disposer)
+    * [workflow-cps-global-lib:2.18](https://plugins.jenkins.io/workflow-cps-global-lib)
+    * [workflow-cps:2.90](https://plugins.jenkins.io/workflow-cps)
+    * [workflow-scm-step:2.12](https://plugins.jenkins.io/workflow-scm-step)
+    * [ws-cleanup:0.39](https://plugins.jenkins.io/ws-cleanup)
+
 ## 2.263.4-242
 * Updated plugins:
     * [aws-java-sdk:1.11.955](https://plugins.jenkins.io/aws-java-sdk)
