@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.263.4-243 (Not released yet)
+## 2.263.4-243
 * Updated plugins:
     * [artifactory:3.10.5](https://plugins.jenkins.io/artifactory)
     * [checkmarx:2021.1.2](https://plugins.jenkins.io/checkmarx)
