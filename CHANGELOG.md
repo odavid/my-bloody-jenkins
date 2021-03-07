@@ -1,5 +1,18 @@
 ## Changelog
 
+## 2.263.4-244 (Not released yet)
+* Updated plugins:
+    * [bouncycastle-api:2.20](https://plugins.jenkins.io/bouncycastle-api)
+    * [email-ext:2.82](https://plugins.jenkins.io/email-ext)
+    * [github-api:1.123](https://plugins.jenkins.io/github-api)
+    * [github-branch-source:2.9.7](https://plugins.jenkins.io/github-branch-source)
+    * [gitlab-plugin:1.5.19](https://plugins.jenkins.io/gitlab-plugin)
+    * [kubernetes:1.29.2](https://plugins.jenkins.io/kubernetes)
+    * [rebuild:1.32](https://plugins.jenkins.io/rebuild)
+    * [swarm:3.25](https://plugins.jenkins.io/swarm)
+    * [workflow-durable-task-step:2.38](https://plugins.jenkins.io/workflow-durable-task-step)
+    * [workflow-support:3.8](https://plugins.jenkins.io/workflow-support)
+
 ## 2.263.4-243
 * Updated plugins:
     * [artifactory:3.10.5](https://plugins.jenkins.io/artifactory)

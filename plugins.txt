@@ -34,7 +34,7 @@ blueocean-rest-impl:1.24.4
 blueocean-rest:1.24.4
 blueocean-web:1.24.4
 blueocean:1.24.4
-bouncycastle-api:2.18
+bouncycastle-api:2.20
 branch-api:2.6.2
 build-timeout:1.20
 build-user-vars-plugin:1.7
@@ -61,7 +61,7 @@ docker-java-api:3.1.5.2
 docker-plugin:1.2.2
 docker-workflow:1.26
 durable-task:1.35
-email-ext:2.81
+email-ext:2.82
 emailext-template:1.2
 embeddable-build-status:2.0.3
 envinject-api:1.7
@@ -77,12 +77,12 @@ git-client:3.6.0
 git-parameter:0.9.13
 git-server:1.9
 git:4.6.0
-github-api:1.122
-github-branch-source:2.9.6
+github-api:1.123
+github-branch-source:2.9.7
 github:1.33.1
 gitlab-api:1.0.6
 gitlab-branch-source:1.5.4
-gitlab-plugin:1.5.13
+gitlab-plugin:1.5.19
 golang:1.4
 google-login:1.6
 gradle:1.36
@@ -109,7 +109,7 @@ junit:1.48
 kubernetes-cli:1.10.0
 kubernetes-client-api:4.13.2-1
 kubernetes-credentials:0.8.0
-kubernetes:1.29.1
+kubernetes:1.29.2
 ldap:1.26
 lockable-resources:2.10
 mailer:1.32.1
@@ -144,7 +144,7 @@ pipeline-utility-steps:2.6.1
 plain-credentials:1.7
 promoted-builds:3.7
 pubsub-light:1.13
-rebuild:1.31
+rebuild:1.32
 resource-disposer:0.15
 run-condition:1.5
 saml:1.1.7
@@ -161,7 +161,7 @@ ssh-slaves:1.31.5
 stashNotifier:1.20
 structs:1.22
 subversion:2.14.0
-swarm:3.24
+swarm:3.25
 throttle-concurrents:2.1
 timestamper:1.11.8
 token-macro:2.13
@@ -174,12 +174,12 @@ workflow-api:2.41
 workflow-basic-steps:2.23
 workflow-cps-global-lib:2.18
 workflow-cps:2.90
-workflow-durable-task-step:2.37
+workflow-durable-task-step:2.38
 workflow-job:2.40
 workflow-multibranch:2.22
 workflow-remote-loader:1.5
 workflow-scm-step:2.12
 workflow-step-api:2.23
-workflow-support:3.7
+workflow-support:3.8
 ws-cleanup:0.39
 xvfb:1.1.3
