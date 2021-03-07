@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.263.4-244 (Not released yet)
+## 2.263.4-244
 * Updated plugins:
     * [bouncycastle-api:2.20](https://plugins.jenkins.io/bouncycastle-api)
     * [email-ext:2.82](https://plugins.jenkins.io/email-ext)
