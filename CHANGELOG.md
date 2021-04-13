@@ -1,5 +1,20 @@
 ## Changelog
 
+## 2.277.2-248 (Not released yet)
+* Updated plugins:
+    * [aws-credentials:1.29](https://plugins.jenkins.io/aws-credentials)
+    * [aws-java-sdk:1.11.995](https://plugins.jenkins.io/aws-java-sdk)
+    * [blueocean:1.24.6](https://plugins.jenkins.io/blueocean)
+    * [credentials:2.3.17](https://plugins.jenkins.io/credentials)
+    * [git-client:3.7.1](https://plugins.jenkins.io/git-client)
+    * [git:4.7.1](https://plugins.jenkins.io/git)
+    * [gitlab-branch-source:1.5.5](https://plugins.jenkins.io/gitlab-branch-source)
+    * [jackson2-api:2.12.2](https://plugins.jenkins.io/jackson2-api)
+    * [ldap:2.5](https://plugins.jenkins.io/ldap)
+    * [p4:1.11.4](https://plugins.jenkins.io/p4)
+    * [promoted-builds:3.9.1](https://plugins.jenkins.io/promoted-builds)
+    * [saml:2.0.3](https://plugins.jenkins.io/saml)
+
 ## 2.277.2-247
 * [LTS-2.277.2](https://www.jenkins.io/changelog-stable/)
 
