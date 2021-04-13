@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.277.2-248 (Not released yet)
+## 2.277.2-248
 * Updated plugins:
     * [aws-credentials:1.29](https://plugins.jenkins.io/aws-credentials)
     * [aws-java-sdk:1.11.995](https://plugins.jenkins.io/aws-java-sdk)
