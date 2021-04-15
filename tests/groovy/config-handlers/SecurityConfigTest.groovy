@@ -179,6 +179,24 @@ jenkinsInternalUser: admin
     assert realm.internalUsersDatabase.jenkinsInternalUser == 'admin'
 }
 
+def testGithubLogin(){
+  def config = new Yaml().load("""
+realmConfig:
+  githubWebUri: https://github.com
+  githubApiUri: https://api.github.com
+  clientID: client-id
+  clientSecret: client-secret
+  oauthScopes: read:org
+""")
+    def githubOAuth2Realm = configHandler.setupGithubOAuth2(config)
+    assert githubOAuth2Realm instanceof org.jenkinsci.plugins.GithubSecurityRealm
+    assert githubOAuth2Realm.githubWebUri == "https://github.com"
+    assert githubOAuth2Realm.githubApiUri == "https://api.github.com"
+    assert githubOAuth2Realm.clientID == "client-id"
+    assert githubOAuth2Realm.clientSecret.toString() == "client-secret"
+    assert githubOAuth2Realm.oauthScopes.toString() == "read:org"
+}
+
 def testAuthorizationStrategy(){
 	def config = new Yaml().load("""
 permissions:
@@ -307,6 +325,7 @@ testSaml()
 testLdap()
 testOIC()
 testActiveDirectory()
+testGithubLogin()
 testAuthorizationStrategy()
 testUnsecureAuthorizationStrategy()
 testSecurityOptions()

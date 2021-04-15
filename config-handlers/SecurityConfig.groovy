@@ -180,6 +180,11 @@ def setupOpenIDConnect(config){
     return realmConfig ? DescribableModel.of(org.jenkinsci.plugins.oic.OicSecurityRealm).instantiate(realmConfig) : null
 }
 
+def setupGithubOAuth2(config){
+    def realmConfig = config.realmConfig
+    return realmConfig ? DescribableModel.of(org.jenkinsci.plugins.GithubSecurityRealm).instantiate(realmConfig) : null
+}
+
 def setup(config){
     config = config ?: [:]
     setupSecurityOptions(config.securityOptions)
@@ -205,6 +210,9 @@ def setup(config){
             break
         case 'oic':
             realm = setupOpenIDConnect(config)
+            break
+        case 'github':
+            realm = setupGithubOAuth2(config)
             break
     }
     if(realm){
