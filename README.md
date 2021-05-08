@@ -239,6 +239,7 @@ Responsible for:
     * saml - Uses [saml plugin](https://plugins.jenkins.io/saml)
     * google - Uses [google-login plugin](https://plugins.jenkins.io/google-login)
     * oic - Uses [oic-auth plugin](https://plugins.jenkins.io/oic-auth/)
+    * github - Uses [github-oauth plugin](https://plugins.jenkins.io/github-oauth)
 * User/Group Permissions dict - Each key represent a user or a group and its value is a list of Jenkins [Permissions IDs](https://wiki.jenkins.io/display/JENKINS/Matrix-based+security)
     * For disable configure Matrix based Security you should add "unsecureStrategy: true" (Anyone can do anything)
 
@@ -375,6 +376,18 @@ security:
     escapeHatchUsername: admin
     escapeHatchSecret: password
     escapeHatchGroup:
+```
+
+```yaml
+# github - github-oauth configuration must be provided
+security:
+  realm: github
+  realmConfig:
+    githubWebUri: https://github.com
+    githubApiUri: https://api.github.com
+    clientID: client-id
+    clientSecret: client-secret
+    oauthScopes: read:org
 ```
 
 ```yaml

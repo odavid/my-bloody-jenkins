@@ -183,3 +183,4 @@ workflow-step-api:2.23
 workflow-support:3.8
 ws-cleanup:0.39
 xvfb:1.1.3
+github-oauth:0.33
