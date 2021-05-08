@@ -1,7 +1,8 @@
 ## Changelog
 
-## 2.277.4-249 (Not released yet)
+## 2.277.4-249
 * [LTS-2.277.4](https://www.jenkins.io/changelog-stable/)
+* Initial support of Github-OAuth autorization strategy [#189](https://github.com/odavid/my-bloody-jenkins/pull/189)
 
 ## 2.277.2-248
 * Updated plugins:
