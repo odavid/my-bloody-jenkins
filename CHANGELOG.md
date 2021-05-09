@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.277.4-250 (Not released yet)
+## 2.277.4-250
 * Updated plugins:
     * [active-directory:2.24](https://plugins.jenkins.io/active-directory)
     * [branch-api:2.6.4](https://plugins.jenkins.io/branch-api)
@@ -24,6 +24,7 @@
     * [timestamper:1.13](https://plugins.jenkins.io/timestamper)
     * [windows-slaves:1.8](https://plugins.jenkins.io/windows-slaves)
     * [workflow-cps-global-lib:2.19](https://plugins.jenkins.io/workflow-cps-global-lib)
+
 ## 2.277.4-249
 * [LTS-2.277.4](https://www.jenkins.io/changelog-stable/)
 * Initial support of Github-OAuth autorization strategy [#189](https://github.com/odavid/my-bloody-jenkins/pull/189)
