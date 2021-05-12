@@ -407,6 +407,7 @@ docker-cloud:
       hostname: docker-host-name
       memory: 50
       memorySwap: 10
+      shmSize: 100
       cpu: 1024
       ports:
         - 9090:8080
@@ -448,6 +449,7 @@ docker-cloud:
         assert template.dockerTemplateBase.hostname == 'docker-host-name'
         assert template.dockerTemplateBase.memoryLimit == 50
         assert template.dockerTemplateBase.memorySwap == 10
+        assert template.dockerTemplateBase.shmSize == 100
         assert template.dockerTemplateBase.cpuShares == 1024
         assert template.dockerTemplateBase.bindPorts == '9090:8080 1500'
         assert template.dockerTemplateBase.bindAllPorts

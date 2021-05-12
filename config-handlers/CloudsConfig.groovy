@@ -106,6 +106,7 @@ def dockerCloud(config){
                 dockerTemplateBase.memoryLimit = asInt(temp.memory)
                 dockerTemplateBase.memorySwap = asInt(temp.memorySwap)
                 dockerTemplateBase.cpuShares = asInt(temp.cpu)
+                dockerTemplateBase.shmSize = asInt(temp.shmSize)
                 dockerTemplateBase.bindPorts = temp.ports?.join(' ') ?:''
                 dockerTemplateBase.bindAllPorts = asBoolean(temp.bindAllPorts)
                 dockerTemplateBase.privileged = asBoolean(temp.privileged)
