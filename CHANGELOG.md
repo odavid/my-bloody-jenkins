@@ -1,5 +1,8 @@
 ## Changelog
 
+## 2.277.4-251
+* fixes #193 - added shmSize field to dockerCloud template [#194](https://github.com/odavid/my-bloody-jenkins/pull/194)
+
 ## 2.277.4-250
 * Updated plugins:
     * [active-directory:2.24](https://plugins.jenkins.io/active-directory)
