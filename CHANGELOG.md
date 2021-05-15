@@ -1,5 +1,19 @@
 ## Changelog
 
+## 2.277.4-252 (Not released yet)
+* Updated plugins:
+    * [configuration-as-code:1.51](https://plugins.jenkins.io/configuration-as-code)
+    * [credentials:2.4.1](https://plugins.jenkins.io/credentials)
+    * [dashboard-view:2.16](https://plugins.jenkins.io/dashboard-view)
+    * [jira:3.3](https://plugins.jenkins.io/jira)
+    * [matrix-auth:2.6.7](https://plugins.jenkins.io/matrix-auth)
+    * [mercurial:2.15](https://plugins.jenkins.io/mercurial)
+    * [p4:1.11.5](https://plugins.jenkins.io/p4)
+    * [structs:1.23](https://plugins.jenkins.io/structs)
+    * [workflow-cps:2.92](https://plugins.jenkins.io/workflow-cps)
+    * [workflow-durable-task-step:2.39](https://plugins.jenkins.io/workflow-durable-task-step)
+    * [workflow-multibranch:2.24](https://plugins.jenkins.io/workflow-multibranch)
+
 ## 2.277.4-251
 * fixes #193 - added shmSize field to dockerCloud template [#194](https://github.com/odavid/my-bloody-jenkins/pull/194)
 
