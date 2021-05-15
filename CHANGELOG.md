@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.277.4-252 (Not released yet)
+## 2.277.4-252
 * Updated plugins:
     * [configuration-as-code:1.51](https://plugins.jenkins.io/configuration-as-code)
     * [credentials:2.4.1](https://plugins.jenkins.io/credentials)
