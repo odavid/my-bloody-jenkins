@@ -12,8 +12,16 @@ def setup(config) {
     def desc = jenkins.model.Jenkins.instance.getDescriptor(org.jfrog.hudson.ArtifactoryBuilder)
     config.with{
         desc.useCredentialsPlugin = asBoolean(useCredentialsPlugin)
-        desc.artifactoryServers = artifactoryServers?.collect{artifactoryServer ->
-            DescribableModel.of(org.jfrog.hudson.ArtifactoryServer).instantiate(artifactoryServer)
+        // artifactoryServers are for backward compatibility
+        servers = jfrogInstances ?: artifactoryServers
+        desc.artifactoryServers = servers?.collect{jfrogInstance ->
+            if(jfrogInstance.serverId && !jfrogInstance.instanceId){
+                jfrogInstance.instanceId = jfrogInstance.serverId
+                jfrogInstance.remove('serverId')
+            } else if(jfrogInstance.serverId){
+                jfrogInstance.remove('serverId')
+            }
+            DescribableModel.of(org.jfrog.hudson.JFrogPlatformInstance).instantiate(jfrogInstance)
         }
     }
     desc.save()

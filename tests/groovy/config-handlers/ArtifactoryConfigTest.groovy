@@ -6,8 +6,9 @@ configHandler = evaluate(new File("/usr/share/jenkins/config-handlers/${handler}
 def testArtifactory(){
  	def config = new Yaml().load("""
 useCredentialsPlugin: true
-artifactoryServers:
-- serverId: artifactory1
+jfrogInstances:
+- instanceId: artifactory1
+  platformUrl: http://artifactory1
   artifactoryUrl: http://artifactory1
   bypassProxy: true
   connectionRetry: 10
@@ -18,7 +19,7 @@ artifactoryServers:
   resolverCredentialsConfig:
     username: username1
     password: password1
-- serverId: artifactory2
+- instanceId: artifactory2
   artifactoryUrl: http://artifactory2
   deployerCredentialsConfig:
     credentialsId: 'cred2'
@@ -32,8 +33,9 @@ artifactoryServers:
     assert desc.useCredentialsPlugin
     assert desc.artifactoryServers.size() == 2
     def server = desc.artifactoryServers[0]
-    assert server.serverId == 'artifactory1'
+    assert server.instanceId == 'artifactory1'
     assert server.artifactoryUrl == 'http://artifactory1'
+    assert server.platformUrl == 'http://artifactory1'
     assert server.bypassProxy
     assert server.connectionRetry == 10
     assert server.timeout == 200
