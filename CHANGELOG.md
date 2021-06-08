@@ -1,5 +1,8 @@
 ## Changelog
 
+## 2.289.1-253 (Not released yet)
+* [LTS-2.289.1](https://www.jenkins.io/changelog-stable/)
+
 ## 2.277.4-252
 * Updated plugins:
     * [configuration-as-code:1.51](https://plugins.jenkins.io/configuration-as-code)
