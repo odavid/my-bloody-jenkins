@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.289.1-253 (Not released yet)
+## 2.289.1-253
 * [LTS-2.289.1](https://www.jenkins.io/changelog-stable/)
 
 ## 2.277.4-252
