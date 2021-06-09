@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.289.1-254 (Not released yet)
+## 2.289.1-254
 * Updated plugins:
     * [ansicolor:1.0.0](https://plugins.jenkins.io/ansicolor)
     * [artifactory:3.11.4](https://plugins.jenkins.io/artifactory)
