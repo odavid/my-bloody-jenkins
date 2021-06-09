@@ -1001,8 +1001,9 @@ artifactory:
   ## Should be true
   useCredentialsPlugin: true
   ## List of artifactory servers
-  artifactoryServers:
-  - serverId: serverId
+  jfrogInstances:
+  - instanceId: instanceId
+    platformUrl: https://artifactory1
     artifactoryUrl: https://artifactory1
     # default false
     bypassProxy: true
