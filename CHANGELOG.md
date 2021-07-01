@@ -1,5 +1,30 @@
 ## Changelog
 
+## 2.289.2-256 (Not released yet)
+* Updated plugins:
+    * [amazon-ecs:1.38](https://plugins.jenkins.io/amazon-ecs)
+    * [artifactory:3.12.1](https://plugins.jenkins.io/artifactory)
+    * [checkmarx:2021.2.96](https://plugins.jenkins.io/checkmarx)
+    * [code-coverage-api:1.4.0](https://plugins.jenkins.io/code-coverage-api)
+    * [credentials-binding:1.26](https://plugins.jenkins.io/credentials-binding)
+    * [git-changelog:3.10](https://plugins.jenkins.io/git-changelog)
+    * [jira:3.5](https://plugins.jenkins.io/jira)
+    * [kubernetes-cli:1.10.3](https://plugins.jenkins.io/kubernetes-cli)
+    * [kubernetes-client-api:5.4.1](https://plugins.jenkins.io/kubernetes-client-api)
+    * [kubernetes:1.30.0](https://plugins.jenkins.io/kubernetes)
+    * [maven-plugin:3.12](https://plugins.jenkins.io/maven-plugin)
+    * [metrics:4.0.2.8](https://plugins.jenkins.io/metrics)
+    * [parameterized-trigger:2.41](https://plugins.jenkins.io/parameterized-trigger)
+    * [pubsub-light:1.16](https://plugins.jenkins.io/pubsub-light)
+    * [resource-disposer:0.16](https://plugins.jenkins.io/resource-disposer)
+    * [ssh-agent:1.23](https://plugins.jenkins.io/ssh-agent)
+    * [subversion:2.14.4](https://plugins.jenkins.io/subversion)
+    * [throttle-concurrents:2.3](https://plugins.jenkins.io/throttle-concurrents)
+    * [workflow-api:2.46](https://plugins.jenkins.io/workflow-api)
+    * [workflow-cps-global-lib:2.21](https://plugins.jenkins.io/workflow-cps-global-lib)
+    * [workflow-multibranch:2.26](https://plugins.jenkins.io/workflow-multibranch)
+    * [workflow-scm-step:2.13](https://plugins.jenkins.io/workflow-scm-step)
+
 ## 2.289.2-255
 * [LTS-2.289.2](https://www.jenkins.io/changelog-stable/)
 

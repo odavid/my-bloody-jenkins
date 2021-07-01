@@ -156,6 +156,7 @@ def ecsCloud(config){
         def ecsCloud = new ECSCloud(
             id,
             credentialsId ?: '',
+            assumedRoleArn,
             cluster
         )
         ecsCloud.regionName = region
@@ -171,6 +172,10 @@ def ecsCloud(config){
                 temp.image,
                 temp.repositoryCredentials,
                 temp.launchType,
+                asBoolean(temp.defaultCapacityProvider),
+                temp.capacityProviderStrategies?.collect { cpsItem ->
+                    new CapacityProviderStrategyEntry(cpsItem.provider, asInt(cpsItem.base), asInt(cpsItem.weight))
+                },
                 temp.networkMode,
                 temp.remoteFs,
                 asBoolean(temp.uniqueRemoteFSRoot),

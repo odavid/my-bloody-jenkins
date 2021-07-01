@@ -16,6 +16,7 @@ def testEcs(){
 ecs-cloud:
   type: ecs
   credentialsId: aws-cred
+  assumedRoleArn: arn:of-role
   region: us-east-1
   cluster: ecs-cluster
   connectTimeout: 60
@@ -114,6 +115,7 @@ ecs-cloud:
 
     assertCloud('ecs-cloud', com.cloudbees.jenkins.plugins.amazonecs.ECSCloud){
         assert it.credentialsId == 'aws-cred'
+        assert it.assumedRoleArn == 'arn:of-role'
         assert it.regionName == 'us-east-1'
         assert it.cluster == 'ecs-cluster'
         assert it.slaveTimeoutInSeconds == 60
