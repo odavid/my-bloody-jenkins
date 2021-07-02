@@ -741,6 +741,8 @@ clouds:
     # discard this credential, otherwise, you need to have an
     # aws credential declared in the credentials secion
     credentialsId: 'my-aws-key'
+    # IAM Role to be assumed
+    assumedRoleArn: 'arn-of-role-to'
     # AWS region where your ECS Cluster reside
     region: eu-west-1
     # ARN of the ECS Cluster
