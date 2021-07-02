@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.289.2-256 (Not released yet)
+## 2.289.2-256
 * Updated plugins:
     * [amazon-ecs:1.38](https://plugins.jenkins.io/amazon-ecs)
     * [artifactory:3.12.1](https://plugins.jenkins.io/artifactory)
