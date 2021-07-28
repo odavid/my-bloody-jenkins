@@ -1,5 +1,37 @@
 ## Changelog
 
+## 2.289.2-257 (Not released yet)
+* Updated plugins:
+    * [artifactory:3.12.5](https://plugins.jenkins.io/artifactory)
+    * [blueocean:1.24.8](https://plugins.jenkins.io/blueocean)
+    * [bouncycastle-api:2.21](https://plugins.jenkins.io/bouncycastle-api)
+    * [branch-api:2.6.5](https://plugins.jenkins.io/branch-api)
+    * [checkmarx:2021.3.1](https://plugins.jenkins.io/checkmarx)
+    * [cloudbees-bitbucket-branch-source:2.9.10](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
+    * [cloudbees-folder:6.16](https://plugins.jenkins.io/cloudbees-folder)
+    * [config-file-provider:3.8.1](https://plugins.jenkins.io/config-file-provider)
+    * [credentials-binding:1.27](https://plugins.jenkins.io/credentials-binding)
+    * [durable-task:1.38](https://plugins.jenkins.io/durable-task)
+    * [git-changelog:3.11](https://plugins.jenkins.io/git-changelog)
+    * [git-client:3.9.0](https://plugins.jenkins.io/git-client)
+    * [git-server:1.10](https://plugins.jenkins.io/git-server)
+    * [git:4.8.1](https://plugins.jenkins.io/git)
+    * [github-branch-source:2.11.2](https://plugins.jenkins.io/github-branch-source)
+    * [gitlab-branch-source:1.5.8](https://plugins.jenkins.io/gitlab-branch-source)
+    * [gradle:1.37.1](https://plugins.jenkins.io/gradle)
+    * [jackson2-api:2.12.4](https://plugins.jenkins.io/jackson2-api)
+    * [jenkins-design-language:1.24.8](https://plugins.jenkins.io/jenkins-design-language)
+    * [junit:1.51](https://plugins.jenkins.io/junit)
+    * [kubernetes:1.30.1](https://plugins.jenkins.io/kubernetes)
+    * [matrix-auth:2.6.8](https://plugins.jenkins.io/matrix-auth)
+    * [pipeline-build-step:2.14](https://plugins.jenkins.io/pipeline-build-step)
+    * [saml:2.0.7](https://plugins.jenkins.io/saml)
+    * [simple-theme-plugin:0.7](https://plugins.jenkins.io/simple-theme-plugin)
+    * [token-macro:266.v44a80cf277fd](https://plugins.jenkins.io/token-macro)
+    * [workflow-cps:2.93](https://plugins.jenkins.io/workflow-cps)
+    * [workflow-step-api:2.24](https://plugins.jenkins.io/workflow-step-api)
+    * [xvfb:1.2](https://plugins.jenkins.io/xvfb)
+
 ## 2.289.2-256
 * Updated plugins:
     * [amazon-ecs:1.38](https://plugins.jenkins.io/amazon-ecs)
