@@ -1,5 +1,14 @@
 ## Changelog
 
+## 2.289-3.259 (Not released yet)
+* Updated plugins:
+    * [extensible-choice-parameter:1.8.0](https://plugins.jenkins.io/extensible-choice-parameter)
+    * [http_request:1.10](https://plugins.jenkins.io/http_request)
+    * [pipeline-build-step:2.15](https://plugins.jenkins.io/pipeline-build-step)
+    * [pipeline-model-definition:1.9.1](https://plugins.jenkins.io/pipeline-model-definition)
+    * [scm-api:2.6.5](https://plugins.jenkins.io/scm-api)
+    * [script-security:1.78](https://plugins.jenkins.io/script-security)
+
 ## 2.289.3-258
 * [LTS-2.289.3](https://www.jenkins.io/changelog-stable/)
 
