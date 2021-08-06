@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.289-3.259 (Not released yet)
+## 2.289-3.259
 * Updated plugins:
     * [extensible-choice-parameter:1.8.0](https://plugins.jenkins.io/extensible-choice-parameter)
     * [http_request:1.10](https://plugins.jenkins.io/http_request)
