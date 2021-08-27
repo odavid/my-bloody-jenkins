@@ -1,5 +1,22 @@
 ## Changelog
 
+## 2.303.1-261 (Not released yet)
+* Updated plugins:
+    * [artifactory:3.13.0](https://plugins.jenkins.io/artifactory)
+    * [aws-credentials:1.30](https://plugins.jenkins.io/aws-credentials)
+    * [bouncycastle-api:2.23](https://plugins.jenkins.io/bouncycastle-api)
+    * [configuration-as-code:1.52](https://plugins.jenkins.io/configuration-as-code)
+    * [cucumber-reports:5.5.4](https://plugins.jenkins.io/cucumber-reports)
+    * [docker-plugin:1.2.3](https://plugins.jenkins.io/docker-plugin)
+    * [durable-task:1.39](https://plugins.jenkins.io/durable-task)
+    * [git:4.8.2](https://plugins.jenkins.io/git)
+    * [github:1.34.0](https://plugins.jenkins.io/github)
+    * [http_request:1.11](https://plugins.jenkins.io/http_request)
+    * [junit:1.52](https://plugins.jenkins.io/junit)
+    * [ssh-slaves:1.33.0](https://plugins.jenkins.io/ssh-slaves)
+    * [throttle-concurrents:2.4](https://plugins.jenkins.io/throttle-concurrents)
+    * [workflow-basic-steps:2.24](https://plugins.jenkins.io/workflow-basic-steps)
+
 ## 2.303.1-260
 * [LTS-2.303.1-260](https://www.jenkins.io/changelog-stable/)
 
