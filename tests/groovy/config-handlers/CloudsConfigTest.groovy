@@ -445,7 +445,7 @@ docker-cloud:
         assert template.dockerTemplateBase.dnsString == '8.8.8.8 8.8.7.7'
         assert template.dockerTemplateBase.network == 'host'
         assert template.dockerTemplateBase.dockerCommand == '/bin/bash'
-        assert template.dockerTemplateBase.volumes == config['docker-cloud']['templates'][0].volumes
+        assert template.dockerTemplateBase.mounts == config['docker-cloud']['templates'][0].volumes
         assert template.dockerTemplateBase.volumesFrom2 == config['docker-cloud']['templates'][0].volumesFrom
         assert template.dockerTemplateBase.environmentsString == ['ENV1=env1Value', 'ENV2=env2Value'].join('\n')
         assert template.dockerTemplateBase.hostname == 'docker-host-name'

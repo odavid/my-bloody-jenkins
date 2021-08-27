@@ -99,7 +99,7 @@ def dockerCloud(config){
                 dockerTemplateBase.dnsString = temp.dns?.join(' ')
                 dockerTemplateBase.network = temp.network?:''
                 dockerTemplateBase.dockerCommand = temp.command?:''
-                dockerTemplateBase.volumesString = temp.volumes?.join('\n')
+                dockerTemplateBase.mountsString = temp.volumes?.join('\n')
                 dockerTemplateBase.volumesFromString = temp.volumesFrom?.join('\n')
                 dockerTemplateBase.environmentsString = temp.environment?.collect{k,v -> "${k}=${v}"}?.join("\n")
                 dockerTemplateBase.hostname = temp.hostname?:''
