@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.303.1-261 (Not released yet)
+## 2.303.1-261
 * Updated plugins:
     * [artifactory:3.13.0](https://plugins.jenkins.io/artifactory)
     * [aws-credentials:1.30](https://plugins.jenkins.io/aws-credentials)
