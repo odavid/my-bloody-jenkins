@@ -1,8 +1,8 @@
 ## Changelog
 
-## 2.303.2-262 (Not released yet)
+## 2.303.2-262
 * [LTS-2.303.2](https://www.jenkins.io/changelog-stable/)
-
+* Removing the icon-shim plugin as it is deprecated [#207](https://github.com/odavid/my-bloody-jenkins/pull/207)
 ## 2.303.1-261
 * Updated plugins:
     * [artifactory:3.13.0](https://plugins.jenkins.io/artifactory)
