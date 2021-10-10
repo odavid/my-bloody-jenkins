@@ -1,5 +1,8 @@
 ## Changelog
 
+## 2.303.2-262 (Not released yet)
+* [LTS-2.303.2](https://www.jenkins.io/changelog-stable/)
+
 ## 2.303.1-261
 * Updated plugins:
     * [artifactory:3.13.0](https://plugins.jenkins.io/artifactory)
@@ -18,7 +21,7 @@
     * [workflow-basic-steps:2.24](https://plugins.jenkins.io/workflow-basic-steps)
 
 ## 2.303.1-260
-* [LTS-2.303.1-260](https://www.jenkins.io/changelog-stable/)
+* [LTS-2.303.1](https://www.jenkins.io/changelog-stable/)
 
 ## 2.289.3-259
 * Updated plugins:
