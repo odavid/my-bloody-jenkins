@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.303.2-263 (Not released yet)
+## 2.303.2-263
 * Updated plugins:
     * [active-directory:2.25](https://plugins.jenkins.io/active-directory)
     * [ant:1.12](https://plugins.jenkins.io/ant)
