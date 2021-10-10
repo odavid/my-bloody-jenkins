@@ -93,7 +93,6 @@ handlebars:3.0.8
 handy-uri-templates-2-api:2.1.8-1.0
 htmlpublisher:1.25
 http_request:1.11
-icon-shim:3.0.0
 image-tag-parameter:1.10
 ivy:2.1
 jackson2-api:2.12.4
