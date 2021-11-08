@@ -1,5 +1,38 @@
 ## Changelog
 
+## 2.303.3-264
+* [LTS-2.303.3](https://www.jenkins.io/changelog-stable/)
+* Updated plugins:
+    * [amazon-ecr:1.7](https://plugins.jenkins.io/amazon-ecr)
+    * [antisamy-markup-formatter:2.4](https://plugins.jenkins.io/antisamy-markup-formatter)
+    * [aws-java-sdk:1.12.101-300.vc09c7be9cb57](https://plugins.jenkins.io/aws-java-sdk)
+    * [badge:1.9](https://plugins.jenkins.io/badge)
+    * [blueocean:1.25.1](https://plugins.jenkins.io/blueocean)
+    * [checkmarx:2021.4.1](https://plugins.jenkins.io/checkmarx)
+    * [cobertura:1.17](https://plugins.jenkins.io/cobertura)
+    * [code-coverage-api:2.0.4](https://plugins.jenkins.io/code-coverage-api)
+    * [cucumber-reports:5.6.1](https://plugins.jenkins.io/cucumber-reports)
+    * [dashboard-view:2.18](https://plugins.jenkins.io/dashboard-view)
+    * [email-ext:2.84](https://plugins.jenkins.io/email-ext)
+    * [envinject-api:1.8](https://plugins.jenkins.io/envinject-api)
+    * [git-changelog:3.13](https://plugins.jenkins.io/git-changelog)
+    * [git:4.10.0](https://plugins.jenkins.io/git)
+    * [gitlab-plugin:1.5.22](https://plugins.jenkins.io/gitlab-plugin)
+    * [htmlpublisher:1.27](https://plugins.jenkins.io/htmlpublisher)
+    * [jackson2-api:2.13.0-230.v59243c64b0a5](https://plugins.jenkins.io/jackson2-api)
+    * [jenkins-design-language:1.25.1](https://plugins.jenkins.io/jenkins-design-language)
+    * [job-dsl:1.78.1](https://plugins.jenkins.io/job-dsl)
+    * [kubernetes:1.30.6](https://plugins.jenkins.io/kubernetes)
+    * [lockable-resources:2.12](https://plugins.jenkins.io/lockable-resources)
+    * [maven-plugin:3.15.1](https://plugins.jenkins.io/maven-plugin)
+    * [pam-auth:1.6.1](https://plugins.jenkins.io/pam-auth)
+    * [subversion:2.15.1](https://plugins.jenkins.io/subversion)
+    * [token-macro:267.vcdaea6462991](https://plugins.jenkins.io/token-macro)
+    * [workflow-api:2.47](https://plugins.jenkins.io/workflow-api)
+    * [workflow-cps-global-lib:545.v7b28cce323cf](https://plugins.jenkins.io/workflow-cps-global-lib)
+    * [workflow-cps:2633.v6baeedc13805](https://plugins.jenkins.io/workflow-cps)
+    * [workflow-job:2.42](https://plugins.jenkins.io/workflow-job)
+
 ## 2.303.2-263
 * Updated plugins:
     * [active-directory:2.25](https://plugins.jenkins.io/active-directory)
