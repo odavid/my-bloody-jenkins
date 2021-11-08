@@ -904,7 +904,7 @@ clouds:
         # to the container docker socket. Also make sure the user within the container
         # has privileges to that socket within the entrypoint
         volumes:
-          - '/var/run/docker.sock:/var/run/docker.sock'
+          - 'type=bind,source=/var/run/docker.sock,destination=/var/run/docker.sock'
         # Environment variables to pass to the slave container
         environment:
           XXX: xxx
