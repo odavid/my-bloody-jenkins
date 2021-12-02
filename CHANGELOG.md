@@ -1,5 +1,8 @@
 ## Changelog
 
+## 2.319.1-265 (Not released yet)
+* [LTS-2.319.1](https://www.jenkins.io/changelog-stable/)
+
 ## 2.303.3-264
 * [LTS-2.303.3](https://www.jenkins.io/changelog-stable/)
 * Updated plugins:
