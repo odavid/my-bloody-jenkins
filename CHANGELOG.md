@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.319.1-266 (Not released yet)
+## 2.319.1-266
 * Update plugins:
     * [ansicolor:1.0.1](https://plugins.jenkins.io/ansicolor)
     * [ant:1.13](https://plugins.jenkins.io/ant)
