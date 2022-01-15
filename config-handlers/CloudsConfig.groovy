@@ -209,6 +209,7 @@ def ecsCloud(config){
                 temp.taskrole,
                 temp.inheritFrom,
                 asInt(temp.sharedMemorySize),
+                asBoolean(temp.enableExecuteCommand),
             )
             ecsTemplate.jvmArgs = temp.jvmArgs
             ecsTemplate.entrypoint = temp.entrypoint
