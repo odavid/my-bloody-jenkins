@@ -67,6 +67,7 @@ ecs-cloud:
         - type: random
         - type: spread
           field: attribute:ecs.availability-zone
+      enableExecuteCommand: true
 
     - name: ecs-template-fargate
       labels:
@@ -157,7 +158,7 @@ ecs-cloud:
         assert template.portMappings[0].hostPort == 9000
         assert template.portMappings[0].protocol == 'tcp'
         assert template.networkMode == 'awsvpc'
-
+        assert template.isEnableExecuteCommand()
 
         def mountPoints = template.mountPoints
         def assertMountPoint = { name, sourcePath, containerPath, readOnly ->
