@@ -43,6 +43,7 @@ ecs-cloud:
       dns: 8.8.8.8
       privileged: true
       containerUser: aUser
+      kernelCapabilities: CAP_AUDIT_WRITE
       ports:
         - 9000:9001
       logDriverOptions:
@@ -63,6 +64,15 @@ ecs-cloud:
         - /home/zzz:/home/zzz:ro
         - /home/aaa:/home/aaa:rw
         - /home/aaa1:/home/aaa1234:rw
+      efsMountPoints:
+        - name: xxx
+          containerPath: /ff
+          readOnly: true
+          fileSystemId: fff
+          rootDirectory: rootDir
+          accessPointId: accessPointId
+          transitEncryption: true
+          iam: true
       placementStrategies:
         - type: random
         - type: spread
@@ -75,6 +85,8 @@ ecs-cloud:
         - generic
       image: odavid/jenkins-jnlp-slave:latest
       launchType: FARGATE
+      operatingSystemFamily: LINUX
+      cpuArchitecture: X86_64
       subnets: subnet-123,subnet-456
       securityGroups: sg-123-123,sg-124-124
       taskrole: 'arn://task-role'
@@ -127,6 +139,8 @@ ecs-cloud:
         assert template.inheritFrom == 'xxx'
         assert template.templateName == ''  // taskDefinitionOverride
         assert template.launchType == 'EC2'
+        assert template.operatingSystemFamily == 'LINUX'
+        assert template.cpuArchitecture == 'X86_64'
         assert template.executionRole == 'ecsTaskExecutionRole111'
         assert !template.subnets
         assert !template.securityGroups
@@ -145,6 +159,7 @@ ecs-cloud:
         assert template.dnsSearchDomains == '8.8.8.8'
         assert template.privileged
         assert template.containerUser == 'aUser'
+        assert template.kernelCapabilities == 'CAP_AUDIT_WRITE'
         assert ['optionA=optionAValue', 'optionB=optionBValue'] == template.logDriverOptions.collect{
             "${it.name}=${it.value}"
         }
@@ -173,6 +188,15 @@ ecs-cloud:
         assertMountPoint('/home/yyy', '/home/yyy', '/home/yyy', false)
         assertMountPoint('/home/zzz', '/home/zzz', '/home/zzz', true)
         assertMountPoint('/home/aaa1', '/home/aaa1', '/home/aaa1234', false)
+
+        assert template.efsMountPoints[0].name == 'xxx'
+        assert template.efsMountPoints[0].containerPath == '/ff'
+        assert template.efsMountPoints[0].readOnly
+        assert template.efsMountPoints[0].fileSystemId == 'fff'
+        assert template.efsMountPoints[0].rootDirectory == 'rootDir'
+        assert template.efsMountPoints[0].accessPointId == 'accessPointId'
+        assert template.efsMountPoints[0].transitEncryption
+        assert template.efsMountPoints[0].iam
 
         assert template.placementStrategyEntries[0].type == 'random'
         assert template.placementStrategyEntries[1].type == 'spread'
