@@ -172,6 +172,8 @@ def ecsCloud(config){
                 temp.image,
                 temp.repositoryCredentials,
                 temp.launchType,
+                temp.operatingSystemFamily,
+                temp.cpuArchitecture,
                 asBoolean(temp.defaultCapacityProvider),
                 temp.capacityProviderStrategies?.collect { cpsItem ->
                     new CapacityProviderStrategyEntry(cpsItem.provider, asInt(cpsItem.base), asInt(cpsItem.weight))
@@ -188,6 +190,7 @@ def ecsCloud(config){
                 asBoolean(temp.assignPublicIp),
                 asBoolean(temp.privileged),
                 temp.containerUser,
+                temp.kernelCapabilities,
                 temp.logDriverOptions?.collect{ k,v -> new LogDriverOption(k,v) },
                 temp.environment?.collect{ k, v -> new EnvironmentEntry(k,v) },
                 temp.extraHosts?.collect { k, v -> new ExtraHostEntry(k,v) },
@@ -195,6 +198,18 @@ def ecsCloud(config){
                     vol_name, host_path, container_path,read_only ->
                         new MountPointEntry(vol_name, host_path, container_path,read_only)
                     }
+                },
+                temp.efsMountPoints?.collect{ vol ->
+                    new ECSTaskTemplate.EFSMountPointEntry(
+                        vol.name,
+                        vol.containerPath,
+                        asBoolean(vol.readOnly),
+                        vol.fileSystemId,
+                        vol.rootDirectory,
+                        vol.accessPointId,
+                        asBoolean(vol.transitEncryption),
+                        asBoolean(vol.iam)
+                    )
                 },
                 temp.ports?.collect {portMapping ->
                     def parts = portMapping?.toString().split(':')
