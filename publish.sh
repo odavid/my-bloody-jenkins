@@ -5,8 +5,10 @@ docker-build(){
     local to_tag=${2}
     echo "docker build --rm --force-rm -t odavid/my-bloody-jenkins:${to_tag} --build-arg=FROM_TAG=${from_tag} ."
     docker build --rm --pull --force-rm -t odavid/my-bloody-jenkins:${to_tag} --build-arg=FROM_TAG=${from_tag} .
+    docker tag odavid/my-bloody-jenkins:${to_tag} ghcr.io/odavid/my-bloody-jenkins:${to_tag}
     echo "docker push odavid/my-bloody-jenkins:${to_tag}"
     docker push odavid/my-bloody-jenkins:${to_tag}
+    docker push ghcr.io/odavid/my-bloody-jenkins:${to_tag}
 }
 
 lts_version=$(cat LTS_VERSION.txt)
