@@ -27,6 +27,12 @@ jobs:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
+      - name: Login to Packages Container registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: deploy
         run: |-
           TAG="$(echo ${{ github.event.ref }} | sed 's|refs/tags/||g')"
@@ -44,6 +50,12 @@ jobs:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
+      - name: Login to Packages Container registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: deploy
         run: ./publish.sh latest
 
