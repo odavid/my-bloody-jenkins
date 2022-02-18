@@ -1,5 +1,8 @@
 ## Changelog
 
+## 2.319.3-271
+* Publish container to ghcr.io [#219](https://github.com/odavid/my-bloody-jenkins/pull/219)
+
 ## 2.319.3-270
 * Update plugins:
     * [amazon-ecs:1.40](https://plugins.jenkins.io/amazon-ecs)

@@ -97,6 +97,11 @@ docker pull odavid/my-bloody-jenkins:debian
 docker pull odavid/my-bloody-jenkins:jdk11
 ```
 
+### Alternate docker registry
+
+The docker image is also published to `ghcr.io`
+So you can also pull it from `ghcr.io/odavid/my-bloody-jenkins:<tag>`
+
 
 ## Environment Variables
 The following Environment variables are supported
