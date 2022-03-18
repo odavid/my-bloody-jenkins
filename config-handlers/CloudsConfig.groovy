@@ -185,6 +185,7 @@ def ecsCloud(config){
                 asInt(temp.memory),
                 asInt(temp.memoryReservation),
                 asInt(temp.cpu),
+                asInt(temp.ephemeralStorageSizeInGiB, null),
                 temp.subnets,
                 temp.securityGroups,
                 asBoolean(temp.assignPublicIp),
