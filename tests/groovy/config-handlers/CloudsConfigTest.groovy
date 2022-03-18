@@ -37,6 +37,7 @@ ecs-cloud:
       memory: 4000
       memoryReservation: 2000
       cpu: 512
+      ephemeralStorageSizeInGiB: 10
       jvmArgs: -Xmx1G
       entrypoint: /entrypoint.sh
       logDriver: aws
@@ -153,6 +154,7 @@ ecs-cloud:
         assert template.memory == 4000
         assert template.memoryReservation == 2000
         assert template.cpu == 512
+        assert template.ephemeralStorageSizeInGiB == 10
         assert template.jvmArgs == '-Xmx1G'
         assert template.entrypoint == '/entrypoint.sh'
         assert template.logDriver == 'aws'
