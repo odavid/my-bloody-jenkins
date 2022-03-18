@@ -415,7 +415,6 @@ security:
   securityOptions:
     preventCSRF: true # default true
     enableScriptSecurityForDSL: false # default false
-    enableAgentMasterAccessControl: true # default true
     disableRememberMe: false # default false
     sshdEnabled: true # default false, if true, port 16022 is exposed
 

@@ -1,5 +1,9 @@
 ## Changelog
 
+## 2.332.1-272
+* [LTS-2.332.1](https://www.jenkins.io/changelog-stable/)
+    * removed security.securityOptions.enableAgentMasterAccessControl - See https://www.jenkins.io/doc/book/security/controller-isolation/jep-235/#api-compatibility
+
 ## 2.319.3-271
 * Publish container to ghcr.io [#219](https://github.com/odavid/my-bloody-jenkins/pull/219)
 
