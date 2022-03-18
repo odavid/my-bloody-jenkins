@@ -232,7 +232,6 @@ def testSecurityOptions(){
     def config = new Yaml().load("""
 preventCSRF: false
 enableScriptSecurityForDSL: true
-enableAgentMasterAccessControl: false
 disableRememberMe: true
 sshdEnabled: true
 """
@@ -241,14 +240,12 @@ sshdEnabled: true
     assert !jenkins.model.Jenkins.instance.crumbIssuer
     assert jenkins.model.GlobalConfiguration.all().get(javaposse.jobdsl.plugin.GlobalJobDslSecurityConfiguration).useScriptSecurity
     assert jenkins.model.Jenkins.instance.disableRememberMe
-    assert jenkins.model.Jenkins.instance.injector.getInstance(jenkins.security.s2m.AdminWhitelistRule).masterKillSwitch
     assert org.jenkinsci.main.modules.sshd.SSHD.get().port == 16022
 
     configHandler.setupSecurityOptions(null)
     assert jenkins.model.Jenkins.instance.crumbIssuer && jenkins.model.Jenkins.instance.crumbIssuer.excludeClientIPFromCrumb
     assert !jenkins.model.GlobalConfiguration.all().get(javaposse.jobdsl.plugin.GlobalJobDslSecurityConfiguration).useScriptSecurity
     assert !jenkins.model.Jenkins.instance.disableRememberMe
-    assert !jenkins.model.Jenkins.instance.injector.getInstance(jenkins.security.s2m.AdminWhitelistRule).masterKillSwitch
     assert org.jenkinsci.main.modules.sshd.SSHD.get().port == -1
 
  }

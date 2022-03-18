@@ -129,8 +129,6 @@ def setupSecurityOptions(config){
     // https://wiki.jenkins.io/display/JENKINS/CSRF+Protection
     config.preventCSRF = asBoolean(config.preventCSRF, true)
     config.enableScriptSecurityForDSL = asBoolean(config.enableScriptSecurityForDSL)
-    // See https://wiki.jenkins.io/display/JENKINS/Slave+To+Master+Access+Control
-    config.enableAgentMasterAccessControl = asBoolean(config.enableAgentMasterAccessControl, true)
     config.disableRememberMe = asBoolean(config.disableRememberMe)
     config.sshdEnabled = asBoolean(config.sshdEnabled)
     config.markupFormatter = config.markupFormatter != null ? config.markupFormatter : 'plainText'
@@ -145,8 +143,6 @@ def setupSecurityOptions(config){
             .get(javaposse.jobdsl.plugin.GlobalJobDslSecurityConfiguration)
             .useScriptSecurity = enableScriptSecurityForDSL
         jenkins.model.Jenkins.instance.disableRememberMe = disableRememberMe
-        jenkins.model.Jenkins.instance
-            .injector.getInstance(jenkins.security.s2m.AdminWhitelistRule).masterKillSwitch = !enableAgentMasterAccessControl
 
 
         if(sshdEnabled){
