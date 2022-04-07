@@ -1,5 +1,43 @@
 ## Changelog
 
+## 2.332.2-275
+* Updated plugins:
+    * [artifactory:3.16.1](https://plugins.jenkins.io/artifactory)
+    * [branch-api:2.1044.v2c007e51b_87f](https://plugins.jenkins.io/branch-api)
+    * [checkmarx:2022.1.3](https://plugins.jenkins.io/checkmarx)
+    * [cloudbees-bitbucket-branch-source:762.v969cfe087fc0](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
+    * [cloudbees-folder:6.714.v79e858ef76a_2](https://plugins.jenkins.io/cloudbees-folder)
+    * [credentials:1087.v16065d268466](https://plugins.jenkins.io/credentials)
+    * [cucumber-reports:5.7.0](https://plugins.jenkins.io/cucumber-reports)
+    * [data-tables-api:1.11.4-4](https://plugins.jenkins.io/data-tables-api)
+    * [display-url-api:2.3.6](https://plugins.jenkins.io/display-url-api)
+    * [docker-plugin:1.2.7](https://plugins.jenkins.io/docker-plugin)
+    * [durable-task:495.v29cd95ec10f2](https://plugins.jenkins.io/durable-task)
+    * [envinject-api:1.192.va_13643e71792](https://plugins.jenkins.io/envinject-api)
+    * [envinject:2.847.vb_fa_18490fa_d6](https://plugins.jenkins.io/envinject)
+    * [git:4.11.0](https://plugins.jenkins.io/git)
+    * [github-branch-source:1598.v91207e9f9b_4a_](https://plugins.jenkins.io/github-branch-source)
+    * [junit:1.58](https://plugins.jenkins.io/junit)
+    * [kubernetes:3580.v78271e5631dc](https://plugins.jenkins.io/kubernetes)
+    * [parallel-test-executor:316.v1324c7927cc8](https://plugins.jenkins.io/parallel-test-executor)
+    * [pipeline-model-api:2.2075.vce74e77b_ce40](https://plugins.jenkins.io/pipeline-model-api)
+    * [pipeline-model-definition:2.2075.vce74e77b_ce40](https://plugins.jenkins.io/pipeline-model-definition)
+    * [pipeline-model-extensions:2.2075.vce74e77b_ce40](https://plugins.jenkins.io/pipeline-model-extensions)
+    * [pipeline-stage-tags-metadata:2.2075.vce74e77b_ce40](https://plugins.jenkins.io/pipeline-stage-tags-metadata)
+    * [plugin-util-api:2.16.0](https://plugins.jenkins.io/plugin-util-api)
+    * [resource-disposer:0.18](https://plugins.jenkins.io/resource-disposer)
+    * [saml:2.296.v0016349946db_](https://plugins.jenkins.io/saml)
+    * [script-security:1145.vb_cf6cf6ed960](https://plugins.jenkins.io/script-security)
+    * [stashNotifier:1.26](https://plugins.jenkins.io/stashNotifier)
+    * [subversion:2.15.3](https://plugins.jenkins.io/subversion)
+    * [swarm:3.32](https://plugins.jenkins.io/swarm)
+    * [throttle-concurrents:2.7](https://plugins.jenkins.io/throttle-concurrents)
+    * [token-macro:285.vff7645a_56ff0](https://plugins.jenkins.io/token-macro)
+    * [workflow-cps:2686.v7c37e0578401](https://plugins.jenkins.io/workflow-cps)
+    * [workflow-durable-task-step:1128.v8c259d125340](https://plugins.jenkins.io/workflow-durable-task-step)
+    * [workflow-support:817.v58126df57338](https://plugins.jenkins.io/workflow-support)
+    * [ws-cleanup:0.41](https://plugins.jenkins.io/ws-cleanup)
+
 ## 2.332.2-274
 * [LTS-2.332.2](https://www.jenkins.io/changelog-stable/)
 
