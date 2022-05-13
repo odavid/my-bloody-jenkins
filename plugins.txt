@@ -115,12 +115,16 @@ image-tag-parameter:1.10
 ivy:2.1
 jackson2-api:2.13.2-260.v43d711474c77
 javadoc:217.v905b_86277a_2a_
+javax-activation-api:1.2.0-2
+javax-mail-api:1.6.2-5
 jaxb:2.3.0.1
 jdk-tool:1.5
 jenkins-design-language:1.25.3
+jersey2-api:2.35-5
 jira-steps:1.6.0
 jira:3.7
 jjwt-api:0.11.2-9.c8b45b8bb173
+jnr-posix-api:3.1.7-3
 job-dsl:1.78.3
 jquery-detached:1.2.1
 jquery3-api:3.6.0-2
