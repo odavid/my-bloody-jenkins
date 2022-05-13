@@ -1,5 +1,8 @@
 ## Changelog
 
+## 2.332.3-276
+* [LTS-2.332.3](https://www.jenkins.io/changelog-stable/)
+
 ## 2.332.2-275
 * Updated plugins:
     * [artifactory:3.16.1](https://plugins.jenkins.io/artifactory)
