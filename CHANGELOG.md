@@ -1,5 +1,8 @@
 ## Changelog
 
+## 2.346.1-278
+* [LTS-2.346.1](https://www.jenkins.io/changelog-stable/)
+
 ## 2.332.3-277
 * Updated plugins:
     * [amazon-ecr:1.73.v741d474abe74](https://plugins.jenkins.io/amazon-ecr)
