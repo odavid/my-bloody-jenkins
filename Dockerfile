@@ -9,7 +9,7 @@ COPY plugins.txt /usr/share/jenkins/ref/
 
 ## Issue with jenkins update site and letsencrypt cert. Using -k for the time being
 ARG CURL_OPTIONS=-sSfLk
-RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
+RUN jenkins-plugin-cli -f /usr/share/jenkins/ref/plugins.txt
 
 # Using root to install and run entrypoint.
 # We will change the user to jenkins using gosu
