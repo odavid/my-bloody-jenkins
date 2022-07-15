@@ -19,6 +19,8 @@ aws-java-sdk-elasticbeanstalk:1.12.246-349.v96b_b_f7eb_a_c3c
 aws-java-sdk-iam:1.12.246-349.v96b_b_f7eb_a_c3c
 aws-java-sdk-logs:1.12.246-349.v96b_b_f7eb_a_c3c
 aws-java-sdk-minimal:1.12.246-349.v96b_b_f7eb_a_c3c
+aws-java-sdk-sns:1.12.246-349.v96b_b_f7eb_a_c3c
+aws-java-sdk-sqs:1.12.246-349.v96b_b_f7eb_a_c3c
 aws-java-sdk-ssm:1.12.246-349.v96b_b_f7eb_a_c3c
 aws-java-sdk:1.12.246-349.v96b_b_f7eb_a_c3c
 badge:1.9.1
@@ -59,6 +61,8 @@ cloudbees-folder:6.729.v2b_9d1a_74d673
 cobertura:1.17
 code-coverage-api:3.0.4
 command-launcher:84.v4a_97f2027398
+commons-lang3-api:3.12.0.0
+commons-text-api:1.9-9.v39a_53e2e0343
 conditional-buildstep:1.4.2
 config-file-provider:3.10.0
 configuration-as-code:1466.v2d4119502006
@@ -145,6 +149,8 @@ matrix-project:772.v494f19991984
 maven-plugin:3.19
 mercurial:2.16.2
 metrics:4.1.6.2
+mina-sshd-api-common:2.8.0-21.v493b_6b_db_22c6
+mina-sshd-api-core:2.8.0-21.v493b_6b_db_22c6
 momentjs:1.1.1
 nodejs:1.5.1
 oic-auth:1.8
@@ -156,6 +162,7 @@ parameterized-trigger:2.45
 pipeline-aws:1.43
 pipeline-build-step:2.18
 pipeline-graph-analysis:195.v5812d95a_a_2f9
+pipeline-groovy-lib:593.va_a_fc25d520e9
 pipeline-input-step:449.v77f0e8b_845c4
 pipeline-maven:1161.v89a_7dcec5d31
 pipeline-milestone-step:101.vd572fef9d926
@@ -171,6 +178,7 @@ plain-credentials:1.8
 plugin-util-api:2.17.0
 popper-api:1.16.1-3
 popper2-api:2.11.5-2
+prism-api:1.28.0-2
 promoted-builds:878.v12d3f7937690
 pubsub-light:1.16
 rebuild:1.34
