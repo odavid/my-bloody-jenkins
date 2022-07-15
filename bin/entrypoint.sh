@@ -31,7 +31,7 @@ if [[ $# -lt 1 ]] || [[ "$1" == "-"* ]]; then
 
     if [ -n "$JENKINS_ENV_PLUGINS" ]; then
         echo "Installing additional plugins $JENKINS_ENV_PLUGINS"
-        install-plugins.sh $(echo $JENKINS_ENV_PLUGINS | tr ',' ' ')
+        jenkins-plugin-cli --plugins $(echo $JENKINS_ENV_PLUGINS | tr ',' ' ')
         chown jenkins:jenkins /usr/share/jenkins/ref/
         echo "Installing additional plugins. Done..."
     fi
