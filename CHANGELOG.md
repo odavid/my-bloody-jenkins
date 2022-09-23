@@ -1,5 +1,8 @@
 ## Changelog
 
+## 2.361.1-283
+* [LTS-2.361.1](https://www.jenkins.io/changelog-stable/)
+
 ## 2.346.3-282
 * Updated plugins:
 * [anchore-container-scanner:1.0.24](https://plugins.jenkins.io/anchore-container-scanner)
