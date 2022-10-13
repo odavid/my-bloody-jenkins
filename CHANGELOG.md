@@ -1,5 +1,9 @@
 ## Changelog
 
+## 3.361.2-285
+* [LTS-2.361.2](https://www.jenkins.io/changelog-stable/)
+
+
 ## 3.361.1-284
 * Updated plugins:
     * [active-directory:2.26](https://plugins.jenkins.io/active-directory)
