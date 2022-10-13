@@ -1,5 +1,35 @@
 ## Changelog
 
+## 3.361.2-286
+* Updated plugins:
+    * [artifactory:3.17.1](https://plugins.jenkins.io/artifactory)
+    * [bootstrap5-api:5.2.1-3](https://plugins.jenkins.io/bootstrap5-api)
+    * [code-coverage-api:3.2.0](https://plugins.jenkins.io/code-coverage-api)
+    * [data-tables-api:1.12.1-4](https://plugins.jenkins.io/data-tables-api)
+    * [docker-plugin:1.2.10](https://plugins.jenkins.io/docker-plugin)
+    * [durable-task:501.ve5d4fc08b0be](https://plugins.jenkins.io/durable-task)
+    * [echarts-api:5.4.0-1](https://plugins.jenkins.io/echarts-api)
+    * [email-ext:2.92](https://plugins.jenkins.io/email-ext)
+    * [emailext-template:1.5](https://plugins.jenkins.io/emailext-template)
+    * [git-client:3.12.1](https://plugins.jenkins.io/git-client)
+    * [gradle:1.40](https://plugins.jenkins.io/gradle)
+    * [jackson2-api:2.13.4-293.vee957901b_6fb](https://plugins.jenkins.io/jackson2-api)
+    * [javax-activation-api:1.2.0-5](https://plugins.jenkins.io/javax-activation-api)
+    * [javax-mail-api:1.6.2-8](https://plugins.jenkins.io/javax-mail-api)
+    * [jaxb:2.3.6-2](https://plugins.jenkins.io/jaxb)
+    * [jnr-posix-api:3.1.15-2](https://plugins.jenkins.io/jnr-posix-api)
+    * [jquery3-api:3.6.1-2](https://plugins.jenkins.io/jquery3-api)
+    * [junit:1150.v5c2848328b_60](https://plugins.jenkins.io/junit)
+    * [kubernetes:3724.v0920c1e0ec69](https://plugins.jenkins.io/kubernetes)
+    * [lockable-resources:2.18](https://plugins.jenkins.io/lockable-resources)
+    * [oic-auth:2.0.0](https://plugins.jenkins.io/oic-auth)
+    * [pipeline-rest-api:2.26](https://plugins.jenkins.io/pipeline-rest-api)
+    * [pipeline-stage-view:2.26](https://plugins.jenkins.io/pipeline-stage-view)
+    * [plugin-util-api:2.18.0](https://plugins.jenkins.io/plugin-util-api)
+    * [popper2-api:2.11.6-2](https://plugins.jenkins.io/popper2-api)
+    * [saml:4.354.vdc8c005cda_34](https://plugins.jenkins.io/saml)
+    * [workflow-api:1198.v4596ea_5329b_6](https://plugins.jenkins.io/workflow-api)
+    * [workflow-cps:2802.v5ea_628154b_c2](https://plugins.jenkins.io/workflow-cps)
 ## 3.361.2-285
 * [LTS-2.361.2](https://www.jenkins.io/changelog-stable/)
 
