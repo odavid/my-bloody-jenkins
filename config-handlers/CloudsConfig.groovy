@@ -193,7 +193,7 @@ def ecsCloud(config){
                 temp.containerUser,
                 temp.kernelCapabilities,
                 temp.logDriverOptions?.collect{ k,v -> new LogDriverOption(k,v) },
-                temp.tags?.collect{k, v new Tag(k, v)}
+                temp.tags?.collect{k, v -> new Tag(k, v)},
                 temp.environment?.collect{ k, v -> new EnvironmentEntry(k,v) },
                 temp.extraHosts?.collect { k, v -> new ExtraHostEntry(k,v) },
                 temp.volumes?.collect { vol -> parseContainerVolume(vol){

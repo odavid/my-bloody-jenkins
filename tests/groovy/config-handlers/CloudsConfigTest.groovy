@@ -167,7 +167,7 @@ ecs-cloud:
         assert ['optionA=optionAValue', 'optionB=optionBValue'] == template.logDriverOptions.collect{
             "${it.name}=${it.value}"
         }
-        assert templates.tags == [new com.cloudbees.jenkins.plugins.amazonecs.ECSTaskTemplate.Tag("tagA", "valueA")]
+        assert [new com.cloudbees.jenkins.plugins.amazonecs.ECSTaskTemplate.Tag("tagA", "valueA")] == template.tags
         assert ['ENV1=env1Value', 'ENV2=env2Value'] == template.environments.collect{
             "${it.name}=${it.value}"
         }
