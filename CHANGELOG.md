@@ -1,5 +1,8 @@
 ## Changelog
 
+## 2.361.4-287
+* [LTS-2.361.4](https://www.jenkins.io/changelog-stable/)
+
 ## 3.361.2-286
 * Updated plugins:
     * [artifactory:3.17.1](https://plugins.jenkins.io/artifactory)
@@ -30,6 +33,7 @@
     * [saml:4.354.vdc8c005cda_34](https://plugins.jenkins.io/saml)
     * [workflow-api:1198.v4596ea_5329b_6](https://plugins.jenkins.io/workflow-api)
     * [workflow-cps:2802.v5ea_628154b_c2](https://plugins.jenkins.io/workflow-cps)
+
 ## 3.361.2-285
 * [LTS-2.361.2](https://www.jenkins.io/changelog-stable/)
 
