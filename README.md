@@ -786,7 +786,9 @@ clouds:
         # Environment variables to pass to the slave container
         environment:
           XXX: xxx
-
+        # Template Tags
+        tags:
+          tagA: ValueA
         # an iam role arn for the task. If omitted, the EC2 instance IAM Role that runs the task will be in use
         taskrole: '<TASKROLE_ARN>'
 
