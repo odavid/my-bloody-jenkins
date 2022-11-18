@@ -8,7 +8,7 @@ jobs:
         dist: [debian, alpine, jdk11]
     steps:
       - name: Setup BATS
-        uses: mig4/setup-bats@v1.2
+        uses: mig4/setup-bats@v1.2.0
 
       - uses: actions/checkout@v3
 
