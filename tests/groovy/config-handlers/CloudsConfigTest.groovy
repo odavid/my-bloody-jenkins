@@ -28,6 +28,8 @@ ecs-cloud:
       labels:
         - test
         - generic
+      tags:
+        tagA: valueA
       taskDefinitionOverride: override
       image: odavid/jenkins-jnlp-slave:latest
       executionRole: ecsTaskExecutionRole111
@@ -165,6 +167,7 @@ ecs-cloud:
         assert ['optionA=optionAValue', 'optionB=optionBValue'] == template.logDriverOptions.collect{
             "${it.name}=${it.value}"
         }
+        assert [new com.cloudbees.jenkins.plugins.amazonecs.ECSTaskTemplate.Tag("tagA", "valueA")] == template.tags
         assert ['ENV1=env1Value', 'ENV2=env2Value'] == template.environments.collect{
             "${it.name}=${it.value}"
         }
