@@ -8,9 +8,9 @@ jobs:
         dist: [debian, alpine, jdk11]
     steps:
       - name: Setup BATS
-        uses: mig4/setup-bats@v1
+        uses: mig4/setup-bats@v1.2
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: test test-${{ matrix.dist }}
         run: make test-${{ matrix.dist }}
@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     if: startsWith(github.ref, 'refs/tags/v')
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: docker login
         shell: bash
         env:
@@ -43,7 +43,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.ref == 'refs/heads/master'
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: docker login
         shell: bash
         env:
