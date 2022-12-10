@@ -111,4 +111,4 @@ ENV JENKINS_HTTP_PORT_FOR_SLAVES=8080
 
 # If sshd enabled, this will be the port
 EXPOSE 16022
-ENTRYPOINT ["/usr/bin/tini", "--", "/usr/bin/entrypoint.sh"]
+ENTRYPOINT ["tini", "--", "/usr/bin/entrypoint.sh"]
