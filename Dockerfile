@@ -1,4 +1,4 @@
-ARG FROM_TAG=2.361.4
+ARG FROM_TAG=2.375.1
 
 FROM jenkins/jenkins:${FROM_TAG}
 
@@ -111,4 +111,4 @@ ENV JENKINS_HTTP_PORT_FOR_SLAVES=8080
 
 # If sshd enabled, this will be the port
 EXPOSE 16022
-ENTRYPOINT ["/sbin/tini", "--", "/usr/bin/entrypoint.sh"]
+ENTRYPOINT ["tini", "--", "/usr/bin/entrypoint.sh"]
