@@ -173,6 +173,7 @@ def setupSecurityOptions(config){
 
 def setupOpenIDConnect(config){
     def realmConfig = config.realmConfig
+    realmConfig.escapeHatchSecret = realmConfig.escapeHatchSecret ? hudson.util.Secret.fromString(realmConfig.escapeHatchSecret) : null
     return realmConfig ? DescribableModel.of(org.jenkinsci.plugins.oic.OicSecurityRealm).instantiate(realmConfig) : null
 }
 

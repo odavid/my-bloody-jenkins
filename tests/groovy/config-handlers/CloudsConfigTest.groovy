@@ -28,6 +28,7 @@ ecs-cloud:
       labels:
         - test
         - generic
+      agentContainerName: testContainerName
       tags:
         tagA: valueA
       taskDefinitionOverride: override
@@ -150,6 +151,7 @@ ecs-cloud:
         assert !template.assignPublicIp
         assert template.taskDefinitionOverride == 'override'
         assert template.label == 'test generic'
+        assert template.agentContainerName == 'testContainerName'
         assert template.image == 'odavid/jenkins-jnlp-slave:latest'
         assert template.repositoryCredentials == 'xxx'
         assert template.remoteFSRoot == '/home/jenkins'
