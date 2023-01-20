@@ -167,6 +167,7 @@ def ecsCloud(config){
             def ecsTemplate = new ECSTaskTemplate(
                 temp.name ? temp.name : temp.labels?.join('-'),
                 temp.labels?.join(' '),
+                temp.agentContainerName,
                 temp.taskDefinitionOverride,
                 temp.dynamicTaskDefinitionOverride,
                 temp.image,
