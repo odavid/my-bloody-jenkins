@@ -151,7 +151,7 @@ ecs-cloud:
         assert !template.assignPublicIp
         assert template.taskDefinitionOverride == 'override'
         assert template.label == 'test generic'
-        assert agentContainerName == 'testContainerName'
+        assert template.agentContainerName == 'testContainerName'
         assert template.image == 'odavid/jenkins-jnlp-slave:latest'
         assert template.repositoryCredentials == 'xxx'
         assert template.remoteFSRoot == '/home/jenkins'
