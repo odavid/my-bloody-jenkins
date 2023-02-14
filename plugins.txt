@@ -13,10 +13,9 @@ aws-credentials:191.vcb_f183ce58b_9
 aws-java-sdk-cloudformation:1.12.397-362.v050e9394cf8e
 aws-java-sdk-codebuild:1.12.397-362.v050e9394cf8e
 aws-java-sdk-ec2:1.12.397-362.v050e9394cf8e
-aws-java-sdk-ec2:1.12.397-362.v050e9394cf8e
-aws-java-sdk-efs:1.12.397-362.v050e9394cf8e
 aws-java-sdk-ecr:1.12.397-362.v050e9394cf8e
 aws-java-sdk-ecs:1.12.397-362.v050e9394cf8e
+aws-java-sdk-efs:1.12.397-362.v050e9394cf8e
 aws-java-sdk-elasticbeanstalk:1.12.397-362.v050e9394cf8e
 aws-java-sdk-iam:1.12.397-362.v050e9394cf8e
 aws-java-sdk-logs:1.12.397-362.v050e9394cf8e
@@ -118,8 +117,12 @@ handy-uri-templates-2-api:2.1.8-22.v77d5b_75e6953
 htmlpublisher:1.31
 http_request:1.16
 image-tag-parameter:2.0
+instance-identity:142.v04572ca_5b_265
+ionicons-api:31.v4757b_6987003
 ivy:2.4
 jackson2-api:2.14.2-319.v37853346a_229
+jakarta-activation-api:2.0.1-2
+jakarta-mail-api:2.0.1-2
 javadoc:226.v71211feb_e7e9
 javax-activation-api:1.2.0-5
 javax-mail-api:1.6.2-8
