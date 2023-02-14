@@ -1,5 +1,9 @@
 ## Changelog
 
+
+## 2.375.3-293
+* [LTS-2.375.3](https://www.jenkins.io/changelog-stable/)
+
 ## 2.375.2-292
 * Updated plugins:
     * [amazon-ecs:1.47](https://plugins.jenkins.io/amazon-ecs)
