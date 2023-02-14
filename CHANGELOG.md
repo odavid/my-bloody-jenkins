@@ -3,6 +3,9 @@
 
 ## 2.375.3-293
 * [LTS-2.375.3](https://www.jenkins.io/changelog-stable/)
+* Updated plugins:
+    * [aws-java-sdk:1.12.397-362.v050e9394cf8e](https://plugins.jenkins.io/aws-java-sdk)
+    * [jackson2-api:2.14.2-319.v37853346a_229](https://plugins.jenkins.io/jackson2-api)
 
 ## 2.375.2-292
 * Updated plugins:
