@@ -1,7 +1,7 @@
 ## Changelog
 
 
-## 2.387.1=296
+## 2.387.1-296
 * Updated plugins:
     * [antisamy-markup-formatter:159.v25b_c67cd35fb_](https://plugins.jenkins.io/antisamy-markup-formatter)
     * [apache-httpcomponents-client-4-api:4.5.14-150.v7a_b_9d17134a_5](https://plugins.jenkins.io/apache-httpcomponents-client-4-api)
