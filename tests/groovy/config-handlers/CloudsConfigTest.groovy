@@ -50,6 +50,10 @@ ecs-cloud:
       kernelCapabilities: CAP_AUDIT_WRITE
       ports:
         - 9000:9001
+      ulimits:
+        - ulimitName: test
+          hardLimit: 100
+          softLimit: 10
       logDriverOptions:
         optionA: optionAValue
         optionB: optionBValue
@@ -179,6 +183,11 @@ ecs-cloud:
         assert template.portMappings[0].containerPort == 9001
         assert template.portMappings[0].hostPort == 9000
         assert template.portMappings[0].protocol == 'tcp'
+
+        assert template.ulimits[0].hardLimit == 100
+        assert template.ulimits[0].softLimit == 10
+        assert template.ulimits[0].ulimitName == 'test'
+
         assert template.networkMode == 'awsvpc'
         assert template.isEnableExecuteCommand()
 
