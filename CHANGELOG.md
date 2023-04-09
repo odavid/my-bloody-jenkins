@@ -1,5 +1,7 @@
 ## Changelog
 
+## 2.387.2-297
+* [LTS-2.387.2](https://www.jenkins.io/changelog-stable/)
 
 ## 2.387.1-296
 * Updated plugins:
