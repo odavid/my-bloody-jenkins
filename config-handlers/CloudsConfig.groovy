@@ -220,6 +220,9 @@ def ecsCloud(config){
                     def containerPort = parts.size() > 1 ? parts[1] : parts[0]
                     return new ECSTaskTemplate.PortMappingEntry(asInt(containerPort), asInt(hostPort), "tcp")
                 },
+                temp.ulimits?.collect {ulimit ->
+                    return new ECSTaskTemplate.UlimitEntry(asInt(ulimit.softLimit, null), asInt(ulimit.hardLimit, null), ulimit.ulimitName)
+                },
                 temp.executionRole ?: 'ecsTaskExecutionRole',
                 temp.placementStrategies?.collect { placementStrategyEntry ->
                     new ECSTaskTemplate.PlacementStrategyEntry(placementStrategyEntry.type, placementStrategyEntry.field)
