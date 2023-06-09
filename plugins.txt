@@ -7,6 +7,7 @@ ansicolor:1.0.2
 ant:487.vd79d090d4ea_e
 antisamy-markup-formatter:159.v25b_c67cd35fb_
 apache-httpcomponents-client-4-api:4.5.14-150.v7a_b_9d17134a_5
+apache-httpcomponents-client-5-api:5.2.1-1.0
 artifactory:3.18.3
 authentication-tokens:1.53.v1c90fd9191a_b_
 aws-credentials:191.vcb_f183ce58b_9
@@ -17,8 +18,8 @@ aws-java-sdk-ecr:1.12.481-392.v8b_291cfcda_09
 aws-java-sdk-ecs:1.12.481-392.v8b_291cfcda_09
 aws-java-sdk-efs:1.12.481-392.v8b_291cfcda_09
 aws-java-sdk-elasticbeanstalk:1.12.481-392.v8b_291cfcda_09
-aws-java-sdk-kinesis:1.12.481-392.v8b_291cfcda_09
 aws-java-sdk-iam:1.12.481-392.v8b_291cfcda_09
+aws-java-sdk-kinesis:1.12.481-392.v8b_291cfcda_09
 aws-java-sdk-logs:1.12.481-392.v8b_291cfcda_09
 aws-java-sdk-minimal:1.12.481-392.v8b_291cfcda_09
 aws-java-sdk-sns:1.12.481-392.v8b_291cfcda_09
@@ -58,6 +59,7 @@ buildtriggerbadge:251.vdf6ef853f3f5
 caffeine-api:3.1.6-115.vb_8b_b_328e59d8
 checkmarx:2023.2.6
 checks-api:2.0.0
+cloud-stats:267.v577e3742c282
 cloudbees-bitbucket-branch-source:805.v7f97d29dc0f5
 cloudbees-folder:6.815.v0dd5a_cb_40e0e
 cobertura:1.17
