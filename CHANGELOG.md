@@ -1,6 +1,9 @@
 ## Changelog
 
 
+## 2.401.1-301
+* [LTS-2.401.1](https://www.jenkins.io/changelog-stable/)
+
 ## 2.287.3-300
 * Updated plugins:
     * [ant:487.vd79d090d4ea_e](https://plugins.jenkins.io/ant)
