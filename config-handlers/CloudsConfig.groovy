@@ -296,7 +296,7 @@ def kubernetesCloud(config){
                 def simplePodVolumes = temp.volumes?.collect { vol -> parseContainerVolume(vol){
                     vol_name, host_path, container_path,read_only ->
                         if(host_path){
-                            return new HostPathVolume(host_path, container_path)
+                            return new HostPathVolume(host_path, container_path, read_only)
                         }else{
                             return new EmptyDirVolume(container_path, false)
                         }

@@ -18,7 +18,10 @@ with open('plugins.txt', 'w') as f:
         if p:
             (plugin_id, current_version) = p.split(':')
             latest = {k:v for k,v in update_site_plugins.items() if v['name'] == plugin_id}
-            version = latest.get(plugin_id).get('version') if not plugin_id in ignored_plugins else current_version
+            if latest:
+                version = latest.get(plugin_id).get('version') if not plugin_id in ignored_plugins else current_version
+            else:
+                version = current_version
             f.write("%s:%s\n" % (plugin_id, version))
 
 
