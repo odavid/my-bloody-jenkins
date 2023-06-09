@@ -2,7 +2,7 @@ import requests
 import json
 import re
 
-update_site_result = requests.get('https://updates.jenkins.io/stable/update-center.json').text
+update_site_result = requests.get('https://updates.jenkins.io/dynamic-stable-2.401.1/update-center.json').text
 update_site_result = re.sub(r'updateCenter\.post\(\n', '', update_site_result)
 update_site_result = re.sub(r'\n\);', '', update_site_result)
 update_site_plugins = json.loads(update_site_result)['plugins']
