@@ -1,7 +1,7 @@
 version: '2'
 services:
   consul:
-    image: consul
+    image: hashicorp/consul
     ports:
       - "8400:8400"
       - "8500:8500"
