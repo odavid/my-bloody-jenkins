@@ -1,5 +1,43 @@
 ## Changelog
 
+## 2.401.2-304
+* Updated plugins:
+* [ant:497.v94e7d9fffa_b_9](https://plugins.jenkins.io/ant)
+* [artifactory:3.18.4](https://plugins.jenkins.io/artifactory)
+* [basic-branch-build-strategies:81.v05e333931c7d](https://plugins.jenkins.io/basic-branch-build-strategies)
+* [bouncycastle-api:2.29](https://plugins.jenkins.io/bouncycastle-api)
+* [branch-api:2.1122.v09cb_8ea_8a_724](https://plugins.jenkins.io/branch-api)
+* [cloud-stats:302.v45b_647b_90608](https://plugins.jenkins.io/cloud-stats)
+* [cloudbees-bitbucket-branch-source:809.vc1d904b_30426](https://plugins.jenkins.io/cloudbees-bitbucket-branch-source)
+* [data-tables-api:1.13.4-3](https://plugins.jenkins.io/data-tables-api)
+* [docker-commons:422.v9d1a_89cede51](https://plugins.jenkins.io/docker-commons)
+* [email-ext:2.99](https://plugins.jenkins.io/email-ext)
+* [embeddable-build-status:395.v96b_260870c38](https://plugins.jenkins.io/embeddable-build-status)
+* [external-monitor-job:206.v9a_94ff0b_4a_10](https://plugins.jenkins.io/external-monitor-job)
+* [github-branch-source:1728.v859147241f49](https://plugins.jenkins.io/github-branch-source)
+* [gitlab-api:5.3.0-91.v1f9a_fda_d654f](https://plugins.jenkins.io/gitlab-api)
+* [gitlab-branch-source:664.v877fdc293c89](https://plugins.jenkins.io/gitlab-branch-source)
+* [gradle:2.8.1](https://plugins.jenkins.io/gradle)
+* [http_request:1.18](https://plugins.jenkins.io/http_request)
+* [instance-identity:173.va_37c494ec4e5](https://plugins.jenkins.io/instance-identity)
+* [jersey2-api:2.40-1](https://plugins.jenkins.io/jersey2-api)
+* [jnr-posix-api:3.1.17-1](https://plugins.jenkins.io/jnr-posix-api)
+* [junit:1217.v4297208a_a_b_ce](https://plugins.jenkins.io/junit)
+* [kubernetes:3971.v94b_4c914ca_75](https://plugins.jenkins.io/kubernetes)
+* [lockable-resources:1172.v4b_8fc8eed570](https://plugins.jenkins.io/lockable-resources)
+* [matrix-auth:3.1.9](https://plugins.jenkins.io/matrix-auth)
+* [p4:1.14.2](https://plugins.jenkins.io/p4)
+* [parameterized-trigger:2.46](https://plugins.jenkins.io/parameterized-trigger)
+* [pipeline-rest-api:2.33](https://plugins.jenkins.io/pipeline-rest-api)
+* [pipeline-stage-view:2.33](https://plugins.jenkins.io/pipeline-stage-view)
+* [pipeline-utility-steps:2.16.0](https://plugins.jenkins.io/pipeline-utility-steps)
+* [run-condition:1.6](https://plugins.jenkins.io/run-condition)
+* [scm-api:676.v886669a_199a_a_](https://plugins.jenkins.io/scm-api)
+* [throttle-concurrents:2.14](https://plugins.jenkins.io/throttle-concurrents)
+* [workflow-api:1223.v41b_0279c361a](https://plugins.jenkins.io/workflow-api)
+* [workflow-cps:3697.vb_470e454c232](https://plugins.jenkins.io/workflow-cps)
+* [workflow-job:1316.vd2290d3341a_f](https://plugins.jenkins.io/workflow-job)
+
 ## 2.401.2-303
 * [LTS-2.401.2](https://www.jenkins.io/changelog-stable/)
 
