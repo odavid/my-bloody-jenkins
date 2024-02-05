@@ -437,9 +437,9 @@ The `configuration_as_code` yaml section enables *"Mixed-Mode"* configuration st
 
 ```yaml
 configuration_as_code:
-  unclassified:
-  ## https://github.com/jenkinsci/configuration-as-code-plugin/blob/1f79326e902fe721a3a05077a7e46f98569804ff/demos/simple-theme-plugin/README.md
-    simple-theme-plugin:
+  ## https://github.com/jenkinsci/simple-theme-plugin/blob/main/src/test/resources/org/jenkinsci/plugins/simpletheme/ConfigurationAsCode.yml
+  appearance:
+    simpleTheme:
       elements:
       - cssUrl:
           url: "https://example.bogus/test.css"

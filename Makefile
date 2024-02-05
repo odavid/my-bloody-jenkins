@@ -28,7 +28,7 @@ test-jdk11: build-jdk11
 	bats tests
 
 update-plugins:
-	env python3 $(PWD)/get-latest-plugins.py
+	env python $(PWD)/get-latest-plugins.py
 	git diff plugins.txt | grep  '^+' | sed 's|+||' | grep -v + | awk -F \: '{print "* ["$$1":"$$2"](https://plugins.jenkins.io/" $$1 ")"}'
 
 release:
