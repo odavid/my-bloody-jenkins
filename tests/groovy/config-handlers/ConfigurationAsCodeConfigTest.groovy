@@ -5,9 +5,9 @@ configHandler = evaluate(new File("/usr/share/jenkins/config-handlers/${handler}
 
 def testJCasC(){
  	def config = new Yaml().load("""
-unclassified:
-  ## https://github.com/jenkinsci/configuration-as-code-plugin/blob/1f79326e902fe721a3a05077a7e46f98569804ff/demos/simple-theme-plugin/README.md
-  simple-theme-plugin:
+## https://github.com/jenkinsci/configuration-as-code-plugin/tree/master/demos/simple-theme-plugin
+appearance:
+  simpleTheme:
     elements:
       - cssUrl:
           url: "https://example.bogus/test.css"
