@@ -1,6 +1,6 @@
 ## Changelog
 
-## 2.426.3-305 (Not released yet)
+## 2.426.3-305
 * [LTS-2.426.3](https://www.jenkins.io/changelog-stable/)
 * Updated plugins:
     * [active-directory:2.34](https://plugins.jenkins.io/active-directory)
