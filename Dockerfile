@@ -28,9 +28,9 @@ RUN \
           ; \
      fi
 
-RUN  pip3 install --no-cache-dir --upgrade pip \
-  && pip install --no-cache-dir wheel \
-  && pip install --no-cache-dir awscli PyYAML six requests botocore boto3
+RUN  pip3 install --break-system-packages --no-cache-dir --upgrade pip \
+  && pip install --break-system-packages --no-cache-dir wheel \
+  && pip install --break-system-packages --no-cache-dir awscli PyYAML six requests botocore boto3
 
 RUN curl $CURL_OPTIONS https://releases.hashicorp.com/envconsul/0.10.0/envconsul_0.10.0_linux_amd64.tgz | tar -C /usr/bin -xvzf - && \
     chmod +x /usr/bin/envconsul
