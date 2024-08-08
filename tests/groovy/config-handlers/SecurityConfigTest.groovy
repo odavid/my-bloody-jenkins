@@ -1,4 +1,5 @@
 import org.yaml.snakeyaml.Yaml
+import hudson.util.Secret
 
 handler = 'Security'
 configHandler = evaluate(new File("/usr/share/jenkins/config-handlers/${handler}Config.groovy"))
@@ -83,7 +84,7 @@ realmConfig:
     def oicRealm = configHandler.setupOpenIDConnect(config)
     assert oicRealm instanceof org.jenkinsci.plugins.oic.OicSecurityRealm
     assert oicRealm.clientId == '111222333'
-    assert oicRealm.clientSecret.toString() == '33322211'
+    assert oicRealm.clientSecret.getPlainText().toString() == '33322211'
     assert oicRealm.wellKnownOpenIDConfigurationUrl == null // relevant only in auto
     assert oicRealm.tokenServerUrl == 'http://xxx2.yyy'
     assert oicRealm.authorizationServerUrl == 'http://xxx3.yyy'
@@ -101,7 +102,8 @@ realmConfig:
     assert oicRealm.tokenFieldToCheckValue == 'value1'
     assert oicRealm.escapeHatchEnabled
     assert oicRealm.escapeHatchUsername == 'admin'
-    assert oicRealm.escapeHatchSecret.toString() == 'password'
+    //This is now a hashed password and not encrypted so can't be tested
+    //assert oicRealm.escapeHatchSecret.toString() == 'password'
     assert oicRealm.escapeHatchGroup == 'test1'
 }
 
@@ -258,7 +260,7 @@ adminPassword: admin
     )
     def realm = configHandler.setupJenkinsDatabase(config)
     assert (realm instanceof hudson.security.HudsonPrivateSecurityRealm)
-    assert hudson.model.User.all.size() == 1
+    assert hudson.model.User.all.size() == 2 //SYSTEM is created by default
  }
 
 

@@ -1,4 +1,3 @@
-version: '2'
 services:
   consul:
     image: hashicorp/consul
@@ -23,5 +22,5 @@ services:
 
 networks:
   default:
-    external:
-      name: ${JENKINS_DOCKER_NETWORK_NAME}
+    name: ${JENKINS_DOCKER_NETWORK_NAME}
+    external: true

@@ -1,8 +1,8 @@
-ARG FROM_TAG=2.426.3
+ARG FROM_TAG=2.462.1
 
 FROM jenkins/jenkins:${FROM_TAG}
 
-ARG GOSU_VERSION=1.12
+ARG GOSU_VERSION=1.17
 
 # Install plugins
 COPY plugins.txt /usr/share/jenkins/ref/
@@ -32,7 +32,7 @@ RUN  pip3 install --break-system-packages --no-cache-dir --upgrade pip \
   && pip install --break-system-packages --no-cache-dir wheel \
   && pip install --break-system-packages --no-cache-dir awscli PyYAML six requests botocore boto3
 
-RUN curl $CURL_OPTIONS https://releases.hashicorp.com/envconsul/0.10.0/envconsul_0.10.0_linux_amd64.tgz | tar -C /usr/bin -xvzf - && \
+RUN curl $CURL_OPTIONS https://releases.hashicorp.com/envconsul/0.13.2/envconsul_0.13.2_linux_amd64.zip -o /tmp/envconsul.zip && unzip /tmp/envconsul.zip -d /usr/bin/ && \
     chmod +x /usr/bin/envconsul
 
 RUN curl $CURL_OPTIONS -o /usr/bin/gosu https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-amd64 && \

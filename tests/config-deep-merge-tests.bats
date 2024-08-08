@@ -1,6 +1,6 @@
 #!/usr/bin/env bats
 
-load tests_helpers
+load tests_helpers.bash
 
 COMPOSE_FILE=docker-compose-simple.yml
 
@@ -12,7 +12,7 @@ function groovy_test(){
     mkdir -p $TESTS_HOST_CONF_DIR/{dir1,dir2,dir3}
     create_docker_network
 
-    JENKINS_ENV_CONFIG_YML_URL="file://${TESTS_CONTAINER_CONF_DIR}/dir1,file://${TESTS_CONTAINER_CONF_DIR}/dir2,file://${TESTS_CONTAINER_CONF_DIR}/dir3/*.yml" \
+    JENKINS_ENV_CONFIG_YML_URL="file://${TESTS_CONTAINER_CONF_DIR}/dir1/*.yml,file://${TESTS_CONTAINER_CONF_DIR}/dir2/*.yml,file://${TESTS_CONTAINER_CONF_DIR}/dir3/*.yml" \
     docker_compose_up $COMPOSE_FILE
 
     health_check http://0.0.0.0:8080/login
