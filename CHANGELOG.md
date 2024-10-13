@@ -1,5 +1,13 @@
 ## Changelog
 
+
+## 2.462.3-306
+* [LTS-2.462.3](https://www.jenkins.io/changelog-stable/)
+* All plugins were upgraded (Thanks @lazzurs)
+* Removed deprecated plugins
+* Removed configuration support for oic-auth-plugin due to many changes within the plugin. Can be still managed by the Configuration as Code
+
+
 ## 2.426.3-305
 * [LTS-2.426.3](https://www.jenkins.io/changelog-stable/)
 * Updated plugins:
