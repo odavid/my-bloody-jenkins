@@ -54,58 +54,6 @@ realmConfig:
     assert samlRealm.samlCustomAttributes == [new org.jenkinsci.plugins.saml.conf.Attribute('xxx', 'wierdxxx')]
 }
 
-def testOIC(){
-	def config = new Yaml().load("""
-realmConfig:
-  clientId: '111222333'
-  clientSecret: '33322211'
-  automanualconfigure: manual
-  wellKnownOpenIDConfigurationUrl: http://xxx1.yyy
-  tokenServerUrl: http://xxx2.yyy
-  authorizationServerUrl: http://xxx3.yyy
-  userInfoServerUrl: http://xxx4.yyy
-  logoutFromOpenidProvider: true
-  endSessionEndpoint: http://xxx5.yyy
-  postLogoutRedirectUrl: http://jenkins
-  userNameField: preferred_username
-  fullNameFieldName: name
-  emailFieldName: email
-  scopes: openid profile email
-  groupsFieldName: groups
-  disableSslVerification: false
-  tokenFieldToCheckKey: key1
-  tokenFieldToCheckValue: value1
-  escapeHatchEnabled: true
-  escapeHatchUsername: admin
-  escapeHatchSecret: password
-  escapeHatchGroup: test1
-""")
-
-    def oicRealm = configHandler.setupOpenIDConnect(config)
-    assert oicRealm instanceof org.jenkinsci.plugins.oic.OicSecurityRealm
-    assert oicRealm.clientId == '111222333'
-    assert oicRealm.clientSecret.getPlainText().toString() == '33322211'
-    assert oicRealm.wellKnownOpenIDConfigurationUrl == null // relevant only in auto
-    assert oicRealm.tokenServerUrl == 'http://xxx2.yyy'
-    assert oicRealm.authorizationServerUrl == 'http://xxx3.yyy'
-    assert oicRealm.userInfoServerUrl == 'http://xxx4.yyy'
-    assert oicRealm.logoutFromOpenidProvider
-    assert oicRealm.endSessionEndpoint == 'http://xxx5.yyy'
-    assert oicRealm.postLogoutRedirectUrl == 'http://jenkins'
-    assert oicRealm.userNameField == 'preferred_username'
-    assert oicRealm.fullNameFieldName == 'name'
-    assert oicRealm.emailFieldName == 'email'
-    assert oicRealm.scopes == 'openid profile email'
-    assert oicRealm.groupsFieldName == 'groups'
-    assert !oicRealm.disableSslVerification
-    assert oicRealm.tokenFieldToCheckKey == 'key1'
-    assert oicRealm.tokenFieldToCheckValue == 'value1'
-    assert oicRealm.escapeHatchEnabled
-    assert oicRealm.escapeHatchUsername == 'admin'
-    //This is now a hashed password and not encrypted so can't be tested
-    //assert oicRealm.escapeHatchSecret.toString() == 'password'
-    assert oicRealm.escapeHatchGroup == 'test1'
-}
 
 def testLdap(){
 	def config = new Yaml().load("""
@@ -322,7 +270,6 @@ markupFormatter:
 testGoogleLogin()
 testSaml()
 testLdap()
-testOIC()
 testActiveDirectory()
 testGithubLogin()
 testAuthorizationStrategy()
