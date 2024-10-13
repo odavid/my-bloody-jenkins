@@ -67,16 +67,6 @@ ssh-key-fileOnMaster:
   username: user
   passphrase: password1234
   fileOnMaster: '/root/.ssh/id_rsa'
-cert-cred:
-  type: cert
-  description: cert description
-  password: secret
-  base64: ${base64Text}
-cert-cred-fileOnMaster:
-  type: cert
-  description: cert description
-  password: secret
-  fileOnMaster: '/root/xxx.crt'
 p4-pass-cred:
   type: p4-pass
   description: p4 pass description
@@ -165,18 +155,6 @@ dynamic-p4-ticket-cred:
         assert it.username == "user"
         assert it.passphrase.toString() == "password1234"
         assert it.privateKeySource.privateKeyFile == '/root/.ssh/id_rsa'
-    }
-    assertCred("cert-cred", com.cloudbees.plugins.credentials.impl.CertificateCredentialsImpl){
-        assert it.description == "cert description"
-        assert it.password.toString() == "secret"
-        assert it.keyStoreSource instanceof com.cloudbees.plugins.credentials.impl.CertificateCredentialsImpl.UploadedKeyStoreSource
-        assert it.keyStoreSource.keyStoreBytes
-    }
-    assertCred("cert-cred-fileOnMaster", com.cloudbees.plugins.credentials.impl.CertificateCredentialsImpl){
-        assert it.description == "cert description"
-        assert it.password.toString() == "secret"
-        assert it.keyStoreSource instanceof com.cloudbees.plugins.credentials.impl.CertificateCredentialsImpl.FileOnMasterKeyStoreSource
-        assert it.keyStoreSource.keyStoreFile == '/root/xxx.crt'
     }
     assertCred("p4-pass-cred", org.jenkinsci.plugins.p4.credentials.P4PasswordImpl){
         assert it.description == "p4 pass description"

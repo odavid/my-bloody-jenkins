@@ -1,7 +1,7 @@
-version: '2'
 services:
   consul:
     image: hashicorp/consul
+    platform: linux/amd64
     ports:
       - "8400:8400"
       - "8500:8500"
@@ -23,5 +23,5 @@ services:
 
 networks:
   default:
-    external:
-      name: ${JENKINS_DOCKER_NETWORK_NAME}
+    name: ${JENKINS_DOCKER_NETWORK_NAME}
+    external: true

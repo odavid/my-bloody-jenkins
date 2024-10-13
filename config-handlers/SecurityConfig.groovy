@@ -171,12 +171,6 @@ def setupSecurityOptions(config){
     }
 }
 
-def setupOpenIDConnect(config){
-    def realmConfig = config.realmConfig
-    realmConfig.escapeHatchSecret = realmConfig.escapeHatchSecret ? hudson.util.Secret.fromString(realmConfig.escapeHatchSecret) : null
-    return realmConfig ? DescribableModel.of(org.jenkinsci.plugins.oic.OicSecurityRealm).instantiate(realmConfig) : null
-}
-
 def setupGithubOAuth2(config){
     def realmConfig = config.realmConfig
     return realmConfig ? DescribableModel.of(org.jenkinsci.plugins.GithubSecurityRealm).instantiate(realmConfig) : null
@@ -204,9 +198,6 @@ def setup(config){
             break
         case 'google':
             realm = setupGoogleOAuth2(config)
-            break
-        case 'oic':
-            realm = setupOpenIDConnect(config)
             break
         case 'github':
             realm = setupGithubOAuth2(config)

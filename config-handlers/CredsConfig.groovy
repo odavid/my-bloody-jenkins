@@ -7,6 +7,7 @@ import com.cloudbees.jenkins.plugins.awscredentials.AWSCredentialsImpl
 import org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl
 import jenkins.model.Jenkins
 import hudson.util.Secret
+import hudson.model.FileParameterValue
 import org.jenkinsci.plugins.structs.describable.DescribableModel
 
 def asInt(value, defaultValue=0){
@@ -133,7 +134,7 @@ def certCred(config){
             def secretBytes = com.cloudbees.plugins.credentials.SecretBytes.fromString(base64)
             keyStoreSource = new com.cloudbees.plugins.credentials.impl.CertificateCredentialsImpl.UploadedKeyStoreSource(secretBytes)
         }else if(fileOnMaster){
-            keyStoreSource = new com.cloudbees.plugins.credentials.impl.CertificateCredentialsImpl.FileOnMasterKeyStoreSource(fileOnMaster)
+            keyStoreSource = new com.cloudbees.plugins.credentials.impl.CertificateCredentialsImpl.UploadedKeyStoreSource(new FileParameterValue.FileItemImpl(fileOnMaster), null)
         }
         return new com.cloudbees.plugins.credentials.impl.CertificateCredentialsImpl(
             CredentialsScope.GLOBAL,

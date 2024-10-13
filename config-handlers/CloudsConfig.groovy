@@ -6,6 +6,7 @@ import jenkins.model.Jenkins
 import com.nirima.jenkins.plugins.docker.*
 import com.nirima.jenkins.plugins.docker.launcher.*
 import com.nirima.jenkins.plugins.docker.strategy.*
+import io.jenkins.docker.connector.DockerComputerJNLPConnector
 
 import com.cloudbees.jenkins.plugins.amazonecs.*
 import static com.cloudbees.jenkins.plugins.amazonecs.ECSTaskTemplate.*
@@ -116,9 +117,7 @@ def dockerCloud(config){
 
                 def dockerTemplate = new DockerTemplate(
                     dockerTemplateBase,
-                    new io.jenkins.docker.connector.DockerComputerJNLPConnector(
-                        new JNLPLauncher(tunnel, temp.jvmArgs)
-                    ),
+                    new DockerComputerJNLPConnector(),
                     temp.labels?.join(' '),
                     temp.remoteFs?:'',
                     temp.instanceCap?.toString() ?: ""

@@ -351,39 +351,6 @@ security:
 ```
 
 ```yaml
-# oid - openid-connect configuration must be provided
-security:
-  realm: oic
-  realmConfig:
-    ### See https://plugins.jenkins.io/oic-auth/
-    clientId: String
-    clientSecret: String
-    # auto / manual
-    automanualconfigure: manual
-    # The Well Known Configuration source URL
-    wellKnownOpenIDConfigurationUrl: http://xxx.yyy
-    # Manual Configuration (not need if you have set the wellKnownOpenIDConfigurationUrl)
-    tokenServerUrl: http://xxx.yyy
-    authorizationServerUrl: http://xxx.yyy
-    userInfoServerUrl: http://xxx.yyy
-    logoutFromOpenidProvider: true
-    endSessionEndpoint: http://xxx.yyy
-    postLogoutRedirectUrl: http://jenkins
-    userNameField: preferred_username
-    fullNameFieldName: name
-    emailFieldName: email
-    scopes: openid profile email
-    groupsFieldName: groups
-    disableSslVerification: false
-    tokenFieldToCheckKey:
-    tokenFieldToCheckValue:
-    escapeHatchEnabled: true
-    escapeHatchUsername: admin
-    escapeHatchSecret: password
-    escapeHatchGroup:
-```
-
-```yaml
 # github - github-oauth configuration must be provided
 security:
   realm: github

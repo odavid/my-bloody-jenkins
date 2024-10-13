@@ -9,4 +9,3 @@ def cred = currentCreds.find{it.id == 'git-user-pass'}
 assert cred
 assert cred.username == "username-dir1"
 assert cred.password.toString() == "password-dir1"
-
