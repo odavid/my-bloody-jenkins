@@ -1,6 +1,7 @@
 services:
   consul:
     image: hashicorp/consul
+    platform: linux/amd64
     ports:
       - "8400:8400"
       - "8500:8500"
