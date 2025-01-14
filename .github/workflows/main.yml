@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        dist: [debian, alpine, jdk11]
+        dist: [debian, alpine, jdk17, jdk21]
     steps:
       - name: Setup BATS
         uses: bats-core/bats-action@2.0.0

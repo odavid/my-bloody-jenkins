@@ -18,7 +18,8 @@ latest)
     docker-build ${lts_version}-alpine latest
     docker-build ${lts_version}-alpine alpine
     docker-build ${lts_version} debian
-    docker-build ${lts_version}-jdk11 jdk11
+    docker-build ${lts_version}-jdk17 jdk17
+    docker-build ${lts_version}-jdk21 jdk21
     ;;
 v*)
     tag=$(echo $version_type | sed 's/v//g')
@@ -33,16 +34,21 @@ v*)
     docker-build ${lts_version} ${short_tag}-debian
     docker-build ${lts_version} lts-debian
 
-    docker-build ${lts_version}-jdk11 ${tag}-jdk11
-    docker-build ${lts_version}-jdk11 ${short_tag}-jdk11
-    docker-build ${lts_version}-jdk11 lts-jdk11
+    docker-build ${lts_version}-jdk17 ${tag}-jdk17
+    docker-build ${lts_version}-jdk17 ${short_tag}-jdk17
+    docker-build ${lts_version}-jdk17 lts-jdk17
+
+    docker-build ${lts_version}-jdk21 ${tag}-jdk21
+    docker-build ${lts_version}-jdk21 ${short_tag}-jdk21
+    docker-build ${lts_version}-jdk21 lts-jdk21
     ;;
 *)
     tag=$version_type
     docker-build ${lts_version}-alpine $tag
     docker-build ${lts_version}-alpine $tag-alpine
     docker-build ${lts_version} $tag-debian
-    docker-build ${lts_version}-jdk11 $tag-jdk11
+    docker-build ${lts_version}-jdk17 $tag-jdk17
+    docker-build ${lts_version}-jdk21 $tag-jdk21
     ;;
 esac
 #docker-build $1 $2
