@@ -5,12 +5,12 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        dist: [debian, alpine, jdk11]
+        dist: [debian, alpine, jdk17, jdk21]
     steps:
       - name: Setup BATS
         uses: bats-core/bats-action@2.0.0
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: test test-${{ matrix.dist }}
         run: make test-${{ matrix.dist }}
@@ -20,15 +20,9 @@ jobs:
     runs-on: ubuntu-latest
     if: startsWith(github.ref, 'refs/tags/v')
     steps:
-      - uses: actions/checkout@v2
-      - name: docker login
-        shell: bash
-        env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-        run: echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
+      - uses: actions/checkout@v4
       - name: Login to Packages Container registry
-        uses: docker/login-action@v1
+        uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
@@ -41,21 +35,14 @@ jobs:
   deploy-latest:
     needs: test
     runs-on: ubuntu-latest
-    if: github.event.ref == 'refs/heads/master'
+    if: github.event.ref == 'refs/heads/main'
     steps:
-      - uses: actions/checkout@v2
-      - name: docker login
-        shell: bash
-        env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-        run: echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
+      - uses: actions/checkout@v4
       - name: Login to Packages Container registry
-        uses: docker/login-action@v1
+        uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: deploy
         run: ./publish.sh latest
-
